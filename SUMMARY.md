@@ -11,7 +11,3 @@
 ## Trader
 
 - [Add to Your App](trader/add-to-your-app.md)
-
-## Instant
-
-- [Add to Your App](instant/add-to-your-app.md)
