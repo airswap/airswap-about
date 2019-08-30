@@ -232,6 +232,6 @@ function fetchSignals(
 ) external view returns (bytes32[] memory result) {
 ```
 
-| Param   | Type      | Description                         |
-| :------ | :-------- | :---------------------------------- |
-| `_user` | `address` | The account or contract to look up. |
+| Param    | Type      | Description                             |
+| :------- | :-------- | :-------------------------------------- |
+| `_count` | `uint256` | The maximum number of signals to fetch. |
