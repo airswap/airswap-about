@@ -1,4 +1,4 @@
-Peers are onchain trading rules. In this context, a **peer** is a smart contract that trades based on rules acting as a taker. A **consumer** is a party that gets quotes from and sends orders to the peer acting as maker. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
+Peers are onchain trading rules. In this context, a **peer** is a smart contract that trades based on rules acting as a taker. A **consumer** is a party that gets quotes from and sends orders to the peer acting as maker. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
 
 # Features
 
@@ -169,9 +169,9 @@ function provideOrder(
 ) public
 ```
 
-| Param   | Type    | Description                                                |
-| :------ | :------ | :--------------------------------------------------------- |
-| `order` | `Order` | Order struct as specified in the `@airswap/types` package. |
+| Param   | Type                              | Description                                                |
+| :------ | :-------------------------------- | :--------------------------------------------------------- |
+| `order` | [`Order`](swap-contract.md#order) | Order struct as specified in the `@airswap/types` package. |
 
 | Revert Reason         | Scenario                                                       |
 | :-------------------- | :------------------------------------------------------------- |
@@ -181,7 +181,7 @@ function provideOrder(
 
 # PeerFactory
 
-Deploys Peer contracts for use in the Swap Protocol. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer-factory).
+Deploys Peer contracts for use in the Swap Protocol. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer-factory).
 
 # Create a Peer
 

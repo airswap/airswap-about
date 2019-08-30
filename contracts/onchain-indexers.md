@@ -1,4 +1,4 @@
-Indexers are for peer discovery. Makers stake tokens to announce their "intent to trade" and become discoverable. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Indexers are for peer discovery. Makers stake tokens to announce their "intent to trade" and become discoverable. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # Features
 
@@ -142,7 +142,7 @@ function getIntents(
 
 # Index
 
-A list of values provided by users sorted by score. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
+A list of values provided by users sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
 # Entry Struct
 

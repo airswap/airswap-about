@@ -1,4 +1,4 @@
-Swap is a non-custodial trade settlement contract. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Swap is a non-custodial trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # Features
 
@@ -125,9 +125,9 @@ event Invalidate(
 );
 ```
 
-# Types
+# Structs
 
-# Order Struct
+# Order
 
 | Param     | Type      | Description                                   |
 | :-------- | :-------- | --------------------------------------------- |
@@ -137,7 +137,7 @@ event Invalidate(
 | taker     | `Party`   | Party to the trade that accepts terms         |
 | affiliate | `Party`   | Party compensated for facilitating (optional) |
 
-# Party Struct
+# Party
 
 | Param  | Type      | Description                    |
 | :----- | :-------- | ------------------------------ |
@@ -146,7 +146,7 @@ event Invalidate(
 | param  | `uint256` | Value (ERC-20) or ID (ERC-721) |
 | kind   | `bytes4`  | Interface ID of the token      |
 
-# Signature Struct
+# Signature
 
 | Param   | Type      | Description                                                                               |
 | :------ | :-------- | ----------------------------------------------------------------------------------------- |

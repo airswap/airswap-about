@@ -129,98 +129,16 @@ window.AirSwapTrader.render(
 
 # Options
 
-| Key        | Type            | Field          | Description                                                                                                                                          |
-| ---------- | --------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `order`    | [Order](#order) | `optional`     | The Order details. Provide values to pre-populate the order builder. If any of these parameters are specified, it will lock the value in the widget. |
-| `cid`      | string          | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.          |
-| `onCreate` | Function        | `optional`     | [Callback function](#onCreate) triggered on creation of a trade.                                                                                     |
-| `onSwap`   | Function        | `optional`     | [Callback function](#onSwap) triggered on a successful trade.                                                                                        |
-| `onCancel` | Function        | `optional`     | [Callback function](#onCancel) triggered on a successful cancel.                                                                                     |
-| `onClose`  | Function        | **`required`** | [Callback function](#onClose) triggered on widget close.                                                                                             |
+| Key        | Type                                         | Field          | Description                                                                                                                                          |
+| ---------- | -------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | The Order details. Provide values to pre-populate the order builder. If any of these parameters are specified, it will lock the value in the widget. |
+| `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.          |
+| `onCreate` | Function                                     | `optional`     | [Callback function](#onCreate) triggered on creation of a trade.                                                                                     |
+| `onSwap`   | Function                                     | `optional`     | [Callback function](#onSwap) triggered on a successful trade.                                                                                        |
+| `onCancel` | Function                                     | `optional`     | [Callback function](#onCancel) triggered on a successful cancel.                                                                                     |
+| `onClose`  | Function                                     | **`required`** | [Callback function](#onClose) triggered on widget close.                                                                                             |
 
----
-
-## Order
-
-Provide values to pre-populate the order builder. If any of these parameters are specified, it will lock the value in the widget. When setting a signed order, all values must be set.
-
-```js
-order: {
-  expiry: 1567024230,
-  nonce: 1566932032583,
-  maker: {
-    ...
-  },
-  taker: {
-    ...
-  },
-  signature: {
-    ...
-  }
-}
-```
-
-| Type        | Key                     | Field      | Description                                                                                              |
-| ----------- | ----------------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
-| `nonce`     | string                  | `optional` | A numeric parameter of every Order that is unique to its Maker. Only used when providing a signed order. |
-| `expiry`    | string                  | `optional` | The expiry in **seconds** since unix epoch.                                                              |
-| `maker`     | [Party](#party)         | `optional` | The Maker of the Order who sets price.                                                                   |
-| `taker`     | [Party](#party)         | `optional` | The Taker of the Order who accepts price.                                                                |
-| `signature` | [Signature](#signature) | `optional` | The signature of the order.                                                                              |
-
----
-
-## Party
-
-The details of a party.
-
-```js
-{
-  wallet: '0xd68bb3350887ed3ee128b5ac4b7d852e24c5d366',
-  token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
-  param: '1000000000000000000',
-  kind: '0x277f8169'
-}
-```
-
-| Type     | Key    | Field      | Description                                               |
-| -------- | ------ | ---------- | --------------------------------------------------------- |
-| `wallet` | string | `optional` | The Ethereum account of the party                         |
-| `token`  | string | `optional` | The address of the token the party sends or receives      |
-| `param`  | string | `optional` | The amount of ERC-20 or the identifier of an ERC-721      |
-| `kind`   | string | `optional` | The interface ID of the token. E.g. ERC-721 is 0x80ac58cd |
-
----
-
-## Signature
-
-The [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signature of the order.
-
-```js
-{
-  version: '0x01',
-  signer: '0x1ffb1788e56a755a74d3b63a787b09b65ca35e12',
-  r: '0xec5aac45d8d9fb9f1b32206db8ca5745bef0ff6cca4e10f96891712932674144',
-  s: '0x74b363b16641a9cf51c8cad2e3b26bfcaec825b32122aeb41dce3db24ad90ec4',
-  v: 28,
-}
-```
-
-| Type      | Key    | Field      | Description                                 |
-| --------- | ------ | ---------- | ------------------------------------------- |
-| `version` | string | `required` | The signing method used.                    |
-| `signer`  | string | `required` | The address of the signer Ethereum account. |
-| `r`       | string | `required` | The `r` value of an ECDSA signature.        |
-| `s`       | string | `required` | The `s` value of an ECDSA signature.        |
-| `v`       | number | `required` | The `v` value of an ECDSA signature.        |
-
----
-
-## cid
-
-[IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.
-
----
+# Callbacks
 
 ## onCreate
 
@@ -238,8 +156,6 @@ function onCreate(order, cid) {
 | `order` | [Order](#order) | The order details.          |
 | `cid`   | string          | The IPFS Hash of the order. |
 
----
-
 ## onSwap
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
@@ -255,8 +171,6 @@ function onSwap(transactionHash) {
 | ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `transactionHash` | `string`  | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
 
----
-
 ## onCancel
 
 Callback function triggered when a trade is canceled. Passes the transaction hash of the cancellation event as an argument.
@@ -271,8 +185,6 @@ function onCancel(transactionHash) {
 | Type              | Parameter | Description                                                                                                                                   |
 | ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `transactionHash` | `string`  | Hash of the cancelation transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
-
----
 
 ## onClose
 

@@ -10,4 +10,4 @@
 
 ## Trader
 
-- [Add to Your App](trader/add-to-your-app.md)
+- [Add Trader to Your App](trader/add-to-your-app.md)
