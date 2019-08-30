@@ -7,13 +7,6 @@ Indexers are for peer discovery. Makers stake tokens to announce their "intent t
 - **Token Blacklisting** to protect the network from duplicate or malicious tokens.
 - **Locator Whitelisting** to limit locators to those white listed by another contract.
 
-# Definitions
-
-- **Locator** is 32 bytes of data that describe how to reach a peer.
-- **Intent** is an interest in trading that includes a locator.
-- **Market** is a list of intents to trade.
-- **Indexer** is a collection of markets.
-
 # Constructor
 
 Create a new `Indexer` contract.

@@ -2,6 +2,10 @@
 
 [AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an embeddable, HTML+JavaScript widget that can be added to any webpage to build and settle over-the-counter trades with no counterparty risk, no deposits, and no fees.
 
+![](images/trader-widget.png)
+
+{% hint style="success" %} Check out the [CodePen](https://codepen.io/syjk129/pen/PoYpgmW) to explore configuration options. {% endhint %}
+
 # Setup
 
 Add the following `script` tag to the `head` element in your web application.

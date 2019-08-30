@@ -1,18 +1,10 @@
-Peers are onchain trading rules. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
+Peers are onchain trading rules. In this context, a **peer** is a smart contract that trades based on rules acting as a taker. A **consumer** is a party that gets quotes from and sends orders to the peer acting as maker. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
 
 # Features
 
 - **Trustless Trading** to configure a smart contract to trade on your behalf.
 - **Limit Orders** to set rules to only take trades at specific prices.
 - **Partial Fills** to send up to a maximum amount of a token.
-
-# Definitions
-
-- **Peer** is a smart contract that trades based on rules. Acts as taker.
-- **Consumer** is a party that gets quotes from and sends orders to the peer. Acts as maker.
-- **Rule** is an amount of tokens to trade at a specific price.
-- **Price Coefficient** is the significant digits of the price.
-- **Price Exponent** is the location of the decimal on the price.
 
 # Price Calculations
 
@@ -168,6 +160,8 @@ function getMaxQuote(
 # Provide an Order
 
 Provide an order to the peer for taking.
+
+{% hint style="warning" %} The taker specified on the order must have authorized this contract to swap on its behalf beforehand. See [Swap Contract](swap-contract.md) {% endhint %}
 
 ```Solidity
 function provideOrder(

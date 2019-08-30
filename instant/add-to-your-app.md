@@ -4,6 +4,8 @@
 
 ![](images/instant-widget.png)
 
+{% hint style="success" %} Check out the [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy) to explore configuration options. {% endhint %}
+
 # Setup
 
 Add the following `script` tag to the `head` element in your web application.
@@ -59,7 +61,5 @@ AirSwapInstant.render(
 | `amount`     | `string`   | optional | A default amount of tokens to request orders for. If specified, the user will not be able to change the token amount in the widget.                                                                                                                                                                                        |
 | `onComplete` | `function` | optional | Called when the user submits the trade transaction to the blockchain. The `transactionId` is passed as an argument.                                                                                                                                                                                                        |
 | `onClose`    | `function` | required | This is the only mandatory parameter. A function called when the user clicks the "X" to dismiss the widget. No arguments are passed.                                                                                                                                                                                       |
-
-{% hint style="warning" %} To explore configuration options, try them out on [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy). {% endhint %}
 
 {% hint style="info" %} If you specify a token not found in the AirSwap token metadata, the widget will not work. {% endhint %}
