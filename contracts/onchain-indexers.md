@@ -1,6 +1,6 @@
-# Indexers
+# Onchain Indexers
 
-Manages indexes that store intents to trade in the Swap Protocol. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Indexers are for peer discovery. Makers stake tokens to announce their "intent to trade" and become discoverable. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 ## Features
 
@@ -41,7 +41,7 @@ function createMarket(
 | `_makerToken` | `address` | Address of the token that the Maker sends. |
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 
-## Add a Token to Blacklist
+## Add to Blacklist
 
 Add a token to the blacklist. Markets that include the blacklisted token will be ignored. Emits an `AddToBlacklist` event.
 
@@ -55,7 +55,7 @@ function addToBlacklist(
 | :------- | :-------- | :--------------------------------- |
 | `_token` | `address` | Address of the token to blacklist. |
 
-## Remove a Token from Blacklist
+## Remove from Blacklist
 
 Remove a token from the blacklist. Emits a `RemoveFromBlacklist` event.
 
@@ -69,7 +69,7 @@ function removeFromBlacklist(
 | :------- | :-------- | :---------------------------------- |
 | `_token` | `address` | The address of the token to remove. |
 
-## Set an Intent to Trade
+## Set an Intent
 
 Stake tokens to the Indexer and set an intent to trade.
 
@@ -79,7 +79,7 @@ function setIntent(
   address _takerToken,
   uint256 _amount,
   uint256 _expiry,
-  address _locator
+  bytes32 _locator
 ) public
 ```
 
@@ -89,7 +89,7 @@ function setIntent(
 | `_takerToken` | `address` | Address of the token that the Taker sends.   |
 | `_amount`     | `uint256` | Amount of token to stake.                    |
 | `_expiry`     | `uint256` | Timestamp after which the intent is invalid. |
-| `_locator`    | `address` | Locator for the peer.                        |
+| `_locator`    | `bytes32` | Usually an address in the first 20 bytes.    |
 
 | Revert Reason           | Scenario                                   |
 | :---------------------- | :----------------------------------------- |
@@ -98,7 +98,7 @@ function setIntent(
 | `MINIMUM_NOT_MET`       | The staking amount is insufficient.        |
 | `UNABLE_TO_STAKE`       | The staking amount was not transferred.    |
 
-## Unset an Intent to Trade
+## Unset an Intent
 
 Unset an intent to trade and return staked tokens to the sender.
 

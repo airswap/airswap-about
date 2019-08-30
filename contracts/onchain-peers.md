@@ -1,8 +1,6 @@
-# Peers
+# Onchain Peers
 
-Manages delegated trading rules for use in the Swap Protocol. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
-
-The authorization feature enables traders to deploy smart contracts that trade on their behalf. These contracts can include arbitrary logic and connect to other liquidity sources. This contract lets one set and unset specific trading rules.
+Peers are onchain trading rules. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
 
 ## Features
 
@@ -90,23 +88,23 @@ function unsetRule(
 
 ## Get a Maker-Side Quote
 
-Get a quote for the maker (consumer) side. Often used to get a buy price for \_quoteTakerToken.
+Get a quote for the maker (consumer) side. Often used to get a buy price for \_takerToken.
 
 ```Solidity
 function getMakerSideQuote(
-  uint256 _quoteTakerParam,
-  address _quoteTakerToken,
-  address _quoteMakerToken
+  uint256 _takerParam,
+  address _takerToken,
+  address _makerToken
 ) external view returns (
-  uint256 quoteMakerParam
+  uint256 makerParam
 )
 ```
 
 | Param              | Type      | Description                                             |
 | :----------------- | :-------- | :------------------------------------------------------ |
-| `_quoteTakerParam` | `uint256` | The amount of ERC-20 token the peer would send.         |
-| `_quoteTakerToken` | `address` | The address of an ERC-20 token the peer would send.     |
-| `_quoteMakerToken` | `address` | The address of an ERC-20 token the consumer would send. |
+| `_takerParam` | `uint256` | The amount of ERC-20 token the peer would send.         |
+| `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
+| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
 
 | Revert Reason         | Scenario                                         |
 | :-------------------- | :----------------------------------------------- |
@@ -115,23 +113,23 @@ function getMakerSideQuote(
 
 ## Get a Taker-Side Quote
 
-Get a quote for the taker (peer) side. Often used to get a sell price for \_quoteMakerToken.
+Get a quote for the taker (peer) side. Often used to get a sell price for \_makerToken.
 
 ```Solidity
 function getTakerSideQuote(
-  uint256 _quoteMakerParam,
-  address _quoteMakerToken,
-  address _quoteTakerToken
+  uint256 _makerParam,
+  address _makerToken,
+  address _takerToken
 ) external view returns (
-  uint256 quoteTakerParam
+  uint256 takerParam
 )
 ```
 
 | Param              | Type      | Description                                             |
 | :----------------- | :-------- | :------------------------------------------------------ |
-| `_quoteMakerParam` | `uint256` | The amount of ERC-20 token the consumer would send.     |
-| `_quoteMakerToken` | `address` | The address of an ERC-20 token the consumer would send. |
-| `_quoteTakerToken` | `address` | The address of an ERC-20 token the peer would send.     |
+| `_makerParam` | `uint256` | The amount of ERC-20 token the consumer would send.     |
+| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
+| `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
 
 | Revert Reason         | Scenario                                         |
 | :-------------------- | :----------------------------------------------- |
@@ -144,18 +142,18 @@ Get the maximum quote from the peer.
 
 ```Solidity
 function getMaxQuote(
-  address _quoteTakerToken,
-  address _quoteMakerToken
+  address _takerToken,
+  address _makerToken
 ) external view returns (
-  uint256 quoteTakerParam,
-  uint256 quoteMakerParam
+  uint256 takerParam,
+  uint256 makerParam
 )
 ```
 
 | Param              | Type      | Description                                             |
 | :----------------- | :-------- | :------------------------------------------------------ |
-| `_quoteTakerToken` | `address` | The address of an ERC-20 token the peer would send.     |
-| `_quoteMakerToken` | `address` | The address of an ERC-20 token the consumer would send. |
+| `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
+| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
 
 | Revert Reason         | Scenario                                  |
 | :-------------------- | :---------------------------------------- |
@@ -211,6 +209,6 @@ function has(
 ) external view returns (bool)
 ```
 
-| Param      | Type      | Description                                                        |
-| :--------- | :-------- | :----------------------------------------------------------------- |
-| `_locator` | `bytes32` | The locator in question, a contract address in the first 20 bytes. |
+| Param      | Type      | Description                                                                |
+| :--------- | :-------- | :------------------------------------------------------------------------- |
+| `_locator` | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |
