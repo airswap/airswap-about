@@ -127,7 +127,7 @@ event Invalidate(
 
 # Structs
 
-# Order
+## Order
 
 | Param     | Type      | Description                                   |
 | :-------- | :-------- | --------------------------------------------- |
@@ -137,7 +137,7 @@ event Invalidate(
 | taker     | `Party`   | Party to the trade that accepts terms         |
 | affiliate | `Party`   | Party compensated for facilitating (optional) |
 
-# Party
+## Party
 
 | Param  | Type      | Description                    |
 | :----- | :-------- | ------------------------------ |
@@ -146,7 +146,7 @@ event Invalidate(
 | param  | `uint256` | Value (ERC-20) or ID (ERC-721) |
 | kind   | `bytes4`  | Interface ID of the token      |
 
-# Signature
+## Signature
 
 | Param   | Type      | Description                                                                               |
 | :------ | :-------- | ----------------------------------------------------------------------------------------- |

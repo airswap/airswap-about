@@ -1,6 +1,6 @@
 <script src="https://cdn.airswap.io/airswap-trader.js"></script>
 
-[AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an embeddable, HTML+JavaScript widget that can be added to any webpage to build and settle over-the-counter trades with no counterparty risk, no deposits, and no fees.
+[AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an HTML+JavaScript widget that can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
 
 ![](images/trader-widget.png)
 
@@ -18,7 +18,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 # Display an new order builder
 
-Embedding the widget is very simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](#order) and [cid](#cid) (ipfs hash) are passed as arguments.
+Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](#order) and [cid](#cid) (ipfs hash) are passed as arguments.
 
 ```js
 window.AirSwapTrader.render(
