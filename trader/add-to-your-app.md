@@ -1,10 +1,8 @@
 <script src="https://cdn.airswap.io/airswap-trader.js"></script>
 
-# Add Trader to your App
+[AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an embeddable, HTML+JavaScript widget that can be added to any webpage to build and settle over-the-counter trades with no counterparty risk, no deposits, and no fees.
 
-AirSwap Trader is an embeddable, HTML+JavaScript widget that can be added to any webpage to build and settle over-the-counter trades with no counterparty risk, no deposits, and no fees.
-
-## Setup
+# Setup
 
 Add the following `script` tag to the `head` element in your web application.
 
@@ -14,7 +12,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 {% hint style="working" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
 
-## Display an new order builder
+# Display an new order builder
 
 Embedding the widget is very simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](#order) and [cid](#cid) (ipfs hash) are passed as arguments.
 
@@ -34,7 +32,7 @@ window.AirSwapTrader.render(
 
 ![](images/build-order.png)
 
-## Pre-fill values in the order builder
+# Pre-fill values in the order builder
 
 In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
@@ -65,7 +63,7 @@ window.AirSwapTrader.render(
 
 ![](images/filled-build-order.png)
 
-## Display an existing signed order
+# Display an existing signed order
 
 To initiate the Taker flow you would need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
@@ -125,7 +123,7 @@ window.AirSwapTrader.render(
 
 ![](images/taker-view.png)
 
-## Options
+# Options
 
 | Key        | Type            | Field          | Description                                                                                                                                          |
 | ---------- | --------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -138,7 +136,7 @@ window.AirSwapTrader.render(
 
 ---
 
-### Order
+## Order
 
 Provide values to pre-populate the order builder. If any of these parameters are specified, it will lock the value in the widget. When setting a signed order, all values must be set.
 
@@ -168,7 +166,7 @@ order: {
 
 ---
 
-### Party
+## Party
 
 The details of a party.
 
@@ -190,7 +188,7 @@ The details of a party.
 
 ---
 
-### Signature
+## Signature
 
 The [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signature of the order.
 
@@ -214,13 +212,13 @@ The [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14a
 
 ---
 
-### cid
+## cid
 
 [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.
 
 ---
 
-### onCreate
+## onCreate
 
 Callback function triggered on creation of a trade. Passes the order and cid to the function as arguments.
 
@@ -238,7 +236,7 @@ function onCreate(order, cid) {
 
 ---
 
-### onSwap
+## onSwap
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
 
@@ -255,7 +253,7 @@ function onSwap(transactionHash) {
 
 ---
 
-### onCancel
+## onCancel
 
 Callback function triggered when a trade is canceled. Passes the transaction hash of the cancellation event as an argument.
 
@@ -272,7 +270,7 @@ function onCancel(transactionHash) {
 
 ---
 
-### onClose
+## onClose
 
 Callback function triggered when the user closes the widget. No arguments.
 

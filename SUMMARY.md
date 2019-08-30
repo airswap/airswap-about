@@ -9,15 +9,12 @@
 
 ## Instant
 
-- [Introduction](instant/introduction.md)
-- [Add the Widget](instant/add-the-widget.md)
+- [Add to Your App](instant/add-to-your-app.md)
 - [Provide Liquidity](instant/provide-liquidity.md)
-- [Use the Indexer](instant/use-the-indexer.md)
 
 ## Trader
 
-- [Introduction](trader/introduction.md)
-- [Add the Widget](trader/add-the-widget.md)
+- [Add to Your App](trader/add-to-your-app.md)
 
 ## Contracts
 

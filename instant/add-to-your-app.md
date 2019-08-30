@@ -1,12 +1,10 @@
 <script src="https://cdn.airswap.io/airswap-instant-widget.js"></script>
 
-# Add Instant to your App
-
-The AirSwap Instant Widget is an embeddable, HTML+JavaScript element that can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
+[AirSwap Instant](https://instant.airswap.io/) is both a standalone app and an embeddable, HTML+JavaScript widget that can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
 
 ![](images/instant-widget.png)
 
-## Setup
+# Setup
 
 Add the following `script` tag to the `head` element in your web application.
 
@@ -16,7 +14,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 {% hint style="working" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
 
-## Display the default widget
+# Display the default widget
 
 The simplest way to use the `AirSwapInstant` widget is by rendering it without any custom configuration options. This will open the widget and allow the user to buy or sell any amount of any token.
 
@@ -31,7 +29,7 @@ window.AirSwapInstant.render(
 )
 ```
 
-## Display a specific token
+# Display a specific token
 
 ```js
 AirSwapInstant.render(
@@ -51,7 +49,7 @@ AirSwapInstant.render(
 )
 ```
 
-## Options
+# Options
 
 | Key          | Type       | Field    | Description                                                                                                                                                                                                                                                                                                                |
 | ------------ | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
