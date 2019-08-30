@@ -81,13 +81,13 @@ function setIntent(
 ) public
 ```
 
-| Param         | Type      | Description                                  |
-| :------------ | :-------- | :------------------------------------------- |
-| `_makerToken` | `address` | Address of the token that the Maker sends.   |
-| `_takerToken` | `address` | Address of the token that the Taker sends.   |
-| `_amount`     | `uint256` | Amount of token to stake.                    |
-| `_expiry`     | `uint256` | Timestamp after which the intent is invalid. |
-| `_locator`    | `bytes32` | Usually an address in the first 20 bytes.    |
+| Param         | Type      | Description                                             |
+| :------------ | :-------- | :------------------------------------------------------ |
+| `_makerToken` | `address` | Address of the token that the Maker sends.              |
+| `_takerToken` | `address` | Address of the token that the Taker sends.              |
+| `_amount`     | `uint256` | Amount of token to stake.                               |
+| `_expiry`     | `uint256` | Timestamp after which the intent is invalid.            |
+| `_locator`    | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
 | Revert Reason          | Scenario                                   |
 | :--------------------- | :----------------------------------------- |
@@ -142,96 +142,96 @@ function getIntents(
 
 # Index
 
-A list of signals: peer locators provided by users sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
+A list of peer locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
-# Signal Struct
+# Locator Struct
 
 ```
-struct Signal {
+struct Locator {
   address user;
   uint256 score;
-  bytes32 locator;
+  bytes32 data;
 }
 ```
 
-# Set a Signal
+# Set a Locator
 
-Set an Signal on the Index.
+Set an Locator on the Index.
 
 ```Solidity
-function setSignal(
-  address _user,
+function setLocator(
   uint256 _score,
-  bytes32 _locator
+  address _user,
+  bytes32 _data
 ) external onlyOwner
 ```
 
-| Param    | Type      | Description                                 |
-| :------- | :-------- | :------------------------------------------ |
-| `_user`  | `address` | The account or contract setting the Signal. |
-| `_score` | `uint256` | Score for placement in the list.            |
-| `_value` | `bytes32` | Arbitrary data.                             |
+| Param    | Type      | Description                                  |
+| :------- | :-------- | :------------------------------------------- |
+| `_score` | `uint256` | Score for placement in the list.             |
+| `_user`  | `address` | The account or contract setting the Locator. |
+| `_data`  | `bytes32` | Arbitrary data.                              |
 
-A successful `setSignal` emits a `SetSignal` event.
+A successful `setLocator` emits a `SetLocator` event.
 
 ```
-event SetSignal(
+event SetLocator(
   uint256 score,
   address indexed user,
-  bytes32 indexed locator
+  bytes32 indexed data
 );
 ```
 
-| Revert Reason        | Scenario                                  |
-| :------------------- | :---------------------------------------- |
-| `SIGNAL_ALREADY_SET` | A Signal by the same user is already set. |
+| Revert Reason        | Scenario                                   |
+| :------------------- | :----------------------------------------- |
+| `SIGNAL_ALREADY_SET` | A Locator by the same user is already set. |
 
-# Unset a Signal
+# Unset a Locator
 
-Unset a Signal from the Index.
+Unset a Locator from the Index.
 
 ```Solidity
-function unsetSignal(
+function unsetLocator(
   address _user
 ) external onlyOwner returns (bool) {
 ```
 
-A successful `unsetSignal` emits an `UnsetSignal` event.
+A successful `unsetLocator` emits an `UnsetLocator` event.
 
 ```
-event UnsetSignal(
+event UnsetLocator(
   address indexed user
 );
 ```
 
-| Param   | Type      | Description                                   |
-| :------ | :-------- | :-------------------------------------------- |
-| `_user` | `address` | The account or contract unsetting the Signal. |
+| Param   | Type      | Description                                    |
+| :------ | :-------- | :--------------------------------------------- |
+| `_user` | `address` | The account or contract unsetting the Locator. |
 
-# Get a Signal
+# Get a Locator
 
 Gets the intent for a given staker address.
 
 ```Solidity
-function getSignal(
+function getLocator(
   address _user
-) external view returns (Signal memory)
+) external view returns (Locator memory)
 ```
 
 | Param   | Type      | Description                         |
 | :------ | :-------- | :---------------------------------- |
 | `_user` | `address` | The account or contract to look up. |
 
-# Fetch Signals
+# Fetch Locators
 
 Fetch up to a number of locators from the list.
 
 ```Solidity
-function fetchSignals(
+function fetchLocators(
   uint256 _count
 ) external view returns (bytes32[] memory result) {
 ```
 
-| Param    | Type      | Description                             |
-| :------- | :-------- | :-------------------------------------- |
-| `_count` | `uint256` | The maximum number of signals to fetch. |
+| Param    | Type      | Description                              |
+| :------- | :-------- | :--------------------------------------- |
+| `_count` | `uint256` | The maximum number of locators to fetch. |
