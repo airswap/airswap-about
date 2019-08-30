@@ -23,12 +23,12 @@ constructor(
 | `_stakeToken`       | `address` | Address of the token required for staking.         |
 | `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
 
-# Create a Market
+# Create an Index
 
-If none exists, deploy a new `Market` contract for the given token pair and return the address of the new or existing market. For example, an intent to trade WETH/DAI.
+If none exists, deploy a new `Index` contract for the given token pair and return the address of the new or existing INDEX. For example, an intent to trade WETH/DAI.
 
 ```Solidity
-function createMarket(
+function createIndex(
   address _makerToken,
   address _takerToken
 ) public returns (address)
@@ -41,7 +41,7 @@ function createMarket(
 
 # Add to Blacklist
 
-Add a token to the blacklist. Markets that include the blacklisted token will be ignored. Emits an `AddToBlacklist` event.
+Add a token to the blacklist. Indexes that include the blacklisted token will be ignored. Emits an `AddToBlacklist` event.
 
 ```Solidity
 function addToBlacklist(
@@ -89,12 +89,12 @@ function setIntent(
 | `_expiry`     | `uint256` | Timestamp after which the intent is invalid. |
 | `_locator`    | `bytes32` | Usually an address in the first 20 bytes.    |
 
-| Revert Reason           | Scenario                                   |
-| :---------------------- | :----------------------------------------- |
-| `MARKET_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `MARKET_DOES_NOT_EXIST` | There is no market for the token pair.     |
-| `MINIMUM_NOT_MET`       | The staking amount is insufficient.        |
-| `UNABLE_TO_STAKE`       | The staking amount was not transferred.    |
+| Revert Reason          | Scenario                                   |
+| :--------------------- | :----------------------------------------- |
+| `INDEX_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
+| `INDEX_DOES_NOT_EXIST` | There is no index for the token pair.      |
+| `MINIMUM_NOT_MET`      | The staking amount is insufficient.        |
+| `UNABLE_TO_STAKE`      | The staking amount was not transferred.    |
 
 # Unset an Intent
 
@@ -112,10 +112,10 @@ function unsetIntent(
 | `_makerToken` | `address` | Address of the token that the Maker sends. |
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 
-| Revert Reason           | Scenario                                   |
-| :---------------------- | :----------------------------------------- |
-| `MARKET_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `MARKET_DOES_NOT_EXIST` | There is no market for the token pair.     |
+| Revert Reason          | Scenario                                   |
+| :--------------------- | :----------------------------------------- |
+| `TOKEN_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
+| `INDEX_DOES_NOT_EXIST` | There is no INDEX for the token pair.      |
 
 # Get Intents
 
@@ -135,77 +135,103 @@ function getIntents(
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 | `_count`      | `uint256` | Maximum number of items to return.         |
 
-| Revert Reason           | Scenario                                   |
-| :---------------------- | :----------------------------------------- |
-| `MARKET_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `MARKET_DOES_NOT_EXIST` | There is no market for the token pair.     |
+| Revert Reason          | Scenario                                   |
+| :--------------------- | :----------------------------------------- |
+| `TOKEN_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
+| `INDEX_DOES_NOT_EXIST` | There is no INDEX for the token pair.      |
 
 # Index
 
-A list of values provided by users sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
+A list of signals: peer locators provided by users sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
-# Entry Struct
+# Signal Struct
 
 ```
-struct Entry {
-  uint256 score;
+struct Signal {
   address user;
-  bytes32 value;
+  uint256 score;
+  bytes32 locator;
 }
 ```
 
-# Set an Entry
+# Set a Signal
 
-Set an intent to trade in the Index.
+Set an Signal on the Index.
 
 ```Solidity
-function setEntry(
-  uint256 _score,
+function setSignal(
   address _user,
-  bytes32 _value
+  uint256 _score,
+  bytes32 _locator
 ) external onlyOwner
 ```
 
-| Param    | Type      | Description                                |
-| :------- | :-------- | :----------------------------------------- |
-| `_user`  | `address` | The account or contract setting the value. |
-| `_score` | `uint256` | Score for placement in the list.           |
-| `_value` | `bytes32` | Arbitrary data.                            |
+| Param    | Type      | Description                                 |
+| :------- | :-------- | :------------------------------------------ |
+| `_user`  | `address` | The account or contract setting the Signal. |
+| `_score` | `uint256` | Score for placement in the list.            |
+| `_value` | `bytes32` | Arbitrary data.                             |
 
-# Unset an Entry
+A successful `setSignal` emits a `SetSignal` event.
 
-Unset an intent to trade in the Index.
-
-```Solidity
-function unsetEntry(
-  address _user
-) public onlyOwner returns (bool)
+```
+event SetSignal(
+  uint256 score,
+  address indexed user,
+  bytes32 indexed locator
+);
 ```
 
-| Param   | Type      | Description                                        |
-| :------ | :-------- | :------------------------------------------------- |
-| `_user` | `address` | Address of the account that will unset its intent. |
+| Revert Reason        | Scenario                                  |
+| :------------------- | :---------------------------------------- |
+| `SIGNAL_ALREADY_SET` | A Signal by the same user is already set. |
 
-# Get an Entry
+# Unset a Signal
+
+Unset a Signal from the Index.
+
+```Solidity
+function unsetSignal(
+  address _user
+) external onlyOwner returns (bool) {
+```
+
+A successful `unsetSignal` emits an `UnsetSignal` event.
+
+```
+event UnsetSignal(
+  address indexed user
+);
+```
+
+| Param   | Type      | Description                                   |
+| :------ | :-------- | :-------------------------------------------- |
+| `_user` | `address` | The account or contract unsetting the Signal. |
+
+# Get a Signal
 
 Gets the intent for a given staker address.
 
 ```Solidity
-function getEntry(
+function getSignal(
   address _user
-) public view returns (Entry memory)
+) external view returns (Signal memory)
 ```
 
-| Param   | Type      | Description                               |
-| :------ | :-------- | :---------------------------------------- |
-| `_user` | `address` | Address of the account to fetch an intent |
+| Param   | Type      | Description                         |
+| :------ | :-------- | :---------------------------------- |
+| `_user` | `address` | The account or contract to look up. |
 
-# Fetch Entries
+# Fetch Signals
 
-Fetch up to a number of intents from the list.
+Fetch up to a number of locators from the list.
 
 ```Solidity
-function fetchEntries(
+function fetchSignals(
   uint256 _count
-) public view returns (address[] memory result)
+) external view returns (bytes32[] memory result) {
 ```
+
+| Param   | Type      | Description                         |
+| :------ | :-------- | :---------------------------------- |
+| `_user` | `address` | The account or contract to look up. |
