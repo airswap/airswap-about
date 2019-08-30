@@ -5,7 +5,7 @@
 ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io/) is a peer-to-peer trading network for Ethereum tokens. AirSwap was built on the Swap Protocol, a profound shift in the way assets are traded by presenting a design for an open network to connect to peers based on common interest, to agree on a price through mutual cryptographic signatures, and to settle without intermediaries on the Ethereum blockchain.
+[AirSwap](https://www.airswap.io/) is a peer-to-peer trading network for Ethereum tokens. AirSwap is an open network to connect to peers based on common interest, to agree on a price through mutual cryptographic signatures, and to settle trades without intermediaries on the Ethereum blockchain.
 
 ## Getting Started
 
