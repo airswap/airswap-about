@@ -8,6 +8,12 @@
 
 ## Getting Started
 
-- **Automated trading** applications → [Instant](instant/introduction.md)
-- **Manual trading** (OTC) applications → [Trader](trader/introduction.md)
-- **Onchain integrations** → [Contracts](contracts/introduction.md)
+- **Automated trading** applications → [Instant](instant/add-to-your-app.md)
+- **Manual trading** (OTC) applications → [Trader](trader/add-to-your-app.md)
+- **Onchain integrations** → [Contracts](contracts/swap-contract.md)
+
+## From the Blog
+
+- [**New AirSwap Protocols**](https://medium.com/fluidity/new-airswap-protocols-c70c73f58477)
+- [**Introducing AirSwap Trader**](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0)
+- [**AirSwap Instant 2.0**](https://medium.com/fluidity/airswap-instant-2-0-d10906447838)

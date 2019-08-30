@@ -2,15 +2,9 @@
 
 - [Welcome](README.md)
 
-## Protocols
-
-- [Introduction](protocols/introduction.md)
-- [Dictionary](protocols/dictionary.md)
-
 ## Instant
 
 - [Add to Your App](instant/add-to-your-app.md)
-- [Provide Liquidity](instant/provide-liquidity.md)
 
 ## Trader
 

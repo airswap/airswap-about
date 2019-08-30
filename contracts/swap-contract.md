@@ -1,8 +1,6 @@
-# Swap Contract
-
 Swap is a non-custodial trade settlement contract. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
-## Features
+# Features
 
 - **Atomic Swap** to transact directly peer-to-peer on Ethereum.
 - **Fungible and Non-Fungible** to swap between any two ERC-20 or ERC-721 assets.
@@ -13,7 +11,19 @@ Swap is a non-custodial trade settlement contract. [View on GitHub](https://gith
 - **Batch Cancels** to cancel multiple orders in a single transaction.
 - **Minimum Nonce** to invalidate all order nonces below a value.
 
-## Swap
+# Definitions
+
+- **Swap** is a transaction of multiple Token transfers that succeeds for all parties or fails.
+- **Token** is a fungible (ERC-20) or non-fungible (ERC-721) Ethereum asset to be transferred.
+- **Maker** is a party that sets and signs the parameters and price of an Order.
+- **Taker** is a party that accepts the parameters of an Order and settles it on Ethereum.
+- **Affiliate** is an _optional_ party compensated by the Maker for facilitating a Swap.
+- **Delegate** is an _optional_ party authorized to make or take Orders on behalf of another party.
+- **Order** is a specification of the tokens, amounts, and parties to a Swap.
+- **Signature** is an ECDSA cryptographic signature of an Order.
+- **Nonce** is a numeric parameter of every Order that is unique to its Maker.
+
+# Swap
 
 An atomic token swap between a maker and taker.
 
@@ -59,7 +69,7 @@ event Swap(
 | `INVALID_AUTH_DELEGATE`  | Delegate address is the same as the sender address.                          |
 | `INVALID_AUTH_EXPIRY`    | Authorization expiry time is in the past.                                    |
 
-## Cancel
+# Cancel
 
 Provide an array of `nonces`, unique by Maker address, to mark one or more Orders as canceled.
 
@@ -76,7 +86,7 @@ event Cancel(
 );
 ```
 
-## Invalidate
+# Invalidate
 
 Provide a minimum value to invalidate all nonces below the value.
 
@@ -93,7 +103,7 @@ event Invalidate(
 );
 ```
 
-## Authorize
+# Authorize
 
 Authorize a delegate account or contract to make (sign) or take (send) Orders on the sender's behalf.
 
@@ -110,7 +120,7 @@ event Invalidate(
 );
 ```
 
-## Revoke
+# Revoke
 
 Revoke the authorization of a delegate account or contract.
 
@@ -129,7 +139,7 @@ event Invalidate(
 
 # Types
 
-## Party Struct
+# Party Struct
 
 | Param  | Type      | Description                    |
 | :----- | :-------- | ------------------------------ |
@@ -138,7 +148,7 @@ event Invalidate(
 | param  | `uint256` | Value (ERC-20) or ID (ERC-721) |
 | kind   | `bytes4`  | Interface ID of the token      |
 
-## Order Struct
+# Order Struct
 
 | Param     | Type      | Description                                   |
 | :-------- | :-------- | --------------------------------------------- |
@@ -148,7 +158,7 @@ event Invalidate(
 | taker     | `Party`   | Party to the trade that accepts terms         |
 | affiliate | `Party`   | Party compensated for facilitating (optional) |
 
-## Signature Struct
+# Signature Struct
 
 | Param   | Type      | Description                                                                               |
 | :------ | :-------- | ----------------------------------------------------------------------------------------- |

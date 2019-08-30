@@ -1,15 +1,20 @@
-# Onchain Indexers
-
 Indexers are for peer discovery. Makers stake tokens to announce their "intent to trade" and become discoverable. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
-## Features
+# Features
 
 - **Peer Discovery** to find peers based on an intent to trade a specific token pair.
 - **Token Staking** of variable amounts to position an intent among others.
 - **Token Blacklisting** to protect the network from duplicate or malicious tokens.
 - **Locator Whitelisting** to limit locators to those white listed by another contract.
 
-## Constructor
+# Definitions
+
+- **Locator** is 32 bytes of data that describe how to reach a peer.
+- **Intent** is an interest in trading that includes a locator.
+- **Market** is a list of intents to trade.
+- **Indexer** is a collection of markets.
+
+# Constructor
 
 Create a new `Indexer` contract.
 
@@ -25,7 +30,7 @@ constructor(
 | `_stakeToken`       | `address` | Address of the token required for staking.         |
 | `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
 
-## Create a Market
+# Create a Market
 
 If none exists, deploy a new `Market` contract for the given token pair and return the address of the new or existing market. For example, an intent to trade WETH/DAI.
 
@@ -41,7 +46,7 @@ function createMarket(
 | `_makerToken` | `address` | Address of the token that the Maker sends. |
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 
-## Add to Blacklist
+# Add to Blacklist
 
 Add a token to the blacklist. Markets that include the blacklisted token will be ignored. Emits an `AddToBlacklist` event.
 
@@ -55,7 +60,7 @@ function addToBlacklist(
 | :------- | :-------- | :--------------------------------- |
 | `_token` | `address` | Address of the token to blacklist. |
 
-## Remove from Blacklist
+# Remove from Blacklist
 
 Remove a token from the blacklist. Emits a `RemoveFromBlacklist` event.
 
@@ -69,7 +74,7 @@ function removeFromBlacklist(
 | :------- | :-------- | :---------------------------------- |
 | `_token` | `address` | The address of the token to remove. |
 
-## Set an Intent
+# Set an Intent
 
 Stake tokens to the Indexer and set an intent to trade.
 
@@ -98,7 +103,7 @@ function setIntent(
 | `MINIMUM_NOT_MET`       | The staking amount is insufficient.        |
 | `UNABLE_TO_STAKE`       | The staking amount was not transferred.    |
 
-## Unset an Intent
+# Unset an Intent
 
 Unset an intent to trade and return staked tokens to the sender.
 
@@ -119,7 +124,7 @@ function unsetIntent(
 | `MARKET_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
 | `MARKET_DOES_NOT_EXIST` | There is no market for the token pair.     |
 
-## Get Intents
+# Get Intents
 
 Get a list of addresses that have an intent to trade a token pair.
 
@@ -146,7 +151,7 @@ function getIntents(
 
 A list of values provided by users sorted by score. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
-## Entry Struct
+# Entry Struct
 
 ```
 struct Entry {
@@ -156,7 +161,7 @@ struct Entry {
 }
 ```
 
-## Set an Entry
+# Set an Entry
 
 Set an intent to trade in the Index.
 
@@ -174,7 +179,7 @@ function setEntry(
 | `_score` | `uint256` | Score for placement in the list.           |
 | `_value` | `bytes32` | Arbitrary data.                            |
 
-## Unset an Entry
+# Unset an Entry
 
 Unset an intent to trade in the Index.
 
@@ -188,7 +193,7 @@ function unsetEntry(
 | :------ | :-------- | :------------------------------------------------- |
 | `_user` | `address` | Address of the account that will unset its intent. |
 
-## Get an Entry
+# Get an Entry
 
 Gets the intent for a given staker address.
 
@@ -202,7 +207,7 @@ function getEntry(
 | :------ | :-------- | :---------------------------------------- |
 | `_user` | `address` | Address of the account to fetch an intent |
 
-## Fetch Entries
+# Fetch Entries
 
 Fetch up to a number of intents from the list.
 

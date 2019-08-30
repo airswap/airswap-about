@@ -1,18 +1,24 @@
-# Onchain Peers
-
 Peers are onchain trading rules. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer).
 
-## Features
+# Features
 
 - **Trustless Trading** to configure a smart contract to trade on your behalf.
 - **Limit Orders** to set rules to only take trades at specific prices.
 - **Partial Fills** to send up to a maximum amount of a token.
 
-## Price Calculations
+# Definitions
+
+- **Peer** is a smart contract that trades based on rules. Acts as taker.
+- **Consumer** is a party that gets quotes from and sends orders to the peer. Acts as maker.
+- **Rule** is an amount of tokens to trade at a specific price.
+- **Price Coefficient** is the significant digits of the price.
+- **Price Exponent** is the location of the decimal on the price.
+
+# Price Calculations
 
 All amounts are in the smallest unit (e.g. wei), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `takerParam` of `2` results in `makerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
-### Rule Examples
+## Rule Examples
 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
 
@@ -32,7 +38,7 @@ Set a rule to send up to 100,000 DAI for WETH at 312 WETH/DAI
 setRule(<WETHAddress>, <DAIAddress>, 100000, 312, 0)
 ```
 
-## Constructor
+# Constructor
 
 Create a new `Peer` contract.
 
@@ -48,7 +54,7 @@ constructor(
 | `_swapContract`      | `address` | Address of the swap contract used to settle trades.   |
 | `_peerContractOwner` | `address` | Address of the owner of the peer for rule management. |
 
-## Set a Rule
+# Set a Rule
 
 Set a trading rule on the peer.
 
@@ -70,7 +76,7 @@ function setRule(
 | `_priceCoef`      | `uint256` | The coefficient of the price to indicate the whole number.     |
 | `_priceExp`       | `uint256` | The exponent of the price to indicate location of the decimal. |
 
-## Unset a Rule
+# Unset a Rule
 
 Unset a trading rule for the peer.
 
@@ -86,7 +92,7 @@ function unsetRule(
 | `_takerToken` | `address` | The token the peer would send.     |
 | `_makerToken` | `address` | The token the consumer would send. |
 
-## Get a Maker-Side Quote
+# Get a Maker-Side Quote
 
 Get a quote for the maker (consumer) side. Often used to get a buy price for \_takerToken.
 
@@ -100,8 +106,8 @@ function getMakerSideQuote(
 )
 ```
 
-| Param              | Type      | Description                                             |
-| :----------------- | :-------- | :------------------------------------------------------ |
+| Param         | Type      | Description                                             |
+| :------------ | :-------- | :------------------------------------------------------ |
 | `_takerParam` | `uint256` | The amount of ERC-20 token the peer would send.         |
 | `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
 | `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
@@ -111,7 +117,7 @@ function getMakerSideQuote(
 | `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.        |
 | `AMOUNT_EXCEEDS_MAX`  | The quote would exceed the maximum for the rule. |
 
-## Get a Taker-Side Quote
+# Get a Taker-Side Quote
 
 Get a quote for the taker (peer) side. Often used to get a sell price for \_makerToken.
 
@@ -125,8 +131,8 @@ function getTakerSideQuote(
 )
 ```
 
-| Param              | Type      | Description                                             |
-| :----------------- | :-------- | :------------------------------------------------------ |
+| Param         | Type      | Description                                             |
+| :------------ | :-------- | :------------------------------------------------------ |
 | `_makerParam` | `uint256` | The amount of ERC-20 token the consumer would send.     |
 | `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
 | `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
@@ -136,7 +142,7 @@ function getTakerSideQuote(
 | `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.        |
 | `AMOUNT_EXCEEDS_MAX`  | The quote would exceed the maximum for the rule. |
 
-## Get a Max Quote
+# Get a Max Quote
 
 Get the maximum quote from the peer.
 
@@ -150,8 +156,8 @@ function getMaxQuote(
 )
 ```
 
-| Param              | Type      | Description                                             |
-| :----------------- | :-------- | :------------------------------------------------------ |
+| Param         | Type      | Description                                             |
+| :------------ | :-------- | :------------------------------------------------------ |
 | `_takerToken` | `address` | The address of an ERC-20 token the peer would send.     |
 | `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
 
@@ -159,7 +165,7 @@ function getMaxQuote(
 | :-------------------- | :---------------------------------------- |
 | `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair. |
 
-## Provide an Order
+# Provide an Order
 
 Provide an order to the peer for taking.
 
@@ -183,7 +189,7 @@ function provideOrder(
 
 Deploys Peer contracts for use in the Swap Protocol. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/peer-factory).
 
-## Create a Peer
+# Create a Peer
 
 Create a new Peer contract. Implements `IPeerFactory.createPeer`.
 
@@ -199,7 +205,7 @@ function createPeer(
 | `_swapContract`      | `address` | The swap contract the peer will use. |
 | `_peerContractOwner` | `address` | The owner of the new peer contract.  |
 
-## Has
+# Has
 
 Check to see whether the factory has deployed a peer by locator. Implements `ILocatorWhitelist.has`.
 
