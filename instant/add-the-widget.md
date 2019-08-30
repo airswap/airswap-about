@@ -4,7 +4,7 @@
 
 The AirSwap Instant Widget is an embeddable, HTML+JavaScript element that can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
 
-![AirSwap Widget](images/instant-widget.png)
+![](images/instant-widget.png)
 
 ## Setup
 
@@ -31,17 +31,6 @@ window.AirSwapInstant.render(
 )
 ```
 
-<button onClick="(function() {
-  window.AirSwapInstant.render(
-    {
-      onClose: function() {
-        console.info('Widget closed.')
-      },
-    },
-    'body',
-  )
-})()">Try it out</button>
-
 ## Display a specific token
 
 ```js
@@ -62,24 +51,6 @@ AirSwapInstant.render(
 )
 ```
 
-<button onClick="(function() {
-  window.AirSwapInstant.render(
-    {
-      env: 'production',
-      mode: 'buy',
-      token: '0x27054b13b1b798b345b591a4d22e6562d47ea75a',
-      amount: '250',
-      onClose: function() {
-        console.info('Widget closed.')
-      },
-      onComplete: function(transactionId) {
-        console.info('Trade complete.', transactionId)
-      },
-    },
-    'body',
-  )
-})()">Try it out</button>
-
 ## Options
 
 | Key          | Type       | Field    | Description                                                                                                                                                                                                                                                                                                                |
@@ -91,6 +62,6 @@ AirSwapInstant.render(
 | `onComplete` | `function` | optional | Called when the user submits the trade transaction to the blockchain. The `transactionId` is passed as an argument.                                                                                                                                                                                                        |
 | `onClose`    | `function` | required | This is the only mandatory parameter. A function called when the user clicks the "X" to dismiss the widget. No arguments are passed.                                                                                                                                                                                       |
 
-{% hint style="working" %} To explore configuration options, try them out on [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy). {% endhint %}
+{% hint style="warning" %} To explore configuration options, try them out on [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy). {% endhint %}
 
 {% hint style="info" %} If you specify a token not found in the AirSwap token metadata, the widget will not work. {% endhint %}

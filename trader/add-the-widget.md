@@ -32,25 +32,7 @@ window.AirSwapTrader.render(
 )
 ```
 
-<button onClick="(function() {
-  const button = document.getElementById('open-trader-widget-1');
-  button.disabled = true;
-  window.AirSwapTrader.render(
-    {
-      onCreate: (order, cid) => {
-        console.log('Order Created!');
-      },
-      onClose: () => {
-        console.log('Widget Closed');
-        button.disabled = false;
-      },
-    },
-    'body',
-  )
-})()">Try it out</button>
-
-Hurray! You will now see an empty order builder.
-![Empty Trader View](images/build-order.png)
+![](images/build-order.png)
 
 ## Pre-fill values in the order builder
 
@@ -81,37 +63,7 @@ window.AirSwapTrader.render(
 )
 ```
 
-Now, you will see that the token and amount for the taker and maker has been set and locked. Click the button below to test it out!
-
-![Filled Trader View](images/filled-build-order.png)
-
-<button class="open-widget" id="open-trader-widget-2" onClick="(function() {
-  const button = document.getElementById('open-trader-widget-2');
-  button.disabled = true;
-  window.AirSwapTrader.render(
-    {
-      order: {
-        maker: {
-          token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', // DAI
-          param: '10000000000000000000', // Atomic value for 10 DAI
-        },
-        taker: {
-          token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
-          param: '10000000000000000', // Atomic value for 0.01 WETH
-        },
-        expiry: 1707026510, // Expiration date in seconds
-      },
-      onCreate: (order, cid) => {
-        console.log('Order Created!');
-      },
-      onClose: () => {
-        console.log('Widget Closed');
-        button.disabled = false;
-      },
-    },
-    'body',
-  )
-})()">Try it out</button>
+![](images/filled-build-order.png)
 
 ## Display an existing signed order
 
@@ -171,23 +123,7 @@ window.AirSwapTrader.render(
 )
 ```
 
-<button class="open-widget" id="open-trader-widget-2" onClick="(function() {
-  const button = document.getElementById('open-trader-widget-2');
-  button.disabled = true;
-  window.AirSwapTrader.render(
-    {
-      cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
-      onSwap: (transactionHash) => {
-        console.log('Trade complete!')
-      },
-      onClose: () => {
-        console.log('Widget Closed');
-        button.disabled = false;
-      },
-    },
-    'body',
-  )
-})()">Try it out</button>
+![](images/taker-view.png)
 
 ## Options
 
