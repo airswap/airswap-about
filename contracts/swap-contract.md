@@ -1,4 +1,4 @@
-# Swap
+# Swap Contract
 
 Swap is a non-custodial trade settlement contract. [View on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
