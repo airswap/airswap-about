@@ -1,26 +1,30 @@
-<script src="https://cdn.airswap.io/airswap-trader.js"></script>
+# Add Trader to Your App
 
 [AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an HTML+JavaScript widget that can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
 
-![](images/trader-widget.png)
+![](../.gitbook/assets/trader-widget.png)
 
-{% hint style="success" %} Check out the [CodePen](https://codepen.io/syjk129/pen/PoYpgmW) to explore configuration options. {% endhint %}
+{% hint style="success" %}
+Check out the [CodePen](https://codepen.io/syjk129/pen/PoYpgmW) to explore configuration options.
+{% endhint %}
 
-# Setup
+## Setup
 
 Add the following `script` tag to the `head` element in your web application.
 
-```html
+```markup
 <script src="https://cdn.airswap.io/airswap-trader.js"></script>
 ```
 
-{% hint style="working" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
+{% hint style="info" %}
+Pop-up blockers can prevent the widget from loading properly.
+{% endhint %}
 
-# Display an new order builder
+## Display an new order builder
 
-Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](#order) and [cid](#cid) (ipfs hash) are passed as arguments.
+Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](add-to-your-app.md#order) and [cid](add-to-your-app.md#cid) \(ipfs hash\) are passed as arguments.
 
-```js
+```javascript
 window.AirSwapTrader.render(
   {
     onCreate: (order, cid) => {
@@ -34,13 +38,13 @@ window.AirSwapTrader.render(
 )
 ```
 
-![](images/build-order.png)
+![](../.gitbook/assets/build-order.png)
 
-# Pre-fill values in the order builder
+## Pre-fill values in the order builder
 
-In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
+In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](add-to-your-app.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
-```js
+```javascript
 window.AirSwapTrader.render(
   {
     order: {
@@ -65,13 +69,13 @@ window.AirSwapTrader.render(
 )
 ```
 
-![](images/filled-build-order.png)
+![](../.gitbook/assets/filled-build-order.png)
 
-# Display an existing signed order
+## Display an existing signed order
 
 To initiate the Taker flow you would need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
-```js
+```javascript
 window.AirSwapTrader.render(
   {
     order: {
@@ -110,7 +114,7 @@ window.AirSwapTrader.render(
 
 If you have the full signed order details stored in [IPFS](https://ipfs.io), you can use the IPFS hash instead.
 
-```js
+```javascript
 window.AirSwapTrader.render(
   {
     cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
@@ -125,73 +129,75 @@ window.AirSwapTrader.render(
 )
 ```
 
-![](images/taker-view.png)
+![](../.gitbook/assets/taker-view.png)
 
-# Options
+## Options
 
-| Key        | Type                                         | Field          | Description                                                                                                                                          |
-| ---------- | -------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | The Order details. Provide values to pre-populate the order builder. If any of these parameters are specified, it will lock the value in the widget. |
-| `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.          |
-| `onCreate` | Function                                     | `optional`     | [Callback function](#onCreate) triggered on creation of a trade.                                                                                     |
-| `onSwap`   | Function                                     | `optional`     | [Callback function](#onSwap) triggered on a successful trade.                                                                                        |
-| `onCancel` | Function                                     | `optional`     | [Callback function](#onCancel) triggered on a successful cancel.                                                                                     |
-| `onClose`  | Function                                     | **`required`** | [Callback function](#onClose) triggered on widget close.                                                                                             |
+| Key | Type | Field | Description |
+| :--- | :--- | :--- | :--- |
+| `env` | string | `optional` | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet. |
+| `order` | [Order](../contracts/swap-contract.md#order) | `optional` | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `cid` | string | `optional` | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen. |
+| `onCreate` | Function | `optional` | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade. |
+| `onSwap` | Function | `optional` | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade. |
+| `onCancel` | Function | `optional` | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel. |
+| `onClose` | Function | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close. |
 
-# Callbacks
+## Callbacks
 
-## onCreate
+### onCreate
 
 Callback function triggered on creation of a trade. Passes the order and cid to the function as arguments.
 
-```js
+```javascript
 function onCreate(order, cid) {
     console.log('Order Created!');
     ...
 }
 ```
 
-| Type    | Parameter       | Description                 |
-| ------- | --------------- | --------------------------- |
-| `order` | [Order](#order) | The order details.          |
-| `cid`   | string          | The IPFS Hash of the order. |
+| Type | Parameter | Description |
+| :--- | :--- | :--- |
+| `order` | [Order](add-to-your-app.md#order) | The order details. |
+| `cid` | string | The IPFS Hash of the order. |
 
-## onSwap
+### onSwap
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
 
-```js
+```javascript
 function onSwap(transactionHash) {
     console.log('Trade Completed!');
     ...
 }
 ```
 
-| Type              | Parameter | Description                                                                                                                            |
-| ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `transactionHash` | `string`  | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
+| Type | Parameter | Description |
+| :--- | :--- | :--- |
+| `transactionHash` | `string` | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
 
-## onCancel
+### onCancel
 
 Callback function triggered when a trade is canceled. Passes the transaction hash of the cancellation event as an argument.
 
-```js
+```javascript
 function onCancel(transactionHash) {
     console.log('Trade Cancelled!');
     ...
 }
 ```
 
-| Type              | Parameter | Description                                                                                                                                   |
-| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `transactionHash` | `string`  | Hash of the cancelation transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
+| Type | Parameter | Description |
+| :--- | :--- | :--- |
+| `transactionHash` | `string` | Hash of the cancelation transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
 
-## onClose
+### onClose
 
 Callback function triggered when the user closes the widget. No arguments.
 
-```js
+```javascript
 function onClose() {
   console.log('Widget closed')
 }
 ```
+

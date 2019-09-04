@@ -1,13 +1,14 @@
-# Table of Contents
+# Table of contents
 
-- [Welcome](README.md)
+* [Welcome](README.md)
 
 ## Contracts
 
-- [Swap Contract](contracts/swap-contract.md)
-- [Onchain Indexers](contracts/onchain-indexers.md)
-- [Onchain Peers](contracts/onchain-peers.md)
+* [Swap Contract](contracts/swap-contract.md)
+* [Onchain Indexers](contracts/onchain-indexers.md)
+* [Onchain Peers](contracts/onchain-peers.md)
 
 ## Trader
 
-- [Add Trader to Your App](trader/add-to-your-app.md)
+* [Add Trader to Your App](trader/add-to-your-app.md)
+
