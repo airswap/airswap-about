@@ -4,14 +4,14 @@ Swap is a non-custodial trade settlement contract. [View the code on GitHub](htt
 
 ## Features
 
-* **Atomic Swap** to transact directly peer-to-peer on Ethereum.
-* **Fungible and Non-Fungible** to swap between any two ERC-20 or ERC-721 assets.
-* **Typed Data Signatures** to sign informative messages for improved transparency.
-* **Delegate Authorization** to authorize peers to act on behalf of others.
-* **Affiliate Fees** to compensate those who facilitate trades.
-* **Trade with Anyone or Someone** to let anyone take an order or set a specific taker.
-* **Batch Cancels** to cancel multiple orders in a single transaction.
-* **Minimum Nonce** to invalidate all order nonces below a value.
+- **Atomic Swap** to transact directly peer-to-peer on Ethereum.
+- **Fungible and Non-Fungible** to swap between any two ERC-20 or ERC-721 assets.
+- **Typed Data Signatures** to sign informative messages for improved transparency.
+- **Delegate Authorization** to authorize peers to act on behalf of others.
+- **Affiliate Fees** to compensate those who facilitate trades.
+- **Trade with Anyone or Someone** to let anyone take an order or set a specific taker.
+- **Batch Cancels** to cancel multiple orders in a single transaction.
+- **Minimum Nonce** to invalidate all order nonces below a value.
 
 ## Swap
 
@@ -23,8 +23,8 @@ function swap(
 ) external
 ```
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
+| Param    | Type    | Description                               |
+| :------- | :------ | :---------------------------------------- |
 | `_order` | `Order` | Order struct as specified in Types below. |
 
 A successul `swap` emits a `Swap` event.
@@ -45,19 +45,19 @@ event Swap(
 );
 ```
 
-| Revert Reason | Scenario |
-| :--- | :--- |
-| `SIGNER_UNAUTHORIZED` | Order has been signed by an account that has not been authorized to sign it. |
-| `SIGNATURE_INVALID` | Signature provided does not match the Order provided. |
-| `ORDER_ALREADY_TAKEN` | Order has already been taken by its `nonce` value. |
-| `ORDER_ALREADY_CANCELED` | Order has already been canceled by its `nonce` value. |
-| `ORDER_EXPIRED` | Order has an `expiry` lower than the current block time. |
-| `NONCE_TOO_LOW` | Nonce provided is below the minimum value set. |
-| `SENDER_UNAUTHORIZED` | Order has been sent by an account that has not been authorized to send it. |
-| `VALUE_MUST_BE_SENT` | Order indicates an ether Swap but insufficient ether was sent. |
-| `VALUE_MUST_BE_ZERO` | Order indicates a token Swap but ether was sent. |
-| `INVALID_AUTH_DELEGATE` | Delegate address is the same as the sender address. |
-| `INVALID_AUTH_EXPIRY` | Authorization expiry time is in the past. |
+| Revert Reason            | Scenario                                                                     |
+| :----------------------- | :--------------------------------------------------------------------------- |
+| `SIGNER_UNAUTHORIZED`    | Order has been signed by an account that has not been authorized to sign it. |
+| `SIGNATURE_INVALID`      | Signature provided does not match the Order provided.                        |
+| `ORDER_ALREADY_TAKEN`    | Order has already been taken by its `nonce` value.                           |
+| `ORDER_ALREADY_CANCELED` | Order has already been canceled by its `nonce` value.                        |
+| `ORDER_EXPIRED`          | Order has an `expiry` lower than the current block time.                     |
+| `NONCE_TOO_LOW`          | Nonce provided is below the minimum value set.                               |
+| `SENDER_UNAUTHORIZED`    | Order has been sent by an account that has not been authorized to send it.   |
+| `VALUE_MUST_BE_SENT`     | Order indicates an ether Swap but insufficient ether was sent.               |
+| `VALUE_MUST_BE_ZERO`     | Order indicates a token Swap but ether was sent.                             |
+| `INVALID_AUTH_DELEGATE`  | Delegate address is the same as the sender address.                          |
+| `INVALID_AUTH_EXPIRY`    | Authorization expiry time is in the past.                                    |
 
 ## Cancel
 
@@ -104,9 +104,10 @@ function authorize(address _delegate, uint256 _expiry) external returns (bool)
 A successful `authorize` emits an `Authorize` event.
 
 ```text
-event Invalidate(
-  uint256 indexed nonce,
-  address indexed makerAddress
+event Authorize(
+  address indexed approverAddress,
+  address indexed delegateAddress,
+  uint256 expiry
 );
 ```
 
@@ -121,9 +122,9 @@ function revoke(address _delegate) external returns (bool)
 A successful `revoke` emits a `Revoke` event.
 
 ```text
-event Invalidate(
-  uint256 indexed nonce,
-  address indexed makerAddress
+event Revoke(
+  address indexed approverAddress,
+  address indexed delegateAddress
 );
 ```
 
@@ -131,30 +132,29 @@ event Invalidate(
 
 ### Order
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-| nonce | `uint256` | Unique per maker and should be sequential |
-| expiry | `uint256` | Expiry in seconds since 1 January 1970 |
-| maker | `Party` | Party to the trade that sets terms |
-| taker | `Party` | Party to the trade that accepts terms |
-| affiliate | `Party` | Party compensated for facilitating \(optional\) |
+| Param     | Type      | Description                                     |
+| :-------- | :-------- | :---------------------------------------------- |
+| nonce     | `uint256` | Unique per maker and should be sequential       |
+| expiry    | `uint256` | Expiry in seconds since 1 January 1970          |
+| maker     | `Party`   | Party to the trade that sets terms              |
+| taker     | `Party`   | Party to the trade that accepts terms           |
+| affiliate | `Party`   | Party compensated for facilitating \(optional\) |
 
 ### Party
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-| wallet | `address` | Wallet address of the party |
-| token | `address` | Contract address of the token |
-| param | `uint256` | Value \(ERC-20\) or ID \(ERC-721\) |
-| kind | `bytes4` | Interface ID of the token |
+| Param  | Type      | Description                        |
+| :----- | :-------- | :--------------------------------- |
+| wallet | `address` | Wallet address of the party        |
+| token  | `address` | Contract address of the token      |
+| param  | `uint256` | Value \(ERC-20\) or ID \(ERC-721\) |
+| kind   | `bytes4`  | Interface ID of the token          |
 
 ### Signature
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-| signer | `address` | Address of the wallet used to sign |
-| v | `uint8` | `v` value of an ECDSA signature |
-| r | `bytes32` | `r` value of an ECDSA signature |
-| s | `bytes32` | `s` value of an ECDSA signature |
-| version | `bytes1` | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version |
-
+| Param   | Type      | Description                                                                               |
+| :------ | :-------- | :---------------------------------------------------------------------------------------- |
+| signer  | `address` | Address of the wallet used to sign                                                        |
+| v       | `uint8`   | `v` value of an ECDSA signature                                                           |
+| r       | `bytes32` | `r` value of an ECDSA signature                                                           |
+| s       | `bytes32` | `s` value of an ECDSA signature                                                           |
+| version | `bytes1`  | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version |
