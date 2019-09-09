@@ -93,6 +93,12 @@ window.AirSwapTrader.render(
         param: '10000000000000000',
         kind: '0x277f8169'
       },
+      affiliate: {
+        wallet: '0x0000000000000000000000000000000000000000',
+        token: '0x0000000000000000000000000000000000000000',
+        param: '0',
+        kind: '0x277f8169'
+      },
       signature: {
         version: '0x01',
         signer: '0xd68bb3350887ed3ee128b5ac4b7d852e24c5d366',
@@ -133,15 +139,15 @@ window.AirSwapTrader.render(
 
 ## Options
 
-| Key | Type | Field | Description |
-| :--- | :--- | :--- | :--- |
-| `env` | string | `optional` | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet. |
-| `order` | [Order](../contracts/swap-contract.md#order) | `optional` | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
-| `cid` | string | `optional` | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen. |
-| `onCreate` | Function | `optional` | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade. |
-| `onSwap` | Function | `optional` | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade. |
-| `onCancel` | Function | `optional` | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel. |
-| `onClose` | Function | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close. |
+| Key        | Type                                         | Field          | Description                                                                                                                                                                                         |
+| :--------- | :------------------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `env`      | string                                       | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
+| `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
+| `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade.                                                                                                                  |
+| `onSwap`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade.                                                                                                                     |
+| `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel.                                                                                                                  |
+| `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close.                                                                                                                          |
 
 ## Callbacks
 
@@ -156,10 +162,10 @@ function onCreate(order, cid) {
 }
 ```
 
-| Type | Parameter | Description |
-| :--- | :--- | :--- |
-| `order` | [Order](add-to-your-app.md#order) | The order details. |
-| `cid` | string | The IPFS Hash of the order. |
+| Type    | Parameter                         | Description                 |
+| :------ | :-------------------------------- | :-------------------------- |
+| `order` | [Order](add-to-your-app.md#order) | The order details.          |
+| `cid`   | string                            | The IPFS Hash of the order. |
 
 ### onSwap
 
@@ -172,9 +178,9 @@ function onSwap(transactionHash) {
 }
 ```
 
-| Type | Parameter | Description |
-| :--- | :--- | :--- |
-| `transactionHash` | `string` | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
+| Type              | Parameter | Description                                                                                                                            |
+| :---------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| `transactionHash` | `string`  | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
 
 ### onCancel
 
@@ -187,9 +193,9 @@ function onCancel(transactionHash) {
 }
 ```
 
-| Type | Parameter | Description |
-| :--- | :--- | :--- |
-| `transactionHash` | `string` | Hash of the cancelation transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
+| Type              | Parameter | Description                                                                                                                                   |
+| :---------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| `transactionHash` | `string`  | Hash of the cancelation transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
 
 ### onClose
 
@@ -200,4 +206,3 @@ function onClose() {
   console.log('Widget closed')
 }
 ```
-
