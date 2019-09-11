@@ -1,8 +1,8 @@
-<script src="https://cdn.airswap.io/airswap-instant-widget.js"></script>
+# Add Instant to Your App
 
-[AirSwap Instant](https://instant.airswap.io/) is both a standalone app and an embeddable, HTML+JavaScript widget that can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
+[AirSwap Instant](https://instant.airswap.io/) can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
 
-![](images/instant-widget.png)
+![](../.gitbook/assets/instant-widget.png)
 
 {% hint style="success" %} Check out the [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy) to explore configuration options. {% endhint %}
 

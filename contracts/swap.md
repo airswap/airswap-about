@@ -1,21 +1,23 @@
-# Swap Contract
-
 Swap is a non-custodial trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
-## Features
+# Deployments
 
-- **Atomic Swap** to transact directly peer-to-peer on Ethereum.
-- **Fungible and Non-Fungible** to swap between any two ERC-20 or ERC-721 assets.
-- **Typed Data Signatures** to sign informative messages for improved transparency.
-- **Delegate Authorization** to authorize peers to act on behalf of others.
-- **Affiliate Fees** to compensate those who facilitate trades.
-- **Trade with Anyone or Someone** to let anyone take an order or set a specific taker.
-- **Batch Cancels** to cancel multiple orders in a single transaction.
-- **Minimum Nonce** to invalidate all order nonces below a value.
+| Version | Network | Address                                                                                                                         |
+| :------ | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| `2.1.0` | Mainnet | [`0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165`](https://etherscan.io/address/0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165)         |
+| `2.1.0` | Rinkeby | [`0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B`](https://rinkeby.etherscan.io/address/0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B) |
 
-## Swap
+# Constructor
 
-An atomic token swap between a maker and taker.
+Create a new `Swap` contract.
+
+```js
+constructor() public
+```
+
+# `swap`
+
+An atomic token swap between a maker and a taker.
 
 ```text
 function swap(
@@ -26,6 +28,11 @@ function swap(
 | Param    | Type    | Description                               |
 | :------- | :------ | :---------------------------------------- |
 | `_order` | `Order` | Order struct as specified in Types below. |
+
+## Preconditions
+
+- The makerWallet must approve the Swap contract to transfer the makerToken.
+- The takerWallet must approve the Swap contract to transfer the takerToken.
 
 A successul `swap` emits a `Swap` event.
 
@@ -59,7 +66,7 @@ event Swap(
 | `INVALID_AUTH_DELEGATE`  | Delegate address is the same as the sender address.                          |
 | `INVALID_AUTH_EXPIRY`    | Authorization expiry time is in the past.                                    |
 
-## Cancel
+# `cancel`
 
 Provide an array of `nonces`, unique by Maker address, to mark one or more Orders as canceled.
 
@@ -76,7 +83,7 @@ event Cancel(
 );
 ```
 
-## Invalidate
+# `invalidate`
 
 Provide a minimum value to invalidate all nonces below the value.
 
@@ -93,7 +100,7 @@ event Invalidate(
 );
 ```
 
-## Authorize
+# `authorize`
 
 Authorize a delegate account or contract to make \(sign\) or take \(send\) Orders on the sender's behalf.
 
@@ -111,7 +118,7 @@ event Authorize(
 );
 ```
 
-## Revoke
+# `revoke`
 
 Revoke the authorization of a delegate account or contract.
 
@@ -127,34 +134,3 @@ event Revoke(
   address indexed delegateAddress
 );
 ```
-
-## Structs
-
-### Order
-
-| Param     | Type      | Description                                     |
-| :-------- | :-------- | :---------------------------------------------- |
-| nonce     | `uint256` | Unique per maker and should be sequential       |
-| expiry    | `uint256` | Expiry in seconds since 1 January 1970          |
-| maker     | `Party`   | Party to the trade that sets terms              |
-| taker     | `Party`   | Party to the trade that accepts terms           |
-| affiliate | `Party`   | Party compensated for facilitating \(optional\) |
-
-### Party
-
-| Param  | Type      | Description                        |
-| :----- | :-------- | :--------------------------------- |
-| wallet | `address` | Wallet address of the party        |
-| token  | `address` | Contract address of the token      |
-| param  | `uint256` | Value \(ERC-20\) or ID \(ERC-721\) |
-| kind   | `bytes4`  | Interface ID of the token          |
-
-### Signature
-
-| Param   | Type      | Description                                                                               |
-| :------ | :-------- | :---------------------------------------------------------------------------------------- |
-| signer  | `address` | Address of the wallet used to sign                                                        |
-| v       | `uint8`   | `v` value of an ECDSA signature                                                           |
-| r       | `bytes32` | `r` value of an ECDSA signature                                                           |
-| s       | `bytes32` | `s` value of an ECDSA signature                                                           |
-| version | `bytes1`  | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version |
