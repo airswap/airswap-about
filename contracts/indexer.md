@@ -178,7 +178,7 @@ constructor(
 
 Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
-# Locator Struct
+## `Locator`
 
 ```java
 struct Locator {
@@ -188,7 +188,7 @@ struct Locator {
 }
 ```
 
-# `setLocator`
+## `setLocator`
 
 Set an Locator on the Index.
 
@@ -222,7 +222,7 @@ event SetLocator(
 | :-------------------- | :----------------------------------------- |
 | `LOCATOR_ALREADY_SET` | A Locator by the same user is already set. |
 
-# `unsetLocator`
+## `unsetLocator`
 
 Unset a Locator from the Index.
 
@@ -244,7 +244,7 @@ event UnsetLocator(
 | :------ | :-------- | :--------------------------------------------- |
 | `_user` | `address` | The account or contract unsetting the Locator. |
 
-# `getLocator`
+## `getLocator`
 
 Gets the intent for a given staker address.
 
@@ -258,7 +258,7 @@ function getLocator(
 | :------ | :-------- | :---------------------------------- |
 | `_user` | `address` | The account or contract to look up. |
 
-# `fetchLocators`
+## `fetchLocators`
 
 Fetch up to a number of locators from the list.
 

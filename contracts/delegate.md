@@ -168,7 +168,7 @@ function getMaxQuote(
 | :-------------------- | :---------------------------------------- |
 | `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair. |
 
-# `provideOrder`
+## `provideOrder`
 
 Provide an order to the delegate for taking.
 
