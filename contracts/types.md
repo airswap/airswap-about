@@ -1,11 +1,4 @@
-Types is library of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
-
-## Deployments
-
-| Version | Network | Address                                                                                                                         |
-| :------ | :------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| `0.2.0` | Mainnet | [`0x2fA5d35f9c99E11a75F2D3cD9F6E6d904a1241C5`](https://etherscan.io/address/0x2fA5d35f9c99E11a75F2D3cD9F6E6d904a1241C5)         |
-| `0.2.0` | Rinkeby | [`0x4A041FA0a727c828616C83C090585913221641ba`](https://rinkeby.etherscan.io/address/0x4A041FA0a727c828616C83C090585913221641ba) |
+A library contract of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # `Order`
 

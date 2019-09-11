@@ -20,7 +20,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 The simplest way to use the `AirSwapInstant` widget is by rendering it without any custom configuration options. This will open the widget and allow the user to buy or sell any amount of any token.
 
-```js
+```java
 window.AirSwapInstant.render(
   {
     onClose: function() {
@@ -33,7 +33,7 @@ window.AirSwapInstant.render(
 
 # Display a specific token
 
-```js
+```java
 AirSwapInstant.render(
   {
     env: 'production',

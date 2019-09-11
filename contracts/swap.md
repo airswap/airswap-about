@@ -1,42 +1,33 @@
-Swap is a non-custodial trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
-
-# Deployments
-
-| Version | Network | Address                                                                                                                         |
-| :------ | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
-| `2.1.0` | Mainnet | [`0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165`](https://etherscan.io/address/0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165)         |
-| `2.1.0` | Rinkeby | [`0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B`](https://rinkeby.etherscan.io/address/0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B) |
-
-# Constructor
-
-Create a new `Swap` contract.
-
-```js
-constructor() public
-```
+Swap is a trustless peer-to-peer trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # `swap`
 
 An atomic token swap between a maker and a taker.
 
-```text
+```java
 function swap(
   Types.Order calldata _order
 ) external
 ```
 
-| Param    | Type    | Description                               |
-| :------- | :------ | :---------------------------------------- |
-| `_order` | `Order` | Order struct as specified in Types below. |
+| Param   | Type    | Required | Description                               |
+| :------ | :------ | :------- | :---------------------------------------- |
+| `order` | `Order` | required | Order struct as specified in Types below. |
 
-## Preconditions
+---
 
-- The makerWallet must approve the Swap contract to transfer the makerToken.
-- The takerWallet must approve the Swap contract to transfer the takerToken.
+| Preconditions                                                          |
+| :--------------------------------------------------------------------- |
+| ✓ makerWallet approves the Swap contract to transfer the makerToken.   |
+| ✓ takerWallet approves the Swap contract to transfer the takerToken.   |
+| ✓ takerWallet approves the Wrapper contract to transfer WETH.          |
+| ✓ takerWallet authorizes the Wrapper contract to on the Swap contract. |
+
+---
 
 A successul `swap` emits a `Swap` event.
 
-```text
+```java
 event Swap(
   uint256 indexed nonce,
   uint256 timestamp,
@@ -68,15 +59,21 @@ event Swap(
 
 # `cancel`
 
-Provide an array of `nonces`, unique by Maker address, to mark one or more Orders as canceled.
+Provide an array of `nonces`, unique by maker address, to mark one or more orders as canceled.
 
-```text
-function cancel(uint256[] memory _nonces) external
+```java
+function cancel(
+  uint256[] memory _nonces
+) external
 ```
+
+| Param    | Type        | Required | Description                               |
+| :------- | :---------- | :------- | :---------------------------------------- |
+| `nonces` | `uint256[]` | required | Order struct as specified in Types below. |
 
 A successful `cancel` emits a `Cancel` event.
 
-```text
+```java
 event Cancel(
   uint256 indexed nonce,
   address indexed makerAddress
@@ -87,13 +84,19 @@ event Cancel(
 
 Provide a minimum value to invalidate all nonces below the value.
 
-```text
-invalidate(uint256 _minimumNonce) external
+```java
+function invalidate(
+  uint256 _minimumNonce
+) external
 ```
+
+| Param          | Type      | Required | Description                               |
+| :------------- | :-------- | :------- | :---------------------------------------- |
+| `minimumNonce` | `uint256` | required | Order struct as specified in Types below. |
 
 A successful `invalidate` emits an `Invalidate` event.
 
-```text
+```java
 event Invalidate(
   uint256 indexed nonce,
   address indexed makerAddress
@@ -104,13 +107,22 @@ event Invalidate(
 
 Authorize a delegate account or contract to make \(sign\) or take \(send\) Orders on the sender's behalf.
 
-```text
-function authorize(address _delegate, uint256 _expiry) external returns (bool)
+```java
+function authorize(
+  address _delegate,
+  uint256 _expiry
+) external returns (bool)
 ```
+
+| Param             | Type      | Required | Description                               |
+| :---------------- | :-------- | :------- | :---------------------------------------- |
+| `approverAddress` | `address` | required | Order struct as specified in Types below. |
+| `delegateAddress` | `address` | required | Order struct as specified in Types below. |
+| `expiry`          | `uint256` | required | Order struct as specified in Types below. |
 
 A successful `authorize` emits an `Authorize` event.
 
-```text
+```java
 event Authorize(
   address indexed approverAddress,
   address indexed delegateAddress,
@@ -122,15 +134,30 @@ event Authorize(
 
 Revoke the authorization of a delegate account or contract.
 
-```text
-function revoke(address _delegate) external returns (bool)
+```java
+function revoke(
+  address _delegate
+) external returns (bool)
 ```
+
+| Param             | Type      | Required | Description                               |
+| :---------------- | :-------- | :------- | :---------------------------------------- |
+| `approverAddress` | `address` | required | Order struct as specified in Types below. |
+| `delegateAddress` | `address` | required | Order struct as specified in Types below. |
 
 A successful `revoke` emits a `Revoke` event.
 
-```text
+```java
 event Revoke(
   address indexed approverAddress,
   address indexed delegateAddress
 );
+```
+
+# Constructor
+
+Create a new `Swap` contract.
+
+```java
+constructor() public
 ```

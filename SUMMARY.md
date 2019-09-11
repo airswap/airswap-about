@@ -1,22 +1,22 @@
 # Table of Contents
 
 - [Welcome](README.md)
-- [Swap Protocol](protocol.md)
+- [Deployments](deployments.md)
 - [Definitions](definitions.md)
+- [Data Formats](data-formats.md)
 
 ## Contracts
 
 - [Swap](contracts/swap.md)
-- [Indexer](contracts/indexer.md)
-- [Delegate](contracts/delegate.md)
+- [Indexers](contracts/indexer.md)
+- [Delegates](contracts/delegate.md)
 - [Wrapper](contracts/wrapper.md)
 - [Types](contracts/types.md)
 
 ## Instant
 
 - [Architecture](instant/architecture.md)
-- [Running Peers](instant/running-peers.md)
-- [Deploying Delegates](instant/deploying-delegates.md)
+- [Running Makers](instant/running-makers.md)
 - [Token Support](instant/token-support.md)
 - [Add to Your App](instant/add-to-your-app.md)
 

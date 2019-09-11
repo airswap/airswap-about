@@ -1,17 +1,10 @@
-# Signer
-
-# Sender
-
-# Maker
-
-# Taker
-
-## Delegate
-
-## Affiliate
-
-# Order
-
-# Quote
-
-# Signature
+| Term      | Definition |
+| :-------- | :--------- |
+| Signer    | ...        |
+| Sender    | ...        |
+| Maker     | ...        |
+| Taker     | ...        |
+| Delegate  | ...        |
+| Affiliate | ...        |
+| Order     | ...        |
+| Quote     | ...        |

@@ -1,35 +1,15 @@
-Indexers are for peer discovery. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Indexer and Index work together to manage onchain discovery.
 
-# Deployments
+# Indexer
 
-| Version | Application         | Network | Address                                                                                                                         |
-| :------ | :------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
-| `2.1.0` | Instant (HTTP)      | Mainnet | [`0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165`](https://etherscan.io/address/0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165)         |
-| `2.1.0` | Instant (Delegates) | Mainnet | [`0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165`](https://etherscan.io/address/0x251F752B85a9F7e1B3C42D802715B5D7A8Da3165)         |
-| `2.1.0` | Instant (HTTP)      | Rinkeby | [`0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B`](https://rinkeby.etherscan.io/address/0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B) |
+Indexer is a smart contract for peer discovery. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
-# Constructor
-
-Create a new `Indexer` contract.
-
-```js
-constructor(
-  address _stakeToken
-  address _locatorWhitelist
-) public
-```
-
-| Param               | Type      | Description                                        |
-| :------------------ | :-------- | :------------------------------------------------- |
-| `_stakeToken`       | `address` | Address of the token required for staking.         |
-| `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
-
-# Create an Index
+## `createTokenPairIndex`
 
 If none exists, deploy a new `Index` contract for the given token pair and return the address of the new or existing INDEX. For example, an intent to trade WETH/DAI.
 
-```text
-function createIndex(
+```java
+function createTokenPairIndex(
   address _makerToken,
   address _takerToken
 ) public returns (address)
@@ -40,12 +20,12 @@ function createIndex(
 | `_makerToken` | `address` | Address of the token that the Maker sends. |
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 
-# Add to Blacklist
+## `addTokenToBlacklist`
 
-Add a token to the blacklist. Indexes that include the blacklisted token will be ignored. Emits an `AddToBlacklist` event.
+Add a token to the blacklist.
 
-```text
-function addToBlacklist(
+```java
+function addTokenToBlacklist(
   address _token
 ) external onlyOwner
 ```
@@ -54,12 +34,20 @@ function addToBlacklist(
 | :------- | :-------- | :--------------------------------- |
 | `_token` | `address` | Address of the token to blacklist. |
 
-# Remove from Blacklist
+A successul `addTokenToBlacklist` emits a `AddTokenToBlacklist` event.
 
-Remove a token from the blacklist. Emits a `RemoveFromBlacklist` event.
+```java
+event AddTokenToBlacklist(
+  address token
+);
+```
 
-```text
-function removeFromBlacklist(
+## `removeTokenFromBlacklist`
+
+Remove a token from the blacklist.
+
+```java
+function removeTokenFromBlacklist(
   address _token
 ) external onlyOwner
 ```
@@ -68,11 +56,19 @@ function removeFromBlacklist(
 | :------- | :-------- | :---------------------------------- |
 | `_token` | `address` | The address of the token to remove. |
 
-# Set an Intent
+A successul `removeTokenFromBlacklist` emits a `RemoveTokenFromBlacklist` event.
+
+```java
+event RemoveTokenFromBlacklist(
+  address token
+);
+```
+
+## `setIntent`
 
 Stake tokens to the Indexer and set an intent to trade.
 
-```text
+```java
 function setIntent(
   address _makerToken,
   address _takerToken,
@@ -90,18 +86,31 @@ function setIntent(
 | `_expiry`     | `uint256` | Timestamp after which the intent is invalid.            |
 | `_locator`    | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
-| Revert Reason          | Scenario                                   |
-| :--------------------- | :----------------------------------------- |
-| `INDEX_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `INDEX_DOES_NOT_EXIST` | There is no index for the token pair.      |
-| `MINIMUM_NOT_MET`      | The staking amount is insufficient.        |
-| `UNABLE_TO_STAKE`      | The staking amount was not transferred.    |
+A successful `setIntent` emits a `Stake` event.
 
-# Unset an Intent
+```java
+event Stake(
+  address wallet,
+  address makerToken,
+  address takerToken,
+  uint256 amount
+);
+```
+
+---
+
+| Revert Reason             | Scenario                                    |
+| :------------------------ | :------------------------------------------ |
+| `LOCATOR_NOT_WHITELISTED` | The locator was not found on the whitelist. |
+| `PAIR_IS_BLACKLISTED`     | One or both of the tokens are blacklisted.  |
+| `INDEX_DOES_NOT_EXIST`    | There is no index for the token pair.       |
+| `UNABLE_TO_STAKE`         | The staking amount was not transferred.     |
+
+## `unsetIntent`
 
 Unset an intent to trade and return staked tokens to the sender.
 
-```text
+```java
 function unsetIntent(
   address _makerToken,
   address _takerToken
@@ -113,16 +122,29 @@ function unsetIntent(
 | `_makerToken` | `address` | Address of the token that the Maker sends. |
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 
-| Revert Reason          | Scenario                                   |
-| :--------------------- | :----------------------------------------- |
-| `TOKEN_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `INDEX_DOES_NOT_EXIST` | There is no INDEX for the token pair.      |
+A successful `unsetIntent` emits a `Unstake` event.
 
-# Get Intents
+```java
+event Unstake(
+  address wallet,
+  address makerToken,
+  address takerToken,
+  uint256 amount
+);
+```
+
+---
+
+| Revert Reason            | Scenario                                       |
+| :----------------------- | :--------------------------------------------- |
+| `INDEX_DOES_NOT_EXIST`   | There is no INDEX for the token pair.          |
+| `LOCATOR_DOES_NOT_EXIST` | Locator does not exist for the message sender. |
+
+## `getIntents`
 
 Get a list of addresses that have an intent to trade a token pair.
 
-```text
+```java
 function getIntents(
   address _makerToken,
   address _takerToken,
@@ -136,18 +158,29 @@ function getIntents(
 | `_takerToken` | `address` | Address of the token that the Taker sends. |
 | `_count`      | `uint256` | Maximum number of items to return.         |
 
-| Revert Reason          | Scenario                                   |
-| :--------------------- | :----------------------------------------- |
-| `TOKEN_IS_BLACKLISTED` | One or both of the tokens are blacklisted. |
-| `INDEX_DOES_NOT_EXIST` | There is no INDEX for the token pair.      |
+## Constructor
+
+Create a new `Indexer` contract.
+
+```java
+constructor(
+  address _stakeToken
+  address _locatorWhitelist
+) public
+```
+
+| Param               | Type      | Description                                        |
+| :------------------ | :-------- | :------------------------------------------------- |
+| `_stakeToken`       | `address` | Address of the token required for staking.         |
+| `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
 
 # Index
 
-A list of peer locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
+Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
 
 # Locator Struct
 
-```text
+```java
 struct Locator {
   address user;
   uint256 score;
@@ -155,11 +188,11 @@ struct Locator {
 }
 ```
 
-# Set a Locator
+# `setLocator`
 
 Set an Locator on the Index.
 
-```text
+```java
 function setLocator(
   uint256 _score,
   address _user,
@@ -175,7 +208,7 @@ function setLocator(
 
 A successful `setLocator` emits a `SetLocator` event.
 
-```text
+```java
 event SetLocator(
   uint256 score,
   address indexed user,
@@ -183,15 +216,17 @@ event SetLocator(
 );
 ```
 
-| Revert Reason        | Scenario                                   |
-| :------------------- | :----------------------------------------- |
-| `SIGNAL_ALREADY_SET` | A Locator by the same user is already set. |
+---
 
-# Unset a Locator
+| Revert Reason         | Scenario                                   |
+| :-------------------- | :----------------------------------------- |
+| `LOCATOR_ALREADY_SET` | A Locator by the same user is already set. |
+
+# `unsetLocator`
 
 Unset a Locator from the Index.
 
-```text
+```java
 function unsetLocator(
   address _user
 ) external onlyOwner returns (bool) {
@@ -199,7 +234,7 @@ function unsetLocator(
 
 A successful `unsetLocator` emits an `UnsetLocator` event.
 
-```text
+```java
 event UnsetLocator(
   address indexed user
 );
@@ -209,11 +244,11 @@ event UnsetLocator(
 | :------ | :-------- | :--------------------------------------------- |
 | `_user` | `address` | The account or contract unsetting the Locator. |
 
-# Get a Locator
+# `getLocator`
 
 Gets the intent for a given staker address.
 
-```text
+```java
 function getLocator(
   address _user
 ) external view returns (Locator memory)
@@ -223,11 +258,11 @@ function getLocator(
 | :------ | :-------- | :---------------------------------- |
 | `_user` | `address` | The account or contract to look up. |
 
-# Fetch Locators
+# `fetchLocators`
 
 Fetch up to a number of locators from the list.
 
-```text
+```java
 function fetchLocators(
   uint256 _count
 ) external view returns (bytes32[] memory result) {
