@@ -6,23 +6,10 @@
 
 ## Getting Started
 
-* **Smart Contracts** → [Contracts](contracts/swap-contract.md)
-* **Manual trading** \(OTC\) applications → [Trader](trader/add-to-your-app.md)
-
-## Bounties
-
-There are two active bounties for the [Ethereal Blocks](https://gitcoin.co/hackathon/ethereal-blocks/) hackathon.
-
-**Challenge \#1: Build for DeFi with AirSwap Trader**
-
-Create a DeFi web app with [Trader](trader/add-to-your-app.md) for token trading. [Full details](https://gitcoin.co/issue/airswap/bounties/1/3374)
-
-**Challenge \#2: Build a Token Launcher with AirSwap**
-
-Create a token launcher web app with [Onchain Peers](contracts/onchain-peers.md) to run launches. [Full details](https://gitcoin.co/issue/airswap/bounties/2/3375)
+- **Smart Contracts** → [Contracts](contracts/swap-contract.md)
+- **Manual trading** \(OTC\) applications → [Trader](trader/add-to-your-app.md)
 
 ## From the Blog
 
-* [**New AirSwap Protocols**](https://medium.com/fluidity/new-airswap-protocols-c70c73f58477)
-* [**Introducing AirSwap Trader**](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0)
-
+- [**New AirSwap Protocols**](https://medium.com/fluidity/new-airswap-protocols-c70c73f58477)
+- [**Introducing AirSwap Trader**](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0)
