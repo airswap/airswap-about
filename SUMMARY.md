@@ -1,8 +1,7 @@
 # Table of Contents
 
 - [Welcome](README.md)
-- [Deployments](deployments.md)
-- [Definitions](definitions.md)
+- [About](about.md)
 - [Data Formats](data-formats.md)
 
 ## Contracts
