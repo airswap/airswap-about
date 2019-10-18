@@ -1,5 +1,13 @@
 Swap is a trustless peer-to-peer trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
+# Features
+
+**Authorizations** are for peers that trade on behalf of others. These peers are authorized for either side of a trade, and can be wallets (people or programs) or smart contracts.
+
+**Affiliates** are third-parties compensated for their part in bringing together the two parties of a trade, and can be other traders or software applications that connect traders on the network.
+
+# Functions
+
 # `swap`
 
 An atomic token swap between a signer and a sender.
