@@ -2,6 +2,22 @@ An Indexer is a smart contract to discover trading parties by token pair. [View 
 
 # Functions
 
+## `constructor`
+
+Create a new `Indexer` contract.
+
+```java
+constructor(
+  address _stakeToken
+  address _locatorWhitelist
+) public
+```
+
+| Param               | Type      | Description                                        |
+| :------------------ | :-------- | :------------------------------------------------- |
+| `_stakeToken`       | `address` | Address of the token required for staking.         |
+| `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
+
 ## `createTokenPairIndex`
 
 If none exists, deploy a new `Index` contract for the given token pair and return the address of the new or existing INDEX. For example, an intent to trade WETH/DAI.
@@ -156,19 +172,3 @@ function getIntents(
 | `_signerToken` | `address` | Address of the token that the signer transfers. |
 | `_senderToken` | `address` | Address of the token that the sender transfers. |
 | `_count`       | `uint256` | Maximum number of items to return.              |
-
-# `constructor`
-
-Create a new `Indexer` contract.
-
-```java
-constructor(
-  address _stakeToken
-  address _locatorWhitelist
-) public
-```
-
-| Param               | Type      | Description                                        |
-| :------------------ | :-------- | :------------------------------------------------- |
-| `_stakeToken`       | `address` | Address of the token required for staking.         |
-| `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
