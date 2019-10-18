@@ -2,7 +2,7 @@ Swap is a trustless peer-to-peer trade settlement contract. [View the code on Gi
 
 # `swap`
 
-An atomic token swap between a maker and a taker.
+An atomic token swap between a signer and a sender.
 
 ```java
 function swap(
@@ -16,12 +16,10 @@ function swap(
 
 ---
 
-| Preconditions                                                          |
-| :--------------------------------------------------------------------- |
-| ✓ makerWallet approves the Swap contract to transfer the makerToken.   |
-| ✓ takerWallet approves the Swap contract to transfer the takerToken.   |
-| ✓ takerWallet approves the Wrapper contract to transfer WETH.          |
-| ✓ takerWallet authorizes the Wrapper contract to on the Swap contract. |
+| Preconditions                                                              |
+| :------------------------------------------------------------------------- |
+| ✓ signerWallet must approve the Swap contract to transfer its signerToken. |
+| ✓ senderWallet must approve the Swap contract to transfer its senderToken. |
 
 ---
 
@@ -31,12 +29,12 @@ A successul `swap` emits a `Swap` event.
 event Swap(
   uint256 indexed nonce,
   uint256 timestamp,
-  address indexed makerWallet,
-  uint256 makerParam,
-  address makerToken,
-  address indexed takerWallet,
-  uint256 takerParam,
-  address takerToken,
+  address indexed signerWallet,
+  uint256 signerParam,
+  address signerToken,
+  address indexed senderWallet,
+  uint256 senderParam,
+  address senderToken,
   address affiliateWallet,
   uint256 affiliateParam,
   address affiliateToken
@@ -59,7 +57,7 @@ event Swap(
 
 # `cancel`
 
-Provide an array of `nonces`, unique by maker address, to mark one or more orders as canceled.
+Provide an array of `nonces`, unique by signer address, to mark one or more orders as canceled.
 
 ```java
 function cancel(
@@ -76,7 +74,7 @@ A successful `cancel` emits a `Cancel` event.
 ```java
 event Cancel(
   uint256 indexed nonce,
-  address indexed makerAddress
+  address indexed signerAddress
 );
 ```
 
@@ -90,42 +88,41 @@ function invalidate(
 ) external
 ```
 
-| Param          | Type      | Required | Description                               |
-| :------------- | :-------- | :------- | :---------------------------------------- |
-| `minimumNonce` | `uint256` | required | Order struct as specified in Types below. |
+| Param          | Type      | Required | Description                                 |
+| :------------- | :-------- | :------- | :------------------------------------------ |
+| `minimumNonce` | `uint256` | required | Lowest acceptable nonce value for a signer. |
 
 A successful `invalidate` emits an `Invalidate` event.
 
 ```java
 event Invalidate(
   uint256 indexed nonce,
-  address indexed makerAddress
+  address indexed signerAddress
 );
 ```
 
 # `authorize`
 
-Authorize a delegate account or contract to make \(sign\) or take \(send\) Orders on the sender's behalf.
+Authorize another account or contract to sign or send orders.
 
 ```java
-function authorize(
-  address _delegate,
+function authorizeSigner(
+  address _delegateAddress,
   uint256 _expiry
 ) external returns (bool)
 ```
 
-| Param             | Type      | Required | Description                               |
-| :---------------- | :-------- | :------- | :---------------------------------------- |
-| `approverAddress` | `address` | required | Order struct as specified in Types below. |
-| `delegateAddress` | `address` | required | Order struct as specified in Types below. |
-| `expiry`          | `uint256` | required | Order struct as specified in Types below. |
+| Param              | Type      | Required | Description                                         |
+| :----------------- | :-------- | :------- | :-------------------------------------------------- |
+| `_delegateAddress` | `address` | required | Address to authorize for signing.                   |
+| `_expiry`          | `uint256` | required | Unix time after which the authorization is expired. |
 
 A successful `authorize` emits an `Authorize` event.
 
 ```java
-event Authorize(
-  address indexed approverAddress,
-  address indexed delegateAddress,
+event AuthorizeSigner(
+  address indexed authorizerAddress,
+  address indexed delegateSignerAddress,
   uint256 expiry
 );
 ```
@@ -135,22 +132,21 @@ event Authorize(
 Revoke the authorization of a delegate account or contract.
 
 ```java
-function revoke(
-  address _delegate
+function revokeSigner(
+  address _delegateAddress
 ) external returns (bool)
 ```
 
-| Param             | Type      | Required | Description                               |
-| :---------------- | :-------- | :------- | :---------------------------------------- |
-| `approverAddress` | `address` | required | Order struct as specified in Types below. |
-| `delegateAddress` | `address` | required | Order struct as specified in Types below. |
+| Param              | Type      | Required | Description                                  |
+| :----------------- | :-------- | :------- | :------------------------------------------- |
+| `_delegateAddress` | `address` | required | Address to remove authorization for signing. |
 
 A successful `revoke` emits a `Revoke` event.
 
 ```java
 event Revoke(
-  address indexed approverAddress,
-  address indexed delegateAddress
+  address indexed authorizerAddress,
+  address indexed delegateSenderAddress,
 );
 ```
 

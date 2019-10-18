@@ -10,15 +10,15 @@ If none exists, deploy a new `Index` contract for the given token pair and retur
 
 ```java
 function createTokenPairIndex(
-  address _makerToken,
-  address _takerToken
+  address _signerToken,
+  address _senderToken
 ) public returns (address)
 ```
 
-| Param         | Type      | Description                                |
-| :------------ | :-------- | :----------------------------------------- |
-| `_makerToken` | `address` | Address of the token that the Maker sends. |
-| `_takerToken` | `address` | Address of the token that the Taker sends. |
+| Param          | Type      | Description                                                |
+| :------------- | :-------- | :--------------------------------------------------------- |
+| `_signerToken` | `address` | Address of the token transferred from a signer in a trade. |
+| `_senderToken` | `address` | Address of the token transferred from a sender in a trade. |
 
 ## `addTokenToBlacklist`
 
@@ -70,29 +70,30 @@ Stake tokens to the Indexer and set an intent to trade.
 
 ```java
 function setIntent(
-  address _makerToken,
-  address _takerToken,
+  address _signerToken,
+  address _senderToken,
   uint256 _amount,
   uint256 _expiry,
   bytes32 _locator
 ) public
 ```
 
-| Param         | Type      | Description                                             |
-| :------------ | :-------- | :------------------------------------------------------ |
-| `_makerToken` | `address` | Address of the token that the Maker sends.              |
-| `_takerToken` | `address` | Address of the token that the Taker sends.              |
-| `_amount`     | `uint256` | Amount of token to stake.                               |
-| `_expiry`     | `uint256` | Timestamp after which the intent is invalid.            |
-| `_locator`    | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
+| Param          | Type      | Description                                                         |
+| :------------- | :-------- | :------------------------------------------------------------------ |
+| `_signerToken` | `address` | Address of the token a signer is interested in sending.             |
+| `_senderToken` | `address` | Address of the token a signer is interested in receiving.           |
+| `_amount`      | `uint256` | Amount of token to stake.                                           |
+| `_expiry`      | `uint256` | Timestamp after which the intent is invalid.                        |
+| `_locator`     | `bytes32` | Arbitrary data. Often an address in the first 20 bytes.             |
+| `_role`        | `bytes1`  | The role of the party. 0x01 (signer), 0x02 (sender), or 0x03 (both) |
 
 A successful `setIntent` emits a `Stake` event.
 
 ```java
 event Stake(
   address wallet,
-  address makerToken,
-  address takerToken,
+  address signerToken,
+  address senderToken,
   uint256 amount
 );
 ```
@@ -112,23 +113,23 @@ Unset an intent to trade and return staked tokens to the sender.
 
 ```java
 function unsetIntent(
-  address _makerToken,
-  address _takerToken
+  address _signerToken,
+  address _senderToken
 ) public
 ```
 
-| Param         | Type      | Description                                |
-| :------------ | :-------- | :----------------------------------------- |
-| `_makerToken` | `address` | Address of the token that the Maker sends. |
-| `_takerToken` | `address` | Address of the token that the Taker sends. |
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `_signerToken` | `address` | Address of the token that the signer transfers. |
+| `_senderToken` | `address` | Address of the token that the sender transfers. |
 
 A successful `unsetIntent` emits a `Unstake` event.
 
 ```java
 event Unstake(
   address wallet,
-  address makerToken,
-  address takerToken,
+  address signerToken,
+  address senderToken,
   uint256 amount
 );
 ```
@@ -146,17 +147,17 @@ Get a list of addresses that have an intent to trade a token pair.
 
 ```java
 function getIntents(
-  address _makerToken,
-  address _takerToken,
+  address _signerToken,
+  address _senderToken,
   uint256 count
 ) external view returns (address[] memory)
 ```
 
-| Param         | Type      | Description                                |
-| :------------ | :-------- | :----------------------------------------- |
-| `_makerToken` | `address` | Address of the token that the Maker sends. |
-| `_takerToken` | `address` | Address of the token that the Taker sends. |
-| `_count`      | `uint256` | Maximum number of items to return.         |
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `_signerToken` | `address` | Address of the token that the signer transfers. |
+| `_senderToken` | `address` | Address of the token that the sender transfers. |
+| `_count`       | `uint256` | Maximum number of items to return.              |
 
 ## Constructor
 
@@ -182,7 +183,7 @@ Index is a list of locators sorted by score. [View the code on GitHub](https://g
 
 ```java
 struct Locator {
-  address user;
+  address signaller;
   uint256 score;
   bytes32 data;
 }
@@ -194,33 +195,33 @@ Set an Locator on the Index.
 
 ```java
 function setLocator(
+  address _signaller,
   uint256 _score,
-  address _user,
   bytes32 _data
 ) external onlyOwner
 ```
 
-| Param    | Type      | Description                                  |
-| :------- | :-------- | :------------------------------------------- |
-| `_score` | `uint256` | Score for placement in the list.             |
-| `_user`  | `address` | The account or contract setting the Locator. |
-| `_data`  | `bytes32` | Arbitrary data.                              |
+| Param        | Type      | Description                                  |
+| :----------- | :-------- | :------------------------------------------- |
+| `_score`     | `uint256` | Score for placement in the list.             |
+| `_signaller` | `address` | The account or contract setting the Locator. |
+| `_data`      | `bytes32` | Arbitrary data.                              |
 
 A successful `setLocator` emits a `SetLocator` event.
 
 ```java
 event SetLocator(
   uint256 score,
-  address indexed user,
+  address indexed signaller,
   bytes32 indexed data
 );
 ```
 
 ---
 
-| Revert Reason         | Scenario                                   |
-| :-------------------- | :----------------------------------------- |
-| `LOCATOR_ALREADY_SET` | A Locator by the same user is already set. |
+| Revert Reason         | Scenario                                        |
+| :-------------------- | :---------------------------------------------- |
+| `LOCATOR_ALREADY_SET` | A Locator by the same signaller is already set. |
 
 ## `unsetLocator`
 
@@ -228,7 +229,7 @@ Unset a Locator from the Index.
 
 ```java
 function unsetLocator(
-  address _user
+  address _signaller
 ) external onlyOwner returns (bool) {
 ```
 
@@ -236,27 +237,27 @@ A successful `unsetLocator` emits an `UnsetLocator` event.
 
 ```java
 event UnsetLocator(
-  address indexed user
+  address indexed signaller
 );
 ```
 
-| Param   | Type      | Description                                    |
-| :------ | :-------- | :--------------------------------------------- |
-| `_user` | `address` | The account or contract unsetting the Locator. |
+| Param        | Type      | Description                                    |
+| :----------- | :-------- | :--------------------------------------------- |
+| `_signaller` | `address` | The account or contract unsetting the Locator. |
 
 ## `getLocator`
 
-Gets the intent for a given staker address.
+Gets the intent for a given ssender address.
 
 ```java
 function getLocator(
-  address _user
+  address _signaller
 ) external view returns (Locator memory)
 ```
 
-| Param   | Type      | Description                         |
-| :------ | :-------- | :---------------------------------- |
-| `_user` | `address` | The account or contract to look up. |
+| Param        | Type      | Description                         |
+| :----------- | :-------- | :---------------------------------- |
+| `_signaller` | `address` | The account or contract to look up. |
 
 ## `fetchLocators`
 

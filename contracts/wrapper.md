@@ -16,12 +16,12 @@ function swap(
 
 ---
 
-| Preconditions                                                          |
-| :--------------------------------------------------------------------- |
-| ✓ makerWallet approves the Swap contract to transfer the makerToken.   |
-| ✓ takerWallet approves the Swap contract to transfer the takerToken.   |
-| ✓ takerWallet approves the Wrapper contract to transfer WETH.          |
-| ✓ takerWallet authorizes the Wrapper contract to on the Swap contract. |
+| Preconditions                                                              |
+| :------------------------------------------------------------------------- |
+| ✓ makerWallet must approve the Swap contract to transfer the makerToken.   |
+| ✓ takerWallet must approve the Swap contract to transfer the takerToken.   |
+| ✓ takerWallet must approve the Wrapper contract to transfer WETH.          |
+| ✓ takerWallet must authorize the Wrapper contract to on the Swap contract. |
 
 ---
 

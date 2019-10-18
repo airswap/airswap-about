@@ -4,10 +4,10 @@ A library contract of protocol structs. [View the code on GitHub](https://github
 
 | Param     | Type      | Description                                     |
 | :-------- | :-------- | :---------------------------------------------- |
-| nonce     | `uint256` | Unique per maker and should be sequential       |
+| nonce     | `uint256` | Unique per signer and should be sequential      |
 | expiry    | `uint256` | Expiry in seconds since 1 January 1970          |
-| maker     | `Party`   | Party to the trade that sets terms              |
-| taker     | `Party`   | Party to the trade that accepts terms           |
+| signer    | `Party`   | Party to the trade that sets terms              |
+| sender    | `Party`   | Party to the trade that accepts terms           |
 | affiliate | `Party`   | Party compensated for facilitating \(optional\) |
 
 # `Party`

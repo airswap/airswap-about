@@ -2,29 +2,29 @@ Delegate and DelegateManager work together to manage onchain trading.
 
 # Delegate
 
-A smart contract that takes orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/delegate).
+A smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/delegate).
 
 ## `setRule`
 
-Set a trading rule on the delegate.
+Set a trading rule on the delegate. Delegate assumes the role of sender.
 
 ```java
 function setRule(
-  address _takerToken,
-  address _makerToken,
-  uint256 _maxTakerAmount,
+  address _signerToken,
+  address _senderToken,
+  uint256 _maxSenderAmount,
   uint256 _priceCoef,
   uint256 _priceExp
 ) external onlyOwner
 ```
 
-| Param             | Type      | Description                                                    |
-| :---------------- | :-------- | :------------------------------------------------------------- |
-| `_takerToken`     | `address` | The token the delegate would send.                             |
-| `_makerToken`     | `address` | The token the consumer would send.                             |
-| `_maxTakerAmount` | `uint256` | The maximum amount of token the delegate would send.           |
-| `_priceCoef`      | `uint256` | The coefficient of the price to indicate the whole number.     |
-| `_priceExp`       | `uint256` | The exponent of the price to indicate location of the decimal. |
+| Param              | Type      | Description                                                    |
+| :----------------- | :-------- | :------------------------------------------------------------- |
+| `_senderToken`     | `address` | The token the sender would send.                               |
+| `_signerToken`     | `address` | The token the signer would send.                               |
+| `_maxSenderAmount` | `uint256` | The maximum amount of token the sender would send.             |
+| `_priceCoef`       | `uint256` | The coefficient of the price to indicate the whole number.     |
+| `_priceExp`        | `uint256` | The exponent of the price to indicate location of the decimal. |
 
 ---
 
@@ -32,9 +32,9 @@ A successful `setRule` will emit a `SetRule` event.
 
 ```java
 event SetRule(
-  address takerToken,
-  address makerToken,
-  uint256 maxTakerAmount,
+  address senderToken,
+  address signerToken,
+  uint256 maxSenderAmount,
   uint256 priceCoef,
   uint256 priceExp
 );
@@ -42,7 +42,7 @@ event SetRule(
 
 ### Price Calculations
 
-All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `takerParam` of `2` results in `makerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
+All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 ### Examples
 
@@ -70,44 +70,44 @@ Unset a trading rule for the delegate.
 
 ```java
 function unsetRule(
-  address _takerToken,
-  address _makerToken
+  address _senderToken,
+  address _signerToken
 ) external onlyOwner
 ```
 
-| Param         | Type      | Description                        |
-| :------------ | :-------- | :--------------------------------- |
-| `_takerToken` | `address` | The token the delegate would send. |
-| `_makerToken` | `address` | The token the consumer would send. |
+| Param          | Type      | Description                      |
+| :------------- | :-------- | :------------------------------- |
+| `_senderToken` | `address` | The token the sender would send. |
+| `_signerToken` | `address` | The token the signer would send. |
 
 A successful `unsetRule` will emit an `UnsetRule` event.
 
 ```java
 event UnsetRule(
-  address takerToken,
-  address makerToken
+  address senderToken,
+  address signerToken
 );
 ```
 
-## `getMakerSideQuote`
+## `getSignerSideQuote`
 
-Get a quote for the maker side. Often used to get a buy price for \_takerToken.
+Get a quote for the signer side. Often used to get a buy price for \_senderToken.
 
 ```java
-function getMakerSideQuote(
-  uint256 _takerParam,
-  address _takerToken,
-  address _makerToken
+function getSignerSideQuote(
+  uint256 _senderParam,
+  address _senderToken,
+  address _signerToken
 ) external view returns (
-  uint256 makerParam
+  uint256 signerParam
 )
 ```
 
-| Param         | Type      | Description                                             |
-| :------------ | :-------- | :------------------------------------------------------ |
-| `_takerParam` | `uint256` | The amount of ERC-20 token the delegate would send.     |
-| `_takerToken` | `address` | The address of an ERC-20 token the delegate would send. |
-| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
+| Param          | Type      | Description                                           |
+| :------------- | :-------- | :---------------------------------------------------- |
+| `_senderParam` | `uint256` | The amount of ERC-20 token the sender would send.     |
+| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
 ---
 
@@ -116,25 +116,25 @@ function getMakerSideQuote(
 | `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.        |
 | `AMOUNT_EXCEEDS_MAX`  | The quote would exceed the maximum for the rule. |
 
-## `getTakerSideQuote`
+## `getSenderSideQuote`
 
-Get a quote for the taker side. Often used to get a sell price for \_makerToken.
+Get a quote for the sender side. Often used to get a sell price for \_signerToken.
 
 ```java
-function getTakerSideQuote(
-  uint256 _makerParam,
-  address _makerToken,
-  address _takerToken
+function getSenderSideQuote(
+  uint256 _signerParam,
+  address _signerToken,
+  address _senderToken
 ) external view returns (
-  uint256 takerParam
+  uint256 senderParam
 )
 ```
 
-| Param         | Type      | Description                                             |
-| :------------ | :-------- | :------------------------------------------------------ |
-| `_makerParam` | `uint256` | The amount of ERC-20 token the consumer would send.     |
-| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
-| `_takerToken` | `address` | The address of an ERC-20 token the delegate would send. |
+| Param          | Type      | Description                                           |
+| :------------- | :-------- | :---------------------------------------------------- |
+| `_signerParam` | `uint256` | The amount of ERC-20 token the signer would send.     |
+| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
+| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
 
 ---
 
@@ -145,22 +145,22 @@ function getTakerSideQuote(
 
 ## `getMaxQuote`
 
-Get the maximum quote from the delegate.
+Get the maximum quote from the sender.
 
 ```java
 function getMaxQuote(
-  address _takerToken,
-  address _makerToken
+  address _senderToken,
+  address _signerToken
 ) external view returns (
-  uint256 takerParam,
-  uint256 makerParam
+  uint256 senderParam,
+  uint256 signerParam
 )
 ```
 
-| Param         | Type      | Description                                             |
-| :------------ | :-------- | :------------------------------------------------------ |
-| `_takerToken` | `address` | The address of an ERC-20 token the delegate would send. |
-| `_makerToken` | `address` | The address of an ERC-20 token the consumer would send. |
+| Param          | Type      | Description                                           |
+| :------------- | :-------- | :---------------------------------------------------- |
+| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
 ---
 
@@ -170,10 +170,10 @@ function getMaxQuote(
 
 ## `provideOrder`
 
-Provide an order to the delegate for taking.
+Provide an order to the sender for taking.
 
 {% hint style="warning" %}
-The taker specified on the order must have authorized this contract to swap on its behalf beforehand. See [Swap Contract](swap-contract.md)
+The sender specified on the order must have authorized this contract to swap on its behalf beforehand. See [Swap Contract](swap-contract.md)
 {% endhint %}
 
 ```java
@@ -196,7 +196,7 @@ function provideOrder(
 
 # DelegateManager
 
-Deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/delegate-factory).
+Deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
 
 ## `createDelegate`
 
@@ -205,18 +205,18 @@ Create a new Delegate contract. Implements `IDelegateFactory.createDelegate`.
 ```java
 function createDelegate(
   address _swapContract,
-  address _delegateContractOwner
-) external returns (address delegateContractAddress)
+  address _senderContractOwner
+) external returns (address senderContractAddress)
 ```
 
-| Param                    | Type      | Description                              |
-| :----------------------- | :-------- | :--------------------------------------- |
-| `_swapContract`          | `address` | The swap contract the delegate will use. |
-| `_delegateContractOwner` | `address` | The owner of the new delegate contract.  |
+| Param                  | Type      | Description                            |
+| :--------------------- | :-------- | :------------------------------------- |
+| `_swapContract`        | `address` | The swap contract the sender will use. |
+| `_senderContractOwner` | `address` | The owner of the new sender contract.  |
 
 ## `has`
 
-Check to see whether the factory has deployed a delegate by locator. Implements `ILocatorWhitelist.has`.
+Check to see whether the factory has deployed a sender by locator. Implements `ILocatorWhitelist.has`.
 
 ```java
 function has(
@@ -235,11 +235,11 @@ Create a new `Delegate` contract.
 ```java
 constructor(
   address _swapContract,
-  address _delegateContractOwner
+  address _senderContractOwner
 ) public
 ```
 
-| Param                    | Type      | Description                                               |
-| :----------------------- | :-------- | :-------------------------------------------------------- |
-| `_swapContract`          | `address` | Address of the swap contract used to settle trades.       |
-| `_delegateContractOwner` | `address` | Address of the owner of the delegate for rule management. |
+| Param                  | Type      | Description                                             |
+| :--------------------- | :-------- | :------------------------------------------------------ |
+| `_swapContract`        | `address` | Address of the swap contract used to settle trades.     |
+| `_senderContractOwner` | `address` | Address of the owner of the sender for rule management. |
