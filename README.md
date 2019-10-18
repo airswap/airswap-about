@@ -12,9 +12,9 @@ This documentation is in the works and subject to change.
 
 # Quick Start
 
-- **Build** on **Smart Contracts** → [Swap](contracts/swap.md) · [Indexer](contracts/indexer.md) · [Delegate](contracts/delegate.md)
-- **Build** for the **Automated** trading network → [Instant](instant/add-to-your-app.md)
-- **Build** for **Manual** / **OTC** trading applications → [Trader](trader/add-to-your-app.md)
+- **Build** on **Smart Contracts** → [Swap](./contracts/swap.md) · [Indexer](./contracts/indexer.md) · [Delegate](./contracts/delegate.md)
+- **Build** for the **Automated** trading network → [Instant](./instant/add-to-your-app.md)
+- **Build** for **Manual** / **OTC** trading applications → [Trader](./trader/add-to-your-app.md)
 
 # Around the Web
 
