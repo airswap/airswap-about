@@ -1,6 +1,6 @@
 # Add Trader to Your App
 
-[AirSwap Trader](https://trader.airswap.io/) is both a standalone app and an HTML+JavaScript widget that can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
+[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
 
 ![](../.gitbook/assets/trader-widget.png)
 
@@ -12,7 +12,7 @@ Check out the [CodePen](https://codepen.io/syjk129/pen/PoYpgmW) to explore confi
 
 Add the following `script` tag to the `head` element in your web application.
 
-```markup
+```html
 <script src="https://cdn.airswap.io/airswap-trader.js"></script>
 ```
 
