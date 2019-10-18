@@ -1,4 +1,4 @@
-Indexer is a smart contract for peer discovery. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+An Indexer is a smart contract to discover trading parties by token pair. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # Functions
 

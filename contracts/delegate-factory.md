@@ -1,4 +1,4 @@
-Deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
+A DelegateManager deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
 
 # Functions
 

@@ -2,13 +2,13 @@
 
 - [Welcome](README.md)
 - [About](about.md)
-- [Messages](messages.md)
 
 ## Instant
 
 - [Add to Your App](instant/add-to-your-app.md)
 - [Architecture](instant/architecture.md)
 - [Running Makers](instant/running-makers.md)
+- [Message Formats](instant/message-formats.md)
 - [Token Support](instant/token-support.md)
 
 ## Trader
