@@ -10,9 +10,9 @@ function swap(
 ) external
 ```
 
-| Param   | Type    | Required | Description                               |
-| :------ | :------ | :------- | :---------------------------------------- |
-| `order` | `Order` | required | Order struct as specified in Types below. |
+| Param   | Type    | Required | Description                                     |
+| :------ | :------ | :------- | :---------------------------------------------- |
+| `order` | `Order` | required | Order struct as specified in [Types](types.md). |
 
 ---
 

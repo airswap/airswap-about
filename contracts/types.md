@@ -1,4 +1,4 @@
-A library contract of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Types is a library contract of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
 # `Order`
 
