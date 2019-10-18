@@ -2,7 +2,7 @@
 
 - [Welcome](README.md)
 - [About](about.md)
-- [Data Formats](data-formats.md)
+- [Messages](messages.md)
 
 ## Contracts
 

@@ -150,7 +150,7 @@ event Revoke(
 );
 ```
 
-# Constructor
+# `constructor`
 
 Create a new `Swap` contract.
 

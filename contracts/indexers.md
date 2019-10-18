@@ -159,7 +159,7 @@ function getIntents(
 | `_senderToken` | `address` | Address of the token that the sender transfers. |
 | `_count`       | `uint256` | Maximum number of items to return.              |
 
-## Constructor
+# `constructor`
 
 Create a new `Indexer` contract.
 
@@ -272,3 +272,11 @@ function fetchLocators(
 | Param    | Type      | Description                              |
 | :------- | :-------- | :--------------------------------------- |
 | `_count` | `uint256` | The maximum number of locators to fetch. |
+
+# `constructor`
+
+Create a new `Index` contract.
+
+```java
+constructor() public
+```

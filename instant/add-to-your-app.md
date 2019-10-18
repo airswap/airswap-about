@@ -14,7 +14,7 @@ Add the following `script` tag to the `head` element in your web application.
 <script src="https://cdn.airswap.io/airswap-instant-widget.js"></script>
 ```
 
-{% hint style="working" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
+{% hint style="warning" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
 
 # Display the default widget
 

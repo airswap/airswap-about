@@ -31,7 +31,7 @@ function swap(
 | `VALUE_MUST_BE_SENT`   | Signature provided does not match the Order provided.                        |
 | `VALUE_MUST_BE_ZERO`   | Order has already been taken by its `nonce` value.                           |
 
-# Constructor
+# `constructor`
 
 Create a new `Wrapper` contract.
 

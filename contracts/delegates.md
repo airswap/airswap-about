@@ -194,7 +194,25 @@ function provideOrder(
 | `AMOUNT_EXCEEDS_MAX`  | The amount of the trade would exceed the maximum for the rule. |
 | `PRICE_INCORRECT`     | The order is priced incorrectly for the rule.                  |
 
-# DelegateManager
+## `constructor`
+
+Create a new `Delegate` contract.
+
+```java
+constructor(
+  ISwap _swapContract,
+  address _delegateContractOwner,
+  address _delegateTradeWallet
+) public
+```
+
+| Param                    | Type      | Description                                             |
+| :----------------------- | :-------- | :------------------------------------------------------ |
+| `_swapContract`          | `ISwap`   | Instance of the swap contract used to settle trades.    |
+| `_delegateContractOwner` | `address` | Address of the owner of the sender for rule management. |
+| `_delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded.    |
+
+# DelegateFactory
 
 Deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
 
@@ -204,15 +222,15 @@ Create a new Delegate contract. Implements `IDelegateFactory.createDelegate`.
 
 ```java
 function createDelegate(
-  address _swapContract,
-  address _senderContractOwner
-) external returns (address senderContractAddress)
+  address _delegateContractOwner,
+  address _delegateTradeWallet
+) external returns (address delegateContractAddress)
 ```
 
-| Param                  | Type      | Description                            |
-| :--------------------- | :-------- | :------------------------------------- |
-| `_swapContract`        | `address` | The swap contract the sender will use. |
-| `_senderContractOwner` | `address` | The owner of the new sender contract.  |
+| Param                    | Type      | Description                                             |
+| :----------------------- | :-------- | :------------------------------------------------------ |
+| `_delegateContractOwner` | `address` | Address of the owner of the sender for rule management. |
+| `_delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded.    |
 
 ## `has`
 
@@ -228,18 +246,14 @@ function has(
 | :--------- | :-------- | :------------------------------------------------------------------------- |
 | `_locator` | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |
 
-## Constructor
+## `constructor`
 
-Create a new `Delegate` contract.
+Create a new `DelegateManager` contract.
 
 ```java
-constructor(
-  address _swapContract,
-  address _senderContractOwner
-) public
+constructor(ISwap _swapContract) public
 ```
 
-| Param                  | Type      | Description                                             |
-| :--------------------- | :-------- | :------------------------------------------------------ |
-| `_swapContract`        | `address` | Address of the swap contract used to settle trades.     |
-| `_senderContractOwner` | `address` | Address of the owner of the sender for rule management. |
+| Param           | Type    | Description                                          |
+| :-------------- | :------ | :--------------------------------------------------- |
+| `_swapContract` | `ISwap` | Instance of the swap contract used to settle trades. |
