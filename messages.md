@@ -1,6 +1,8 @@
-Among peers, requests and responses use common terminology to describe the parties and signatures of orders and quotes. When requesting from and responding to peers, those requests with quotes and orders, both the request and response parameters are correlated.
+Messages passed between peers and delegates, including request parameters, and order and quote responses, are interchangeable between nested and flat formats.
 
-### Nested
+# Nested Format
+
+The nested format of an order is addresses fields with dot syntax. For example, `maker.wallet` to indicate the signer wallet.
 
 ```json
 {
@@ -25,7 +27,7 @@ Among peers, requests and responses use common terminology to describe the parti
     "kind": "0x277f8169"
   },
   "signature": {
-    "signer": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+    "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "version": "0x45",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
     "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
@@ -34,22 +36,22 @@ Among peers, requests and responses use common terminology to describe the parti
 }
 ```
 
-### Flat
+# Flat Format
 
-The flat form of an order collapses the tree structure by concatenating each value as a path. For example, `maker.wallet` is represented as `makerWallet`.
+The flat format of an order collapses the tree structure by concatenating each value as a path. For example, `signer.wallet` is represented as `signerWallet`.
 
 ```json
 {
   "nonce": "1566937684942",
   "expiry": "1566941284",
-  "makerWallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-  "makerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-  "makerParam": "10000",
-  "makerKind": "0x277f8169",
-  "takerWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-  "takerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-  "takerParam": "100000000",
-  "takerKind": "0x277f8169",
+  "signerWallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+  "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+  "signerParam": "10000",
+  "signerKind": "0x277f8169",
+  "senderWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
+  "senderToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+  "senderParam": "100000000",
+  "senderKind": "0x277f8169",
   "affiliateWallet": "0x0000000000000000000000000000000000000000",
   "affiliateToken": "0x0000000000000000000000000000000000000000",
   "affiliateParam": "0",
@@ -61,3 +63,7 @@ The flat form of an order collapses the tree structure by concatenating each val
   "signatureV": "28"
 }
 ```
+
+# Orders and Quotes
+
+Orders contain all the parameters listed above. Quotes, on the other hand, do not include a `nonce` or `signature` parameter.
