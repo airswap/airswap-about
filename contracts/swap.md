@@ -8,7 +8,7 @@ Swap is a trustless peer-to-peer trade settlement contract. [View the code on Gi
 
 # Functions
 
-# `swap`
+## `swap`
 
 An atomic token swap between a signer and a sender.
 
@@ -63,7 +63,7 @@ event Swap(
 | `INVALID_AUTH_DELEGATE`  | Delegate address is the same as the sender address.                          |
 | `INVALID_AUTH_EXPIRY`    | Authorization expiry time is in the past.                                    |
 
-# `cancel`
+## `cancel`
 
 Provide an array of `nonces`, unique by signer address, to mark one or more orders as canceled.
 
@@ -86,7 +86,7 @@ event Cancel(
 );
 ```
 
-# `invalidate`
+## `invalidate`
 
 Provide a minimum value to invalidate all nonces below the value.
 
@@ -109,7 +109,7 @@ event Invalidate(
 );
 ```
 
-# `authorize`
+## `authorize`
 
 Authorize another account or contract to sign or send orders.
 
@@ -135,7 +135,7 @@ event AuthorizeSigner(
 );
 ```
 
-# `revoke`
+## `revoke`
 
 Revoke the authorization of a delegate account or contract.
 
@@ -158,7 +158,7 @@ event Revoke(
 );
 ```
 
-# `constructor`
+## `constructor`
 
 Create a new `Swap` contract.
 

@@ -2,7 +2,7 @@ Messages passed between peers and delegates, including request parameters, and o
 
 # Nested Format
 
-The nested format of an order is addresses fields with dot syntax. For example, `maker.wallet` to indicate the signer wallet.
+The nested format makes parameters available by dot syntax. For example, `signer.wallet` to access the signer wallet.
 
 ```json
 {
@@ -66,4 +66,4 @@ The flat format of an order collapses the tree structure by concatenating each v
 
 # Orders and Quotes
 
-Orders contain all the parameters listed above. Quotes, on the other hand, do not include a `nonce` or `signature` parameter.
+Orders contain all the parameters listed above. Quotes, on the other hand, do not include the `nonce` or `signature` parameters.
