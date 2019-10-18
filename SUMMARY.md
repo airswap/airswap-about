@@ -7,19 +7,19 @@
 ## Contracts
 
 - [Swap](contracts/swap.md)
-- [Indexers](contracts/indexer.md)
-- [Delegates](contracts/delegate.md)
+- [Indexers](contracts/indexers.md)
+- [Delegates](contracts/delegates.md)
 - [Wrapper](contracts/wrapper.md)
 - [Types](contracts/types.md)
 
 ## Instant
 
+- [Add to Your App](instant/add-to-your-app.md)
 - [Architecture](instant/architecture.md)
 - [Running Makers](instant/running-makers.md)
 - [Token Support](instant/token-support.md)
-- [Add to Your App](instant/add-to-your-app.md)
 
 ## Trader
 
-- [Token Support](trader/token-support.md)
 - [Add to Your App](trader/add-to-your-app.md)
+- [Token Support](trader/token-support.md)

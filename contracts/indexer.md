@@ -1,4 +1,4 @@
-Indexer and Index work together to manage onchain discovery.
+Indexer and Index work together to enable counterparty discovery.
 
 # Indexer
 
@@ -87,11 +87,11 @@ function setIntent(
 | `_locator`     | `bytes32` | Arbitrary data. Often an address in the first 20 bytes.             |
 | `_role`        | `bytes1`  | The role of the party. 0x01 (signer), 0x02 (sender), or 0x03 (both) |
 
-A successful `setIntent` emits a `Stake` event.
+A successful `setIntent` emits a `Stake` event. The underlying `Index` emits an `SetLocator` event.
 
 ```java
 event Stake(
-  address wallet,
+  address staker,
   address signerToken,
   address senderToken,
   uint256 amount
@@ -123,11 +123,11 @@ function unsetIntent(
 | `_signerToken` | `address` | Address of the token that the signer transfers. |
 | `_senderToken` | `address` | Address of the token that the sender transfers. |
 
-A successful `unsetIntent` emits a `Unstake` event.
+A successful `unsetIntent` emits a `Unstake` event. The underlying `Index` emits an `UnsetLocator` event.
 
 ```java
 event Unstake(
-  address wallet,
+  address staker,
   address signerToken,
   address senderToken,
   uint256 amount

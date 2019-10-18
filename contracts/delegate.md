@@ -1,4 +1,4 @@
-Delegate and DelegateManager work together to manage onchain trading.
+Delegate and DelegateManager work together to manage onchain trading rules.
 
 # Delegate
 
