@@ -1,6 +1,8 @@
 Types is a library contract of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
 
-# `Order`
+# Structs
+
+## `Order`
 
 | Param     | Type      | Description                                     |
 | :-------- | :-------- | :---------------------------------------------- |
@@ -10,7 +12,7 @@ Types is a library contract of protocol structs. [View the code on GitHub](https
 | sender    | `Party`   | Party to the trade that accepts terms           |
 | affiliate | `Party`   | Party compensated for facilitating \(optional\) |
 
-# `Party`
+## `Party`
 
 | Param  | Type      | Description                        |
 | :----- | :-------- | :--------------------------------- |
@@ -19,7 +21,7 @@ Types is a library contract of protocol structs. [View the code on GitHub](https
 | param  | `uint256` | Value \(ERC-20\) or ID \(ERC-721\) |
 | kind   | `bytes4`  | Interface ID of the token          |
 
-# `Signature`
+## `Signature`
 
 | Param   | Type      | Description                                                                               |
 | :------ | :-------- | :---------------------------------------------------------------------------------------- |

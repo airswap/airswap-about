@@ -1,4 +1,4 @@
-Messages passed between peers and delegates, including request parameters, and order and quote responses, are interchangeable between nested and flat formats.
+Messages passed between peers and smart contracts, including request parameters, order and quote responses, and contract events, are interchangeable between nested and flat formats.
 
 # Nested Format
 

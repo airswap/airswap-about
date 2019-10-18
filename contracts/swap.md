@@ -8,6 +8,14 @@ Swap is a trustless peer-to-peer trade settlement contract. [View the code on Gi
 
 # Functions
 
+## `constructor`
+
+Create a new `Swap` contract.
+
+```java
+constructor() public
+```
+
 ## `swap`
 
 An atomic token swap between a signer and a sender.
@@ -156,12 +164,4 @@ event Revoke(
   address indexed authorizerAddress,
   address indexed delegateSenderAddress,
 );
-```
-
-## `constructor`
-
-Create a new `Swap` contract.
-
-```java
-constructor() public
 ```
