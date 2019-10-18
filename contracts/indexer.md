@@ -20,7 +20,7 @@ constructor(
 
 ## `createTokenPairIndex`
 
-If none exists, deploy a new `Index` contract for the given token pair and return the address of the new or existing INDEX. For example, an intent to trade WETH/DAI.
+If none exists, deploy a new `Index` contract for the given token pair and return its address.
 
 ```java
 function createTokenPairIndex(
@@ -33,6 +33,15 @@ function createTokenPairIndex(
 | :------------- | :-------- | :--------------------------------------------------------- |
 | `_signerToken` | `address` | Address of the token transferred from a signer in a trade. |
 | `_senderToken` | `address` | Address of the token transferred from a sender in a trade. |
+
+A successful `createTokenPairIndex` emits a `CreateTokenPairIndex` event.
+
+```java
+event CreateTokenPairIndex(
+  address signerToken,
+  address senderToken
+);
+```
 
 ## `addTokenToBlacklist`
 
