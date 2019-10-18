@@ -9,6 +9,7 @@
 - [Architecture](instant/architecture.md)
 - [Message Formats](instant/message-formats.md)
 - [Running Makers](instant/running-makers.md)
+- [Deploying Delegates](instant/deploying-delegates.md)
 - [Token Support](instant/token-support.md)
 
 ## Trader
