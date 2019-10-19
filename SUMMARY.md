@@ -7,7 +7,7 @@
 
 - [Add to Your App](instant/add-to-your-app.md)
 - [Architecture](instant/architecture.md)
-- [Message Formats](instant/message-formats.md)
+- [API Reference](instant/api-reference.md)
 - [Running Makers](instant/running-makers.md)
 - [Deploying Delegates](instant/deploying-delegates.md)
 - [Token Support](instant/token-support.md)
