@@ -1,3 +1,7 @@
+{% hint style="warning" %}
+This content is in the works.
+{% endhint %}
+
 # Peer API
 
 The following methods should be implemented by all makers on the network.
