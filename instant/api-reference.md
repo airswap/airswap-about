@@ -336,7 +336,7 @@ The nested format makes parameters available by dot syntax. For example, `signer
 }
 ```
 
-# Flat Format
+## Flat Format
 
 The flat format of an order collapses the tree structure by concatenating each value as a path. For example, `signer.wallet` is represented as `signerWallet`.
 
@@ -363,7 +363,3 @@ The flat format of an order collapses the tree structure by concatenating each v
   "signatureV": "28"
 }
 ```
-
-# Orders and Quotes
-
-Orders contain all the parameters listed above. Quotes, on the other hand, do not include the `nonce` or `signature` parameters.
