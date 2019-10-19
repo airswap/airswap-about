@@ -4,19 +4,19 @@ This content is in the works.
 
 Running makers for AirSwap Instant involves three key activities.
 
-- Running an HTTP web server that parses JSON-RPC requests
+- Running an HTTP server that parses JSON-RPC requests
 - Pricing and cryptographically signing orders
 - Interacting with indexers to signal your intent to trade
 
 # Getting Started
 
-1. Create an Ethereum key pair. You can use Metamask to create a new wallet and export the private key.
+1. Create an Ethereum key pair. You can use MetaMask to create and export a private key.
 2. Use the [ETH Faucet](https://faucet.rinkeby.io/) to obtain Rinkeby ETH.
 3. Use the [AST Faucet](https://ast-faucet-ui.development.airswap.io/) to obtain Rinkeby AST.
 
-# Using Node.js
+# Node.js Example
 
-Create a new project and add [AirSwap.js](https://gitub.com/airswap/AirSwap.js) and other dependencies.
+Create a new project and add dependencies.
 
 ```
 yarn add express body-parser jayson ethers airswap.js
