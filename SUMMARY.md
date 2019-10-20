@@ -9,12 +9,10 @@
 - [Run a Maker](instant/run-a-maker.md)
 - [API Reference](instant/api-reference.md)
 - [Architecture](instant/architecture.md)
-- [Token Support](instant/token-support.md)
 
 ## Trader
 
 - [Add to Your App](trader/add-to-your-app.md)
-- [Token Support](trader/token-support.md)
 
 ## Contracts
 
