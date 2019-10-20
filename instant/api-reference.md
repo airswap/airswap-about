@@ -25,7 +25,7 @@ Given a `signerParam` and token pair, request a `senderParam` from the signer.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a `Quote` object.
+A successful `getSenderSideQuote` returns a `Quote` object including the requested `senderParam`.
 
 ## `getSignerSideQuote`
 
@@ -50,7 +50,7 @@ Given a `senderParam` and token pair, request a `signerParam` from the signer.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a `Quote` object.
+A successful `getSignerSideQuote` returns a `Quote` object including the requested `signerParam`.
 
 ## `getMaxQuote`
 
@@ -76,7 +76,7 @@ Given a token pair, request the maximum amounts a signer is willing to trade.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a `Quote` object.
+A successful `getMaxQuote` returns a `Quote` object.
 
 ## `getSenderSideOrder`
 
@@ -103,7 +103,7 @@ A successful `getSignerSideQuote` returns a `Quote` object.
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSenderSideOrder` returns a signed `Order` object.
+A successful `getSenderSideOrder` returns a signed `Order` object including the requested `senderParam`.
 
 ## `getSignerSideOrder`
 
@@ -114,69 +114,25 @@ A successful `getSenderSideOrder` returns a signed `Order` object.
   "jsonrpc": "2.0",
   "method": "getSignerSideOrder",
   "params": {
+    "senderParam": "100000000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderParam": "100000000",
-    "senderWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-    "affiliateToken": "0x0000000000000000000000000000000000000000",
-    "affiliateParam": "0"
+    "senderWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6"
   },
   "id": "123"
 }
 ```
 
-## `provideOrder`
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `senderParam`  | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `signerToken`  | `address` | The token the signer would transfer.            |
+| `senderToken`  | `address` | The token the sender would transfer.            |
+| `senderWallet` | `address` | The wallet of the sender.                       |
 
-**Example Request**
+A successful `getSignerSideOrder` returns a signed `Order` object including the requested `signerParam`.
 
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "provideOrder",
-  "params": {
-    "nonce": "100",
-    "expiry": "1566941284",
-    "signer": {
-      "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-      "param": "10000",
-      "kind": "0x277f8169"
-    },
-    "sender": {
-      "wallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-      "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-      "param": "100000000",
-      "kind": "0x277f8169"
-    },
-    "affiliate": {
-      "wallet": "0x0000000000000000000000000000000000000000",
-      "token": "0x0000000000000000000000000000000000000000",
-      "param": "0",
-      "kind": "0x277f8169"
-    },
-    "signature": {
-      "signer": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "version": "0x45",
-      "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
-      "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
-      "v": "28"
-    }
-  },
-  "id": "123"
-}
-```
-
-**Example Response**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": true,
-  "id": "123"
-}
-```
-
-### Error codes
+# Error codes
 
 The above call may have thrown an error, matched by `id`:
 
@@ -202,13 +158,13 @@ The following are error codes in the [JSON-RPC specification](http://www.jsonrpc
 
 We have allocated the following range for Swap Protocol errors:
 
-- `-33600` Cannot provide this order
+- `-33600` Cannot provide the requested quote or order
 - `-33601` Not trading the requested `signerToken` `senderToken` pair
 - `-33602` The specified `senderParam` or `signerParam` is too low
 - `-33603` The specified `senderParam` or `signerParam` is too high
 - `-33604` Improperly formatted `signerToken`, `senderToken`, or `senderWallet` address
 - `-33605` Rate limit exceeded
-- `-33700 to -33799` Reserved for implementation defined trading errors.
+- `-33700 to -33799` Reserved for implementation specific trading errors.
 
 # Message Formats
 

@@ -4,11 +4,11 @@ Running a maker for AirSwap has three simple requirements.
 - Pricing logic for the tokens that you wish to trade
 - Tools to interact with indexers to signal your intent to trade
 
-**Important notes**
+# Important notes
 
 - Makers only trade tokens, not native ether (ETH). To trade ETH it must be wrapped (WETH).
-- Makers must manage nonces, which are single-use identifiers for each order. Each nonce can only be used once and subsequent nonces should only increase.
-- Makers must be accessible at public endpoints shorter than 32 characters in length. HTTPS is the assumed URL scheme. For example `maker.example.com:8000` or `99.84.41.93`. Takers are also expected to resolve URL shortners like `bit.ly/2N0Rhfo` using the `OPTIONS` method.
+- Makers must manage nonces, which are single-use identifiers for each order. Each nonce can only be used once and subsequent nonces should increase.
+- Makers must be accessible at public endpoints shorter than 32 characters in length. HTTPS is the assumed URL scheme. For example `maker.example.com:8000` or `99.84.41.93`. Takers are also expected to resolve URL shortners like `bit.ly/2N0Rhfo` using an `OPTIONS` request.
 
 # Implement the Peer Protocol
 
@@ -23,10 +23,6 @@ At the protocol level, a **maker** is a trading party that is generally availabl
 | `getSignerSideOrder` | An order that includes the amount you would send. The taker is **selling** to you.        |
 
 See the [API Reference](./api-reference.md) for method details.
-
-{% hint style="warning" %}
-Reference server implementations are in the works.
-{% endhint %}
 
 # Approve Your Tokens
 
@@ -44,7 +40,3 @@ With your server ready to go, it's time to signal to other peers that you're rea
 | `createTokenPairIndex` | If your token pair is not on the indexer it must be created.                                                                                  |
 
 See the [Indexer Contract](../contracts/indexer.md) for method details. You can interact with indexer contracts either programmatically or through tools like [MEW](https://www.myetherwallet.com/).
-
-{% hint style="warning" %}
-Guides on setting intent to trade are in the works.
-{% endhint %}
