@@ -6,10 +6,9 @@
 ## Instant
 
 - [Add to Your App](instant/add-to-your-app.md)
-- [Architecture](instant/architecture.md)
+- [Run a Maker](instant/run-a-maker.md)
 - [API Reference](instant/api-reference.md)
-- [Running Makers](instant/running-makers.md)
-- [Deploying Delegates](instant/deploying-delegates.md)
+- [Architecture](instant/architecture.md)
 - [Token Support](instant/token-support.md)
 
 ## Trader

@@ -1,14 +1,35 @@
-{% hint style="warning" %}
-This content is in the works.
-{% endhint %}
+At the API level, a **signer** is the party that prices and cryptographically signs a trade, and a **sender** is the party that sends it to the blockchain for settlement.
 
 # Peer API
 
-The following methods should be implemented by all makers on the network.
+## `getSenderSideQuote`
+
+Given a `signerParam` and token pair, request a `senderParam` from the signer.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "getSenderSideQuote",
+  "params": {
+    "signerParam": "100000000",
+    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
+  },
+  "id": "123"
+}
+```
+
+| Param         | Type      | Description                                     |
+| :------------ | :-------- | :---------------------------------------------- |
+| `signerParam` | `uint256` | The amount of ERC-20 the signer would transfer. |
+| `senderToken` | `address` | The token the sender would transfer.            |
+| `signerToken` | `address` | The token the signer would transfer.            |
+
+A successful `getSenderSideQuote` returns a `Quote` object.
 
 ## `getSignerSideQuote`
 
-**Example Request**
+Given a `senderParam` and token pair, request a `signerParam` from the signer.
 
 ```json
 {
@@ -17,62 +38,23 @@ The following methods should be implemented by all makers on the network.
   "params": {
     "senderParam": "100000000",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "affiliateToken": "0x0000000000000000000000000000000000000000",
-    "affiliateParam": "0"
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
   },
   "id": "123"
 }
 ```
 
-**Example Response**
+| Param         | Type      | Description                                     |
+| :------------ | :-------- | :---------------------------------------------- |
+| `senderParam` | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `senderToken` | `address` | The token the sender would transfer.            |
+| `signerToken` | `address` | The token the signer would transfer.            |
 
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "signer":
-      "param": "100000000"
-    }
-  },
-  "id": "123"
-}
-```
-
-## `getSenderSideQuote`
-
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSignerSideQuote",
-  "params": {
-    "signerParam": "100000000",
-    "signerToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "affiliateToken": "0x0000000000000000000000000000000000000000",
-    "affiliateParam": "0"
-  },
-  "id": "123"
-}
-```
-
-**Example Response**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "sender":
-      "param": "100000000"
-    }
-  },
-  "id": "123"
-}
-```
+A successful `getSignerSideQuote` returns a `Quote` object.
 
 ## `getMaxQuote`
+
+Given a token pair, request the maximum amounts a signer is willing to trade.
 
 **Example Request**
 
@@ -88,22 +70,40 @@ The following methods should be implemented by all makers on the network.
 }
 ```
 
-**Example Response**
+| Param         | Type      | Description                                     |
+| :------------ | :-------- | :---------------------------------------------- |
+| `senderParam` | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `senderToken` | `address` | The token the sender would transfer.            |
+| `signerToken` | `address` | The token the signer would transfer.            |
+
+A successful `getSignerSideQuote` returns a `Quote` object.
+
+## `getSenderSideOrder`
+
+**Example Request**
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": {
-    "signer": {
-      "param": "100000000"
-    },
-    "sender": {
-      "param": "100000000"
-    }
+  "method": "getSenderSideOrder",
+  "params": {
+    "signerParam": "10000",
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "senderWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6"
   },
   "id": "123"
 }
 ```
+
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `signerParam`  | `uint256` | The amount of ERC-20 the signer would transfer. |
+| `signerToken`  | `address` | The token the signer would transfer.            |
+| `senderToken`  | `address` | The token the sender would transfer.            |
+| `senderWallet` | `address` | The wallet of the sender.                       |
+
+A successful `getSenderSideOrder` returns a signed `Order` object.
 
 ## `getSignerSideOrder`
 
@@ -125,105 +125,9 @@ The following methods should be implemented by all makers on the network.
 }
 ```
 
-**Example Response**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "nonce": "100",
-    "expiry": "1566941284",
-    "signer": {
-      "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-      "param": "10000",
-      "kind": "0x277f8169"
-    },
-    "sender": {
-      "wallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-      "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-      "param": "100000000",
-      "kind": "0x277f8169"
-    },
-    "affiliate": {
-      "wallet": "0x0000000000000000000000000000000000000000",
-      "token": "0x0000000000000000000000000000000000000000",
-      "param": "0",
-      "kind": "0x277f8169"
-    },
-    "signature": {
-      "signer": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "version": "0x45",
-      "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
-      "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
-      "v": "28"
-    }
-  },
-  "id": "123"
-}
-```
-
-## `getSenderSideOrder`
-
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSenderSideOrder",
-  "params": {
-    "signerParam": "10000",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-    "affiliateToken": "0x0000000000000000000000000000000000000000",
-    "affiliateParam": "0"
-  },
-  "id": "123"
-}
-```
-
-**Example Response**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "nonce": "100",
-    "expiry": "1566941284",
-    "signer": {
-      "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-      "param": "10000",
-      "kind": "0x277f8169"
-    },
-    "sender": {
-      "wallet": "0xdead0717b16b9f56eb6e308e4b29230dc0eee0b6",
-      "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-      "param": "100000000",
-      "kind": "0x277f8169"
-    },
-    "affiliate": {
-      "wallet": "0x0000000000000000000000000000000000000000",
-      "token": "0x0000000000000000000000000000000000000000",
-      "param": "0",
-      "kind": "0x277f8169"
-    },
-    "signature": {
-      "signer": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-      "version": "0x45",
-      "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
-      "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
-      "v": "28"
-    }
-  },
-  "id": "123"
-}
-```
-
 ## `provideOrder`
 
-**Example Response**
+**Example Request**
 
 ```json
 {
@@ -272,33 +176,39 @@ The following methods should be implemented by all makers on the network.
 }
 ```
 
-# Indexer API
+### Error codes
 
-The following methods are implemented by the Indexer smart contract.
+The above call may have thrown an error, matched by `id`:
 
-## `createTokenPairIndex`
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -33605,
+    "message": "Rate limit exceeded"
+  }
+}
+```
 
-**Example Request**
+The following are error codes in the [JSON-RPC specification](http://www.jsonrpc.org/specification#error_object):
 
-**Example Response**
+- `-32700` Parse error
+- `-32600` Invalid Request
+- `-32601` Method not found
+- `-32602` Invalid params
+- `-32603` Internal error
+- `-32000 to -32099` Reserved for implementation-defined server-errors.
 
-## `setIntent`
+We have allocated the following range for Swap Protocol errors:
 
-**Example Request**
-
-**Example Response**
-
-## `unsetIntent`
-
-**Example Request**
-
-**Example Response**
-
-## `getIntents`
-
-**Example Request**
-
-**Example Response**
+- `-33600` Cannot provide this order
+- `-33601` Not trading the requested `signerToken` `senderToken` pair
+- `-33602` The specified `senderParam` or `signerParam` is too low
+- `-33603` The specified `senderParam` or `signerParam` is too high
+- `-33604` Improperly formatted `signerToken`, `senderToken`, or `senderWallet` address
+- `-33605` Rate limit exceeded
+- `-33700 to -33799` Reserved for implementation defined trading errors.
 
 # Message Formats
 

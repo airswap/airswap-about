@@ -1,10 +1,10 @@
-A DelegateManager deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
+A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
 
 # Functions
 
 ## `constructor`
 
-Create a new `DelegateManager` contract.
+Create a new `DelegateFactory` contract.
 
 ```java
 constructor(ISwap _swapContract) public
