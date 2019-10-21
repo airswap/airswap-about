@@ -1,4 +1,8 @@
-Running a maker for AirSwap has three simple requirements.
+{% hint style="warning" %}
+This documentation is in the works and subject to change.
+{% endhint %}
+
+Running a maker for AirSwap Instant has three simple requirements.
 
 - An HTTPS server at a public endpoint that implements [JSON-RPC 2.0](http://www.jsonrpc.org/specification) and [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - Pricing logic for the tokens that you wish to trade
@@ -8,9 +12,9 @@ Running a maker for AirSwap has three simple requirements.
 
 - Makers only trade tokens, not native ether (ETH). To trade ETH it must be wrapped (WETH).
 - Makers must manage nonces, which are single-use identifiers for each order. Each nonce can only be used once and subsequent nonces should increase.
-- Makers must be accessible at public endpoints shorter than 32 characters in length. HTTPS is the assumed URL scheme. For example `maker.example.com:8000` or `99.84.41.93`. Takers are also expected to resolve URL shortners like `bit.ly/2N0Rhfo` using an `OPTIONS` request.
+- Makers must be accessible at public endpoints shorter than 32 characters in length. HTTPS is the assumed URL scheme. For example `maker.example.com:8000` or `99.84.41.93`.
 
-# Implement the Peer Protocol
+# Implement the Peer API
 
 At the protocol level, a **maker** is a trading party that is generally available to provide pricing and make trades. A **taker** is a trading party that trades one-off or periodically and accepts the pricing of makers. Makers are expected to implement the following methods taking the API role of **signer** in all cases.
 

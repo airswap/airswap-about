@@ -1,3 +1,7 @@
+{% hint style="warning" %}
+This documentation is in the works and subject to change.
+{% endhint %}
+
 At the API level, a **signer** is the party that prices and cryptographically signs a trade, and a **sender** is the party that sends it to the blockchain for settlement.
 
 # Peer API
@@ -25,7 +29,7 @@ Given a `signerParam` and token pair, request a `senderParam` from the signer.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a `Quote` object including the requested `senderParam`.
+A successful `getSenderSideQuote` returns a [Quote](#quote-object) object including the requested `senderParam`.
 
 ## `getSignerSideQuote`
 
@@ -50,7 +54,7 @@ Given a `senderParam` and token pair, request a `signerParam` from the signer.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a `Quote` object including the requested `signerParam`.
+A successful `getSignerSideQuote` returns a [Quote](#quote-object) object including the requested `signerParam`.
 
 ## `getMaxQuote`
 
@@ -76,7 +80,7 @@ Given a token pair, request the maximum amounts a signer is willing to trade.
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
-A successful `getMaxQuote` returns a `Quote` object.
+A successful `getMaxQuote` returns a [Quote](#quote-object) object.
 
 ## `getSenderSideOrder`
 
@@ -103,7 +107,7 @@ A successful `getMaxQuote` returns a `Quote` object.
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSenderSideOrder` returns a signed `Order` object including the requested `senderParam`.
+A successful `getSenderSideOrder` returns a signed [Order](#order-object) object including the requested `senderParam`.
 
 ## `getSignerSideOrder`
 
@@ -130,7 +134,7 @@ A successful `getSenderSideOrder` returns a signed `Order` object including the 
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSignerSideOrder` returns a signed `Order` object including the requested `signerParam`.
+A successful `getSignerSideOrder` returns a signed [Order](#order-object) object including the requested `signerParam`.
 
 # Error codes
 
@@ -168,6 +172,8 @@ We have allocated the following range for Swap Protocol errors:
 
 # Quotes and Orders
 
+## Quote Object
+
 Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`.
 
 ```json
@@ -184,6 +190,8 @@ Quotes are simple structures that only include the `token`, `param`, and `kind` 
   }
 }
 ```
+
+## Order Object
 
 Orders are full structures that include `wallet` for `signer` and `sender`, an `affiliate` party empty by default, and a `nonce`, `expiry`, and `signature`.
 
@@ -218,6 +226,8 @@ Orders are full structures that include `wallet` for `signer` and `sender`, an `
   }
 }
 ```
+
+These values correlate to the structs in [Types](../contracts/types.md).
 
 # Representation Formats
 
