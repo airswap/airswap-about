@@ -18,12 +18,12 @@ constructor(
 | `_stakeToken`       | `address` | Address of the token required for staking.         |
 | `_locatorWhitelist` | `address` | Address of an optional locator whitelist contract. |
 
-## `createTokenPairIndex`
+## `createIndex`
 
 If none exists, deploy a new `Index` contract for the given token pair and return its address.
 
 ```java
-function createTokenPairIndex(
+function createIndex(
   address _signerToken,
   address _senderToken
 ) public returns (address)
@@ -34,21 +34,21 @@ function createTokenPairIndex(
 | `_signerToken` | `address` | Address of the token transferred from a signer in a trade. |
 | `_senderToken` | `address` | Address of the token transferred from a sender in a trade. |
 
-A successful `createTokenPairIndex` emits a `CreateTokenPairIndex` event.
+A successful `createIndex` emits a `CreateIndex` event.
 
 ```java
-event CreateTokenPairIndex(
+event CreateIndex(
   address signerToken,
   address senderToken
 );
 ```
 
-## `addTokenToBlacklist`
+## `addToBlacklist`
 
 Add a token to the blacklist.
 
 ```java
-function addTokenToBlacklist(
+function addToBlacklist(
   address _token
 ) external onlyOwner
 ```
@@ -57,20 +57,20 @@ function addTokenToBlacklist(
 | :------- | :-------- | :--------------------------------- |
 | `_token` | `address` | Address of the token to blacklist. |
 
-A successul `addTokenToBlacklist` emits a `AddTokenToBlacklist` event.
+A successul `addToBlacklist` emits a `AddToBlacklist` event.
 
 ```java
-event AddTokenToBlacklist(
+event AddToBlacklist(
   address token
 );
 ```
 
-## `removeTokenFromBlacklist`
+## `removeFromBlacklist`
 
 Remove a token from the blacklist.
 
 ```java
-function removeTokenFromBlacklist(
+function removeFromBlacklist(
   address _token
 ) external onlyOwner
 ```
@@ -79,10 +79,10 @@ function removeTokenFromBlacklist(
 | :------- | :-------- | :---------------------------------- |
 | `_token` | `address` | The address of the token to remove. |
 
-A successul `removeTokenFromBlacklist` emits a `RemoveTokenFromBlacklist` event.
+A successul `removeFromBlacklist` emits a `RemoveFromBlacklist` event.
 
 ```java
-event RemoveTokenFromBlacklist(
+event RemoveFromBlacklist(
   address token
 );
 ```
