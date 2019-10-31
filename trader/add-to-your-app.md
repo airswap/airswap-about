@@ -145,8 +145,10 @@ window.AirSwapTrader.render(
 | `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
 | `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
 | `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade.                                                                                                                  |
+| `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSubmit) triggered on submission of a trade.                                                                                                                  |
 | `onSwap`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade.                                                                                                                     |
 | `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel.                                                                                                                  |
+| `onError`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onError) triggered when an error occurs on a trade submission.                                                                                                                     |
 | `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close.                                                                                                                          |
 
 ## Callbacks
@@ -158,6 +160,22 @@ Callback function triggered on creation of a trade. Passes the order and cid to 
 ```javascript
 function onCreate(order, cid) {
     console.log('Order Created!');
+    ...
+}
+```
+
+| Type    | Parameter                         | Description                 |
+| :------ | :-------------------------------- | :-------------------------- |
+| `order` | [Order](add-to-your-app.md#order) | The order details.          |
+| `cid`   | string                            | The IPFS Hash of the order. |
+
+### onSubmit
+
+Callback function triggered on submission of a trade. This does not necessarily mean that the trade was completed. No arguments.
+
+```javascript
+function onSubmit() {
+    console.log('Order submitted!');
     ...
 }
 ```
@@ -181,6 +199,22 @@ function onSwap(transactionHash) {
 | Type              | Parameter | Description                                                                                                                            |
 | :---------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | `transactionHash` | `string`  | Hash of the swap transaction. Can be used on blockchain explorers like [Etherscan](https://etherscan.io/) to view transaction details. |
+
+### onError
+
+Callback function triggered when an error occurs on a trade submission. The user can resolve the issue and try completing the trade again. Passes the error message as an argument.
+
+```javascript
+function onError(error) {
+    console.log('There was an issue with the trade');
+    console.log(error);
+    ...
+}
+```
+
+| Type              | Parameter | Description                                                                                                                            |
+| :---------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| `error` | `string`  | Description of the error that occured. |
 
 ### onCancel
 
