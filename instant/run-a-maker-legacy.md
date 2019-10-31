@@ -80,7 +80,9 @@ async function main() {
 
 Let's create an Intent to sell AST for ETH. As we have learned, creating an intent requires 250 AST.
 
-!> setIntents will fail if you do not have 250 AST per intent
+
+{% hint style="warning" %} setIntents will fail if you do not have 250 AST per intent. {% endhint %}
+
 
 Use `router.setIntents()` to create intents. This action is idempotent and replaces all other intents for your address. You call this method everytime your application starts. It should include the full list of intents. In your `main()` function:
 

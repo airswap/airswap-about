@@ -1,6 +1,6 @@
 # Add Trader to Your App
 
-[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
+[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-counter trading with no counterparty risk, no deposits, and no fees.
 
 ![](../.gitbook/assets/trader-widget.png)
 
