@@ -179,7 +179,7 @@ We have allocated the following range for Swap Protocol errors:
 
 ## Quote Object
 
-Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`.
+Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`. The `kind` is the interface identifier for ERC-20 or ERC-721 - see [EIP-165](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
 
 **Example**
 
@@ -200,7 +200,7 @@ Quotes are simple structures that only include the `token`, `param`, and `kind` 
 
 ## Order Object
 
-Orders are full structures that include `wallet` for `signer` and `sender`, an `affiliate` party empty by default, and a `nonce`, `expiry`, and `signature`.
+Orders are full structures that include `wallet` for `signer` and `sender`, an `affiliate` party empty by default, and a `nonce`, `expiry`, and `signature`. The `kind` is the interface identifier for ERC-20 or ERC-721 - see [EIP-165](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
 
 **Example**
 
