@@ -5,7 +5,7 @@ Maker Kit (Beta) is a collection of tools and examples to explore the AirSwap ne
 # Introduction
 
 {% hint style="warning" %}
-The following system is in beta on Rinkeby. For production maker documentation, see [https://developers.airswap.io/](https://developers.airswap.io/#/tutorials/maker/README).
+The following system is in beta on Rinkeby. For production maker documentation, [click here](./run-a-maker-legacy.md).
 {% endhint %}
 
 Running a maker for AirSwap Instant has three simple requirements.

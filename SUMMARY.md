@@ -11,6 +11,10 @@
 - [API Reference](instant/api-reference.md)
 - [Architecture](instant/architecture.md)
 
+## Instant Legacy
+- [Add to Your App (Legacy)](instant/add-to-your-app-legacy.md)
+- [Run a Maker (Legacy)](instant/run-a-maker-legacy.md)
+
 ## Trader
 
 - [Add to Your App](trader/add-to-your-app.md)
