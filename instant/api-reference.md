@@ -67,8 +67,8 @@ Given a token pair, request the maximum amounts a signer is willing to trade.
   "jsonrpc": "2.0",
   "method": "getMaxQuote",
   "params": {
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab"
+    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
   },
   "id": "123"
 }
@@ -76,7 +76,6 @@ Given a token pair, request the maximum amounts a signer is willing to trade.
 
 | Param         | Type      | Description                                     |
 | :------------ | :-------- | :---------------------------------------------- |
-| `senderParam` | `uint256` | The amount of ERC-20 the sender would transfer. |
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
