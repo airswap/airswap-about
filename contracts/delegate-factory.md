@@ -7,12 +7,13 @@ A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://
 Create a new `DelegateFactory` contract.
 
 ```java
-constructor(ISwap _swapContract) public
+constructor(ISwap factorySwapContract, IIndexer factoryIndexerContract) public
 ```
 
-| Param           | Type    | Description                                          |
-| :-------------- | :------ | :--------------------------------------------------- |
-| `_swapContract` | `ISwap` | Instance of the swap contract used to settle trades. |
+| Param                    | Type    | Description                                                     |
+| :----------------------- | :------ | :-------------------------------------------------------------- |
+| `factorySwapContract`    | `ISwap` | Instance of the swap contract used to settle trades.            |
+| `factoryIndexerContract` | `ISwap` | Instance of the indexer contract the delegate will deploy with. |
 
 ## `createDelegate`
 
@@ -20,15 +21,15 @@ Create a new Delegate contract. Implements `IDelegateFactory.createDelegate`.
 
 ```java
 function createDelegate(
-  address _delegateContractOwner,
-  address _delegateTradeWallet
+  address delegateContractOwner,
+  address delegateTradeWallet
 ) external returns (address delegateContractAddress)
 ```
 
 | Param                    | Type      | Description                                             |
 | :----------------------- | :-------- | :------------------------------------------------------ |
-| `_delegateContractOwner` | `address` | Address of the owner of the sender for rule management. |
-| `_delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded.    |
+| `delegateContractOwner`  | `address` | Address of the owner of the sender for rule management. |
+| `delegateTradeWallet`    | `address` | Address of the wallet that holds funds to be traded.    |
 
 ## `has`
 
@@ -36,10 +37,10 @@ Check to see whether the factory has deployed a sender by locator. Implements `I
 
 ```java
 function has(
-  bytes32 _locator
+  bytes32 locator
 ) external view returns (bool)
 ```
 
 | Param      | Type      | Description                                                                |
 | :--------- | :-------- | :------------------------------------------------------------------------- |
-| `_locator` | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |
+| `locator`  | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |
