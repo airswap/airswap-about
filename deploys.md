@@ -10,5 +10,9 @@
 
 | Contract | Version | Application                                                                                                                     |
 | :------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
-| Swap     | `2.1.0` | [`0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B`](https://rinkeby.etherscan.io/address/0x6f337bA064b0a92538a4AfdCF0e60F50eEAe0D5B) |
-| Types    | `0.2.0` | [`0x4A041FA0a727c828616C83C090585913221641ba`](https://rinkeby.etherscan.io/address/0x4A041FA0a727c828616C83C090585913221641ba) |
+| Swap     | `2.2.0` | [`0x3a42c0ff0e06cc312b093e82bbca79c751654a62`](https://rinkeby.etherscan.io/address/0x3a42c0ff0e06cc312b093e82bbca79c751654a62) |
+| Types    | `0.3.0` | [`0xb1AB33C12a59E8A0Df91Ae6aD9B111d9D16AC465`](https://rinkeby.etherscan.io/address/0xb1AB33C12a59E8A0Df91Ae6aD9B111d9D16AC465) |
+| Wrapper  | `0.3.0` | [`0x8481a5c5d2c23c8d43a812ec8913f1aa4d739db9`](https://rinkeby.etherscan.io/address/0x8481a5c5d2c23c8d43a812ec8913f1aa4d739db9) |
+| Types    | `0.3.0` | [`0xb1AB33C12a59E8A0Df91Ae6aD9B111d9D16AC465`](https://rinkeby.etherscan.io/address/0xb1AB33C12a59E8A0Df91Ae6aD9B111d9D16AC465) |
+| Indexer  | `0.3.0` | [`0x6299e178413d6b7903c365dda1d4f23e37868b25`](https://rinkeby.etherscan.io/address/0x6299e178413d6b7903c365dda1d4f23e37868b25) |
+| Delegate-Factory   | `0.2.0` | [`0x1b217076a9b43983e27036b9e7326fc6172b68da`](https://rinkeby.etherscan.io/address/0x1b217076a9b43983e27036b9e7326fc6172b68da) |
