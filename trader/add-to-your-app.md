@@ -180,11 +180,6 @@ function onSubmit() {
 }
 ```
 
-| Type    | Parameter                         | Description                 |
-| :------ | :-------------------------------- | :-------------------------- |
-| `order` | [Order](add-to-your-app.md#order) | The order details.          |
-| `cid`   | string                            | The IPFS Hash of the order. |
-
 ### onSwap
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
@@ -206,7 +201,7 @@ Callback function triggered when an error occurs on a trade submission. The user
 
 ```javascript
 function onError(error) {
-    console.log('There was an issue with the trade');
+    console.log('There was an error on trade submission');
     console.log(error);
     ...
 }
