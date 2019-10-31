@@ -10,6 +10,8 @@ At the API level, a **signer** is the party that prices and cryptographically si
 
 Given a `signerParam` and token pair, request a `senderParam` from the signer.
 
+**Example Request**
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -34,6 +36,8 @@ A successful `getSenderSideQuote` returns a [Quote](#quote-object) object includ
 ## `getSignerSideQuote`
 
 Given a `senderParam` and token pair, request a `signerParam` from the signer.
+
+**Example Request**
 
 ```json
 {
@@ -76,7 +80,6 @@ Given a token pair, request the maximum amounts a signer is willing to trade.
 
 | Param         | Type      | Description                                     |
 | :------------ | :-------- | :---------------------------------------------- |
-| `senderParam` | `uint256` | The amount of ERC-20 the sender would transfer. |
 | `senderToken` | `address` | The token the sender would transfer.            |
 | `signerToken` | `address` | The token the signer would transfer.            |
 
@@ -140,6 +143,8 @@ A successful `getSignerSideOrder` returns a signed [Order](#order-object) object
 
 The above call may have thrown an error, matched by `id`:
 
+**Example**
+
 ```json
 {
   "id": 1,
@@ -176,6 +181,8 @@ We have allocated the following range for Swap Protocol errors:
 
 Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`.
 
+**Example**
+
 ```json
 {
   "signer": {
@@ -194,6 +201,8 @@ Quotes are simple structures that only include the `token`, `param`, and `kind` 
 ## Order Object
 
 Orders are full structures that include `wallet` for `signer` and `sender`, an `affiliate` party empty by default, and a `nonce`, `expiry`, and `signature`.
+
+**Example**
 
 ```json
 {
@@ -237,6 +246,8 @@ Messages passed between peers and smart contracts, including request parameters,
 
 The nested format makes parameters available by dot syntax. For example, `signer.wallet` to access the signer wallet.
 
+**Example**
+
 ```json
 {
   "nonce": "100",
@@ -272,6 +283,8 @@ The nested format makes parameters available by dot syntax. For example, `signer
 ## Flat Format
 
 The flat format of an order collapses the tree structure by concatenating each value as a path. For example, `signer.wallet` is represented as `signerWallet`.
+
+**Example**
 
 ```json
 {
