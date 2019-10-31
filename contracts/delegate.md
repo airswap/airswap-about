@@ -1,4 +1,4 @@
-A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/delegate).
+A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate).
 
 # Functions
 

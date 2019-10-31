@@ -1,4 +1,4 @@
-A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/sender-factory).
+A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate-factory).
 
 # Functions
 
