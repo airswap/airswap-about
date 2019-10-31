@@ -220,9 +220,9 @@ Orders are full structures that include `wallet` for `signer` and `sender`, an `
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "version": "0x45",
+    "v": "28",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
-    "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
-    "v": "28"
+    "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70"
   }
 }
 ```
