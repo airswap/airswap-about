@@ -200,22 +200,22 @@ Orders are full structures that include `wallet` for `signer` and `sender`, an `
   "nonce": "100",
   "expiry": "1566941284",
   "signer": {
+    "kind": "0x277f8169",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "param": "10000",
-    "kind": "0x277f8169"
+    "param": "10000"
   },
   "sender": {
+    "kind": "0x277f8169",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "param": "100000000",
-    "kind": "0x277f8169"
+    "param": "100000000"
   },
   "affiliate": {
+    "kind": "0x277f8169",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
-    "param": "0",
-    "kind": "0x277f8169"
+    "param": "0"
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
@@ -242,22 +242,22 @@ The nested format makes parameters available by dot syntax. For example, `signer
   "nonce": "100",
   "expiry": "1566941284",
   "signer": {
+    "kind": "0x277f8169",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "param": "10000",
-    "kind": "0x277f8169"
+    "param": "10000"
   },
   "sender": {
+    "kind": "0x277f8169",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "param": "100000000",
-    "kind": "0x277f8169"
+    "param": "100000000"
   },
   "affiliate": {
+    "kind": "0x277f8169",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
-    "param": "0",
-    "kind": "0x277f8169"
+    "param": "0"
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
