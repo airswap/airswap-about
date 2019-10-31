@@ -10,6 +10,8 @@
 - [Run a Maker](instant/run-a-maker.md)
 - [API Reference](instant/api-reference.md)
 - [Architecture](instant/architecture.md)
+- [Widget (Legacy)](instant/instant-widget-legacy.md)
+- [Run a Maker (Legacy)](instant/run-a-maker-legacy.md)
 
 ## Trader
 
