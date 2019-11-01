@@ -2,7 +2,6 @@
 
 - [Welcome](README.md)
 - [About](about.md)
-- [Deploys](deploys.md)
 
 ## Instant
 
