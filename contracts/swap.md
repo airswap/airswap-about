@@ -1,8 +1,8 @@
-Swap is a trustless peer-to-peer trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/swap).
+Swap is a trustless peer-to-peer trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/swap).
 
 # Features
 
-**Authorizations** are for peers that trade on behalf of others. These peers are authorized for either side of a trade, and can be wallets (people or programs) or smart contracts.
+**Authorizations** are for peers that trade on behalf of others. These peers are authorized by an individual to send or sign orders for them. Peers can be wallets (people or programs) or smart contracts.
 
 **Affiliates** are third-parties compensated for their part in bringing together the two parties of a trade, and can be other traders or software applications that connect traders on the network.
 
@@ -22,7 +22,7 @@ An atomic token swap between a signer and a sender.
 
 ```java
 function swap(
-  Types.Order calldata _order
+  Types.Order calldata order
 ) external
 ```
 
@@ -39,7 +39,7 @@ function swap(
 
 ---
 
-A successul `swap` emits a `Swap` event.
+A successful `swap` emits a `Swap` event.
 
 ```java
 event Swap(
@@ -59,48 +59,45 @@ event Swap(
 
 | Revert Reason            | Scenario                                                                     |
 | :----------------------- | :--------------------------------------------------------------------------- |
-| `SIGNER_UNAUTHORIZED`    | Order has been signed by an account that has not been authorized to sign it. |
-| `SIGNATURE_INVALID`      | Signature provided does not match the Order provided.                        |
-| `ORDER_ALREADY_TAKEN`    | Order has already been taken by its `nonce` value.                           |
-| `ORDER_ALREADY_CANCELED` | Order has already been canceled by its `nonce` value.                        |
-| `ORDER_EXPIRED`          | Order has an `expiry` lower than the current block time.                     |
-| `NONCE_TOO_LOW`          | Nonce provided is below the minimum value set.                               |
-| `SENDER_UNAUTHORIZED`    | Order has been sent by an account that has not been authorized to send it.   |
-| `VALUE_MUST_BE_SENT`     | Order indicates an ether Swap but insufficient ether was sent.               |
-| `VALUE_MUST_BE_ZERO`     | Order indicates a token Swap but ether was sent.                             |
-| `INVALID_AUTH_DELEGATE`  | Delegate address is the same as the sender address.                          |
-| `INVALID_AUTH_EXPIRY`    | Authorization expiry time is in the past.                                    |
+| `SIGNER_UNAUTHORIZED`      | Order has been signed by an account that has not been authorized to sign it. |
+| `SIGNATURE_INVALID`        | Signature provided does not match the Order provided.                        |
+| `ORDER_TAKEN_OR_CANCELLED` | Order has already been taken or cancelled by its `nonce` value.              |
+| `ORDER_EXPIRED`            | Order has an `expiry` before the current block time.                         |
+| `NONCE_TOO_LOW`            | Nonce provided is below the minimum value set.                               |
+| `SENDER_UNAUTHORIZED`      | Order has been sent by an account that has not been authorized to send it.|
+| `INVALID_SELF_TRANSFER`    | Order has the same signer and sender for the swap.                           |
+| `TRANSFER_FAILED`          | One of the token transfers in the swap failed.                               |
 
 ## `cancel`
 
-Provide an array of `nonces`, unique by signer address, to mark one or more orders as canceled.
+Provide an array of `nonces`, unique by signer address, to mark one or more orders as cancelled.
 
 ```java
 function cancel(
-  uint256[] memory _nonces
+  uint256[] memory nonces
 ) external
 ```
 
 | Param    | Type        | Required | Description                               |
 | :------- | :---------- | :------- | :---------------------------------------- |
-| `nonces` | `uint256[]` | required | Order struct as specified in Types below. |
+| `nonces` | `uint256[]` | required | Array of order nonces to cancel.          |
 
-A successful `cancel` emits a `Cancel` event.
+A successful `cancel` emits one `Cancel` event per nonce.
 
 ```java
 event Cancel(
   uint256 indexed nonce,
-  address indexed signerAddress
+  address indexed signerWallet
 );
 ```
 
 ## `invalidate`
 
-Provide a minimum value to invalidate all nonces below the value.
+Provide a minimum value to invalidate all nonces below the value. This is not inclusive - the `minimumNonce` value is still considered valid.
 
 ```java
 function invalidate(
-  uint256 _minimumNonce
+  uint256 minimumNonce
 ) external
 ```
 
@@ -113,55 +110,109 @@ A successful `invalidate` emits an `Invalidate` event.
 ```java
 event Invalidate(
   uint256 indexed nonce,
-  address indexed signerAddress
+  address indexed signerWallet
 );
 ```
 
-## `authorize`
+## `authorizeSender`
 
-Authorize another account or contract to sign or send orders.
+Authorize another account or contract send orders on behalf of the caller.
 
 ```java
-function authorizeSigner(
-  address _delegateAddress,
-  uint256 _expiry
-) external returns (bool)
+function authorizeSender(
+  address authorizedSender
+) external
 ```
 
 | Param              | Type      | Required | Description                                         |
 | :----------------- | :-------- | :------- | :-------------------------------------------------- |
-| `_delegateAddress` | `address` | required | Address to authorize for signing.                   |
-| `_expiry`          | `uint256` | required | Unix time after which the authorization is expired. |
+| `authorizedSender` | `address` | required | Address to authorize for sending.                   |
 
-A successful `authorize` emits an `Authorize` event.
+A successful `authorizeSender` emits an `AuthorizeSender` event.
+
+```java
+event AuthorizeSender(
+  address indexed authorizerAddress,
+  address indexed authorizedSender
+);
+```
+
+| Revert Reason            | Scenario                                                       |
+| :----------------------- | :------------------------------------------------------------------------------------------ |
+| `INVALID_AUTH_SENDER`      | The `authorizedSender` and the function caller are the same. |
+
+## `authorizeSigner`
+
+Authorize another account or contract to:
+- Sign an order OR
+- Submit an order without a signature
+on behalf of the function caller. This means the function caller is no longer required to sign such orders.
+
+```java
+function authorizeSigner(
+  address authorizedSigner
+) external
+```
+
+| Param              | Type      | Required | Description                                         |
+| :----------------- | :-------- | :------- | :-------------------------------------------------- |
+| `authorizedSigner` | `address` | required | Address to authorize for signing.                   |
+
+A successful `authorizeSigner` emits an `AuthorizeSigner` event.
 
 ```java
 event AuthorizeSigner(
   address indexed authorizerAddress,
-  address indexed delegateSignerAddress,
-  uint256 expiry
+  address indexed authorizedSigner
 );
 ```
 
-## `revoke`
+| Revert Reason            | Scenario                                                       |
+| :----------------------- | :------------------------------------------------------------------------------------------ |
+| `INVALID_AUTH_SIGNER`      | The `authorizedSigner` and the function caller are the same. |
 
-Revoke the authorization of a delegate account or contract.
+## `revokeSender`
+
+Revoke the sending authorization of a delegate account or contract.
+
+```java
+function revokeSender(
+  address authorizedSender
+) external
+```
+
+| Param              | Type      | Required | Description                                         |
+| :----------------- | :-------- | :------- | :-------------------------------------------------- |
+| `authorizedSender` | `address` | required | Address from which to revoke sending authorization. |
+
+A successful `revokeSender` emits a `RevokeSender` event.
+
+```java
+event RevokeSender(
+  address indexed authorizerAddress,
+  address indexed revokedSender,
+);
+```
+
+## `revokeSigner`
+
+Revoke the signing authorization of a delegate account or contract.
 
 ```java
 function revokeSigner(
-  address _delegateAddress
-) external returns (bool)
+  address authorizedSigner
+) external
 ```
 
-| Param              | Type      | Required | Description                                  |
-| :----------------- | :-------- | :------- | :------------------------------------------- |
-| `_delegateAddress` | `address` | required | Address to remove authorization for signing. |
+| Param              | Type      | Required | Description                                         |
+| :----------------- | :-------- | :------- | :-------------------------------------------------- |
+| `authorizedSigner` | `address` | required | Address from which to revoke signing authorization. |
 
-A successful `revoke` emits a `Revoke` event.
+A successful `revokeSigner` emits a `RevokeSigner` event.
 
 ```java
-event Revoke(
+event RevokeSigner(
   address indexed authorizerAddress,
-  address indexed delegateSenderAddress,
+  address indexed revokedSigner,
 );
 ```
