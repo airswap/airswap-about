@@ -1,4 +1,4 @@
-Wrapper is a shim over the Swap contract. The Swap contract only supports tokens, so for ether (ETH) to be used it must first be wrapped into WETH. Orders can be submitted to the Wrapper, which deals with the wrapping and unwrapping of ETH, as well as passing the Order onwards to the Swap contract. Swaps through the wrapper cannot be performed with authorized senders or blank signatures (See [Swap](types.md) for more detail on these cases). [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/wrapper).
+Wrapper is a shim over the Swap contract. The Swap contract only supports tokens, so for ether (ETH) to be used it must first be wrapped into WETH. Orders can be submitted to the Wrapper, which deals with the wrapping and unwrapping of ETH, as well as passing the Order onwards to the Swap contract. Swaps through the wrapper cannot be performed with authorized senders or blank signatures (See [Swap](swap.md) for more detail on these cases). [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/wrapper).
 
 # Functions
 
