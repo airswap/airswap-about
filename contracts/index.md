@@ -1,14 +1,15 @@
-An Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/index).
+An Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/index).
 
 # Structs
 
-## `Locator`
+## `Entry`
 
 ```java
-struct Locator {
-  address signaller;
+struct Entry {
+  bytes32 locator;
   uint256 score;
-  bytes32 data;
+  address prev;
+  address next;
 }
 ```
 
@@ -28,33 +29,33 @@ Set an Locator on the Index.
 
 ```java
 function setLocator(
-  address _signaller,
-  uint256 _score,
-  bytes32 _data
+  address identifier,
+  uint256 score,
+  bytes32 locator
 ) external onlyOwner
 ```
 
-| Param        | Type      | Description                                  |
-| :----------- | :-------- | :------------------------------------------- |
-| `_score`     | `uint256` | Score for placement in the list.             |
-| `_signaller` | `address` | The account or contract setting the Locator. |
-| `_data`      | `bytes32` | Arbitrary data.                              |
+| Param            | Type      | Description                                         |
+| :--------------- | :-------- | :-------------------------------------------------- |
+| `identifier`     | `address` | On-chain address identifying the owner of a locator.|
+| `score`          | `uint256` | Score for the locator being set.                    |
+| `locator`        | `bytes32` | Locator.                                            |
 
 A successful `setLocator` emits a `SetLocator` event.
 
 ```java
 event SetLocator(
+  address indexed identifier,
   uint256 score,
-  address indexed signaller,
-  bytes32 indexed data
+  bytes32 indexed locator
 );
 ```
 
 ---
 
-| Revert Reason         | Scenario                                        |
-| :-------------------- | :---------------------------------------------- |
-| `LOCATOR_ALREADY_SET` | A Locator by the same signaller is already set. |
+| Revert Reason         | Scenario                                            |
+| :-------------------- | :-------------------------------------------------  |
+| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index.    |
 
 ## `unsetLocator`
 
@@ -62,7 +63,7 @@ Unset a Locator from the Index.
 
 ```java
 function unsetLocator(
-  address _signaller
+  address identifier
 ) external onlyOwner returns (bool) {
 ```
 
@@ -70,38 +71,61 @@ A successful `unsetLocator` emits an `UnsetLocator` event.
 
 ```java
 event UnsetLocator(
-  address indexed signaller
+  address event identifier
 );
 ```
 
-| Param        | Type      | Description                                    |
-| :----------- | :-------- | :--------------------------------------------- |
-| `_signaller` | `address` | The account or contract unsetting the Locator. |
+| Param        | Type      | Description                                          |
+| :----------- | :-------- | :--------------------------------------------------- |
+| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+
+---
+
+| Revert Reason         | Scenario                                               |
+| :-------------------- | :----------------------------------------------------- |
+| `ENTRY_DOES_NOT_EXIST`| This address does not have an Entry on the Index.      |
+
+## `getScore`
+
+Gets the score for a given identifier.
+
+```java
+function getScore(
+  address identifier
+) external view returns (uint256)
+```
+
+| Param        | Type      | Description                                          |
+| :----------- | :-------- | :--------------------------------------------------- |
+| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+
 
 ## `getLocator`
 
-Gets the intent for a given ssender address.
+Gets the locator as bytes32 for a given identifier.
 
 ```java
 function getLocator(
-  address _signaller
-) external view returns (Locator memory)
+  address identifier
+) external view returns (bytes32)
 ```
 
-| Param        | Type      | Description                         |
-| :----------- | :-------- | :---------------------------------- |
-| `_signaller` | `address` | The account or contract to look up. |
+| Param        | Type      | Description                                          |
+| :----------- | :-------- | :--------------------------------------------------- |
+| `identifier` | `address` | On-chain address identifying the owner of a locator. |
 
-## `fetchLocators`
+## `getLocators`
 
-Fetch up to a number of locators from the list.
+Get a Range of Locators.
 
 ```java
-function fetchLocators(
-  uint256 _count
-) external view returns (bytes32[] memory result) {
+function getLocators(
+   address cursor,
+   uint256 limit
+) external view returns (bytes32[] memory locators, uint256[] memory scores, address nextCursor) {
 ```
 
 | Param    | Type      | Description                              |
 | :------- | :-------- | :--------------------------------------- |
-| `_count` | `uint256` | The maximum number of locators to fetch. |
+| `cursor` | `address` | Cursor to start with.                    |
+| `limit`  | `uint256` | Maximum number of locators to return.    |
