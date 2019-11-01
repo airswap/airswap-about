@@ -10,7 +10,7 @@
 
 # Peer-to-Peer
 
-Every participant on the network, whether a [server running](./instant/run-a-maker.md) on the public internet, a user connected through a [web application](./instant/add-to-your-app.md), or a delegated [smart contract](./contracts/delegate.md), is equipped to trade. Some are designed to always provide prices for taking. Some are designed to always request prices and take them. Some, both. Generally, peers can take either side of a trade, depending on their intentions. Many forms of trading can be done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
+Every participant on the trading network, whether a [server running](./instant/run-a-maker.md) on the public internet, a user connected through a [web application](./instant/add-to-your-app.md), a trader connected through a [terminal](https://github.com/airswap/airswap-maker-kit), or a a configured [smart contract](./contracts/delegate.md), is equipped to trade. Some are designed to always provide prices for taking. Some are designed to always request prices and take them. Some, both. Generally, peers can take either side of a trade, depending on their intentions. Many forms of trading can be done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
 
 **For end users** no trading fees, no deposits, and no sign-ups. AirSwap is simple enough to stay intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
 
