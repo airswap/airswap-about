@@ -17,13 +17,16 @@ constructor(
 
 | Param                    | Type      | Description                                             |
 | :----------------------- | :-------- | :------------------------------------------------------ |
-| `swapContract`          | `ISwap`   | Instance of the swap contract used to settle trades.    |
-| `delegateContractOwner`  | `address` | Address of the owner of the sender for rule management. |
-| `delegateTradeWallet`    | `address` | Address of the wallet that holds funds to be traded.    |
+| `delegateSwap`           | `ISwap`   | Swap contract the delegate will deploy with.            |
+| `delegateIndexer`        | `IIndexer`| Indexer contract the delegate will deploy with.         |
+| `delegateContractOwner`  | `address` | Owner of the delegate.                                  |
+| `delegateTradeWallet`    | `address` | Wallet the delegate will trade from.                    |
 
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
+Briefly this examples shows how the priceCoef and priceExp function to compute the trade quantity.
+1 senderToken = priceCoef * 10^(-priceExp) * signerToken
 
 ```java
 function setRule(
@@ -127,7 +130,7 @@ function setRuleAndIntent(
 | `amountToStake` | `uint256` | Amount to stake for an intent.   |
 
 
-A successful `setRuleAndIntent` will emit an `SetRule` event and `Stake` event. It will be an
+A successful `setRuleAndIntent` will emit a `SetRule` event and `Stake` event. It will be an
 all-or-nothing transaction.
 
 ```java
@@ -150,7 +153,7 @@ event Stake(
 
 ## `unsetRuleAndIntent`
 
-Ssets a rule on the delegate and an intent on the indexer.
+Sets a rule on the delegate and an intent on the indexer.
 
 ```java
 function unsetRuleAndIntent(
@@ -186,7 +189,7 @@ event Unstake(
 
 ## `getSignerSideQuote`
 
-Get a quote for the signer side. Often used to get a buy price for \_senderToken.
+Get a quote for the signer side. Often used to get a buy price for \senderToken.
 
 ```java
 function getSignerSideQuote(
@@ -257,7 +260,7 @@ The sender specified on the order must have authorized this contract to swap on 
 ```java
 function provideOrder(
   Types.Order memory order
-) public
+) external
 ```
 
 | Param   | Type                      | Description                                                |
@@ -268,10 +271,10 @@ function provideOrder(
 
 | Revert Reason              | Scenario                                                       |
 | :------------------------  | :------------------------------------------------------------- |
-| `SIGNER_MUST_BE_SENDER`    | Ensure msg.sender is set as the order signer.                  |
-| `INVALID_SENDER_WALLET`    | Ensure sender wallet is set to the tradeWallet.                |
-| `SIGNER_KIND_MUST_BE_ERC20`| Ensure the order.signer.kind is ERC-20.                        |
-| `SENDER_KIND_MUST_BE_ERC20`| Ensure the order.sender.kind is ERC-20.                        |
+| `SIGNER_MUST_BE_SENDER`    | The msg.sender is not set as the order signer.                  |
+| `INVALID_SENDER_WALLET`    | The sender wallet is not set to the tradeWallet.                |
+| `SIGNER_KIND_MUST_BE_ERC20`| The order.signer.kind is not ERC-20.                        |
+| `SENDER_KIND_MUST_BE_ERC20`| The order.sender.kind is ERC-20.                        |
 | `TOKEN_PAIR_INACTIVE`      | There is no rule set for this token pair.                      |
 | `AMOUNT_EXCEEDS_MAX`       | The amount of the trade would exceed the maximum for the rule. |
 | `PRICE_INCORRECT`          | The order is priced incorrectly for the rule.                  |

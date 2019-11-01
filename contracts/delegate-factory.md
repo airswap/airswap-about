@@ -7,7 +7,10 @@ A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://
 Create a new `DelegateFactory` contract.
 
 ```java
-constructor(ISwap factorySwapContract, IIndexer factoryIndexerContract) public
+constructor(
+  ISwap factorySwapContract,
+  IIndexer factoryIndexerContract
+) public
 ```
 
 | Param                    | Type    | Description                                                     |
@@ -28,12 +31,12 @@ function createDelegate(
 
 | Param                    | Type      | Description                                             |
 | :----------------------- | :-------- | :------------------------------------------------------ |
-| `delegateContractOwner`  | `address` | Address of the owner of the sender for rule management. |
+| `delegateContractOwner`  | `address` | Address of the owner of the new delegate contract.      |
 | `delegateTradeWallet`    | `address` | Address of the wallet that holds funds to be traded.    |
 
 ## `has`
 
-Check to see whether the factory has deployed a sender by locator. Implements `ILocatorWhitelist.has`.
+Check to see whether the factory has deployed a delegate by locator. Implements `ILocatorWhitelist.has`.
 
 ```java
 function has(

@@ -1,4 +1,4 @@
-Types is a library contract of protocol structs. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/types).
+Types is a library contract of protocol structs, functions, and constants for the Swap contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/types).
 
 # Structs
 

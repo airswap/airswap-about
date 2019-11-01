@@ -2,7 +2,7 @@ An Index is a list of locators sorted by score. [View the code on GitHub](https:
 
 # Structs
 
-## `Index Entry`
+## `Entry`
 
 ```java
 struct Entry {
@@ -55,7 +55,7 @@ event SetLocator(
 
 | Revert Reason         | Scenario                                         |
 | :-------------------- | :----------------------------------------------  |
-| `ENTRY_ALREADY_EXISTS` | A Locator by the same signaller is already set. |
+| `ENTRY_ALREADY_EXISTS` | An Entry by the same address is already set.    |
 
 ## `unsetLocator`
 
@@ -102,7 +102,7 @@ function getScore(
 
 ## `getLocator`
 
-Gets the intent for a given identifier.
+Gets the locator as bytes32 for a given identifier.
 
 ```java
 function getLocator(
