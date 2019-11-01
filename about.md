@@ -9,7 +9,7 @@ The Swap Protocol has a role in decentralized finance as the “automated escrow
 
 You’ve likely heard the buzz around decentralized trading (DEX) before, especially in the aftershock of the hacks and closures of centralized cryptocurrency exchanges. Rather than dwelling on the dangers of centralized cryptocurrency exchanges, let’s instead focus on the benefits of decentralized trading.
 
-![](../.gitbook/assets/airswap-instant-ribbon)
+![](../.gitbook/assets/airswap-instant-ribbon.png)
 
 Peer-to-peer trading is secure by nature. Transactions are explicitly acknowledged and permitted by you through the use of a personal digital wallet. Security analysts have recognized this, naming AirSwap the #1 most secure DEX in a recent security report.
 AirSwap does not match orders or host an order book. Because orders are peer-to-peer, there are no order collisions, race conditions, price slippage, or front-running prevalent in other decentralized trading designs.
