@@ -1,6 +1,6 @@
 # Add Trader to Your App
 
-[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
+[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-counter trading with no counterparty risk, no deposits, and no fees.
 
 ![](../.gitbook/assets/trader-widget.png)
 
@@ -22,7 +22,7 @@ Pop-up blockers can prevent the widget from loading properly.
 
 ## Display an new order builder
 
-Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](add-to-your-app.md#order) and [cid](add-to-your-app.md#cid) \(ipfs hash\) are passed as arguments.
+Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid \(ipfs hash\) are passed as arguments.
 
 ```javascript
 window.AirSwapTrader.render(
@@ -42,7 +42,7 @@ window.AirSwapTrader.render(
 
 ## Pre-fill values in the order builder
 
-In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](add-to-your-app.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
+In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
 ```javascript
 window.AirSwapTrader.render(
@@ -180,11 +180,6 @@ function onSubmit() {
 }
 ```
 
-| Type    | Parameter                         | Description                 |
-| :------ | :-------------------------------- | :-------------------------- |
-| `order` | [Order](add-to-your-app.md#order) | The order details.          |
-| `cid`   | string                            | The IPFS Hash of the order. |
-
 ### onSwap
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
@@ -206,7 +201,7 @@ Callback function triggered when an error occurs on a trade submission. The user
 
 ```javascript
 function onError(error) {
-    console.log('There was an issue with the trade');
+    console.log('There was an error on trade submission');
     console.log(error);
     ...
 }
