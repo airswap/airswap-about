@@ -25,7 +25,7 @@ constructor(
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
-Briefly this examples shows how the priceCoef and priceExp function to compute the trade quantity.
+Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity.
 1 senderToken = priceCoef * 10^(-priceExp) * signerToken
 
 ```java

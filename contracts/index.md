@@ -53,9 +53,9 @@ event SetLocator(
 
 ---
 
-| Revert Reason         | Scenario                                         |
-| :-------------------- | :----------------------------------------------  |
-| `ENTRY_ALREADY_EXISTS` | An Entry by the same address is already set.    |
+| Revert Reason         | Scenario                                            |
+| :-------------------- | :-------------------------------------------------  |
+| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index.    |
 
 ## `unsetLocator`
 
@@ -81,9 +81,9 @@ event UnsetLocator(
 
 ---
 
-| Revert Reason         | Scenario                                         |
-| :-------------------- | :----------------------------------------------  |
-| `ENTRY_DOES_NOT_EXIST`| A Locator by the same signaller is not set.      |
+| Revert Reason         | Scenario                                               |
+| :-------------------- | :----------------------------------------------------- |
+| `ENTRY_DOES_NOT_EXIST`| This address does not have an Entry on the Index.      |
 
 ## `getScore`
 
