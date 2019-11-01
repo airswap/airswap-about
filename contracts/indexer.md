@@ -55,7 +55,7 @@ function addTokenToBlacklist(
 | :------- | :-------- | :--------------------------------- |
 | `token`  | `address` | Address of the token to blacklist. |
 
-A successul `addTokenToBlacklist` emits a `AddTokenToBlacklist` event.
+A successful `addTokenToBlacklist` emits a `AddTokenToBlacklist` event.
 
 ```java
 event AddTokenToBlacklist(
@@ -75,9 +75,9 @@ function removeTokenFromBlacklist(
 
 | Param    | Type      | Description                         |
 | :------- | :-------- | :---------------------------------- |
-| `_token` | `address` | The address of the token to remove. |
+| `token` | `address` | The address of the token to remove. |
 
-A successul `removeTokenFromBlacklist` emits a `RemoveTokenFromBlacklist` event.
+A successful `removeTokenFromBlacklist` emits a `RemoveTokenFromBlacklist` event.
 
 ```java
 event RemoveTokenFromBlacklist(
