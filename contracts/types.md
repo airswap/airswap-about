@@ -28,8 +28,8 @@ Types is a library contract of protocol structs, functions, and constants for th
 | Param      | Type      | Description                                                                               |
 | :------    | :-------- | :---------------------------------------------------------------------------------------- |
 | signatory  | `address` | Address of the wallet used to sign                                                        |
+| validator  | `address` | Address of the intended swap contract                                                     |
 | version    | `bytes1`  | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version |
 | v          | `uint8`   | `v` value of an ECDSA signature                                                           |
 | r          | `bytes32` | `r` value of an ECDSA signature                                                           |
 | s          | `bytes32` | `s` value of an ECDSA signature                                                           |
-
