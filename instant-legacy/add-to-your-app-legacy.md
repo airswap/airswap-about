@@ -1,11 +1,8 @@
 # Introduction
 
-
 {% hint style="warning" %} We will no longer update AirSwap’s Legacy Widget, but we will continue to support it until our [new widget](./add-to-your-app.md) reaches full feature parity. {% endhint %}
 
-
 ![AirSwap Widget](../.gitbook/assets/widget-legacy.gif)
-
 
 The AirSwap Widget is an embeddable trading frontend that lets your users make ERC20 trades without leaving your application. The [`demo.html`](https://github.com/airswap/developers/blob/master/widget/demo.html) file shows usage of the Widget API on the **Rinkeby** sandbox. Keep in mind there may not be active peers using the sandbox at any given time. Join the AirSwap Developers Telegram group at https://t.me/airswapdevs or the AirSwap Community at https://t.me/airswap for conversation and support.
 
@@ -21,18 +18,21 @@ And navigate to http://localhost:8000/demo.html.
 
 ```html
 <head>
-...
-    <script src="https://cdn.airswap.io/gallery/airswap-trader.js"></script>
-...
+  ...
+  <script src="https://cdn.airswap.io/gallery/airswap-trader.js"></script>
+  ...
 </head>
 ```
 
 ```js
-AirSwap.Trader.render({
+AirSwap.Trader.render(
+  {
     onComplete: function(transactionId) {
-        console.info('Trade complete. Thank you, come again.');
-    }
-}, 'body');
+      console.info('Trade complete. Thank you, come again.')
+    },
+  },
+  'body'
+)
 ```
 
 ## Environments
@@ -42,23 +42,26 @@ By default your widget will connect to the AirSwap `sandbox` environment which l
 ## With Options
 
 ```js
-AirSwap.Trader.render({
+AirSwap.Trader.render(
+  {
     mode: 'buy',
     amount: '10000',
     token: '0x0...',
-    onCancel: function () {
-        console.info('Trade was canceled.');
+    onCancel: function() {
+      console.info('Trade was canceled.')
     },
     onComplete: function(transactionId) {
-        console.info('Trade complete. Thank you, come again.');
-    }
-}, 'body');
+      console.info('Trade complete. Thank you, come again.')
+    },
+  },
+  'body'
+)
 ```
 
 ## JavaScript API
 
 ```js
-AirSwap.Trader.render(options, parent);
+AirSwap.Trader.render(options, parent)
 ```
 
 The `options` argument is an object with parameters listed below. The `parent` argument is a DOM node that lives on the page, optimally the `body` element. Once the widget is closed the element is removed from the DOM.
@@ -97,7 +100,9 @@ A fixed `address` to query a specific counter-party for orders.
 A function called when the user has canceled or dismissed the widget. No arguments.
 
 ```js
-function onCancel() { console.log('Canceled!'); }
+function onCancel() {
+  console.log('Canceled!')
+}
 ```
 
 #### onComplete : `function` - `required`
@@ -105,5 +110,7 @@ function onCancel() { console.log('Canceled!'); }
 Called when the transaction sent to the blockchain has succeeded. The transaction ID is passed as an argument.
 
 ```js
-function onComplete(transactionId) { console.log('Complete!', transactionId); }
+function onComplete(transactionId) {
+  console.log('Complete!', transactionId)
+}
 ```
