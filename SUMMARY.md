@@ -5,14 +5,14 @@
 
 ## Instant
 
+- [Run a Maker](instant-legacy/run-a-maker-legacy.md)
 - [Add to Your App](instant/add-to-your-app.md)
+- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
+
+## Instant (Beta)
+
 - [Run a Maker](instant/run-a-maker.md)
 - [Architecture](instant/architecture.md)
-
-## Instant (Legacy)
-
-- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
-- [Run a Maker (Legacy)](instant-legacy/run-a-maker-legacy.md)
 
 ## Trader
 

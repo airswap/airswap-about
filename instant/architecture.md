@@ -1,5 +1,5 @@
 {% hint style="warning" %}
-This documentation is in the works and subject to change.
+The following system is in beta on Rinkeby.
 {% endhint %}
 
 Under the hood, AirSwap Instant works with a combination of web protocols and smart contracts. There are two kinds of makers in the system, those that run their own HTTP servers to provide liquidity, and those that manage onchain delegates that make trades on their behalf.
@@ -11,7 +11,7 @@ Under the hood, AirSwap Instant works with a combination of web protocols and sm
 The **Web App** calls...
 
 1. `getIntents` on the **Maker [Indexer](../contracts/indexer.md) Contract** and gets back HTTP endpoints.
-2. `getOrder` on each **HTTP [Maker](running-makers.md)** using JSON-RPC over HTTP.
+2. `getOrder` on each **HTTP [Maker](run-a-maker.md)** using JSON-RPC over HTTP.
 3. `swap` on the **[Swap](../contracts/swap.md) Contract** with the order that it wishes to trade.
 
 # Trading with Onchain Delegates\*
