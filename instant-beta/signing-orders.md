@@ -6,7 +6,9 @@ Ethereum uses [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signature
 
 Once hashed, one of two signing methods may be used, either `personalSign` or `signTypedData`. AirSwap signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`). The primary distinction is that in the former, Ethereum wallets prefix the hash with byte `\x19` to stay out of range of valid RLP so that a signature cannot be executed as a transaction. [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) standardizes this prefixing to include existing `personalSign` behavior and [EIP-712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md) implements it for structured data, which makes the data more transparent for the signer.
 
-An AirSwap signature has the following properties:
+# Signature
+
+An AirSwap signature has the following properties.
 
 | Param     | Type      | Description                                                                                                |
 | :-------- | :-------- | :--------------------------------------------------------------------------------------------------------- |
@@ -16,6 +18,8 @@ An AirSwap signature has the following properties:
 | v         | `uint8`   | `v` value of the ECDSA signature                                                                           |
 | r         | `bytes32` | `r` value of the ECDSA signature                                                                           |
 | s         | `bytes32` | `s` value of the ECDSA signature                                                                           |
+
+Each signature should be included on the order it signs, accessible as `order.signature`, to be settled by invoking `swap(order)` on the Swap contract.
 
 # JavaScript
 
