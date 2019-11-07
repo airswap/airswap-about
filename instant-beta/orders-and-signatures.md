@@ -1,7 +1,3 @@
-{% hint style="warning" %}
-The following specification is in beta on Rinkeby.
-{% endhint %}
-
 Each swap is between at least two parties, a `signer` and a `sender`. The `signer` is the party that creates and cryptographically signs an order, and `sender` is the party that sends the order to Ethereum for settlement.
 
 **Authorizations** are for parties that trade on behalf of others. These parties are authorized by an individual to send or sign orders for them. Parties can be wallets (people or programs) or smart contracts.

@@ -4,15 +4,15 @@
 
 ## Instant (Beta)
 
-- [Architecture](instant-beta/architecture.md)
-- [Running Makers](instant-beta/running-makers.md)
-- [Orders and Signatures](instant-beta/orders-and-signatures.md)
+- [Running Makers (Beta)](instant-beta/running-makers.md)
+- [Orders and Signatures (Beta)](instant-beta/orders-and-signatures.md)
+- [Architecture (Beta)](instant-beta/architecture.md)
 
 ## Instant
 
 - [Running Makers](instant/running-makers-legacy.md)
 - [Add to Your App](instant/add-to-your-app.md)
-- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
+- [Add to Your App (Legacy)](instant/add-to-your-app-legacy.md)
 
 ## Trader
 
