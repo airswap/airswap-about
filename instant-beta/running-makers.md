@@ -42,7 +42,7 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
 | `senderToken` | `address` | Token the sender would transfer.            |
 | `signerToken` | `address` | Token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a [Quote](#quote-object) object including the requested `senderParam`.
+A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures#quotes-versus-orders) object including the requested `senderParam`.
 
 ### `getSignerSideQuote`
 
@@ -69,7 +69,7 @@ Given a `senderParam` and token pair, return a complete quote. The `signerParam`
 | `senderToken` | `address` | Token the sender would transfer.            |
 | `signerToken` | `address` | Token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a [Quote](#quote-object) object including the requested `signerParam`. Maximum amounts of tokens you're willing to trade.
+A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures#quotes-versus-orders) object including the requested `signerParam`. Maximum amounts of tokens you're willing to trade.
 
 ### `getMaxQuote`
 
@@ -94,7 +94,7 @@ Given a token pair, return a quote object with the maximum amounts you're willin
 | `senderToken` | `address` | The token the sender would transfer. |
 | `signerToken` | `address` | The token the signer would transfer. |
 
-A successful `getMaxQuote` returns a [Quote](#quote-object) object.
+A successful `getMaxQuote` returns a [Quote](./orders-and-signatures#quotes-versus-orders) object.
 
 ### `getSenderSideOrder`
 
@@ -125,7 +125,7 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
 | `senderWallet`       | `address` | Wallet of the sender.                       |
 | `signatureValidator` | `address` | Swap contract the sender intends to use.    |
 
-A successful `getSenderSideOrder` returns a signed [Order](#order-object) object including the requested `senderParam`.
+A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures#creating-orders) object including the requested `senderParam`.
 
 ### `getSignerSideOrder`
 
@@ -156,7 +156,7 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
 | `senderWallet`       | `address` | The wallet of the sender.                       |
 | `signatureValidator` | `address` | Swap contract the sender intends to use.        |
 
-A successful `getSignerSideOrder` returns a signed [Order](#order-object) object including the requested `signerParam`.
+A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures#creating-orders) object including the requested `signerParam`.
 
 ## Error codes
 
