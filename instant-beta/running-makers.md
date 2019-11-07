@@ -1,10 +1,8 @@
-{% hint style="warning" %}
-The following specification is in beta on Rinkeby. For production maker documentation, [click here](../instant/running-makers-legacy.md).
-{% endhint %}
+Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, the server must be run at a public URL with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. The URL then must be staked on an _indexer_ contract that takers query based on the tokens being traded. To get started, you can either use the Maker Kit or build your own maker.
 
 # Use the Maker Kit
 
-Maker Kit includes tools and examples to help you get started on the AirSwap Network. Interact with indexers, tokens, and other peers.
+Maker Kit includes a reference implementation and set of tools to help you run a maker.
 
 ![](../.gitbook/assets/set-intent-terminal.png)
 
@@ -14,13 +12,9 @@ Maker Kit includes tools and examples to help you get started on the AirSwap Net
 
 ## Terminology
 
-At the liquidity level, a **maker** is a trading party that is generally available to provide pricing and make trades. A **taker** is a trading party that trades one-off or periodically and accepts the pricing of makers. Makers are expected to implement the following methods taking the API role of **signer** in all cases. The following Peer API is implemented by makers via JSON-RPC over HTTP. At the API level, a **signer** is the party that creates and cryptographically signs an order, and a **sender** is the party that sends it to the blockchain for settlement.
+At the liquidity level, a **maker** is a trading party that is generally available to provide pricing and make trades. A **taker** is a trading party that trades one-off or periodically and accepts the pricing of makers. Makers are expected to implement the following methods taking the API role of **signer** in all cases. The following Maker API is implemented by makers via JSON-RPC over HTTP. At the API level, a **signer** is the party that creates and cryptographically signs an order, and a **sender** is the party that sends it to the blockchain for settlement.
 
-## Running a Server
-
-Makers are HTTP servers that implement the following API using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) and [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). To be accessible, the server must be run at a public URL, which is then posted to an indexer contract as "intent to trade" for visibility by prospective counterparties.
-
-## Methods
+## Maker API
 
 ### `getSenderSideQuote`
 
@@ -213,7 +207,9 @@ Indexers are smart contracts used to signal your intent to trade tokens and publ
 
 See the [Indexer Contract](../contracts/indexer.md) for method details. You can interact with Indexer contracts either programmatically or through tools like [AirSwap Maker Kit](https://github.com/airswap/airswap-maker-kit) and [MEW](https://www.myetherwallet.com/).
 
-# Helpful Links for Testing on Rinkeby
+# Helpful for Testing
+
+The following resources are helpful for testing on Rinkeby.
 
 - **ETH** to pay for transactions - [ETH Faucet](https://faucet.rinkeby.io/)
 - **WETH** for trading - `0xc778417e063141139fce010982780140aa0cd5ab` [Etherscan](https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab)

@@ -1,7 +1,3 @@
-{% hint style="warning" %}
-The following specification is in beta on Rinkeby.
-{% endhint %}
-
 Under the hood, AirSwap Instant works with a combination of web protocols and smart contracts. There are two kinds of makers in the system, those that run their own HTTP servers to provide liquidity, and those that manage onchain delegates that make trades on their behalf.
 
 ![](../.gitbook/assets/architecture.png)
