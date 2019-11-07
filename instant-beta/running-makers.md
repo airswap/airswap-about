@@ -194,24 +194,91 @@ We have allocated the following range for Swap Protocol errors:
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.
 
-# Interacting with Indexers
+# Indexer API
 
-Indexers are smart contracts used to signal your intent to trade tokens and publish the URL at which your maker is running.
+Indexers are smart contracts used to signal your intent to trade and publish the URL at which your maker is running. You can interact with indexer contracts either programmatically or through tools like [AirSwap Maker Kit](https://github.com/airswap/airswap-maker-kit) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../contracts/indexer.md) for complete method details.
 
-| Function to call | When to call it                                                                                                                                |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| `setIntent`      | Start receiving requests. Sets a token pair and location of your server. Stake AirSwap Tokens (AST) to be ranked higher for better visibility. |
-| `unsetIntent`    | Stop receiving requests. Unsets a token pair. Any staked AST will be returned.                                                                 |
-| `getLocators`    | Get a list of all makers trading a token pair.                                                                                                 |
-| `createIndex`    | If your token pair is not on the Indexer it must be created.                                                                                   |
+## `createIndex`
 
-See the [Indexer Contract](../contracts/indexer.md) for method details. You can interact with Indexer contracts either programmatically or through tools like [AirSwap Maker Kit](https://github.com/airswap/airswap-maker-kit) and [MEW](https://www.myetherwallet.com/).
+Each token pair must have an `Index` before calling `setIntent`. If the requested `Index` already exists, the function returns its address.
+
+```java
+function createIndex(
+  address signerToken,
+  address senderToken
+) external returns (address)
+```
+
+| Param         | Type      | Description                                                |
+| :------------ | :-------- | :--------------------------------------------------------- |
+| `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
+| `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
+
+## `setIntent`
+
+Stake tokens to the indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
+
+```java
+function setIntent(
+  address signerToken,
+  address senderToken,
+  uint256 stakingAmount,
+  bytes32 locator
+) external
+```
+
+| Param           | Type      | Description                                             |
+| :-------------- | :-------- | :------------------------------------------------------ |
+| `signerToken`   | `address` | Signer token of the Index being staked.                 |
+| `senderToken`   | `address` | Sender token of the Index being staked.                 |
+| `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
+| `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
+
+## `unsetIntent`
+
+Unset an intent to trade and return staked tokens to the sender.
+
+```java
+function unsetIntent(
+  address signerToken,
+  address senderToken
+) external
+```
+
+| Param         | Type      | Description                               |
+| :------------ | :-------- | :---------------------------------------- |
+| `signerToken` | `address` | Signer token of the Index being unstaked. |
+| `senderToken` | `address` | Sender token of the Index being unstaked. |
+
+## `getLocators`
+
+Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
+
+```java
+function getLocators(
+  address signerToken,
+  address senderToken,
+  address cursor,
+  uint256 limit
+) external view returns (
+  bytes32[] memory locators,
+  uint256[] memory scores,
+  address nextCursor
+) {
+```
+
+| Param         | Type      | Description                                     |
+| :------------ | :-------- | :---------------------------------------------- |
+| `signerToken` | `address` | Address of the token that the signer transfers. |
+| `senderToken` | `address` | Address of the token that the sender transfers. |
+| `cursor`      | `address` | Address of the user to start from in the list.  |
+| `limit`       | `uint256` | Maximum number of items to return.              |
 
 # Helpful for Testing
 
-The following resources are helpful for testing on Rinkeby.
+The following resources are helpful for testing on **Rinkeby**.
 
-- **ETH** to pay for transactions - [ETH Faucet](https://faucet.rinkeby.io/)
+- **ETH** to pay for transactions - [Faucet](https://faucet.rinkeby.io/)
 - **WETH** for trading - `0xc778417e063141139fce010982780140aa0cd5ab` [Etherscan](https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab)
 - **DAI** for trading - `0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea` [Etherscan](https://rinkeby.etherscan.io/address/0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea)
-- **AST** for staking - [AST Faucet](https://ast-faucet-ui.development.airswap.io/)
+- **AST** for staking - `0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8` [Etherscan](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) / [Faucet](https://ast-faucet-ui.development.airswap.io/)
