@@ -6,6 +6,7 @@
 ## Instant (Beta)
 
 - [Running Makers](instant-beta/running-makers.md)
+- [Signing Orders](instant-beta/signing-orders.md)
 - [Architecture](instant-beta/architecture.md)
 
 ## Instant
