@@ -8,27 +8,27 @@ Each swap is between at least two parties, a `signer` and a `sender`. The `signe
 
 An AirSwap `Order` has the following properties.
 
-| Param     | Type        | Description                                     |
-| :-------- | :---------- | :---------------------------------------------- |
-| nonce     | `uint256`   | Unique per signer and should be sequential      |
-| expiry    | `uint256`   | Expiry in seconds since 1 January 1970          |
-| signer    | `Party`     | Party to the trade that sets terms              |
-| sender    | `Party`     | Party to the trade that accepts terms           |
-| affiliate | `Party`     | Party compensated for facilitating \(optional\) |
-| signature | `Signature` | Signature of the order, described below         |
+| Param     | Type        | Description                                   |
+| :-------- | :---------- | :-------------------------------------------- |
+| nonce     | `uint256`   | Unique per signer and should be sequential    |
+| expiry    | `uint256`   | Expiry in seconds since 1 January 1970        |
+| signer    | `Party`     | Party to the trade that sets terms            |
+| sender    | `Party`     | Party to the trade that accepts terms         |
+| affiliate | `Party`     | Party compensated for facilitating (optional) |
+| signature | `Signature` | Signature of the order, described below       |
 
-Each `Party` on an order has the following properties.
+Each `Party` has the following properties.
 
-| Param  | Type      | Description                                                                                                                      |
-| :----- | :-------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| kind   | `bytes4`  | Either `0x277f8169` (ERC-20) or `0x80ac58cd` (ERC-721) ([EIP-165](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md)) |
-| wallet | `address` | Wallet address of the party                                                                                                      |
-| token  | `address` | Contract address of the token                                                                                                    |
-| param  | `uint256` | Amount (ERC-20) or ID (ERC-721)                                                                                                  |
+| Param  | Type      | Description                                     |
+| :----- | :-------- | :---------------------------------------------- |
+| kind   | `bytes4`  | `0x277f8169` (ERC-20) or `0x80ac58cd` (ERC-721) |
+| wallet | `address` | Wallet address of the party                     |
+| token  | `address` | Contract address of the token                   |
+| param  | `uint256` | Amount (ERC-20) or ID (ERC-721)                 |
 
 These values correlate to the structs in [Types](../contracts/types.md).
 
-**Example**
+## Example
 
 ```json
 {
