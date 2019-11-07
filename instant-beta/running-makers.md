@@ -194,11 +194,11 @@ We have allocated the following range for Swap Protocol errors:
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.
 
-# Indexer API
+## Indexer API
 
 Indexers are smart contracts used to signal your intent to trade and publish the URL at which your maker is running. You can interact with indexer contracts either programmatically or through tools like [AirSwap Maker Kit](https://github.com/airswap/airswap-maker-kit) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../contracts/indexer.md) for complete method details.
 
-## `createIndex`
+### `createIndex`
 
 Each token pair must have an `Index` before calling `setIntent`. If the requested `Index` already exists, the function returns its address.
 
@@ -214,7 +214,7 @@ function createIndex(
 | `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
 | `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
 
-## `setIntent`
+### `setIntent`
 
 Stake tokens to the indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
 
@@ -234,7 +234,7 @@ function setIntent(
 | `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
 | `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
-## `unsetIntent`
+### `unsetIntent`
 
 Unset an intent to trade and return staked tokens to the sender.
 
@@ -250,7 +250,7 @@ function unsetIntent(
 | `signerToken` | `address` | Signer token of the Index being unstaked. |
 | `senderToken` | `address` | Sender token of the Index being unstaked. |
 
-## `getLocators`
+### `getLocators`
 
 Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
 
