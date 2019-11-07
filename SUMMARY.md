@@ -1,13 +1,12 @@
 # Table of Contents
 
 - [Welcome](README.md)
-- [About](about.md)
 
 ## Instant (Beta)
 
-- [Running Makers](instant-beta/running-makers.md)
-- [Signing Orders](instant-beta/signing-orders.md)
 - [Architecture](instant-beta/architecture.md)
+- [Running Makers](instant-beta/running-makers.md)
+- [Orders and Signatures](instant-beta/orders-and-signatures.md)
 
 ## Instant
 
