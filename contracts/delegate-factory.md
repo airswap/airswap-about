@@ -29,10 +29,10 @@ function createDelegate(
 ) external returns (address delegateContractAddress)
 ```
 
-| Param                    | Type      | Description                                             |
-| :----------------------- | :-------- | :------------------------------------------------------ |
-| `delegateContractOwner`  | `address` | Address of the owner of the new delegate contract.      |
-| `delegateTradeWallet`    | `address` | Address of the wallet that holds funds to be traded.    |
+| Param                   | Type      | Description                                          |
+| :---------------------- | :-------- | :--------------------------------------------------- |
+| `delegateContractOwner` | `address` | Address of the owner of the new delegate contract.   |
+| `delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded. |
 
 ## `has`
 
@@ -44,6 +44,6 @@ function has(
 ) external view returns (bool)
 ```
 
-| Param      | Type      | Description                                                                |
-| :--------- | :-------- | :------------------------------------------------------------------------- |
-| `locator`  | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |
+| Param     | Type      | Description                                                                |
+| :-------- | :-------- | :------------------------------------------------------------------------- |
+| `locator` | `bytes32` | The locator in question. Expects a contract address in the first 20 bytes. |

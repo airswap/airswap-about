@@ -13,8 +13,8 @@ constructor(
 ) public
 ```
 
-| Param           | Type      | Description                                                |
-| :-------------- | :-------- | :--------------------------------------------------------- |
+| Param                 | Type      | Description                                          |
+| :-------------------- | :-------- | :--------------------------------------------------- |
 | `wrapperSwapContract` | `address` | Address of the Swap contract to settle trades.       |
 | `wrapperWethContract` | `address` | Address of the wrapped ether (WETH) contract to use. |
 
@@ -28,9 +28,9 @@ function swap(
 ) external payable
 ```
 
-| Param    | Type    | Description                                     |
-| :------- | :------ | :---------------------------------------------- |
-| `order ` | `Order` | Order struct as specified in [Types](types.md). |
+| Param   | Type    | Description                                     |
+| :------ | :------ | :---------------------------------------------- |
+| `order` | `Order` | Order struct as specified in [Types](types.md). |
 
 ---
 
@@ -43,9 +43,9 @@ function swap(
 
 ---
 
-| Revert Reason          | Scenario                                                                     |
-| :--------------------- | :--------------------------------------------------------------------------- |
+| Revert Reason                     | Scenario                                                                   |
+| :-------------------------------- | :------------------------------------------------------------------------- |
 | `MSG_SENDER_MUST_BE_ORDER_SENDER` | Order has been sent by an account that is not the order's `sender.wallet`. |
-| `SIGNATURE_MUST_BE_SENT` | The signature field is blank. This is not allowed on the Wrapper.          |
-| `VALUE_MUST_BE_SENT`   | No ETH was provided for an order that was expecting ETH to wrap.             |
-| `VALUE_MUST_BE_ZERO`   | ETH was provided for an order that was not expecting ETH to wrap.            |
+| `SIGNATURE_MUST_BE_SENT`          | The signature field is blank. This is not allowed on the Wrapper.          |
+| `VALUE_MUST_BE_SENT`              | No ETH was provided for an order that was expecting ETH to wrap.           |
+| `VALUE_MUST_BE_ZERO`              | ETH was provided for an order that was not expecting ETH to wrap.          |

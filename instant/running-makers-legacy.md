@@ -1,6 +1,10 @@
+{% hint style="warning" %}
+The following system will be soon deprecated in favor of the [new architecture](../instant/run-a-maker.md).
+{% endhint %}
+
 ## Maker Tutorial
 
-In Concepts, we learned about Makers and Takers and how they interact with one another using dApps and APIs. We looked at the Indexer and learned about Intents. In this tutorial, you'll learn how to put together these concepts in order to provide liquidity on the AirSwap network. Over the course of this tutorial, you'll learn how to:
+Over the course of this tutorial, you'll learn how to:
 
 - Authenticate with the AirSwap Websocket
 - Create Intents

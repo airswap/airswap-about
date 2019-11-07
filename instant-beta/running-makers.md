@@ -1,5 +1,5 @@
 {% hint style="warning" %}
-The following system is in beta on Rinkeby. For production maker documentation, [click here](../instant-legacy/run-a-maker-legacy.md).
+The following system is in beta on Rinkeby. For production maker documentation, [click here](../instant/running-makers-legacy.md).
 {% endhint %}
 
 # Use the Maker Kit
@@ -33,19 +33,20 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
   "jsonrpc": "2.0",
   "method": "getSenderSideQuote",
   "params": {
-    "signerParam": "100000000",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "signerParam": "100000000",
+    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
   },
   "id": "123"
 }
 ```
 
-| Param         | Type      | Description                                     |
-| :------------ | :-------- | :---------------------------------------------- |
-| `signerParam` | `uint256` | The amount of ERC-20 the signer would transfer. |
-| `senderToken` | `address` | The token the sender would transfer.            |
-| `signerToken` | `address` | The token the signer would transfer.            |
+| Param         | Type      | Description                                 |
+| :------------ | :-------- | :------------------------------------------ |
+| `signerParam` | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `senderToken` | `address` | Token the sender would transfer.            |
+| `signerToken` | `address` | Token the signer would transfer.            |
 
 A successful `getSenderSideQuote` returns a [Quote](#quote-object) object including the requested `senderParam`.
 
@@ -60,19 +61,19 @@ Given a `senderParam` and token pair, return a complete quote. The `signerParam`
   "jsonrpc": "2.0",
   "method": "getSignerSideQuote",
   "params": {
-    "senderParam": "100000000",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "senderParam": "100000000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
   },
   "id": "123"
 }
 ```
 
-| Param         | Type      | Description                                     |
-| :------------ | :-------- | :---------------------------------------------- |
-| `senderParam` | `uint256` | The amount of ERC-20 the sender would transfer. |
-| `senderToken` | `address` | The token the sender would transfer.            |
-| `signerToken` | `address` | The token the signer would transfer.            |
+| Param         | Type      | Description                                 |
+| :------------ | :-------- | :------------------------------------------ |
+| `senderParam` | `uint256` | Amount of ERC-20 the sender would transfer. |
+| `senderToken` | `address` | Token the sender would transfer.            |
+| `signerToken` | `address` | Token the signer would transfer.            |
 
 A successful `getSignerSideQuote` returns a [Quote](#quote-object) object including the requested `signerParam`. Maximum amounts of tokens you're willing to trade.
 
@@ -115,18 +116,20 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
     "signerParam": "10000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
+    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
   },
   "id": "123"
 }
 ```
 
-| Param          | Type      | Description                                     |
-| :------------- | :-------- | :---------------------------------------------- |
-| `signerParam`  | `uint256` | The amount of ERC-20 the signer would transfer. |
-| `signerToken`  | `address` | The token the signer would transfer.            |
-| `senderToken`  | `address` | The token the sender would transfer.            |
-| `senderWallet` | `address` | The wallet of the sender.                       |
+| Param                | Type      | Description                                 |
+| :------------------- | :-------- | :------------------------------------------ |
+| `signerParam`        | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `signerToken`        | `address` | Token the signer would transfer.            |
+| `senderToken`        | `address` | Token the sender would transfer.            |
+| `senderWallet`       | `address` | Wallet of the sender.                       |
+| `signatureValidator` | `address` | Swap contract the sender intends to use.    |
 
 A successful `getSenderSideOrder` returns a signed [Order](#order-object) object including the requested `senderParam`.
 
@@ -141,21 +144,23 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
   "jsonrpc": "2.0",
   "method": "getSignerSideOrder",
   "params": {
-    "senderParam": "100000000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
+    "senderParam": "100000000",
+    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
   },
   "id": "123"
 }
 ```
 
-| Param          | Type      | Description                                     |
-| :------------- | :-------- | :---------------------------------------------- |
-| `senderParam`  | `uint256` | The amount of ERC-20 the sender would transfer. |
-| `signerToken`  | `address` | The token the signer would transfer.            |
-| `senderToken`  | `address` | The token the sender would transfer.            |
-| `senderWallet` | `address` | The wallet of the sender.                       |
+| Param                | Type      | Description                                     |
+| :------------------- | :-------- | :---------------------------------------------- |
+| `senderParam`        | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `signerToken`        | `address` | The token the signer would transfer.            |
+| `senderToken`        | `address` | The token the sender would transfer.            |
+| `senderWallet`       | `address` | The wallet of the sender.                       |
+| `signatureValidator` | `address` | Swap contract the sender intends to use.        |
 
 A successful `getSignerSideOrder` returns a signed [Order](#order-object) object including the requested `signerParam`.
 
@@ -197,7 +202,7 @@ We have allocated the following range for Swap Protocol errors:
 
 # Interacting with Indexers
 
-Indexers are smart contracts used to signal your intent to trade tokens and the URL at which your maker is running.
+Indexers are smart contracts used to signal your intent to trade tokens and publish the URL at which your maker is running.
 
 | Function to call | When to call it                                                                                                                                |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -261,6 +266,7 @@ Orders are full structures that include `wallet` for `signer` and `sender`, an `
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+    "validator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
     "version": "0x45",
     "v": "28",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
@@ -270,6 +276,8 @@ Orders are full structures that include `wallet` for `signer` and `sender`, an `
 ```
 
 These values correlate to the structs in [Types](../contracts/types.md).
+
+# Signatures
 
 # Representation Formats
 
@@ -305,6 +313,7 @@ The nested format makes parameters available by dot syntax. For example, `signer
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+    "validator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
     "version": "0x45",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
     "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
@@ -335,7 +344,8 @@ The flat format of an order collapses the tree structure by concatenating each v
   "affiliateToken": "0x0000000000000000000000000000000000000000",
   "affiliateParam": "0",
   "affiliateKind": "0x277f8169",
-  "signatureSigner": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+  "signatureSignatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+  "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
   "signatureVersion": "0x45",
   "signatureR": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
   "signatureS": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",

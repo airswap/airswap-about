@@ -12,9 +12,9 @@ constructor(
 ) public
 ```
 
-| Param                 | Type      | Description                                        |
-| :-------------------- | :-------- | :------------------------------------------------- |
-| `indexerStakingToken` | `address` | Address of the token required for staking.         |
+| Param                 | Type      | Description                                |
+| :-------------------- | :-------- | :----------------------------------------- |
+| `indexerStakingToken` | `address` | Address of the token required for staking. |
 
 ## `createIndex`
 
@@ -27,10 +27,10 @@ function createIndex(
 ) external returns (address)
 ```
 
-| Param          | Type      | Description                                                |
-| :------------- | :-------- | :--------------------------------------------------------- |
-| `signerToken`  | `address` | Address of the token transferred from a signer in a trade. |
-| `senderToken`  | `address` | Address of the token transferred from a sender in a trade. |
+| Param         | Type      | Description                                                |
+| :------------ | :-------- | :--------------------------------------------------------- |
+| `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
+| `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
 
 When a new `Index` is deployed, `createIndex` emits a `CreateIndex` event.
 
@@ -51,9 +51,9 @@ function addTokenToBlacklist(
 ) external onlyOwner
 ```
 
-| Param    | Type      | Description                        |
-| :------- | :-------- | :--------------------------------- |
-| `token`  | `address` | Address of the token to blacklist. |
+| Param   | Type      | Description                        |
+| :------ | :-------- | :--------------------------------- |
+| `token` | `address` | Address of the token to blacklist. |
 
 A successful `addTokenToBlacklist` emits a `AddTokenToBlacklist` event.
 
@@ -73,8 +73,8 @@ function removeTokenFromBlacklist(
 ) external onlyOwner
 ```
 
-| Param    | Type      | Description                         |
-| :------- | :-------- | :---------------------------------- |
+| Param   | Type      | Description                         |
+| :------ | :-------- | :---------------------------------- |
 | `token` | `address` | The address of the token to remove. |
 
 A successful `removeTokenFromBlacklist` emits a `RemoveTokenFromBlacklist` event.
@@ -98,12 +98,12 @@ function setIntent(
 ) external
 ```
 
-| Param           | Type      | Description                                                     |
-| :-------------- | :-------- | :-------------------------------------------------------------- |
-| `signerToken`   | `address` | Signer token of the Index being staked.                         |
-| `senderToken`   | `address` | Sender token of the Index being staked.                         |
-| `stakingAmount` | `uint256` | Amount of stakingToken to stake.                                |
-| `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes.         |
+| Param           | Type      | Description                                             |
+| :-------------- | :-------- | :------------------------------------------------------ |
+| `signerToken`   | `address` | Signer token of the Index being staked.                 |
+| `senderToken`   | `address` | Sender token of the Index being staked.                 |
+| `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
+| `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
 A successful `setIntent` emits a `Stake` event. The underlying `Index` emits an `SetLocator` event.
 
@@ -118,13 +118,13 @@ event Stake(
 
 ---
 
-| Revert Reason             | Scenario                                    |
-| :------------------------ | :------------------------------------------ |
-| `INDEX_DOES_NOT_EXIST`    | There is no index for the token pair.       |
-| `LOCATOR_NOT_WHITELISTED` | The locator was not found on the whitelist. |
-| `PAIR_IS_BLACKLISTED`     | One or both of the tokens are blacklisted.  |
-| `UNABLE_TO_STAKE`         | The staking amount was not transferred.     |
-| `ENTRY_ALREADY_EXISTS`    | Entry does not exist for the message sender.   |
+| Revert Reason             | Scenario                                     |
+| :------------------------ | :------------------------------------------- |
+| `INDEX_DOES_NOT_EXIST`    | There is no index for the token pair.        |
+| `LOCATOR_NOT_WHITELISTED` | The locator was not found on the whitelist.  |
+| `PAIR_IS_BLACKLISTED`     | One or both of the tokens are blacklisted.   |
+| `UNABLE_TO_STAKE`         | The staking amount was not transferred.      |
+| `ENTRY_ALREADY_EXISTS`    | Entry does not exist for the message sender. |
 
 ## `unsetIntent`
 
@@ -137,10 +137,10 @@ function unsetIntent(
 ) external
 ```
 
-| Param          | Type      | Description                                       |
-| :------------- | :-------- | :------------------------------------------------ |
-| `signerToken`   | `address` | Signer token of the Index being unstaked.        |
-| `senderToken`   | `address` | Sender token of the Index being unstaked.        |
+| Param         | Type      | Description                               |
+| :------------ | :-------- | :---------------------------------------- |
+| `signerToken` | `address` | Signer token of the Index being unstaked. |
+| `senderToken` | `address` | Sender token of the Index being unstaked. |
 
 A successful `unsetIntent` emits an `Unstake` event. The underlying `Index` emits an `UnsetLocator` event.
 
@@ -155,10 +155,10 @@ event Unstake(
 
 ---
 
-| Revert Reason            | Scenario                                       |
-| :----------------------- | :--------------------------------------------- |
-| `INDEX_DOES_NOT_EXIST`   | There is no Index for the token pair.          |
-| `ENTRY_DOES_NOT_EXIST`   | Entry does not exist for the message sender.   |
+| Revert Reason          | Scenario                                     |
+| :--------------------- | :------------------------------------------- |
+| `INDEX_DOES_NOT_EXIST` | There is no Index for the token pair.        |
+| `ENTRY_DOES_NOT_EXIST` | Entry does not exist for the message sender. |
 
 ## `getLocators`
 
@@ -177,12 +177,12 @@ function getLocators(
 ) {
 ```
 
-| Param          | Type      | Description                                     |
-| :------------- | :-------- | :---------------------------------------------- |
-| `signerToken`  | `address` | Address of the token that the signer transfers. |
-| `senderToken`  | `address` | Address of the token that the sender transfers. |
-| `cursor`       | `address` | Address of the user to start from in the list.  |
-| `limit`        | `uint256` | Maximum number of items to return.              |
+| Param         | Type      | Description                                     |
+| :------------ | :-------- | :---------------------------------------------- |
+| `signerToken` | `address` | Address of the token that the signer transfers. |
+| `senderToken` | `address` | Address of the token that the sender transfers. |
+| `cursor`      | `address` | Address of the user to start from in the list.  |
+| `limit`       | `uint256` | Maximum number of items to return.              |
 
 ## `getStakedAmount`
 
@@ -196,8 +196,8 @@ function getStakedAmount(
 ) public view returns (uint256 stakedAmount) {
 ```
 
-| Param          | Type      | Description                                      |
-| :------------- | :-------- | :----------------------------------------------- |
-| `user`         | `address` | The user whose stake amount is requested.        |
-| `signerToken`  | `address` | The signer token of the Index they've staked on. |
-| `senderToken`  | `address` | The sender token of the Index they've staked on. |
+| Param         | Type      | Description                                      |
+| :------------ | :-------- | :----------------------------------------------- |
+| `user`        | `address` | The user whose stake amount is requested.        |
+| `signerToken` | `address` | The signer token of the Index they've staked on. |
+| `senderToken` | `address` | The sender token of the Index they've staked on. |

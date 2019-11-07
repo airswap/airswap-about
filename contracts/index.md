@@ -35,11 +35,11 @@ function setLocator(
 ) external onlyOwner
 ```
 
-| Param            | Type      | Description                                         |
-| :--------------- | :-------- | :-------------------------------------------------- |
-| `identifier`     | `address` | On-chain address identifying the owner of a locator.|
-| `score`          | `uint256` | Score for the locator being set.                    |
-| `locator`        | `bytes32` | Locator.                                            |
+| Param        | Type      | Description                                          |
+| :----------- | :-------- | :--------------------------------------------------- |
+| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+| `score`      | `uint256` | Score for the locator being set.                     |
+| `locator`    | `bytes32` | Locator.                                             |
 
 A successful `setLocator` emits a `SetLocator` event.
 
@@ -53,9 +53,9 @@ event SetLocator(
 
 ---
 
-| Revert Reason         | Scenario                                            |
-| :-------------------- | :-------------------------------------------------  |
-| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index.    |
+| Revert Reason          | Scenario                                        |
+| :--------------------- | :---------------------------------------------- |
+| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index. |
 
 ## `unsetLocator`
 
@@ -81,9 +81,9 @@ event UnsetLocator(
 
 ---
 
-| Revert Reason         | Scenario                                               |
-| :-------------------- | :----------------------------------------------------- |
-| `ENTRY_DOES_NOT_EXIST`| This address does not have an Entry on the Index.      |
+| Revert Reason          | Scenario                                          |
+| :--------------------- | :------------------------------------------------ |
+| `ENTRY_DOES_NOT_EXIST` | This address does not have an Entry on the Index. |
 
 ## `getScore`
 
@@ -98,7 +98,6 @@ function getScore(
 | Param        | Type      | Description                                          |
 | :----------- | :-------- | :--------------------------------------------------- |
 | `identifier` | `address` | On-chain address identifying the owner of a locator. |
-
 
 ## `getLocator`
 
@@ -125,7 +124,7 @@ function getLocators(
 ) external view returns (bytes32[] memory locators, uint256[] memory scores, address nextCursor) {
 ```
 
-| Param    | Type      | Description                              |
-| :------- | :-------- | :--------------------------------------- |
-| `cursor` | `address` | Cursor to start with.                    |
-| `limit`  | `uint256` | Maximum number of locators to return.    |
+| Param    | Type      | Description                           |
+| :------- | :-------- | :------------------------------------ |
+| `cursor` | `address` | Cursor to start with.                 |
+| `limit`  | `uint256` | Maximum number of locators to return. |

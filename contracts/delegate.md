@@ -15,18 +15,18 @@ constructor(
 ) public
 ```
 
-| Param                    | Type      | Description                                             |
-| :----------------------- | :-------- | :------------------------------------------------------ |
-| `delegateSwap`           | `ISwap`   | Swap contract the delegate will deploy with.            |
-| `delegateIndexer`        | `IIndexer`| Indexer contract the delegate will deploy with.         |
-| `delegateContractOwner`  | `address` | Owner of the delegate.                                  |
-| `delegateTradeWallet`    | `address` | Wallet the delegate will trade from.                    |
+| Param                   | Type       | Description                                     |
+| :---------------------- | :--------- | :---------------------------------------------- |
+| `delegateSwap`          | `ISwap`    | Swap contract the delegate will deploy with.    |
+| `delegateIndexer`       | `IIndexer` | Indexer contract the delegate will deploy with. |
+| `delegateContractOwner` | `address`  | Owner of the delegate.                          |
+| `delegateTradeWallet`   | `address`  | Wallet the delegate will trade from.            |
 
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
 Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity.
-1 senderToken = priceCoef * 10^(-priceExp) * signerToken
+1 senderToken = priceCoef _ 10^(-priceExp) _ signerToken
 
 ```java
 function setRule(
@@ -38,8 +38,8 @@ function setRule(
 ) external onlyOwner
 ```
 
-| Param              | Type      | Description                                                    |
-| :----------------- | :-------- | :------------------------------------------------------------- |
+| Param             | Type      | Description                                                    |
+| :---------------- | :-------- | :------------------------------------------------------------- |
 | `senderToken`     | `address` | The token the sender would send.                               |
 | `signerToken`     | `address` | The token the signer would send.                               |
 | `maxSenderAmount` | `uint256` | The maximum amount of token the sender would send.             |
@@ -95,8 +95,8 @@ function unsetRule(
 ) external onlyOwner
 ```
 
-| Param          | Type      | Description                      |
-| :------------- | :-------- | :------------------------------- |
+| Param         | Type      | Description                      |
+| :------------ | :-------- | :------------------------------- |
 | `senderToken` | `address` | The token the sender would send. |
 | `signerToken` | `address` | The token the signer would send. |
 
@@ -126,9 +126,8 @@ function setRuleAndIntent(
 | :-------------- | :-------- | :------------------------------- |
 | `senderToken`   | `address` | The token the sender would send. |
 | `signerToken`   | `address` | The token the signer would send. |
-| `rule`          |  `Rule`   | Rule to set on a delegate.       |
+| `rule`          | `Rule`    | Rule to set on a delegate.       |
 | `amountToStake` | `uint256` | Amount to stake for an intent.   |
-
 
 A successful `setRuleAndIntent` will emit a `SetRule` event and `Stake` event. It will be an
 all-or-nothing transaction.
@@ -162,11 +161,10 @@ function unsetRuleAndIntent(
 ) external onlyOwner
 ```
 
-| Param           | Type      | Description                      |
-| :-------------- | :-------- | :------------------------------- |
-| `senderToken`   | `address` | The token the sender would send. |
-| `signerToken`   | `address` | The token the signer would send. |
-
+| Param         | Type      | Description                      |
+| :------------ | :-------- | :------------------------------- |
+| `senderToken` | `address` | The token the sender would send. |
+| `signerToken` | `address` | The token the signer would send. |
 
 A successful `unsetRuleAndIntent` will emit an `UnsetRule` event and `Unstake` event. It will be an
 all-or-nothing transaction.
@@ -186,7 +184,6 @@ event Unstake(
 );
 ```
 
-
 ## `getSignerSideQuote`
 
 Get a quote for the signer side. Often used to get a buy price for \senderToken.
@@ -201,12 +198,11 @@ function getSignerSideQuote(
 )
 ```
 
-| Param          | Type      | Description                                           |
-| :------------- | :-------- | :---------------------------------------------------- |
-| `senderParam` | `uint256` | The amount of ERC-20 token the sender would send.      |
-| `senderToken` | `address` | The address of an ERC-20 token the sender would send.  |
-| `signerToken` | `address` | The address of an ERC-20 token the signer would send.  |
-
+| Param         | Type      | Description                                           |
+| :------------ | :-------- | :---------------------------------------------------- |
+| `senderParam` | `uint256` | The amount of ERC-20 token the sender would send.     |
+| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
 ## `getSenderSideQuote`
 
@@ -222,12 +218,11 @@ function getSenderSideQuote(
 )
 ```
 
-| Param          | Type      | Description                                           |
-| :------------- | :-------- | :---------------------------------------------------- |
-| `signerParam` | `uint256` | The amount of ERC-20 token the signer would send.      |
-| `signerToken` | `address` | The address of an ERC-20 token the signer would send.  |
-| `senderToken` | `address` | The address of an ERC-20 token the sender would send.  |
-
+| Param         | Type      | Description                                           |
+| :------------ | :-------- | :---------------------------------------------------- |
+| `signerParam` | `uint256` | The amount of ERC-20 token the signer would send.     |
+| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
+| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
 
 ## `getMaxQuote`
 
@@ -243,11 +238,10 @@ function getMaxQuote(
 )
 ```
 
-| Param          | Type      | Description                                           |
-| :------------- | :-------- | :---------------------------------------------------- |
-| `senderToken` | `address` | The address of an ERC-20 token the sender would send.  |
-| `signerToken` | `address` | The address of an ERC-20 token the signer would send.  |
-
+| Param         | Type      | Description                                           |
+| :------------ | :-------- | :---------------------------------------------------- |
+| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
 ## `provideOrder`
 
@@ -269,12 +263,12 @@ function provideOrder(
 
 ---
 
-| Revert Reason              | Scenario                                                       |
-| :------------------------  | :------------------------------------------------------------- |
-| `SIGNER_MUST_BE_SENDER`    | The msg.sender is not set as the order signer.                  |
-| `INVALID_SENDER_WALLET`    | The sender wallet is not set to the tradeWallet.                |
-| `SIGNER_KIND_MUST_BE_ERC20`| The order.signer.kind is not ERC-20.                        |
-| `SENDER_KIND_MUST_BE_ERC20`| The order.sender.kind is ERC-20.                        |
-| `TOKEN_PAIR_INACTIVE`      | There is no rule set for this token pair.                      |
-| `AMOUNT_EXCEEDS_MAX`       | The amount of the trade would exceed the maximum for the rule. |
-| `PRICE_INCORRECT`          | The order is priced incorrectly for the rule.                  |
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |
+| `SIGNER_MUST_BE_SENDER`     | The msg.sender is not set as the order signer.                 |
+| `INVALID_SENDER_WALLET`     | The sender wallet is not set to the tradeWallet.               |
+| `SIGNER_KIND_MUST_BE_ERC20` | The order.signer.kind is not ERC-20.                           |
+| `SENDER_KIND_MUST_BE_ERC20` | The order.sender.kind is ERC-20.                               |
+| `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
+| `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
+| `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |

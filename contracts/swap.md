@@ -57,14 +57,14 @@ event Swap(
 );
 ```
 
-| Revert Reason            | Scenario                                                                     |
-| :----------------------- | :--------------------------------------------------------------------------- |
+| Revert Reason              | Scenario                                                                     |
+| :------------------------- | :--------------------------------------------------------------------------- |
 | `SIGNER_UNAUTHORIZED`      | Order has been signed by an account that has not been authorized to sign it. |
 | `SIGNATURE_INVALID`        | Signature provided does not match the Order provided.                        |
 | `ORDER_TAKEN_OR_CANCELLED` | Order has already been taken or cancelled by its `nonce` value.              |
 | `ORDER_EXPIRED`            | Order has an `expiry` before the current block time.                         |
 | `NONCE_TOO_LOW`            | Nonce provided is below the minimum value set.                               |
-| `SENDER_UNAUTHORIZED`      | Order has been sent by an account that has not been authorized to send it.|
+| `SENDER_UNAUTHORIZED`      | Order has been sent by an account that has not been authorized to send it.   |
 | `INVALID_SELF_TRANSFER`    | Order has the same signer and sender for the swap.                           |
 | `TRANSFER_FAILED`          | One of the token transfers in the swap failed.                               |
 
@@ -78,9 +78,9 @@ function cancel(
 ) external
 ```
 
-| Param    | Type        | Required | Description                               |
-| :------- | :---------- | :------- | :---------------------------------------- |
-| `nonces` | `uint256[]` | required | Array of order nonces to cancel.          |
+| Param    | Type        | Required | Description                      |
+| :------- | :---------- | :------- | :------------------------------- |
+| `nonces` | `uint256[]` | required | Array of order nonces to cancel. |
 
 A successful `cancel` emits one `Cancel` event per nonce.
 
@@ -124,9 +124,9 @@ function authorizeSender(
 ) external
 ```
 
-| Param              | Type      | Required | Description                                         |
-| :----------------- | :-------- | :------- | :-------------------------------------------------- |
-| `authorizedSender` | `address` | required | Address to authorize for sending.                   |
+| Param              | Type      | Required | Description                       |
+| :----------------- | :-------- | :------- | :-------------------------------- |
+| `authorizedSender` | `address` | required | Address to authorize for sending. |
 
 A successful `authorizeSender` emits an `AuthorizeSender` event.
 
@@ -137,16 +137,17 @@ event AuthorizeSender(
 );
 ```
 
-| Revert Reason            | Scenario                                                       |
-| :----------------------- | :------------------------------------------------------------------------------------------ |
-| `INVALID_AUTH_SENDER`      | The `authorizedSender` and the function caller are the same. |
+| Revert Reason         | Scenario                                                     |
+| :-------------------- | :----------------------------------------------------------- |
+| `INVALID_AUTH_SENDER` | The `authorizedSender` and the function caller are the same. |
 
 ## `authorizeSigner`
 
 Authorize another account or contract to:
+
 - Sign an order OR
 - Submit an order without a signature
-on behalf of the function caller. This means the function caller is no longer required to sign such orders.
+  on behalf of the function caller. This means the function caller is no longer required to sign such orders.
 
 ```java
 function authorizeSigner(
@@ -154,9 +155,9 @@ function authorizeSigner(
 ) external
 ```
 
-| Param              | Type      | Required | Description                                         |
-| :----------------- | :-------- | :------- | :-------------------------------------------------- |
-| `authorizedSigner` | `address` | required | Address to authorize for signing.                   |
+| Param              | Type      | Required | Description                       |
+| :----------------- | :-------- | :------- | :-------------------------------- |
+| `authorizedSigner` | `address` | required | Address to authorize for signing. |
 
 A successful `authorizeSigner` emits an `AuthorizeSigner` event.
 
@@ -167,9 +168,9 @@ event AuthorizeSigner(
 );
 ```
 
-| Revert Reason            | Scenario                                                       |
-| :----------------------- | :------------------------------------------------------------------------------------------ |
-| `INVALID_AUTH_SIGNER`      | The `authorizedSigner` and the function caller are the same. |
+| Revert Reason         | Scenario                                                     |
+| :-------------------- | :----------------------------------------------------------- |
+| `INVALID_AUTH_SIGNER` | The `authorizedSigner` and the function caller are the same. |
 
 ## `revokeSender`
 

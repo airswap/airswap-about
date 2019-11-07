@@ -3,16 +3,16 @@
 - [Welcome](README.md)
 - [About](about.md)
 
-## Instant
-
-- [Run a Maker](instant-legacy/run-a-maker-legacy.md)
-- [Add to Your App](instant/add-to-your-app.md)
-- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
-
 ## Instant (Beta)
 
-- [Run a Maker](instant/run-a-maker.md)
-- [Architecture](instant/architecture.md)
+- [Running Makers](instant-beta/running-makers.md)
+- [Architecture](instant-beta/architecture.md)
+
+## Instant
+
+- [Running Makers](instant/running-makers-legacy.md)
+- [Add to Your App](instant/add-to-your-app.md)
+- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
 
 ## Trader
 
