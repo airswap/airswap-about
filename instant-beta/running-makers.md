@@ -1,5 +1,5 @@
 {% hint style="warning" %}
-The following system is in beta on Rinkeby. For production maker documentation, [click here](../instant/running-makers-legacy.md).
+The following specification is in beta on Rinkeby. For production maker documentation, [click here](../instant/running-makers-legacy.md).
 {% endhint %}
 
 # Use the Maker Kit
