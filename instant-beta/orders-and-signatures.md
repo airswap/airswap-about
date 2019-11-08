@@ -236,6 +236,8 @@ v, r, s = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
 # version is 0x45 for personalSign
 signed_order = {
   "version": "0x45",
+  "signatory": WALLET_ADDRESS,
+  "validator": SWAP_CONTRACT_ADDRESS,
   "v": v,
   "r": r,
   "s": s
