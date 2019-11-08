@@ -232,6 +232,14 @@ Finally, package the hashed order with the `EIP-712` domain separator and prefix
 encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
 
 v, r, s = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+
+# version is 0x45 for personalSign
+signed_order = {
+  "version": "0x45",
+  "v": v,
+  "r": r,
+  "s": s
+}
 ```
 
 ## EIP712Domain
