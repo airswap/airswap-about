@@ -139,6 +139,8 @@ return {
 
 ### Using `ecdsa_raw_sign`
 
+The python example uses the [eth-abi](https://github.com/ethereum/eth-abi) package.
+
 To sign the order, you'll need to create hashes of the encoded types, as well as the domain separator (used at the final step). `SWAP_DOMAIN` and `SWAP_VERSION` should be set to `SWAP` and `2`, respectively.
 
 ```python
