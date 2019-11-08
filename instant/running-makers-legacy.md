@@ -1,5 +1,5 @@
 {% hint style="warning" %}
-The following system will be soon deprecated in favor of the [new architecture](../instant/run-a-maker.md).
+The following system will be deprecated soon in favor of the [new architecture](../instant-beta/architecture.md).
 {% endhint %}
 
 ## Maker Tutorial
