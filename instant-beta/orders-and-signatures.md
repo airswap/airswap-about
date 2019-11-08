@@ -139,7 +139,7 @@ return {
 
 ### Using `ecdsa_raw_sign`
 
-To sign the order, you'll need to create hashes of the encoded types.
+To sign the order, you'll need to create hashes of the encoded types, as well as the domain separator (used at the final step). `SWAP_DOMAIN` and `SWAP_VERSION` should be set to `SWAP` and `2`, respectively.
 
 ```python
 SWAP_TYPES = {
@@ -153,6 +153,18 @@ SWAP_TYPE_HASHES = {
     "order": keccak(SWAP_TYPES["order"] + SWAP_TYPES["party"]),
     "eip712": keccak(SWAP_TYPES["eip712"]),
 }
+
+DOMAIN_SEPARATOR = keccak(
+    encode_abi(
+        ["bytes32", "bytes32", "bytes32", "address"],
+        [
+            SWAP_TYPE_HASHES["eip712"],
+            keccak(SWAP_DOMAIN.encode()),
+            keccak(SWAP_VERSION.encode()),
+            SWAP_CONTRACT_ADDRESS,
+        ],
+    )
+)
 ```
 
 Then you can create a hash of the order itself with the type information included, assuming that `order` represents your order in a dict.
