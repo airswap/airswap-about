@@ -139,7 +139,86 @@ return {
 
 ### Using `ecdsa_raw_sign`
 
-Python example coming soon.
+To sign the order, you'll need to create hashes of the encoded types.
+
+```python
+SWAP_TYPES = {
+    "party": b"Party(bytes4 kind,address wallet,address token,uint256 param)",
+    "order": b"Order(uint256 nonce,uint256 expiry,Party signer,Party sender,Party affiliate)",
+    "eip712": b"EIP712Domain(string name,string version,address verifyingContract)",
+}
+
+SWAP_TYPE_HASHES = {
+    "party": keccak(SWAP_TYPES["party"]),
+    "order": keccak(SWAP_TYPES["order"] + SWAP_TYPES["party"]),
+    "eip712": keccak(SWAP_TYPES["eip712"]),
+}
+```
+
+Then you can create a hash of the order itself with the type information included, assuming that `order` represents your order in a dict.
+
+```python
+hashed_signer = keccak(
+    encode_abi(
+        ["bytes32", "bytes4", "address", "address", "uint256"],
+        [
+            SWAP_TYPE_HASHES["party"],
+            ERC_20_INTERFACE_ID,
+            order["signerWallet"],
+            order["signerToken"],
+            int(order["signerParam"]),
+        ],
+    )
+)
+
+hashed_sender = keccak(
+    encode_abi(
+        ["bytes32", "bytes4", "address", "address", "uint256"],
+        [
+            SWAP_TYPE_HASHES["party"],
+            ERC_20_INTERFACE_ID,
+            order["senderWallet"],
+            order["senderToken"],
+            int(order["senderParam"]),
+        ],
+    )
+)
+
+hashed_affiliate = keccak(
+    encode_abi(
+        ["bytes32",  "bytes4", "address", "address", "uint256"],
+        [
+            SWAP_TYPE_HASHES["party"],
+            ERC_20_INTERFACE_ID,
+            "0x0000000000000000000000000000000000000000",
+            "0x0000000000000000000000000000000000000000",
+            0,
+        ],
+    )
+)
+
+hashed_order = keccak(
+    encode_abi(
+        ["bytes32", "uint256", "uint256", "bytes32", "bytes32", "bytes32"],
+        [
+            SWAP_TYPE_HASHES["order"],
+            int(order["nonce"]),
+            int(order["expiry"]),
+            hashed_signer,
+            hashed_sender,
+            hashed_affiliate,
+        ],
+    )
+)
+```
+
+Finally, package the hashed order with the `EIP-712` domain separator and prefixes, then sign it with your private key `PRIVATE_KEY`.
+
+```python
+encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
+
+ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+```
 
 ## EIP712Domain
 
