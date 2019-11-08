@@ -139,7 +139,7 @@ return {
 
 ### Using `ecdsa_raw_sign`
 
-Pythong example coming soon.
+Python example coming soon.
 
 ## EIP712Domain
 
