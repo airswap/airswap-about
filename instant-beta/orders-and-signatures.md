@@ -231,7 +231,7 @@ Finally, package the hashed order with the `EIP-712` domain separator and prefix
 ```python
 encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
 
-ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+v, r, s = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
 ```
 
 ## EIP712Domain
