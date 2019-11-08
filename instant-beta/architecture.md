@@ -7,7 +7,7 @@ Under the hood, AirSwap Instant works with a combination of web protocols and sm
 The **Web App** calls...
 
 1. `getIntents` on the **Maker [Indexer](../contracts/indexer.md) Contract** and gets back HTTP endpoints.
-2. `getOrder` on each **HTTP [Maker](run-a-maker.md)** using JSON-RPC over HTTP.
+2. `getOrder` on each **HTTP [Maker](running-makers.md)** using JSON-RPC over HTTP.
 3. `swap` on the **[Swap](../contracts/swap.md) Contract** with the order that it wishes to trade.
 
 # Trading with Onchain Delegates\*
