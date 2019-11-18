@@ -70,6 +70,8 @@ All amounts are in the smallest unit \(e.g. wei\), so all calculations based on 
 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI has a decimal representation of 18 and WETH has a decimal representation of 18 as well. Another way to think about this is that this rule is putting 100,000 DAI up for trade in return for WETH.
 
+Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
+
 ```java
 setRule(WETHAddress, DAIAddress, 100000000000000000000000, 32, 4)
 ```
