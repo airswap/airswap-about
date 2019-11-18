@@ -73,19 +73,13 @@ Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000000000000000000000, 32, 4)
+setRule(DAIAddress, WETHAddress, 100000000000000000000000, 32, 4)
 ```
 
-Set a rule to send up to 100,000 DAI for WETH at 312.50 WETH/DAI
+Set a rule to send up to 320 WETH for DAI at 0.0032 WETH/DAI. 
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000000000000000000000, 31250, 2)
-```
-
-Set a rule to send up to 100,000 DAI for WETH at 312 WETH/DAI
-
-```java
-setRule(WETHAddress, DAIAddress, 100000000000000000000000, 312, 0)
+setRule(WETHAddress, DAIAddress, 320000000000000000000, 3125, 1)
 ```
 
 #### Example using AST and WETH tokens 
