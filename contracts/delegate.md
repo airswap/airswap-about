@@ -66,22 +66,38 @@ All amounts are in the smallest unit \(e.g. wei\), so all calculations based on 
 
 ### Examples
 
-Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
+#### Example using DAI and WETH tokens 
+
+Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI has a decimal representation of 18 and WETH has a decimal representation of 18 as well. Another way to think about this is that this rule is putting 100,000 DAI up for trade in return for WETH.
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 32, 4)
+setRule(WETHAddress, DAIAddress, 100000000000000000000000, 32, 4)
 ```
 
 Set a rule to send up to 100,000 DAI for WETH at 312.50 WETH/DAI
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 31250, 2)
+setRule(WETHAddress, DAIAddress, 100000000000000000000000, 31250, 2)
 ```
 
 Set a rule to send up to 100,000 DAI for WETH at 312 WETH/DAI
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 312, 0)
+setRule(WETHAddress, DAIAddress, 100000000000000000000000, 312, 0)
+```
+
+#### Example using AST and WETH tokens 
+
+Set a rule to send up to 5,000 AST for WETH at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
+
+```java
+setRule(ASTAddress, WETHAddress, 50000000, 40000000000, 0)
+```
+
+Set a rule to send up to 2 WETH for AST at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
+
+```java
+setRule(WETHAddress, ASTAddress, 2000000000000000000, 25, 12)
 ```
 
 ## `unsetRule`
