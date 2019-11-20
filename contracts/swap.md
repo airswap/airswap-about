@@ -71,6 +71,8 @@ event Swap(
 ## `cancel`
 
 Provide an array of `nonces`, unique by signer address, to mark one or more orders as cancelled.
+Note: If the list of nonces to cancel is too long, there is a potential issue of out of gas error. 
+It is best to break the list into smaller chunks and submit the cancel this way instead.
 
 ```java
 function cancel(
