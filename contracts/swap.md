@@ -71,6 +71,9 @@ event Swap(
 ## `cancel`
 
 Provide an array of `nonces`, unique by signer address, to mark one or more orders as cancelled.
+{% hint style="warning" %}
+Out of gas may occur in arrays of length > 400
+{% endhint %}
 
 ```java
 function cancel(
