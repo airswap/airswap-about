@@ -94,12 +94,12 @@ event Cancel(
 );
 ```
 
-## `invalidate`
+## `cancelUpTo`
 
-Provide a minimum value to invalidate all nonces below the value. This is not inclusive - the `minimumNonce` value is still considered valid.
+Provide a minimum value to cancel all nonces below the value. This is not inclusive - the `minimumNonce` value is still considered valid.
 
 ```java
-function invalidate(
+function cancelUpTo(
   uint256 minimumNonce
 ) external
 ```
@@ -108,10 +108,10 @@ function invalidate(
 | :------------- | :-------- | :------- | :------------------------------------------ |
 | `minimumNonce` | `uint256` | required | Lowest acceptable nonce value for a signer. |
 
-A successful `invalidate` emits an `Invalidate` event.
+A successful `cancelUpTo` emits an `CancelUpTo` event.
 
 ```java
-event Invalidate(
+event CancelUpTo(
   uint256 indexed nonce,
   address indexed signerWallet
 );
