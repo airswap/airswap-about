@@ -25,7 +25,7 @@ constructor(
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
-Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold rice that can be filled. Order requiring the delegate to send less tokens than its trading rule can also fill.
+Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the delegate will trade at. An order requiring the delegate to send fewer tokens than its trading rule (i.e. a better price for the delegate), will also succeed.
 1 senderToken = priceCoef _ 10^(-priceExp) _ signerToken
 
 ```java
