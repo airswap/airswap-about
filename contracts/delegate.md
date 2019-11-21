@@ -153,7 +153,7 @@ all-or-nothing transaction.
 | :-------------------------- | :------------------------------------------------------------- |
 | `INVALID_PRICE_COEF`     | The priceCoef must be greater than 0.                 |
 | `STAKING_TRANSFER_FAILED`     | The Delegate contract was not approved to transfer the staking token to itself.                 |
-| `STAKING_RETURN_FAILED`     | The Delegate was unable to transfer remaining staked amount back. Please increase gas limit.                 |
+| `STAKING_RETURN_FAILED`     | The Delegate was unable to transfer remaining staked amount back.                |
 
 ```java
 event SetRule(
@@ -303,7 +303,7 @@ function provideOrder(
 
 ## `setTradeWallet`
 
-Get the maximum quote from the sender.
+Set a new trade wallet.
 
 ```java
 function setTradeWallet(
