@@ -25,7 +25,7 @@ constructor(
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
-Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity.
+Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the delegate will trade at. An order requiring the delegate to send fewer tokens than its trading rule (i.e. a better price for the delegate), will also succeed.
 1 senderToken = priceCoef _ 10^(-priceExp) _ signerToken
 
 ```java
@@ -67,7 +67,7 @@ event SetRule(
 
 ### Price Calculations
 
-All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
+All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 ### Examples
 

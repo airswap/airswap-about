@@ -71,6 +71,9 @@ event Swap(
 ## `cancel`
 
 Provide an array of `nonces`, unique by signer address, to mark one or more orders as cancelled.
+{% hint style="warning" %}
+Out of gas may occur in arrays of length > 400
+{% endhint %}
 
 ```java
 function cancel(
@@ -91,12 +94,12 @@ event Cancel(
 );
 ```
 
-## `invalidate`
+## `cancelUpTo`
 
-Provide a minimum value to invalidate all nonces below the value. This is not inclusive - the `minimumNonce` value is still considered valid.
+Provide a minimum value to cancel all nonces below the value. This is not inclusive - the `minimumNonce` value is still considered valid.
 
 ```java
-function invalidate(
+function cancelUpTo(
   uint256 minimumNonce
 ) external
 ```
@@ -105,10 +108,10 @@ function invalidate(
 | :------------- | :-------- | :------- | :------------------------------------------ |
 | `minimumNonce` | `uint256` | required | Lowest acceptable nonce value for a signer. |
 
-A successful `invalidate` emits an `Invalidate` event.
+A successful `cancelUpTo` emits an `CancelUpTo` event.
 
 ```java
-event Invalidate(
+event CancelUpTo(
   uint256 indexed nonce,
   address indexed signerWallet
 );
