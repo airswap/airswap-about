@@ -60,6 +60,11 @@ event SetRule(
 );
 ```
 
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |
+| `INVALID_PRICE_COEF`     | The priceCoef must be greater than 0.                 |
+
+
 ### Price Calculations
 
 All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
@@ -144,6 +149,12 @@ function setRuleAndIntent(
 A successful `setRuleAndIntent` will emit a `SetRule` event and `Stake` event. It will be an
 all-or-nothing transaction.
 
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |
+| `INVALID_PRICE_COEF`     | The priceCoef must be greater than 0.                 |
+| `STAKING_TRANSFER_FAILED`     | The Delegate contract was not approved to transfer the staking token to itself.                 |
+| `STAKING_RETURN_FAILED`     | The Delegate was unable to transfer remaining staked amount back. Please increase gas limit.                 |
+
 ```java
 event SetRule(
   address indexed ruleOwner,
@@ -180,6 +191,10 @@ function unsetRuleAndIntent(
 
 A successful `unsetRuleAndIntent` will emit an `UnsetRule` event and `Unstake` event. It will be an
 all-or-nothing transaction.
+
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |            |
+| `STAKING_RETURN_FAILED`     | The Delegate was unable to transfer remaining staked amount back.                 |
 
 ```java
 event UnsetRule(
@@ -255,6 +270,7 @@ function getMaxQuote(
 | `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
 | `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
+
 ## `provideOrder`
 
 Provide an order to the sender for taking.
@@ -284,3 +300,21 @@ function provideOrder(
 | `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
 | `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
 | `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |
+
+## `setTradeWallet`
+
+Get the maximum quote from the sender.
+
+```java
+function setTradeWallet(
+  address newTradeWallet
+) external onlyOwner
+```
+
+| Param         | Type      | Description                                           |
+| :------------ | :-------- | :---------------------------------------------------- |
+| `newTradeWallet` | `address` | The address of the new trade wallet. |
+
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |            |
+| `TRADE_WALLET_REQUIRED`     | Trade wallet cannot be set to 0x0.          |
