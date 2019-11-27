@@ -109,20 +109,18 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
     "signerParam": "10000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
   },
   "id": "123"
 }
 ```
 
-| Param                | Type      | Description                                 |
-| :------------------- | :-------- | :------------------------------------------ |
-| `signerParam`        | `uint256` | Amount of ERC-20 the signer would transfer. |
-| `signerToken`        | `address` | Token the signer would transfer.            |
-| `senderToken`        | `address` | Token the sender would transfer.            |
-| `senderWallet`       | `address` | Wallet of the sender.                       |
-| `signatureValidator` | `address` | Swap contract the sender intends to use.    |
+| Param          | Type      | Description                                 |
+| :------------- | :-------- | :------------------------------------------ |
+| `signerParam`  | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `signerToken`  | `address` | Token the signer would transfer.            |
+| `senderToken`  | `address` | Token the sender would transfer.            |
+| `senderWallet` | `address` | Wallet of the sender.                       |
 
 A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderParam`.
 
@@ -140,20 +138,18 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderParam": "100000000",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "senderParam": "100000000"
   },
   "id": "123"
 }
 ```
 
-| Param                | Type      | Description                                     |
-| :------------------- | :-------- | :---------------------------------------------- |
-| `senderParam`        | `uint256` | The amount of ERC-20 the sender would transfer. |
-| `signerToken`        | `address` | The token the signer would transfer.            |
-| `senderToken`        | `address` | The token the sender would transfer.            |
-| `senderWallet`       | `address` | The wallet of the sender.                       |
-| `signatureValidator` | `address` | Swap contract the sender intends to use.        |
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `senderParam`  | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `signerToken`  | `address` | The token the signer would transfer.            |
+| `senderToken`  | `address` | The token the sender would transfer.            |
+| `senderWallet` | `address` | The wallet of the sender.                       |
 
 A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerParam`.
 
@@ -189,7 +185,7 @@ We have allocated the following range for Swap Protocol errors:
 - `-33601` Not trading the requested `signerToken` `senderToken` pair
 - `-33602` The specified `senderParam` or `signerParam` is too low
 - `-33603` The specified `senderParam` or `signerParam` is too high
-- `-33604` Improperly formatted `signerToken`, `senderToken`, or `senderWallet` address
+- `-33604` Invalid request parameters
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.
 
