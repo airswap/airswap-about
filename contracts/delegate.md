@@ -60,13 +60,17 @@ event SetRule(
 );
 ```
 
+| Revert Reason        | Scenario                              |
+| :------------------- | :------------------------------------ |
+| `INVALID_PRICE_COEF` | The priceCoef must be greater than 0. |
+
 ### Price Calculations
 
 All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 ### Examples
 
-#### Example using DAI and WETH tokens 
+#### Example using DAI and WETH tokens
 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI has a decimal representation of 18 and WETH has a decimal representation of 18 as well. Another way to think about this is that this rule is putting 100,000 DAI up for trade in return for WETH.
 
@@ -76,13 +80,13 @@ Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
 setRule(DAIAddress, WETHAddress, 100000000000000000000000, 32, 4)
 ```
 
-Set a rule to send up to 320 WETH for DAI at 0.0032 WETH/DAI. 
+Set a rule to send up to 320 WETH for DAI at 0.0032 WETH/DAI.
 
 ```java
 setRule(WETHAddress, DAIAddress, 320000000000000000000, 3125, 1)
 ```
 
-#### Example using AST and WETH tokens 
+#### Example using AST and WETH tokens
 
 Set a rule to send up to 5,000 AST for WETH at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
 
@@ -144,6 +148,12 @@ function setRuleAndIntent(
 A successful `setRuleAndIntent` will emit a `SetRule` event and `Stake` event. It will be an
 all-or-nothing transaction.
 
+| Revert Reason             | Scenario                                                                        |
+| :------------------------ | :------------------------------------------------------------------------------ |
+| `INVALID_PRICE_COEF`      | The priceCoef must be greater than 0.                                           |
+| `STAKING_TRANSFER_FAILED` | The Delegate contract was not approved to transfer the staking token to itself. |
+| `STAKING_RETURN_FAILED`   | The Delegate was unable to transfer remaining staked amount back.               |
+
 ```java
 event SetRule(
   address indexed ruleOwner,
@@ -180,6 +190,10 @@ function unsetRuleAndIntent(
 
 A successful `unsetRuleAndIntent` will emit an `UnsetRule` event and `Unstake` event. It will be an
 all-or-nothing transaction.
+
+| Revert Reason | Scenario |
+| :-------------------------- | :------------------------------------------------------------- | |
+| `STAKING_RETURN_FAILED` | The Delegate was unable to transfer remaining staked amount back. |
 
 ```java
 event UnsetRule(
@@ -284,3 +298,21 @@ function provideOrder(
 | `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
 | `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
 | `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |
+
+## `setTradeWallet`
+
+Set a new trade wallet.
+
+```java
+function setTradeWallet(
+  address newTradeWallet
+) external onlyOwner
+```
+
+| Param            | Type      | Description                          |
+| :--------------- | :-------- | :----------------------------------- |
+| `newTradeWallet` | `address` | The address of the new trade wallet. |
+
+| Revert Reason | Scenario |
+| :-------------------------- | :------------------------------------------------------------- | |
+| `TRADE_WALLET_REQUIRED` | Trade wallet cannot be set to 0x0. |

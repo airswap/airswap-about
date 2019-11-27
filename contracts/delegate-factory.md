@@ -24,15 +24,13 @@ Create a new Delegate contract. Implements `IDelegateFactory.createDelegate`.
 
 ```java
 function createDelegate(
-  address delegateContractOwner,
   address delegateTradeWallet
 ) external returns (address delegateContractAddress)
 ```
 
-| Param                   | Type      | Description                                          |
-| :---------------------- | :-------- | :--------------------------------------------------- |
-| `delegateContractOwner` | `address` | Address of the owner of the new delegate contract.   |
-| `delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded. |
+| Param                 | Type      | Description                                          |
+| :-------------------- | :-------- | :--------------------------------------------------- |
+| `delegateTradeWallet` | `address` | Address of the wallet that holds funds to be traded. |
 
 ## `has`
 
