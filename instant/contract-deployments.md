@@ -11,7 +11,7 @@ November 26, 2019 / [Commit Hash](https://github.com/airswap/airswap-protocols/c
 
 # Rinkeby
 
-November 26, 2019 / [Commit](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07)
+November 26, 2019 / [Commit Hash](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07)
 
 | Contract | Version                                                                 | Address                                                                                                                             |
 | :------- | :---------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
