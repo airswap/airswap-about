@@ -29,8 +29,7 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
   "params": {
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "signerParam": "100000000",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "signerParam": "100000000"
   },
   "id": "123"
 }
