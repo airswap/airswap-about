@@ -4,11 +4,11 @@
 
 ## Instant
 
-- [Architecture](instant/architecture.md)
-- [Add to Your App](instant-legacy/add-to-your-app.md)
-- [Running Makers](instant/running-makers.md)
+- [Add to Your App](instant/add-to-your-app.md)
+- [Run Makers](instant/running-makers.md)
 - [Orders and Signatures](instant/orders-and-signatures.md)
 - [Contract Deployments](instant/contract-deployments.md)
+- [Architecture](instant/architecture.md)
 
 ## Instant (Legacy)
 
