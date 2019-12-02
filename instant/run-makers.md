@@ -1,5 +1,9 @@
 Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, the server must be run at a public URL with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. The URL then must be staked on an _indexer_ contract that takers query based on the tokens being traded. To get started, you can either use the Maker Kit or build your own maker.
 
+# Tutorials
+
+- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) in just a few steps using Maker Kit and ZEIT.
+
 # Use the Maker Kit
 
 Maker Kit includes a reference implementation and set of tools to help you run a maker.
