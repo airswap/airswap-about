@@ -38,6 +38,8 @@ Starting from 100, this function merely increments the nonce by 1 and outputs th
   }
 ```
 
+**Returns** a nonce.
+
 ## `generateExpiry`
 
 Generates a timestamp expiry for exactly n days in the future.
@@ -52,6 +54,7 @@ Generates a timestamp expiry for exactly n days in the future.
 | :-------- | :------- | :-------------------------------- | :---------- |
 | `days`    | `number` | The number of days in the future. | `2.2`       |
 
+**Returns** an expiry timestamp.
 
 ## `getOrder`
 
@@ -90,3 +93,80 @@ All parameters are _optional_, and unprovided parameters default to the values s
 | `affiliate` | `Party`  | Details of the affiliate of the order. |
 
 Where a Party is a json struct defined in [Types](https://docs.airswap.io/contracts/types).
+
+**Returns** an order struct.
+
+
+## `isValidQuote`
+
+Checks that the json Quote provided is structured correctly, and is therefore a valid quote.
+
+```javascript
+  isValidQuote(quote) {
+    return (
+      'signer' in quote &&
+      'sender' in quote &&
+      'token' in quote['signer'] &&
+      'token' in quote['sender'] &&
+      'param' in quote['signer'] &&
+      'param' in quote['sender'] &&
+      !('signature' in quote)
+    )
+  }
+```
+
+| Param    | Type    | Description                         |
+| :------- | :------ | :---------------------------------- |
+| `quote`  | `Quote` | The quote struct to be checked.     |
+
+**Returns** `true` if the quote is valid.
+
+
+## `isValidOrder`
+
+Checks that the json Order provided is structured correctly, and is therefore a valid order.
+
+| Param    | Type    | Description                         |
+| :------- | :------ | :---------------------------------- |
+| `order`  | `Order` | The order struct to be checked.     |
+
+**Returns** `true` if the order is valid.
+
+```javascript
+const isValidOrder = order => {
+  return (
+    'nonce' in order &&
+    'expiry' in order &&
+    'signer' in order &&
+    'sender' in order &&
+    'affiliate' in order &&
+    'signature' in order &&
+    'wallet' in order['signer'] &&
+    'wallet' in order['sender'] &&
+    'wallet' in order['affiliate'] &&
+    'token' in order['signer'] &&
+    'token' in order['sender'] &&
+    'token' in order['affiliate'] &&
+    'param' in order['signer'] &&
+    'param' in order['sender'] &&
+    'param' in order['affiliate'] &&
+    'signatory' in order['signature'] &&
+    'validator' in order['signature'] &&
+    'r' in order['signature'] &&
+    's' in order['signature'] &&
+    'v' in order['signature']
+  )
+}
+```
+
+## `checkOrder`
+
+Checks whether the swap contract would accept or reject a specified order. THis includes checking wallet balances, approvals, authorizations, signatures, expiry and nonces,
+
+| Param     | Type     | Description                                      |
+| :-------- | :------- | :----------------------------------------------- |
+| `order`   | `Order`  | The order struct to be checked.                  |
+| `network` | `string` | The Ethereum network. e.g. `mainnet`, `rinkeby`  |
+
+**Returns** an array. Each element is a string specifying an error with the order. A valid order returns an empty array.
+e.g. `['Signatory not authorised', 'Signer balance is too low']`
