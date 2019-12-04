@@ -10,11 +10,6 @@
 - [Contract Deployments](instant/contract-deployments.md)
 - [Architecture](instant/architecture.md)
 
-## Instant (Legacy)
-
-- [Running Makers (Legacy)](instant-legacy/running-makers-legacy.md)
-- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
-
 ## Trader
 
 - [Add to Your App](trader/add-to-your-app.md)
@@ -28,3 +23,17 @@
 - [DelegateFactory](contracts/delegate-factory.md)
 - [Wrapper](contracts/wrapper.md)
 - [Types](contracts/types.md)
+
+## Helper Libraries
+
+- [Orders and Quotes](helper-libaries/orders-and-quotes.md)
+- [Signing Orders](helper-libaries/signing-orders.md)
+- [Hashing Orders](helper-libaries/hashing-orders.md)
+- [Testing Token Balances](helper-libaries/testing-token-balances.md)
+- [Padding Locators](helper-libaries/padding-locators.md)
+- [Testing with Time Travel](helper-libaries/testing-time-travel.md)
+
+## Instant (Legacy)
+
+- [Running Makers (Legacy)](instant-legacy/running-makers-legacy.md)
+- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
