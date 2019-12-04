@@ -5,9 +5,7 @@ The Airswap Protocol uses Order structs to communicate, verify and ultimately pe
 - Check a Quote is structured correctly
 - Check if the swap contract would accept an Order (e.g. checking balances, approvals etc)
 
-You can find the library, `orders.js`:
-- [NPM package @airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils)
-- [GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
+You can find the `orders.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
 
 # Functions
 
@@ -25,7 +23,7 @@ Every Order struct has a `.signature.validator` field that specifies the address
 
 | Param               | Type     | Description                | Example                                        |
 | :------------------ | :------- | :------------------------- | :--------------------------------------------- |
-| `verifyingContract` | `string` | The swap contract address. | `'0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE'` |
+| `verifyingContract` | `address`| The swap contract address. | `'0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE'` |
 
 ## `generateNonce`
 
@@ -96,6 +94,21 @@ Where a Party is a json struct defined in [Types](https://docs.airswap.io/contra
 
 **Returns** an order struct.
 
+To pass in your own Party values, instead of using a default value, the parameters must be laid out correctly as a json object. E.g.
+```javascript
+const order = await orders.getOrder({
+  signer: {
+    wallet: ganacheWallet,
+    token: ASTAddress,
+    param: '400',
+  },
+  sender: {
+    wallet: senderWallet,
+    token: WETHAddress,
+    param: '2',
+  },
+})
+```
 
 ## `isValidQuote`
 
