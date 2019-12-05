@@ -7,6 +7,8 @@ The Airswap Protocol uses Order structs to communicate, verify and ultimately pe
 
 You can find the `orders.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
 
+Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
+
 # Functions
 
 ## `setVerifyingContract`
@@ -89,8 +91,6 @@ All parameters are _optional_, and unprovided parameters default to the values s
 | `signer`    | `Party`  | Details of the signer of the order.    |
 | `sender`    | `Party`  | Details of the sender of the order.    |
 | `affiliate` | `Party`  | Details of the affiliate of the order. |
-
-Where a Party is a json struct defined in [Types](https://docs.airswap.io/contracts/types).
 
 **Returns** an order struct.
 

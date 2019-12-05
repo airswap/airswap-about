@@ -4,6 +4,8 @@ The Swap contract accepts 2 types of signatures: those prefixed with the Ethereu
 
 You can find the `signatures.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/signatures.js)
 
+Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
+
 # Functions
 
 The functions below sign all of the fields of an order except the signature field. The functions then return a signature object that is formatted correctly for the swap contract. This signature needs to be combined into the order object before it can then be passed into the swap contract to be executed.
