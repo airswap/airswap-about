@@ -1,5 +1,9 @@
 Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, the server must be run at a public URL with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. The URL then must be staked on an _indexer_ contract that takers query based on the tokens being traded. To get started, you can either use the Maker Kit or build your own maker.
 
+# Tutorials
+
+- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) in just a few steps using Maker Kit and ZEIT.
+
 # Use the Maker Kit
 
 Maker Kit includes a reference implementation and set of tools to help you run a maker.
@@ -29,8 +33,7 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
   "params": {
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "signerParam": "100000000",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "signerParam": "100000000"
   },
   "id": "123"
 }
@@ -110,20 +113,18 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
     "signerParam": "10000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
   },
   "id": "123"
 }
 ```
 
-| Param                | Type      | Description                                 |
-| :------------------- | :-------- | :------------------------------------------ |
-| `signerParam`        | `uint256` | Amount of ERC-20 the signer would transfer. |
-| `signerToken`        | `address` | Token the signer would transfer.            |
-| `senderToken`        | `address` | Token the sender would transfer.            |
-| `senderWallet`       | `address` | Wallet of the sender.                       |
-| `signatureValidator` | `address` | Swap contract the sender intends to use.    |
+| Param          | Type      | Description                                 |
+| :------------- | :-------- | :------------------------------------------ |
+| `signerParam`  | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `signerToken`  | `address` | Token the signer would transfer.            |
+| `senderToken`  | `address` | Token the sender would transfer.            |
+| `senderWallet` | `address` | Wallet of the sender.                       |
 
 A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderParam`.
 
@@ -141,20 +142,18 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderParam": "100000000",
-    "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078"
+    "senderParam": "100000000"
   },
   "id": "123"
 }
 ```
 
-| Param                | Type      | Description                                     |
-| :------------------- | :-------- | :---------------------------------------------- |
-| `senderParam`        | `uint256` | The amount of ERC-20 the sender would transfer. |
-| `signerToken`        | `address` | The token the signer would transfer.            |
-| `senderToken`        | `address` | The token the sender would transfer.            |
-| `senderWallet`       | `address` | The wallet of the sender.                       |
-| `signatureValidator` | `address` | Swap contract the sender intends to use.        |
+| Param          | Type      | Description                                     |
+| :------------- | :-------- | :---------------------------------------------- |
+| `senderParam`  | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `signerToken`  | `address` | The token the signer would transfer.            |
+| `senderToken`  | `address` | The token the sender would transfer.            |
+| `senderWallet` | `address` | The wallet of the sender.                       |
 
 A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerParam`.
 
@@ -190,7 +189,7 @@ We have allocated the following range for Swap Protocol errors:
 - `-33601` Not trading the requested `signerToken` `senderToken` pair
 - `-33602` The specified `senderParam` or `signerParam` is too low
 - `-33603` The specified `senderParam` or `signerParam` is too high
-- `-33604` Improperly formatted `signerToken`, `senderToken`, or `senderWallet` address
+- `-33604` Invalid request parameters
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.
 

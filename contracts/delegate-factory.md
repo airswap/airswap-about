@@ -28,9 +28,9 @@ function createDelegate(
 ) external returns (address delegateContractAddress)
 ```
 
-| Param                   | Type      | Description                                          |
-| :---------------------- | :-------- | :--------------------------------------------------- |
-| `delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded. |
+| Param                 | Type      | Description                                          |
+| :-------------------- | :-------- | :--------------------------------------------------- |
+| `delegateTradeWallet` | `address` | Address of the wallet that holds funds to be traded. |
 
 ## `has`
 
