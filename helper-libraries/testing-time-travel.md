@@ -4,9 +4,9 @@ Testing contracts where time is a critical component can be difficult. We use a 
 - increase block numbers
 - revert blockchain state to a previous snapshot
 
-The majority of the functions we use for this are from the npm package `ganache-time-traveler`, which was developed by one of Airswap's developers. We combined this with a couple of web3 time-based functions to create a helper library.
+The majority of the functions we use for this are from the npm package `ganache-time-traveler`, which was developed by one of AirSwap's developers. We combined this with a couple of web3 time-based functions to create a helper library.
 
-You can find the `time.js` library on NPM within [@airswap/test-utils](https://www.npmjs.com/package/@airswap/test-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/test-utils/src/time.js)
+You can find the `time.js` library on NPM within [@airswap/test-utils](https://www.npmjs.com/package/@airswap/test-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/test-utils/src/time.js)
 
 # Functions
 
@@ -18,7 +18,7 @@ For documentation of the following 6 functions, view `ganache-time-traveller` on
 `takeSnapshot`
 `revertToSnapshot`
 
-These 6 functions are all available within Airswap's `time.js` library along with the following 2 functions:
+These 6 functions are all available within AirSwap's `time.js` library along with the following 2 functions:
 
 ## `getLatestTimestamp`
 

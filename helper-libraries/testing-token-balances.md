@@ -1,6 +1,6 @@
 When testing smart contracts that work with tokens, you frequently want to gather current token balances and allowances and verify their values. We created a helper library to abstract away some of the complexity of doing this, so that you can check the balances and allowances of addresses with just 1 line of code.
 
-You can find the `balances.js` library on NPM within [@airswap/test-utils](https://www.npmjs.com/package/@airswap/test-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/test-utils/src/balances.js)
+You can find the `balances.js` library on NPM within [@airswap/test-utils](https://www.npmjs.com/package/@airswap/test-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/test-utils/src/balances.js)
 
 # Functions
 

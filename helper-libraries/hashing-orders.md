@@ -1,6 +1,6 @@
-When an order is submitted to the Swap contract, a signature of the order is provided with it, which gives security to the signer that the sender of the order cannot modify the order's contents.. This signature is constructed by calculating the hash of the order, before signing this hash. Due to the use of sub-objects in an order, there are many different ways of hashing an order - however the smart contract only accepts one. This helper library provides functions to calculate hashes used in various parts of the Airswap Protocol.
+When an order is submitted to the Swap contract, a signature of the order is provided with it, which gives security to the signer that the sender of the order cannot modify the order's contents. This signature is constructed by calculating the hash of the order, before signing this hash. Due to the use of sub-objects in an order, there are many different ways of hashing an order - however the smart contract only accepts one. This helper library provides functions to calculate hashes used throughout the protocol.
 
-You can find the `hashes.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/hashes.js)
+You can find the `hashes.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/hashes.js)
 
 Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
 

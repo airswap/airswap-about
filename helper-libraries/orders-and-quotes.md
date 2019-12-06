@@ -1,11 +1,11 @@
-The Airswap Protocol uses Order structs to communicate, verify and ultimately perform atomic swaps between parties. All Orders passed to the contracts must be correctly structured, with the right datatypes, otherwise the smart contracts will not accept them. We created a library to help:
+The AirSwap Protocol uses Order structs to communicate, verify and ultimately perform atomic swaps between parties. All Orders passed to the contracts must be correctly structured, with the right datatypes, otherwise the smart contracts will not accept them. We created a library to help:
 - Create Orders
 - Generate Order expiries
 - Check an Order is structured correctly
 - Check a Quote is structured correctly
 - Check if the swap contract would accept an Order (e.g. checking balances, approvals etc)
 
-You can find the `orders.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
+You can find the `orders.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
 
 Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
 

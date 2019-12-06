@@ -2,7 +2,7 @@ Orders submitted to the swap contract contain a signature field that usually mus
 
 The Swap contract accepts 2 types of signatures: those prefixed with the Ethereum signature header and those without. The signature type is specified usign an `order.signature.version` of `0x01` (no header) or `0x45` (header). Our library provides signature functions for both of these options.
 
-You can find the `signatures.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [Airswap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/signatures.js)
+You can find the `signatures.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/signatures.js)
 
 Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
 
