@@ -7,7 +7,7 @@ The AirSwap Protocol uses Order structs to communicate, verify and ultimately pe
 
 You can find the `orders.js` library on NPM within [@airswap/order-utils](https://www.npmjs.com/package/@airswap/order-utils) or on the [AirSwap GitHub](https://github.com/airswap/airswap-protocols/blob/master/utils/order-utils/src/orders.js)
 
-Types `Order` and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
+Types `Order`, `Quote`, and `Party` refer to the structs defined in the [Types](https://docs.airswap.io/contracts/types) contract.
 
 # Functions
 
