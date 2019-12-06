@@ -33,4 +33,4 @@ e.g. to verify that the Swap contract has allowance to transfer 500 AST and 20 W
 
 `await allowances(aliceAddress, swapAddress, [[ASTaddress, 500], [WETHaddress, 20]])`
 
-**Returns** `true` if all allowances are correct.
+**Returns** `true` if all allowances are satisfied.

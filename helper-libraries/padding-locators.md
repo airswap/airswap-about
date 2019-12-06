@@ -12,4 +12,4 @@ Pads a given Ethereum address into a bytes32 to be used as a locator on the Inde
 | :--------- | :--------- | :------------------------------------------ |
 | `address`  | `address`  | The address to be padded to a bytes32.      | 
 
-**Returns** the address padded with a tail of 66 0s.
+**Returns** the address right padded with 66 0s.

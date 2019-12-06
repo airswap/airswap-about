@@ -174,7 +174,7 @@ const isValidOrder = order => {
 
 ## `checkOrder`
 
-Checks whether the swap contract would accept or reject a specified order. THis includes checking wallet balances, approvals, authorizations, signatures, expiry and nonces,
+Checks whether the swap contract would accept or reject a specified order. This includes checking wallet balances, approvals, authorizations, signatures, expiry and nonces,
 
 | Param     | Type     | Description                                      |
 | :-------- | :------- | :----------------------------------------------- |
