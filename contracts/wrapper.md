@@ -36,10 +36,10 @@ function swap(
 
 | Preconditions                                                              |
 | :------------------------------------------------------------------------- |
-| ✓ makerWallet must approve the Swap contract to transfer the makerToken.   |
-| ✓ takerWallet must approve the Swap contract to transfer the takerToken.   |
-| ✓ takerWallet must approve the Wrapper contract to transfer WETH.          |
-| ✓ takerWallet must authorize the Wrapper contract to on the Swap contract. |
+| ✓ signerWallet must approve the Swap contract to transfer the signerToken. |
+| ✓ senderWallet must approve the Swap contract to transfer the senderToken. |
+| ✓ senderWallet must approve the Wrapper contract to transfer WETH.         |
+| ✓ senderWallet must authorize the Wrapper contract on the Swap contract.   |
 
 ---
 
@@ -49,3 +49,5 @@ function swap(
 | `SIGNATURE_MUST_BE_SENT`          | The signature field is blank. This is not allowed on the Wrapper.          |
 | `VALUE_MUST_BE_SENT`              | No ETH was provided for an order that was expecting ETH to wrap.           |
 | `VALUE_MUST_BE_ZERO`              | ETH was provided for an order that was not expecting ETH to wrap.          |
+| `ETH_RETURN_FAILED`               | Transferring ETH to recipient wallet failed.                             |
+| `DO_NOT_SEND_ETHER`               | ETH was sent to the contract directly. This contract can only receive ETH from the WETH contract. |
