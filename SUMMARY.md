@@ -26,12 +26,12 @@
 
 ## Helper Libraries
 
-- [Orders and Quotes](helper-libaries/orders-and-quotes.md)
-- [Signing Orders](helper-libaries/signing-orders.md)
-- [Hashing Orders](helper-libaries/hashing-orders.md)
-- [Testing Token Balances](helper-libaries/testing-token-balances.md)
-- [Padding Locators](helper-libaries/padding-locators.md)
-- [Testing with Time Travel](helper-libaries/testing-time-travel.md)
+- [Orders and Quotes](helper-libraries/orders-and-quotes.md)
+- [Signing Orders](helper-libraries/signing-orders.md)
+- [Hashing Orders](helper-libraries/hashing-orders.md)
+- [Testing Token Balances](helper-libraries/testing-token-balances.md)
+- [Padding Locators](helper-libraries/padding-locators.md)
+- [Testing with Time Travel](helper-libraries/testing-time-travel.md)
 
 ## Instant (Legacy)
 
