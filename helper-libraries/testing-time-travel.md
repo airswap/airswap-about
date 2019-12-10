@@ -11,12 +11,12 @@ You can find the `time.js` library on NPM within [@airswap/test-utils](https://w
 # Functions
 
 For documentation of the following 6 functions, view `ganache-time-traveller` on [NPM](https://www.npmjs.com/package/ganache-time-traveler) or [GitHub](https://github.com/ejwessel/GanacheTimeTraveler/).
-`advanceTime`
-`advanceBlock`
-`advanceBlockAndSetTime`
-`advanceTimeAndBlock`
-`takeSnapshot`
-`revertToSnapshot`
+### `advanceTime`
+### `advanceBlock`
+### `advanceBlockAndSetTime`
+### `advanceTimeAndBlock`
+### `takeSnapshot`
+### `revertToSnapshot`
 
 These 6 functions are all available within AirSwap's `time.js` library along with the following 2 functions:
 
@@ -30,4 +30,4 @@ These 6 functions are all available within AirSwap's `time.js` library along wit
 | :------ | :----------- | :---------------------------------------------- |
 | `days`  | `number`     | The number of days to add to the current time.  | 
 
-**Returns** the timestamp that is `days` number of days in the future. *Note* this does not increase the blockchain to this time, it merely returns the timestamp of that time.
+**Returns** the timestamp that is `days` number of days in the future. **Note** this does not increase the blockchain to this time, it merely returns the timestamp of that time.

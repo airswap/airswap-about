@@ -8,7 +8,7 @@ Types `Order` and `Party` refer to the structs defined in the [Types](https://do
 
 ## `getOrderHash`
 
-Calculates the hash of an order, ignoring any signature fields that are passed to it. This order hash includes the hashing of the `domain` of the order (the smart contract it is to be submitted to), to prevent double spend attacks. This function is executed within the signature functions described in `Signing Orders`, and therefore if you use those signature functions you do not need to calculate the order hash beforehand.
+Calculates the hash of an order, ignoring any signature fields that are passed to it. This order hash includes the hashing of the `domain` of the order (the smart contract it is to be submitted to), to prevent double spend attacks. This function is executed within the signature functions described in [Signing Orders](signing-orders.md), and therefore if you use those signature functions you do not need to calculate the order hash beforehand.
 
 | Param               | Type     | Description                   |
 | :------------------ | :------- | :---------------------------- |
