@@ -19,3 +19,30 @@ November 26, 2019 / [Commit Hash](https://github.com/airswap/airswap-protocols/c
 | Indexer  | `0.4.2` ([NPM](https://www.npmjs.com/package/@airswap/indexer/v/0.4.2)) | `0xb7eEC6973876211EB0222290282fb09e9314fcb6` ([Etherscan](https://rinkeby.etherscan.io/address/0xb7eEC6973876211EB0222290282fb09e9314fcb6)) |
 | Wrapper  | `0.4.1` ([NPM](https://www.npmjs.com/package/@airswap/wrapper/v/0.4.1)) | `0x56b5236826836c722B70B1E9785ae829aCFccC6D` ([Etherscan](https://rinkeby.etherscan.io/address/0x56b5236826836c722B70B1E9785ae829aCFccC6D)) |
 | Types    | `0.4.2` ([NPM](https://www.npmjs.com/package/@airswap/types/v/0.4.2))   | `0x748981557D20b6C42052A5018CF33385F0da669C` ([Etherscan](https://rinkeby.etherscan.io/address/0x748981557D20b6C42052A5018CF33385F0da669C)) |
+
+
+## Deploy Process
+
+The step-by-step guide to the deployment process is documented within (https://github.com/airswap/airswap-protocols/blob/master/DEPLOYMENT_GUIDE.md). Deployments to public networks are only carried out on the master branch. Contracts will be deployed to a public network and then their source code will be verified on Etherscan. Post-deploy, the addresses are updated in the repo in `deploys.json` and versions of the contracts a incremented based on the versioning schema described below. The ABIs and contracts are published to npm allow application developers to pull from correct versions.
+
+
+## Smart Contract Versioning
+
+**MAJOR.MINOR.PATCH (Semantic Versioning) similar to NPM**
+
+**MAJOR** will be incremented on refer to MAINNET releases
+
+**MINOR** will be incremented on TESTNET releases, specifically RINKEY
+
+**PATCH** will be incremented at a release cadence (proposing at least every 2 weeks)
+
+Each subrepo: delegate, delegate-factory, index, indexer, swap, tokens, types, wrapper will have its own version stored within the package.json
+
+There will not be a version in the root package.json as each subrepo has its own versioning. To help manage the dependencies, there is a dependency-checker script within the `scripts` folder.
+
+## What's part of the release and published to NPM?
+
+- Swap version + that's deployed + address
+- contract versions (semver)
+- Abis, located in build within npm with version update
+- contract addresses located within deploys.json
