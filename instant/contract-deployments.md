@@ -1,24 +1,22 @@
 # Mainnet
 
-November 26, 2019 / [Commit Hash](https://github.com/airswap/airswap-protocols/commit/6ae3e6f900f791562d4f893086702b87bd484902)
-
-| Contract | Version                                                                 | Address                                                                                                                             |
-| :------- | :---------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| Swap     | `3.3.5` ([NPM](https://www.npmjs.com/package/@airswap/swap/v/3.3.5))    | `0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE` ([Etherscan](https://etherscan.io/address/0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE)) |
-| Indexer  | `1.5.6` ([NPM](https://www.npmjs.com/package/@airswap/indexer/v/1.5.6)) | `0x393C25AB96913a80b17069a2b061Ee74813d3866` ([Etherscan](https://etherscan.io/address/0x393C25AB96913a80b17069a2b061Ee74813d3866)) |
-| Wrapper  | `1.5.5` ([NPM](https://www.npmjs.com/package/@airswap/wrapper/v/1.5.5)) | `0x200c6958F6B5dfb463F84f67792b9e8a9966829F` ([Etherscan](https://etherscan.io/address/0x200c6958F6B5dfb463F84f67792b9e8a9966829F)) |
-| Types    | `1.4.4` ([NPM](https://www.npmjs.com/package/@airswap/types/v/1.4.4))   | `0xCE4a46E27986c523d989aD929b42B0e6714C6CC8` ([Etherscan](https://etherscan.io/address/0xCE4a46E27986c523d989aD929b42B0e6714C6CC8)) |
+| Contract | Version                                                           | Address                                                                                                                 | Commit                                                                                                        |
+| :------- | :---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
+| Swap     | [`3.3.5`](https://www.npmjs.com/package/@airswap/swap/v/3.3.5)    | [`0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE`](https://etherscan.io/address/0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE) | [`6ae3...4902`](https://github.com/airswap/airswap-protocols/commit/6ae3e6f900f791562d4f893086702b87bd484902) |
+| Indexer  | [`2.6.7`](https://www.npmjs.com/package/@airswap/indexer/v/2.6.7) | [`0x08FaDac1e47e92c8C01D590147208bDA84594dB3`](https://etherscan.io/address/0x08FaDac1e47e92c8C01D590147208bDA84594dB3) | [`6ae6...5cbd`](https://github.com/airswap/airswap-protocols/commit/6ae6b1aedce4aafb3d006bc77525c2c0e5625cbd) |
+| Wrapper  | [`1.5.5`](https://www.npmjs.com/package/@airswap/wrapper/v/1.5.5) | [`0x200c6958F6B5dfb463F84f67792b9e8a9966829F`](https://etherscan.io/address/0x200c6958F6B5dfb463F84f67792b9e8a9966829F) | [`6ae3...4902`](https://github.com/airswap/airswap-protocols/commit/6ae3e6f900f791562d4f893086702b87bd484902) |
+| Types    | [`1.4.4`](https://www.npmjs.com/package/@airswap/types/v/1.4.4)   | [`0xCE4a46E27986c523d989aD929b42B0e6714C6CC8`](https://etherscan.io/address/0xCE4a46E27986c523d989aD929b42B0e6714C6CC8) | [`6ae3...4902`](https://github.com/airswap/airswap-protocols/commit/6ae3e6f900f791562d4f893086702b87bd484902) |
 
 # Rinkeby
 
-November 26, 2019 / [Commit Hash](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07)
+| Contract | Version                                                           | Address                                                                                                                         | Commit                                                                                                        |
+| :------- | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Swap     | [`2.3.2`](https://www.npmjs.com/package/@airswap/swap/v/3.3.4)    | [`0xE032C9585fF89FE9e9e99a3E49c9f302Aa636D77`](https://rinkeby.etherscan.io/address/0xE032C9585fF89FE9e9e99a3E49c9f302Aa636D77) | [`96c0...aa07`](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07) |
+| Indexer  | [`2.6.7`](https://www.npmjs.com/package/@airswap/indexer/v/2.6.7) | [`0x18C90516a38Dd7B779A8f6C19FA698F0F4Efc7FC`](https://rinkeby.etherscan.io/address/0x18C90516a38Dd7B779A8f6C19FA698F0F4Efc7FC) | [`6ae6...5cbd`](https://github.com/airswap/airswap-protocols/commit/6ae6b1aedce4aafb3d006bc77525c2c0e5625cbd) |
+| Wrapper  | [`0.4.1`](https://www.npmjs.com/package/@airswap/wrapper/v/0.4.1) | [`0x56b5236826836c722B70B1E9785ae829aCFccC6D`](https://rinkeby.etherscan.io/address/0x56b5236826836c722B70B1E9785ae829aCFccC6D) | [`96c0...aa07`](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07) |
+| Types    | [`0.4.2`](https://www.npmjs.com/package/@airswap/types/v/0.4.2)   | [`0x748981557D20b6C42052A5018CF33385F0da669C`](https://rinkeby.etherscan.io/address/0x748981557D20b6C42052A5018CF33385F0da669C) | [`96c0...aa07`](https://github.com/airswap/airswap-protocols/commit/96c0a5ef627f5539ce638e8408b2a4373e6baa07) |
+>>>>>>> e4467ee5cc38080bc11ea7e7ebc6a8a4cdaad111
 
-| Contract | Version                                                                 | Address                                                                                                                                     |
-| :------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| Swap     | `2.3.2` ([NPM](https://www.npmjs.com/package/@airswap/swap/v/3.3.4))    | `0xE032C9585fF89FE9e9e99a3E49c9f302Aa636D77` ([Etherscan](https://rinkeby.etherscan.io/address/0xE032C9585fF89FE9e9e99a3E49c9f302Aa636D77)) |
-| Indexer  | `0.4.2` ([NPM](https://www.npmjs.com/package/@airswap/indexer/v/0.4.2)) | `0xb7eEC6973876211EB0222290282fb09e9314fcb6` ([Etherscan](https://rinkeby.etherscan.io/address/0xb7eEC6973876211EB0222290282fb09e9314fcb6)) |
-| Wrapper  | `0.4.1` ([NPM](https://www.npmjs.com/package/@airswap/wrapper/v/0.4.1)) | `0x56b5236826836c722B70B1E9785ae829aCFccC6D` ([Etherscan](https://rinkeby.etherscan.io/address/0x56b5236826836c722B70B1E9785ae829aCFccC6D)) |
-| Types    | `0.4.2` ([NPM](https://www.npmjs.com/package/@airswap/types/v/0.4.2))   | `0x748981557D20b6C42052A5018CF33385F0da669C` ([Etherscan](https://rinkeby.etherscan.io/address/0x748981557D20b6C42052A5018CF33385F0da669C)) |
 
 
 ## Deploy Process
