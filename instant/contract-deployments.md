@@ -21,9 +21,9 @@
 See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/utils/deployer) for a guide to the deployment process. Each deploy has the following outputs:
 
 - A new contract is deployed from the master branch.
-- After deploy, the source code is verified on Etherscan.
-- The new contract addresses are written to `deploys.json` in each package.
-- The new contract ABI is written to `build/contracts` in each package.
+- After deploy, the contract source code is verified on Etherscan.
+- New contract addresses are written to `deploys.json` in each package. (Both on GitHub and NPM)
+- New contract ABI is written to `build/contracts` in each package. (Only on NPM)
 
 # Contract Versioning
 
