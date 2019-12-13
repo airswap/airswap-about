@@ -255,7 +255,7 @@ If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the f
 | Version           | `bytes32` | 2                                                                  |
 | verifyingContract | `address` | Swap contract address to be used for settlement                    |
 
-# Quotes versus Orders
+# Quotes
 
 Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x277f8169` (ERC-20) or `0x80ac58cd` (ERC-721). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
 
