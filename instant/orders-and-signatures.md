@@ -8,14 +8,14 @@ Each swap is between at least two parties, a `signer` and a `sender`. The `signe
 
 An AirSwap `Order` has the following properties.
 
-| Param     | Type        | Description                                   |
-| :-------- | :---------- | :-------------------------------------------- |
-| nonce     | `uint256`   | Unique per signer and should be sequential    |
-| expiry    | `uint256`   | Expiry in seconds since 1 January 1970        |
-| signer    | `Party`     | Party to the trade that sets terms            |
-| sender    | `Party`     | Party to the trade that accepts terms         |
-| affiliate | `Party`     | Party compensated for facilitating (optional) |
-| signature | `Signature` | Signature of the order, described below       |
+| Param     | Type        | Description                                             |
+| :-------- | :---------- | :------------------------------------------------------ |
+| nonce     | `uint256`   | Unique per signer and should be sequential              |
+| expiry    | `uint256`   | Expiry in seconds since 1 January 1970                  |
+| signer    | `Party`     | Party to the trade that sets and signs terms            |
+| sender    | `Party`     | Party to the trade that accepts and sends terms         |
+| affiliate | `Party`     | `optional` Party compensated for facilitating the trade |
+| signature | `Signature` | Signature of the order, described below                 |
 
 Each `Party` has the following properties.
 
@@ -91,17 +91,17 @@ Each signature should be included on its order, accessible as `order.signature`,
 You can use `personalSign` with the hashing function in the `@airswap/order-utils` package.
 
 ```javascript
-const ethUtil = require('ethereumjs-util')
-const { hashes } = require('@airswap/order-utils')
-const orderHashHex = hashes.getOrderHash(order)
-const sig = await web3.eth.sign(orderHashHex, signer)
-const { v, r, s } = ethUtil.fromRpcSig(sig)
+const ethUtil = require("ethereumjs-util");
+const { hashes } = require("@airswap/order-utils");
+const orderHashHex = hashes.getOrderHash(order);
+const sig = await web3.eth.sign(orderHashHex, signer);
+const { v, r, s } = ethUtil.fromRpcSig(sig);
 return {
-  version: '0x45',
+  version: "0x45",
   v,
   r,
-  s,
-}
+  s
+};
 ```
 
 ### Using `signTypedData`
@@ -109,30 +109,30 @@ return {
 You can use `signTypedData` by calling it directly.
 
 ```javascript
-const ethUtil = require('ethereumjs-util')
-const sigUtil = require('eth-sig-util')
-const DOMAIN_NAME = 'SWAP'
-const DOMAIN_VERSION = '2'
-const verifyingContract = '0x0...' // Address of the Swap Contract
+const ethUtil = require("ethereumjs-util");
+const sigUtil = require("eth-sig-util");
+const DOMAIN_NAME = "SWAP";
+const DOMAIN_VERSION = "2";
+const verifyingContract = "0x0..."; // Address of the Swap Contract
 const sig = sigUtil.signTypedData(privateKey, {
   data: {
     types, // See: @airswap/order-utils/src/constants.js
     domain: {
       name: DOMAIN_NAME,
       version: DOMAIN_VERSION,
-      verifyingContract,
+      verifyingContract
     },
-    primaryType: 'Order',
-    message: order, // See: @airswap/order-utils/src/orders.js
-  },
-})
-const { r, s, v } = ethUtil.fromRpcSig(sig)
+    primaryType: "Order",
+    message: order // See: @airswap/order-utils/src/orders.js
+  }
+});
+const { r, s, v } = ethUtil.fromRpcSig(sig);
 return {
-  version: '0x01', // Version 0x01: signTypedData
+  version: "0x01", // Version 0x01: signTypedData
   r,
   s,
-  v,
-}
+  v
+};
 ```
 
 ## Python
