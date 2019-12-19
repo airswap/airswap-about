@@ -31,8 +31,3 @@
 - [Hashing Orders](helper-libraries/hashing-orders.md)
 - [Testing Token Balances](helper-libraries/testing-token-balances.md)
 - [Testing with Time Travel](helper-libraries/testing-time-travel.md)
-
-## Instant (Legacy)
-
-- [Running Makers (Legacy)](instant-legacy/running-makers-legacy.md)
-- [Add to Your App (Legacy)](instant-legacy/add-to-your-app-legacy.md)
