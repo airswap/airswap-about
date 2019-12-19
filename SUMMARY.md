@@ -30,7 +30,6 @@
 - [Signing Orders](helper-libraries/signing-orders.md)
 - [Hashing Orders](helper-libraries/hashing-orders.md)
 - [Testing Token Balances](helper-libraries/testing-token-balances.md)
-- [Padding Locators](helper-libraries/padding-locators.md)
 - [Testing with Time Travel](helper-libraries/testing-time-travel.md)
 
 ## Instant (Legacy)
