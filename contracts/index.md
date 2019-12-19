@@ -56,6 +56,43 @@ event SetLocator(
 | Revert Reason          | Scenario                                        |
 | :--------------------- | :---------------------------------------------- |
 | `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index. |
+| `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity. |
+
+## `updateLocator`
+
+Updates an existing Locator on the Index.
+
+```java
+function updateLocator(
+  address identifier,
+  uint256 score,
+  bytes32 locator
+) external onlyOwner
+```
+
+| Param        | Type      | Description                                          |
+| :----------- | :-------- | :--------------------------------------------------- |
+| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+| `score`      | `uint256` | Score for the locator being set.                     |
+| `locator`    | `bytes32` | Locator.                                             |
+
+A successful `updateLocator` emits a `SetLocator` event.
+
+
+```java
+event SetLocator(
+  address indexed identifier,
+  uint256 score,
+  bytes32 indexed locator
+);
+```
+
+---
+
+| Revert Reason          | Scenario                                        |
+| :--------------------- | :---------------------------------------------- |
+| `ENTRY_DOES_NOT_EXIST` | This address does not has an Entry on the Index and thus cannot be updated. |
+| `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity. |
 
 ## `unsetLocator`
 
