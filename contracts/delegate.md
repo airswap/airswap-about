@@ -11,7 +11,8 @@ constructor(
   ISwap delegateSwap,
   IIndexer delegateIndexer,
   address delegateContractOwner,
-  address delegateTradeWallet
+  address delegateTradeWallet,
+  bytes2 delegateProtocol
 ) public
 ```
 
@@ -21,6 +22,7 @@ constructor(
 | `delegateIndexer`       | `IIndexer` | Indexer contract the delegate will deploy with. |
 | `delegateContractOwner` | `address`  | Owner of the delegate.                          |
 | `delegateTradeWallet`   | `address`  | Wallet the delegate will trade from.            |
+| `delegateProtocol`   | `bytes2`  | The protocol identifier for Delegate contracts.            |
 
 ## `setRule`
 
