@@ -1,24 +1,28 @@
-Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, the server must be run at a public URL with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. The URL then must be staked on an _indexer_ contract that takers query based on the tokens being traded. To get started, you can either use the Maker Kit or build your own maker.
+Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is staked on an _indexer_ contract that takers query based on the tokens they wish to trade.
+
+# Concepts
+
+On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. These two roles form the upper "liquidity" level of the network. At the lower "protocol" level of the network, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap Instant](https://instant.airswap.io/) system, a maker is always the **signer** and a taker is always the **sender** throughout the protocol implementation.
+
+- [**_Orders_**](./orders-and-signatures.md#creating-orders) are signed and executable trades and [**_Quotes_**](./orders-and-signatures.md#quotes) are indicative prices. Makers should provide both.
+- **_Intent_** is a signal to takers that a maker is trading specific tokens, including contact information (locator), without pricing.
+- **_Locators_** take the form of `hostname[:port][/path]` and resolve to web servers that implement the Maker API. The max length is 32 characters and `https://` is implied.
 
 # Quick Start
 
 ## Tutorials
 
-- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) in just a few steps using Maker Kit and ZEIT.
+- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using Maker Kit and ZEIT.
 
 ## Examples
 
 - [_Maker Kit_](https://github.com/airswap/airswap-maker-kit) includes tools and [examples](https://github.com/airswap/airswap-maker-kit-examples) to help you run a maker.
 
-# Build Your Own
+# Maker API
 
-## Terminology
+The following methods must be implemented as JSON-RPC over HTTP. See an [example implementation](https://github.com/airswap/airswap-maker-kit-examples/blob/master/api/handlers.js#L170).
 
-At the liquidity level, a **maker** is a trading party that is generally available to provide pricing and make trades. A **taker** is a trading party that trades one-off or periodically and accepts the pricing of makers. Makers are expected to implement the following methods taking the API role of **signer** in all cases. The following Maker API is implemented by makers via JSON-RPC over HTTP. At the API level, a **signer** is the party that creates and cryptographically signs an order, and a **sender** is the party that sends it to the blockchain for settlement.
-
-## Maker API
-
-### `getSenderSideQuote`
+## `getSenderSideQuote`
 
 Given a `signerParam` and token pair, return a complete quote. The `senderParam` value is the amount the taker would send. The taker is **buying** from you.
 
@@ -45,7 +49,7 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
 
 A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `senderParam`.
 
-### `getSignerSideQuote`
+## `getSignerSideQuote`
 
 Given a `senderParam` and token pair, return a complete quote. The `signerParam` value is the amount you would send. The taker is **selling** to you.
 
@@ -72,7 +76,7 @@ Given a `senderParam` and token pair, return a complete quote. The `signerParam`
 
 A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `signerParam`. Maximum amounts of tokens you're willing to trade.
 
-### `getMaxQuote`
+## `getMaxQuote`
 
 Given a token pair, return a quote object with the maximum amounts you're willing to trade.
 
@@ -97,7 +101,7 @@ Given a token pair, return a quote object with the maximum amounts you're willin
 
 A successful `getMaxQuote` returns a [Quote](./orders-and-signatures.md#quotes) object.
 
-### `getSenderSideOrder`
+## `getSenderSideOrder`
 
 Given a `signerParam`, `senderWallet`, and token pair, return a complete order. The `senderParam` value is the amount the taker would send. The taker is **buying** from you.
 
@@ -126,7 +130,7 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
 
 A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderParam`.
 
-### `getSignerSideOrder`
+## `getSignerSideOrder`
 
 Given a `senderParam`, `senderWallet`, and token pair, return a complete order. The `signerParam` value is the amount you would send. The taker is **selling** to you.
 
@@ -155,7 +159,7 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
 
 A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerParam`.
 
-## Error codes
+# Error codes
 
 The above call may have thrown an error, matched by `id`:
 
@@ -191,11 +195,11 @@ We have allocated the following range for Swap Protocol errors:
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.
 
-## Indexer API
+# Indexer API
 
 Indexers are smart contracts used to signal your intent to trade and publish the URL at which your maker is running. You can interact with indexer contracts either programmatically or through tools like [AirSwap Maker Kit](https://github.com/airswap/airswap-maker-kit) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../contracts/indexer.md) for complete method details.
 
-### `createIndex`
+## `createIndex`
 
 Each token pair must have an `Index` before calling `setIntent`. If the requested `Index` already exists, the function returns its address.
 
@@ -211,7 +215,7 @@ function createIndex(
 | `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
 | `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
 
-### `setIntent`
+## `setIntent`
 
 Stake tokens to the indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
 
@@ -231,7 +235,7 @@ function setIntent(
 | `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
 | `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
-### `unsetIntent`
+## `unsetIntent`
 
 Unset an intent to trade and return staked tokens to the sender.
 
@@ -247,7 +251,7 @@ function unsetIntent(
 | `signerToken` | `address` | Signer token of the Index being unstaked. |
 | `senderToken` | `address` | Sender token of the Index being unstaked. |
 
-### `getLocators`
+## `getLocators`
 
 Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
 
