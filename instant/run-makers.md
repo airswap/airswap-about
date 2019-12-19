@@ -1,12 +1,12 @@
 Makers are HTTP servers that implement the [Maker API](#maker-api) using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is staked on an _indexer_ contract that takers query based on the tokens they wish to trade.
 
-# Concepts
+# Introduction
 
-On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. These two roles form the upper "liquidity" level of the network. At the lower "protocol" level of the network, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap Instant](https://instant.airswap.io/) system, a maker is always the **signer** and a taker is always the **sender** throughout the protocol implementation.
+On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap Instant](https://instant.airswap.io/) system, a maker is always the **signer** and a taker is always the **sender** throughout the protocol implementation.
 
-- [**_Orders_**](./orders-and-signatures.md#creating-orders) are signed and executable trades and [**_Quotes_**](./orders-and-signatures.md#quotes) are indicative prices. Makers should provide both.
-- **_Intent_** is a signal to takers that a maker is trading specific tokens, including contact information (locator), without pricing.
-- **_Locators_** take the form of `hostname[:port][/path]` and resolve to web servers that implement the Maker API. The max length is 32 characters and `https://` is implied.
+- [**Orders**](./orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](./orders-and-signatures.md#quotes) are indicative prices. Makers should provide both.
+- **Intent** is a signal to takers that a maker is trading specific tokens, including contact information (locator), without pricing.
+- **Locators** take the form of `hostname[:port][/path]` and resolve to web servers that implement the Maker API. The max length is 32 characters and `https://` is implied.
 
 # Quick Start
 
