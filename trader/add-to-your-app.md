@@ -28,14 +28,14 @@ Embedding the widget is simple. Simply add the following code to where you want 
 window.AirSwapTrader.render(
   {
     onCreate: (order, cid) => {
-      console.log('Order created!')
+      console.log("Order created!");
     },
     onClose: transactionHash => {
-      console.log('Widget closed')
-    },
+      console.log("Widget closed");
+    }
   },
-  'body'
-)
+  "body"
+);
 ```
 
 ![](../.gitbook/assets/build-order.png)
@@ -50,23 +50,23 @@ window.AirSwapTrader.render(
     order: {
       expiry: 1707026510, // Expiration date in seconds
       maker: {
-        token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', // DAI
-        param: '10000000000000000000', // Atomic value for 10 DAI
+        token: "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359", // DAI
+        param: "10000000000000000000" // Atomic value for 10 DAI
       },
       taker: {
-        token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
-        param: '10000000000000000', // Atomic value for 0.01 WETH
-      },
+        token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+        param: "10000000000000000" // Atomic value for 0.01 WETH
+      }
     },
     onCreate: (order, cid) => {
-      console.log('Order created!')
+      console.log("Order created!");
     },
     onClose: transactionHash => {
-      console.log('Widget closed')
-    },
+      console.log("Widget closed");
+    }
   },
-  'body'
-)
+  "body"
+);
 ```
 
 ![](../.gitbook/assets/filled-build-order.png)
@@ -85,19 +85,19 @@ window.AirSwapTrader.render(
         wallet: '0xd68bb3350887ed3ee128b5ac4b7d852e24c5d366',
         token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
         param: '1000000000000000000',
-        kind: '0x277f8169'
+        kind: '0x36372b07'
       },
       taker: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
         param: '10000000000000000',
-        kind: '0x277f8169'
+        kind: '0x36372b07'
       },
       affiliate: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0x0000000000000000000000000000000000000000',
         param: '0',
-        kind: '0x277f8169'
+        kind: '0x36372b07'
       },
       signature: {
         version: '0x01',
@@ -123,16 +123,16 @@ If you have the full signed order details stored in [IPFS](https://ipfs.io), you
 ```javascript
 window.AirSwapTrader.render(
   {
-    cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
+    cid: "QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf",
     onSwap: transactionHash => {
-      console.log('Trade complete!')
+      console.log("Trade complete!");
     },
     onClose: transactionHash => {
-      console.log('Widget closed')
-    },
+      console.log("Widget closed");
+    }
   },
-  'body'
-)
+  "body"
+);
 ```
 
 ![](../.gitbook/assets/taker-view.png)
@@ -145,10 +145,10 @@ window.AirSwapTrader.render(
 | `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
 | `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
 | `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade.                                                                                                                  |
-| `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSubmit) triggered on submission of a trade.                                                                                                                  |
+| `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSubmit) triggered on submission of a trade.                                                                                                                |
 | `onSwap`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade.                                                                                                                     |
 | `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel.                                                                                                                  |
-| `onError`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onError) triggered when an error occurs on a trade submission.                                                                                                                     |
+| `onError`  | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onError) triggered when an error occurs on a trade submission.                                                                                               |
 | `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close.                                                                                                                          |
 
 ## Callbacks
@@ -207,8 +207,8 @@ function onError(error) {
 }
 ```
 
-| Type              | Parameter | Description                                                                                                                            |
-| :---------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| Type    | Parameter | Description                            |
+| :------ | :-------- | :------------------------------------- |
 | `error` | `string`  | Description of the error that occured. |
 
 ### onCancel
@@ -232,6 +232,6 @@ Callback function triggered when the user closes the widget. No arguments.
 
 ```javascript
 function onClose() {
-  console.log('Widget closed')
+  console.log("Widget closed");
 }
 ```

@@ -21,7 +21,7 @@ Each `Party` has the following properties.
 
 | Param  | Type      | Description                                     |
 | :----- | :-------- | :---------------------------------------------- |
-| kind   | `bytes4`  | `0x277f8169` (ERC-20) or `0x80ac58cd` (ERC-721) |
+| kind   | `bytes4`  | `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721) |
 | wallet | `address` | Wallet address of the party                     |
 | token  | `address` | Contract address of the token                   |
 | param  | `uint256` | Amount (ERC-20) or ID (ERC-721)                 |
@@ -35,19 +35,19 @@ These values correlate to the structs in [Types](../contracts/types.md).
   "nonce": "100",
   "expiry": "1566941284",
   "signer": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "param": "10000"
   },
   "sender": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
     "param": "100000000"
   },
   "affiliate": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
     "param": "0"
@@ -257,7 +257,7 @@ If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the f
 
 # Quotes
 
-Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x277f8169` (ERC-20) or `0x80ac58cd` (ERC-721). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
+Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
 
 **Example**
 
@@ -266,12 +266,12 @@ Quotes are simple structures that only include the `token`, `param`, and `kind` 
   "signer": {
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "param": "10000",
-    "kind": "0x277f8169"
+    "kind": "0x36372b07"
   },
   "sender": {
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
     "param": "100000000",
-    "kind": "0x277f8169"
+    "kind": "0x36372b07"
   }
 }
 ```
@@ -291,19 +291,19 @@ The nested format makes parameters available by dot syntax. For example, `signer
   "nonce": "100",
   "expiry": "1566941284",
   "signer": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "param": "10000"
   },
   "sender": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
     "param": "100000000"
   },
   "affiliate": {
-    "kind": "0x277f8169",
+    "kind": "0x36372b07",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
     "param": "0"
@@ -332,15 +332,15 @@ The flat format of an order collapses the tree structure by concatenating each v
   "signerWallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
   "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
   "signerParam": "10000",
-  "signerKind": "0x277f8169",
+  "signerKind": "0x36372b07",
   "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
   "senderToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
   "senderParam": "100000000",
-  "senderKind": "0x277f8169",
+  "senderKind": "0x36372b07",
   "affiliateWallet": "0x0000000000000000000000000000000000000000",
   "affiliateToken": "0x0000000000000000000000000000000000000000",
   "affiliateParam": "0",
-  "affiliateKind": "0x277f8169",
+  "affiliateKind": "0x36372b07",
   "signatureSignatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
   "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
   "signatureVersion": "0x45",
