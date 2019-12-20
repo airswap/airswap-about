@@ -24,7 +24,7 @@ Every Order struct has a `.signature.validator` field that specifies the address
 
 | Param               | Type      | Description                | Example                                        |
 | :------------------ | :-------- | :------------------------- | :--------------------------------------------- |
-| `verifyingContract` | `address` | The swap contract address. | `'0x5fc1d62123558feAbad1B806FDEfeC1dE61162dE'` |
+| `verifyingContract` | `address` | The swap contract address. | `'0x3E0c31C3D4067Ed5d7d294F08B79B6003B7bf9c8'` |
 
 ## `generateNonce`
 
