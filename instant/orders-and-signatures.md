@@ -24,7 +24,8 @@ Each `Party` has the following properties.
 | kind   | `bytes4`  | `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721) |
 | wallet | `address` | Wallet address of the party                     |
 | token  | `address` | Contract address of the token                   |
-| param  | `uint256` | Amount (ERC-20) or ID (ERC-721)                 |
+| amount | `uint256` | Amount of the token (ERC-20)                    |
+| id     | `uint256` | ID of the token (ERC-721)                       |
 
 These values correlate to the structs in [Types](../contracts/types.md).
 
@@ -38,19 +39,22 @@ These values correlate to the structs in [Types](../contracts/types.md).
     "kind": "0x36372b07",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "param": "10000"
+    "amount": "10000",
+    "id": "0"
   },
   "sender": {
     "kind": "0x36372b07",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "param": "100000000"
+    "amount": "100000000",
+    "id": "0"
   },
   "affiliate": {
     "kind": "0x36372b07",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
-    "param": "0"
+    "amount": "0",
+    "id": "0"
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
@@ -145,7 +149,7 @@ To sign the order, you'll need to create hashes of the encoded types, as well as
 
 ```python
 SWAP_TYPES = {
-    "party": b"Party(bytes4 kind,address wallet,address token,uint256 param)",
+    "party": b"Party(bytes4 kind,address wallet,address token,uint256 amount,uint256 id)",
     "order": b"Order(uint256 nonce,uint256 expiry,Party signer,Party sender,Party affiliate)",
     "eip712": b"EIP712Domain(string name,string version,address verifyingContract)",
 }
@@ -174,38 +178,41 @@ Then you can create a hash of the order itself with the type information include
 ```python
 hashed_signer = keccak(
     encode_abi(
-        ["bytes32", "bytes4", "address", "address", "uint256"],
+        ["bytes32", "bytes4", "address", "address", "uint256", "uint256"],
         [
             SWAP_TYPE_HASHES["party"],
             ERC_20_INTERFACE_ID,
             order["signerWallet"],
             order["signerToken"],
-            int(order["signerParam"]),
+            int(order["signerAmount"]),
+            int(order["signerId"]),
         ],
     )
 )
 
 hashed_sender = keccak(
     encode_abi(
-        ["bytes32", "bytes4", "address", "address", "uint256"],
+        ["bytes32", "bytes4", "address", "address", "uint256", "uint256"],
         [
             SWAP_TYPE_HASHES["party"],
             ERC_20_INTERFACE_ID,
             order["senderWallet"],
             order["senderToken"],
-            int(order["senderParam"]),
+            int(order["senderAmount"]),
+            int(order["senderId"]),
         ],
     )
 )
 
 hashed_affiliate = keccak(
     encode_abi(
-        ["bytes32",  "bytes4", "address", "address", "uint256"],
+        ["bytes32",  "bytes4", "address", "address", "uint256", "uint256"],
         [
             SWAP_TYPE_HASHES["party"],
             ERC_20_INTERFACE_ID,
             "0x0000000000000000000000000000000000000000",
             "0x0000000000000000000000000000000000000000",
+            0,
             0,
         ],
     )
@@ -257,7 +264,7 @@ If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the f
 
 # Quotes
 
-Quotes are simple structures that only include the `token`, `param`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `param` is the number of ERC-20 tokens being transferred, or the ID of the ERC-721 being transferred.
+Quotes are simple structures that only include the `token`, `amount`, `id`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `amount` is the number of ERC-20 tokens being transferred, and `id` is the ID of the ERC-721 being transferred.
 
 **Example**
 
@@ -265,12 +272,14 @@ Quotes are simple structures that only include the `token`, `param`, and `kind` 
 {
   "signer": {
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "param": "10000",
+    "amount": "10000",
+    "id": "0",
     "kind": "0x36372b07"
   },
   "sender": {
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "param": "100000000",
+    "amount": "100000000",
+    "id": "0",
     "kind": "0x36372b07"
   }
 }
@@ -294,19 +303,22 @@ The nested format makes parameters available by dot syntax. For example, `signer
     "kind": "0x36372b07",
     "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
     "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "param": "10000"
+    "amount": "10000",
+    "id": "0"
   },
   "sender": {
     "kind": "0x36372b07",
     "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "token": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "param": "100000000"
+    "amount": "100000000",
+    "id": "0"
   },
   "affiliate": {
     "kind": "0x36372b07",
     "wallet": "0x0000000000000000000000000000000000000000",
     "token": "0x0000000000000000000000000000000000000000",
-    "param": "0"
+    "amount": "0",
+    "id": "0"
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
@@ -331,15 +343,18 @@ The flat format of an order collapses the tree structure by concatenating each v
   "expiry": "1566941284",
   "signerWallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
   "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-  "signerParam": "10000",
+  "signerAmount": "10000",
+  "signerId": "0",
   "signerKind": "0x36372b07",
   "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
   "senderToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-  "senderParam": "100000000",
+  "senderAmount": "100000000",
+  "senderId": "0",
   "senderKind": "0x36372b07",
   "affiliateWallet": "0x0000000000000000000000000000000000000000",
   "affiliateToken": "0x0000000000000000000000000000000000000000",
-  "affiliateParam": "0",
+  "affiliateAmount": "0",
+  "affiliateId": "0",
   "affiliateKind": "0x36372b07",
   "signatureSignatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
   "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",

@@ -68,7 +68,7 @@ event SetRule(
 
 ### Price Calculations
 
-All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
+All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderAmount` of `2` results in `signerAmount` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 ### Examples
 
@@ -218,19 +218,19 @@ Get a quote for the signer side. Often used to get a buy price for \senderToken.
 
 ```java
 function getSignerSideQuote(
-  uint256 senderParam,
+  uint256 senderAmount,
   address senderToken,
   address signerToken
 ) external view returns (
-  uint256 signerParam
+  uint256 signerAmount
 )
 ```
 
-| Param         | Type      | Description                                           |
-| :------------ | :-------- | :---------------------------------------------------- |
-| `senderParam` | `uint256` | The amount of ERC-20 token the sender would send.     |
-| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
-| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
+| Param          | Type      | Description                                           |
+| :------------- | :-------- | :---------------------------------------------------- |
+| `senderAmount` | `uint256` | The amount of ERC-20 token the sender would send.     |
+| `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
+| `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
 
 ## `getSenderSideQuote`
 
@@ -238,19 +238,19 @@ Get a quote for the sender side. Often used to get a sell price for \_signerToke
 
 ```java
 function getSenderSideQuote(
-  uint256 signerParam,
+  uint256 signerAmount,
   address signerToken,
   address senderToken
 ) external view returns (
-  uint256 senderParam
+  uint256 senderAmount
 )
 ```
 
-| Param         | Type      | Description                                           |
-| :------------ | :-------- | :---------------------------------------------------- |
-| `signerParam` | `uint256` | The amount of ERC-20 token the signer would send.     |
-| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
-| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| Param          | Type      | Description                                           |
+| :------------- | :-------- | :---------------------------------------------------- |
+| `signerAmount` | `uint256` | The amount of ERC-20 token the signer would send.     |
+| `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
+| `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
 
 ## `getMaxQuote`
 
@@ -261,8 +261,8 @@ function getMaxQuote(
   address senderToken,
   address signerToken
 ) external view returns (
-  uint256 senderParam,
-  uint256 signerParam
+  uint256 senderAmount,
+  uint256 signerAmount
 )
 ```
 

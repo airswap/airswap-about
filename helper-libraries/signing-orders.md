@@ -16,23 +16,18 @@ const order = await orders.getOrder({
   signer: {
     wallet: ganacheWallet,
     token: ASTAddress,
-    param: '400',
+    amount: '400',
   },
   sender: {
     wallet: senderWallet,
     token: WETHAddress,
-    param: '2',
+    amount: '2',
   },
 })
 
 // Now sign the order.
 // Notice that the function response is assigned as the order's signature
-order.signature = await signatures.getWeb3Signature(
-  order,
-  ganacheWallet,
-  swapContractAddress,
-  'http://127.0.0.1:8545'
-)
+order.signature = await signatures.getWeb3Signature(order, ganacheWallet, swapContractAddress, 'http://127.0.0.1:8545')
 ```
 
 ## `getWeb3Signature`
@@ -41,12 +36,12 @@ Uses a web3 provider to sign an order. This means no private key or seed phrase 
 
 This creates a signature with version 0x45.
 
-| Param               | Type     | Description                   |
-| :------------------ | :------- | :---------------------------- |
-| `order`             | `Order`  | The order to be signed.       | 
-| `signatory`         | `address`| The wallet to sign the order. |
-| `verifyingContract` | `address`| The swap contract address.    |
-| `provider`          | `string` | The web3 provider to use.     |
+| Param               | Type      | Description                   |
+| :------------------ | :-------- | :---------------------------- |
+| `order`             | `Order`   | The order to be signed.       |
+| `signatory`         | `address` | The wallet to sign the order. |
+| `verifyingContract` | `address` | The swap contract address.    |
+| `provider`          | `string`  | The web3 provider to use.     |
 
 **Returns** an order signature.
 
@@ -56,20 +51,18 @@ Uses a private key to sign the order.
 
 This creates a signature with version 0x01.
 
-| Param               | Type     | Description                   |
-| :------------------ | :------- | :---------------------------- |
-| `order`             | `Order`  | The order to be signed.       | 
-| `privateKey`        | `Buffer` | The private key to sign with. |
-| `verifyingContract` | `address`| The swap contract address.    |
+| Param               | Type      | Description                   |
+| :------------------ | :-------- | :---------------------------- |
+| `order`             | `Order`   | The order to be signed.       |
+| `privateKey`        | `Buffer`  | The private key to sign with. |
+| `verifyingContract` | `address` | The swap contract address.    |
 
 **Returns** an order signature.
 
 Note: To get your string private key into the correct form use:
+
 ```javascript
-const privateKeyBuffer = Buffer.from(
-  privateKeyString,
-  'hex'
-)
+const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
 ## `getPersonalSignature`
@@ -78,20 +71,18 @@ Uses a private key to sign the order.
 
 This creates a signature with version 0x45.
 
-| Param               | Type     | Description                   |
-| :------------------ | :------- | :---------------------------- |
-| `order`             | `Order`  | The order to be signed.       | 
-| `privateKey`        | `Buffer` | The private key to sign with. |
-| `verifyingContract` | `address`| The swap contract address.    |
+| Param               | Type      | Description                   |
+| :------------------ | :-------- | :---------------------------- |
+| `order`             | `Order`   | The order to be signed.       |
+| `privateKey`        | `Buffer`  | The private key to sign with. |
+| `verifyingContract` | `address` | The swap contract address.    |
 
 **Returns** an order signature.
 
 Note: To get your string private key into the correct form use:
+
 ```javascript
-const privateKeyBuffer = Buffer.from(
-  privateKeyString,
-  'hex'
-)
+const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
 ## `getTypedDataSignature`
@@ -100,37 +91,34 @@ Uses a private key to sign the order.
 
 This creates a signature with version 0x01.
 
-| Param               | Type     | Description                   |
-| :------------------ | :------- | :---------------------------- |
-| `order`             | `Order`  | The order to be signed.       | 
-| `privateKey`        | `Buffer` | The private key to sign with. |
-| `verifyingContract` | `address`| The swap contract address.    |
+| Param               | Type      | Description                   |
+| :------------------ | :-------- | :---------------------------- |
+| `order`             | `Order`   | The order to be signed.       |
+| `privateKey`        | `Buffer`  | The private key to sign with. |
+| `verifyingContract` | `address` | The swap contract address.    |
 
 **Returns** an order signature.
 
 Note: To get your string private key into the correct form use:
+
 ```javascript
-const privateKeyBuffer = Buffer.from(
-  privateKeyString,
-  'hex'
-)
+const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
 ## `getEmptySignature`
 
 Returns a signature struct with all values as empty values, except the signature validator which still takes the value of the swap contract address. The Swap contract allows `signerAuthorizations`, whereby the order signer no longer has to have signed the order. Instead users can authorize another address to send in orders on their behalf without a signature. This function can be used to create that empty signature field.
 
-| Param               | Type     | Description                   |
-| :------------------ | :------- | :---------------------------- |
-| `verifyingContract` | `address`| The swap contract address.    |
-
+| Param               | Type      | Description                |
+| :------------------ | :-------- | :------------------------- |
+| `verifyingContract` | `address` | The swap contract address. |
 
 ## `isSignatureValid`
 
 Checks whether a signature is a valid signature of a given order. This includes verifying that the key that signed the order is the same as the one named in the order.
 
-| Param               | Type     | Description                       |
-| :------------------ | :------- | :-------------------------------- |
-| `order`             | `Order`  | The order including a signature.  | 
+| Param   | Type    | Description                      |
+| :------ | :------ | :------------------------------- |
+| `order` | `Order` | The order including a signature. |
 
 **Returns** `true` if the signature is valid
