@@ -24,7 +24,7 @@ The following methods must be implemented as JSON-RPC over HTTP. See an [example
 
 ## `getSenderSideQuote`
 
-Given a `signerParam` and token pair, return a complete quote. The `senderParam` value is the amount the taker would send. The taker is **buying** from you.
+Given a `signerAmount` and token pair, return a complete quote. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
 
 **Example Request**
 
@@ -35,23 +35,23 @@ Given a `signerParam` and token pair, return a complete quote. The `senderParam`
   "params": {
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "signerParam": "100000000"
+    "signerAmount": "100000000"
   },
   "id": "123"
 }
 ```
 
-| Param         | Type      | Description                                 |
-| :------------ | :-------- | :------------------------------------------ |
-| `signerParam` | `uint256` | Amount of ERC-20 the signer would transfer. |
-| `senderToken` | `address` | Token the sender would transfer.            |
-| `signerToken` | `address` | Token the signer would transfer.            |
+| Param          | Type      | Description                                 |
+| :------------- | :-------- | :------------------------------------------ |
+| `signerAmount` | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `senderToken`  | `address` | Token the sender would transfer.            |
+| `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `senderParam`.
+A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `senderAmount`.
 
 ## `getSignerSideQuote`
 
-Given a `senderParam` and token pair, return a complete quote. The `signerParam` value is the amount you would send. The taker is **selling** to you.
+Given a `senderAmount` and token pair, return a complete quote. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
 
 **Example Request**
 
@@ -61,20 +61,20 @@ Given a `senderParam` and token pair, return a complete quote. The `signerParam`
   "method": "getSignerSideQuote",
   "params": {
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderParam": "100000000",
+    "senderAmount": "100000000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
   },
   "id": "123"
 }
 ```
 
-| Param         | Type      | Description                                 |
-| :------------ | :-------- | :------------------------------------------ |
-| `senderParam` | `uint256` | Amount of ERC-20 the sender would transfer. |
-| `senderToken` | `address` | Token the sender would transfer.            |
-| `signerToken` | `address` | Token the signer would transfer.            |
+| Param          | Type      | Description                                 |
+| :------------- | :-------- | :------------------------------------------ |
+| `senderAmount` | `uint256` | Amount of ERC-20 the sender would transfer. |
+| `senderToken`  | `address` | Token the sender would transfer.            |
+| `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `signerParam`. Maximum amounts of tokens you're willing to trade.
+A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `signerAmount`. Maximum amounts of tokens you're willing to trade.
 
 ## `getMaxQuote`
 
@@ -103,7 +103,7 @@ A successful `getMaxQuote` returns a [Quote](./orders-and-signatures.md#quotes) 
 
 ## `getSenderSideOrder`
 
-Given a `signerParam`, `senderWallet`, and token pair, return a complete order. The `senderParam` value is the amount the taker would send. The taker is **buying** from you.
+Given a `signerAmount`, `senderWallet`, and token pair, return a complete order. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
 
 **Example Request**
 
@@ -112,7 +112,7 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
   "jsonrpc": "2.0",
   "method": "getSenderSideOrder",
   "params": {
-    "signerParam": "10000",
+    "signerAmount": "10000",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
@@ -123,16 +123,16 @@ Given a `signerParam`, `senderWallet`, and token pair, return a complete order. 
 
 | Param          | Type      | Description                                 |
 | :------------- | :-------- | :------------------------------------------ |
-| `signerParam`  | `uint256` | Amount of ERC-20 the signer would transfer. |
+| `signerAmount` | `uint256` | Amount of ERC-20 the signer would transfer. |
 | `signerToken`  | `address` | Token the signer would transfer.            |
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `senderWallet` | `address` | Wallet of the sender.                       |
 
-A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderParam`.
+A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderAmount`.
 
 ## `getSignerSideOrder`
 
-Given a `senderParam`, `senderWallet`, and token pair, return a complete order. The `signerParam` value is the amount you would send. The taker is **selling** to you.
+Given a `senderAmount`, `senderWallet`, and token pair, return a complete order. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
 
 **Example Request**
 
@@ -144,7 +144,7 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderParam": "100000000"
+    "senderAmount": "100000000"
   },
   "id": "123"
 }
@@ -152,12 +152,12 @@ Given a `senderParam`, `senderWallet`, and token pair, return a complete order. 
 
 | Param          | Type      | Description                                     |
 | :------------- | :-------- | :---------------------------------------------- |
-| `senderParam`  | `uint256` | The amount of ERC-20 the sender would transfer. |
+| `senderAmount` | `uint256` | The amount of ERC-20 the sender would transfer. |
 | `signerToken`  | `address` | The token the signer would transfer.            |
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerParam`.
+A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerAmount`.
 
 # Error codes
 
@@ -189,8 +189,8 @@ We have allocated the following range for Swap Protocol errors:
 
 - `-33600` Cannot provide the requested quote or order
 - `-33601` Not trading the requested `signerToken` `senderToken` pair
-- `-33602` The specified `senderParam` or `signerParam` is too low
-- `-33603` The specified `senderParam` or `signerParam` is too high
+- `-33602` The specified `senderAmount` or `signerAmount` is too low
+- `-33603` The specified `senderAmount` or `signerAmount` is too high
 - `-33604` Invalid request parameters
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` Reserved for implementation specific trading errors.

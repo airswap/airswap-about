@@ -51,11 +51,11 @@ window.AirSwapTrader.render(
       expiry: 1707026510, // Expiration date in seconds
       maker: {
         token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', // DAI
-        param: '10000000000000000000', // Atomic value for 10 DAI
+        amount: '10000000000000000000', // Atomic value for 10 DAI
       },
       taker: {
         token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
-        param: '10000000000000000', // Atomic value for 0.01 WETH
+        amount: '10000000000000000', // Atomic value for 0.01 WETH
       },
     },
     onCreate: (order, cid) => {
@@ -84,19 +84,22 @@ window.AirSwapTrader.render(
       maker: {
         wallet: '0xd68bb3350887ed3ee128b5ac4b7d852e24c5d366',
         token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
-        param: '1000000000000000000',
+        amount: '1000000000000000000',
+        id: '0',
         kind: '0x36372b07'
       },
       taker: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-        param: '10000000000000000',
+        amount: '10000000000000000',
+        id: '0',
         kind: '0x36372b07'
       },
       affiliate: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0x0000000000000000000000000000000000000000',
-        param: '0',
+        amount: '0',
+        id: '0',
         kind: '0x36372b07'
       },
       signature: {
