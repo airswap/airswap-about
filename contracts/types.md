@@ -15,13 +15,13 @@ Types is a library contract of protocol structs, functions, and constants for th
 
 ## `Party`
 
-| Param  | Type      | Description                        |
-| :----- | :-------- | :--------------------------------- |
-| kind   | `bytes4`  | Interface ID of the token          |
-| wallet | `address` | Wallet address of the party        |
-| token  | `address` | Contract address of the token      |
-| amount | `uint256` | Value \(ERC-20\)                   |
-| id     | `uint256` | ID \(ERC-721\)                     |
+| Param  | Type      | Description                   |
+| :----- | :-------- | :---------------------------- |
+| kind   | `bytes4`  | Interface ID of the token     |
+| wallet | `address` | Wallet address of the party   |
+| token  | `address` | Contract address of the token |
+| amount | `uint256` | Value \(ERC-20\)              |
+| id     | `uint256` | ID \(ERC-721\)                |
 
 ## `Signature`
 

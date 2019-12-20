@@ -6,7 +6,7 @@
 
 - [Add to Your App](instant/add-to-your-app.md)
 - [Run Makers](instant/run-makers.md)
-- [Orders, Signatures, and Quotes](instant/orders-and-signatures.md)
+- [Orders, Quotes, and Signatures](instant/orders-and-signatures.md)
 - [Contract Deployments](instant/contract-deployments.md)
 - [Architecture](instant/architecture.md)
 

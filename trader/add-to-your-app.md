@@ -28,14 +28,14 @@ Embedding the widget is simple. Simply add the following code to where you want 
 window.AirSwapTrader.render(
   {
     onCreate: (order, cid) => {
-      console.log("Order created!");
+      console.log('Order created!')
     },
     onClose: transactionHash => {
-      console.log("Widget closed");
-    }
+      console.log('Widget closed')
+    },
   },
-  "body"
-);
+  'body',
+)
 ```
 
 ![](../.gitbook/assets/build-order.png)
@@ -50,23 +50,23 @@ window.AirSwapTrader.render(
     order: {
       expiry: 1707026510, // Expiration date in seconds
       maker: {
-        token: "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359", // DAI
-        param: "10000000000000000000" // Atomic value for 10 DAI
+        token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', // DAI
+        param: '10000000000000000000', // Atomic value for 10 DAI
       },
       taker: {
-        token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-        param: "10000000000000000" // Atomic value for 0.01 WETH
-      }
+        token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
+        param: '10000000000000000', // Atomic value for 0.01 WETH
+      },
     },
     onCreate: (order, cid) => {
-      console.log("Order created!");
+      console.log('Order created!')
     },
     onClose: transactionHash => {
-      console.log("Widget closed");
-    }
+      console.log('Widget closed')
+    },
   },
-  "body"
-);
+  'body',
+)
 ```
 
 ![](../.gitbook/assets/filled-build-order.png)
@@ -123,16 +123,16 @@ If you have the full signed order details stored in [IPFS](https://ipfs.io), you
 ```javascript
 window.AirSwapTrader.render(
   {
-    cid: "QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf",
+    cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
     onSwap: transactionHash => {
-      console.log("Trade complete!");
+      console.log('Trade complete!')
     },
     onClose: transactionHash => {
-      console.log("Widget closed");
-    }
+      console.log('Widget closed')
+    },
   },
-  "body"
-);
+  'body',
+)
 ```
 
 ![](../.gitbook/assets/taker-view.png)
@@ -232,6 +232,6 @@ Callback function triggered when the user closes the widget. No arguments.
 
 ```javascript
 function onClose() {
-  console.log("Widget closed");
+  console.log('Widget closed')
 }
 ```

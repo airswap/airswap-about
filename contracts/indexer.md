@@ -16,8 +16,8 @@ constructor(
 ) public
 ```
 
-| Param                 | Type      | Description                                |
-| :-------------------- | :-------- | :----------------------------------------- |
+| Param                 | Type      | Description                                                                   |
+| :-------------------- | :-------- | :---------------------------------------------------------------------------- |
 | `indexerStakingToken` | `address` | Address of the token required for staking. Must be a standard ERC20 contract. |
 
 ## `createIndex`
@@ -32,11 +32,11 @@ function createIndex(
 ) external returns (address)
 ```
 
-| Param         | Type      | Description                                                |
-| :------------ | :-------- | :--------------------------------------------------------- |
-| `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
-| `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
-| `protocol` | `bytes2` | Identifier for different locator versions ie http makers, delegates. |
+| Param         | Type      | Description                                                          |
+| :------------ | :-------- | :------------------------------------------------------------------- |
+| `signerToken` | `address` | Address of the token transferred from a signer in a trade.           |
+| `senderToken` | `address` | Address of the token transferred from a sender in a trade.           |
+| `protocol`    | `bytes2`  | Identifier for different locator versions ie http makers, delegates. |
 
 When a new `Index` is deployed, `createIndex` emits a `CreateIndex` event.
 
@@ -110,7 +110,7 @@ function setIntent(
 | :-------------- | :-------- | :------------------------------------------------------ |
 | `signerToken`   | `address` | Signer token of the Index being staked.                 |
 | `senderToken`   | `address` | Sender token of the Index being staked.                 |
-| `protocol`      | `bytes2` | Identifies protocol to communicate with locator.  
+| `protocol`      | `bytes2`  | Identifies protocol to communicate with locator.        |
 | `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
 | `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
@@ -148,10 +148,10 @@ function unsetIntent(
 ) external
 ```
 
-| Param         | Type      | Description                               |
-| :------------ | :-------- | :---------------------------------------- |
-| `signerToken` | `address` | Signer token of the Index being unstaked. |
-| `senderToken` | `address` | Sender token of the Index being unstaked. |
+| Param         | Type      | Description                                      |
+| :------------ | :-------- | :----------------------------------------------- |
+| `signerToken` | `address` | Signer token of the Index being unstaked.        |
+| `senderToken` | `address` | Sender token of the Index being unstaked.        |
 | `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
 
 A successful `unsetIntent` emits an `Unstake` event. The underlying `Index` emits an `UnsetLocator` event.
@@ -191,13 +191,13 @@ function getLocators(
 ) {
 ```
 
-| Param         | Type      | Description                                     |
-| :------------ | :-------- | :---------------------------------------------- |
-| `signerToken` | `address` | Address of the token that the signer transfers. |
-| `senderToken` | `address` | Address of the token that the sender transfers. |
+| Param         | Type      | Description                                      |
+| :------------ | :-------- | :----------------------------------------------- |
+| `signerToken` | `address` | Address of the token that the signer transfers.  |
+| `senderToken` | `address` | Address of the token that the sender transfers.  |
 | `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
-| `cursor`      | `address` | Address of the user to start from in the list.  |
-| `limit`       | `uint256` | Maximum number of items to return.              |
+| `cursor`      | `address` | Address of the user to start from in the list.   |
+| `limit`       | `uint256` | Maximum number of items to return.               |
 
 ## `getStakedAmount`
 

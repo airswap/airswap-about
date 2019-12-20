@@ -14,11 +14,11 @@ constructor(
 ) public
 ```
 
-| Param                    | Type    | Description                                                     |
-| :----------------------- | :------ | :-------------------------------------------------------------- |
-| `factorySwapContract`    | `ISwap` | Instance of the swap contract used to settle trades.            |
-| `factoryIndexerContract` | `ISwap` | Instance of the indexer contract the delegate will deploy with. |
-| `factoryProtocol` | `bytes2` | Protocol type of the delegates the factory deploys. |
+| Param                    | Type     | Description                                                     |
+| :----------------------- | :------- | :-------------------------------------------------------------- |
+| `factorySwapContract`    | `ISwap`  | Instance of the swap contract used to settle trades.            |
+| `factoryIndexerContract` | `ISwap`  | Instance of the indexer contract the delegate will deploy with. |
+| `factoryProtocol`        | `bytes2` | Protocol type of the delegates the factory deploys.             |
 
 ## `createDelegate`
 

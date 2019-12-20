@@ -53,9 +53,9 @@ event SetLocator(
 
 ---
 
-| Revert Reason          | Scenario                                        |
-| :--------------------- | :---------------------------------------------- |
-| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index. |
+| Revert Reason          | Scenario                                            |
+| :--------------------- | :-------------------------------------------------- |
+| `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index.     |
 | `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity. |
 
 ## `updateLocator`
@@ -78,7 +78,6 @@ function updateLocator(
 
 A successful `updateLocator` emits a `SetLocator` event.
 
-
 ```java
 event SetLocator(
   address indexed identifier,
@@ -89,10 +88,10 @@ event SetLocator(
 
 ---
 
-| Revert Reason          | Scenario                                        |
-| :--------------------- | :---------------------------------------------- |
+| Revert Reason          | Scenario                                                                    |
+| :--------------------- | :-------------------------------------------------------------------------- |
 | `ENTRY_DOES_NOT_EXIST` | This address does not has an Entry on the Index and thus cannot be updated. |
-| `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity. |
+| `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity.                         |
 
 ## `unsetLocator`
 

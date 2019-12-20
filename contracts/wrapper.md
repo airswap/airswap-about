@@ -43,11 +43,11 @@ function swap(
 
 ---
 
-| Revert Reason                     | Scenario                                                                   |
-| :-------------------------------- | :------------------------------------------------------------------------- |
-| `MSG_SENDER_MUST_BE_ORDER_SENDER` | Order has been sent by an account that is not the order's `sender.wallet`. |
-| `SIGNATURE_MUST_BE_SENT`          | The signature field is blank. This is not allowed on the Wrapper.          |
-| `VALUE_MUST_BE_SENT`              | No ETH was provided for an order that was expecting ETH to wrap.           |
-| `VALUE_MUST_BE_ZERO`              | ETH was provided for an order that was not expecting ETH to wrap.          |
-| `ETH_RETURN_FAILED`               | Transferring ETH to recipient wallet failed.                             |
+| Revert Reason                     | Scenario                                                                                          |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------ |
+| `MSG_SENDER_MUST_BE_ORDER_SENDER` | Order has been sent by an account that is not the order's `sender.wallet`.                        |
+| `SIGNATURE_MUST_BE_SENT`          | The signature field is blank. This is not allowed on the Wrapper.                                 |
+| `VALUE_MUST_BE_SENT`              | No ETH was provided for an order that was expecting ETH to wrap.                                  |
+| `VALUE_MUST_BE_ZERO`              | ETH was provided for an order that was not expecting ETH to wrap.                                 |
+| `ETH_RETURN_FAILED`               | Transferring ETH to recipient wallet failed.                                                      |
 | `DO_NOT_SEND_ETHER`               | ETH was sent to the contract directly. This contract can only receive ETH from the WETH contract. |
