@@ -18,7 +18,7 @@ constructor(
 
 | Param                 | Type      | Description                                |
 | :-------------------- | :-------- | :----------------------------------------- |
-| `indexerStakingToken` | `address` | Address of the token required for staking. |
+| `indexerStakingToken` | `address` | Address of the token required for staking. Must be a standard ERC20 contract. |
 
 ## `createIndex`
 
@@ -27,7 +27,8 @@ If none exists, deploy a new `Index` contract for the given token pair and retur
 ```java
 function createIndex(
   address signerToken,
-  address senderToken
+  address senderToken,
+  bytes2  protocol
 ) external returns (address)
 ```
 
@@ -35,13 +36,15 @@ function createIndex(
 | :------------ | :-------- | :--------------------------------------------------------- |
 | `signerToken` | `address` | Address of the token transferred from a signer in a trade. |
 | `senderToken` | `address` | Address of the token transferred from a sender in a trade. |
+| `protocol` | `bytes2` | Identifier for different locator versions ie http makers, delegates. |
 
 When a new `Index` is deployed, `createIndex` emits a `CreateIndex` event.
 
 ```java
 event CreateIndex(
   address signerToken,
-  address senderToken
+  address senderToken,
+  bytes2 protocol
 );
 ```
 
@@ -97,6 +100,7 @@ Stake tokens to the Indexer and set an intent to trade. If the caller already ha
 function setIntent(
   address signerToken,
   address senderToken,
+  bytes2 protocol,
   uint256 stakingAmount,
   bytes32 locator
 ) external
@@ -106,6 +110,7 @@ function setIntent(
 | :-------------- | :-------- | :------------------------------------------------------ |
 | `signerToken`   | `address` | Signer token of the Index being staked.                 |
 | `senderToken`   | `address` | Sender token of the Index being staked.                 |
+| `protocol`      | `bytes2` | Identifies protocol to communicate with locator.  
 | `stakingAmount` | `uint256` | Amount of stakingToken to stake.                        |
 | `locator`       | `bytes32` | Arbitrary data. Often an address in the first 20 bytes. |
 
@@ -116,6 +121,7 @@ event Stake(
   address indexed staker,
   address indexed signerToken,
   address indexed senderToken,
+  bytes2 protocol,
   uint256 stakeAmount
 );
 ```
@@ -137,7 +143,8 @@ Unset an intent to trade and return staked tokens to the sender.
 ```java
 function unsetIntent(
   address signerToken,
-  address senderToken
+  address senderToken,
+  bytes2 protocol
 ) external
 ```
 
@@ -145,6 +152,7 @@ function unsetIntent(
 | :------------ | :-------- | :---------------------------------------- |
 | `signerToken` | `address` | Signer token of the Index being unstaked. |
 | `senderToken` | `address` | Sender token of the Index being unstaked. |
+| `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
 
 A successful `unsetIntent` emits an `Unstake` event. The underlying `Index` emits an `UnsetLocator` event.
 
@@ -153,6 +161,7 @@ event Unstake(
   address indexed staker,
   address indexed signerToken,
   address indexed senderToken,
+  bytes2 protocol,
   uint256 stakeAmount
 );
 ```
@@ -172,6 +181,7 @@ Get a list of locators that have an intent to trade a token pair. Along with the
 function getLocators(
   address signerToken,
   address senderToken,
+  bytes2 protocol,
   address cursor,
   uint256 limit
 ) external view returns (
@@ -185,6 +195,7 @@ function getLocators(
 | :------------ | :-------- | :---------------------------------------------- |
 | `signerToken` | `address` | Address of the token that the signer transfers. |
 | `senderToken` | `address` | Address of the token that the sender transfers. |
+| `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
 | `cursor`      | `address` | Address of the user to start from in the list.  |
 | `limit`       | `uint256` | Maximum number of items to return.              |
 
@@ -196,7 +207,8 @@ Get a list of locators that have an intent to trade a token pair. Along with the
 function getStakedAmount(
   address user,
   address signerToken,
-  address senderToken
+  address senderToken,
+  bytes2 protocol
 ) public view returns (uint256 stakedAmount) {
 ```
 
@@ -205,3 +217,4 @@ function getStakedAmount(
 | `user`        | `address` | The user whose stake amount is requested.        |
 | `signerToken` | `address` | The signer token of the Index they've staked on. |
 | `senderToken` | `address` | The sender token of the Index they've staked on. |
+| `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
