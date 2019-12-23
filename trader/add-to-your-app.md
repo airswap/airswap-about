@@ -22,11 +22,7 @@ Pop-up blockers can prevent the widget from loading properly.
 
 ## Display an new order builder
 
-<<<<<<< HEAD
-Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](../contracts/types.md#order) and cid \(ipfs hash\) are passed as arguments.
-=======
 Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid \(ipfs hash\) are passed as arguments.
->>>>>>> @{-1}
 
 ```javascript
 window.AirSwapTrader.render(
@@ -46,11 +42,7 @@ window.AirSwapTrader.render(
 
 ## Pre-fill values in the order builder
 
-<<<<<<< HEAD
-In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](../contracts/types.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
-=======
 In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
->>>>>>> @{-1}
 
 ```javascript
 window.AirSwapTrader.render(
