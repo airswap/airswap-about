@@ -22,7 +22,7 @@ Pop-up blockers can prevent the widget from loading properly.
 
 ## Display an new order builder
 
-Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](add-to-your-app.md#order) and [cid](add-to-your-app.md#cid) \(ipfs hash\) are passed as arguments.
+Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](../contracts/types.md#order) and cid \(ipfs hash\) are passed as arguments.
 
 ```javascript
 window.AirSwapTrader.render(
@@ -42,7 +42,7 @@ window.AirSwapTrader.render(
 
 ## Pre-fill values in the order builder
 
-In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](add-to-your-app.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
+In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](../contracts/types.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
 ```javascript
 window.AirSwapTrader.render(
@@ -142,14 +142,14 @@ window.AirSwapTrader.render(
 | Key        | Type                                         | Field          | Description                                                                                                                                                                                         |
 | :--------- | :------------------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `env`      | string                                       | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
-| `order`    | [Order](../contracts/swap-contract.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `order`    | [Order](../contracts/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
 | `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
-| `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCreate) triggered on creation of a trade.                                                                                                                  |
-| `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSubmit) triggered on submission of a trade.                                                                                                                  |
-| `onSwap`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onSwap) triggered on a successful trade.                                                                                                                     |
-| `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onCancel) triggered on a successful cancel.                                                                                                                  |
-| `onError`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onError) triggered when an error occurs on a trade submission.                                                                                                                     |
-| `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onClose) triggered on widget close.                                                                                                                          |
+| `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#oncreate) triggered on creation of a trade.                                                                                                                  |
+| `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
+| `onSwap`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onswap) triggered on a successful trade.                                                                                                                     |
+| `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#oncancel) triggered on a successful cancel.                                                                                                                  |
+| `onError`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onerror) triggered when an error occurs on a trade submission.                                                                                                                     |
+| `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onclose) triggered on widget close.                                                                                                                          |
 
 ## Callbacks
 
@@ -166,7 +166,7 @@ function onCreate(order, cid) {
 
 | Type    | Parameter                         | Description                 |
 | :------ | :-------------------------------- | :-------------------------- |
-| `order` | [Order](add-to-your-app.md#order) | The order details.          |
+| `order` | [Order](../contracts/types.md#order) | The order details.          |
 | `cid`   | string                            | The IPFS Hash of the order. |
 
 ### onSubmit
