@@ -1,6 +1,6 @@
 # Add Trader to Your App
 
-[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-countery trading with no counterparty risk, no deposits, and no fees.
+[AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-counter trading with no counterparty risk, no deposits, and no fees.
 
 ![](../.gitbook/assets/trader-widget.png)
 
@@ -22,7 +22,11 @@ Pop-up blockers can prevent the widget from loading properly.
 
 ## Display an new order builder
 
+<<<<<<< HEAD
 Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The [order details](../contracts/types.md#order) and cid \(ipfs hash\) are passed as arguments.
+=======
+Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid \(ipfs hash\) are passed as arguments.
+>>>>>>> @{-1}
 
 ```javascript
 window.AirSwapTrader.render(
@@ -34,7 +38,7 @@ window.AirSwapTrader.render(
       console.log('Widget closed')
     },
   },
-  'body'
+  'body',
 )
 ```
 
@@ -42,7 +46,11 @@ window.AirSwapTrader.render(
 
 ## Pre-fill values in the order builder
 
+<<<<<<< HEAD
 In many cases, you would want to set a desired token and amount. To do so, you can add an [Order object](../contracts/types.md#order) to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
+=======
+In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
+>>>>>>> @{-1}
 
 ```javascript
 window.AirSwapTrader.render(
@@ -51,11 +59,11 @@ window.AirSwapTrader.render(
       expiry: 1707026510, // Expiration date in seconds
       maker: {
         token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', // DAI
-        param: '10000000000000000000', // Atomic value for 10 DAI
+        amount: '10000000000000000000', // Atomic value for 10 DAI
       },
       taker: {
         token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
-        param: '10000000000000000', // Atomic value for 0.01 WETH
+        amount: '10000000000000000', // Atomic value for 0.01 WETH
       },
     },
     onCreate: (order, cid) => {
@@ -65,7 +73,7 @@ window.AirSwapTrader.render(
       console.log('Widget closed')
     },
   },
-  'body'
+  'body',
 )
 ```
 
@@ -84,20 +92,23 @@ window.AirSwapTrader.render(
       maker: {
         wallet: '0xd68bb3350887ed3ee128b5ac4b7d852e24c5d366',
         token: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
-        param: '1000000000000000000',
-        kind: '0x277f8169'
+        amount: '1000000000000000000',
+        id: '0',
+        kind: '0x36372b07'
       },
       taker: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-        param: '10000000000000000',
-        kind: '0x277f8169'
+        amount: '10000000000000000',
+        id: '0',
+        kind: '0x36372b07'
       },
       affiliate: {
         wallet: '0x0000000000000000000000000000000000000000',
         token: '0x0000000000000000000000000000000000000000',
-        param: '0',
-        kind: '0x277f8169'
+        amount: '0',
+        id: '0',
+        kind: '0x36372b07'
       },
       signature: {
         version: '0x01',
@@ -131,7 +142,7 @@ window.AirSwapTrader.render(
       console.log('Widget closed')
     },
   },
-  'body'
+  'body',
 )
 ```
 
@@ -207,8 +218,8 @@ function onError(error) {
 }
 ```
 
-| Type              | Parameter | Description                                                                                                                            |
-| :---------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| Type    | Parameter | Description                            |
+| :------ | :-------- | :------------------------------------- |
 | `error` | `string`  | Description of the error that occured. |
 
 ### onCancel

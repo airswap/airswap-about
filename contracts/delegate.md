@@ -1,4 +1,4 @@
-A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/protocols/delegate).
+A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate).
 
 # Functions
 
@@ -8,39 +8,45 @@ Create a new `Delegate` contract.
 
 ```java
 constructor(
-  ISwap _swapContract,
-  address _delegateContractOwner,
-  address _delegateTradeWallet
+  ISwap delegateSwap,
+  IIndexer delegateIndexer,
+  address delegateContractOwner,
+  address delegateTradeWallet,
+  bytes2 delegateProtocol
 ) public
 ```
 
-| Param                    | Type      | Description                                             |
-| :----------------------- | :-------- | :------------------------------------------------------ |
-| `_swapContract`          | `ISwap`   | Instance of the swap contract used to settle trades.    |
-| `_delegateContractOwner` | `address` | Address of the owner of the sender for rule management. |
-| `_delegateTradeWallet`   | `address` | Address of the wallet that holds funds to be traded.    |
+| Param                   | Type       | Description                                     |
+| :---------------------- | :--------- | :---------------------------------------------- |
+| `delegateSwap`          | `ISwap`    | Swap contract the delegate will deploy with.    |
+| `delegateIndexer`       | `IIndexer` | Indexer contract the delegate will deploy with. |
+| `delegateContractOwner` | `address`  | Owner of the delegate.                          |
+| `delegateTradeWallet`   | `address`  | Wallet the delegate will trade from.            |
+| `delegateProtocol`      | `bytes2`   | The protocol identifier for Delegate contracts. |
 
 ## `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
+Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the delegate will trade at. An order requiring the delegate to send fewer tokens than its trading rule (i.e. a better price for the delegate), will also succeed.
+1 senderToken = priceCoef _ 10^(-priceExp) _ signerToken
 
 ```java
 function setRule(
-  address _signerToken,
-  address _senderToken,
-  uint256 _maxSenderAmount,
-  uint256 _priceCoef,
-  uint256 _priceExp
+  address senderToken,
+  address signerToken,
+  uint256 maxSenderAmount,
+  uint256 priceCoef,
+  uint256 priceExp
 ) external onlyOwner
 ```
 
-| Param              | Type      | Description                                                    |
-| :----------------- | :-------- | :------------------------------------------------------------- |
-| `_senderToken`     | `address` | The token the sender would send.                               |
-| `_signerToken`     | `address` | The token the signer would send.                               |
-| `_maxSenderAmount` | `uint256` | The maximum amount of token the sender would send.             |
-| `_priceCoef`       | `uint256` | The coefficient of the price to indicate the whole number.     |
-| `_priceExp`        | `uint256` | The exponent of the price to indicate location of the decimal. |
+| Param             | Type      | Description                                                    |
+| :---------------- | :-------- | :------------------------------------------------------------- |
+| `senderToken`     | `address` | The token the sender would send.                               |
+| `signerToken`     | `address` | The token the signer would send.                               |
+| `maxSenderAmount` | `uint256` | The maximum amount of token the sender would send.             |
+| `priceCoef`       | `uint256` | The coefficient of the price to indicate the whole number.     |
+| `priceExp`        | `uint256` | The exponent of the price to indicate location of the decimal. |
 
 ---
 
@@ -56,28 +62,44 @@ event SetRule(
 );
 ```
 
+| Revert Reason        | Scenario                              |
+| :------------------- | :------------------------------------ |
+| `INVALID_PRICE_COEF` | The priceCoef must be greater than 0. |
+
 ### Price Calculations
 
-All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is automatically floored by dropping the decimal. For example, a price of `5.25` and `senderParam` of `2` results in `signerParam` of `10` rather than `10.5`. Tokens have many decimal places so these differences are very small.
+All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderAmount` of `2` results in `signerAmount` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 ### Examples
+
+#### Example using DAI and WETH tokens
+
+Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI has a decimal representation of 18 and WETH has a decimal representation of 18 as well. Another way to think about this is that this rule is putting 100,000 DAI up for trade in return for WETH.
 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 32, 4)
+setRule(DAIAddress, WETHAddress, 100000000000000000000000, 32, 4)
 ```
 
-Set a rule to send up to 100,000 DAI for WETH at 312.50 WETH/DAI
+Set a rule to send up to 320 WETH for DAI at 0.0032 WETH/DAI.
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 31250, 2)
+setRule(WETHAddress, DAIAddress, 320000000000000000000, 3125, 1)
 ```
 
-Set a rule to send up to 100,000 DAI for WETH at 312 WETH/DAI
+#### Example using AST and WETH tokens
+
+Set a rule to send up to 5,000 AST for WETH at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
 
 ```java
-setRule(WETHAddress, DAIAddress, 100000, 312, 0)
+setRule(ASTAddress, WETHAddress, 50000000, 40000000000, 0)
+```
+
+Set a rule to send up to 2 WETH for AST at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
+
+```java
+setRule(WETHAddress, ASTAddress, 2000000000000000000, 25, 12)
 ```
 
 ## `unsetRule`
@@ -86,15 +108,15 @@ Unset a trading rule for the delegate.
 
 ```java
 function unsetRule(
-  address _senderToken,
-  address _signerToken
+  address senderToken,
+  address signerToken
 ) external onlyOwner
 ```
 
-| Param          | Type      | Description                      |
-| :------------- | :-------- | :------------------------------- |
-| `_senderToken` | `address` | The token the sender would send. |
-| `_signerToken` | `address` | The token the signer would send. |
+| Param         | Type      | Description                      |
+| :------------ | :-------- | :------------------------------- |
+| `senderToken` | `address` | The token the sender would send. |
+| `signerToken` | `address` | The token the signer would send. |
 
 A successful `unsetRule` will emit an `UnsetRule` event.
 
@@ -105,32 +127,110 @@ event UnsetRule(
 );
 ```
 
+## `setRuleAndIntent`
+
+Ssets a rule on the delegate and an intent on the indexer.
+
+```java
+function setRuleAndIntent(
+  address senderToken,
+  address signerToken,
+  Rule calldata rule,
+  uint256 amountToStake
+) external onlyOwner
+```
+
+| Param           | Type      | Description                      |
+| :-------------- | :-------- | :------------------------------- |
+| `senderToken`   | `address` | The token the sender would send. |
+| `signerToken`   | `address` | The token the signer would send. |
+| `rule`          | `Rule`    | Rule to set on a delegate.       |
+| `amountToStake` | `uint256` | Amount to stake for an intent.   |
+
+A successful `setRuleAndIntent` will emit a `SetRule` event and `Stake` event. It will be an
+all-or-nothing transaction.
+
+| Revert Reason             | Scenario                                                                        |
+| :------------------------ | :------------------------------------------------------------------------------ |
+| `INVALID_PRICE_COEF`      | The priceCoef must be greater than 0.                                           |
+| `STAKING_TRANSFER_FAILED` | The Delegate contract was not approved to transfer the staking token to itself. |
+| `STAKING_RETURN_FAILED`   | The Delegate was unable to transfer remaining staked amount back.               |
+
+```java
+event SetRule(
+  address indexed ruleOwner,
+  address indexed senderToken,
+  address indexed signerToken,
+  uint256 maxSenderAmount,
+  uint256 priceCoef,
+  uint256 priceExp
+);
+
+event Stake(
+  address indexed staker,
+  address indexed signerToken,
+  address indexed senderToken,
+  uint256 stakeAmount
+);
+```
+
+## `unsetRuleAndIntent`
+
+Sets a rule on the delegate and an intent on the indexer.
+
+```java
+function unsetRuleAndIntent(
+  address senderToken,
+  address signerToken
+) external onlyOwner
+```
+
+| Param         | Type      | Description                      |
+| :------------ | :-------- | :------------------------------- |
+| `senderToken` | `address` | The token the sender would send. |
+| `signerToken` | `address` | The token the signer would send. |
+
+A successful `unsetRuleAndIntent` will emit an `UnsetRule` event and `Unstake` event. It will be an
+all-or-nothing transaction.
+
+| Revert Reason | Scenario |
+| :-------------------------- | :------------------------------------------------------------- | |
+| `STAKING_RETURN_FAILED` | The Delegate was unable to transfer remaining staked amount back. |
+
+```java
+event UnsetRule(
+  address indexed ruleOwner,
+  address indexed senderToken,
+  address indexed signerToken
+);
+
+event Unstake(
+  address indexed staker,
+  address indexed signerToken,
+  address indexed senderToken,
+  uint256 stakeAmount
+);
+```
+
 ## `getSignerSideQuote`
 
-Get a quote for the signer side. Often used to get a buy price for \_senderToken.
+Get a quote for the signer side. Often used to get a buy price for \senderToken.
 
 ```java
 function getSignerSideQuote(
-  uint256 _senderParam,
-  address _senderToken,
-  address _signerToken
+  uint256 senderAmount,
+  address senderToken,
+  address signerToken
 ) external view returns (
-  uint256 signerParam
+  uint256 signerAmount
 )
 ```
 
 | Param          | Type      | Description                                           |
 | :------------- | :-------- | :---------------------------------------------------- |
-| `_senderParam` | `uint256` | The amount of ERC-20 token the sender would send.     |
-| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
-| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
-
----
-
-| Revert Reason         | Scenario                                         |
-| :-------------------- | :----------------------------------------------- |
-| `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.        |
-| `AMOUNT_EXCEEDS_MAX`  | The quote would exceed the maximum for the rule. |
+| `senderAmount` | `uint256` | The amount of ERC-20 token the sender would send.     |
+| `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
+| `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
 
 ## `getSenderSideQuote`
 
@@ -138,26 +238,19 @@ Get a quote for the sender side. Often used to get a sell price for \_signerToke
 
 ```java
 function getSenderSideQuote(
-  uint256 _signerParam,
-  address _signerToken,
-  address _senderToken
+  uint256 signerAmount,
+  address signerToken,
+  address senderToken
 ) external view returns (
-  uint256 senderParam
+  uint256 senderAmount
 )
 ```
 
 | Param          | Type      | Description                                           |
 | :------------- | :-------- | :---------------------------------------------------- |
-| `_signerParam` | `uint256` | The amount of ERC-20 token the signer would send.     |
-| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
-| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
-
----
-
-| Revert Reason         | Scenario                                         |
-| :-------------------- | :----------------------------------------------- |
-| `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.        |
-| `AMOUNT_EXCEEDS_MAX`  | The quote would exceed the maximum for the rule. |
+| `signerAmount` | `uint256` | The amount of ERC-20 token the signer would send.     |
+| `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
+| `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
 
 ## `getMaxQuote`
 
@@ -165,24 +258,18 @@ Get the maximum quote from the sender.
 
 ```java
 function getMaxQuote(
-  address _senderToken,
-  address _signerToken
+  address senderToken,
+  address signerToken
 ) external view returns (
-  uint256 senderParam,
-  uint256 signerParam
+  uint256 senderAmount,
+  uint256 signerAmount
 )
 ```
 
-| Param          | Type      | Description                                           |
-| :------------- | :-------- | :---------------------------------------------------- |
-| `_senderToken` | `address` | The address of an ERC-20 token the sender would send. |
-| `_signerToken` | `address` | The address of an ERC-20 token the signer would send. |
-
----
-
-| Revert Reason         | Scenario                                  |
-| :-------------------- | :---------------------------------------- |
-| `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair. |
+| Param         | Type      | Description                                           |
+| :------------ | :-------- | :---------------------------------------------------- |
+| `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
+| `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
 ## `provideOrder`
 
@@ -194,8 +281,8 @@ The sender specified on the order must have authorized this contract to swap on 
 
 ```java
 function provideOrder(
-  Types.Order memory _order
-) public
+  Types.Order memory order
+) external
 ```
 
 | Param   | Type                      | Description                                                |
@@ -204,8 +291,30 @@ function provideOrder(
 
 ---
 
-| Revert Reason         | Scenario                                                       |
-| :-------------------- | :------------------------------------------------------------- |
-| `TOKEN_PAIR_INACTIVE` | There is no rule set for this token pair.                      |
-| `AMOUNT_EXCEEDS_MAX`  | The amount of the trade would exceed the maximum for the rule. |
-| `PRICE_INCORRECT`     | The order is priced incorrectly for the rule.                  |
+| Revert Reason               | Scenario                                                       |
+| :-------------------------- | :------------------------------------------------------------- |
+| `SIGNER_MUST_BE_SENDER`     | The msg.sender is not set as the order signer.                 |
+| `INVALID_SENDER_WALLET`     | The sender wallet is not set to the tradeWallet.               |
+| `SIGNER_KIND_MUST_BE_ERC20` | The order.signer.kind is not ERC-20.                           |
+| `SENDER_KIND_MUST_BE_ERC20` | The order.sender.kind is ERC-20.                               |
+| `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
+| `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
+| `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |
+
+## `setTradeWallet`
+
+Set a new trade wallet.
+
+```java
+function setTradeWallet(
+  address newTradeWallet
+) external onlyOwner
+```
+
+| Param            | Type      | Description                          |
+| :--------------- | :-------- | :----------------------------------- |
+| `newTradeWallet` | `address` | The address of the new trade wallet. |
+
+| Revert Reason | Scenario |
+| :-------------------------- | :------------------------------------------------------------- | |
+| `TRADE_WALLET_REQUIRED` | Trade wallet cannot be set to 0x0. |

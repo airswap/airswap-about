@@ -1,13 +1,13 @@
 # Table of Contents
 
 - [Welcome](README.md)
-- [About](about.md)
 
 ## Instant
 
 - [Add to Your App](instant/add-to-your-app.md)
-- [Run a Maker](instant/run-a-maker.md)
-- [API Reference](instant/api-reference.md)
+- [Run Makers](instant/run-makers.md)
+- [Orders, Quotes, and Signatures](instant/orders-and-signatures.md)
+- [Contract Deployments](instant/contract-deployments.md)
 - [Architecture](instant/architecture.md)
 
 ## Trader
@@ -23,3 +23,11 @@
 - [DelegateFactory](contracts/delegate-factory.md)
 - [Wrapper](contracts/wrapper.md)
 - [Types](contracts/types.md)
+
+## Helper Libraries
+
+- [Orders and Quotes](helper-libraries/orders-and-quotes.md)
+- [Signing Orders](helper-libraries/signing-orders.md)
+- [Hashing Orders](helper-libraries/hashing-orders.md)
+- [Testing Token Balances](helper-libraries/testing-token-balances.md)
+- [Testing with Time Travel](helper-libraries/testing-time-travel.md)
