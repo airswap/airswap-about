@@ -152,6 +152,10 @@ from eth_utils import keccak
 from eth_abi import encode_abi
 from bitcoin import ecdsa_raw_sign
 
+SWAP_VERSION = "2"
+SWAP_DOMAIN = "SWAP
+ERC_20_INTERFACE_ID = bytes.fromhex("36372b07")
+
 SWAP_TYPES = {
     "party": b"Party(bytes4 kind,address wallet,address token,uint256 amount,uint256 id)",
     "order": b"Order(uint256 nonce,uint256 expiry,Party signer,Party sender,Party affiliate)",
