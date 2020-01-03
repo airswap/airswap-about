@@ -143,11 +143,15 @@ return {
 
 ### Using `ecdsa_raw_sign`
 
-The python example uses the [eth-abi](https://github.com/ethereum/eth-abi) package.
+The python example uses the [eth-abi](https://github.com/ethereum/eth-abi) and [eth-utils](https://github.com/ethereum/eth-utils) packages.
 
 To sign the order, you'll need to create hashes of the encoded types, as well as the domain separator (used at the final step). `SWAP_DOMAIN` and `SWAP_VERSION` should be set to `SWAP` and `2`, respectively.
 
 ```python
+from eth_utils import keccak
+from eth_abi import encode_abi
+from bitcoin import ecdsa_raw_sign
+
 SWAP_TYPES = {
     "party": b"Party(bytes4 kind,address wallet,address token,uint256 amount,uint256 id)",
     "order": b"Order(uint256 nonce,uint256 expiry,Party signer,Party sender,Party affiliate)",
