@@ -246,7 +246,11 @@ Finally, package the hashed order with the `EIP-712` domain separator and prefix
 ```python
 encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
 
-v, r, s = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+V, R, S = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+
+v = V
+r = Web3.toHex(R)
+s = Web3.toHex(S)
 
 # version is 0x45 for personalSign
 signed_order = {
