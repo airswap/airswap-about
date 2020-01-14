@@ -58,7 +58,7 @@ These values correlate to the structs in [Types](../contracts/types.md).
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-    "validator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
+    "validator": "0x3E0c31C3D4067Ed5d7d294F08B79B6003B7bf9c8",
     "version": "0x45",
     "v": "28",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
@@ -330,7 +330,7 @@ The nested format makes parameters available by dot syntax. For example, `signer
   },
   "signature": {
     "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-    "validator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
+    "validator": "0x3E0c31C3D4067Ed5d7d294F08B79B6003B7bf9c8",
     "version": "0x45",
     "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
     "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
@@ -365,7 +365,7 @@ The flat format of an order collapses the tree structure by concatenating each v
   "affiliateId": "0",
   "affiliateKind": "0x36372b07",
   "signatureSignatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
-  "signatureValidator": "0x43f18D371f388ABE40b9dDaac44D1C9c9185a078",
+  "signatureValidator": "0x3E0c31C3D4067Ed5d7d294F08B79B6003B7bf9c8",
   "signatureVersion": "0x45",
   "signatureR": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
   "signatureS": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70",
