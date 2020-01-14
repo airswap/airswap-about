@@ -159,15 +159,6 @@ window.AirSwapTrader.render(
 
 ## Objects
 
-### TokenSection
-
-Config to customize token sections in the token selector.
-
-| Type    | Parameter                         | Field | Description                 |
-| :------ | :-------------------------------- | :------ | :-------------------------- |
-| `label` | string | `required` | The token section label |
-| `tokens`   | string[] | `required` | List of token addresses to show in the token selector. |
-
 ### WidgetConfig
 
 Config to customize the appearance of the widget.
@@ -178,6 +169,15 @@ Config to customize the appearance of the widget.
 | `secondaryColor`   | string | `optional` | Hex code of custom secondary color. Defaults to #2b71ff |
 | `logoUrl`   | string | `optional` | Logo image URL. Defaults to the AirSwap logo. Preferred image dimensions are 150px x 30px. |
 | `condensedLogoUrl`   | string | `optional` | Logo image URL for mobile view. Defaults to the condensed AirSwap logo. Preferred logo dimensions are 150px x 30px. |
+
+### TokenSection
+
+Config to customize token sections in the token selector.
+
+| Type    | Parameter                         | Field | Description                 |
+| :------ | :-------------------------------- | :------ | :-------------------------- |
+| `label` | string | `required` | The token section label |
+| `tokens`   | string[] | `required` | List of token addresses to show in the token selector. |
 
 
 Example of a widget with customized appearance
