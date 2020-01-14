@@ -145,7 +145,10 @@ window.AirSwapTrader.render(
 | Key        | Type                                         | Field          | Description                                                                                                                                                                                         |
 | :--------- | :------------------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `env`      | string                                       | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
+| `widgetConfig` | [WidgetConfig](add-to-your-app.md#WidgetConfig) | `optional` | Config to customize the appearance of the widget  |
+| `customTokenSections` | [TokenSection](add-to-your-app.md#TokenSection)[] | `optional` | Config to add custom token sections in the token selector. Defaults to the standard AirSwap token selector sections |
 | `order`    | [Order](../contracts/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `orderGasLimit`    | number | `optional`     | Custom gas limit for the order. |
 | `cid`      | string                                       | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
 | `onCreate` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#oncreate) triggered on creation of a trade.                                                                                                                  |
 | `onSubmit` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
@@ -153,6 +156,61 @@ window.AirSwapTrader.render(
 | `onCancel` | Function                                     | `optional`     | [Callback function](add-to-your-app.md#oncancel) triggered on a successful cancel.                                                                                                                  |
 | `onError`   | Function                                     | `optional`     | [Callback function](add-to-your-app.md#onerror) triggered when an error occurs on a trade submission.                                                                                                                     |
 | `onClose`  | Function                                     | **`required`** | [Callback function](add-to-your-app.md#onclose) triggered on widget close.                                                                                                                          |
+
+## Objects
+
+### WidgetConfig
+
+Config to customize the appearance of the widget.
+
+| Type    | Parameter                         | Field | Description                 |
+| :------ | :-------------------------------- | :------ | :-------------------------- |
+| `primaryColor` | string | `optional` | Hex code of custom primary color. Defaults to #2b71ff          |
+| `secondaryColor`   | string | `optional` | Hex code of custom secondary color. Defaults to #2b71ff |
+| `logoUrl`   | string | `optional` | Logo image URL. Defaults to the AirSwap logo. Preferred image dimensions are 150px x 30px. |
+| `condensedLogoUrl`   | string | `optional` | Logo image URL for mobile view. Defaults to the condensed AirSwap logo. Preferred logo dimensions are 150px x 30px. |
+
+### TokenSection
+
+Config to customize token sections in the token selector.
+
+| Type    | Parameter                         | Field | Description                 |
+| :------ | :-------------------------------- | :------ | :-------------------------- |
+| `label` | string | `required` | The token section label |
+| `tokens`   | string[] | `required` | List of token addresses to show in the token selector. |
+
+
+Example of a widget with customized appearance
+
+```javascript
+window.AirSwapTrader.render(
+  {
+    widgetConfig: {
+      primaryColor: '#151212',
+      secondaryColor: '#2B71FF',
+      logoUrl: 'https://www.example.com/path/to/image',
+    },
+    orderGasLimit: 9000000,
+    customTokenSections: [
+      {
+        label: 'Custom Tokens',
+        tokens: ['0x97d1fe62edd176db61aaaa395e61fda3f1832747', '0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8']
+      },
+      {
+        label: 'Custom Stablecoins',
+        tokens: ['0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea']
+      }
+    ],
+    onSwap: transactionHash => {
+      console.log('Trade complete!')
+    },
+    onClose: transactionHash => {
+      console.log('Widget closed')
+    },
+  },
+  'body',
+)
+```
 
 ## Callbacks
 
