@@ -180,7 +180,7 @@ Config to customize the appearance of the widget.
 | `condensedLogoUrl`   | string | `optional` | Logo image URL for mobile view. Defaults to the condensed AirSwap logo. |
 
 
-Example of customized widget appearance
+Example of a widget with customized appearance
 
 ```javascript
 window.AirSwapTrader.render(
