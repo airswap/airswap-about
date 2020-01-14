@@ -176,8 +176,8 @@ Config to customize the appearance of the widget.
 | :------ | :-------------------------------- | :------ | :-------------------------- |
 | `primaryColor` | string | `optional` | Hex code of custom primary color. Defaults to #2b71ff          |
 | `secondaryColor`   | string | `optional` | Hex code of custom secondary color. Defaults to #2b71ff |
-| `logoUrl`   | string | `optional` | Logo image URL. Defaults to the AirSwap logo |
-| `condensedLogoUrl`   | string | `optional` | Logo image URL for mobile view. Defaults to the condensed AirSwap logo. |
+| `logoUrl`   | string | `optional` | Logo image URL. Defaults to the AirSwap logo. Preferred image dimensions are 150px x 30px. |
+| `condensedLogoUrl`   | string | `optional` | Logo image URL for mobile view. Defaults to the condensed AirSwap logo. Preferred logo dimensions are 150px x 30px. |
 
 
 Example of a widget with customized appearance
