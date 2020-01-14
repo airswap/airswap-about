@@ -186,7 +186,7 @@ Example of a widget with customized appearance
 window.AirSwapTrader.render(
   {
     widgetConfig: {
-      primaryColor: '#F2F2F2',
+      primaryColor: '#151212',
       secondaryColor: '#2B71FF',
       logoUrl: 'https://www.example.com/path/to/image',
     },
