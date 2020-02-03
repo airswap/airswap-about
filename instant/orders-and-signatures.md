@@ -252,6 +252,16 @@ v = V
 r = Web3.toHex(R)
 s = Web3.toHex(S)
 
+# The ecdsa_raw_sign method we are using may return r & s values that are under 66 characters, so check for
+# that a pad if necessary
+if len(s) < 66:
+  diff = 66 - len(s)
+  s = "0x" + "0" * diff + s[2:]
+
+if len(r) < 66:
+  diff = 66 - len(r)
+  r = "0x" + "0" * diff + r[2:]
+
 # version is 0x45 for personalSign
 signed_order = {
   "version": "0x45",
