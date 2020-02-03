@@ -253,7 +253,7 @@ r = Web3.toHex(R)
 s = Web3.toHex(S)
 
 # The ecdsa_raw_sign method we are using may return r & s values that are under 66 characters, so check for
-# that a pad if necessary
+# that and pad if necessary
 if len(s) < 66:
   diff = 66 - len(s)
   s = "0x" + "0" * diff + s[2:]
