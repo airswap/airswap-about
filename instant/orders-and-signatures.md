@@ -246,7 +246,21 @@ Finally, package the hashed order with the `EIP-712` domain separator and prefix
 ```python
 encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
 
-v, r, s = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+V, R, S = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
+
+v = V
+r = Web3.toHex(R)
+s = Web3.toHex(S)
+
+# The bitcoin.ecdsa_raw_sign method we are using may return r & s values that are under 66 bytes, so check for
+# that and pad with '0' if necessary to align with bytes32 types
+if len(s) < 66:
+  diff = 66 - len(s)
+  s = "0x" + "0" * diff + s[2:]
+
+if len(r) < 66:
+  diff = 66 - len(r)
+  r = "0x" + "0" * diff + r[2:]
 
 # version is 0x45 for personalSign
 signed_order = {
