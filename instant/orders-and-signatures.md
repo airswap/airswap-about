@@ -252,8 +252,8 @@ v = V
 r = Web3.toHex(R)
 s = Web3.toHex(S)
 
-# The ecdsa_raw_sign method we are using may return r & s values that are under 66 characters, so check for
-# that and pad if necessary
+# The bitcoin.ecdsa_raw_sign method we are using may return r & s values that are under 66 bytes, so check for
+# that and pad with '0' if necessary to align with bytes32 types
 if len(s) < 66:
   diff = 66 - len(s)
   s = "0x" + "0" * diff + s[2:]
