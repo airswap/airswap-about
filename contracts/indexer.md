@@ -1,9 +1,5 @@
 An Indexer is a smart contract to discover trading parties by token pair. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/indexer).
 
-{% hint style="warning" %}
-The indexer contract deployed to the AirSwap network may have some administrative privileges. Specifically, AirSwap does maintain a token blacklist which disallows certain tokens from being added and queried through the Indexer. In addition, setLocatorWhitelist which dictates what interface if any locators must follow is also maintained by AirSwap.
-{% endhint %}
-
 # Functions
 
 ## `constructor`
