@@ -10,7 +10,7 @@ You can find the `time.js` library on NPM within [@airswap/test-utils](https://w
 
 # Functions
 
-For documentation of the following 6 functions, view `ganache-time-traveller` on [NPM](https://www.npmjs.com/package/ganache-time-traveler) or [GitHub](https://github.com/ejwessel/GanacheTimeTraveler/).
+For documentation of the following 6 functions, view `ganache-time-traveler` on [NPM](https://www.npmjs.com/package/ganache-time-traveler) or [GitHub](https://github.com/ejwessel/GanacheTimeTraveler/).
 ### `advanceTime`
 ### `advanceBlock`
 ### `advanceBlockAndSetTime`
