@@ -15,7 +15,7 @@ On AirSwap there are **makers**, generally available to trade, and **takers**, e
 
 # Maker API
 
-The following methods must be implemented as JSON-RPC over HTTP. See an [example implementation](https://github.com/airswap/airswap-maker-kit-examples/blob/master/api/handlers.js#L170).
+The following methods must be implemented as JSON-RPC over HTTP. See an [example implementation](https://github.com/airswap/airswap-maker-kit-examples/blob/master/api/handlers.js#L217).
 
 ## `getSenderSideQuote`
 
