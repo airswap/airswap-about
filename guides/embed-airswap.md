@@ -1,12 +1,10 @@
-# Add AirSwap to Your App
-
 [AirSwap](https://instant.airswap.io/) can be dropped into any webpage and be used to automatically buy or sell Ethereum ERC20 tokens. The widget is designed to provide instant access to liquidity for aggregators, utility token-based dApps, and more.
 
 ![](../.gitbook/assets/instant-widget.png)
 
 {% hint style="success" %} Check out the [CodePen](https://codepen.io/grahamperich/pen/xxKqBQy) to explore configuration options. {% endhint %}
 
-# Setup
+## Setup
 
 Add the following `script` tag to the `head` element in your web application.
 
@@ -16,7 +14,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 {% hint style="warning" %} Pop-up blockers can prevent the widget from loading properly. {% endhint %}
 
-# Display the default widget
+## Display the default widget
 
 The simplest way to use the `AirSwapInstant` widget is by rendering it without any custom configuration options. This will open the widget and allow the user to buy or sell any amount of any token.
 
@@ -31,7 +29,7 @@ window.AirSwapInstant.render(
 )
 ```
 
-# Display a specific token
+## Display a specific token
 
 ```java
 AirSwapInstant.render(
@@ -51,7 +49,7 @@ AirSwapInstant.render(
 )
 ```
 
-# Options
+## Options
 
 | Key          | Type       | Field    | Description                                                                                                                                                                                                                                                                                                                |
 | ------------ | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,7 +63,7 @@ AirSwapInstant.render(
 
 {% hint style="info" %} If you specify a token not found in the AirSwap token metadata, the widget will not work. {% endhint %}
 
-# Add AirSwap OTC to Your App
+# Embed AirSwap OTC
 
 [AirSwap Trader](https://trader.airswap.io/) can be added to any webpage for over-the-counter trading with no counterparty risk, no deposits, and no fees.
 
