@@ -285,8 +285,8 @@ Config to set custom Pre-Transfer Check messages
 
 | Type    | Parameter               | Field      | Description                              |
 | :------ | :---------------------- | :--------- | :--------------------------------------- |
-| `maker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker |
-| `taker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker |
+| `maker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker of the security token |
+| `taker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the taker of the security token |
 
 ### PreTransferCheckMessage
 
