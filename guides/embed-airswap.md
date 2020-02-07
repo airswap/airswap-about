@@ -298,6 +298,33 @@ Pre-Transfer Check Message Details
 | `buttonText`  | string    | `optional` | Action Button Text. Defaults to "Redirect" if redirectURL is provided and "Done" if not. |
 | `redirectURL` | string    | `optional` | If provided, the action button will open a new tab with this url. The order details will be passed as query params. |
 
+Example of a widget with customized pre-transfer check message.
+
+```javascript
+window.AirSwapTrader.render(
+  {
+    canDismiss: false,
+    customShareURL: 'www.custom.share.url.com', // Resulting Share URL will be www.custom.share.url.com?cid=[cid]
+    preTransferCheckErrors: {
+      "1": {
+        message: "The provided taker wallet address is not in the whitelist.",
+        buttonText: "Request Whitelist",
+        redirectURL: "www.test.com/requestWhitelist",
+      },
+      "2": {
+        message: "The provided maker wallet address is locked up.",
+      },
+    },
+    onSwap: transactionHash => {
+      console.log('Trade complete!')
+    },
+    onClose: transactionHash => {
+      console.log('Widget closed')
+    },
+  },
+  'body',
+)
+```
 ## Callbacks
 
 ### onCreate
