@@ -210,13 +210,13 @@ window.AirSwapTrader.render(
 | Key                   | Type                                              | Field          | Description                                                                                                                                                                                         |
 | :-------------------- | :------------------------------------------------ | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `env`                 | string                                            | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
-| `widgetConfig`        | [WidgetConfig](embed-airswap.md#WidgetConfig)   | `optional`     | Config to customize the appearance of the widget                                                                                                                                                    |
-| `customTokenSections` | [TokenSection](embed-airswap.md#TokenSection)[] | `optional`     | Config to add custom token sections in the token selector. Defaults to the standard AirSwap token selector sections                                                                                 |
+| `widgetConfig`        | [WidgetConfig](embed-airswap.md#widgetconfig)   | `optional`     | Config to customize the appearance of the widget                                                                                                                                                    |
+| `customTokenSections` | [TokenSection](embed-airswap.md#tokensection)[] | `optional`     | Config to add custom token sections in the token selector. Defaults to the standard AirSwap token selector sections                                                                                 |
 | `order`               | [Order](../reference/types.md#order)              | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
 | `orderGasLimit`       | number                                            | `optional`     | Custom gas limit for the order. |
 | `canDismiss`          | boolean                                           | `optional`     | Whether the user can dismiss the widget. Defaults to true. |
 | `customShareURL`          | string                                           | `optional`     | Custom share URL for the order. If provided, the order cid is passed as a query param. Defaults to trader.airswap.io/[cid]. |
-| `preTransferCheckErrors`          | Map(string, [PreTransferCheck](embed-airswap.md#PreTransferCheck))                                           | `optional`     | Custom pre-transfer check error message map. The key is the error code and value is the custom message configuration. |
+| `preTransferCheckErrors`          | Map(string, [PreTransferCheck](embed-airswap.md#pretransfercheck))                                           | `optional`     | Custom pre-transfer check error message map. The key is the error code and value is the custom message configuration. |
 | `cid`                 | string                                            | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
 | `onCreate`            | Function                                          | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                  |
 | `onSubmit`            | Function                                          | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                |
@@ -285,8 +285,8 @@ Config to set custom Pre-Transfer Check messages
 
 | Type    | Parameter               | Field      | Description                              |
 | :------ | :---------------------- | :--------- | :--------------------------------------- |
-| `maker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker of the security token |
-| `taker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the taker of the security token |
+| `maker` | [PreTransferCheckMessage](embed-airswap.md#pretransfercheckmessage) | `optional` | Pre-Transfer Check Message for the maker of the security token |
+| `taker` | [PreTransferCheckMessage](embed-airswap.md#pretransfercheckmessage) | `optional` | Pre-Transfer Check Message for the taker of the security token |
 
 ### PreTransferCheckMessage
 
