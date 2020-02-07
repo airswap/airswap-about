@@ -210,17 +210,20 @@ window.AirSwapTrader.render(
 | Key                   | Type                                              | Field          | Description                                                                                                                                                                                         |
 | :-------------------- | :------------------------------------------------ | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `env`                 | string                                            | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
-| `widgetConfig`        | [WidgetConfig](add-to-your-app.md#WidgetConfig)   | `optional`     | Config to customize the appearance of the widget                                                                                                                                                    |
-| `customTokenSections` | [TokenSection](add-to-your-app.md#TokenSection)[] | `optional`     | Config to add custom token sections in the token selector. Defaults to the standard AirSwap token selector sections                                                                                 |
+| `widgetConfig`        | [WidgetConfig](embed-airswap.md#WidgetConfig)   | `optional`     | Config to customize the appearance of the widget                                                                                                                                                    |
+| `customTokenSections` | [TokenSection](embed-airswap.md#TokenSection)[] | `optional`     | Config to add custom token sections in the token selector. Defaults to the standard AirSwap token selector sections                                                                                 |
 | `order`               | [Order](../reference/types.md#order)              | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
-| `orderGasLimit`       | number                                            | `optional`     | Custom gas limit for the order.                                                                                                                                                                     |
+| `orderGasLimit`       | number                                            | `optional`     | Custom gas limit for the order. |
+| `canDismiss`          | boolean                                           | `optional`     | Whether the user can dismiss the widget. Defaults to true. |
+| `customShareURL`          | string                                           | `optional`     | Custom share URL for the order. If provided, the order cid is passed as a query param. Defaults to trader.airswap.io/[cid]. |
+| `preTransferCheckErrors`          | Map<string, [PreTransferCheck](embed-airswap.md#PreTransferCheck)>                                           | `optional`     | Custom pre-transfer check error message map. The key is the error code and value is the custom message configuration. |
 | `cid`                 | string                                            | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
-| `onCreate`            | Function                                          | `optional`     | [Callback function](add-to-your-app.md#oncreate) triggered on creation of a trade.                                                                                                                  |
-| `onSubmit`            | Function                                          | `optional`     | [Callback function](add-to-your-app.md#onsubmit) triggered on submission of a trade.                                                                                                                |
-| `onSwap`              | Function                                          | `optional`     | [Callback function](add-to-your-app.md#onswap) triggered on a successful trade.                                                                                                                     |
-| `onCancel`            | Function                                          | `optional`     | [Callback function](add-to-your-app.md#oncancel) triggered on a successful cancel.                                                                                                                  |
-| `onError`             | Function                                          | `optional`     | [Callback function](add-to-your-app.md#onerror) triggered when an error occurs on a trade submission.                                                                                               |
-| `onClose`             | Function                                          | **`required`** | [Callback function](add-to-your-app.md#onclose) triggered on widget close.                                                                                                                          |
+| `onCreate`            | Function                                          | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                  |
+| `onSubmit`            | Function                                          | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                |
+| `onSwap`              | Function                                          | `optional`     | [Callback function](embed-airswap.md#onswap) triggered on a successful trade.                                                                                                                     |
+| `onCancel`            | Function                                          | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                  |
+| `onError`             | Function                                          | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                               |
+| `onClose`             | Function                                          | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                          |
 
 ## Objects
 
@@ -275,6 +278,25 @@ window.AirSwapTrader.render(
   'body',
 )
 ```
+
+### PreTransferCheck
+
+Config to set custom Pre-Transfer Check messages
+
+| Type    | Parameter               | Field      | Description                              |
+| :------ | :---------------------- | :--------- | :--------------------------------------- |
+| `maker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker |
+| `taker` | [PreTransferCheckMessage](embed-airswap.md#PreTransferCheckMessage) | `optional` | Pre-Transfer Check Message for the maker |
+
+### PreTransferCheckMessage
+
+Pre-Transfer Check Message Details
+
+| Type          | Parameter | Field      | Description                                            |
+| :------------ | :-------- | :--------- | :----------------------------------------------------- |
+| `message`     | string    | `required` | Message to display for the pre-transfer check error code |
+| `buttonText`  | string    | `optional` | Action Button Text. Defaults to "Redirect" if redirectURL is provided and "Done" if not. |
+| `redirectURL` | string    | `optional` | If provided, the action button will open a new tab with this url. The order details will be passed as query params. |
 
 ## Callbacks
 
