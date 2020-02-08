@@ -5,13 +5,22 @@
 ## System
 
 - [Architecture](system/architecture.md)
-- [Orders and Signatures](system/orders-and-signatures.md)
-- [Contract Deployments](system/contract-deployments.md)
+- [Data Structures](system/data-structures.md)
+- [Signatures](system/generate-signatures.md)
+- [Contracts](system/contract-deployments.md)
+- [Quote Protocol](system/quote.md)
+- [Order Protocol](system/order.md)
+- [Last Look Protocol](system/last-look.md)
 
-## Guides
+## Make Liquidity
 
-- [Build a Maker](guides/build-a-maker.md)
-- [Embed AirSwap](guides/embed-airswap.md)
+- [Run a Server](make-liquidity/run-a-server.md)
+- [Deploy a Delegate](make-liquidity/deploy-a-delegate.md)
+
+## Take Liquidity
+
+- [Build an Aggregator](take-liquidity/build-an-aggregator.md)
+- [Embed AirSwap](take-liquidity/embed-airswap.md)
 
 ## Reference
 
