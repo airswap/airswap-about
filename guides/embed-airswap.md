@@ -29,14 +29,15 @@ window.AirSwapInstant.render(
 )
 ```
 
-## Render a specific token
+## Render a specific token and base token
 
 ```java
 AirSwapInstant.render(
   {
     env: 'production',
     mode: 'buy',
-    token: '0x27054b13b1b798b345b591a4d22e6562d47ea75a',
+    token: '0x27054b13b1b798b345b591a4d22e6562d47ea75a', // AST
+    baseToken: '0x6b175474e89094c44da98b954eedeac495271d0f', // DAI
     amount: '250',
     onClose: function() {
       console.info('Widget closed.')
@@ -51,15 +52,15 @@ AirSwapInstant.render(
 
 ## Options
 
-| Key          | Type       | Field    | Description                                                                                                                                                                                                                                                                                                                |
-| ------------ | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `env`        | `string`   | optional | Either `development` or `production`. If not specified, this option will default to `production`. Using `production` will request orders for the main Ethereum network, whereas using `development` will request orders for the Rinkeby test network.                                                                      |
-| `mode`       | `string`   | optional | Either `buy` or `sell`. If specified, the user will not be able to change the mode.                                                                                                                                                                                                                                        |
-| `token`      | `string`   | optional | The hex address of the token to swap in exchange for ETH. You can find a full list of indexed token metadata for: [Mainnet](https://token-metadata.airswap.io/tokens) or [Rinkeby](https://token-metadata.airswap.io/rinkebyTokens). If specified, the user will not be able to search for any other tokens in the widget. |
-| `baseToken`  | `string`   | optional | Either `ETH`, `WETH`, `DAI`, or `USDC`. Defaults to `ETH` when not specified.                                                                                                                                                                                                                                              |
-| `amount`     | `string`   | optional | A default amount of tokens to request orders for. If specified, the user will not be able to change the token amount in the widget.                                                                                                                                                                                        |
-| `onComplete` | `function` | optional | Called when the user submits the trade transaction to the blockchain. The `transactionId` is passed as an argument.                                                                                                                                                                                                        |
-| `onClose`    | `function` | required | This is the only mandatory parameter. A function called when the user clicks the "X" to dismiss the widget. No arguments are passed.                                                                                                                                                                                       |
+| Key          | Type       | Field    | Description                                                                                                                                                                                                                                                                                                                    |
+| ------------ | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `env`        | `string`   | optional | Either `development` or `production`. If not specified, this option will default to `production`. Using `production` will request orders for the main Ethereum network, whereas using `development` will request orders for the Rinkeby test network.                                                                          |
+| `mode`       | `string`   | optional | Either `buy` or `sell`. If specified, the user will not be able to change the mode.                                                                                                                                                                                                                                            |
+| `token`      | `string`   | optional | The **hex address** of the token to swap in exchange for ETH. You can find a full list of indexed token metadata for: [Mainnet](https://token-metadata.airswap.io/tokens) or [Rinkeby](https://token-metadata.airswap.io/rinkebyTokens). If specified, the user will not be able to search for any other tokens in the widget. |
+| `baseToken`  | `string`   | optional | The **hex address** of either `ETH`, `WETH`, `DAI`, `USDC`, `WBTC`, `USDT`, `SAI`, `TUSD`, `TCAD`, `TAUD`, `THKD`, or `TGBP`. Defaults to `0x0000000000000000000000000000000000000000` (`ETH`) when not specified.                                                                                                             |
+| `amount`     | `string`   | optional | A default amount of tokens to request orders for. If specified, the user will not be able to change the token amount in the widget.                                                                                                                                                                                            |
+| `onComplete` | `function` | optional | Called when the user submits the trade transaction to the blockchain. The `transactionId` is passed as an argument.                                                                                                                                                                                                            |
+| `onClose`    | `function` | required | This is the only mandatory parameter. A function called when the user clicks the "X" to dismiss the widget. No arguments are passed.                                                                                                                                                                                           |
 
 {% hint style="info" %} If you specify a token not found in the AirSwap token metadata, the widget will not work. {% endhint %}
 
@@ -207,19 +208,18 @@ window.AirSwapTrader.render(
 
 ## Options
 
-| Key                      | Type                                                               | Field          | Description                                                                                                                                                                                         |
-| :----------------------- | :----------------------------------------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `env`                    | string                                                             | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
-| `order`                  | [Order](../reference/types.md#order)                               | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
-| `canDismiss`             | boolean                                                            | `optional`     | Whether the user can dismiss the widget. Defaults to true.                                                                                                                                          |
-| `cid`                    | string                                                             | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
-| `onCreate`               | Function                                                           | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                    |
-| `onSubmit`               | Function                                                           | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
-| `onSwap`                 | Function                                                           | `optional`     | [Callback function](embed-airswap.md#onswap) triggered on a successful trade.                                                                                                                       |
-| `onCancel`               | Function                                                           | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                    |
-| `onError`                | Function                                                           | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                                 |
-| `onClose`                | Function                                                           | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                            |
-
+| Key          | Type                                 | Field          | Description                                                                                                                                                                                         |
+| :----------- | :----------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `env`        | string                               | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
+| `order`      | [Order](../reference/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `canDismiss` | boolean                              | `optional`     | Whether the user can dismiss the widget. Defaults to true.                                                                                                                                          |
+| `cid`        | string                               | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
+| `onCreate`   | Function                             | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                    |
+| `onSubmit`   | Function                             | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
+| `onSwap`     | Function                             | `optional`     | [Callback function](embed-airswap.md#onswap) triggered on a successful trade.                                                                                                                       |
+| `onCancel`   | Function                             | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                    |
+| `onError`    | Function                             | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                                 |
+| `onClose`    | Function                             | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                            |
 
 ## Callbacks
 
