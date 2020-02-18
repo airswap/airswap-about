@@ -286,7 +286,7 @@ If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the f
 
 # Quotes
 
-Quotes are simple structures that only include the `token`, `amount`, `id`, and `kind` fields for `signer` and `sender`. The `kind` is the token interface identifier `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `amount` is the number of ERC-20 tokens being transferred, and `id` is the ID of the ERC-721 being transferred.
+Quotes indicate prices at which a peer is interested in trading. A Quote includes `token`, `amount`, `id`, and `kind` fields for `signer` and `sender`. The `kind` is a token interface identifier like `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `amount` is the number of ERC-20 tokens being transferred, and `id` is the ID of the ERC-721 being transferred. Interface identifier `0xd9b67a26` (ERC-1155) uses both `id` and `amount` fields.
 
 **Example**
 
