@@ -4,7 +4,7 @@ Makers are HTTPS servers that implement the [Maker API](#maker-api) using [JSON-
 
 On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a maker is always the **signer** and a taker is always the **sender** throughout the protocol implementation.
 
-- [**Orders**](./orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](./orders-and-signatures.md#quotes) are indicative prices. Makers should provide both.
+- [**Orders**](../system/orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](../system/orders-and-signatures.md#quotes) are indicative prices. Makers should provide both.
 - **Intent** is a signal to takers that a maker is trading specific tokens, including contact information (locator), without pricing.
 - **Locators** take the form of `hostname[:port][/path]` and resolve to web servers that implement the Maker API. The max length is 32 characters and `https://` is implied.
 
@@ -42,7 +42,7 @@ Given a `signerAmount` and token pair, return a complete quote. The `senderAmoun
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `senderAmount`.
+A successful `getSenderSideQuote` returns a [Quote](../system/orders-and-signatures.md#quotes) object including the requested `senderAmount`.
 
 ## `getSignerSideQuote`
 
@@ -69,7 +69,7 @@ Given a `senderAmount` and token pair, return a complete quote. The `signerAmoun
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `signerAmount`. Maximum amounts of tokens you're willing to trade.
+A successful `getSignerSideQuote` returns a [Quote](../system/orders-and-signatures.md#quotes) object including the requested `signerAmount`. Maximum amounts of tokens you're willing to trade.
 
 ## `getMaxQuote`
 
@@ -94,7 +94,7 @@ Given a token pair, return a quote object with the maximum amounts you're willin
 | `senderToken` | `address` | The token the sender would transfer. |
 | `signerToken` | `address` | The token the signer would transfer. |
 
-A successful `getMaxQuote` returns a [Quote](./orders-and-signatures.md#quotes) object.
+A successful `getMaxQuote` returns a [Quote](../system/orders-and-signatures.md#quotes) object.
 
 ## `getSenderSideOrder`
 
@@ -123,7 +123,7 @@ Given a `signerAmount`, `senderWallet`, and token pair, return a complete order.
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `senderWallet` | `address` | Wallet of the sender.                       |
 
-A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderAmount`.
+A successful `getSenderSideOrder` returns a signed [Order](../system/orders-and-signatures.md#creating-orders) object including the requested `senderAmount`.
 
 ## `getSignerSideOrder`
 
@@ -152,7 +152,7 @@ Given a `senderAmount`, `senderWallet`, and token pair, return a complete order.
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerAmount`.
+A successful `getSignerSideOrder` returns a signed [Order](../system/orders-and-signatures.md#creating-orders) object including the requested `signerAmount`.
 
 # Error codes
 
