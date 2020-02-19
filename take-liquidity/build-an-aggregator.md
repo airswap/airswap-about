@@ -1,4 +1,4 @@
-Aggregators are applications that communicate with Servers and Delegates to take liquidity from the AirSwap network. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, effectively functioning as non-custodial limit orders. These combine to enable a wide variety of traders provide liquidity to a wide variety of tokens on the network.
+Aggregators are applications that communicate with Servers and Delegates to take liquidity from the AirSwap network. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
 
 # Server Liquidity (HTTPS)
 
@@ -7,65 +7,101 @@ Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/or
 ## Determine Total Liquidity
 
 ```javascript
-import { Indexer, Server } from '@airswap/clients'
+import { Indexer, Server } from '@airswap/protocols'
+import { Quote } from '@airswap/types'
 import { rinkebyTokens } from '@airswap/constants'
-import { toDecimalString } from '@airswap/utils'
-import { BigNumber } from 'ethers/utils'
+import { toDecimalString, getTotalBySignerAmount } from '@airswap/utils'
 
-const signerToken = rinkebyTokens.DAI.address
-const senderToken = rinkebyTokens.WETH.address
+async function getServerLiquidity(signerToken: string, senderToken: string) {
+  // Fetch Server locators from the Rinkeby Indexer
+  const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
-// Fetch Server locators from the Rinkeby Indexer for DAI / WETH.
-const { locators } = await new Indexer().getLocators(signerToken, senderToken)
-
-// Iterate through Servers to get quotes.
-let totalAmountAvailable = new BigNumber(0)
-for (let locator of locators) {
-  try {
-    const quote = await new Server(locator).getMaxQuote(signerToken, senderToken)
-    totalAmountAvailable = totalAmountAvailable.add(quote.signer.amount)
-  } catch (error) {
-    continue
+  // Iterate through Servers to get quotes
+  const quotes: Array<Quote> = []
+  for (let locator of locators) {
+    try {
+      quotes.push(
+        await new Server(locator).getMaxQuote(signerToken, senderToken),
+      )
+    } catch (error) {
+      continue
+    }
   }
+  return toDecimalString(
+    getTotalBySignerAmount(quotes),
+    rinkebyTokens.DAI.decimals,
+  )
 }
 
-// Convert the amount to decimal and display.
-const totalAmountDecimal = toDecimalString(totalAmountAvailable, rinkebyTokens.DAI.decimals)
-console.log(`${totalAmountDecimal} DAI available from Servers on Rinkeby.`)
+getServerLiquidity(rinkebyTokens.DAI.address, rinkebyTokens.WETH.address).then(
+  amount => {
+    console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
+  },
+)
 ```
 
-## Fetch and Take an Order
+## Take the Best Order
 
 ```javascript
-import { Server, Swap } from '@airswap/clients'
-import { toAtomicString } from '@airswap/utils'
-import { chainIds, rinkebyTokens, etherscanDomains } from '@airswap/constants'
+import { Indexer, Server, Swap } from '@airswap/protocols'
+import { Order } from '@airswap/types'
+import { chainIds, rinkebyTokens } from '@airswap/constants'
+import {
+  toAtomicString,
+  getBestByLowestSenderAmount,
+  getEtherscanURL,
+} from '@airswap/utils'
 import { ethers } from 'ethers'
 import { BigNumber } from 'ethers/utils'
 
-// Create a wallet using ethers.js.
-const wallet = new ethers.Wallet(signerPrivateKey, ethers.getDefaultProvider('rinkeby'))
+async function takeBestServerOrder(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string,
+) {
+  // Load a wallet using ethers.js
+  const signer = new ethers.Wallet('...')
+
+  // Fetch Server locators from the Rinkeby Indexer
+  const { locators } = await new Indexer().getLocators(signerToken, senderToken)
+
+  // Iterate to get orders from all Servers.
+  let orders: Array<Order> = []
+  for (const locator of locators) {
+    try {
+      orders.push(
+        await new Server(locator).getSenderSideOrder(
+          signerAmount,
+          signerToken,
+          senderToken,
+          signer.address,
+        ),
+      )
+    } catch (error) {
+      continue
+    }
+  }
+
+  // Get the best among all returned orders.
+  const best = getBestByLowestSenderAmount(orders)
+
+  if (best) {
+    return await new Swap().swap(best, signer)
+  }
+}
 
 // Request to buy 1 DAI for WETH.
-const signerAmount = toAtomicString(new BigNumber(1), rinkebyTokens.DAI.decimals)
-const signerToken = rinkebyTokens.DAI.address
-const senderToken = rinkebyTokens.WETH.address
-
-// Request the order from the Server.
-try {
-  const order = await new Server('m.dmosites.now.sh').getSenderSideOrder(
-    signerAmount,
-    signerToken,
-    senderToken,
-    wallet.address,
-  )
-
-  // Swap the order and display an Etherscan link.
-  let hash = await new Swap().swap(order, wallet)
-  console.log(`https://${etherscanDomains[chainIds.RINKEBY]}/tx/${hash}`)
-} catch (error) {
-  console.error(error)
-}
+takeBestServerOrder(
+  toAtomicString(new BigNumber(1), rinkebyTokens.DAI.decimals),
+  rinkebyTokens.DAI.address,
+  rinkebyTokens.WETH.address,
+).then(hash => {
+  if (hash) {
+    console.log(getEtherscanURL(chainIds.RINKEBY, hash))
+  } else {
+    console.log('No valid orders found.')
+  }
+})
 ```
 
 # Delegate Liquidity (On-Chain)
@@ -77,72 +113,118 @@ Delegates **require signatures** on orders, which enables them to be passed thro
 ## Determine Total Liquidity
 
 ```javascript
-import { Indexer, Delegate, ERC20 } from '@airswap/clients'
-import { rinkebyTokens } from '@airswap/constants'
-import { toDecimalString } from '@airswap/utils'
-import { BigNumber } from 'ethers/utils'
+import { Indexer, Delegate } from '@airswap/protocols'
+import { Quote } from '@airswap/types'
+import { rinkebyTokens, protocols } from '@airswap/constants'
+import { toDecimalString, getTotalBySenderAmount } from '@airswap/utils'
 
-const signerToken = rinkebyTokens.DAI.address
-const senderToken = rinkebyTokens.WETH.address
+async function getDelegateLiquidity(signerToken: string, senderToken: string) {
+  // Fetch Delegate locators from the Rinkeby Indexer
+  const { locators } = await new Indexer().getLocators(
+    signerToken,
+    senderToken,
+    protocols.DELEGATE,
+  )
 
-// Fetch Delegate locators from the Rinkeby Indexer for DAI / WETH.
-const { locators } = await new Indexer().getLocators(signerToken, senderToken, protocols.DELEGATE)
-
-// Iterate through Delegates to get quotes.
-let totalAmountAvailable = new BigNumber(0)
-for (let locator of locators) {
-  try {
-    // Construct a Delegate.
-    const delegate = new Delegate(locator)
-
-    // Get a quote from the Delegate and check its balance.
-    const quote = await delegate.getMaxQuote(senderToken, signerToken)
-    const balance = await new ERC20(quote.sender.token).balanceOf(await delegate.getWallet())
-    if (balance.lt(quote.sender.amount)) {
-      totalAmountAvailable = totalAmountAvailable.add(balance)
-    } else {
-      totalAmountAvailable = totalAmountAvailable.add(quote.sender.amount)
+  // Iterate through Delegates to get quotes
+  const quotes: Array<Quote> = []
+  for (let locator of locators) {
+    try {
+      quotes.push(
+        await new Delegate(locator).getMaxQuote(signerToken, senderToken),
+      )
+    } catch (error) {
+      continue
     }
-  } catch (error) {
-    continue
   }
+
+  return toDecimalString(
+    getTotalBySenderAmount(quotes),
+    rinkebyTokens.DAI.decimals,
+  )
 }
 
-// Convert the amount to decimal and display.
-const totalAmountDecimal = toDecimalString(totalAmountAvailable, rinkebyTokens.DAI.decimals)
-console.log(`${totalAmountDecimal} DAI available from Delegates on Rinkeby.`)
+getDelegateLiquidity(
+  rinkebyTokens.DAI.address,
+  rinkebyTokens.WETH.address,
+).then(amount => {
+  console.log(`${amount} DAI available for WETH from Delegates on Rinkeby.`)
+})
 ```
 
 ## Fetch a Quote and Provide an Order
 
 ```javascript
-import { Delegate, Swap } from '@airswap/clients'
-import { chainIds, rinkebyTokens, etherscanDomains } from '@airswap/constants'
-import { createOrderFromQuote, toAtomicString, signOrder } from '@airswap/utils'
+import { Indexer, Delegate, Swap } from '@airswap/protocols'
+import { Quote, Order } from '@airswap/types'
+import { chainIds, rinkebyTokens, protocols } from '@airswap/constants'
+import {
+  createOrderForQuote,
+  signOrder,
+  getBestByLowestSignerAmount,
+  getEtherscanURL,
+  toAtomicString,
+} from '@airswap/utils'
 import { ethers } from 'ethers'
 import { BigNumber } from 'ethers/utils'
 
-// Create a wallet using ethers.js.
-const wallet = new ethers.Wallet(signerPrivateKey, ethers.getDefaultProvider('rinkeby'))
+async function takeBestDelegateQuote(
+  senderAmount: string,
+  senderToken: string,
+  signerToken: string,
+) {
+  // Fetch Server locators from the Rinkeby Indexer
+  const { locators } = await new Indexer().getLocators(
+    signerToken,
+    senderToken,
+    protocols.DELEGATE,
+  )
 
-// Request to buy 1 DAI for WETH from a Delegate.
-const senderAmount = toAtomicString(new BigNumber(1), rinkebyTokens.DAI.decimals)
-const senderToken = rinkebyTokens.DAI.address
-const signerToken = rinkebyTokens.WETH.address
+  // Iterate through Delegates to get quotes
+  const quotes: Array<Quote> = []
+  for (let locator of locators) {
+    try {
+      quotes.push(
+        await new Delegate(locator).getSignerSideQuote(
+          senderAmount,
+          signerToken,
+          senderToken,
+        ),
+      )
+    } catch (error) {
+      continue
+    }
+  }
 
-try {
-  // Construct the new Delegate.
-  const delegate = new Delegate('0xa6897d36cfadf64f80ca2ae4b0202e334948ccb7')
+  // Get the best among all returned quotes
+  const best = getBestByLowestSignerAmount(quotes)
 
-  // Get a quote from the Delegate and create an order from the quote.
-  const quote = await delegate.getSignerSideQuote(senderAmount, senderToken, signerToken)
-  const order = createOrderFromQuote(quote, wallet.address, await delegate.getWallet())
-  order.signature = await signOrder(order, wallet, Swap.getAddress())
+  if (best) {
+    // Load a wallet using ethers.js
+    const signer = new ethers.Wallet('...')
 
-  // Provide to the Delegate and display an Etherscan link.
-  let hash = await delegate.provideOrder(order, wallet)
-  console.log(`https://${etherscanDomains[chainIds.RINKEBY]}/tx/${hash}`)
-} catch (error) {
-  console.error(error)
+    // Construct a Delegate using the best locator
+    const delegate = new Delegate(best.locator)
+    const order: Order = await signOrder(
+      createOrderForQuote(best, signer.address, await delegate.getWallet()),
+      signer,
+      Swap.getAddress(),
+    )
+    // Provide order to the Delegate
+    return await delegate.provideOrder(order, signer)
+  }
 }
+
+// Request to buy 1 DAI for WETH.
+takeBestDelegateQuote(
+  toAtomicString(new BigNumber(1), rinkebyTokens.WETH.decimals),
+  rinkebyTokens.WETH.address,
+  rinkebyTokens.DAI.address,
+).then(hash => {
+  if (hash) {
+    console.log(getEtherscanURL(chainIds.RINKEBY, hash))
+  } else {
+    console.log('No valid quotes found.')
+  }
+})
 ```
