@@ -6,7 +6,7 @@ Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/or
 
 ## Determine Total Liquidity
 
-```javascript
+```TypeScript
 import { Indexer, Server } from '@airswap/protocols'
 import { Quote } from '@airswap/types'
 import { rinkebyTokens } from '@airswap/constants'
@@ -42,7 +42,7 @@ getServerLiquidity(rinkebyTokens.DAI.address, rinkebyTokens.WETH.address).then(
 
 ## Take the Best Order
 
-```javascript
+```TypeScript
 import { Indexer, Server, Swap } from '@airswap/protocols'
 import { Order } from '@airswap/types'
 import { chainIds, rinkebyTokens } from '@airswap/constants'
@@ -112,7 +112,7 @@ Delegates **require signatures** on orders, which enables them to be passed thro
 
 ## Determine Total Liquidity
 
-```javascript
+```TypeScript
 import { Indexer, Delegate } from '@airswap/protocols'
 import { Quote } from '@airswap/types'
 import { rinkebyTokens, protocols } from '@airswap/constants'
@@ -154,7 +154,7 @@ getDelegateLiquidity(
 
 ## Fetch a Quote and Provide an Order
 
-```javascript
+```TypeScript
 import { Indexer, Delegate, Swap } from '@airswap/protocols'
 import { Quote, Order } from '@airswap/types'
 import { chainIds, rinkebyTokens, protocols } from '@airswap/constants'
