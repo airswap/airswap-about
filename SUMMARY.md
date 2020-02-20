@@ -16,7 +16,7 @@
 
 ## Take Liquidity
 
-- [Run an Aggregator](take-liquidity/build-an-aggregator.md)
+- [Run an Aggregator](take-liquidity/run-an-aggregator.md)
 - [Embed AirSwap](take-liquidity/embed-airswap.md)
 
 ## Reference
