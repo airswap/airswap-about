@@ -4,7 +4,7 @@ Aggregators take liquidity by interacting with Servers and Delegates. Generally,
 
 Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
-## Determine Total Liquidity
+## Liquidity for a Token Pair
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-liquidity.ts).
 
@@ -74,7 +74,7 @@ Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../
 
 Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for onchain integrations that do not require signatures.
 
-## Determine Total Liquidity
+## Liquidity for a Token Pair
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-liquidity.ts).
 

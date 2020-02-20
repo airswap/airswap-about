@@ -4,7 +4,8 @@
 
 # Quick Start
 
-- **Run** a **Server** on AirSwap → [Build a Maker](./make-liquidity/run-a-server.md)
+- **Run** a **Server** to Make Liquidity → [Run a Server](./make-liquidity/run-a-server.md)
+- **Run** an **Aggregator** to Take Liquidity → [Run an Aggregator](./take-liquidity/run-an-aggregator.md)
 - **Embed** AirSwap into **Your App** → [Embed AirSwap](./take-liquidity/embed-airswap.md)
 - **Learn** about **Smart Contracts** → [Swap](./reference/swap.md) · [Indexer](./reference/indexer.md) · [Delegate](./reference/delegate.md)
 
