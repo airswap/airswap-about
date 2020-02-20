@@ -77,9 +77,13 @@ const hash = await delegate.provideOrder(order);
 
 # Solidity
 
+See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby DelegateFactory deployments.
+
+# Delegate Contract
+
 A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate).
 
-## `constructor`
+### `constructor`
 
 Create a new `Delegate` contract.
 
@@ -101,7 +105,7 @@ constructor(
 | `delegateTradeWallet`   | `address`  | Wallet the delegate will trade from.            |
 | `delegateProtocol`      | `bytes2`   | The protocol identifier for Delegate contracts. |
 
-## `setRule`
+### `setRule`
 
 Set a trading rule on the delegate. Delegate assumes the role of sender.
 Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the delegate will trade at. An order requiring the delegate to send fewer tokens than its trading rule (i.e. a better price for the delegate), will also succeed.
@@ -143,13 +147,13 @@ event SetRule(
 | :------------------- | :------------------------------------ |
 | `INVALID_PRICE_COEF` | The priceCoef must be greater than 0. |
 
-### Price Calculations
+#### Price Calculations
 
 All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderAmount` of `2` results in `signerAmount` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
-### Examples
+#### Examples
 
-#### Example using DAI and WETH tokens
+**Example using DAI and WETH tokens**
 
 Set a rule to send up to 100,000 DAI for WETH at 0.0032 WETH/DAI. Note that DAI has a decimal representation of 18 and WETH has a decimal representation of 18 as well. Another way to think about this is that this rule is putting 100,000 DAI up for trade in return for WETH.
 
@@ -165,7 +169,7 @@ Set a rule to send up to 320 WETH for DAI at 0.0032 WETH/DAI.
 setRule(WETHAddress, DAIAddress, 320000000000000000000, 3125, 1)
 ```
 
-#### Example using AST and WETH tokens
+**Example using AST and WETH tokens**
 
 Set a rule to send up to 5,000 AST for WETH at 0.0004 AST/WETH. Note that AST has a decimal representation of 4 and WETH has a decimal representation of 18.
 
@@ -179,7 +183,7 @@ Set a rule to send up to 2 WETH for AST at 0.0004 AST/WETH. Note that AST has a 
 setRule(WETHAddress, ASTAddress, 2000000000000000000, 25, 12)
 ```
 
-## `unsetRule`
+### `unsetRule`
 
 Unset a trading rule for the delegate.
 
@@ -204,7 +208,7 @@ event UnsetRule(
 );
 ```
 
-## `setRuleAndIntent`
+### `setRuleAndIntent`
 
 Ssets a rule on the delegate and an intent on the indexer.
 
@@ -251,7 +255,7 @@ event Stake(
 );
 ```
 
-## `unsetRuleAndIntent`
+### `unsetRuleAndIntent`
 
 Sets a rule on the delegate and an intent on the indexer.
 
@@ -309,7 +313,7 @@ function getSignerSideQuote(
 | `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
 | `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
 
-## `getSenderSideQuote`
+### `getSenderSideQuote`
 
 Get a quote for the sender side. Often used to get a sell price for \_signerToken.
 
@@ -329,7 +333,7 @@ function getSenderSideQuote(
 | `signerToken`  | `address` | The address of an ERC-20 token the signer would send. |
 | `senderToken`  | `address` | The address of an ERC-20 token the sender would send. |
 
-## `getMaxQuote`
+### `getMaxQuote`
 
 Get the maximum quote from the sender.
 
@@ -348,7 +352,7 @@ function getMaxQuote(
 | `senderToken` | `address` | The address of an ERC-20 token the sender would send. |
 | `signerToken` | `address` | The address of an ERC-20 token the signer would send. |
 
-## `provideOrder`
+### `provideOrder`
 
 Provide an order to the sender for taking.
 
@@ -378,7 +382,7 @@ function provideOrder(
 | `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
 | `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |
 
-## `setTradeWallet`
+### `setTradeWallet`
 
 Set a new trade wallet.
 
@@ -396,13 +400,13 @@ function setTradeWallet(
 | :---------------------- | :--------------------------------- |
 | `TRADE_WALLET_REQUIRED` | Trade wallet cannot be set to 0x0. |
 
-# DelegateFactory
+# DelegateFactory Contract
 
 A DelegateFactory deploys Delegate contracts. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate-factory).
 
-## Functions
+### Functions
 
-### `constructor`
+#### `constructor`
 
 Create a new `DelegateFactory` contract.
 
@@ -420,7 +424,7 @@ constructor(
 | `factoryIndexerContract` | `ISwap`  | Instance of the indexer contract the delegate will deploy with. |
 | `factoryProtocol`        | `bytes2` | Protocol type of the delegates the factory deploys.             |
 
-### `createDelegate`
+#### `createDelegate`
 
 Create a new Delegate contract. Implements `IDelegateFactory.createDelegate`.
 
@@ -434,7 +438,7 @@ function createDelegate(
 | :-------------------- | :-------- | :--------------------------------------------------- |
 | `delegateTradeWallet` | `address` | Address of the wallet that holds funds to be traded. |
 
-### `has`
+#### `has`
 
 Check to see whether the factory has deployed a delegate by locator. Implements `ILocatorWhitelist.has`.
 

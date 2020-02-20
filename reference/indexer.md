@@ -88,7 +88,7 @@ const { locators } = await indexer.getLocators(signerToken, senderToken, protoco
 
 # Solidity
 
-See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby Indexers.
+See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby Indexer deployments.
 
 ## Indexer Contract
 
@@ -307,7 +307,7 @@ function getStakedAmount(
 | `senderToken` | `address` | The sender token of the Index they've staked on. |
 | `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
 
-## Index
+## Index Contract
 
 An Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/index).
 
