@@ -1,3 +1,70 @@
+See the `@airswap/types` package for [TypeScript](https://github.com/airswap/airswap-protocols/blob/master/source/types/index.ts) and [Solidity](https://github.com/airswap/airswap-protocols/blob/master/source/types/contracts/Types.sol) types.
+
+# Orders
+
+Each order includes a `nonce`, `expiry`, `signature`, and three parties: `signer`, `sender`, and `affiliate`. The `affiliate` field may be empty but must be included.
+
+**Example**
+
+```json
+{
+  "nonce": "100",
+  "expiry": "1566941284",
+  "signer": {
+    "kind": "0x36372b07",
+    "wallet": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+    "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "amount": "10000",
+    "id": "0"
+  },
+  "sender": {
+    "kind": "0x36372b07",
+    "wallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
+    "token": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "amount": "100000000",
+    "id": "0"
+  },
+  "affiliate": {
+    "kind": "0x36372b07",
+    "wallet": "0x0000000000000000000000000000000000000000",
+    "token": "0x0000000000000000000000000000000000000000",
+    "amount": "0",
+    "id": "0"
+  },
+  "signature": {
+    "signatory": "0x6556b252b05ad2ff5435d04a812b77875fa2bdbe",
+    "validator": "0x3E0c31C3D4067Ed5d7d294F08B79B6003B7bf9c8",
+    "version": "0x45",
+    "v": "28",
+    "r": "0x589bb063fc85f49ad096ec9513c45b3e93f5a2da4efe0706db9a2b755121f4c2",
+    "s": "0x73075fbae37e5a4954a6e57e0c056d130b582ce390b56fd69f0bb2e103d07e70"
+  }
+}
+```
+
+# Quotes
+
+Each Quote includes `token`, `amount`, `id`, and `kind` fields for `signer` and `sender`. The `kind` is a token interface identifier like `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `amount` is the number of ERC-20 tokens being transferred, and `id` is the ID of the ERC-721 being transferred. Interface identifier `0xd9b67a26` (ERC-1155) uses both `id` and `amount` fields.
+
+**Example**
+
+```json
+{
+  "signer": {
+    "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "amount": "10000",
+    "id": "0"
+  },
+  "sender": {
+    "token": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "amount": "100000000",
+    "id": "0"
+  }
+}
+```
+
+# Formatting
+
 Throughout the network, messages passed between peers and smart contracts, including request parameters, order and quote responses, and contract events, are interchangeable between nested and flat formats.
 
 ## Nested Format

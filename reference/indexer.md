@@ -1,8 +1,100 @@
+Indexers are used by makers to signal their interest in trading, and by takers to query for makers with mutual trading interest. Locators are strings used by takers to connect to makers. In the case of Servers, locators are URLs, and in the case of Delegates, locators are contract addresses.
+
+# Indexer Client
+
+Add the `@airswap/protocols` package to your application.
+
+```bash
+$ yarn add @airswap/protocols
+```
+
+Import the Indexer client.
+
+```TypeScript
+import { Indexer } from '@airswap/protocols'
+```
+
+### `constructor`
+
+Create a new `Indexer` client.
+
+```TypeScript
+public constructor(
+  chainId = chainIds.RINKEBY,
+  signerOrProvider?: ethers.Signer | ethers.providers.Provider
+)
+```
+
+| Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
+| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
+| `signerOrProvider` | `ethers.Signer | ethers.providers.Provider` | `optional`  | Ethers [signer](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
+
+**Example**
+Create a client for the rinkeby indexer using the default provider.
+
+```java
+const indexer = new Indexer();
+```
+
+**Example**
+Create a client for the mainnet indexer using an INFURA provider.
+
+```TypeScript
+import { chainIds } from '@airswap/constants'
+const provider = new ethers.providers.InfuraProvider(...)
+const indexer = new Indexer(chainIds.MAINNET, provider);
+```
+
+### `getLocators`
+
+Get a list of `string` locators by token pair.
+
+```TypeScript
+public async getLocators(
+  signerToken: string,
+  senderToken: string,
+  protocol = protocols.SERVER,
+  limit = 10,
+  cursor = INDEX_HEAD
+)
+): Promise<LocatorResult>
+```
+
+| Param         | Type      | Optionality                           | Description                                                       |
+| :------------ | :-------- | :------------------------------------ | :---------------------------------------------------------------- |
+| `signerToken` | `string`  | `required`                            | Address of a token for the signer side of a trade                 |
+| `senderToken` | `string`  | `required`                            | Address of a token for the sender side of a trade                 |
+| `protocol`    | `bytes2`  | `optional` default `protocols.SERVER` | Protocol to query e.g. `protocols.SERVER` or `protocols.DELEGATE` |
+| `limit`       | `number`  | `optional` default `10`               | Maximum number of results to query                                |
+| `cursor`      | `address` | `optional` default `head`             | Cursor from which to start the query                              |
+
+**Example**
+Query rinkeby Servers for those selling DAI for WETH. Locators are Server URLs.
+
+```TypeScript
+const indexer = new Indexer();
+const { locators } = await indexer.getLocators(signerToken, senderToken);
+```
+
+**Example**
+Query rinkeby Delegates for those selling DAI for WETH. Locators are Delegate contract addresses.
+
+```TypeScript
+import { rinkebyTokens, protocols } from `@airswap/constants`
+const indexer = new Indexer();
+const { locators } = await indexer.getLocators(signerToken, senderToken, protocols.DELEGATE);
+```
+
+# Solidity
+
+See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby Indexers.
+
+## Indexer Contract
+
 An Indexer is a smart contract to discover trading parties by token pair. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/indexer).
 
-# Functions
-
-## `constructor`
+### `constructor`
 
 Create a new `Indexer` contract.
 
@@ -16,7 +108,7 @@ constructor(
 | :-------------------- | :-------- | :---------------------------------------------------------------------------- |
 | `indexerStakingToken` | `address` | Address of the token required for staking. Must be a standard ERC20 contract. |
 
-## `createIndex`
+### `createIndex`
 
 If none exists, deploy a new `Index` contract for the given token pair and return its address. If the requested `Index` already exists, the function just returns its address.
 
@@ -44,7 +136,7 @@ event CreateIndex(
 );
 ```
 
-## `addTokenToBlacklist`
+### `addTokenToBlacklist`
 
 Add a token to the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them, and cannot have locators fetched for them.
 
@@ -66,7 +158,7 @@ event AddTokenToBlacklist(
 );
 ```
 
-## `removeTokenFromBlacklist`
+### `removeTokenFromBlacklist`
 
 Remove a token from the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them, and cannot have locators fetched for them.
 
@@ -88,7 +180,7 @@ event RemoveTokenFromBlacklist(
 );
 ```
 
-## `setIntent`
+### `setIntent`
 
 Stake tokens to the Indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
 
@@ -132,7 +224,7 @@ event Stake(
 | `UNABLE_TO_STAKE`         | The staking amount was not transferred.      |
 | `ENTRY_ALREADY_EXISTS`    | Entry does not exist for the message sender. |
 
-## `unsetIntent`
+### `unsetIntent`
 
 Unset an intent to trade and return staked tokens to the sender.
 
@@ -169,7 +261,7 @@ event Unstake(
 | `INDEX_DOES_NOT_EXIST` | There is no Index for the token pair.        |
 | `ENTRY_DOES_NOT_EXIST` | Entry does not exist for the message sender. |
 
-## `getLocators`
+### `getLocators`
 
 Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
 
@@ -195,7 +287,7 @@ function getLocators(
 | `cursor`      | `address` | Address of the user to start from in the list.   |
 | `limit`       | `uint256` | Maximum number of items to return.               |
 
-## `getStakedAmount`
+### `getStakedAmount`
 
 Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
 
@@ -215,13 +307,13 @@ function getStakedAmount(
 | `senderToken` | `address` | The sender token of the Index they've staked on. |
 | `protocol`    | `bytes2`  | Identifies protocol to communicate with locator. |
 
-# Index
+## Index
 
 An Index is a list of locators sorted by score. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/index).
 
-## Structs
+### Structs
 
-### `Entry`
+#### `Entry`
 
 ```java
 struct Entry {
@@ -232,9 +324,9 @@ struct Entry {
 }
 ```
 
-## Functions
+### Functions
 
-### `constructor`
+#### `constructor`
 
 Create a new `Index` contract.
 
@@ -242,7 +334,7 @@ Create a new `Index` contract.
 constructor() public
 ```
 
-### `setLocator`
+#### `setLocator`
 
 Set an Locator on the Index.
 
@@ -277,7 +369,7 @@ event SetLocator(
 | `ENTRY_ALREADY_EXISTS` | This address already has an Entry on the Index.     |
 | `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity. |
 
-### `updateLocator`
+#### `updateLocator`
 
 Updates an existing Locator on the Index.
 
@@ -312,7 +404,7 @@ event SetLocator(
 | `ENTRY_DOES_NOT_EXIST` | This address does not has an Entry on the Index and thus cannot be updated. |
 | `LOCATOR_MUST_BE_SENT` | Locator must not be empty to ensure list integrity.                         |
 
-### `unsetLocator`
+#### `unsetLocator`
 
 Unset a Locator from the Index.
 
@@ -340,7 +432,7 @@ event UnsetLocator(
 | :--------------------- | :------------------------------------------------ |
 | `ENTRY_DOES_NOT_EXIST` | This address does not have an Entry on the Index. |
 
-### `getScore`
+#### `getScore`
 
 Gets the score for a given identifier.
 
@@ -354,7 +446,7 @@ function getScore(
 | :----------- | :-------- | :--------------------------------------------------- |
 | `identifier` | `address` | On-chain address identifying the owner of a locator. |
 
-### `getLocator`
+#### `getLocator`
 
 Gets the locator as bytes32 for a given identifier.
 
@@ -368,7 +460,7 @@ function getLocator(
 | :----------- | :-------- | :--------------------------------------------------- |
 | `identifier` | `address` | On-chain address identifying the owner of a locator. |
 
-### `getLocators`
+#### `getLocators`
 
 Get a Range of Locators.
 

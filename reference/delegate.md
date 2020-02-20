@@ -1,6 +1,83 @@
-A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate).
+Delegates are smart contracts that implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols.
 
-# Functions
+# Delegate Client
+
+Add the `@airswap/protocols` package to your application.
+
+```bash
+$ yarn add @airswap/protocols
+```
+
+Import the Delegate client.
+
+```TypeScript
+import { Delegate } from '@airswap/protocols'
+```
+
+### `constructor`
+
+Create a new `Delegate` client.
+
+```TypeScript
+public constructor(locator: string)
+```
+
+| Param     | Type     | Optionality | Description                               |
+| :-------- | :------- | :---------- | :---------------------------------------- |
+| `locator` | `string` | `required`  | Ethereum address of the Delegate contract |
+
+**Example**
+Create a client to connect to `0xaBcD...0123`.
+
+```java
+const delegate = new Delegate('0xaBcD...0123');
+```
+
+### `Quotes`
+
+Delegates implement the [`Quote`](../protocols/quote.md) protocol.
+
+**Example**
+Call `getMaxQuote` on a Delegate.
+
+```TypeScript
+import { rinkebyTokens } from '@airswap/constants';
+const delegate = new Delegate('0xaBcD...0123');
+const quote = await delegate.getMaxQuote(senderToken, signerToken);
+```
+
+### `Last Look`
+
+Delegates implement the [`Last Look`](../protocols/last-look.md) protocol.
+
+**Example**
+Call `provideOrder` on a Delegate based on a previously queried quote.
+
+```TypeScript
+import { Delegate, Swap } from '@airswap/protocols';
+
+// Create a new ethers wallet
+const wallet = new ethers.Wallet('...');
+
+// Construct a new Delegate
+const delegate = new Delegate('...');
+
+// Get a quote from the Delegate
+const quote = await delegate.getSignerSideQuote(senderAmount, signerToken, senderToken);
+
+// Create an order given the quote
+const unsigedOrder = createOrderForQuote(quote, wallet.address, await delegate.getWallet())
+
+// Sign the order with the ethers wallet
+const order = await signOrder(unsigedOrder, wallet, Swap.getAddress(chainIds.MAINNET));
+
+// Provide the signed order to the Delegate
+const hash = await delegate.provideOrder(order);
+```
+
+# Solidity
+
+A Delegate is a smart contract that sends orders based on rules. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/delegate).
 
 ## `constructor`
 
