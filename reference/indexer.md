@@ -33,7 +33,7 @@ public constructor(
 **Example**
 Create a client for the rinkeby indexer using the default provider.
 
-```java
+```TypeScript
 const indexer = new Indexer();
 ```
 

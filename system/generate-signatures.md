@@ -21,7 +21,7 @@ Each signature should be included on its order, accessible as `order.signature`,
 
 You can use `personalSign` with the hashing function in the `@airswap/order-utils` package.
 
-```javascript
+```TypeScript
 const ethUtil = require('ethereumjs-util')
 const { hashes } = require('@airswap/order-utils')
 const orderHashHex = hashes.getOrderHash(order)
@@ -39,7 +39,7 @@ return {
 
 You can use `signTypedData` by calling it directly.
 
-```javascript
+```TypeScript
 const ethUtil = require('ethereumjs-util')
 const sigUtil = require('eth-sig-util')
 const DOMAIN_NAME = 'SWAP'

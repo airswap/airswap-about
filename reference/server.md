@@ -29,14 +29,14 @@ public constructor(locator: string)
 **Example**
 Create a client to connect to `https://maker.example.com/`.
 
-```java
+```TypeScript
 const server = new Server('maker.example.com');
 ```
 
 **Example**
 Create a client to connect to a local development server.
 
-```java
+```TypeScript
 const server = new Server('http://localhost:3000');
 ```
 

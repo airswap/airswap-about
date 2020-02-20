@@ -189,7 +189,7 @@ window.AirSwapTrader.render(
 
 If you have the full signed order details stored in [IPFS](https://ipfs.io), you can use the IPFS hash instead.
 
-```javascript
+```TypeScript
 window.AirSwapTrader.render(
   {
     cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
@@ -227,7 +227,7 @@ window.AirSwapTrader.render(
 
 Callback function triggered on creation of a trade. Passes the order and cid to the function as arguments.
 
-```javascript
+```TypeScript
 function onCreate(order, cid) {
     console.log('Order Created!');
     ...
@@ -243,7 +243,7 @@ function onCreate(order, cid) {
 
 Callback function triggered on submission of a trade. This does not necessarily mean that the trade was completed. No arguments.
 
-```javascript
+```TypeScript
 function onSubmit() {
     console.log('Order submitted!');
     ...
@@ -254,7 +254,7 @@ function onSubmit() {
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
 
-```javascript
+```TypeScript
 function onSwap(transactionHash) {
     console.log('Trade Completed!');
     ...
@@ -269,7 +269,7 @@ function onSwap(transactionHash) {
 
 Callback function triggered when an error occurs on a trade submission. The user can resolve the issue and try completing the trade again. Passes the error message as an argument.
 
-```javascript
+```TypeScript
 function onError(error) {
     console.log('There was an error on trade submission');
     console.log(error);
@@ -285,7 +285,7 @@ function onError(error) {
 
 Callback function triggered when a trade is canceled. Passes the transaction hash of the cancellation event as an argument.
 
-```javascript
+```TypeScript
 function onCancel(transactionHash) {
     console.log('Trade Cancelled!');
     ...
@@ -300,7 +300,7 @@ function onCancel(transactionHash) {
 
 Callback function triggered when the user closes the widget. No arguments.
 
-```javascript
+```TypeScript
 function onClose() {
   console.log('Widget closed')
 }

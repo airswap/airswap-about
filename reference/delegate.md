@@ -29,7 +29,7 @@ public constructor(locator: string)
 **Example**
 Create a client to connect to `0xaBcD...0123`.
 
-```java
+```TypeScript
 const delegate = new Delegate('0xaBcD...0123');
 ```
 

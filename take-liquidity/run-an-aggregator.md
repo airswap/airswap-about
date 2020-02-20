@@ -37,11 +37,11 @@ console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-order.ts).
 
 ```TypeScript
-// Load a wallet using ethers.js
-const signer = new ethers.Wallet('...')
-
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
+
+// Load a wallet using ethers.js
+const signer = new ethers.Wallet('...')
 
 // Iterate to get orders from all Servers
 let orders: Array<Order> = []
