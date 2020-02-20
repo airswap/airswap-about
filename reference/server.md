@@ -42,10 +42,10 @@ const server = new Server('http://localhost:3000');
 
 ### `Quotes`
 
-Servers implement the [`Quote`](../apis/quote.md) protocol.
+Servers implement the [`Quote`](../apis/quote.md) API.
 
 **Example**
-Call `getMaxQuote` on a Server.
+Call `getMaxQuote` on a local development Server.
 
 ```TypeScript
 const server = new Server('http://localhost:3000');
@@ -54,10 +54,10 @@ const quote = await server.getMaxQuote(senderToken, signerToken);
 
 ### `Orders`
 
-Servers implement the [`Order`](../apis/order.md) protocol.
+Servers implement the [`Order`](../apis/order.md) API.
 
 **Example**
-Call `getSenderSideOrder` on a Server.
+Call `getSenderSideOrder` on a local development Server.
 
 ```TypeScript
 const wallet = new ethers.Wallet('...');

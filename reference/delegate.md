@@ -35,7 +35,7 @@ const delegate = new Delegate('0xaBcD...0123');
 
 ### `Quotes`
 
-Delegates implement the [`Quote`](../apis/quote.md) protocol.
+Delegates implement the [`Quote`](../apis/quote.md) API.
 
 **Example**
 Call `getMaxQuote` on a Delegate.
@@ -48,7 +48,7 @@ const quote = await delegate.getMaxQuote(senderToken, signerToken);
 
 ### `Last Look`
 
-Delegates implement the [`Last Look`](../protocols/last-look.md) protocol.
+Delegates implement the [`Last Look`](../protocols/last-look.md) API.
 
 **Example**
 Call `provideOrder` on a Delegate based on a previously queried quote.
