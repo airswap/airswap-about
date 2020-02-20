@@ -2,7 +2,7 @@ Takers on the network "aggregate" liquidity by interacting with Servers and Dele
 
 # Aggregating Server Liquidity (HTTPS)
 
-Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
+Servers implement the [Quote](../apis/quote.md) and [Order](../apis/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
 ## Determine Total Liquidity
 
@@ -70,7 +70,7 @@ if (best) {
 
 # Aggregating Delegate Liquidity (On-Chain)
 
-Delegates implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
+Delegates implement the [Quote](../apis/quote.md) and [Last Look](../protocols/last-look.md) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
 Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for on-chain integrations that do not require signatures.
 

@@ -1,4 +1,4 @@
-Delegates are smart contracts that implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols.
+Delegates are smart contracts that implement the [Quote](../apis/quote.md) and [Last Look](../protocols/last-look.md) protocols.
 
 # Delegate Client
 
@@ -35,7 +35,7 @@ const delegate = new Delegate('0xaBcD...0123');
 
 ### `Quotes`
 
-Delegates implement the [`Quote`](../protocols/quote.md) protocol.
+Delegates implement the [`Quote`](../apis/quote.md) protocol.
 
 **Example**
 Call `getMaxQuote` on a Delegate.

@@ -1,4 +1,4 @@
-Servers are processes that implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS. To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is staked on an _indexer_ contract that takers query based on the tokens they wish to trade.
+Servers are processes that implement the [Quote](../apis/quote.md) and [Order](../apis/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS. To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is staked on an _indexer_ contract that takers query based on the tokens they wish to trade.
 
 # Introduction
 

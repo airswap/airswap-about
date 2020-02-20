@@ -9,11 +9,11 @@
 - [Signatures](system/generate-signatures.md)
 - [Contracts](system/contract-deployments.md)
 
-## Protocols
+## APIs
 
-- [Quote](protocols/quote.md)
-- [Order](protocols/order.md)
-- [Last Look](protocols/last-look.md)
+- [Quote](apis/quote.md)
+- [Order](apis/order.md)
+- [Last Look](apis/last-look.md)
 
 ## Make Liquidity
 

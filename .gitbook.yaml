@@ -6,5 +6,5 @@ root: ./
 
 redirects:
   instant/contract-deployments: system/contract-deployments.md
-  instant/add-to-your-app: guides/embed-airswap.md
-  trader/add-to-your-app: guides/embed-airswap.md
+  instant/add-to-your-app: take-liquidity/embed-airswap.md
+  trader/add-to-your-app: take-liquidity/embed-airswap.md

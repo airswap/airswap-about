@@ -1,6 +1,6 @@
-# Last Look Protocol
+# Last Look API
 
-A "last look" is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](./quote.md) protocol, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
+Last look is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](./quote.md) protocol, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
 
 ## `provideOrder`
 

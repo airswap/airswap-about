@@ -6,7 +6,7 @@ Each swap is between at least two parties, a `signer` and a `sender`. The `signe
 
 # Trading with Servers
 
-Servers (HTTPS) implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) protocols.
+Servers (HTTPS) implement the [Quote](../apis/quote.md) and [Order](../apis/order.md) protocols.
 
 **Takers** call...
 
@@ -16,7 +16,7 @@ Servers (HTTPS) implement the [Quote](../protocols/quote.md) and [Order](../prot
 
 # Trading with Delegates
 
-Delegates (On-chain) implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols.
+Delegates (On-chain) implement the [Quote](../apis/quote.md) and [Last Look](../protocols/last-look.md) protocols.
 
 **Takers** call...
 

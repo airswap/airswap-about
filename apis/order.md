@@ -1,4 +1,4 @@
-# Order Protocol
+# Order API
 
 Orders are priced and executable swaps that indicate all parties to a trade.
 

@@ -1,4 +1,4 @@
-Servers are processes that implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS.
+Servers are processes that implement the [Quote](../apis/quote.md) and [Order](../apis/order.md) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS.
 
 # Server Client
 
@@ -42,7 +42,7 @@ const server = new Server('http://localhost:3000');
 
 ### `Quotes`
 
-Servers implement the [`Quote`](../protocols/quote.md) protocol.
+Servers implement the [`Quote`](../apis/quote.md) protocol.
 
 **Example**
 Call `getMaxQuote` on a Server.
@@ -54,7 +54,7 @@ const quote = await server.getMaxQuote(senderToken, signerToken);
 
 ### `Orders`
 
-Servers implement the [`Order`](../protocols/order.md) protocol.
+Servers implement the [`Order`](../apis/order.md) protocol.
 
 **Example**
 Call `getSenderSideOrder` on a Server.

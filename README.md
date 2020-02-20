@@ -4,13 +4,13 @@
 
 # Quick Start
 
-- **Build** a **Maker** for AirSwap → [Build a Maker](./guides/build-a-maker.md)
-- **Embed** AirSwap into **Your App** → [Embed AirSwap](./guides/embed-airswap.md)
+- **Run** a **Server** on AirSwap → [Build a Maker](./make-liquidity/run-a-server.md)
+- **Embed** AirSwap into **Your App** → [Embed AirSwap](./take-liquidity/embed-airswap.md)
 - **Learn** about **Smart Contracts** → [Swap](./reference/swap.md) · [Indexer](./reference/indexer.md) · [Delegate](./reference/delegate.md)
 
 # Peer-to-Peer
 
-Every participant on the network, whether a [server running](./guides/build-a-maker.md) on the public internet, a user connected through a [web application](./guides/embed-airswap.md), a trader connected through a [terminal](./tools/airswap-cli), or a configured [smart contract](./reference/delegate.md), is equipped to trade. Peers can take either side of a trade, depending on their intentions. Many forms of trading can be done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
+Every participant on the network, whether a [server running](./make-liquidity/run-a-server.md) on the public internet, a user connected through a [web application](./take-liquidity/embed-airswap.md), a trader connected through a [terminal](./tools/airswap-cli), or a configured [smart contract](./reference/delegate.md), is equipped to trade. Peers can take either side of a trade, depending on their intentions. Many forms of trading can be done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
 
 **For end users**, no trading fees, no deposits, and no sign-ups. AirSwap is simple enough to stay intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
 

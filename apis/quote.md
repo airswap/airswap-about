@@ -1,4 +1,4 @@
-# Quote Protocol
+# Quote API
 
 Quotes indicate prices at which a peer is interested in trading.
 
