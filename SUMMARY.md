@@ -5,15 +5,10 @@
 ## System
 
 - [Architecture](system/architecture.md)
+- [APIs](system/apis.md)
 - [Types and Formats](system/types-and-formats.md)
 - [Signatures](system/generate-signatures.md)
 - [Contracts](system/contract-deployments.md)
-
-## APIs
-
-- [Quote](apis/quote.md)
-- [Order](apis/order.md)
-- [Last Look](apis/last-look.md)
 
 ## Make Liquidity
 
