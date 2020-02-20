@@ -1,6 +1,6 @@
 Indexers are smart contracts used to signal your intent to trade and publish the URL at which your server is running. You can interact with indexer contracts either programmatically or through tools like [AirSwap CLI](https://github.com/airswap/airswap-cli) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../reference/indexer.md) for complete method details.
 
-# Use the AirSwap CLI
+# Using the CLI
 
 Install the CLI globally.
 

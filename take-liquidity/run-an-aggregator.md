@@ -1,8 +1,8 @@
-Takers on the network "aggregate" liquidity by interacting with Servers and Delegates. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
+Aggregators take liquidity by interacting with Servers and Delegates. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
 
-# Aggregating Server Liquidity (HTTPS)
+# Server Liquidity (HTTPS)
 
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) protocols using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
 ## Determine Total Liquidity
 
@@ -68,7 +68,7 @@ if (best) {
 }
 ```
 
-# Aggregating Delegate Liquidity (On-Chain)
+# Delegate Liquidity (On-Chain)
 
 Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
