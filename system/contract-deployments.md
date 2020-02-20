@@ -20,7 +20,7 @@
 
 # Deploy Process
 
-See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/utils/deployer) for a guide to the deployment process. Each deploy has the following outputs:
+See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/tools/deployer) for a guide to the deployment process. Each deploy has the following outputs:
 
 - A new contract is deployed from the master branch.
 - After deploy, the contract source code is verified on Etherscan.

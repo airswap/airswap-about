@@ -8,7 +8,7 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-liquidity.ts).
 
-```java
+```TypeScript
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
@@ -24,7 +24,7 @@ for (let locator of locators) {
   }
 }
 
-// Sum up the amounts on quotes and convert to decimal.
+// Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySignerAmount(quotes),
   rinkebyTokens.DAI.decimals,
@@ -36,14 +36,14 @@ console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-order.ts).
 
-```java
+```TypeScript
 // Load a wallet using ethers.js
 const signer = new ethers.Wallet('...')
 
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
-// Iterate to get orders from all Servers.
+// Iterate to get orders from all Servers
 let orders: Array<Order> = []
 for (const locator of locators) {
   try {
@@ -60,7 +60,7 @@ for (const locator of locators) {
   }
 }
 
-// Get and swap the best among all returned orders.
+// Get and swap the best among all returned orders
 const best = getBestByLowestSenderAmount(orders)
 if (best) {
   const hash = await new Swap().swap(best, signer)
@@ -78,7 +78,7 @@ Delegates **require signatures** on orders, which enables them to be passed thro
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-liquidity.ts).
 
-```java
+```TypeScript
 // Fetch Delegate locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(
   signerToken,
@@ -98,7 +98,7 @@ for (let locator of locators) {
   }
 }
 
-// Sum up the amounts on quotes and convert to decimal.
+// Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySenderAmount(quotes),
   rinkebyTokens.DAI.decimals,
@@ -110,7 +110,7 @@ console.log(`${amount} DAI available for WETH from Delegates on Rinkeby.`)
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-order.ts).
 
-```java
+```TypeScript
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(
   signerToken,

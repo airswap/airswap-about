@@ -18,7 +18,7 @@ Add the following `script` tag to the `head` element in your web application.
 
 The simplest way to use the `AirSwapInstant` widget is by rendering it without any custom configuration options. This will open the widget and allow the user to buy or sell any amount of any token.
 
-```java
+```TypeScript
 window.AirSwapInstant.render(
   {
     onClose: function() {
@@ -31,7 +31,7 @@ window.AirSwapInstant.render(
 
 ## Render a specific token and base token
 
-```java
+```TypeScript
 AirSwapInstant.render(
   {
     env: 'production',
@@ -90,7 +90,7 @@ Pop-up blockers can prevent the widget from loading properly.
 
 Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid (ipfs hash) are passed as arguments.
 
-```javascript
+```TypeScript
 window.AirSwapTrader.render(
   {
     onCreate: (order, cid) => {
@@ -110,7 +110,7 @@ window.AirSwapTrader.render(
 
 In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
-```javascript
+```TypeScript
 window.AirSwapTrader.render(
   {
     order: {
@@ -141,7 +141,7 @@ window.AirSwapTrader.render(
 
 To initiate the Taker flow you would need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
-```javascript
+```TypeScript
 window.AirSwapTrader.render(
   {
     order: {
