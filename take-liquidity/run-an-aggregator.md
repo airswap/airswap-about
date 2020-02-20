@@ -72,7 +72,7 @@ if (best) {
 
 Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
-Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for on-chain integrations that do not require signatures.
+Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for onchain integrations that do not require signatures.
 
 ## Determine Total Liquidity
 

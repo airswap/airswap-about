@@ -1,4 +1,4 @@
-Indexers are smart contracts used to signal your intent to trade and publish the URL at which your server is running. You can interact with indexer contracts either programmatically or through tools like [AirSwap CLI](https://github.com/airswap/airswap-cli) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../reference/indexer.md) for complete method details.
+Indexers are smart contracts used to signal your intent to trade and publish the URL at which your server is running. You can interact with Indexer contracts either programmatically or through tools like [AirSwap CLI](https://github.com/airswap/airswap-cli) and [MEW](https://www.myetherwallet.com/). See the [Indexer Contract](../reference/indexer.md) for complete method details.
 
 # Using the CLI
 
@@ -30,7 +30,7 @@ These commands map to the contract functions below.
 
 ## Set an Intent to Trade
 
-Once you have set an account with `airswap account:import` run the following command to enable staking on the Indexer.
+Once you have set an account with `airswap account:import`, run the following command to enable staking on the Indexer.
 
 ```
 $ airswap indexer:enable
@@ -42,13 +42,13 @@ Once you have your [Server](./run-a-server.md) up and running, run the following
 $ airswap indexer:set
 ```
 
-| Param         | Type            | Description                                    |
-| :------------ | :-------------- | :--------------------------------------------- |
-| `buy or sell` | `buy` or `sell` | Whether you intend to buy or sell a token      |
-| `token`       | `token`         | Token you intend to buy or sell                |
-| `for`         | `token`         | Base token to buy or sell for                  |
-| `locator`     | `locator`       | URL of your Server where `https://` is implied |
-| `stakeAmount` | `number`        | Number of AirSwap Tokens to stake              |
+| Param         | Type            | Description                                     |
+| :------------ | :-------------- | :---------------------------------------------- |
+| `buy or sell` | `buy` or `sell` | Whether you intend to buy or sell a token.      |
+| `token`       | `token`         | Token you intend to buy or sell.                |
+| `for`         | `token`         | Base token to buy or sell for.                  |
+| `locator`     | `locator`       | URL of your Server where `https://` is implied. |
+| `stakeAmount` | `number`        | Number of AirSwap Tokens to stake.              |
 
 To ensure your intent was correctly set, you can query the opposite side of your intent on the indexer. For example, if you set an intent to sell DAI for WETH, you would query to buy DAI for WETH with the `indexer:get` command.
 
@@ -80,7 +80,7 @@ See [Contract Deployments](../system/contract-deployments) for the latest mainne
 
 ## `setIntent`
 
-Stake tokens to the indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
+Stake tokens to the Indexer and set an intent to trade. If the caller already has an intent on the specified Index, then the intent is updated to reflect the new `stakingAmount` and `locator`.
 
 ```java
 function setIntent(
@@ -116,7 +116,7 @@ function unsetIntent(
 
 ## `getLocators`
 
-Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
+Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor for pagination.
 
 ```java
 function getLocators(

@@ -4,9 +4,9 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
 
-- [**Orders**](../system/orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](../system/types-and-formats.md#quotes) are indicative prices. Servers should provide both.
+- **Orders** are signed and executable trades and Quotes are indicative prices. Servers should provide both.
 - **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
-- **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided `https://` is implied.
+- **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
 
 # Resources
 
@@ -37,7 +37,7 @@ The following are error codes in the [JSON-RPC specification](http://www.jsonrpc
 - `-32601` Method not found
 - `-32602` Invalid params
 - `-32603` Internal error
-- `-32000 to -32099` Reserved for implementation-defined server-errors.
+- `-32000 to -32099` (Reserved for implementation-defined server-errors)
 
 We have allocated the following range for Swap Protocol errors:
 
@@ -47,7 +47,7 @@ We have allocated the following range for Swap Protocol errors:
 - `-33603` The specified `senderAmount` or `signerAmount` is too high
 - `-33604` Invalid request parameters
 - `-33605` Rate limit exceeded
-- `-33700 to -33799` Reserved for implementation specific trading errors.
+- `-33700 to -33799` (Reserved for implementation specific trading errors)
 
 # Helpful for Testing
 

@@ -33,6 +33,6 @@ Packages are versioned based on deploys. Major versions e.g. 1.x.x are mainnet d
 
 **MAJOR.MINOR.PATCH** (Semantic Versioning)
 
-- _MAJOR_ is incremented on _MAINNET_ deploy
-- _MINOR_ is incremented on _TESTNET_ deploy (specifically RINKEBY)
+- _MAJOR_ is incremented on _MAINNET_ deploy.
+- _MINOR_ is incremented on _TESTNET_ deploy (specifically RINKEBY).
 - _PATCH_ is incremented to publish to NPM, unrelated to a deploy.

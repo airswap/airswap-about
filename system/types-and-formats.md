@@ -27,24 +27,24 @@ Each Quote includes `token`, `amount`, `id`, and `kind` fields for `signer` and 
 
 An `Order` has the following properties.
 
-| Param     | Type        | Description                                             |
-| :-------- | :---------- | :------------------------------------------------------ |
-| nonce     | `uint256`   | Unique per signer and should be sequential              |
-| expiry    | `uint256`   | Expiry in seconds since 1 January 1970                  |
-| signer    | `Party`     | Party to the trade that sets and signs terms            |
-| sender    | `Party`     | Party to the trade that accepts and sends terms         |
-| affiliate | `Party`     | `optional` Party compensated for facilitating the trade |
-| signature | `Signature` | Signature of the order, described below                 |
+| Param     | Type        | Description                                              |
+| :-------- | :---------- | :------------------------------------------------------- |
+| nonce     | `uint256`   | Unique per signer and should be sequential.              |
+| expiry    | `uint256`   | Expiry in seconds since 1 January 1970.                  |
+| signer    | `Party`     | Party to the trade that sets and signs terms.            |
+| sender    | `Party`     | Party to the trade that accepts and sends terms.         |
+| affiliate | `Party`     | `optional` Party compensated for facilitating the trade. |
+| signature | `Signature` | Signature of the order, described below.                 |
 
 Each `Party` has the following properties.
 
-| Param  | Type      | Description                                     |
-| :----- | :-------- | :---------------------------------------------- |
-| kind   | `bytes4`  | `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721) |
-| wallet | `address` | Wallet address of the party                     |
-| token  | `address` | Contract address of the token                   |
-| amount | `uint256` | Amount of the token (ERC-20)                    |
-| id     | `uint256` | ID of the token (ERC-721)                       |
+| Param  | Type      | Description                                                                |
+| :----- | :-------- | :------------------------------------------------------------------------- |
+| kind   | `bytes4`  | `0x36372b07` (ERC-20), `0x80ac58cd` (ERC-721), or `0xd9b67a26` (ERC-1155). |
+| wallet | `address` | Wallet address of the party.                                               |
+| token  | `address` | Contract address of the token.                                             |
+| amount | `uint256` | Amount of the token (ERC-20).                                              |
+| id     | `uint256` | ID of the token (ERC-721).                                                 |
 
 These values correlate to the structs in [Types](../contracts/types.md).
 

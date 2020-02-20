@@ -1,4 +1,4 @@
-Indexers are used by makers to signal their interest in trading, and by takers to query for makers with mutual trading interest. Locators are strings used by takers to connect to makers. In the case of Servers, locators are URLs, and in the case of Delegates, locators are contract addresses.
+Indexers are used by makers to signal their interest in trading and by takers to query for makers with mutual trading interest. Locators are strings used by takers to connect to makers. In the case of Servers, locators are URLs, and in the case of Delegates, locators are contract addresses.
 
 # Indexer Client
 
@@ -21,24 +21,24 @@ Create a new `Indexer` client.
 ```TypeScript
 public constructor(
   chainId = chainIds.RINKEBY,
-  signerOrProvider?: ethers.Signer | ethers.providers.Provider
+  walletOrProvider?: ethers.Wallet | ethers.providers.Provider
 )
 ```
 
-| Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
-| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
-| `signerOrProvider` | `ethers.Signer | ethers.providers.Provider` | `optional`  | Ethers [signer](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
+| Param              | Type                                        | Optionality | Description                                                                                                                                                                      |
+| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                               |
+| `walletOrProvider` | `ethers.Wallet | ethers.providers.Provider` | `optional`  | Ethers [signer](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance. |
 
 **Example**
-Create a client for the rinkeby indexer using the default provider.
+Create a client for the Rinkeby Indexer using the default provider.
 
 ```TypeScript
 const indexer = new Indexer();
 ```
 
 **Example**
-Create a client for the mainnet indexer using an INFURA provider.
+Create a client for the Mainnet Indexer using an INFURA provider.
 
 ```TypeScript
 import { chainIds } from '@airswap/constants'
@@ -61,13 +61,13 @@ public async getLocators(
 ): Promise<LocatorResult>
 ```
 
-| Param         | Type      | Optionality                           | Description                                                       |
-| :------------ | :-------- | :------------------------------------ | :---------------------------------------------------------------- |
-| `signerToken` | `string`  | `required`                            | Address of a token for the signer side of a trade                 |
-| `senderToken` | `string`  | `required`                            | Address of a token for the sender side of a trade                 |
-| `protocol`    | `bytes2`  | `optional` default `protocols.SERVER` | Protocol to query e.g. `protocols.SERVER` or `protocols.DELEGATE` |
-| `limit`       | `number`  | `optional` default `10`               | Maximum number of results to query                                |
-| `cursor`      | `address` | `optional` default `head`             | Cursor from which to start the query                              |
+| Param         | Type      | Optionality                           | Description                                                        |
+| :------------ | :-------- | :------------------------------------ | :----------------------------------------------------------------- |
+| `signerToken` | `string`  | `required`                            | Address of a token for the signer side of a trade.                 |
+| `senderToken` | `string`  | `required`                            | Address of a token for the sender side of a trade.                 |
+| `protocol`    | `bytes2`  | `optional` default `protocols.SERVER` | Protocol to query e.g. `protocols.SERVER` or `protocols.DELEGATE`. |
+| `limit`       | `number`  | `optional` default `10`               | Maximum number of results to query.                                |
+| `cursor`      | `address` | `optional` default `head`             | Cursor from which to start the query.                              |
 
 **Example**
 Query rinkeby Servers for those selling DAI for WETH. Locators are Server URLs.
@@ -138,7 +138,7 @@ event CreateIndex(
 
 ### `addTokenToBlacklist`
 
-Add a token to the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them, and cannot have locators fetched for them.
+Add a token to the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them and cannot have locators fetched for them.
 
 ```java
 function addTokenToBlacklist(
@@ -160,7 +160,7 @@ event AddTokenToBlacklist(
 
 ### `removeTokenFromBlacklist`
 
-Remove a token from the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them, and cannot have locators fetched for them.
+Remove a token from the blacklist. Markets that include a blacklisted token cannot have intents to trade set on them and cannot have locators fetched for them.
 
 ```java
 function removeTokenFromBlacklist(
@@ -263,7 +263,7 @@ event Unstake(
 
 ### `getLocators`
 
-Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
+Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor for pagination.
 
 ```java
 function getLocators(
@@ -289,7 +289,7 @@ function getLocators(
 
 ### `getStakedAmount`
 
-Get a list of locators that have an intent to trade a token pair. Along with the locators, their corresponding staking scores are returned, and the address of the next cursor to pass back into the function to achieve pagination.
+Get the amount staked for a specific user, token pair, and protocol.
 
 ```java
 function getStakedAmount(
@@ -346,11 +346,11 @@ function setLocator(
 ) external onlyOwner
 ```
 
-| Param        | Type      | Description                                          |
-| :----------- | :-------- | :--------------------------------------------------- |
-| `identifier` | `address` | On-chain address identifying the owner of a locator. |
-| `score`      | `uint256` | Score for the locator being set.                     |
-| `locator`    | `bytes32` | Locator.                                             |
+| Param        | Type      | Description                                         |
+| :----------- | :-------- | :-------------------------------------------------- |
+| `identifier` | `address` | Onchain address identifying the owner of a locator. |
+| `score`      | `uint256` | Score for the locator being set.                    |
+| `locator`    | `bytes32` | Locator.                                            |
 
 A successful `setLocator` emits a `SetLocator` event.
 
@@ -381,11 +381,11 @@ function updateLocator(
 ) external onlyOwner
 ```
 
-| Param        | Type      | Description                                          |
-| :----------- | :-------- | :--------------------------------------------------- |
-| `identifier` | `address` | On-chain address identifying the owner of a locator. |
-| `score`      | `uint256` | Score for the locator being set.                     |
-| `locator`    | `bytes32` | Locator.                                             |
+| Param        | Type      | Description                                         |
+| :----------- | :-------- | :-------------------------------------------------- |
+| `identifier` | `address` | Onchain address identifying the owner of a locator. |
+| `score`      | `uint256` | Score for the locator being set.                    |
+| `locator`    | `bytes32` | Locator.                                            |
 
 A successful `updateLocator` emits a `SetLocator` event.
 
@@ -422,9 +422,9 @@ event UnsetLocator(
 );
 ```
 
-| Param        | Type      | Description                                          |
-| :----------- | :-------- | :--------------------------------------------------- |
-| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+| Param        | Type      | Description                                         |
+| :----------- | :-------- | :-------------------------------------------------- |
+| `identifier` | `address` | Onchain address identifying the owner of a locator. |
 
 ---
 
@@ -442,9 +442,9 @@ function getScore(
 ) external view returns (uint256)
 ```
 
-| Param        | Type      | Description                                          |
-| :----------- | :-------- | :--------------------------------------------------- |
-| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+| Param        | Type      | Description                                         |
+| :----------- | :-------- | :-------------------------------------------------- |
+| `identifier` | `address` | Onchain address identifying the owner of a locator. |
 
 #### `getLocator`
 
@@ -456,9 +456,9 @@ function getLocator(
 ) external view returns (bytes32)
 ```
 
-| Param        | Type      | Description                                          |
-| :----------- | :-------- | :--------------------------------------------------- |
-| `identifier` | `address` | On-chain address identifying the owner of a locator. |
+| Param        | Type      | Description                                         |
+| :----------- | :-------- | :-------------------------------------------------- |
+| `identifier` | `address` | Onchain address identifying the owner of a locator. |
 
 #### `getLocators`
 

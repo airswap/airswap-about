@@ -1,17 +1,17 @@
-Ethereum uses [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signatures. To generate a signature for an AirSwap order, the order must first be hashed according to [EIP-712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md), which can be seen in the [Solidity](https://github.com/airswap/airswap-protocols/blob/master/source/types/contracts/Types.sol) and [JavaScript](https://github.com/airswap/airswap-protocols/blob/master/tools/utils/src/hashes.ts) implementations.
+Ethereum uses [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signatures. To generate a signature for an AirSwap order, the order must first be hashed according to [EIP-712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md), which can be seen in the [Solidity](https://github.com/airswap/airswap-protocols/blob/master/source/types/contracts/Types.sol) and [TypeScript](https://github.com/airswap/airswap-protocols/blob/master/tools/utils/src/hashes.ts) implementations.
 
 Once hashed, one of two signing methods may be used, either `personalSign` or `signTypedData`. AirSwap signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`). The primary distinction is that in the former, Ethereum wallets prefix the hash with byte `\x19` to stay out of range of valid RLP so that a signature cannot be executed as a transaction.
 
-An AirSwap signature has the following properties.
+An AirSwap signature has the following properties:
 
-| Param     | Type      | Description                                                                                                |
-| :-------- | :-------- | :--------------------------------------------------------------------------------------------------------- |
-| signatory | `address` | Wallet used to generate the signature                                                                      |
-| validator | `address` | Swap contract address to be used for settlement                                                            |
-| version   | `bytes1`  | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version `0x01` or `0x45` |
-| v         | `uint8`   | `v` value of the ECDSA signature                                                                           |
-| r         | `bytes32` | `r` value of the ECDSA signature                                                                           |
-| s         | `bytes32` | `s` value of the ECDSA signature                                                                           |
+| Param     | Type      | Description                                                                                                 |
+| :-------- | :-------- | :---------------------------------------------------------------------------------------------------------- |
+| signatory | `address` | Wallet used to generate the signature.                                                                      |
+| validator | `address` | Swap contract address to be used for settlement.                                                            |
+| version   | `bytes1`  | [EIP-191](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-191.md) signature version `0x01` or `0x45`. |
+| v         | `uint8`   | `v` value of the ECDSA signature.                                                                           |
+| r         | `bytes32` | `r` value of the ECDSA signature.                                                                           |
+| s         | `bytes32` | `s` value of the ECDSA signature.                                                                           |
 
 Each signature should be included on its order, accessible as `order.signature`, to be settled by invoking `swap(order)` on the Swap contract.
 
@@ -108,7 +108,7 @@ DOMAIN_SEPARATOR = keccak(
 )
 ```
 
-Then you can create a hash of the order itself with the type information included, assuming that `order` represents your order in a dict.
+You can then create a hash of the order itself with the type information included, assuming that `order` represents your order in a dict.
 
 ```python
 hashed_signer = keccak(
@@ -209,4 +209,4 @@ If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the f
 | Typehash          | `bytes32` | EIP712Domain(string name,string version,address verifyingContract) |
 | Name              | `bytes32` | SWAP                                                               |
 | Version           | `bytes32` | 2                                                                  |
-| verifyingContract | `address` | Swap contract address to be used for settlement                    |
+| verifyingContract | `address` | Swap contract address to be used for settlement.                   |

@@ -139,7 +139,7 @@ window.AirSwapTrader.render(
 
 ## Render an existing signed order
 
-To initiate the Taker flow you would need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
+To initiate the Taker flow, you need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
 ```TypeScript
 window.AirSwapTrader.render(

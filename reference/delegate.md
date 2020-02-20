@@ -99,17 +99,15 @@ constructor(
 
 | Param                   | Type       | Description                                     |
 | :---------------------- | :--------- | :---------------------------------------------- |
-| `delegateSwap`          | `ISwap`    | Swap contract the delegate will deploy with.    |
-| `delegateIndexer`       | `IIndexer` | Indexer contract the delegate will deploy with. |
-| `delegateContractOwner` | `address`  | Owner of the delegate.                          |
-| `delegateTradeWallet`   | `address`  | Wallet the delegate will trade from.            |
+| `delegateSwap`          | `ISwap`    | Swap contract the Delegate will deploy with.    |
+| `delegateIndexer`       | `IIndexer` | Indexer contract the Delegate will deploy with. |
+| `delegateContractOwner` | `address`  | Owner of the Delegate.                          |
+| `delegateTradeWallet`   | `address`  | Wallet the Delegate will trade from.            |
 | `delegateProtocol`      | `bytes2`   | The protocol identifier for Delegate contracts. |
 
 ### `setRule`
 
-Set a trading rule on the delegate. Delegate assumes the role of sender.
-Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the delegate will trade at. An order requiring the delegate to send fewer tokens than its trading rule (i.e. a better price for the delegate), will also succeed.
-1 senderToken = priceCoef _ 10^(-priceExp) _ signerToken
+Set a trading rule on the Delegate. Delegate assumes the role of sender. Briefly this example shows how the priceCoef and priceExp function to compute the trade quantity. This calculated price indicates the threshold price that the Delegate will trade at. An order requiring the Delegate to send fewer tokens than its trading rule (i.e. a better price for the Delegate), will also succeed. 1 senderToken = priceCoef \* 10^(-priceExp) \* signerToken.
 
 ```java
 function setRule(
@@ -149,7 +147,7 @@ event SetRule(
 
 #### Price Calculations
 
-All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the delegate's favor. For example, a price of `5.25` and `senderAmount` of `2` results in `signerAmount` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
+All amounts are in the smallest unit \(e.g. wei\), so all calculations based on price result in a whole number. For calculations that would result in a decimal, the amount is rounded in the Delegate's favor. For example, a price of `5.25` and `senderAmount` of `2` results in `signerAmount` of `11` rather than `10.5`. Tokens have many decimal places so these differences are very small.
 
 #### Examples
 
@@ -185,7 +183,7 @@ setRule(WETHAddress, ASTAddress, 2000000000000000000, 25, 12)
 
 ### `unsetRule`
 
-Unset a trading rule for the delegate.
+Unset a trading rule for the Delegate.
 
 ```java
 function unsetRule(
@@ -210,7 +208,7 @@ event UnsetRule(
 
 ### `setRuleAndIntent`
 
-Ssets a rule on the delegate and an intent on the indexer.
+Ssets a rule on the Delegate and an intent on the indexer.
 
 ```java
 function setRuleAndIntent(
@@ -257,7 +255,7 @@ event Stake(
 
 ### `unsetRuleAndIntent`
 
-Sets a rule on the delegate and an intent on the indexer.
+Sets a rule on the Delegate and an intent on the indexer.
 
 ```java
 function unsetRuleAndIntent(
@@ -420,8 +418,8 @@ constructor(
 
 | Param                    | Type     | Description                                                     |
 | :----------------------- | :------- | :-------------------------------------------------------------- |
-| `factorySwapContract`    | `ISwap`  | Instance of the swap contract used to settle trades.            |
-| `factoryIndexerContract` | `ISwap`  | Instance of the indexer contract the delegate will deploy with. |
+| `factorySwapContract`    | `ISwap`  | Instance of the Swap contract used to settle trades.            |
+| `factoryIndexerContract` | `ISwap`  | Instance of the Indexer contract the Delegate will deploy with. |
 | `factoryProtocol`        | `bytes2` | Protocol type of the delegates the factory deploys.             |
 
 #### `createDelegate`
@@ -440,7 +438,7 @@ function createDelegate(
 
 #### `has`
 
-Check to see whether the factory has deployed a delegate by locator. Implements `ILocatorWhitelist.has`.
+Check to see whether the factory has deployed a Delegate by locator. Implements `ILocatorWhitelist.has`.
 
 ```java
 function has(
