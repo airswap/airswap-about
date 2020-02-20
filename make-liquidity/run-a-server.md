@@ -4,7 +4,7 @@ Servers are processes that implement the [Quote](../system/apis.md#quote-api) an
 
 On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
 
-- [**Orders**](../system/orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](../system/orders-and-signatures.md#quotes) are indicative prices. Servers should provide both.
+- [**Orders**](../system/orders-and-signatures.md#creating-orders) are signed and executable trades and [**Quotes**](../system/types-and-formats.md#quotes) are indicative prices. Servers should provide both.
 - **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided `https://` is implied.
 

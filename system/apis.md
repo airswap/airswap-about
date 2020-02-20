@@ -25,7 +25,7 @@ Given a token pair, return a quote object with the maximum amounts a maker is wi
 | `senderToken` | `address` | The token the sender would transfer. |
 | `signerToken` | `address` | The token the signer would transfer. |
 
-A successful `getMaxQuote` returns a [Quote](./orders-and-signatures.md#quotes) object.
+A successful `getMaxQuote` returns a [Quote](./types-and-formats.md#quotes) object.
 
 ## `getSenderSideQuote`
 
@@ -52,7 +52,7 @@ Given a `signerAmount` and token pair, return a complete quote. The `senderAmoun
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSenderSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `senderAmount`.
+A successful `getSenderSideQuote` returns a [Quote](./types-and-formats.md#quotes) object including the requested `senderAmount`.
 
 ## `getSignerSideQuote`
 
@@ -79,7 +79,7 @@ Given a `senderAmount` and token pair, return a complete quote. The `signerAmoun
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `signerToken`  | `address` | Token the signer would transfer.            |
 
-A successful `getSignerSideQuote` returns a [Quote](./orders-and-signatures.md#quotes) object including the requested `signerAmount`
+A successful `getSignerSideQuote` returns a [Quote](./types-and-formats.md#quotes) object including the requested `signerAmount`
 
 # Order API
 
