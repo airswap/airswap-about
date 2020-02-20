@@ -41,7 +41,7 @@ For complete source code check out [GitHub](https://github.com/airswap/airswap-t
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
 // Load a wallet using ethers.js
-const signer = new ethers.Wallet('...')
+const wallet = new ethers.Wallet('...')
 
 // Iterate to get orders from all Servers
 let orders: Array<Order> = []
@@ -63,7 +63,7 @@ for (const locator of locators) {
 // Get and swap the best among all returned orders
 const best = getBestByLowestSenderAmount(orders)
 if (best) {
-  const hash = await new Swap().swap(best, signer)
+  const hash = await new Swap().swap(best, wallet)
   console.log(getEtherscanURL(chainIds.RINKEBY, hash))
 }
 ```
@@ -138,18 +138,18 @@ for (let locator of locators) {
 const best = getBestByLowestSignerAmount(quotes)
 if (best) {
   // Load a wallet using ethers.js
-  const signer = new ethers.Wallet('...')
+  const wallet = new ethers.Wallet('...')
 
   // Construct a Delegate using the best locator
   const delegate = new Delegate(best.locator)
   const order: Order = await signOrder(
-    createOrderForQuote(best, signer.address, await delegate.getWallet()),
-    signer,
+    createOrderForQuote(best, wallet.address, await delegate.getWallet()),
+    wallet,
     Swap.getAddress(),
   )
 
   // Provide order to the Delegate
-  const hash = await delegate.provideOrder(order, signer)
+  const hash = await delegate.provideOrder(order, wallet)
   console.log(getEtherscanURL(chainIds.RINKEBY, hash))
 }
 ```
