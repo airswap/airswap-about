@@ -4,25 +4,43 @@ Each swap is between at least two parties, a `signer` and a `sender`. The `signe
 
 ![](../.gitbook/assets/airswap-architecture.png)
 
-# Trading with Servers
+# Make Liquidity
 
-Servers (HTTPS) implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) protocols.
+Makers run Servers or deploy Delegates and use the Indexer to signal their interest in trading.
 
-**Takers** call...
+**Makers**...
 
-1. `getIntents` on the **Server [Indexer](../reference/indexer.md)** using protocol `0x0000` and receives locators (URLs).
-2. `getOrder` on each **HTTPS [Server](../make-liquidity/run-a-server.md)** using JSON-RPC over HTTPS.
-3. `swap` on the **[Swap](../reference/swap.md) Contract** with the order that it wishes to execute.
+1. [Run a Server](../make-liquidity/run-a-server.md) at a public URL and use it as their `locator` value.
+2. [Stake](../make-liquidity/use-the-indexer.md) AirSwap Tokens to signal their intent to trade on the [Indexer](../reference/indexer.md).
+3. Respond to [`get*Quote`](./apis.md#quote-api) and [`get*Order`](./apis.md#order-api) requests.
 
-# Trading with Delegates
+See code examples of these protocols at work in the [Run a Server](../make-liquidity/run-a-server.md) section.
 
-Delegates (onchain) implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols.
+# Take Liquidity
 
-**Takers** call...
+Takers use the Indexer to find Servers and Delegates to interact with.
 
-1. `getIntents` on the **Delegate [Indexer](../reference/indexer.md)** using protocol `0x0001` and receives contract addresses.
-2. `get*Quote` on each **[Delegate](../reference/delegate.md) Contract**.
-3. `provideOrder` on the selected **Delegate Contract** that performs the **[Swap](../reference/swap.md)**.
+## Servers (HTTPS)
+
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) protocols.
+
+**Takers**...
+
+1. Call `getIntents` on the **Server [Indexer](../reference/indexer.md)** using protocol `0x0000` and receives locators (URLs).
+2. Call `get*Order` on each **HTTPS [Server](../make-liquidity/run-a-server.md)** using JSON-RPC over HTTPS.
+3. Call `swap` on the **[Swap](../reference/swap.md) Contract** with the order that it wishes to execute.
+
+## Delegates (onchain)
+
+Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols.
+
+**Takers**...
+
+1. Call `getIntents` on the **Delegate [Indexer](../reference/indexer.md)** using protocol `0x0001` and receives contract addresses.
+2. Call `get*Quote` on each **[Delegate](../reference/delegate.md) Contract**.
+3. Call `provideOrder` on the selected **Delegate Contract** that performs the **[Swap](../reference/swap.md)**.
+
+See code examples of these protocols at work in the [Run an Aggregator](../take-liquidity/run-an-aggregator.md) section.
 
 # Third-Parties
 
