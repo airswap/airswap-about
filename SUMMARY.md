@@ -13,6 +13,7 @@
 ## Make Liquidity
 
 - [Run a Server](make-liquidity/run-a-server.md)
+- [Use the Indexer](make-liquidity/use-the-indexer.md)
 
 ## Take Liquidity
 
