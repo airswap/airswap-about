@@ -42,13 +42,13 @@ Once you have your [Server](./run-a-server.md) up and running, run the following
 $ airswap indexer:set
 ```
 
-| Param         | Type         | Description                                    |
-| :------------ | :----------- | :--------------------------------------------- |
-| `buy or sell` | `buy | sell` | Whether you intend to buy or sell a token      |
-| `token`       | `token`      | Token you intend to buy or sell                |
-| `for`         | `token`      | Base token to buy or sell for                  |
-| `locator`     | `locator`    | URL of your Server where `https://` is implied |
-| `stakeAmount` | `number`     | Number of AirSwap Tokens to stake              |
+| Param         | Type            | Description                                    |
+| :------------ | :-------------- | :--------------------------------------------- |
+| `buy or sell` | `buy` or `sell` | Whether you intend to buy or sell a token      |
+| `token`       | `token`         | Token you intend to buy or sell                |
+| `for`         | `token`         | Base token to buy or sell for                  |
+| `locator`     | `locator`       | URL of your Server where `https://` is implied |
+| `stakeAmount` | `number`        | Number of AirSwap Tokens to stake              |
 
 To ensure your intent was correctly set, you can query the opposite side of your intent on the indexer. For example, if you set an intent to sell DAI for WETH, you would query to buy DAI for WETH with the `indexer:get` command.
 
