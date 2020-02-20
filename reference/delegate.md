@@ -1,4 +1,4 @@
-Delegates are smart contracts that implement the [Quote](../apis/quote.md) and [Last Look](../protocols/last-look.md) protocols.
+Delegates are smart contracts that implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols.
 
 # Delegate Client
 
