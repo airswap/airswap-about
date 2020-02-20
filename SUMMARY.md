@@ -26,9 +26,10 @@
 
 ## Reference
 
-- [Swap](reference/swap.md)
 - [Indexer](reference/indexer.md)
+- [Server](reference/server.md)
 - [Delegate](reference/delegate.md)
+- [Swap](reference/swap.md)
 - [Wrapper](reference/wrapper.md)
 - [Types](reference/types.md)
 
