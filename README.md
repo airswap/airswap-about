@@ -14,7 +14,7 @@ Every participant on the network, whether a [server running](./make-liquidity/ru
 
 **For end users**, no trading fees, no deposits, and no sign-ups. AirSwap is simple enough to stay intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
 
-**For makers**, no costly price updates with onchain order books. Prices are per request. Easily manage exposure, and if needed, cancel specific orders or in batch in a single transaction.
+**For makers**, no costly price updates with onchain order books. Prices are per request. Easily manage exposure, and, if needed, cancel orders individually or as a batch in a single transaction.
 
 # Around the Web
 
