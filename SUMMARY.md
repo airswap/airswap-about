@@ -2,32 +2,35 @@
 
 - [Welcome](README.md)
 
-## Instant
+## System
 
-- [Add to Your App](instant/add-to-your-app.md)
-- [Run Makers](instant/run-makers.md)
-- [Orders, Quotes, and Signatures](instant/orders-and-signatures.md)
-- [Contract Deployments](instant/contract-deployments.md)
-- [Architecture](instant/architecture.md)
+- [Architecture](system/architecture.md)
+- [APIs](system/apis.md)
+- [Types and Formats](system/types-and-formats.md)
+- [Signatures](system/generate-signatures.md)
+- [Contracts](system/contract-deployments.md)
 
-## Trader
+## Make Liquidity
 
-- [Add to Your App](trader/add-to-your-app.md)
+- [Run a Server](make-liquidity/run-a-server.md)
+- [Use the Indexer](make-liquidity/use-the-indexer.md)
 
-## Contracts
+## Take Liquidity
 
-- [Swap](contracts/swap.md)
-- [Indexer](contracts/indexer.md)
-- [Index](contracts/index.md)
-- [Delegate](contracts/delegate.md)
-- [DelegateFactory](contracts/delegate-factory.md)
-- [Wrapper](contracts/wrapper.md)
-- [Types](contracts/types.md)
+- [Run an Aggregator](take-liquidity/run-an-aggregator.md)
+- [Embed AirSwap](take-liquidity/embed-airswap.md)
 
-## Helper Libraries
+## Reference
 
-- [Orders and Quotes](helper-libraries/orders-and-quotes.md)
-- [Signing Orders](helper-libraries/signing-orders.md)
-- [Hashing Orders](helper-libraries/hashing-orders.md)
-- [Testing Token Balances](helper-libraries/testing-token-balances.md)
-- [Testing with Time Travel](helper-libraries/testing-time-travel.md)
+- [Indexer](reference/indexer.md)
+- [Server](reference/server.md)
+- [Delegate](reference/delegate.md)
+- [Swap](reference/swap.md)
+- [Wrapper](reference/wrapper.md)
+- [Types](reference/types.md)
+
+## Tools
+
+- [AirSwap CLI](https://github.com/airswap/airswap-cli)
+- [Order Utils](tools/order-utils.md)
+- [Time Travel](tools/time-travel.md)

@@ -20,7 +20,7 @@
 
 # Deploy Process
 
-See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/utils/deployer) for a guide to the deployment process. Each deploy has the following outputs:
+See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/tools/deployer) for a guide to the deployment process. Each deploy has the following outputs:
 
 - A new contract is deployed from the master branch.
 - After deploy, the contract source code is verified on Etherscan.
@@ -33,6 +33,6 @@ Packages are versioned based on deploys. Major versions e.g. 1.x.x are mainnet d
 
 **MAJOR.MINOR.PATCH** (Semantic Versioning)
 
-- _MAJOR_ is incremented on _MAINNET_ deploy
-- _MINOR_ is incremented on _TESTNET_ deploy (specifically RINKEBY)
+- _MAJOR_ is incremented on _MAINNET_ deploy.
+- _MINOR_ is incremented on _TESTNET_ deploy (specifically RINKEBY).
 - _PATCH_ is incremented to publish to NPM, unrelated to a deploy.

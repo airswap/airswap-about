@@ -1,10 +1,90 @@
+Swap is a smart contract that trustlessly transfers tokens between parties.
+
+# Swap Client
+
+Add the `@airswap/protocols` package to your application.
+
+```bash
+$ yarn add @airswap/protocols
+```
+
+Import the Swap client.
+
+```TypeScript
+import { Swap } from '@airswap/protocols'
+```
+
+### `constructor`
+
+Create a new `Swap` client.
+
+```TypeScript
+public constructor(
+  chainId = chainIds.RINKEBY,
+  walletOrProvider?: ethers.Wallet | ethers.providers.Provider
+)
+```
+
+| Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
+| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
+| `walletOrProvider` | `ethers.Wallet | ethers.providers.Provider` | `optional`  | Ethers [signer](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
+
+**Example**
+Create a client for the Rinkeby Indexer using the default provider.
+
+```TypeScript
+const swap = new Swap();
+```
+
+**Example**
+Create a client for the Mainnet Indexer using an INFURA provider.
+
+```TypeScript
+import { chainIds } from '@airswap/constants'
+const provider = new ethers.providers.InfuraProvider(...)
+const swap = new Swap(chainIds.MAINNET, provider);
+```
+
+### `swap`
+
+Perform a swap given an order.
+
+```TypeScript
+public async swap(order: Order, wallet?: ethers.Wallet): Promise<string>
+```
+
+| Param    | Type            | Optionality | Description                                                                               |
+| :------- | :-------------- | :---------- | :---------------------------------------------------------------------------------------- |
+| `order`  | `Order`         | `required`  | Order to swap tokens between `signer` and `sender` parties                                |
+| `wallet` | `ethers.Wallet` | `optional`  | Wallet used to execute the transaction, otherwise uses wallet provided in the constructor |
+
+**Example**
+Get an order from a local development Server and execute a swap.
+
+```TypeScript
+// Create a new ethers wallet
+const wallet = new ethers.Wallet('...');
+
+// Construct a new Server
+const server = new Server('http://localhost:3000');
+
+// Get an order from the Server
+const order = await server.getSenderSideOrder(senderAmount, signerToken, senderToken, wallet.address);
+
+// Swap the order on the Rinkeby swap contract
+const hash = await new Swap().swap(order, wallet);
+```
+
+# Solidity
+
 Swap is a trustless peer-to-peer trade settlement contract. [View the code on GitHub](https://github.com/airswap/airswap-protocols/tree/master/source/swap).
 
 # Features
 
 **Authorizations** are for peers that trade on behalf of others. These peers are authorized by an individual to send or sign orders for them. Peers can be wallets (people or programs) or smart contracts.
 
-**Affiliates** are third-parties compensated for their part in bringing together the two parties of a trade, and can be other traders or software applications that connect traders on the network.
+**Affiliates** are third-parties compensated for their part in bringing together the two parties of a trade and can be other traders or software applications that connect traders on the network.
 
 # Functions
 
@@ -180,7 +260,7 @@ event AuthorizeSigner(
 
 ## `revokeSender`
 
-Revoke the sending authorization of a delegate account or contract.
+Revoke the sending authorization of a Delegate account or contract.
 
 ```java
 function revokeSender(
@@ -203,7 +283,7 @@ event RevokeSender(
 
 ## `revokeSigner`
 
-Revoke the signing authorization of a delegate account or contract.
+Revoke the signing authorization of a Delegate account or contract.
 
 ```java
 function revokeSigner(
