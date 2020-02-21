@@ -63,8 +63,19 @@ for (const locator of locators) {
 // Get and swap the best among all returned orders
 const best = getBestByLowestSenderAmount(orders)
 if (best) {
-  const hash = await new Swap().swap(best, wallet)
-  console.log(getEtherscanURL(chainIds.RINKEBY, hash))
+
+  // Check for any reasons that the order would fail
+  const errors = await new Validator().checkSwap(best)
+  if (errors.length) {
+    console.log('Could not swap for the following reasons')
+    for (let error of errors) {
+      console.log(Validator.getReason(error))
+    }
+  } else {
+    // Swap the order and print the Etherscan URL
+    const hash = await new Swap().swap(best, wallet)
+    console.log(getEtherscanURL(chainIds.RINKEBY, hash))
+  }
 }
 ```
 
