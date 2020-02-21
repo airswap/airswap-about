@@ -371,14 +371,13 @@ function provideOrder(
 ---
 
 | Revert Reason               | Scenario                                                       |
-| :-------------------------- | :------------------------------------------------------------- |
-| `SIGNER_MUST_BE_SENDER`     | The msg.sender is not set as the order signer.                 |
-| `INVALID_SENDER_WALLET`     | The sender wallet is not set to the tradeWallet.               |
+| :-------------------------- | :------------------------------------------------------------- |               |
+| `SENDER_WALLET_INVALID`     | The sender wallet is not set to the tradeWallet.               |
 | `SIGNER_KIND_MUST_BE_ERC20` | The order.signer.kind is not ERC-20.                           |
 | `SENDER_KIND_MUST_BE_ERC20` | The order.sender.kind is ERC-20.                               |
 | `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
 | `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
-| `PRICE_INCORRECT`           | The order is priced incorrectly for the rule.                  |
+| `PRICE_INVALID`           | The order is priced incorrectly for the rule.                  |
 
 ### `setTradeWallet`
 
