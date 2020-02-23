@@ -112,7 +112,7 @@ Given a `signerAmount`, `senderWallet`, and token pair, return a complete order.
 | `senderToken`  | `address` | Token the sender would transfer.            |
 | `senderWallet` | `address` | Wallet of the sender.                       |
 
-A successful `getSenderSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `senderAmount`.
+A successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.md#orders) object including the requested `senderAmount`.
 
 ## `getSignerSideOrder`
 
@@ -141,11 +141,11 @@ Given a `senderAmount`, `senderWallet`, and token pair, return a complete order.
 | `senderToken`  | `address` | The token the sender would transfer.            |
 | `senderWallet` | `address` | The wallet of the sender.                       |
 
-A successful `getSignerSideOrder` returns a signed [Order](./orders-and-signatures.md#creating-orders) object including the requested `signerAmount`.
+A successful `getSignerSideOrder` returns a signed [Order](./types-and-formats.md#orders) object including the requested `signerAmount`.
 
 # Last Look API
 
-Last look is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](./quote.md) protocol, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
+Last look is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](#quote-api) API, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
 
 ## `provideOrder`
 
