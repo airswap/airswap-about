@@ -15,7 +15,7 @@ On AirSwap there are **makers**, generally available to trade, and **takers**, e
 
 # Quote and Order APIs
 
-Servers are expected to implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing.
 
 ## Quote API
 
