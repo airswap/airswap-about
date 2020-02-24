@@ -2,7 +2,21 @@ See the `@airswap/types` package for [TypeScript](https://github.com/airswap/air
 
 # Quotes
 
-Each Quote includes `token`, `amount`, `id`, and `kind` fields for `signer` and `sender`. The `kind` is a token interface identifier like `0x36372b07` (ERC-20) or `0x80ac58cd` (ERC-721). The `amount` is the number of ERC-20 tokens being transferred, and `id` is the ID of the ERC-721 being transferred. Interface identifier `0xd9b67a26` (ERC-1155) uses both `id` and `amount` fields.
+A `Quote` has the following properties:
+
+| Property | Type    | Description                                      |
+| :------- | :------ | :----------------------------------------------- |
+| signer   | `Party` | Party to the trade that sets and signs terms.    |
+| sender   | `Party` | Party to the trade that accepts and sends terms. |
+
+Each `Party` has the following properties.
+
+| Property | Type      | Description                                                                |
+| :------- | :-------- | :------------------------------------------------------------------------- |
+| kind     | `bytes4`  | `0x36372b07` (ERC-20), `0x80ac58cd` (ERC-721), or `0xd9b67a26` (ERC-1155). |
+| token    | `address` | Contract address of the token.                                             |
+| amount   | `uint256` | Amount of the token (ERC-20, ERC-1155).                                    |
+| id       | `uint256` | ID of the token (ERC-721, ERC-1155).                                       |
 
 **Example**
 
@@ -25,9 +39,9 @@ Each Quote includes `token`, `amount`, `id`, and `kind` fields for `signer` and 
 
 # Orders
 
-An `Order` has the following properties.
+An `Order` has the following properties:
 
-| Param     | Type        | Description                                              |
+| Property  | Type        | Description                                              |
 | :-------- | :---------- | :------------------------------------------------------- |
 | nonce     | `uint256`   | Unique per signer and should be sequential.              |
 | expiry    | `uint256`   | Expiry in seconds since 1 January 1970.                  |
@@ -38,15 +52,15 @@ An `Order` has the following properties.
 
 Each `Party` has the following properties.
 
-| Param  | Type      | Description                                                                |
-| :----- | :-------- | :------------------------------------------------------------------------- |
-| kind   | `bytes4`  | `0x36372b07` (ERC-20), `0x80ac58cd` (ERC-721), or `0xd9b67a26` (ERC-1155). |
-| wallet | `address` | Wallet address of the party.                                               |
-| token  | `address` | Contract address of the token.                                             |
-| amount | `uint256` | Amount of the token (ERC-20).                                              |
-| id     | `uint256` | ID of the token (ERC-721).                                                 |
+| Property | Type      | Description                                                                |
+| :------- | :-------- | :------------------------------------------------------------------------- |
+| kind     | `bytes4`  | `0x36372b07` (ERC-20), `0x80ac58cd` (ERC-721), or `0xd9b67a26` (ERC-1155). |
+| wallet   | `address` | Wallet address of the party.                                               |
+| token    | `address` | Contract address of the token.                                             |
+| amount   | `uint256` | Amount of the token (ERC-20).                                              |
+| id       | `uint256` | ID of the token (ERC-721).                                                 |
 
-These values correlate to the structs in [Types](../contracts/types.md).
+These properties correlate to the structs in [Types](../contracts/types.md).
 
 **Example**
 
