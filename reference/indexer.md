@@ -28,7 +28,7 @@ public constructor(
 | Param              | Type                                        | Optionality | Description                                                                                                                                                                      |
 | :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                               |
-| `walletOrProvider` | `ethers.Wallet | ethers.providers.Provider` | `optional`  | Ethers [signer](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance. |
+| `walletOrProvider` | `ethers.Wallet | ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance. |
 
 **Example**
 Create a client for the Rinkeby Indexer using the default provider.

@@ -26,6 +26,7 @@
 - [Server](reference/server.md)
 - [Delegate](reference/delegate.md)
 - [Swap](reference/swap.md)
+- [Validator](reference/validator.md)
 - [Wrapper](reference/wrapper.md)
 - [Types](reference/types.md)
 
