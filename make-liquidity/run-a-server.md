@@ -25,8 +25,8 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 ## Order API
 
-- `getSignerSideQuote` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
-- `getSenderSideQuote` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
+- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
+- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
 
 # Error Handling
 
