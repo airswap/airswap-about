@@ -8,21 +8,52 @@ On AirSwap there are **makers**, generally available to trade, and **takers**, e
 - **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
 
-# Resources
+# Getting Started
 
 - [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using AirSwap CLI and ZEIT.
 - [_AirSwap ZEIT Example_](https://github.com/airswap/airswap-zeit-example) includes a simple example to help you run a server.
 
-# Error codes
+# Quote and Order APIs
 
-The above call may have thrown an error, matched by `id`:
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing.
 
-**Example**
+## Quote API
+
+- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including maximum **signer** and **sender** amounts.
+- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including the **signer** amount.
+- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including the **sender** amount.
+
+## Order API
+
+- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
+- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
+
+# Error Handling
+
+A JSON-RPC request may result in an error, matched by its request `id`:
+
+## Example
+
+**_Request_**
 
 ```json
 {
-  "id": 1,
   "jsonrpc": "2.0",
+  "id": 123,
+  "method": "getMaxQuote",
+  "params": {
+    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
+  }
+}
+```
+
+**_Response_**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 123,
   "error": {
     "code": -33605,
     "message": "Rate limit exceeded"

@@ -8,3 +8,4 @@ redirects:
   instant/contract-deployments: system/contract-deployments.md
   instant/add-to-your-app: take-liquidity/embed-airswap.md
   trader/add-to-your-app: take-liquidity/embed-airswap.md
+  guides/build-a-maker: make-liquidity/run-a-server.md
