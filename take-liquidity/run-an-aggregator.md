@@ -1,5 +1,9 @@
 Aggregators take liquidity by interacting with Servers and Delegates. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
 
+# Getting Started
+
+- [_AirSwap Taker Examples_](https://github.com/airswap/airswap-taker-examples) includes the source code of the examples below.
+
 # Server Liquidity (HTTPS)
 
 Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
