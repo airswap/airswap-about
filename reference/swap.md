@@ -28,16 +28,16 @@ public constructor(
 | Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
 | :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
-| `walletOrProvider` | `ethers.Wallet | ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
+| `walletOrProvider` | `ethers.Wallet` or `ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
 
-**Example**
+#### Basic Example
 Create a client for the Rinkeby Indexer using the default provider.
 
 ```TypeScript
 const swap = new Swap();
 ```
 
-**Example**
+#### Custom Provider Example
 Create a client for the Mainnet Indexer using an INFURA provider.
 
 ```TypeScript
@@ -45,6 +45,8 @@ import { chainIds } from '@airswap/constants'
 const provider = new ethers.providers.InfuraProvider(...)
 const swap = new Swap(chainIds.MAINNET, provider);
 ```
+
+See a list of available providers on the [ethers.js documentation](https://docs.ethers.io/ethers.js/html/api-providers.html#connecting-to-ethereum).
 
 ### `swap`
 
