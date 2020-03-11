@@ -9,7 +9,10 @@ Quotes indicate prices at which a peer is interested in trading.
 Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
 
 ```TypeScript
-getMaxQuote(signerToken: string, senderToken: string): Quote
+getMaxQuote(
+  signerToken: string,
+  senderToken: string
+): Quote
 ```
 
 | Param         | Type      | Description                          |
@@ -24,7 +27,11 @@ A successful `getMaxQuote` returns a [Quote](./types-and-formats.md#quotes) obje
 Given a `signerAmount` and token pair, return a complete quote. The `senderAmount` value is the amount the taker would send. The taker is **buying** from the maker.
 
 ```TypeScript
-getSenderSideQuote(signerAmount: string, signerToken: string, senderToken: string): Quote
+getSenderSideQuote(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string
+): Quote
 ```
 
 | Param          | Type      | Description                                 |
@@ -40,7 +47,11 @@ A successful `getSenderSideQuote` returns a [Quote](./types-and-formats.md#quote
 Given a `senderAmount` and token pair, return a complete quote. The `signerAmount` value is the amount the maker would send. The taker is **selling** to the maker.
 
 ```TypeScript
-getSignerSideQuote(senderAmount: string, senderToken: string, signerToken: string): Quote
+getSignerSideQuote(
+  senderAmount: string,
+  senderToken: string,
+  signerToken: string
+): Quote
 ```
 
 | Param          | Type      | Description                                 |
@@ -60,7 +71,12 @@ Orders are priced and executable swaps that indicate all parties to a trade.
 Given a `signerAmount`, `senderWallet`, and token pair, return a complete order. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
 
 ```TypeScript
-getSenderSideQuote(signerAmount: string, signerToken: string, senderToken: string): Quote
+getSenderSideOrder(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string
+): Order
 ```
 
 | Param          | Type      | Description                                 |
@@ -77,7 +93,12 @@ A successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.m
 Given a `senderAmount`, `senderWallet`, and token pair, return a complete order. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
 
 ```TypeScript
-getSignerSideQuote(senderAmount: string, senderToken: string, signerToken: string): Quote
+getSignerSideOrder(
+  senderAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string
+): Order
 ```
 
 | Param          | Type      | Description                                     |
@@ -98,7 +119,9 @@ Last look is to say that, after having emitted an indicative quote, a maker may 
 Given an [Order](./types-and-formats.md#orders), assess its price, and conditionally perform a swap.
 
 ```TypeScript
-provideOrder(order: Order)
+provideOrder(
+  order: Order
+)
 ```
 
 | Param   | Type    | Description    |
