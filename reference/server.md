@@ -10,7 +10,7 @@ $ yarn add @airswap/protocols
 
 Import the Server client.
 
-```TypeScript
+```javascript
 import { Server } from '@airswap/protocols'
 ```
 
@@ -18,7 +18,7 @@ import { Server } from '@airswap/protocols'
 
 Create a new `Server` client.
 
-```TypeScript
+```javascript
 public constructor(locator: string)
 ```
 
@@ -29,15 +29,15 @@ public constructor(locator: string)
 **Example**
 Create a client to connect to `https://maker.example.com/`.
 
-```TypeScript
-const server = new Server('maker.example.com');
+```javascript
+const server = new Server('maker.example.com')
 ```
 
 **Example**
 Create a client to connect to a local development server.
 
-```TypeScript
-const server = new Server('http://localhost:3000');
+```javascript
+const server = new Server('http://localhost:3000')
 ```
 
 ### `Quotes`
@@ -47,9 +47,9 @@ Servers implement the [`Quote`](../apis/quote.md) API.
 **Example**
 Call `getMaxQuote` on a local development Server.
 
-```TypeScript
-const server = new Server('http://localhost:3000');
-const quote = await server.getMaxQuote(senderToken, signerToken);
+```javascript
+const server = new Server('http://localhost:3000')
+const quote = await server.getMaxQuote(senderToken, signerToken)
 ```
 
 ### `Orders`
@@ -59,8 +59,13 @@ Servers implement the [`Order`](../apis/order.md) API.
 **Example**
 Call `getSenderSideOrder` on a local development Server.
 
-```TypeScript
-const wallet = new ethers.Wallet('...');
-const server = new Server('http://localhost:3000');
-const quote = await server.getSenderSideOrder(signerAmount, signerToken, senderToken, wallet.address);
+```javascript
+const wallet = new ethers.Wallet('...')
+const server = new Server('http://localhost:3000')
+const quote = await server.getSenderSideOrder(
+  signerAmount,
+  signerToken,
+  senderToken,
+  wallet.address,
+)
 ```

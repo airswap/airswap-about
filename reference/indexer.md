@@ -10,7 +10,7 @@ $ yarn add @airswap/protocols
 
 Import the Indexer client.
 
-```TypeScript
+```javascript
 import { Indexer } from '@airswap/protocols'
 ```
 
@@ -18,29 +18,31 @@ import { Indexer } from '@airswap/protocols'
 
 Create a new `Indexer` client.
 
-```TypeScript
+```javascript
 public constructor(
   chainId = chainIds.RINKEBY,
   walletOrProvider?: ethers.Wallet | ethers.providers.Provider
 )
 ```
 
-| Param              | Type                                        | Optionality | Description                                                                                                                                                                      |
-| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                               |
+| Param              | Type                                           | Optionality | Description                                                                                                                                                                      |
+| :----------------- | :--------------------------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chainId`          | `string`                                       | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                               |
 | `walletOrProvider` | `ethers.Wallet` or `ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance. |
 
 #### Basic Example
+
 Create a client for the Rinkeby Indexer using the default provider.
 
-```TypeScript
-const indexer = new Indexer();
+```javascript
+const indexer = new Indexer()
 ```
 
 #### Custom Provider Example
+
 Create a client for the Mainnet Indexer using an INFURA provider.
 
-```TypeScript
+```javascript
 import { chainIds } from '@airswap/constants'
 const provider = new ethers.providers.InfuraProvider(...)
 const indexer = new Indexer(chainIds.MAINNET, provider);
@@ -52,7 +54,7 @@ See a list of available providers on the [ethers.js documentation](https://docs.
 
 Get a list of `string` locators by token pair.
 
-```TypeScript
+```javascript
 public async getLocators(
   signerToken: string,
   senderToken: string,
@@ -74,15 +76,15 @@ public async getLocators(
 **Example**
 Query rinkeby Servers for those selling DAI for WETH. Locators are Server URLs.
 
-```TypeScript
-const indexer = new Indexer();
-const { locators } = await indexer.getLocators(signerToken, senderToken);
+```javascript
+const indexer = new Indexer()
+const { locators } = await indexer.getLocators(signerToken, senderToken)
 ```
 
 **Example**
 Query rinkeby Delegates for those selling DAI for WETH. Locators are Delegate contract addresses.
 
-```TypeScript
+```javascript
 import { rinkebyTokens, protocols } from `@airswap/constants`
 const indexer = new Indexer();
 const { locators } = await indexer.getLocators(signerToken, senderToken, protocols.DELEGATE);

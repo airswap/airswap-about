@@ -18,20 +18,20 @@ Add the following `script` tag to the `head` element in your web application.
 
 The simplest way to use the `AirSwapInstant` widget is by rendering it without any custom configuration options. This will open the widget and allow the user to buy or sell any amount of any token.
 
-```TypeScript
+```javascript
 window.AirSwapInstant.render(
   {
     onClose: function() {
       console.info('Widget closed.')
     },
   },
-  'body'
+  'body',
 )
 ```
 
 ## Render a specific token and base token
 
-```TypeScript
+```javascript
 AirSwapInstant.render(
   {
     env: 'production',
@@ -46,7 +46,7 @@ AirSwapInstant.render(
       console.info('Trade complete.', transactionId)
     },
   },
-  'body'
+  'body',
 )
 ```
 
@@ -90,7 +90,7 @@ Pop-up blockers can prevent the widget from loading properly.
 
 Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid (ipfs hash) are passed as arguments.
 
-```TypeScript
+```javascript
 window.AirSwapTrader.render(
   {
     onCreate: (order, cid) => {
@@ -110,7 +110,7 @@ window.AirSwapTrader.render(
 
 In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
-```TypeScript
+```javascript
 window.AirSwapTrader.render(
   {
     order: {
@@ -141,7 +141,7 @@ window.AirSwapTrader.render(
 
 To initiate the Taker flow, you need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
-```TypeScript
+```javascript
 window.AirSwapTrader.render(
   {
     order: {
@@ -189,7 +189,7 @@ window.AirSwapTrader.render(
 
 If you have the full signed order details stored in [IPFS](https://ipfs.io), you can use the IPFS hash instead.
 
-```TypeScript
+```javascript
 window.AirSwapTrader.render(
   {
     cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
@@ -208,20 +208,20 @@ window.AirSwapTrader.render(
 
 ## Options
 
-| Key          | Type                                 | Field          | Description                                                                                                                                                                                         |
-| :----------- | :----------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `env`        | string                               | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
-| `order`      | [Order](../reference/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
-| `canDismiss` | boolean                              | `optional`     | Whether the user can dismiss the widget. Defaults to true.                                                                                                                                          |
-| `cid`        | string                               | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
-| `defaultMakerToken` | string | `optional` | Sets the default maker token. To set a permanent maker token on the order, use the config in the [Order](../reference/types.md#order) object. |
-| `defaultTakerToken` | string | `optional` | Sets the default taker token. To set a permanent taker token on the order, use the config in the [Order](../reference/types.md#order) object. |
-| `onCreate`   | Function                             | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                    |
-| `onSubmit`   | Function                             | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
-| `onSwap`     | Function                             | `optional`     | [Callback function](embed-airswap.md#onswap) triggered on a successful trade.                                                                                                                       |
-| `onCancel`   | Function                             | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                    |
-| `onError`    | Function                             | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                                 |
-| `onClose`    | Function                             | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                            |
+| Key                 | Type                                 | Field          | Description                                                                                                                                                                                         |
+| :------------------ | :----------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `env`               | string                               | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.                                                                                 |
+| `order`             | [Order](../reference/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `canDismiss`        | boolean                              | `optional`     | Whether the user can dismiss the widget. Defaults to true.                                                                                                                                          |
+| `cid`               | string                               | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
+| `defaultMakerToken` | string                               | `optional`     | Sets the default maker token. To set a permanent maker token on the order, use the config in the [Order](../reference/types.md#order) object.                                                       |
+| `defaultTakerToken` | string                               | `optional`     | Sets the default taker token. To set a permanent taker token on the order, use the config in the [Order](../reference/types.md#order) object.                                                       |
+| `onCreate`          | Function                             | `optional`     | [Callback function](embed-airswap.md#oncreate) triggered on creation of a trade.                                                                                                                    |
+| `onSubmit`          | Function                             | `optional`     | [Callback function](embed-airswap.md#onsubmit) triggered on submission of a trade.                                                                                                                  |
+| `onSwap`            | Function                             | `optional`     | [Callback function](embed-airswap.md#onswap) triggered on a successful trade.                                                                                                                       |
+| `onCancel`          | Function                             | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                    |
+| `onError`           | Function                             | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                                 |
+| `onClose`           | Function                             | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                            |
 
 ## Callbacks
 
@@ -229,7 +229,7 @@ window.AirSwapTrader.render(
 
 Callback function triggered on creation of a trade. Passes the order and cid to the function as arguments.
 
-```TypeScript
+```javascript
 function onCreate(order, cid) {
     console.log('Order Created!');
     ...
@@ -245,7 +245,7 @@ function onCreate(order, cid) {
 
 Callback function triggered on submission of a trade. This does not necessarily mean that the trade was completed. No arguments.
 
-```TypeScript
+```javascript
 function onSubmit() {
     console.log('Order submitted!');
     ...
@@ -256,7 +256,7 @@ function onSubmit() {
 
 Callback function triggered on a successful trade. Passes the transaction hash of the fill event as an argument.
 
-```TypeScript
+```javascript
 function onSwap(transactionHash) {
     console.log('Trade Completed!');
     ...
@@ -271,7 +271,7 @@ function onSwap(transactionHash) {
 
 Callback function triggered when an error occurs on a trade submission. The user can resolve the issue and try completing the trade again. Passes the error message as an argument.
 
-```TypeScript
+```javascript
 function onError(error) {
     console.log('There was an error on trade submission');
     console.log(error);
@@ -287,7 +287,7 @@ function onError(error) {
 
 Callback function triggered when a trade is canceled. Passes the transaction hash of the cancellation event as an argument.
 
-```TypeScript
+```javascript
 function onCancel(transactionHash) {
     console.log('Trade Cancelled!');
     ...
@@ -302,7 +302,7 @@ function onCancel(transactionHash) {
 
 Callback function triggered when the user closes the widget. No arguments.
 
-```TypeScript
+```javascript
 function onClose() {
   console.log('Widget closed')
 }
