@@ -6,9 +6,9 @@
 
 - [Architecture](system/architecture.md)
 - [APIs](system/apis.md)
+- [Deployed Contracts](system/contract-deployments.md)
 - [Types and Formats](system/types-and-formats.md)
 - [Signatures](system/generate-signatures.md)
-- [Contracts](system/contract-deployments.md)
 
 ## Make Liquidity
 
