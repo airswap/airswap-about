@@ -71,15 +71,16 @@ AirSwapInstant.render(
 ![](../.gitbook/assets/trader-widget.png)
 
 {% hint style="success" %}
-Check out the [CodePen](https://codepen.io/syjk129/pen/PoYpgmW) to explore configuration options.
+Check out the [CodePen](https://codepen.io/syjk129/pen/zYvWWaB) to explore configuration options.
 {% endhint %}
 
 ## Setup
 
 Add the following `script` tag to the `head` element in your web application.
 
+Latest widget version is 1.3.0. See [widget version changes](embed-airswap.md#widget-versions).
 ```html
-<script src="https://cdn.airswap.io/airswap-trader.js"></script>
+<script src="https://cdn.airswap.io/1.3.0/airswap-trader.js"></script>
 ```
 
 {% hint style="info" %}
@@ -91,7 +92,7 @@ Pop-up blockers can prevent the widget from loading properly.
 Embedding the widget is simple. Simply add the following code to where you want to open the widget. The optional `onCreate` callback function will be triggered once the user successfully creates an order. The order details and cid (ipfs hash) are passed as arguments.
 
 ```javascript
-window.AirSwapTrader.render(
+window.AirSwapTrader(
   {
     onCreate: (order, cid) => {
       console.log('Order created!')
@@ -100,8 +101,7 @@ window.AirSwapTrader.render(
       console.log('Widget closed')
     },
   },
-  'body',
-)
+).render('body')
 ```
 
 ![](../.gitbook/assets/build-order.png)
@@ -111,7 +111,7 @@ window.AirSwapTrader.render(
 In many cases, you would want to set a desired token and amount. To do so, you can add an Order object to the widget options. Passing a value in the object will lock the corresponding field in the widget, preventing the user from changing the value.
 
 ```javascript
-window.AirSwapTrader.render(
+window.AirSwapTrader(
   {
     order: {
       expiry: 1707026510, // Expiration date in seconds
@@ -130,9 +130,8 @@ window.AirSwapTrader.render(
     onClose: transactionHash => {
       console.log('Widget closed')
     },
-  },
-  'body',
-)
+  }
+).render('body')
 ```
 
 ![](../.gitbook/assets/filled-build-order.png)
@@ -142,7 +141,7 @@ window.AirSwapTrader.render(
 To initiate the Taker flow, you need to pass the full order object. The `onSwap` callback function will be triggered when the taker fills the order and passes the hash of the transaction as an argument.
 
 ```javascript
-window.AirSwapTrader.render(
+window.AirSwapTrader(
   {
     order: {
       expiry: 1707026510,
@@ -182,15 +181,14 @@ window.AirSwapTrader.render(
     onClose: (transactionHash) => {
       console.log('Widget closed')
     },
-  },
-  'body',
-)
+  }
+).render('body')
 ```
 
 If you have the full signed order details stored in [IPFS](https://ipfs.io), you can use the IPFS hash instead.
 
 ```javascript
-window.AirSwapTrader.render(
+window.AirSwapTrader(
   {
     cid: 'QmRi5hnoBJPKJ54FnyqyRnzsigpEYLq75pyjuNeMjoEsNf',
     onSwap: transactionHash => {
@@ -199,9 +197,8 @@ window.AirSwapTrader.render(
     onClose: transactionHash => {
       console.log('Widget closed')
     },
-  },
-  'body',
-)
+  }
+).render('body')
 ```
 
 ![](../.gitbook/assets/taker-view.png)
@@ -210,9 +207,11 @@ window.AirSwapTrader.render(
 
 | Key                 | Type                                 | Field          | Description                                                                                                                                                                                         |
 | :------------------ | :----------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `env`               | string                               | `optional`     | Defaults to `production`. Using `production` connects to mainnet and `development` connects to the Rinkeby testnet.  |
-| `chainId`                | number                        | `optional` | Defaults to `mainnet`. Select the chain you wish to use by passing one of the following ID numbers (MAINNET =  1, RINKEBY = 4, GOERLI = 5, and KOVAN = 42)
-| `order`             | [Order](../reference/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
+| `domain` | string | `optional` | Custom proxy url for the trader widget. |
+| `version` | string | `optional` | Custom trader UI version. Note: This is different than the widget version. |
+| `chainId` | number | `optional` | Defaults to `mainnet`. Select the chain you wish to use by passing one of the following ID numbers (MAINNET =  1, RINKEBY = 4, GOERLI = 5, and KOVAN = 42)
+| `tokenMetadata` | [TokenMetadata](embed-airswap.md#tokenmetadata)[] | `optional` | Custom token metadata to pass into the trader UI.
+| `order` | [Order](../reference/types.md#order) | `optional`     | Optionally provide values to pre-populate the order builder. If any parameters are specified, it will lock that value in the builder. If a full order is provided, it will be presented for taking. |
 | `canDismiss`        | boolean                              | `optional`     | Whether the user can dismiss the widget. Defaults to true.                                                                                                                                          |
 | `cid`               | string                               | `optional`     | [IPFS](https://ipfs.io) hash for the order. If provided, the widget will fetch the order details from IPFS and display a take order screen.                                                         |
 | `defaultMakerToken` | string                               | `optional`     | Sets the default maker token. To set a permanent maker token on the order, use the config in the [Order](../reference/types.md#order) object.                                                       |
@@ -223,6 +222,17 @@ window.AirSwapTrader.render(
 | `onCancel`          | Function                             | `optional`     | [Callback function](embed-airswap.md#oncancel) triggered on a successful cancel.                                                                                                                    |
 | `onError`           | Function                             | `optional`     | [Callback function](embed-airswap.md#onerror) triggered when an error occurs on a trade submission.                                                                                                 |
 | `onClose`           | Function                             | **`required`** | [Callback function](embed-airswap.md#onclose) triggered on widget close.                                                                                                                            |
+
+### TokenMetadata
+| Key                 | Type                                 | Field          | Description                                                                                                                                                                                         |
+| :------------------ | :----------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `address` | string | `required` | Token address
+| `symbol` | string | `required` | Token Symbol
+| `name` | string | `required` | Token name
+| `decimals` | number | `required` | Number of decimals the token has
+| `kind` | string | `required` | Type of token. Options are `ERC20`, `ERC721`, `ERC1155`
+| `img_url` | string | `optional` | Url of token image
+| `properties` | string[] | `optional` | Custom properties of the token. Supported properties: `ds_protocol`
 
 ## Callbacks
 
@@ -308,3 +318,19 @@ function onClose() {
   console.log('Widget closed')
 }
 ```
+
+## Widget Versions
+
+### v1.3.0 (Latest)
+Breaking Changes
+- zoid6 -> zoid9
+- ability to pass in custom token metadata
+- removal of `env` prop
+
+Features
+- Ability to pass in custom token metadata
+- Dynamic urls with `domain` & `version` props
+
+### v1.1.0
+- zoid6
+- stable versio
