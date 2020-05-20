@@ -41,7 +41,6 @@ Delegates implement the [`Quote`](../apis/quote.md) API.
 Call `getMaxQuote` on a Delegate.
 
 ```javascript
-import { rinkebyTokens } from '@airswap/constants'
 const delegate = new Delegate('0xaBcD...0123')
 const quote = await delegate.getMaxQuote(senderToken, signerToken)
 ```

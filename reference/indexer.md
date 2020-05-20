@@ -85,7 +85,7 @@ const { locators } = await indexer.getLocators(signerToken, senderToken)
 Query rinkeby Delegates for those selling DAI for WETH. Locators are Delegate contract addresses.
 
 ```javascript
-import { rinkebyTokens, protocols } from `@airswap/constants`
+import { protocols } from `@airswap/constants`
 const indexer = new Indexer();
 const { locators } = await indexer.getLocators(signerToken, senderToken, protocols.DELEGATE);
 ```

@@ -31,7 +31,7 @@ for (let locator of locators) {
 // Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySignerAmount(quotes),
-  rinkebyTokens.DAI.decimals,
+  18, // Decimals for signerToken, varies by token
 ))
 console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
 ```
@@ -115,7 +115,7 @@ for (let locator of locators) {
 // Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySenderAmount(quotes),
-  rinkebyTokens.DAI.decimals,
+  18, // Decimals for senderToken, varies by token
 ))
 console.log(`${amount} DAI available for WETH from Delegates on Rinkeby.`)
 ```
