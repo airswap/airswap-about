@@ -1,4 +1,4 @@
-Aggregators take liquidity by interacting with Servers and Delegates. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
+Fetch and fill orders by interacting with Servers and Delegates. Generally, Servers are online processes that listen for requests via JSON-RPC over HTTP, making for on-demand real-time pricing. Delegates on the other hand are smart contracts with fixed rules, functioning as non-custodial limit orders. These combine to enable a wide variety of traders to provide liquidity to a wide variety of tokens on the network.
 
 # Getting Started
 
@@ -8,7 +8,7 @@ Aggregators take liquidity by interacting with Servers and Delegates. Generally,
 
 Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
-## Liquidity for a Token Pair
+## See All Liquidity for a Token Pair
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-liquidity.ts).
 
@@ -89,7 +89,7 @@ Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../
 
 Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for onchain integrations that do not require signatures.
 
-## Liquidity for a Token Pair
+## See All Liquidity for a Token Pair
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-liquidity.ts).
 
