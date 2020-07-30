@@ -10,7 +10,7 @@ $ yarn add @airswap/protocols
 
 Import the Delegate client.
 
-```TypeScript
+```javascript
 import { Delegate } from '@airswap/protocols'
 ```
 
@@ -18,7 +18,7 @@ import { Delegate } from '@airswap/protocols'
 
 Create a new `Delegate` client.
 
-```TypeScript
+```javascript
 public constructor(locator: string)
 ```
 
@@ -29,8 +29,8 @@ public constructor(locator: string)
 **Example**
 Create a client to connect to `0xaBcD...0123`.
 
-```TypeScript
-const delegate = new Delegate('0xaBcD...0123');
+```javascript
+const delegate = new Delegate('0xaBcD...0123')
 ```
 
 ### `Quotes`
@@ -40,10 +40,9 @@ Delegates implement the [`Quote`](../apis/quote.md) API.
 **Example**
 Call `getMaxQuote` on a Delegate.
 
-```TypeScript
-import { rinkebyTokens } from '@airswap/constants';
-const delegate = new Delegate('0xaBcD...0123');
-const quote = await delegate.getMaxQuote(senderToken, signerToken);
+```javascript
+const delegate = new Delegate('0xaBcD...0123')
+const quote = await delegate.getMaxQuote(senderToken, signerToken)
 ```
 
 ### `Last Look`
@@ -53,26 +52,38 @@ Delegates implement the [`Last Look`](../protocols/last-look.md) API.
 **Example**
 Call `provideOrder` on a Delegate based on a previously queried quote.
 
-```TypeScript
-import { Delegate, Swap } from '@airswap/protocols';
+```javascript
+import { Delegate, Swap } from '@airswap/protocols'
 
 // Create a new ethers wallet
-const wallet = new ethers.Wallet('...');
+const wallet = new ethers.Wallet('...')
 
 // Construct a new Delegate
-const delegate = new Delegate('...');
+const delegate = new Delegate('...')
 
 // Get a quote from the Delegate
-const quote = await delegate.getSignerSideQuote(senderAmount, signerToken, senderToken);
+const quote = await delegate.getSignerSideQuote(
+  senderAmount,
+  signerToken,
+  senderToken,
+)
 
 // Create an order given the quote
-const unsigedOrder = createOrderForQuote(quote, wallet.address, await delegate.getWallet())
+const unsigedOrder = createOrderForQuote(
+  quote,
+  wallet.address,
+  await delegate.getWallet(),
+)
 
 // Sign the order with the ethers wallet
-const order = await signOrder(unsigedOrder, wallet, Swap.getAddress(chainIds.MAINNET));
+const order = await signOrder(
+  unsigedOrder,
+  wallet,
+  Swap.getAddress(chainIds.MAINNET),
+)
 
 // Provide the signed order to the Delegate
-const hash = await delegate.provideOrder(order);
+const hash = await delegate.provideOrder(order)
 ```
 
 # Solidity
@@ -371,13 +382,13 @@ function provideOrder(
 ---
 
 | Revert Reason               | Scenario                                                       |
-| :-------------------------- | :------------------------------------------------------------- |               |
+| :-------------------------- | :------------------------------------------------------------- |
 | `SENDER_WALLET_INVALID`     | The sender wallet is not set to the tradeWallet.               |
 | `SIGNER_KIND_MUST_BE_ERC20` | The order.signer.kind is not ERC-20.                           |
 | `SENDER_KIND_MUST_BE_ERC20` | The order.sender.kind is ERC-20.                               |
 | `TOKEN_PAIR_INACTIVE`       | There is no rule set for this token pair.                      |
 | `AMOUNT_EXCEEDS_MAX`        | The amount of the trade would exceed the maximum for the rule. |
-| `PRICE_INVALID`           | The order is priced incorrectly for the rule.                  |
+| `PRICE_INVALID`             | The order is priced incorrectly for the rule.                  |
 
 ### `setTradeWallet`
 

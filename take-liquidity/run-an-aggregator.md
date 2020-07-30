@@ -12,7 +12,7 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-liquidity.ts).
 
-```TypeScript
+```javascript
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
@@ -31,7 +31,7 @@ for (let locator of locators) {
 // Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySignerAmount(quotes),
-  rinkebyTokens.DAI.decimals,
+  18, // Decimals for signerToken, varies by token
 ))
 console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
 ```
@@ -40,7 +40,7 @@ console.log(`${amount} DAI available for WETH from Servers on Rinkeby.`)
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/server-order.ts).
 
-```TypeScript
+```javascript
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(signerToken, senderToken)
 
@@ -67,7 +67,6 @@ for (const locator of locators) {
 // Get and swap the best among all returned orders
 const best = getBestByLowestSenderAmount(orders)
 if (best) {
-
   // Check for any reasons that the order would fail
   const errors = await new Validator().checkSwap(best)
   if (errors.length) {
@@ -93,7 +92,7 @@ Delegates **require signatures** on orders, which enables them to be passed thro
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-liquidity.ts).
 
-```TypeScript
+```javascript
 // Fetch Delegate locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(
   signerToken,
@@ -116,7 +115,7 @@ for (let locator of locators) {
 // Sum up the amounts on quotes and convert to decimal
 const amount = toDecimalString(
   getTotalBySenderAmount(quotes),
-  rinkebyTokens.DAI.decimals,
+  18, // Decimals for senderToken, varies by token
 ))
 console.log(`${amount} DAI available for WETH from Delegates on Rinkeby.`)
 ```
@@ -125,7 +124,7 @@ console.log(`${amount} DAI available for WETH from Delegates on Rinkeby.`)
 
 For complete source code check out [GitHub](https://github.com/airswap/airswap-taker-examples/blob/master/examples/delegate-order.ts).
 
-```TypeScript
+```javascript
 // Fetch Server locators from the Rinkeby Indexer
 const { locators } = await new Indexer().getLocators(
   signerToken,

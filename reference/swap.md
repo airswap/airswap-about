@@ -10,7 +10,7 @@ $ yarn add @airswap/protocols
 
 Import the Swap client.
 
-```TypeScript
+```javascript
 import { Swap } from '@airswap/protocols'
 ```
 
@@ -18,29 +18,31 @@ import { Swap } from '@airswap/protocols'
 
 Create a new `Swap` client.
 
-```TypeScript
+```javascript
 public constructor(
   chainId = chainIds.RINKEBY,
   walletOrProvider?: ethers.Wallet | ethers.providers.Provider
 )
 ```
 
-| Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
-| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
+| Param              | Type                                           | Optionality | Description                                                                                                                                                                     |
+| :----------------- | :--------------------------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chainId`          | `string`                                       | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
 | `walletOrProvider` | `ethers.Wallet` or `ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
 
 #### Basic Example
+
 Create a client for the Rinkeby Indexer using the default provider.
 
-```TypeScript
-const swap = new Swap();
+```javascript
+const swap = new Swap()
 ```
 
 #### Custom Provider Example
+
 Create a client for the Mainnet Indexer using an INFURA provider.
 
-```TypeScript
+```javascript
 import { chainIds } from '@airswap/constants'
 const provider = new ethers.providers.InfuraProvider(...)
 const swap = new Swap(chainIds.MAINNET, provider);
@@ -52,7 +54,7 @@ See a list of available providers on the [ethers.js documentation](https://docs.
 
 Perform a swap given an order.
 
-```TypeScript
+```javascript
 public async swap(order: Order, wallet?: ethers.Wallet): Promise<string>
 ```
 
@@ -64,18 +66,23 @@ public async swap(order: Order, wallet?: ethers.Wallet): Promise<string>
 **Example**
 Get an order from a local development Server and execute a swap.
 
-```TypeScript
+```javascript
 // Create a new ethers wallet
-const wallet = new ethers.Wallet('...');
+const wallet = new ethers.Wallet('...')
 
 // Construct a new Server
-const server = new Server('http://localhost:3000');
+const server = new Server('http://localhost:3000')
 
 // Get an order from the Server
-const order = await server.getSenderSideOrder(senderAmount, signerToken, senderToken, wallet.address);
+const order = await server.getSenderSideOrder(
+  senderAmount,
+  signerToken,
+  senderToken,
+  wallet.address,
+)
 
 // Swap the order on the Rinkeby swap contract
-const hash = await new Swap().swap(order, wallet);
+const hash = await new Swap().swap(order, wallet)
 ```
 
 # Solidity

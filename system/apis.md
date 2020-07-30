@@ -1,3 +1,5 @@
+The following APIs are implemented by peers on the network to [make](../make-liquidity/run-a-server.md) and [take](../take-liquidity/run-an-aggregator.md) liquidity.
+
 # Quote API
 
 Quotes indicate prices at which a peer is interested in trading.
@@ -6,18 +8,11 @@ Quotes indicate prices at which a peer is interested in trading.
 
 Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
 
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getMaxQuote",
-  "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
-  },
-  "id": "123"
-}
+```javascript
+getMaxQuote(
+  signerToken: string,
+  senderToken: string
+): Quote
 ```
 
 | Param         | Type      | Description                          |
@@ -31,19 +26,12 @@ A successful `getMaxQuote` returns a [Quote](./types-and-formats.md#quotes) obje
 
 Given a `signerAmount` and token pair, return a complete quote. The `senderAmount` value is the amount the taker would send. The taker is **buying** from the maker.
 
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSenderSideQuote",
-  "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "signerAmount": "100000000"
-  },
-  "id": "123"
-}
+```javascript
+getSenderSideQuote(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string
+): Quote
 ```
 
 | Param          | Type      | Description                                 |
@@ -58,19 +46,12 @@ A successful `getSenderSideQuote` returns a [Quote](./types-and-formats.md#quote
 
 Given a `senderAmount` and token pair, return a complete quote. The `signerAmount` value is the amount the maker would send. The taker is **selling** to the maker.
 
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSignerSideQuote",
-  "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderAmount": "100000000",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
-  },
-  "id": "123"
-}
+```javascript
+getSignerSideQuote(
+  senderAmount: string,
+  senderToken: string,
+  signerToken: string
+): Quote
 ```
 
 | Param          | Type      | Description                                 |
@@ -89,20 +70,13 @@ Orders are priced and executable swaps that indicate all parties to a trade.
 
 Given a `signerAmount`, `senderWallet`, and token pair, return a complete order. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
 
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSenderSideOrder",
-  "params": {
-    "signerAmount": "10000",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2"
-  },
-  "id": "123"
-}
+```javascript
+getSenderSideOrder(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string
+): Order
 ```
 
 | Param          | Type      | Description                                 |
@@ -118,20 +92,13 @@ A successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.m
 
 Given a `senderAmount`, `senderWallet`, and token pair, return a complete order. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
 
-**Example Request**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "getSignerSideOrder",
-  "params": {
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderAmount": "100000000"
-  },
-  "id": "123"
-}
+```javascript
+getSignerSideOrder(
+  senderAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string
+): Order
 ```
 
 | Param          | Type      | Description                                     |
@@ -149,16 +116,14 @@ Last look is to say that, after having emitted an indicative quote, a maker may 
 
 ## `provideOrder`
 
-Given an order, assess its price, and conditionally perform a swap.
+Given an [Order](./types-and-formats.md#orders), assess its price, and conditionally perform a swap.
+
+```javascript
+provideOrder(
+  order: Order
+)
+```
 
 | Param   | Type    | Description    |
 | :------ | :------ | :------------- |
 | `order` | `Order` | Order to swap. |
-
-**Example Delegate Call**
-
-```TypeScript
-import { Delegate } from '@airswap/protocols'
-const delegate = new Delegate('...')
-const hash = await delegate.provideOrder(order);
-```

@@ -10,7 +10,7 @@ $ yarn add @airswap/protocols
 
 Import the Validator client.
 
-```TypeScript
+```javascript
 import { Validator } from '@airswap/protocols'
 ```
 
@@ -18,29 +18,31 @@ import { Validator } from '@airswap/protocols'
 
 Create a new `Validator` client.
 
-```TypeScript
+```javascript
 public constructor(
   chainId = chainIds.RINKEBY,
   walletOrProvider?: ethers.Wallet | ethers.providers.Provider
 )
 ```
 
-| Param              | Type                                        | Optionality | Description                                                                                                                                                                     |
-| :----------------- | :------------------------------------------ | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `chainId`          | `string`                                    | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
+| Param              | Type                                           | Optionality | Description                                                                                                                                                                     |
+| :----------------- | :--------------------------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chainId`          | `string`                                       | `optional`  | Ethereum chain ID of the network to connect to, either `1` or `4`.                                                                                                              |
 | `walletOrProvider` | `ethers.Wallet` or `ethers.providers.Provider` | `optional`  | Ethers [wallet](https://docs.ethers.io/ethers.js/html/api-wallet.html) or [provider](https://docs.ethers.io/ethers.js/html/api-providers.html) to use for the contract instance |
 
 #### Basic Example
+
 Create a client for the Rinkeby Validator using the default provider.
 
-```TypeScript
-const validator = new Validator();
+```javascript
+const validator = new Validator()
 ```
 
 #### Custom Provider Example
+
 Create a client for the Mainnet Validator using an INFURA provider.
 
-```TypeScript
+```javascript
 import { chainIds } from '@airswap/constants'
 const provider = new ethers.providers.InfuraProvider(...)
 const validator = new Validator(chainIds.MAINNET, provider);
@@ -52,7 +54,7 @@ See a list of available providers on the [ethers.js documentation](https://docs.
 
 Get a plain language reason for a swap failure.
 
-```TypeScript
+```javascript
 public static getReason(reason: string): string
 ```
 
@@ -64,7 +66,7 @@ public static getReason(reason: string): string
 
 Check [swap](./swap.md#swap) given an order.
 
-```TypeScript
+```javascript
 public async checkSwap(order: Order): Promise<Array<string>>
 ```
 
@@ -76,7 +78,7 @@ public async checkSwap(order: Order): Promise<Array<string>>
 
 Check swap through a [Wrapper](./wrapper.md) given an order.
 
-```TypeScript
+```javascript
 public async checkWrappedSwap(
   order: Order,
   fromAddress: string,
@@ -94,7 +96,7 @@ public async checkWrappedSwap(
 
 Check swap through a [Delegate](./delegate.md) given an order.
 
-```TypeScript
+```javascript
 public async checkDelegate(
   order: Order,
   delegateAddress: string
@@ -110,7 +112,7 @@ public async checkDelegate(
 
 Check swap through a [Wrapper](./wrapper.md) and [Delegate](./delegate.md) given an order.
 
-```TypeScript
+```javascript
 public async checkWrappedDelegate(
   order: Order,
   delegateAddress: string,

@@ -18,7 +18,7 @@ Types `Order`, `Quote`, and `Party` refer to the structs defined in the [Types](
 
 Every Order struct has a `.signature.validator` field that specifies the address of the Swap contract that the order is intended for. By executing this function, passing the address of the Swap contract you want to work with, all orders you create using `getOrder` in the library will have the correct validator field. You can check the current value using `_verifyingContract`
 
-```TypeScript
+```javascript
   setVerifyingContract(verifyingContract) {
     this._verifyingContract = verifyingContract
   }
@@ -32,7 +32,7 @@ Every Order struct has a `.signature.validator` field that specifies the address
 
 Starting from 100, this function merely increments the nonce by 1 and outputs the new number each time it's called. The Swap contract only accepts each nonce from each Ethereum address once, so this function is used to ensure each Order has a unique nonce. If you create orders using the function `getOrder` you do not need to use this function - `getOrder` executes `generateNonce` itself to fetch a new unique nonce for each new order.
 
-```TypeScript
+```javascript
   generateNonce() {
     nonce = nonce + 1
     return nonce.toString()
@@ -45,7 +45,7 @@ Starting from 100, this function merely increments the nonce by 1 and outputs th
 
 Generates a timestamp expiry for exactly n days in the future.
 
-```TypeScript
+```javascript
   async generateExpiry(days) {
     return (await getLatestTimestamp()) + SECONDS_IN_DAY * days
   }
@@ -61,7 +61,7 @@ Generates a timestamp expiry for exactly n days in the future.
 
 Generates a new order
 
-```TypeScript
+```javascript
   async getOrder({
     expiry = '0',
     nonce = this.generateNonce(),
@@ -97,7 +97,7 @@ All parameters are _optional_, and unprovided parameters default to the values s
 
 To pass in your own Party values, instead of using a default value, the parameters must be laid out correctly as a json object. E.g.
 
-```TypeScript
+```javascript
 const order = await orders.getOrder({
   signer: {
     wallet: ganacheWallet,
@@ -116,7 +116,7 @@ const order = await orders.getOrder({
 
 Checks that the json Quote provided is structured correctly, and is therefore a valid quote.
 
-```TypeScript
+```javascript
   isValidQuote(quote) {
     return (
       'signer' in quote &&
@@ -148,7 +148,7 @@ Checks that the json Order provided is structured correctly, and is therefore a 
 
 **Returns** `true` if the order is valid.
 
-```TypeScript
+```javascript
 const isValidOrder = order => {
   return (
     'nonce' in order &&
@@ -202,7 +202,7 @@ Types `Order` and `Party` refer to the structs defined in the [Types](../referen
 
 The functions below sign all of the fields of an order except the signature field. The functions then return a signature object that is formatted correctly for the swap contract. This signature needs to be combined into the order object before it can then be passed into the swap contract to be executed.
 
-```TypeScript
+```javascript
 // Get an order object using the `orders.js` library
 const order = await orders.getOrder({
   signer: {
@@ -219,7 +219,12 @@ const order = await orders.getOrder({
 
 // Now sign the order.
 // Notice that the function response is assigned as the order's signature
-order.signature = await signatures.getWeb3Signature(order, ganacheWallet, swapContractAddress, 'http://127.0.0.1:8545')
+order.signature = await signatures.getWeb3Signature(
+  order,
+  ganacheWallet,
+  swapContractAddress,
+  'http://127.0.0.1:8545',
+)
 ```
 
 ## `getWeb3Signature`
@@ -253,7 +258,7 @@ This creates a signature with version 0x01.
 
 Note: To get your string private key into the correct form use:
 
-```TypeScript
+```javascript
 const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
@@ -273,7 +278,7 @@ This creates a signature with version 0x45.
 
 Note: To get your string private key into the correct form use:
 
-```TypeScript
+```javascript
 const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
@@ -293,7 +298,7 @@ This creates a signature with version 0x01.
 
 Note: To get your string private key into the correct form use:
 
-```TypeScript
+```javascript
 const privateKeyBuffer = Buffer.from(privateKeyString, 'hex')
 ```
 
