@@ -28,36 +28,40 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 - `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
 - `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
 
+## Example
+
+**_Request from a client_**
+
+```json
+POST / HTTP/1.0
+Content-Length: 185
+Content-Type: application/json
+
+{"jsonrpc":"2.0","id":123,"method":"getMaxQuote","params":{"senderToken": "0xc778417e063141139fce010982780140aa0cd5ab","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a"}}
+```
+
+**_Response from your server_**
+
+```json
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Methods: POST, OPTIONS
+Content-Length: 262
+Content-Type: application/json
+
+{"jsonrpc":"2.0","id":123,"result":{"signer":{"kind":"0x36372b07","token":"0x27054b13b1b798b345b591a4d22e6562d47ea75a","amount":"10000","id":"0"},"sender":{"kind":"0x36372b07","token":"0xc778417e063141139fce010982780140aa0cd5ab","amount":"100000000","id":"0"}}}
+```
+
 # Error Handling
 
 A JSON-RPC request may result in an error, matched by its request `id`:
 
-## Example
-
-**_Request_**
-
 ```json
 {
   "jsonrpc": "2.0",
   "id": 123,
-  "method": "getMaxQuote",
-  "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
-  }
-}
-```
-
-**_Response_**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 123,
-  "error": {
-    "code": -33605,
-    "message": "Rate limit exceeded"
-  }
+  "error": { "code": -33605, "message": "Rate limit exceeded" }
 }
 ```
 
