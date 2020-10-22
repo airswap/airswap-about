@@ -28,9 +28,11 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 - `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
 - `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
 
-## Example
+# Example
 
-**_Request from a client_**
+The following is an example of an HTTP request-response cycle with JSON-RPC payloads.
+
+### Request from a Client
 
 ```json
 POST / HTTP/1.0
@@ -40,7 +42,7 @@ Content-Type: application/json
 {"jsonrpc":"2.0","id":123,"method":"getMaxQuote","params":{"senderToken": "0xc778417e063141139fce010982780140aa0cd5ab","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a"}}
 ```
 
-**_Response from your server_**
+### Response from your server
 
 ```json
 HTTP/1.0 200 OK
