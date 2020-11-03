@@ -24,13 +24,13 @@ COMMANDS
   indexer:unset   unset an intent
 ```
 
-Now run the following command to enable staking for your account.
+First run the following command to enable staking for your account.
 
 ```
 $ airswap indexer:enable
 ```
 
-Run the following command to set your intent to trade.
+Now run the following command to set your intent to trade.
 
 ```
 $ airswap indexer:set

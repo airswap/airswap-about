@@ -1,8 +1,8 @@
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTP. To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is set on the _Indexer_ contract that takers query to find counterparties based on the tokens they wish to trade.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) POST requests. To be accessible by other applications and websites, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is added to the _Indexer_ contract that takers query to find counterparties based on the tokens they wish to trade.
 
 # Introduction
 
-AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
+AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
 
 - **Orders** are signed and executable trades and **Quotes** are indicative prices. Servers should provide both.
 - **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
@@ -13,7 +13,7 @@ AirSwap liquidity providers are **makers**, generally online and quoting, with *
 - [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using [Vercel](https://vercel.com/) and the [AirSwap CLI](https://github.com/airswap/airswap-cli).
 - [_AirSwap Vercel Example_](https://github.com/airswap/airswap-zeit-example) includes an example server to get started.
 
-## To run the Vercel example server
+## To run the Vercel example
 
 Vercel is an integrated devops platform and CLI.
 
@@ -28,7 +28,7 @@ Vercel CLI 20.1.2 dev (beta) — https://vercel.com/feedback
 > Ready! Available at http://localhost:3000
 ```
 
-Now that the example is running, debug it with the [CLI](./debug-with-cli.md). This example is for convenience, but any web hosting platform will work.
+Now that the example is running, you can debug with the [CLI](./debug-with-cli.md). This example is for convenience, but any web hosting platform will work.
 
 # Quote and Order APIs
 
@@ -36,33 +36,33 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 ## Quote API
 
-- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set maximum **signer** and **sender** amounts.
-- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set the **signer** amount.
-- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set the **sender** amount.
+- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **signer** and **sender** amounts.
+- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **signer** amount.
+- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **sender** amount.
 
 ## Order API
 
-- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) where you set the **signer** amount.
-- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) where you set the **sender** amount.
+- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders). You set the **signer** amount.
+- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders). You set the **sender** amount.
 
 # Example
 
-The following is an example of an HTTP cycle of a `getMaxQuote` request.
+The following is an example of a `getMaxQuote` request.
 
 ### Request from a Client
 
 ```json
-POST / HTTP/1.0
+POST / HTTP/1.1
 Content-Length: 185
 Content-Type: application/json
 
 {"jsonrpc":"2.0","id":123,"method":"getMaxQuote","params":{"senderToken": "0xc778417e063141139fce010982780140aa0cd5ab","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a"}}
 ```
 
-### Response from Your Server
+### Your Response
 
 ```json
-HTTP/1.0 200 OK
+HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Headers: *
 Access-Control-Allow-Methods: POST, OPTIONS
@@ -93,7 +93,7 @@ The following are error codes in the [JSON-RPC specification](http://www.jsonrpc
 - `-32603` Internal error
 - `-32000 to -32099` (Reserved for implementation-defined server-errors)
 
-We have allocated the following range for Swap Protocol errors:
+The following are AirSwap specific errors:
 
 - `-33600` Cannot provide the requested quote or order
 - `-33601` Not trading the requested `signerToken` `senderToken` pair

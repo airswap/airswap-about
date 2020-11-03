@@ -1,6 +1,6 @@
 [![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io/) is a peer-to-peer RFQ style trading network for Ethereum. Peers connect based on common interest, agree on a price through mutual cryptographic signatures, and settle trades via atomic swap without intermediaries. Every trade on AirSwap requires an existing liquidity provider (LP) to be available as a web server, a delegate smart contract, or a trader manually communicating trades over-the-counter (OTC).
+[AirSwap](https://www.airswap.io/) is a peer-to-peer RFQ style trading network for Ethereum. Peers connect and agree on price through mutual cryptographic signatures, settling trades via atomic swap without an intermediary. Every trade on AirSwap requires an existing liquidity provider (LP) to be available as a web server, a delegate smart contract, or a trader manually communicating prices over-the-counter (OTC).
 
 # Quick Start
 

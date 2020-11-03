@@ -4,7 +4,7 @@ Ensure the AirSwap CLI is installed.
 $ yarn global add airswap
 ```
 
-In development, ensure the current chain is set to `4` with the `airswap chain` command. The following examples assume you're runnning a local development server at `http://localhost:3000`.
+In development, set the chain to `4` with the `airswap chain` command. The following examples assume a local development server is running at `http://localhost:3000`.
 
 Request a maximum quote to see what's available.
 
@@ -44,4 +44,4 @@ Quote from http://localhost:3000
 Price 0.0025 WETH/DAI (400 DAI/WETH)
 ```
 
-You can debug all [Quote and Order API](../system/apis.md) methods using [AirSwap CLI commands](https://github.com/airswap/airswap-cli).
+You can debug all [Quote and Order API](../system/apis.md) methods using the `quote` and `order` [AirSwap CLI commands](https://github.com/airswap/airswap-cli#all-commands).
