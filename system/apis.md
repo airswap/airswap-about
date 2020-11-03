@@ -1,4 +1,4 @@
-The following APIs are implemented by peers on the network to [make](../make-liquidity/run-a-server.md) and [take](../take-liquidity/run-an-aggregator.md) liquidity.
+The following APIs are implemented by peers on the network to [make](../make-liquidity/run-a-server.md) and [take](../take-liquidity/request-quotes.md) liquidity.
 
 # Quote API
 
@@ -119,9 +119,7 @@ Last look is to say that, after having emitted an indicative quote, a maker may 
 Given an [Order](./types-and-formats.md#orders), assess its price, and conditionally perform a swap.
 
 ```javascript
-provideOrder(
-  order: Order
-)
+provideOrder((order: Order))
 ```
 
 | Param   | Type    | Description    |
