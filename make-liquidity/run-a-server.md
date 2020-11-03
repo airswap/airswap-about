@@ -1,4 +1,4 @@
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) POST requests. To be accessible by other applications and websites, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is added to the _Indexer_ contract that takers query to find counterparties based on the tokens they wish to trade.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
 
 # Introduction
 

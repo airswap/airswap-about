@@ -4,7 +4,7 @@ Fetch and fill orders by interacting with Servers and Delegates. Generally, Serv
 
 - [_AirSwap Taker Examples_](https://github.com/airswap/airswap-taker-examples) includes the source code of the examples below.
 
-# Server Liquidity (HTTPS)
+# Querying Servers (HTTPS)
 
 Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
@@ -82,7 +82,7 @@ if (best) {
 }
 ```
 
-# Delegate Liquidity (On-Chain)
+# Querying Delegates (On-Chain)
 
 Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
