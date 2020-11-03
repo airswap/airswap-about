@@ -22,7 +22,7 @@ AirSwap is the easiest and most direct way to provide liquidity to over 1M activ
 
 # AirSwap Improvement Proposals (AIPs)
 
-AirSwap implements a proposal system in the style of existing open source projects and those throughout the blockchain development community. For more information on AIPs see [AIP 1](https://github.com/airswap/AIPs/issues/1) and see [https://github.com/airswap/AIPs/issues](https://github.com/airswap/AIPs/issues) for all active proposals.
+AirSwap is governed by a community proposal and voting process called AirSwap Improvement Proposals (AIP). For more information on AIPs see [AIP 1](https://github.com/airswap/AIPs/issues/1) and see [https://github.com/airswap/AIPs/issues](https://github.com/airswap/AIPs/issues) for all active proposals. Voting is held on [https://vote.airswap.io/](https://vote.airswap.io/).
 
 # Around the Web
 
