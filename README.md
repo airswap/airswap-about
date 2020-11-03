@@ -18,11 +18,11 @@ Every participant on the network, whether a [Server](./make-liquidity/run-a-serv
 
 # MetaMask Swaps
 
-AirSwap is the easiest, most direct way to provide liquidity to over 1M active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add your server to the Indexer and you're ready to go.
+AirSwap is the easiest and most direct way to provide liquidity to over 1M active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add it to the Indexer. Requests for quotes will start coming your way immediately.
 
 # AirSwap Improvement Proposals (AIPs)
 
-AirSwap implements a proposal system following the style of existing open source projects and those throughout the blockchain development community. For more information on AIPs see [AIP 1](https://github.com/airswap/AIPs/issues/1) and see [https://github.com/airswap/AIPs/issues](https://github.com/airswap/AIPs/issues) for all active proposals.
+AirSwap implements a proposal system in the style of existing open source projects and those throughout the blockchain development community. For more information on AIPs see [AIP 1](https://github.com/airswap/AIPs/issues/1) and see [https://github.com/airswap/AIPs/issues](https://github.com/airswap/AIPs/issues) for all active proposals.
 
 # Around the Web
 
