@@ -10,11 +10,11 @@
 
 # Peer-to-Peer
 
-Every participant on the network, whether a [Server](./make-liquidity/run-a-server.md) running on the public internet, a user connected through a [web application](./take-liquidity/embed-airswap.md), a trader using the [CLI](./tools/airswap-cli), or a [Delegate](./reference/delegate.md) deployed to Ethereum, is equipped to trade. Peers can take either side of a trade, depending on their intentions. Many forms of trading can be done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
+Peers on the AirSwap network include [Servers](./make-liquidity/run-a-server.md) running on the public internet, users connected through [web applications](./take-liquidity/embed-airswap.md) and [wallets](https://medium.com/metamask/introducing-metamask-swaps-84318c643785), developers using the [CLI](./tools/airswap-cli), and [Delegates](./reference/delegate.md) deployed to Ethereum. Many forms of trading are done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
 
-**For end users**, no trading fees, no deposits, and no sign-ups. AirSwap is simple enough to stay intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
+**For end users**, there are no trading fees, no deposits, and no sign-ups. AirSwap is simple and intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
 
-**For makers**, no costly price updates with onchain order books. Prices are per request. Easily manage exposure, and, if needed, cancel orders individually or as a batch in a single transaction.
+**For makers**, there are no costly price updates with onchain order books. Prices are per request. Easily manage exposure, and, if needed, cancel orders individually or as a batch in a single transaction.
 
 # AirSwap Improvement Proposals (AIPs)
 
