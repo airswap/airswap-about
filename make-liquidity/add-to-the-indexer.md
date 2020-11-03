@@ -4,7 +4,7 @@ Ensure the AirSwap CLI is installed.
 $ yarn global add airswap
 ```
 
-Once your Server is up and running at a **public URL**, you're ready to add it to the Indexer. First, ensure an account is set with the `airswap account:import` command. You can but are not required to use the same Ethereum account that your Server is using.
+Once your [Server](./run-a-server.md) is up and running at a **public URL**, you're ready to add it to the Indexer. First, ensure an account is set with the `airswap account:import` command. You can but are not required to use the same Ethereum account that your Server is using.
 
 Let's take a look at the available Indexer commands.
 
