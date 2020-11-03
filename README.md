@@ -4,9 +4,9 @@
 
 # Quick Start
 
-- **Provide liquidity** with **dynamic pricing** → [Run a Server](./make-liquidity/run-a-server.md)
-- **Embed** AirSwap into **your app** → [Embed AirSwap](./take-liquidity/embed-airswap.md)
-- **Explore** the AirSwap **smart contracts** → [Swap](./reference/swap.md) · [Indexer](./reference/indexer.md) · [Delegate](./reference/delegate.md)
+- **Provide liquidity** via **RFQ** → [Run a Server](./make-liquidity/run-a-server.md)
+- **Add a widget** to **your app** → [Embed AirSwap](./take-liquidity/embed-airswap.md)
+- **Explore** the **smart contracts** → [Swap](./reference/swap.md) · [Indexer](./reference/indexer.md) · [Delegate](./reference/delegate.md)
 
 # Peer-to-Peer
 
