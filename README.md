@@ -1,6 +1,6 @@
 [![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io/) is a peer-to-peer RFQ style trading network for Ethereum. Peers connect and agree on price through mutual cryptographic signatures, settling trades via atomic swap without an intermediary. Every trade on AirSwap requires an existing liquidity provider (LP) to be available as a web server, a delegate smart contract, or a trader manually communicating prices over-the-counter (OTC).
+[AirSwap](https://www.airswap.io/) is a peer-to-peer RFQ style trading network for Ethereum. Peers connect and agree on price through mutual cryptographic signatures, settling trades via atomic swap without any intermediaries. Every trade on AirSwap requires an existing liquidity provider (LP) to be available as a web server, a delegate smart contract, or a trader manually communicating prices over-the-counter (OTC).
 
 # Quick Start
 
@@ -22,7 +22,7 @@ AirSwap is governed by a community proposal and voting process called AirSwap Im
 
 # MetaMask Swaps
 
-AirSwap is the easiest and most direct way to provide liquidity to over 1M active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add it to the Indexer. Requests for quotes will start coming your way immediately.
+AirSwap is the most direct way to provide liquidity to 1M+ active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add it to the Indexer. Requests for quotes will start coming your way.
 
 # Around the Web
 
