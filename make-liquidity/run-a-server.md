@@ -1,36 +1,53 @@
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS. To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is staked on an _indexer_ contract that takers query based on the tokens they wish to trade.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTP. To be accessible by other applications and websites, these servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. Each endpoint (locator) is set on the _Indexer_ contract that takers query to find counterparties based on the tokens they wish to trade.
 
 # Introduction
 
-On AirSwap there are **makers**, generally available to trade, and **takers**, everyday people looking to buy or sell tokens. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
+AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for execution and settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
 
-- **Orders** are signed and executable trades and Quotes are indicative prices. Servers should provide both.
+- **Orders** are signed and executable trades and **Quotes** are indicative prices. Servers should provide both.
 - **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
 
 # Getting Started
 
-- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using AirSwap CLI and ZEIT.
-- [_AirSwap ZEIT Example_](https://github.com/airswap/airswap-zeit-example) includes a simple example to help you run a server.
+- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using [Vercel](https://vercel.com/) and the [AirSwap CLI](https://github.com/airswap/airswap-cli).
+- [_AirSwap Vercel Example_](https://github.com/airswap/airswap-zeit-example) includes an example server to get started.
+
+## To run the Vercel example server
+
+Vercel is an integrated devops platform and CLI.
+
+```
+$ git clone git@github.com:airswap/airswap-vercel-example.git
+$ cd airswap-vercel-example
+$ airswap-vercel-example yarn
+$ airswap-vercel-example yarn global add vercel
+$ airswap-vercel-example echo "ETHEREUM_ACCOUNT=[A PRIVATE KEY]" > .env
+$ airswap-vercel-example vercel dev
+Vercel CLI 20.1.2 dev (beta) — https://vercel.com/feedback
+> Ready! Available at http://localhost:3000
+```
+
+Now that the example is running, debug it with the [CLI](./debug-with-cli.md). This example is for convenience, but any web hosting platform will work.
 
 # Quote and Order APIs
 
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing.
+Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing strategies.
 
 ## Quote API
 
-- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including maximum **signer** and **sender** amounts.
-- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including the **signer** amount.
-- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) including the **sender** amount.
+- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set maximum **signer** and **sender** amounts.
+- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set the **signer** amount.
+- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes) where you set the **sender** amount.
 
 ## Order API
 
-- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **signer** amount.
-- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) including the **sender** amount.
+- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) where you set the **signer** amount.
+- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders) where you set the **sender** amount.
 
 # Example
 
-The following is an example of an HTTP request-response cycle with JSON-RPC payloads.
+The following is an example of an HTTP cycle of a `getMaxQuote` request.
 
 ### Request from a Client
 
@@ -42,7 +59,7 @@ Content-Type: application/json
 {"jsonrpc":"2.0","id":123,"method":"getMaxQuote","params":{"senderToken": "0xc778417e063141139fce010982780140aa0cd5ab","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a"}}
 ```
 
-### Response from your server
+### Response from Your Server
 
 ```json
 HTTP/1.0 200 OK

@@ -11,7 +11,7 @@ Makers run Servers or deploy Delegates and use the Indexer to signal their inter
 **Makers**...
 
 1. [Run a Server](../make-liquidity/run-a-server.md) at a public URL and use it as their `locator` value.
-2. [Stake](../make-liquidity/use-the-indexer.md) AirSwap Tokens to signal their intent to trade on the [Indexer](../reference/indexer.md).
+2. [Stake](../make-liquidity/debug-with-cli.md) AirSwap Tokens to signal their intent to trade on the [Indexer](../reference/indexer.md).
 3. Respond to [`get*Quote`](./apis.md#quote-api) and [`get*Order`](./apis.md#order-api) requests.
 
 See code examples of these protocols at work in the [Run a Server](../make-liquidity/run-a-server.md) section.
@@ -40,7 +40,7 @@ Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../
 2. Call `get*Quote` on each **[Delegate](../reference/delegate.md) Contract**.
 3. Call `provideOrder` on the selected **Delegate Contract** that performs the **[Swap](../reference/swap.md)**.
 
-See code examples of these protocols at work in the [Run an Aggregator](../take-liquidity/run-an-aggregator.md) section.
+See code examples of these protocols at work in the [Run an Aggregator](../take-liquidity/request-quotes.md) section.
 
 # Third-Parties
 
