@@ -1,8 +1,8 @@
-Ethereum uses [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signatures. To generate a signature for an AirSwap order, the order must first be hashed according to [EIP-712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md), which can be seen in the [Solidity](https://github.com/airswap/airswap-protocols/blob/master/source/types/contracts/Types.sol) and [TypeScript](https://github.com/airswap/airswap-protocols/blob/master/tools/utils/src/hashes.ts) implementations.
+Ethereum uses [ECDSA](https://hackernoon.com/a-closer-look-at-ethereum-signatures-5784c14abecc) signatures. To generate a signature for a [full order](./types-and-formats.md#order), the order must first be hashed according to [EIP-712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md), which can be seen in the [Solidity](https://github.com/airswap/airswap-protocols/blob/master/source/types/contracts/Types.sol) and [TypeScript](https://github.com/airswap/airswap-protocols/blob/master/tools/utils/src/hashes.ts) implementations.
 
 Once hashed, one of two signing methods may be used, either `personalSign` or `signTypedData`. AirSwap signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`). The primary distinction is that in the former, Ethereum wallets prefix the hash with byte `\x19` to stay out of range of valid RLP so that a signature cannot be executed as a transaction.
 
-An AirSwap signature has the following properties:
+A full signature has the following properties:
 
 | Param     | Type      | Description                                                                                                 |
 | :-------- | :-------- | :---------------------------------------------------------------------------------------------------------- |
@@ -200,13 +200,56 @@ signed_order = {
 }
 ```
 
-## EIP712Domain
+# Light Signatures
 
-If you plan to use `signTypedData` or do the EIP-712 hashing manually, use the following values for the EIP712Domain. The typehash, name, and version must be hashed to bytes32 using keccak256.
+To sign a [light order](./types-and-formats.md#light-order), parameters must first be hashed. Once hashed, `signTypedData` is used and the `r`, `s`, and `v` values are concatenated into a single string. Alternatively, use the `createLightSignature` function from the `@airswap/utils` package.
+
+## TypeScript
+
+```typescript
+type LightOrder = {
+  nonce: number
+  expiry: number
+  signerToken: string
+  signerAmount: string
+  senderWallet: string
+  senderToken: string
+  senderAmount: string
+}
+```
+
+```typescript
+import { LightOrder } from '@airswap/types'
+import { createLightSignature } from '@airswap/utils'
+
+const signature = createLightSignature(
+  order: LightOrder,
+  privateKey: string,
+  swapContract: string,
+  chainId: string
+)
+```
+
+# EIP712 Domains
+
+## Full
+
+Full signatures using version `0x01` are EIP-712. Typehash, name, and version must be hashed to bytes32 using keccak256.
 
 | Param             | Type      | Value                                                              |
 | :---------------- | :-------- | :----------------------------------------------------------------- |
 | Typehash          | `bytes32` | EIP712Domain(string name,string version,address verifyingContract) |
 | Name              | `bytes32` | SWAP                                                               |
 | Version           | `bytes32` | 2                                                                  |
+| verifyingContract | `address` | Swap contract address to be used for settlement.                   |
+
+## Light
+
+Light signatures require EIP-712. Typehash, name, and version must be hashed to bytes32 using keccak256.
+
+| Param             | Type      | Value                                                              |
+| :---------------- | :-------- | :----------------------------------------------------------------- |
+| Typehash          | `bytes32` | EIP712Domain(string name,string version,address verifyingContract) |
+| Name              | `bytes32` | SWAP_LIGHT                                                         |
+| Version           | `bytes32` | 3                                                                  |
 | verifyingContract | `address` | Swap contract address to be used for settlement.                   |
