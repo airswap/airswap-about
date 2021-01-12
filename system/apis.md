@@ -1,10 +1,68 @@
 The following APIs are implemented by peers on the network to [make](../make-liquidity/run-a-server.md) and [take](../take-liquidity/request-quotes.md) liquidity.
 
-# Quote API
+# RFQ API
+
+## Orders
+
+Orders are priced and executable swaps that specify all parties to a trade.
+
+### `getSenderSideOrder`
+
+Given a `signerAmount`, `senderWallet`, and token pair, return a complete order. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
+
+```TypeScript
+getSenderSideOrder(
+  signerAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string,
+  swapContract: string,
+  proxyingFor: string,
+)
+```
+
+| Param          | Type      | Description                                   |
+| :------------- | :-------- | :-------------------------------------------- |
+| `signerAmount` | `uint256` | Amount of ERC-20 the signer would transfer.   |
+| `signerToken`  | `address` | Token the signer would transfer.              |
+| `senderToken`  | `address` | Token the sender would transfer.              |
+| `senderWallet` | `address` | Wallet of the sender.                         |
+| `swapContract` | `address` | Swap contract intended for use.               |
+| `proxyingFor`  | `address` | `optional` Ultimate counterparty of the swap. |
+
+Depending on the `swapContract`, a successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-order) that includes the requested `senderAmount`.
+
+### `getSignerSideOrder`
+
+Given a `senderAmount`, `senderWallet`, and token pair, return a complete order. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
+
+```TypeScript
+getSignerSideOrder(
+  senderAmount: string,
+  signerToken: string,
+  senderToken: string,
+  senderWallet: string,
+  swapContract: string,
+  proxyingFor: string,
+)
+```
+
+| Param          | Type      | Description                                   |
+| :------------- | :-------- | :-------------------------------------------- |
+| `senderAmount` | `uint256` | Amount of ERC-20 the sender would transfer.   |
+| `signerToken`  | `address` | Token the signer would transfer.              |
+| `senderToken`  | `address` | Token the sender would transfer.              |
+| `senderWallet` | `address` | Wallet of the sender.                         |
+| `swapContract` | `address` | Swap contract intended for use.               |
+| `proxyingFor`  | `address` | `optional` Ultimate counterparty of the swap. |
+
+Depending on the value set as `swapContract` a successful `getSignerSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-order) including the requested `signerAmount`.
+
+## Quotes
 
 Quotes indicate prices at which a peer is interested in trading.
 
-## `getMaxQuote`
+### `getMaxQuote`
 
 Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
 
@@ -22,7 +80,7 @@ getMaxQuote(
 
 A successful `getMaxQuote` returns a [Quote](./types-and-formats.md#quotes) object.
 
-## `getSenderSideQuote`
+### `getSenderSideQuote`
 
 Given a `signerAmount` and token pair, return a complete quote. The `senderAmount` value is the amount the taker would send. The taker is **buying** from the maker.
 
@@ -42,7 +100,7 @@ getSenderSideQuote(
 
 A successful `getSenderSideQuote` returns a [Quote](./types-and-formats.md#quotes) object including the requested `senderAmount`.
 
-## `getSignerSideQuote`
+### `getSignerSideQuote`
 
 Given a `senderAmount` and token pair, return a complete quote. The `signerAmount` value is the amount the maker would send. The taker is **selling** to the maker.
 
@@ -61,54 +119,6 @@ getSignerSideQuote(
 | `signerToken`  | `address` | Token the signer would transfer.            |
 
 A successful `getSignerSideQuote` returns a [Quote](./types-and-formats.md#quotes) object including the requested `signerAmount`
-
-# Order API
-
-Orders are priced and executable swaps that indicate all parties to a trade.
-
-## `getSenderSideOrder`
-
-Given a `signerAmount`, `senderWallet`, and token pair, return a complete order. The `senderAmount` value is the amount the taker would send. The taker is **buying** from you.
-
-```javascript
-getSenderSideOrder(
-  signerAmount: string,
-  signerToken: string,
-  senderToken: string,
-  senderWallet: string
-): Order
-```
-
-| Param          | Type      | Description                                 |
-| :------------- | :-------- | :------------------------------------------ |
-| `signerAmount` | `uint256` | Amount of ERC-20 the signer would transfer. |
-| `signerToken`  | `address` | Token the signer would transfer.            |
-| `senderToken`  | `address` | Token the sender would transfer.            |
-| `senderWallet` | `address` | Wallet of the sender.                       |
-
-A successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.md#orders) object including the requested `senderAmount`.
-
-## `getSignerSideOrder`
-
-Given a `senderAmount`, `senderWallet`, and token pair, return a complete order. The `signerAmount` value is the amount you would send. The taker is **selling** to you.
-
-```javascript
-getSignerSideOrder(
-  senderAmount: string,
-  signerToken: string,
-  senderToken: string,
-  senderWallet: string
-): Order
-```
-
-| Param          | Type      | Description                                     |
-| :------------- | :-------- | :---------------------------------------------- |
-| `senderAmount` | `uint256` | The amount of ERC-20 the sender would transfer. |
-| `signerToken`  | `address` | The token the signer would transfer.            |
-| `senderToken`  | `address` | The token the sender would transfer.            |
-| `senderWallet` | `address` | The wallet of the sender.                       |
-
-A successful `getSignerSideOrder` returns a signed [Order](./types-and-formats.md#orders) object including the requested `signerAmount`.
 
 # Last Look API
 
