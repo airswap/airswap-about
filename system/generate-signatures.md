@@ -202,7 +202,7 @@ signed_order = {
 
 # Light Signatures
 
-To sign a [light order](./types-and-formats.md#light-order), parameters must first be hashed. Once hashed, `signTypedData` is used and the `r`, `s`, and `v` values are concatenated into a single string. Alternatively, use the `createLightSignature` function from the `@airswap/utils` package.
+To sign a [light order](./types-and-formats.md#light-orders), parameters must first be hashed. Once hashed, `signTypedData` is used and the `r`, `s`, and `v` values are concatenated into a single string. Alternatively, use the `createLightSignature` function from the `@airswap/utils` package.
 
 ## TypeScript
 

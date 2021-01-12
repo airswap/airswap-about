@@ -30,7 +30,7 @@ getSenderSideOrder(
 | `swapContract` | `address` | Swap contract intended for use.               |
 | `proxyingFor`  | `address` | `optional` Ultimate counterparty of the swap. |
 
-Depending on the `swapContract`, a successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-order) that includes the requested `senderAmount`.
+Depending on the `swapContract`, a successful `getSenderSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-orders) that includes the requested `senderAmount`.
 
 ### `getSignerSideOrder`
 
@@ -56,7 +56,7 @@ getSignerSideOrder(
 | `swapContract` | `address` | Swap contract intended for use.               |
 | `proxyingFor`  | `address` | `optional` Ultimate counterparty of the swap. |
 
-Depending on the value set as `swapContract` a successful `getSignerSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-order) including the requested `signerAmount`.
+Depending on the value set as `swapContract` a successful `getSignerSideOrder` returns a signed [Order](./types-and-formats.md#orders) or a [Light Order](./types-and-formats.md#light-orders) including the requested `signerAmount`.
 
 ## Quotes
 
