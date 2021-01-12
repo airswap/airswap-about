@@ -204,6 +204,8 @@ signed_order = {
 
 To sign a [light order](./types-and-formats.md#light-orders), parameters must first be hashed. Once hashed, `signTypedData` is used and the `r`, `s`, and `v` values are concatenated into a single string. Alternatively, use the `createLightSignature` function from the `@airswap/utils` package.
 
+{% hint style="info" %} Light signatures use EIP-712 as seen in [@airswap/utils](https://github.com/airswap/airswap-protocols/blob/master/tools/utils/src/orders.ts#L259). {% endhint %}
+
 ## TypeScript
 
 ```typescript
