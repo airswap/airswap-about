@@ -63,7 +63,7 @@ These properties correlate to the structs in [Types](../contracts/types.md).
 }
 ```
 
-## Light Order
+## Light Orders
 
 A light order (ERC20-only) has the following properties:
 
@@ -77,7 +77,9 @@ A light order (ERC20-only) has the following properties:
 | senderAmount | `uint256` | Amount that the sender will transfer.                                            |
 | signature    | `bytes`   | Signature of the order, described [here](./generate-signatures.md#light-orders). |
 
-{% hint style="warning" %} Note: `signerWallet` is derived from the [signature](./generate-signatures.md#light-orders). The `senderWallet` is hashed into the `signature` and checked against `msg.sender` at settlement. {% endhint %}
+{% hint style="info" %}`signerWallet` is derived from the [signature](./generate-signatures.md#light-orders). {% endhint %}
+
+{% hint style="info" %}`senderWallet` is hashed into the `signature` and checked against `msg.sender` at settlement.{% endhint %}
 
 **Example**
 
