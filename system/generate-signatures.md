@@ -207,7 +207,7 @@ To sign a [light order](./types-and-formats.md#light-orders), parameters must fi
 ## TypeScript
 
 ```typescript
-type LightOrder = {
+type UnsignedLightOrder = {
   nonce: number
   expiry: number
   signerToken: string
@@ -219,15 +219,16 @@ type LightOrder = {
 ```
 
 ```typescript
-import { LightOrder } from '@airswap/types'
+import { UnsignedLightOrder } from '@airswap/types'
 import { createLightSignature } from '@airswap/utils'
 
 const signature = createLightSignature(
-  order: LightOrder,
+  unsignedOrder: UnsignedLightOrder,
   privateKey: string,
   swapContract: string,
   chainId: string
 )
+
 ```
 
 # EIP712 Domains

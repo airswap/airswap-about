@@ -79,6 +79,20 @@ A light order (ERC20-only) has the following properties:
 
 {% hint style="info" %} `senderWallet` is hashed into the [signature](./generate-signatures.md#light-signatures). During settlement, the `senderWallet` is assumed to be `msg.sender` and the `signerWallet` is derived from the signature. {% endhint %}
 
+**Typescript**
+
+```typescript
+type LightOrder = {
+  nonce: number
+  expiry: number
+  signerToken: string
+  signerAmount: string
+  senderToken: string
+  senderAmount: string
+  signature: string
+}
+```
+
 **Example**
 
 ```json
