@@ -77,7 +77,7 @@ A light order (ERC20-only) has the following properties:
 | senderAmount | `uint256` | Amount that the sender will transfer.                                            |
 | signature    | `bytes`   | Signature of the order, described [here](./generate-signatures.md#light-orders). |
 
-:bulb: Note: `signerWallet` is derived from the [signature](./generate-signatures.md#light-orders). The `senderWallet` is hashed into the `signature` and checked against `msg.sender` at settlement.
+{% hint style="warning" %} Note: `signerWallet` is derived from the [signature](./generate-signatures.md#light-orders). The `senderWallet` is hashed into the `signature` and checked against `msg.sender` at settlement. {% endhint %}
 
 **Example**
 
