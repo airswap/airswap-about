@@ -4,7 +4,7 @@ The following APIs are implemented by peers on the network to [make](../make-liq
 
 ## Orders
 
-Orders are priced and executable swaps that specify all parties to a trade.
+Orders are priced and executable swaps that specify all parties of a trade.
 
 ### `getSenderSideOrder`
 
