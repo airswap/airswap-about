@@ -12,7 +12,7 @@ Makers run Servers or deploy Delegates and use the Indexer to signal their inter
 
 1. [Run a Server](../make-liquidity/run-a-server.md) at a public URL and use it as their `locator` value.
 2. [Stake](../make-liquidity/debug-with-cli.md) AirSwap Tokens to signal their intent to trade on the [Indexer](../reference/indexer.md).
-3. Respond to [`get*Quote`](./apis.md#quote-api) and [`get*Order`](./apis.md#order-api) requests.
+3. Respond to [`get*Quote`](./apis.md#quotes) and [`get*Order`](./apis.md#orders) requests.
 
 See code examples of these protocols at work in the [Run a Server](../make-liquidity/run-a-server.md) section.
 
@@ -22,7 +22,7 @@ Takers use the Indexer to find Servers and Delegates to interact with.
 
 ## Servers (HTTPS)
 
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) protocols.
+Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) protocols.
 
 **Takers**...
 
@@ -32,7 +32,7 @@ Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system
 
 ## Delegates (onchain)
 
-Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols.
+Delegates implement the [Quote](../system/apis.md#quotes) and [Last Look](../system/apis.md#last-look-api) protocols.
 
 **Takers**...
 

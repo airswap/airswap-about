@@ -1,4 +1,4 @@
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
+Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
 
 # Introduction
 
@@ -32,7 +32,7 @@ Now that the example is running, you can debug with the [CLI](./debug-with-cli.m
 
 # Quote and Order APIs
 
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs. The following responses would be based on your internal pricing strategies.
+Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs. The following responses would be based on your internal pricing strategies.
 
 ## Quote API
 
