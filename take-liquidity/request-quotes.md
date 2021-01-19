@@ -6,7 +6,7 @@ Fetch and fill orders by interacting with Servers and Delegates. Generally, Serv
 
 # Querying Servers (HTTPS)
 
-Servers implement the [Quote](../system/apis.md#quote-api) and [Order](../system/apis.md#order-api) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
+Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification). In the following scenarios, the Server is always the **signer** and the end user is always the **sender**.
 
 ## See All Liquidity for a Token Pair
 
@@ -84,7 +84,7 @@ if (best) {
 
 # Querying Delegates (On-Chain)
 
-Delegates implement the [Quote](../system/apis.md#quote-api) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
+Delegates implement the [Quote](../system/apis.md#quotes) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
 Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for onchain integrations that do not require signatures.
 

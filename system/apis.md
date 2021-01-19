@@ -122,7 +122,7 @@ A successful `getSignerSideQuote` returns a [Quote](./types-and-formats.md#quote
 
 # Last Look API
 
-Last look is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](#quote-api) API, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
+Last look is to say that, after having emitted an indicative quote, a maker may accept or decline an order provided to it by a taker. Quotes are primarily served through the [`Quote`](#quotes) API, but other methods to disseminate pricing information may exist, for example `SetRule` events on `Delegate` contracts.
 
 ## `provideOrder`
 
