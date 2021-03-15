@@ -80,7 +80,7 @@ from eth_abi import encode_abi
 from bitcoin import ecdsa_raw_sign
 
 SWAP_VERSION = "2"
-SWAP_DOMAIN = "SWAP
+SWAP_DOMAIN = "SWAP"
 ERC_20_INTERFACE_ID = bytes.fromhex("36372b07")
 
 SWAP_TYPES = {
@@ -230,7 +230,60 @@ const signature = createLightSignature(
   swapContract: string,
   chainId: string
 )
+```
 
+## Python
+
+Light signatures in python can be created using the `py_eth_sig_utils` package.
+
+```python
+from py_eth_sig_utils.signing import *
+
+PRIVATE_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
+SWAP_DOMAIN = "SWAP_LIGHT"
+SWAP_VERSION = "3"
+CHAIN_ID = 1
+SWAP_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"
+
+order = {
+  "nonce": 0,
+  "expiry": 0,
+  "signerToken": "0x0000000000000000000000000000000000000000",
+  "signerAmount": 0,
+  "senderWallet": "0x0000000000000000000000000000000000000000",
+  "senderToken": "0x0000000000000000000000000000000000000000",
+  "senderAmount": 0
+}
+
+data = {
+  "types": {
+    "EIP712Domain": [
+      { "name": "name", "type": "string" },
+      { "name": "version", "type": "string" },
+      { "name": "chainId", "type": "uint256" },
+      { "name": "verifyingContract", "type": "address" },
+    ],
+    "LightOrder": [
+      { "name": "nonce", "type": "uint256" },
+      { "name": "expiry", "type": "uint256" },
+      { "name": "senderWallet", "type": "address" },
+      { "name": "signerToken", "type": "address" },
+      { "name": "signerAmount", "type": "uint256" },
+      { "name": "senderToken", "type": "address" },
+      { "name": "senderAmount", "type": "uint256" },
+    ]
+  },
+  "domain": {
+    "name": SWAP_DOMAIN,
+    "version": SWAP_VERSION,
+    "chainId": CHAIN_ID,
+    "verifyingContract": SWAP_CONTRACT_ADDRESS,
+  },
+  "primaryType": "LightOrder",
+  "message": order,
+}
+
+signature = v_r_s_to_signature(*sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))).hex()
 ```
 
 # EIP712 Domains
