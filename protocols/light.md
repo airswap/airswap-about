@@ -137,16 +137,17 @@ const { v, r, s } = createLightSignature(
 
 ### Python
 
-Light signatures in Python can be created using the `py_eth_sig_utils` package.
+Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
 
 ```python
 from py_eth_sig_utils.signing import *
 
 PRIVATE_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
-SWAP_DOMAIN = "SWAP_LIGHT"
-SWAP_VERSION = "3"
-CHAIN_ID = 1
-SWAP_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"
+
+DOMAIN = "SWAP_LIGHT"
+VERSION = "3"
+CHAINID = 1
+CONTRACT = "0x0000000000000000000000000000000000000000"
 
 order = {
   "nonce": 0,
@@ -177,21 +178,21 @@ data = {
     ]
   },
   "domain": {
-    "name": SWAP_DOMAIN,
-    "version": SWAP_VERSION,
-    "chainId": CHAIN_ID,
-    "verifyingContract": SWAP_CONTRACT_ADDRESS,
+    "name": DOMAIN,
+    "version": VERSION,
+    "chainId": CHAINID,
+    "verifyingContract": CONTRACT,
   },
   "primaryType": "LightOrder",
   "message": order,
 }
 
-signature = v_r_s_to_signature(*sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))).hex()
+v, r, s = sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))
 ```
 
 # Authorized Signers
 
-One account may authorize another account to sign on its behalf. For example, running a server would use an account that has been authorized to sign on behalf of a contract wallet. To authorize a signer, submit a transaction to execute the following function on the [Light](./contract-deployments.md) contract.
+One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](./contract-deployments.md) contract.
 
 ```
 function authorize(address signer) external

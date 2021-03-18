@@ -141,42 +141,6 @@ Full signatures use either `personalSign` or `signTypedData` but `signTypedData`
 Full signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```typescript
-export type Party = {
-  kind: string
-  token: string
-  id?: string
-  amount?: string
-}
-
-export type OrderParty = Party & {
-  wallet: string
-}
-
-export type UnsignedOrder = {
-  nonce: string
-  expiry: string
-  signer: OrderParty
-  sender: OrderParty
-  affiliate: OrderParty
-}
-
-export type Signature = {
-  version: string
-  signatory: string
-  validator: string
-  v: string
-  r: string
-  s: string
-}
-
-export type Order = UnsignedOrder & {
-  signature: Signature
-}
-```
-
-## Signatures
-
-```typescript
 import { UnsignedOrder } from '@airswap/types'
 import { createOrder, createTypedDataSignature } from '@airswap/utils'
 
@@ -204,137 +168,83 @@ order.signature = createTypedDataSignature(
 
 ### Python
 
-Full signatures in Python can be created using the [eth-abi](https://github.com/ethereum/eth-abi) and [eth-utils](https://github.com/ethereum/eth-utils) packages.
+Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
 
 ```python
-from eth_utils import keccak
-from eth_abi import encode_abi
-from bitcoin import ecdsa_raw_sign
+from py_eth_sig_utils.signing import *
 
-SWAP_VERSION = "2"
-SWAP_DOMAIN = "SWAP"
-ERC_20_INTERFACE_ID = bytes.fromhex("36372b07")
+PRIVATE_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
 
-SWAP_TYPES = {
-    "party": b"Party(bytes4 kind,address wallet,address token,uint256 amount,uint256 id)",
-    "order": b"Order(uint256 nonce,uint256 expiry,Party signer,Party sender,Party affiliate)",
-    "eip712": b"EIP712Domain(string name,string version,address verifyingContract)",
+DOMAIN = "SWAP"
+VERSION = "2"
+CHAINID = 1
+CONTRACT = "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA"
+
+order = {
+  "nonce": 0,
+  "expiry": 0,
+  "signer": {
+    "kind": bytes.fromhex("36372b07"),
+    "wallet": "0x0000000000000000000000000000000000000000",
+    "token": "0x0000000000000000000000000000000000000000",
+    "amount": 0,
+    "id": 0,
+  },
+  "sender": {
+    "kind": bytes.fromhex("36372b07"),
+    "wallet": "0x0000000000000000000000000000000000000000",
+    "token": "0x0000000000000000000000000000000000000000",
+    "amount": 0,
+    "id": 0,
+  },
+    "affiliate": {
+    "kind": bytes.fromhex("36372b07"),
+    "wallet": "0x0000000000000000000000000000000000000000",
+    "token": "0x0000000000000000000000000000000000000000",
+    "amount": 0,
+    "id": 0,
+  }
 }
 
-SWAP_TYPE_HASHES = {
-    "party": keccak(SWAP_TYPES["party"]),
-    "order": keccak(SWAP_TYPES["order"] + SWAP_TYPES["party"]),
-    "eip712": keccak(SWAP_TYPES["eip712"]),
+data = {
+  "types": {
+    "EIP712Domain": [
+      { "name": "name", "type": "string" },
+      { "name": "version", "type": "string" },
+      { "name": "chainId", "type": "uint256" },
+      { "name": "verifyingContract", "type": "address" },
+    ],
+    "Order": [
+      { "name": "nonce", "type": "uint256" },
+      { "name": "expiry", "type": "uint256" },
+      { "name": "signer", "type": "Party" },
+      { "name": "sender", "type": "Party" },
+      { "name": "affiliate", "type": "Party" },
+    ],
+    "Party": [
+      { "name": "kind", "type": "bytes4" },
+      { "name": "wallet", "type": "address" },
+      { "name": "token", "type": "address" },
+      { "name": "amount", "type": "uint256" },
+      { "name": "id", "type": "uint256" },
+    ],
+  },
+  "domain": {
+    "name": DOMAIN,
+    "version": VERSION,
+    "chainId": CHAINID,
+    "verifyingContract": CONTRACT,
+  },
+  "primaryType": "Order",
+  "message": order,
 }
 
-DOMAIN_SEPARATOR = keccak(
-    encode_abi(
-        ["bytes32", "bytes32", "bytes32", "address"],
-        [
-            SWAP_TYPE_HASHES["eip712"],
-            keccak(SWAP_DOMAIN.encode()),
-            keccak(SWAP_VERSION.encode()),
-            SWAP_CONTRACT_ADDRESS,
-        ],
-    )
-)
-```
-
-You can then create a hash of the order itself with the type information included, assuming that `order` represents your order in a dict.
-
-```python
-hashed_signer = keccak(
-    encode_abi(
-        ["bytes32", "bytes4", "address", "address", "uint256", "uint256"],
-        [
-            SWAP_TYPE_HASHES["party"],
-            ERC_20_INTERFACE_ID,
-            order["signerWallet"],
-            order["signerToken"],
-            int(order["signerAmount"]),
-            int(order["signerId"]),
-        ],
-    )
-)
-
-hashed_sender = keccak(
-    encode_abi(
-        ["bytes32", "bytes4", "address", "address", "uint256", "uint256"],
-        [
-            SWAP_TYPE_HASHES["party"],
-            ERC_20_INTERFACE_ID,
-            order["senderWallet"],
-            order["senderToken"],
-            int(order["senderAmount"]),
-            int(order["senderId"]),
-        ],
-    )
-)
-
-hashed_affiliate = keccak(
-    encode_abi(
-        ["bytes32",  "bytes4", "address", "address", "uint256", "uint256"],
-        [
-            SWAP_TYPE_HASHES["party"],
-            ERC_20_INTERFACE_ID,
-            "0x0000000000000000000000000000000000000000",
-            "0x0000000000000000000000000000000000000000",
-            0,
-            0,
-        ],
-    )
-)
-
-hashed_order = keccak(
-    encode_abi(
-        ["bytes32", "uint256", "uint256", "bytes32", "bytes32", "bytes32"],
-        [
-            SWAP_TYPE_HASHES["order"],
-            int(order["nonce"]),
-            int(order["expiry"]),
-            hashed_signer,
-            hashed_sender,
-            hashed_affiliate,
-        ],
-    )
-)
-```
-
-Finally, package the hashed order with the `EIP-712` domain separator and prefixes, then sign it with your private key `PRIVATE_KEY`.
-
-```python
-encoded_order = keccak(b"\x19Ethereum Signed Message:\n32" + keccak(b"\x19\x01" + DOMAIN_SEPARATOR + hashed_order))
-
-V, R, S = ecdsa_raw_sign(encoded_order, PRIVATE_KEY)
-
-v = V
-r = Web3.toHex(R)
-s = Web3.toHex(S)
-
-# The bitcoin.ecdsa_raw_sign method we are using may return r & s values that are under 66 bytes, so check for
-# that and pad with '0' if necessary to align with bytes32 types
-if len(s) < 66:
-  diff = 66 - len(s)
-  s = "0x" + "0" * diff + s[2:]
-
-if len(r) < 66:
-  diff = 66 - len(r)
-  r = "0x" + "0" * diff + r[2:]
-
-# version is 0x45 for personalSign
-signed_order = {
-  "version": "0x45",
-  "signatory": WALLET_ADDRESS,
-  "validator": SWAP_CONTRACT_ADDRESS,
-  "v": v,
-  "r": r,
-  "s": s
-}
+v, r, s = sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))
 ```
 
 # Signer and Sender Authorizations
 
-One account may authorize another account to sign or send orders on its behalf. For example, running a server would use an account that has been authorized to sign on behalf of a contract wallet. To authorize a signer or sender, submit a transaction to execute one of the following functions on the [Swap](./contract-deployments.md) contract.
+One account may authorize another account to sign or send orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer and sender authorizations, use the following functions on the [Swap](./contract-deployments.md) contract.
 
 ```
 function authorizeSigner(address authorizedSigner) external
