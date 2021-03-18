@@ -9,7 +9,7 @@
 
 ### `getSignerSideOrder`
 
-Given a `senderAmount`, `senderWallet`, and token pair, server returns a complete order with a `signerAmount`. The client is **selling** to the server.
+Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
 
 ```TypeScript
 getSignerSideOrder(
@@ -19,12 +19,12 @@ getSignerSideOrder(
   senderWallet: string, // Wallet of the sender
   swapContract: string, // Swap contract intended for use (Light)
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-): Order
+)
 ```
 
 ### `getSenderSideOrder`
 
-Given a `signerAmount`, `senderWallet`, and token pair, server returns a complete order with a `senderAmount`. The client is **buying** from the server.
+Given a `signerAmount` the server returns a signed order with a `senderAmount`. The client is **buying** from the server.
 
 ```TypeScript
 getSenderSideOrder(
@@ -34,7 +34,7 @@ getSenderSideOrder(
   senderWallet: string, // Wallet of the sender
   swapContract: string, // Swap contract intended for use (Light)
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-): Order
+)
 ```
 
 # Responses
@@ -136,7 +136,7 @@ Content-Type: application/json
 
 Full signatures use either `personalSign` or `signTypedData` but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`). Full signatures in TypeScript can be created using the `@airswap/utils` package.
 
-```typescript
+```TypeScript
 import { UnsignedOrder } from '@airswap/types'
 import { createOrder, createTypedDataSignature } from '@airswap/utils'
 

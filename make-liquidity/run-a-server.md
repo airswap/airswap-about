@@ -49,33 +49,6 @@ See: [Light Protocol](../system/quote-protocol.md)
 - `getSignerSideOrder` requests an Order. You set the **signer** amount.
 - `getSenderSideOrder` requests an Order. You set the **sender** amount.
 
-# Example
-
-The following is an example of a `getMaxQuote` request.
-
-### Request from a Client
-
-```json
-POST / HTTP/1.1
-Content-Length: 185
-Content-Type: application/json
-
-{"jsonrpc":"2.0","id":123,"method":"getMaxQuote","params":{"senderToken": "0xc778417e063141139fce010982780140aa0cd5ab","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a"}}
-```
-
-### Your Response
-
-```json
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Headers: *
-Access-Control-Allow-Methods: POST, OPTIONS
-Content-Length: 262
-Content-Type: application/json
-
-{"jsonrpc":"2.0","id":123,"result":{"signer":{"kind":"0x36372b07","token":"0x27054b13b1b798b345b591a4d22e6562d47ea75a","amount":"10000","id":"0"},"sender":{"kind":"0x36372b07","token":"0xc778417e063141139fce010982780140aa0cd5ab","amount":"100000000","id":"0"}}}
-```
-
 # Error Handling
 
 A JSON-RPC request may result in an error, matched by its request `id`:

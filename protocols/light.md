@@ -9,7 +9,7 @@
 
 ### `getSignerSideOrder`
 
-Given a `senderAmount`, `senderWallet`, and token pair, server returns a complete order with a `signerAmount`. The client is **selling** to the server.
+Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
 
 ```TypeScript
 getSignerSideOrder(
@@ -19,12 +19,12 @@ getSignerSideOrder(
   senderWallet: string, // Wallet of the sender
   swapContract: string, // Swap contract intended for use (Light)
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-): LightOrder
+)
 ```
 
 ### `getSenderSideOrder`
 
-Given a `signerAmount`, `senderWallet`, and token pair, server returns a complete order with a `senderAmount`. The client is **buying** from the server.
+Given a `signerAmount` the server returns a signed order with a `senderAmount`. The client is **buying** from the server.
 
 ```TypeScript
 getSenderSideOrder(
@@ -34,7 +34,7 @@ getSenderSideOrder(
   senderWallet: string, // Wallet of the sender
   swapContract: string, // Swap contract intended for use (Light)
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-): LightOrder
+)
 ```
 
 # Responses
@@ -107,7 +107,7 @@ Content-Type: application/json
 
 Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
-```typescript
+```TypeScript
 import { UnsignedLightOrder } from '@airswap/types'
 import { createLightOrder, createLightSignature } from '@airswap/utils'
 
@@ -191,7 +191,7 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 # Protocol Fees
 
-A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](./contract-deployments.md) contract.
+A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](./contract-deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 # Authorized Signers
 
