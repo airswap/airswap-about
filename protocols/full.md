@@ -1,4 +1,4 @@
-Full orders are fully featured.
+**Request for Quote fully featured.**
 
 - Swaps ERC20, ERC721, ERC1155 tokens
 - Supports multiple signer and sender authorization
@@ -143,8 +143,6 @@ Either `personalSign` or `signTypedData` may be used but `signTypedData` is reco
 
 Full signatures in TypeScript can be created using the `@airswap/utils` package.
 
-## Types
-
 ```typescript
 export type Party = {
   kind: string
@@ -183,9 +181,24 @@ export type Order = UnsignedOrder & {
 
 ```typescript
 import { UnsignedOrder } from '@airswap/types'
-import { createTypedDataSignature } from '@airswap/utils'
+import { createOrder, createTypedDataSignature } from '@airswap/utils'
 
-const signature = createTypedDataSignature(
+const order = createOrder({
+  nonce: string,
+  expiry: string,
+  signer: {
+    wallet: string,
+    token: string,
+    amount: string,
+  },
+  sender: {
+    wallet: string,
+    token: string,
+    amount: string,
+  }
+})
+
+order.signature = createTypedDataSignature(
   unsignedOrder: UnsignedOrder,
   privateKey: string,
   swapContract: string

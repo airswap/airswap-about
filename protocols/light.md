@@ -1,4 +1,4 @@
-Light orders are gas efficient.
+**Request for Quote (Light) is gas efficient.**
 
 - Supports ERC20 tokens
 - Supports single signer authorization
@@ -54,8 +54,6 @@ In RFQ the server is the order signer. A `LightOrder` has the following properti
 | v            | `uint8`   | `v` value of the ECDSA signature.           |
 | r            | `bytes32` | `r` value of the ECDSA signature.           |
 | s            | `bytes32` | `s` value of the ECDSA signature.           |
-
-{% hint style="info" %} The `senderWallet` is hashed into the signature. During settlement, `msg.sender` must be the same as `senderWallet`. {% endhint %}
 
 {% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
 
