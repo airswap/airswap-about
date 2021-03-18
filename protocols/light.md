@@ -7,11 +7,9 @@
 
 # Methods
 
-In RFQ the client is the order sender.
-
 ### `getSignerSideOrder`
 
-Given a `senderAmount`, `senderWallet`, and token pair, return a complete order with a `signerAmount`. The taker is **selling** to you.
+Given a `senderAmount`, `senderWallet`, and token pair, server returns a complete order with a `signerAmount`. The client is **selling** to the server.
 
 ```TypeScript
 getSignerSideOrder(
@@ -26,7 +24,7 @@ getSignerSideOrder(
 
 ### `getSenderSideOrder`
 
-Given a `signerAmount`, `senderWallet`, and token pair, return a complete order with a `senderAmount`. The taker is **buying** from you.
+Given a `signerAmount`, `senderWallet`, and token pair, server returns a complete order with a `senderAmount`. The client is **buying** from the server.
 
 ```TypeScript
 getSenderSideOrder(
@@ -41,7 +39,9 @@ getSenderSideOrder(
 
 # Responses
 
-In RFQ the server is the order signer. A `LightOrder` has the following properties:
+{% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
+
+A `LightOrder` has the following properties:
 
 | Property     | Type      | Description                                 |
 | :----------- | :-------- | :------------------------------------------ |
@@ -55,8 +55,6 @@ In RFQ the server is the order signer. A `LightOrder` has the following properti
 | v            | `uint8`   | `v` value of the ECDSA signature.           |
 | r            | `bytes32` | `r` value of the ECDSA signature.           |
 | s            | `bytes32` | `s` value of the ECDSA signature.           |
-
-{% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
 
 ## Example
 
@@ -107,7 +105,7 @@ Content-Type: application/json
 
 ## Signatures
 
-Light signatures use `signTypedData`.
+Light signatures use `signTypedData` which implements EIP712.
 
 ### TypeScript
 

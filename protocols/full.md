@@ -3,14 +3,13 @@
 - Swaps ERC20, ERC721, ERC1155 tokens
 - Supports multiple signer and sender authorization
 - Supports affiliate fees in any token
+- More costly to use than the [Light](./light.md) protocol
 
 # Methods
 
-In RFQ the client is the order sender.
-
 ### `getSignerSideOrder`
 
-Given a `senderAmount`, `senderWallet`, and token pair, return a complete order with a `signerAmount`. The taker is **selling** to you.
+Given a `senderAmount`, `senderWallet`, and token pair, server returns a complete order with a `signerAmount`. The client is **selling** to the server.
 
 ```TypeScript
 getSignerSideOrder(
@@ -25,7 +24,7 @@ getSignerSideOrder(
 
 ### `getSenderSideOrder`
 
-Given a `signerAmount`, `senderWallet`, and token pair, return a complete order with a `senderAmount`. The taker is **buying** from you.
+Given a `signerAmount`, `senderWallet`, and token pair, server returns a complete order with a `senderAmount`. The client is **buying** from the server.
 
 ```TypeScript
 getSenderSideOrder(
@@ -39,8 +38,6 @@ getSenderSideOrder(
 ```
 
 # Responses
-
-In RFQ the server is the order signer.
 
 {% hint style="info" %} Only respond with a full order if the `swapContract` parameter in the request matches the [Swap](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Light Order](./light.md){% endhint %}
 
@@ -137,7 +134,7 @@ Content-Type: application/json
 
 ## Signatures
 
-Either `personalSign` or `signTypedData` may be used but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`).
+Full signatures use either `personalSign` or `signTypedData` but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`).
 
 ### TypeScript
 
