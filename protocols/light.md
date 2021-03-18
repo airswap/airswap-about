@@ -40,11 +40,7 @@ getSenderSideOrder(
 
 # Responses
 
-In RFQ the server is the order signer.
-
-{% hint style="info" %} Only respond with a full order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full Order](./full.md){% endhint %}
-
-A `LightOrder` has the following properties:
+In RFQ the server is the order signer. A `LightOrder` has the following properties:
 
 | Property     | Type      | Description                                 |
 | :----------- | :-------- | :------------------------------------------ |
@@ -59,7 +55,9 @@ A `LightOrder` has the following properties:
 | r            | `bytes32` | `r` value of the ECDSA signature.           |
 | s            | `bytes32` | `s` value of the ECDSA signature.           |
 
-{% hint style="info" %} `senderWallet` is hashed into the. During settlement, the `senderWallet` is assumed to be `msg.sender`. {% endhint %}
+{% hint style="info" %} The `senderWallet` is hashed into the signature. During settlement, `msg.sender` must be the same as `senderWallet`. {% endhint %}
+
+{% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
 
 ## Example
 
@@ -116,7 +114,7 @@ Either `personalSign` or `signTypedData` may be used but `signTypedData` is reco
 
 Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
-## Types
+#### Types
 
 ```typescript
 export type LightSignature = {
@@ -148,7 +146,7 @@ export type LightOrder = {
 } & LightSignature
 ```
 
-## Signatures
+#### Signatures
 
 ```typescript
 import { UnsignedLightOrder } from '@airswap/types'
