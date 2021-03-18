@@ -1,8 +1,9 @@
-**This is the gas efficient RFQ protocol.**
+**The gas efficient RFQ protocol.**
 
 - Supports ERC20 tokens
 - Supports single signer authorization
 - No affiliate fees feature
+- Cheaper to use than the [Full](./full.md) protocol
 
 # Methods
 
@@ -106,7 +107,7 @@ Content-Type: application/json
 
 ## Signatures
 
-Either `personalSign` or `signTypedData` may be used but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`).
+Light signatures use `signTypedData`.
 
 ### TypeScript
 

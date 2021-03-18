@@ -1,4 +1,4 @@
-**This is the fully featured RFQ protocol.**
+**The fully featured RFQ protocol.**
 
 - Swaps ERC20, ERC721, ERC1155 tokens
 - Supports multiple signer and sender authorization
