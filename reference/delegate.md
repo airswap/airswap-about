@@ -1,4 +1,4 @@
-Delegates are smart contracts that implement the [Quote](../protocols/quote.md) and [Last Look](../system/apis.md#last-look-api) protocols.
+Delegates are smart contracts that implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols.
 
 # Delegate Client
 
@@ -88,7 +88,7 @@ const hash = await delegate.provideOrder(order)
 
 # Solidity
 
-See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby DelegateFactory deployments.
+See [Contract Deployments](../contract-deployments) for the latest mainnet and rinkeby DelegateFactory deployments.
 
 # Delegate Contract
 

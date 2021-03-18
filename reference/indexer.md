@@ -92,7 +92,7 @@ const { locators } = await indexer.getLocators(signerToken, senderToken, protoco
 
 # Solidity
 
-See [Contract Deployments](../system/contract-deployments) for the latest mainnet and rinkeby Indexer deployments.
+See [Contract Deployments](../contract-deployments) for the latest mainnet and rinkeby Indexer deployments.
 
 ## Indexer Contract
 

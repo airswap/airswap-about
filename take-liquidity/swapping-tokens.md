@@ -84,7 +84,7 @@ if (best) {
 
 # Querying Delegates (On-Chain)
 
-Delegates implement the [Quote](../protocols/quote.md) and [Last Look](../system/apis.md#last-look-api) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
+Delegates implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols as an Ethereum smart contract. In the following scenarios, the Delegate is always the **sender** and end user is always the **signer**.
 
 Delegates **require signatures** on orders, which enables them to be passed through the Wrapper contract. There may be future versions of Delegates intended for onchain integrations that do not require signatures.
 
