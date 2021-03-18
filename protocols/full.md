@@ -134,11 +134,7 @@ Content-Type: application/json
 
 ## Signatures
 
-Full signatures use either `personalSign` or `signTypedData` but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`).
-
-### TypeScript
-
-Full signatures in TypeScript can be created using the `@airswap/utils` package.
+Full signatures use either `personalSign` or `signTypedData` but `signTypedData` is recommended. Signatures include a byte `version` to indicate `personalSign` (`0x45`) or `signTypedData` (`0x01`). Full signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```typescript
 import { UnsignedOrder } from '@airswap/types'
@@ -166,19 +162,18 @@ order.signature = createTypedDataSignature(
 )
 ```
 
-### Python
-
 Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
 
 ```python
 from py_eth_sig_utils.signing import *
 
-PRIVATE_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
+SIGNER_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
+SIGNER_ADDRESS = "0x0000000000000000000000000000000000000000"
+SWAP_CONTRACT = "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA"
 
 DOMAIN = "SWAP"
 VERSION = "2"
-CHAINID = 1
-CONTRACT = "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA"
+CHAIN_ID = 1
 
 order = {
   "nonce": 0,
@@ -232,14 +227,22 @@ data = {
   "domain": {
     "name": DOMAIN,
     "version": VERSION,
-    "chainId": CHAINID,
-    "verifyingContract": CONTRACT,
+    "chainId": CHAIN_ID,
+    "verifyingContract": SWAP_CONTRACT,
   },
   "primaryType": "Order",
   "message": order,
 }
 
 v, r, s = sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))
+order['signature'] = {
+  "version": "0x01",
+  "signatory": SIGNER_ADDRESS,
+  "validator": SWAP_CONTRACT,
+  "v": v,
+  "r": r,
+  "s": s
+}
 ```
 
 # Signer and Sender Authorizations

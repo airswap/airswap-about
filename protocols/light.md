@@ -105,10 +105,6 @@ Content-Type: application/json
 
 ## Signatures
 
-Light signatures use `signTypedData` which implements EIP712.
-
-### TypeScript
-
 Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```typescript
@@ -135,25 +131,26 @@ const { v, r, s } = createLightSignature(
 )
 ```
 
-### Python
-
 Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
 
 ```python
 from py_eth_sig_utils.signing import *
 
-PRIVATE_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
+SIGNER_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
+SIGNER_ADDRESS = "0x0000000000000000000000000000000000000000"
+SWAP_CONTRACT = "0x0000000000000000000000000000000000000000"
 
 DOMAIN = "SWAP_LIGHT"
 VERSION = "3"
-CHAINID = 1
-CONTRACT = "0x0000000000000000000000000000000000000000"
+CHAIN_ID = 1
 
 order = {
   "nonce": 0,
   "expiry": 0,
+  "signerWallet": "0x0000000000000000000000000000000000000000",
   "signerToken": "0x0000000000000000000000000000000000000000",
   "signerAmount": 0,
+  "signerFee": 0,
   "senderWallet": "0x0000000000000000000000000000000000000000",
   "senderToken": "0x0000000000000000000000000000000000000000",
   "senderAmount": 0
@@ -170,9 +167,11 @@ data = {
     "LightOrder": [
       { "name": "nonce", "type": "uint256" },
       { "name": "expiry", "type": "uint256" },
-      { "name": "senderWallet", "type": "address" },
+      { "name": "signerWallet", "type": "address" },
       { "name": "signerToken", "type": "address" },
       { "name": "signerAmount", "type": "uint256" },
+      { "name": "signerFee", "type": "uint256" },
+      { "name": "senderWallet", "type": "address" },
       { "name": "senderToken", "type": "address" },
       { "name": "senderAmount", "type": "uint256" },
     ]
@@ -180,15 +179,19 @@ data = {
   "domain": {
     "name": DOMAIN,
     "version": VERSION,
-    "chainId": CHAINID,
-    "verifyingContract": CONTRACT,
+    "chainId": CHAIN_ID,
+    "verifyingContract": SWAP_CONTRACT,
   },
   "primaryType": "LightOrder",
   "message": order,
 }
 
-v, r, s = sign_typed_data(data, bytes.fromhex(PRIVATE_KEY))
+v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 ```
+
+# Protocol Fees
+
+A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](./contract-deployments.md) contract.
 
 # Authorized Signers
 
