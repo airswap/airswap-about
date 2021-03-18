@@ -2,56 +2,32 @@ Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/or
 
 # Introduction
 
-AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract. Within the [AirSwap](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
+AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract. Within the [AirSwap RFQ](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
 
-- **Orders** are signed and executable trades and **Quotes** are indicative prices. Servers should provide both.
-- **Intent** is a signal to takers that a server is trading specific tokens, including contact information (locator), without pricing.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
+- **Indexers** are used to signal that a server is available to trade specific tokens, including contact information (locator), without pricing.
 
 # Getting Started
 
-- [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) using [Vercel](https://vercel.com/) and the [AirSwap CLI](https://github.com/airswap/airswap-cli).
-- [_AirSwap Vercel Example_](https://github.com/airswap/airswap-zeit-example) includes an example server to get started.
+Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Indexer.
 
-## To run the Vercel example
+- Servers generally implement the [RFQ: Light](../protocols/light.md) protocol.
+- You can debug your server with the [CLI](./debug-with-cli.md).
+- See [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) for a guide using [Vercel](https://vercel.com/).
+- When ready, add your server [to the Indexer](./add-to-the-indexer.md).
 
-Vercel is an integrated devops platform and CLI.
+# Helpful for Testing
 
-```
-$ git clone git@github.com:airswap/airswap-vercel-example.git
-$ cd airswap-vercel-example
-$ airswap-vercel-example yarn
-$ airswap-vercel-example yarn global add vercel
-$ airswap-vercel-example echo "ETHEREUM_ACCOUNT=[A PRIVATE KEY]" > .env
-$ airswap-vercel-example vercel dev
-Vercel CLI 20.1.2 dev (beta) — https://vercel.com/feedback
-> Ready! Available at http://localhost:3000
-```
+The following resources are helpful for testing on **Rinkeby**.
 
-Now that the example is running, you can debug with the [CLI](./debug-with-cli.md). This example is for convenience, but any web hosting platform will work.
+- **ETH** to pay for transactions - [Faucet](https://faucet.rinkeby.io/)
+- **WETH** for trading - `0xc778417e063141139fce010982780140aa0cd5ab` [Etherscan](https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab)
+- **DAI** for trading - `0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea` [Etherscan](https://rinkeby.etherscan.io/address/0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea)
+- **AST** for staking - `0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8` [Etherscan](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) / [Faucet](https://ast-faucet-ui.development.airswap.io/)
 
-# Quote and Order APIs
+# Handling Errors
 
-Servers implement the [Quote](../system/quote-protocol.md) and [Order](../system/quote-protocol.md) APIs. The following responses would be based on your internal pricing strategies.
-
-## Quote API
-
-See: [Quote Protocol](../system/quote-protocol.md)
-
-- `getMaxQuote` requests a Quote. You set the **signer** and **sender** amounts.
-- `getSignerSideQuote` requests a Quote. You set the **signer** amount.
-- `getSenderSideQuote` requests a Quote. You set the **sender** amount.
-
-## Order API
-
-See: [Light Protocol](../system/quote-protocol.md)
-
-- `getSignerSideOrder` requests an Order. You set the **signer** amount.
-- `getSenderSideOrder` requests an Order. You set the **sender** amount.
-
-# Error Handling
-
-A JSON-RPC request may result in an error, matched by its request `id`:
+You should provide descriptive errors where possible. In the case of a server side error, return a JSON-RPC error response.
 
 ```json
 {
@@ -79,12 +55,3 @@ The following are AirSwap specific errors:
 - `-33604` Invalid request parameters
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` (Reserved for implementation specific trading errors)
-
-# Helpful for Testing
-
-The following resources are helpful for testing on **Rinkeby**.
-
-- **ETH** to pay for transactions - [Faucet](https://faucet.rinkeby.io/)
-- **WETH** for trading - `0xc778417e063141139fce010982780140aa0cd5ab` [Etherscan](https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab)
-- **DAI** for trading - `0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea` [Etherscan](https://rinkeby.etherscan.io/address/0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea)
-- **AST** for staking - `0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8` [Etherscan](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) / [Faucet](https://ast-faucet-ui.development.airswap.io/)
