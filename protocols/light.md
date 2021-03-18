@@ -1,4 +1,4 @@
-**Request for Quote (Light) is gas efficient.**
+**This is the gas efficient RFQ protocol.**
 
 - Supports ERC20 tokens
 - Supports single signer authorization
