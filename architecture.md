@@ -22,7 +22,7 @@ Takers use the Indexer to find Servers and Delegates to interact with.
 
 ## Servers (HTTPS)
 
-Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) protocols.
+Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/light.md) protocols.
 
 **Takers**...
 
@@ -32,7 +32,7 @@ Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/ap
 
 ## Delegates (onchain)
 
-Delegates implement the [Quote](../system/apis.md#quotes) and [Last Look](../system/apis.md#last-look-api) protocols.
+Delegates implement the [Quote](../protocols/quote.md) and [Last Look](../protocols/last-look.md) protocols.
 
 **Takers**...
 

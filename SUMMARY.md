@@ -1,7 +1,8 @@
 # Table of Contents
 
 - [Welcome](README.md)
-- [Deployments](system/contract-deployments.md)
+- [Deployments](contract-deployments.md)
+- [Architecture](architecture.md)
 
 ## Liquidity Providers
 
@@ -11,15 +12,14 @@
 
 ## App Developers
 
-- [Requesting Quotes](take-liquidity/request-quotes.md)
+- [Swapping Tokens](take-liquidity/swapping-tokens.md)
 - [Embedding AirSwap](take-liquidity/embed-airswap.md)
 
-## System
+## Protocols
 
-- [Architecture](system/architecture.md)
-- [APIs](system/apis.md)
-- [Types and Formats](system/types-and-formats.md)
-- [Signatures](system/generate-signatures.md)
+- [Request for Quote (Light)](protocols/light.md)
+- [Request for Quote](protocols/full.md)
+- [Last Look](protocols/last-look.md)
 
 ## Reference
 
@@ -33,5 +33,4 @@
 
 ## Tools
 
-- [Order Utils](tools/order-utils.md)
 - [Time Travel](tools/time-travel.md)

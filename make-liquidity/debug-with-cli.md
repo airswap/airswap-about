@@ -44,4 +44,4 @@ Quote from http://localhost:3000
 Price 0.0025 WETH/DAI (400 DAI/WETH)
 ```
 
-You can debug all [Quote and Order API](../system/apis.md) methods using the `quote` and `order` [AirSwap CLI commands](https://github.com/airswap/airswap-cli#all-commands).
+You can debug all methods using the `quote` and `order` [AirSwap CLI commands](https://github.com/airswap/airswap-cli#all-commands).

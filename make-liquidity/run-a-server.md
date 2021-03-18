@@ -1,4 +1,4 @@
-Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
+Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
 
 # Introduction
 
@@ -32,18 +32,22 @@ Now that the example is running, you can debug with the [CLI](./debug-with-cli.m
 
 # Quote and Order APIs
 
-Servers implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs. The following responses would be based on your internal pricing strategies.
+Servers implement the [Quote](../system/quote-protocol.md) and [Order](../system/quote-protocol.md) APIs. The following responses would be based on your internal pricing strategies.
 
 ## Quote API
 
-- `getMaxQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **signer** and **sender** amounts.
-- `getSignerSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **signer** amount.
-- `getSenderSideQuote` requests a [`Quote`](../system/types-and-formats.md#quotes). You set the **sender** amount.
+See: [Quote Protocol](../system/quote-protocol.md)
+
+- `getMaxQuote` requests a Quote. You set the **signer** and **sender** amounts.
+- `getSignerSideQuote` requests a Quote. You set the **signer** amount.
+- `getSenderSideQuote` requests a Quote. You set the **sender** amount.
 
 ## Order API
 
-- `getSignerSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders). You set the **signer** amount.
-- `getSenderSideOrder` is a request for an [`Order`](../system/types-and-formats.md#orders). You set the **sender** amount.
+See: [Light Protocol](../system/quote-protocol.md)
+
+- `getSignerSideOrder` requests an Order. You set the **signer** amount.
+- `getSenderSideOrder` requests an Order. You set the **sender** amount.
 
 # Example
 

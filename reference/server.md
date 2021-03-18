@@ -1,4 +1,4 @@
-Servers are processes that implement the [Quote](../system/apis.md#quotes) and [Order](../system/apis.md#orders) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS.
+Servers are processes that implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) APIs using [JSON-RPC 2.0](http://www.jsonrpc.org/specification) over HTTPS.
 
 # Server Client
 
