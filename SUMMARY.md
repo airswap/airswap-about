@@ -17,8 +17,8 @@
 
 ## Protocols
 
-- [Request for Quote (Light)](protocols/light.md)
-- [Request for Quote](protocols/full.md)
+- [RFQ: Light](protocols/light.md)
+- [RFQ: Full](protocols/full.md)
 - [Last Look](protocols/last-look.md)
 
 ## Reference
