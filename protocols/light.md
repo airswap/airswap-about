@@ -39,7 +39,7 @@ getSenderSideOrder(
 
 # Responses
 
-{% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
+{% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](../contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
 
 A `LightOrder` has the following properties:
 
@@ -191,11 +191,11 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 # Protocol Fees
 
-A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](./contract-deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../contract-deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 # Authorized Signers
 
-One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](./contract-deployments.md) contract.
+One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](../contract-deployments.md) contract.
 
 ```
 function authorize(address signer) external
@@ -206,9 +206,9 @@ function revoke() external
 
 The following values are used for the EIP712Domain.
 
-| Param               | Type      | Value                                               |
-| :------------------ | :-------- | :-------------------------------------------------- |
-| `name`              | `bytes32` | SWAP_LIGHT                                          |
-| `version`           | `bytes32` | 3                                                   |
-| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                 |
-| `verifyingContract` | `address` | [Light](./contract-deployments.md) contract address |
+| Param               | Type      | Value                                                |
+| :------------------ | :-------- | :--------------------------------------------------- |
+| `name`              | `bytes32` | SWAP_LIGHT                                           |
+| `version`           | `bytes32` | 3                                                    |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                  |
+| `verifyingContract` | `address` | [Light](../contract-deployments.md) contract address |

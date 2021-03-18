@@ -39,7 +39,7 @@ getSenderSideOrder(
 
 # Responses
 
-{% hint style="info" %} Only respond with a full order if the `swapContract` parameter in the request matches the [Swap](./contract-deployments.md) contract address. Your client may otherwise be requesting a [Light Order](./light.md){% endhint %}
+{% hint style="info" %} Only respond with a full order if the `swapContract` parameter in the request matches the [Swap](../contract-deployments.md) contract address. Your client may otherwise be requesting a [Light Order](./light.md){% endhint %}
 
 An `Order` has the following properties:
 
@@ -247,7 +247,7 @@ order['signature'] = {
 
 # Signer and Sender Authorizations
 
-One account may authorize another account to sign or send orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer and sender authorizations, use the following functions on the [Swap](./contract-deployments.md) contract.
+One account may authorize another account to sign or send orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer and sender authorizations, use the following functions on the [Swap](../contract-deployments.md) contract.
 
 ```
 function authorizeSigner(address authorizedSigner) external
@@ -263,9 +263,9 @@ function revokeSender(address authorizedSender) external
 
 The following values are used for the EIP712Domain.
 
-| Param               | Type      | Value                                              |
-| :------------------ | :-------- | :------------------------------------------------- |
-| `name`              | `bytes32` | SWAP                                               |
-| `version`           | `bytes32` | 2                                                  |
-| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                |
-| `verifyingContract` | `address` | [Swap](./contract-deployments.md) contract address |
+| Param               | Type      | Value                                               |
+| :------------------ | :-------- | :-------------------------------------------------- |
+| `name`              | `bytes32` | SWAP                                                |
+| `version`           | `bytes32` | 2                                                   |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                 |
+| `verifyingContract` | `address` | [Swap](../contract-deployments.md) contract address |
