@@ -114,49 +114,27 @@ Either `personalSign` or `signTypedData` may be used but `signTypedData` is reco
 
 Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
-#### Types
-
-```typescript
-export type LightSignature = {
-  v: string
-  r: string
-  s: string
-}
-
-export type UnsignedLightOrder = {
-  nonce: string
-  expiry: string
-  signerWallet: string
-  signerToken: string
-  signerAmount: string
-  signerFee: string
-  senderWallet: string
-  senderToken: string
-  senderAmount: string
-}
-
-export type LightOrder = {
-  nonce: string
-  expiry: string
-  signerWallet: string
-  signerToken: string
-  signerAmount: string
-  senderToken: string
-  senderAmount: string
-} & LightSignature
-```
-
-#### Signatures
-
 ```typescript
 import { UnsignedLightOrder } from '@airswap/types'
-import { createLightSignature } from '@airswap/utils'
+import { createLightOrder, createLightSignature } from '@airswap/utils'
 
-const signature = createLightSignature(
-  unsignedOrder: UnsignedLightOrder,
+const order = createLightOrder({
+  nonce: string,
+  expiry: string,
+  signerWallet: string,
+  signerToken: string,
+  signerAmount: string,
+  signerFee: string,
+  senderWallet: string,
+  senderToken: string,
+  senderAmount: string,
+})
+
+const { v, r, s } = createLightSignature(
+  order: UnsignedLightOrder,
   privateKey: string,
   swapContract: string,
-  chainId: string
+  chainId: string,
 )
 ```
 
