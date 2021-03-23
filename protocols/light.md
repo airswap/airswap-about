@@ -37,11 +37,43 @@ getSenderSideOrder(
 )
 ```
 
-# Responses
+# Client
+
+Clients invoke the above methods as JSON-RPC over HTTP requests.
+
+```json
+POST / HTTP/1.1
+Content-Length: ...
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "method": "getSignerSideOrder",
+  "params": {
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "senderAmount": "1000000000000000000",
+    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+    "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
+  }
+}
+```
+
+The above request can be made using curl for testing.
+
+```sh
+curl -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a","senderAmount":"1000000000000000000","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
+     https://localhost:3000/
+```
+
+# Server
 
 {% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](../contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
 
-A `LightOrder` has the following properties:
+A successful result containing a `LightOrder` has the following properties:
 
 | Property     | Type      | Description                                 |
 | :----------- | :-------- | :------------------------------------------ |
@@ -57,25 +89,6 @@ A `LightOrder` has the following properties:
 | s            | `bytes32` | `s` value of the ECDSA signature.           |
 
 ## Example
-
-```json
-POST / HTTP/1.1
-Content-Length: ...
-Content-Type: application/json
-
-{
-  "jsonrpc": "2.0",
-  "id": 123,
-  "method": "getSignerSideOrder",
-  "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
-    "senderAmount": "100000000",
-    "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
-  }
-}
-```
 
 ```json
 HTTP/1.1 200 OK
@@ -94,8 +107,8 @@ Content-Type: application/json
     "signerWallet": "0x5E6bfd15c85C62e96f5888FCFbe88b74e298862d",
     "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "signerAmount": "10000",
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "senderAmount": "100000000",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "senderAmount": "1000000000000000000",
     "v": "28",
     "r": "0x67e0723b0afd357d4f28523bf633dfee16e0eab2f3cbcf8ce1afd32a035d2764",
     "s": "0x1b71e6e633b3334fc88faf4ec0ca1b7611883bc0de4df7024abec07af78b97c3"
@@ -103,9 +116,9 @@ Content-Type: application/json
 }
 ```
 
-## Signatures
+# Signatures
 
-Light signatures in TypeScript can be created using the `@airswap/utils` package.
+**TypeScript**. Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```TypeScript
 import { UnsignedLightOrder } from '@airswap/types'
@@ -131,7 +144,7 @@ const { v, r, s } = createLightSignature(
 )
 ```
 
-Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
+**Python**. Light signatures in Python can be created using the [`py_eth_sig_utils`](https://pypi.org/project/py-eth-sig-utils/) package.
 
 ```python
 from py_eth_sig_utils.signing import *
@@ -208,7 +221,7 @@ The following values are used for the EIP712Domain.
 
 | Param               | Type      | Value                                                |
 | :------------------ | :-------- | :--------------------------------------------------- |
-| `name`              | `bytes32` | SWAP_LIGHT                                           |
-| `version`           | `bytes32` | 3                                                    |
+| `name`              | `bytes32` | `SWAP_LIGHT`                                         |
+| `version`           | `bytes32` | `3`                                                  |
 | `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                  |
 | `verifyingContract` | `address` | [Light](../contract-deployments.md) contract address |
