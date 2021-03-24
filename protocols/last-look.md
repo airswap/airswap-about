@@ -105,8 +105,8 @@ Content-Type: application/json
   "id": 123,
   "method": "getMaxQuote",
   "params": {
-    "senderToken": "0xc778417e063141139fce010982780140aa0cd5ab",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a"
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7"
   }
 }
 ```
@@ -124,17 +124,17 @@ Content-Type: application/json
   "id": 123,
   "result": {
     "timestamp": "1566941284",
-    "version": "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA",
+    "version": "0xc549a5c701cb6e6cbc091007a80c089c49595468",
     "locator": "maker.example.com",
     "signer": {
       "kind": "0x36372b07",
-      "token": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+      "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
       "amount": "10000",
       "id": "0"
     },
     "sender": {
       "kind": "0x36372b07",
-      "token": "0xc778417e063141139fce010982780140aa0cd5ab",
+      "token": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
       "amount": "100000000",
       "id": "0"
     }

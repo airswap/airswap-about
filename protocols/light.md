@@ -51,10 +51,10 @@ Content-Type: application/json
   "id": 123,
   "method": "getSignerSideOrder",
   "params": {
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "senderAmount": "1000000000000000000",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
     "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
   }
 }
@@ -63,9 +63,8 @@ Content-Type: application/json
 The above request can be made using curl for testing.
 
 ```sh
-curl -X POST \
-     -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","signerToken":"0x27054b13b1b798b345b591a4d22e6562d47ea75a","senderAmount":"1000000000000000000","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
+curl -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
      https://localhost:3000/
 ```
 
@@ -105,8 +104,8 @@ Content-Type: application/json
     "nonce": "99",
     "expiry": "1566941284",
     "signerWallet": "0x5E6bfd15c85C62e96f5888FCFbe88b74e298862d",
-    "signerToken": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
-    "signerAmount": "10000",
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "signerAmount": "100000000",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "senderAmount": "1000000000000000000",
     "v": "28",
