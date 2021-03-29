@@ -1,4 +1,4 @@
-# Mainnet
+# Ethereum Mainnet
 
 | Contract  | Version                                                             | Address                                                                                                                 | Commit                                                                                                  |
 | :-------- | :------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
@@ -13,7 +13,16 @@
 | Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
 | AST       | `N/A`                                                               | [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa)      |
 
-# Rinkeby
+# Binance Smart Chain
+
+| Contract | Version                                                           | Address                                                                                                                | Commit                                                                                                  |
+| :------- | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+| Light    | [`2.2.0`](https://www.npmjs.com/package/@airswap/light/v/2.2.0)   | [`0xc98314a5077DBa8F12991B29bcE39F834E82e197`](https://bscscan.com/address/0xc98314a5077DBa8F12991B29bcE39F834E82e197) | [`e27cbda`](https://github.com/airswap/airswap-protocols/tree/e27cbda7df6d6e93bd63f5aa78755386092ec569) |
+| Indexer  | [`3.6.9`](https://www.npmjs.com/package/@airswap/indexer/v/3.6.9) | [`0x0fEE96B8d44C0fD9E6D6472531E2aD159CCba73d`](https://bscscan.com/address/0x0fEE96B8d44C0fD9E6D6472531E2aD159CCba73d) | [`48da430`](https://github.com/airswap/airswap-protocols/tree/48da430ca23876b9d01743d59b548f7fb59660ab) |
+| Pool     | [`1.1.0`](https://www.npmjs.com/package/@airswap/pool/v/1.1.0)    | [`0xF636776aCfca2132E019E714a1fC881124B3bAfC`](https://bscscan.com/address/0xF636776aCfca2132E019E714a1fC881124B3bAfC) | [`ed7af5e`](https://github.com/airswap/airswap-protocols/tree/ed7af5e048bc754e920ffbc6e4a0735a75d07386) |
+| AST      | `N/A`                                                             | [`0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1`](https://bscscan.com/token/0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1)   | `N/A`                                                                                                   |
+
+# Ethereum Rinkeby
 
 | Contract  | Version                                                             | Address                                                                                                                         | Commit                                                                                                  |
 | :-------- | :------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
@@ -28,7 +37,7 @@
 | Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x2D8849EAaB159d20Abf10D4a80c97281A12448CC`](https://rinkeby.etherscan.io/address/0x2D8849EAaB159d20Abf10D4a80c97281A12448CC) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
 | AST       | `N/A`                                                               | [`0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8`](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa)      |
 
-# Kovan
+# Ethereum Kovan
 
 | Contract | Version                                                            | Address                                                                                                                       | Commit                                                                                                  |
 | :------- | :----------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -38,7 +47,7 @@
 | Wrapper  | [`3.6.9`](https://www.npmjs.com/package/@airswap/wrapper/v/3.6.9)  | [`0xE5E7116AB49666e9791f53aeD4f5B7207770879D`](https://kovan.etherscan.io/address/0xE5E7116AB49666e9791f53aeD4f5B7207770879D) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
 | Types    | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10)  | [`0x708A7ea9C9580fD194c2941eeD48e4ff4ee32a9D`](https://kovan.etherscan.io/address/0x708A7ea9C9580fD194c2941eeD48e4ff4ee32a9D) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
 
-# Goerli
+# Ethereum Goerli
 
 | Contract | Version                                                            | Address                                                                                                                        | Commit                                                                                                  |
 | :------- | :----------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
