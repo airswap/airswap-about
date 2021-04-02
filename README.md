@@ -15,10 +15,11 @@ Peers on the AirSwap network include [Servers](./make-liquidity/run-a-server.md)
 **For end users**, there are no trading fees, no deposits, and no sign-ups. AirSwap is simple and intuitive, secure, and liquid, without front-running, price slippage, or order collisions.
 
 **For makers**, there are no costly price updates with onchain order books. Prices are per request. Easily manage exposure, and, if needed, cancel orders individually or as a batch in a single transaction.
+r
 
 # AirSwap Improvement Proposals (AIPs)
 
-AirSwap is governed by a community proposal and voting process called AirSwap Improvement Proposals (AIP). For more information on AIPs see [AIP 1](https://community.airswap.io/t/aip-1-proposal-how-to) and check out [all active proposals](https://community.airswap.io/c/proposals). Voting is held on [Codefi Activate](https://activate-dev.codefi.network/staking/airswap/governance).
+AirSwap is governed by a community proposal and voting process called AirSwap Improvement Proposals (AIP). For more information on AIPs see [AIP 1](https://community.airswap.io/t/aip-1-proposal-how-to) and check out [all active proposals](https://community.airswap.io/c/proposals). Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance).
 
 # MetaMask Swaps
 
