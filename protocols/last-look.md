@@ -47,7 +47,7 @@ A successful `getSenderSideQuote` returns a Quote object including the requested
 
 ### `getLevels`
 
-Given a token pair, return an array with different levels of size and price.
+Given a token pair, return an array with amounts at various sizes.
 
 ```TypeScript
 getLevels(
