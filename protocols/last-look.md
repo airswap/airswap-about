@@ -45,6 +45,27 @@ getSenderSideQuote(
 
 A successful `getSenderSideQuote` returns a Quote object including the requested `senderAmount`.
 
+### `getLevels`
+
+Given a token pair, return an array with different levels of size and price.
+
+```TypeScript
+getLevels(
+  signerToken: string, // Token the sender would transfer
+  senderToken: string  // Token the signer would transfer
+)
+```
+
+A successful `getLevels` returns an object in the following format.
+
+```TypeScript
+[
+  [100, 0.002132234],
+  [1000, 0.002002234],
+  [10000, 0.001992234]
+]
+```
+
 # Push Methods
 
 ### `provideQuote`
