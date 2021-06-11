@@ -37,37 +37,6 @@ getSenderSideOrder(
 )
 ```
 
-# Client
-
-Clients invoke the above methods as JSON-RPC over HTTP requests.
-
-```json
-POST / HTTP/1.1
-Content-Length: ...
-Content-Type: application/json
-
-{
-  "jsonrpc": "2.0",
-  "id": 123,
-  "method": "getSignerSideOrder",
-  "params": {
-    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
-    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "senderAmount": "1000000000000000000",
-    "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
-  }
-}
-```
-
-The above request can be made using curl for testing.
-
-```sh
-curl -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
-     https://localhost:3000/
-```
-
 # Server
 
 {% hint style="info" %} Only respond with a light order if the `swapContract` parameter in the request matches the [Light](../contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](./full.md) order.{% endhint %}
@@ -199,6 +168,70 @@ data = {
 }
 
 v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
+```
+
+# Client
+
+Clients invoke the above methods as JSON-RPC over HTTP requests.
+
+```json
+POST / HTTP/1.1
+Content-Length: ...
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "method": "getSignerSideOrder",
+  "params": {
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "senderAmount": "1000000000000000000",
+    "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
+  }
+}
+```
+
+The above request can be made using curl for testing.
+
+```sh
+curl -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
+     https://localhost:3000/
+```
+
+## Settlement
+
+After requesting an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
+
+```JavaScript
+  function swap(
+    uint256 nonce,
+    uint256 expiry,
+    address signerWallet,
+    IERC20 signerToken,
+    uint256 signerAmount,
+    IERC20 senderToken,
+    uint256 senderAmount,
+    uint8 v,
+    bytes32 r,
+    bytes32 s
+  ) external;
+```
+
+```JavaScript
+  event Swap(
+    uint256 indexed nonce,
+    uint256 timestamp,
+    address indexed signerWallet,
+    IERC20 signerToken,
+    uint256 signerAmount,
+    uint256 signerFee,
+    address indexed senderWallet,
+    IERC20 senderToken,
+    uint256 senderAmount
+  );
 ```
 
 # Protocol Fees
