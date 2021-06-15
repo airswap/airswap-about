@@ -14,128 +14,94 @@ Last look is implemented by servers that provide quote levels and accept signed 
 
 # Server Methods
 
-In Last Look protocols, the client is the order signer and server the order sender.
-
-### `getLevels`
-
-Given a token pair, return an array of Levels.
-
-```TypeScript
-getLevels(
-  signerToken: string, // Token the sender would transfer
-  senderToken: string  // Token the signer would transfer
-)
-```
+In Last Look protocols, the Client is the order signer and Server the order sender.
 
 ### `subscribeLevels`
 
-Subscribe to level updates, which are delivered to the Client with `updateLevels`.
+A request to receive updates to quote levels for a token pair. Returns the current quote levels.
 
 ```TypeScript
 subscribeLevels(
-  signerToken: string, // Token the sender would transfer
-  senderToken: string  // Token the signer would transfer
-)
+  signerToken: string, // Token the Client would transfer
+  senderToken: string  // Token the Server would transfer
+): Levels
 ```
 
 ### `unsubscribeLevels`
 
-Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
+A request to stop receiving updates to quote levels for a token pair. Returns a boolean.
 
 ```TypeScript
 subscribeLevels(
-  signerToken: string, // Token the sender would transfer
-  senderToken: string  // Token the signer would transfer
-)
+  signerToken: string, // Token the Client would transfer
+  senderToken: string  // Token the Server would transfer
+): boolean
 ```
 
-### `getMaxQuote`
+### `getLevels`
 
-Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
+Given a token pair, return an array of quote levels.
 
 ```TypeScript
-getMaxQuote(
-  signerToken: string, // Token the sender would transfer
-  senderToken: string  // Token the signer would transfer
-)
+getLevels(
+  signerToken: string, // Token the Client would transfer
+  senderToken: string  // Token the Server would transfer
+): Levels
 ```
-
-A successful `getMaxQuote` returns a Quote object.
-
-### `getSignerSideQuote`
-
-Given a `senderAmount` and token pair, return a complete quote. The `signerAmount` value is the amount the maker would send. The taker is **selling** to the maker.
-
-```TypeScript
-getSignerSideQuote(
-  senderAmount: string, // Amount the sender would transfer
-  signerToken: string,  // Token the sender would transfer
-  senderToken: string   // Token the signer would transfer
-)
-```
-
-A successful `getSignerSideQuote` returns a Quote object including the requested `signerAmount`
-
-### `getSenderSideQuote`
-
-Given a `signerAmount` and token pair, return a complete quote. The `senderAmount` value is the amount the taker would send. The taker is **buying** from the maker.
-
-```TypeScript
-getSenderSideQuote(
-  signerAmount: string, // Amount the signer would transfer
-  signerToken: string,  // Token the sender would transfer
-  senderToken: string   // Token the signer would transfer
-)
-```
-
-A successful `getSenderSideQuote` returns a Quote object including the requested `senderAmount`.
 
 ### `provideOrder`
 
-Given an Order, assess its price, and perform a swap.
+Provide a signed order to be filled or ignored. Response should be a transaction ID.
 
 ```TypeScript
 provideOrder(
-  order: Order // Order to fill
-)
+  order: Order // Signed order as specified below
+): string
 ```
 
 # Client Methods
 
 ### `updateLevels`
 
-Given a token pair, return a quote object with the maximum amounts a maker is willing to trade.
+Update quote levels for a token pair. This is a notification so returns no result.
 
 ```TypeScript
 updateLevels(
-  signerToken: string,  // Token the sender would transfer
-  senderToken: string,  // Token the signer would transfer
-  levels: Array<Level>  // Array of quote levels
+  levels: Levels // Levels object as specified below
 )
 ```
 
 # Types
 
-### `Level`
+### `Levels`
 
 Tuple with an amount of signerToken and respective amount of senderToken in atomic units.
 
 ```TypeScript
-[string, string]
+{
+  signerToken: string               // Token the Client would transfer
+  senderToken: string               // Token the Server would transfer
+  amounts: Array<[string, string]>  // Array of quote levels
+  timestamp?: string                // Optional timestamp of the quote levels
+  url?: string                      // Optional url of the server
+}
 ```
 
-### `Quote`
+### `Order`
 
-Object with signer and sender tokens and maximum amounts.
+Object with the parameters of a firm order to be filled.
 
 ```TypeScript
 {
+  nonce: string,
+  expiry: string,
+  signerWallet: string,
   signerToken: string,
   signerAmount: string,
   senderToken: string,
   senderAmount: string,
-  timestamp?: string
-  protocol?: string
-  locator?: string
+  v: string,
+  r: string,
+  s: string
 }
 ```
