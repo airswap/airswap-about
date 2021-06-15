@@ -93,14 +93,14 @@ Object with the parameters of a firm order to be filled.
 
 ```TypeScript
 {
-  nonce: string,
-  expiry: string,
-  signerWallet: string,
-  signerToken: string,
-  signerAmount: string,
-  senderToken: string,
-  senderAmount: string,
-  v: string,
+  nonce: string,        // Single use nonce
+  expiry: string,       // Expiry in seconds
+  signerWallet: string, // Wallet of the Client
+  signerToken: string,  // Token the Client would transfer
+  signerAmount: string, // Amount the Client would transfer
+  senderToken: string,  // Token the Server would transfer
+  senderAmount: string, // Amount the Server would transfer
+  v: string,            // ECDSA signature
   r: string,
   s: string
 }
