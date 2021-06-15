@@ -257,3 +257,24 @@ The following values are used for the EIP712Domain.
 | `version`           | `bytes32` | `3`                                                  |
 | `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                  |
 | `verifyingContract` | `address` | [Light](../contract-deployments.md) contract address |
+
+# Types
+
+### `Order`
+
+Object with the parameters of a firm order to be filled.
+
+```TypeScript
+{
+  nonce: string,
+  expiry: string,
+  signerWallet: string,
+  signerToken: string,
+  signerAmount: string,
+  senderToken: string,
+  senderAmount: string,
+  v: string,
+  r: string,
+  s: string
+}
+```

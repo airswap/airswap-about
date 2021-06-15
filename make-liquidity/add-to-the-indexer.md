@@ -1,3 +1,7 @@
+{% hint style="warning" %}
+Indexer will be deprecated in favor of Registry in the near future.
+{% endhint %}
+
 Ensure the AirSwap CLI is installed.
 
 ```
