@@ -5,6 +5,16 @@
 - No affiliate fees feature
 - Cheaper to use than the [Full](./full.md) protocol
 
+# Protocol
+
+In RFQ, Servers are **signers** and Clients are **senders**.
+
+1. Client sends the Server a JSON-RPC over HTTP request.
+
+2. Server responds with a signed order.
+
+3. Client may send the signed order to Ethereum for settlement.
+
 # Methods
 
 ### `getSignerSideOrder`
@@ -118,7 +128,6 @@ const { v, r, s } = createLightSignature(
 from py_eth_sig_utils.signing import *
 
 SIGNER_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
-SIGNER_ADDRESS = "0x0000000000000000000000000000000000000000"
 SWAP_CONTRACT = "0x0000000000000000000000000000000000000000"
 
 DOMAIN = "SWAP_LIGHT"

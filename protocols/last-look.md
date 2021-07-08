@@ -1,16 +1,36 @@
-Last look is implemented by servers that provide quote levels and accept signed orders provided by clients.
+Servers communicate prices to Clients and Clients in turn provide signed orders according to those communicated prices.
 
 # Protocol
 
-1. Client establishes a websocket connection to the Server.
+In Last Look, Clients are **signers** and Servers are **senders**.
 
-2. Client calls `subscribeLevels` on the Server.
+1. Client establishes a bidirectional (e.g. WebSocket) connection to the Server.
 
-3. Server periodically calls `updateLevels` on the Client.
+2. Client calls `subscribeLevels` on the Server with a list of token pairs.
 
-4. Client periodically calls `provideOrder` to the Server with a signed order.
+3. Server periodically calls `updateLevels` on the Client for each token pair.
 
-5. Client calls `unsubscribeLevels` to unsubscribe from the stream.
+4. Client calls `provideOrder` on the Server with a signed order.
+
+5. Server may send the signed order to Ethereum for settlement.
+
+# Levels
+
+Each level is a tuple of amount and price at that level. In the following example, Any `senderAmount` up to `100` has price `0.3`, from `100` up to `1000` has price `0.2`, and so on.
+
+```
+  [100, 0.1],
+  [1000, 0.2],
+  [10000, 0.3]
+```
+
+The Server has indicated that it would accept orders with the following values:
+
+1. A `senderAmount` of `100` and a `signerAmount` of `10`.
+2. A `senderAmount` of `500` and a `signerAmount` of `90` because the first `100` is `10` and next `400` is `80`.
+3. A `senderAmount` of `5000` and a `signerAmount` of `1390` because the first `100` is `10`, next `900` is `180`, and next `4000` is `1200`.
+
+There is no minimum and the maximum is the largest `senderAmount`.
 
 # Server Methods
 
@@ -18,7 +38,7 @@ In Last Look protocols, the Client is the order signer and Server the order send
 
 ### `subscribeLevels`
 
-A request to receive updates to quote levels for a token pair. Returns the current quote levels.
+A request to receive updates to for a token pair. Returns the current price levels.
 
 ```TypeScript
 subscribeLevels(
@@ -29,10 +49,10 @@ subscribeLevels(
 
 ### `unsubscribeLevels`
 
-A request to stop receiving updates to quote levels for a token pair. Returns a boolean.
+A request to stop receiving updates for a token pair. Returns a boolean.
 
 ```TypeScript
-subscribeLevels(
+unsubscribeLevels(
   signerToken: string, // Token the Client would transfer
   senderToken: string  // Token the Server would transfer
 ): boolean
@@ -40,7 +60,7 @@ subscribeLevels(
 
 ### `getLevels`
 
-Given a token pair, return an array of quote levels.
+Given a token pair, return an array of price levels.
 
 ```TypeScript
 getLevels(
@@ -63,12 +83,48 @@ provideOrder(
 
 ### `updateLevels`
 
-Update quote levels for a token pair. This is a notification so returns no result.
+Update price levels for a token pair. This is a notification so returns no result.
 
 ```TypeScript
 updateLevels(
   levels: Levels // Levels object as specified below
 )
+```
+
+# Example
+
+Calls are JSON-RPC over WebSocket. Take `getLevels` as an example.
+
+Client connects and sends the following message to the Server:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "method": "getLevels",
+  "params": {
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+  }
+}
+```
+
+Server then sends the following message to the Client:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "result": {
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "levels": [
+      [100, 0.002132234],
+      [1000, 0.002002234],
+      [10000, 0.001992234]
+    ]
+  }
+}
 ```
 
 # Types
@@ -79,17 +135,15 @@ Tuple with an amount of signerToken and respective amount of senderToken in atom
 
 ```TypeScript
 {
-  signerToken: string               // Token the Client would transfer
-  senderToken: string               // Token the Server would transfer
-  amounts: Array<[string, string]>  // Array of quote levels
-  timestamp?: string                // Optional timestamp of the quote levels
-  url?: string                      // Optional url of the server
+  signerToken: string              // Token the Client would transfer
+  senderToken: string              // Token the Server would transfer
+  levels: Array<[string, string]>  // Array of price levels
 }
 ```
 
 ### `Order`
 
-Object with the parameters of a firm order to be filled.
+Object with the parameters of a signed order to be filled.
 
 ```TypeScript
 {
