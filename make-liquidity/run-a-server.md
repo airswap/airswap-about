@@ -2,7 +2,9 @@ Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/or
 
 # Introduction
 
-AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract. Within the [AirSwap RFQ](https://instant.airswap.io/) system, a Server is always the **signer** and a taker is always the **sender**.
+AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract.
+
+For the RFQ protocol, a Server is always the **signer** and a Client is always the **sender**. For Last Look, a Client is always the **signer** and a Server is always the **sender**.
 
 - **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
