@@ -1,4 +1,4 @@
-Servers communicate prices to Clients and Clients in turn provide signed orders according to those communicated prices.
+Servers provide prices to Clients and Clients provide signed orders to Servers.
 
 # Protocol
 
@@ -16,7 +16,7 @@ In Last Look, Clients are **signers** and Servers are **senders**.
 
 # Levels
 
-Each level is a tuple of amount and price at that level. In the following example, Any `senderAmount` up to `100` has price `0.3`, from `100` up to `1000` has price `0.2`, and so on.
+Each level is a tuple of amount and price at that level. In the following example, a `senderAmount` up to `100` has price `0.3`, from `100` to `1000` has price `0.2`, and so on.
 
 ```
   [100, 0.1],
@@ -26,9 +26,9 @@ Each level is a tuple of amount and price at that level. In the following exampl
 
 The Server has indicated that it would accept orders with the following values:
 
-1. A `senderAmount` of `100` and a `signerAmount` of `10`.
-2. A `senderAmount` of `500` and a `signerAmount` of `90` because the first `100` is `10` and next `400` is `80`.
-3. A `senderAmount` of `5000` and a `signerAmount` of `1390` because the first `100` is `10`, next `900` is `180`, and next `4000` is `1200`.
+1. `senderAmount` of `100` and `signerAmount` of `10`.
+2. `senderAmount` of `500` and `signerAmount` of `90` because the first `100` is `10` and next `400` is `80`.
+3. `senderAmount` of `5000` and `signerAmount` of `1390` because the first `100` is `10`, next `900` is `180`, and next `4000` is `1200`.
 
 There is no minimum and the maximum is the largest `senderAmount`.
 
