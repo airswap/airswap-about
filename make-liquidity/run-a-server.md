@@ -1,4 +1,4 @@
-Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Indexer](./add-to-the-indexer.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
+Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/order.md) APIs using [JSON-RPC over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html). To be reachable for RFQs, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](./add-to-the-registry.md) smart contract, which is [queried](../take-liquidity/request-quotes.md) by prospective counterparties.
 
 # Introduction
 
@@ -8,16 +8,16 @@ For the RFQ protocol, a Server is always the **signer** and a Client is always t
 
 - **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
 - **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
-- **Indexers** are used to signal that a server is available to trade specific tokens, including contact information (locator), without pricing.
+- **Registries** are used to signal that a server is available to trade specific tokens, including contact information (locator), without pricing.
 
 # Getting Started
 
-Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Indexer.
+Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
 - Servers generally implement the [RFQ: Light](../protocols/light.md) protocol.
 - You can debug your server with the [CLI](./debug-with-cli.md).
 - See [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) for a guide using [Vercel](https://vercel.com/).
-- When ready, add your server [to the Indexer](./add-to-the-indexer.md).
+- When ready, add your server [to the Registry](./add-to-the-registry.md).
 
 # Helpful for Testing
 

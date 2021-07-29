@@ -23,7 +23,7 @@ AirSwap is governed by a community proposal and voting process called AirSwap Im
 
 # MetaMask Swaps
 
-AirSwap is the most direct way to provide liquidity to 5M+ active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add it to the Indexer. Requests for quotes will start coming your way.
+AirSwap is the most direct way to provide liquidity to 5M+ active users of [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785). Just [Run a Server](./make-liquidity/run-a-server.md) and [Use the CLI](./make-liquidity/debug-with-cli.md) to add it to the Registry. Requests for quotes will start coming your way.
 
 # Around the Web
 

@@ -6,19 +6,17 @@ Each swap is between at least two parties, a `signer` and a `sender`. The `signe
 
 # Make Liquidity
 
-Makers run Servers or deploy Delegates and use the Indexer to signal their interest in trading.
+Makers run Servers or deploy Delegates and use the Registry to signal their interest in trading.
 
 **Makers**...
 
 1. [Run a Server](../make-liquidity/run-a-server.md) at a public URL and use it as their `locator` value.
-2. [Stake](../make-liquidity/debug-with-cli.md) AirSwap Tokens to signal their intent to trade on the [Indexer](../reference/indexer.md).
+2. [Stake](../make-liquidity/debug-with-cli.md) AirSwap Tokens to signal their intent to trade on the [Registry](../reference/registry.md).
 3. Respond to [`get*Quote`](./apis.md#quotes) and [`get*Order`](./apis.md#orders) requests.
 
 See code examples of these protocols at work in the [Run a Server](../make-liquidity/run-a-server.md) section.
 
 # Take Liquidity
-
-Takers use the Indexer to find Servers and Delegates to interact with.
 
 ## Servers (HTTPS)
 
@@ -26,7 +24,7 @@ Servers implement the [Quote](../protocols/quote.md) and [Order](../protocols/li
 
 **Takers**...
 
-1. Call `getIntents` on the **Server [Indexer](../reference/indexer.md)** using protocol `0x0000` and receives locators (URLs).
+1. For each side of a pair (e.g. WETH/USDT) call `getURLsForToken` on the **Server [Registry](../reference/registry.md)** and receives a list of URLs of servers supporting each token and intersects the lists.
 2. Call `get*Order` on each **HTTPS [Server](../make-liquidity/run-a-server.md)** using JSON-RPC over HTTPS.
 3. Call `swap` on the **[Swap](../reference/swap.md) Contract** with the order that it wishes to execute.
 

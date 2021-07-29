@@ -8,7 +8,6 @@
 
 - [Running a Server](make-liquidity/run-a-server.md)
 - [Debugging with the CLI](make-liquidity/debug-with-cli.md)
-- [Adding to the Indexer](make-liquidity/add-to-the-indexer.md)
 - [Adding to the Registry](make-liquidity/add-to-the-registry.md)
 
 ## Protocols

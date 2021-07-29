@@ -46,7 +46,7 @@ $ airswap registry:add
 To ensure your configuration is correct, you can query tokens that you support on the registry.
 
 ```
-$ airswap indexer:get
+$ airswap registry:get
 AirSwap CLI 1.6.0 — https://airswap.io/
 
 get urls from the registry RINKEBY
