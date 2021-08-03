@@ -118,6 +118,7 @@ Server then sends the following message to the Client:
   "result": {
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "minimumAmount": "10",
     "levels": [
       [100, 0.002132234],
       [1000, 0.002002234],
@@ -137,6 +138,7 @@ Tuple with an amount of signerToken and respective amount of senderToken in atom
 {
   signerToken: string              // Token the Client would transfer
   senderToken: string              // Token the Server would transfer
+  minimumAmount: string            // Minimum acceptable senderAmount
   levels: Array<[string, string]>  // Array of price levels
 }
 ```
