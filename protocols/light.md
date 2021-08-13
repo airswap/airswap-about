@@ -172,7 +172,7 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 # Client
 
-To discover Servers that support a token pair, Clients call the `getURLsForToken` function on the [Registry](https://docs.airswap.io/contract-deployments) contract for each token and then intersect the results.
+To find Servers that support a token pair, Clients call the `getURLsForToken` function on the [Registry](https://docs.airswap.io/contract-deployments) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
 
 ```JavaScript
   function getURLsForToken(address token)
@@ -202,7 +202,7 @@ Content-Type: application/json
 }
 ```
 
-The above request can be made using curl for testing.
+A response looks like the [example](https://docs.airswap.io/protocols/light#example) above. This request can be made using curl for testing.
 
 ```sh
 curl -H 'Content-Type: application/json' \
