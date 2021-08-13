@@ -172,7 +172,16 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 # Client
 
-Clients invoke the above methods as JSON-RPC over HTTP requests.
+To discover Servers that support a token pair, Clients call the `getURLsForToken` function on the [Registry](https://docs.airswap.io/contract-deployments) contract for each token and then intersect the results.
+
+```JavaScript
+  function getURLsForToken(address token)
+    external
+    view
+    returns (string[] memory urls);
+```
+
+With Server URLs in hand, Clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC over HTTP requests.
 
 ```json
 POST / HTTP/1.1

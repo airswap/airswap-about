@@ -17,7 +17,6 @@
 
 ## Reference
 
-- [Indexer](reference/indexer.md)
 - [Server](reference/server.md)
 - [Delegate](reference/delegate.md)
 - [Swap](reference/swap.md)
