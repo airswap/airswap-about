@@ -12,8 +12,7 @@
 
 ## Protocols
 
-- [RFQ: Light](protocols/light.md)
-- [RFQ: Full](protocols/full.md)
+- [RFQ](protocols/light.md)
 - [Last Look](protocols/last-look.md)
 
 ## Reference

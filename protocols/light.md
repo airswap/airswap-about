@@ -1,12 +1,3 @@
-**The gas efficient RFQ protocol.**
-
-- Supports ERC20 tokens
-- Supports single signer authorization
-- No affiliate fees feature
-- Cheaper to use than the [Full](./full.md) protocol
-
-# Protocol
-
 In RFQ, Servers are **signers** and Clients are **senders**.
 
 1. Client sends the Server a JSON-RPC over HTTP request.
