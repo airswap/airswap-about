@@ -85,7 +85,7 @@ Content-Type: application/json
 }
 ```
 
-# Signatures
+## Signatures
 
 **TypeScript**. Light signatures in TypeScript can be created using the `@airswap/utils` package.
 
@@ -170,6 +170,30 @@ data = {
 v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 ```
 
+## Protocol Fees
+
+**Required.** A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../contract-deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+
+## Authorized Signers
+
+**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](../contract-deployments.md) contract.
+
+```
+function authorize(address signer) external
+function revoke() external
+```
+
+## EIP712
+
+The following values are used for the EIP712Domain.
+
+| Param               | Type      | Value                                                |
+| :------------------ | :-------- | :--------------------------------------------------- |
+| `name`              | `bytes32` | `SWAP_LIGHT`                                         |
+| `version`           | `bytes32` | `3`                                                  |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                  |
+| `verifyingContract` | `address` | [Light](../contract-deployments.md) contract address |
+
 # Client
 
 To find Servers that support a token pair, Clients call the `getURLsForToken` function on the [Registry](https://docs.airswap.io/contract-deployments) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
@@ -240,30 +264,6 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
     uint256 senderAmount
   );
 ```
-
-# Protocol Fees
-
-**Required.** A protocol fee (in basis points) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../contract-deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
-
-# Authorized Signers
-
-**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](../contract-deployments.md) contract.
-
-```
-function authorize(address signer) external
-function revoke() external
-```
-
-# EIP712
-
-The following values are used for the EIP712Domain.
-
-| Param               | Type      | Value                                                |
-| :------------------ | :-------- | :--------------------------------------------------- |
-| `name`              | `bytes32` | `SWAP_LIGHT`                                         |
-| `version`           | `bytes32` | `3`                                                  |
-| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                  |
-| `verifyingContract` | `address` | [Light](../contract-deployments.md) contract address |
 
 # Types
 
