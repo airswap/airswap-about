@@ -2,12 +2,6 @@
 
 [AirSwap](https://www.airswap.io/) is a peer-to-peer RFQ style trading network for Ethereum. Peers connect and agree on price through mutual cryptographic signatures, settling trades via atomic swap without any intermediaries. Every trade on AirSwap involves an RFQ server or a trader manually communicating prices over-the-counter (OTC).
 
-# Quick Start
-
-- **Provide liquidity** via **RFQ** → [Run a Server](./make-liquidity/run-a-server.md)
-- **Add a widget** to **your app** → [Embed AirSwap](./take-liquidity/embed-airswap.md)
-- **Explore** the **smart contracts** → [Swap](./reference/swap.md) · [Indexer](./reference/indexer.md) · [Delegate](./reference/delegate.md)
-
 # Peer-to-Peer
 
 Peers on the AirSwap network include [Servers](./make-liquidity/run-a-server.md) running on the public internet, users connected through [web applications](./take-liquidity/embed-airswap.md) and [wallets](https://medium.com/metamask/introducing-metamask-swaps-84318c643785), developers using the [CLI](./tools/airswap-cli), and [Delegates](./reference/delegate.md) deployed to Ethereum. Many forms of trading are done peer-to-peer, including RFQ, last look, limit orders (issuing fixed price quotes), and partial fills (requesting specific amounts), in a fully trustless way.
