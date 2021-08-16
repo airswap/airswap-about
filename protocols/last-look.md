@@ -172,6 +172,7 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
 **2. Server responds with current levels or formulas**
 
 ```
+{
   "jsonrpc": "2.0",
   "id": 123,
   "result": [{
@@ -185,11 +186,13 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
     "buy": [["0.5", "2000"], ["1", "2010"], ["10", "2050"]],
     "sell": [["0.5", "2001"], ["1", "2015"], ["10", "2060"]],
   }]
+}
 ```
 
 **3. Server updates continuously with new levels or formulas**
 
 ```
+{
   "jsonrpc": "2.0",
   "method": "update",
   "params": [{
@@ -198,11 +201,13 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
     "buy": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
     "sell": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
   }]
+}
 ```
 
 **4. Client uses most recent price to provide an order**
 
 ```
+{
   "jsonrpc": "2.0",
   "id": "abc",
   "method": "consider",
@@ -218,6 +223,7 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
     r: "0x0...",
     s: "0x0..."
   }
+}
 ```
 
 **4. Server submits a transaction to Ethereum**
