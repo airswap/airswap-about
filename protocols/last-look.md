@@ -88,7 +88,7 @@ Server pricing can be communicated either by levels or a formula. All input and 
 
 ## Levels
 
-The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level. In the following example, the server is buying up to `0.5` WETH at price `2000`, from `0.5` to `1` at price `2010`, and so on.
+The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
 ```
 [{
