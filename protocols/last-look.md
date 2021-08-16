@@ -66,7 +66,7 @@ initialize({
 })
 ```
 
-### `update`
+## `update`
 
 Server updates prices for a token pair. Returns no result.
 
