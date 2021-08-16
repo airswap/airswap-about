@@ -150,7 +150,7 @@ Client looks up baseToken USDT and quoteToken WETH and uses the `sell` levels ab
 **Client wants to swap USDT into `1` WETH.**
 Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
 
-# Protocol
+# Example
 
 **1. Client connects and subscribes to token pairs**
 
