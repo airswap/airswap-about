@@ -23,7 +23,6 @@
 - [Validator](reference/validator.md)
 - [Wrapper](reference/wrapper.md)
 - [Types](reference/types.md)
-- [Widget](take-liquidity/embed-airswap.md)
 
 ## Tools
 
