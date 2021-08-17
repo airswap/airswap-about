@@ -1,4 +1,4 @@
-In Last Look, servers are signers and clients are senders.
+In Last Look, clients are signers and servers are senders.
 
 1. Client connects to server via WebSocket and subcribes to pricing.
 2. Server streams pricing updates to client.
