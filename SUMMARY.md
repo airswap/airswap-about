@@ -15,15 +15,6 @@
 - [RFQ](protocols/light.md)
 - [Last Look](protocols/last-look.md)
 
-## Reference
-
-- [Server](reference/server.md)
-- [Delegate](reference/delegate.md)
-- [Swap](reference/swap.md)
-- [Validator](reference/validator.md)
-- [Wrapper](reference/wrapper.md)
-- [Types](reference/types.md)
-
 ## Tools
 
 - [Time Travel](tools/time-travel.md)
