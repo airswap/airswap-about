@@ -76,8 +76,8 @@ update([
     baseToken: string,
     quoteToken: string,
     minimum: string,  // Optional minimum amount of baseToken.
-    buy: Levels | Formula,
-    sell: Levels | Formula
+    bid: Levels | Formula,
+    ask: Levels | Formula
   }, { ... }
 ])
 ```
@@ -94,29 +94,29 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 [{
   "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",  // USDT
   "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-  "buy": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
-  "sell": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
+  "bid": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
+  "ask": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
 },{
   "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",  // WETH
   "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-  "buy": [["0.5", "2000"], ["1", "2010"], ["10", "2050"]],
-  "sell": [["0.5", "2001"], ["1", "2015"], ["10", "2060"]],
+  "bid": [["0.5", "2000"], ["1", "2010"], ["10", "2050"]],
+  "ask": [["0.5", "2001"], ["1", "2015"], ["10", "2060"]],
 }]
 ```
 
 ### Scenarios
 
 **Client wants to swap `1000` USDT into WETH.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `buy` levels above. The first `100` would be multiplied by `0.00053` and second `900` would be multiplied by `0.00061` for a total of `0.602` WETH.
+Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. The first `100` would be multiplied by `0.00053` and second `900` would be multiplied by `0.00061` for a total of `0.602` WETH.
 
 **Client wants to swap `1` WETH into USDT.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `buy` levels above. The first `0.5` would be multiplied by `2000` and second `0.5` would be multiplied by `2010` for a total of `2005` USDT.
+Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. The first `0.5` would be multiplied by `2000` and second `0.5` would be multiplied by `2010` for a total of `2005` USDT.
 
 **Client wants to swap WETH into `1000` USDT.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `sell` levels above. The first `100` would be multiplied by `0.00055` and second 90 would be multiplied by `0.00067` for a total of `0.658` WETH.
+Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. The first `100` would be multiplied by `0.00055` and second 90 would be multiplied by `0.00067` for a total of `0.658` WETH.
 
 **Client wants to swap USDT into `1` WETH.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels above. The first `0.5` would be multiplied by `2001` and second 90 would be multiplied by `2015` for a total WETH amount of `2008` USDT.
+Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second 90 would be multiplied by `2015` for a total WETH amount of `2008` USDT.
 
 ## Formula
 
@@ -124,31 +124,31 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 
 ```
 [{
-  baseToken: "0xdac17f958d2ee523a2206206994597c13d831ec7",  // USDT
-  quoteToken: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-  buy: "x*0.00053",
-  sell: "x*0.00055",
+  "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",  // USDT
+  "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+  "bid": "x*0.00053",
+  "ask": "x*0.00055",
 },{
-  baseToken: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",  // WETH
-  quoteToken: "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-  buy: "x*2000",
-  sell: "x*2001",
+  "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",  // WETH
+  "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+  "bid": "x*2000",
+  "ask": "x*2001",
 }]
 ```
 
 ### Scenarios
 
 **Client wants to swap `1000` USDT into WETH.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `buy` levels above. `1000` is multiplied by `0.00053` for a total of `0.53` WETH.
+Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. `1000` is multiplied by `0.00053` for a total of `0.53` WETH.
 
 **Client wants to swap `1` WETH into USDT.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `buy` levels above. `1` is multiplied by `2000` for a total of `2000` WETH.
+Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. `1` is multiplied by `2000` for a total of `2000` WETH.
 
 **Client wants to swap WETH into `1000` USDT.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `sell` levels above. `1000` is multiplied by `0.00055` for a total of `0.55` WETH.
+Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. `1000` is multiplied by `0.00055` for a total of `0.55` WETH.
 
 **Client wants to swap USDT into `1` WETH.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
+Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
 
 # Example
 
@@ -178,13 +178,13 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
   "result": [{
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "buy": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
-    "sell": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
+    "bid": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
+    "ask": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
   },{
     "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "buy": [["0.5", "2000"], ["1", "2010"], ["10", "2050"]],
-    "sell": [["0.5", "2001"], ["1", "2015"], ["10", "2060"]],
+    "bid": [["0.5", "2000"], ["1", "2010"], ["10", "2050"]],
+    "ask": [["0.5", "2001"], ["1", "2015"], ["10", "2060"]],
   }]
 }
 ```
@@ -198,8 +198,8 @@ Client looks up baseToken WETH and quoteToken USDT and uses the `sell` levels ab
   "params": [{
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "buy": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
-    "sell": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
+    "bid": [["100", "0.00053"], ["1000", "0.00061"], ["10000", "0.0007"]],
+    "ask": [["100", "0.00055"], ["1000", "0.00067"], ["10000", "0.0008"]],
   }]
 }
 ```
