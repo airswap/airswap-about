@@ -129,7 +129,7 @@ Let's take a look at the available Registry commands.
 
 ```
 $ airswap registry
-AirSwap CLI 1.6.0 — https://airswap.io/
+AirSwap CLI 1.6.1 — https://airswap.io/
 add and remove supported tokens
 
 USAGE
@@ -166,7 +166,7 @@ To ensure your configuration is correct, you can query tokens that you support o
 
 ```
 $ airswap registry:get
-AirSwap CLI 1.6.0 — https://airswap.io/
+AirSwap CLI 1.6.1 — https://airswap.io/
 
 get urls from the registry RINKEBY
 
@@ -183,7 +183,7 @@ Now that your server is running and has been added to the Registry, your quotes 
 
 ```
 $ airswap order:best
-AirSwap CLI 1.6.0 — https://airswap.io/
+AirSwap CLI 1.6.1 — https://airswap.io/
 
 get the best available order MAINNET
 
