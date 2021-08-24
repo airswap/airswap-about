@@ -8,7 +8,7 @@
 
 ## Technology
 
-- [Request for Quote](./technology/request-for-quote.md)
+- [RFQ](./technology/request-for-quote.md)
 - [Last Look](./technology/last-look.md)
 - [Discovery](./technology/discovery.md)
 - [Signatures](./technology/signatures.md)
@@ -16,8 +16,7 @@
 
 ## Guides
 
-- [Voters](./guides/voters.md)
-- [Ambassadors](./guides/ambassadors.md)
+- [Authors](./guides/authors.md)
 - [Bounties](./guides/bounties.md)
 - [Makers](./guides/makers.md)
-- [Authors](./guides/authors.md)
+- [Voters](./guides/voters.md)
