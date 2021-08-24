@@ -5,12 +5,4 @@ root: ./
   summary: SUMMARY.md​
 
 redirects:
-  instant/contract-deployments: contract-deployments.md
-  instant/add-to-your-app: take-liquidity/embed-airswap.md
-  trader/add-to-your-app: take-liquidity/embed-airswap.md
-  guides/build-a-maker: make-liquidity/run-a-server.md
-  make-liquidity/use-the-indexer: make-liquidity/debug-with-cli.md
-  take-liquidity/run-an-aggregator: take-liquidity/request-quotes.md
-  system/types-and-formats.md: protocols/light.md
-  system/generate-signatures.md: protocols/light.md
-  system/architecture.md: architecture.md
+  system/architecture.md: README.md
