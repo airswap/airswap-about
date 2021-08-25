@@ -34,9 +34,9 @@
   * [How to use AirSwap to swap tokens](https://support.airswap.io/en/collections/1334292-start-trading-on-airswap)
 * Members
   * [Staking, Voting and Claiming Rewards on AirSwap](https://community.airswap.io/t/guides-how-to-stake-ast-with-metamask/50)
-  * [Voting using MetaMask Mobile](https://community.airswap.io/t/guide-using-metamask-mobile-to-vote/221)
-  * Claiming a [bounty](https://www.notion.so/Bounties-fa5ae7d4314c434287751a2ae0a59158)
-  * [Creating an AIP](https://community.airswap.io/t/aip-1-proposal-how-to/31)
+  * [Voting using MetaMask Mobile](https://docs.airswap.io/v/new-docs/guides/voters#voting-with-metamask-mobile)
+  * [Claiming a bounty](https://docs.airswap.io/v/new-docs/guides/bounties)
+  * [Creating an AIP](https://docs.airswap.io/v/new-docs/guides/authors#what-is-the-aip-process)
 * Makers
   * [Setting up a serverless Maker bot](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379)
 
