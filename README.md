@@ -36,15 +36,13 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 * [Last Look](technology/last-look.md) \(LL\) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement.
 * [Over-the-counter](https://trader.airswap.io/) \(OTC\) is trading between known counterparties via chat applications or email using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC.
 
-### Applications
+### Apps and Integrations
 
 Several applications are available to end users.
 
 * [AirSwap Web](https://preview.airswap.io/) — **\(alpha\)** New open source web app currently in development.
 * [AirSwap OTC](https://trader.airswap.io/) — Industry standard OTC interface for large bespoke swaps.
 * [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface for interacting with AirSwap.
-
-### Integrations
 
 Several DEX aggregators and market makers and have implemented AirSwap.
 
