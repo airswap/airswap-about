@@ -1,20 +1,22 @@
+# Last Look
+
 In Last Look, clients are **signers** and servers are **senders**.
 
 1. Client connects to server via WebSocket and subcribes to pricing.
 2. Server streams pricing to client, which then sends orders to the server using its pricing.
 3. Server may send the order to Ethereum for settlement.
 
-# Discovery
+## Discovery
 
-Last Look is only available over **WebSocket**. For information on finding counterparties, see [Discovery](./discovery.md).
+Last Look is only available over **WebSocket**. For information on finding counterparties, see [Discovery](discovery.md).
 
-# Methods
+## Methods
 
-## `initialize`
+### `initialize`
 
 Upon connection, the server sends values for the `swapContract` the it intends to use, the `senderWallet` it intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. Returns no result.
 
-```TypeScript
+```typescript
 initialize({
   swapContract: string,
   senderWallet: string,
@@ -22,11 +24,11 @@ initialize({
 })
 ```
 
-## `subscribe`
+### `subscribe`
 
 Client subscribes to pricing updates for a list of token pairs. Returns current formula or levels for each pair.
 
-```TypeScript
+```typescript
 subscribe([
   {
     baseToken: string,
@@ -37,15 +39,15 @@ subscribe([
 
 Client may also subscribe to pricing updates for all available pairs.
 
-```TypeScript
+```typescript
 subscribeAll(): boolean
 ```
 
-## `unsubscribe`
+### `unsubscribe`
 
 Client unsubscribes from pricing updates for a list of token pairs. Returns a boolean.
 
-```TypeScript
+```typescript
 unsubscribe([
   {
     baseToken: string,
@@ -56,15 +58,15 @@ unsubscribe([
 
 Client may also unsubscribe from all subscriptions.
 
-```TypeScript
+```typescript
 unsubscribeAll(): boolean
 ```
 
-## `updatePricing`
+### `updatePricing`
 
 Server updates pricing for a token pair. Returns no result.
 
-```TypeScript
+```typescript
 update([
   {
     baseToken: string,
@@ -76,11 +78,11 @@ update([
 ])
 ```
 
-## `consider`
+### `consider`
 
 Client provides a priced order to the server. If the server has set a `senderServer` this method is to be called on that URL via JSON-RPC over HTTP. Returns boolean `true` if accepted by the server.
 
-```TypeScript
+```typescript
 consider({
   nonce: string,
   expiry: string,
@@ -95,15 +97,15 @@ consider({
 }): boolean
 ```
 
-# Pricing
+## Pricing
 
 Server pricing can be communicated either by levels or a formula. All input and output values for pricing are in base units rather than atomic units. When generating orders, all values must be converted to atomic units.
 
-## Levels
+### Levels
 
 The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
-```json
+```javascript
 [
   {
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
@@ -136,25 +138,21 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 ]
 ```
 
-### Examples
+#### Examples
 
-**Client wants to swap `1000` USDT into WETH.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. The first `100` would be multiplied by `0.00053` and second `900` would be multiplied by `0.00061` for a total of `0.602` WETH.
+**Client wants to swap `1000` USDT into WETH.** Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. The first `100` would be multiplied by `0.00053` and second `900` would be multiplied by `0.00061` for a total of `0.602` WETH.
 
-**Client wants to swap `1` WETH into USDT.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. The first `0.5` would be multiplied by `2000` and second `0.5` would be multiplied by `2010` for a total of `2005` USDT.
+**Client wants to swap `1` WETH into USDT.** Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. The first `0.5` would be multiplied by `2000` and second `0.5` would be multiplied by `2010` for a total of `2005` USDT.
 
-**Client wants to swap WETH into `1000` USDT.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. The first `100` would be multiplied by `0.00055` and second 90 would be multiplied by `0.00067` for a total of `0.658` WETH.
+**Client wants to swap WETH into `1000` USDT.** Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. The first `100` would be multiplied by `0.00055` and second 90 would be multiplied by `0.00067` for a total of `0.658` WETH.
 
-**Client wants to swap USDT into `1` WETH.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second 90 would be multiplied by `2015` for a total WETH amount of `2008` USDT.
+**Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second 90 would be multiplied by `2015` for a total WETH amount of `2008` USDT.
 
-## Formula
+### Formula
 
 The server can specify formulas to use for pricing. Each formula is an expression with operations including addition, subtraction, multiplication, and division, where `x` is provided by the client.
 
-```json
+```javascript
 [
   {
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
@@ -171,27 +169,23 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 ]
 ```
 
-### Examples
+#### Examples
 
-**Client wants to swap `1000` USDT into WETH.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. `1000` is multiplied by `0.00053` for a total of `0.53` WETH.
+**Client wants to swap `1000` USDT into WETH.** Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. `1000` is multiplied by `0.00053` for a total of `0.53` WETH.
 
-**Client wants to swap `1` WETH into USDT.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. `1` is multiplied by `2000` for a total of `2000` WETH.
+**Client wants to swap `1` WETH into USDT.** Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. `1` is multiplied by `2000` for a total of `2000` WETH.
 
-**Client wants to swap WETH into `1000` USDT.**
-Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. `1000` is multiplied by `0.00055` for a total of `0.55` WETH.
+**Client wants to swap WETH into `1000` USDT.** Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. `1000` is multiplied by `0.00055` for a total of `0.55` WETH.
 
-**Client wants to swap USDT into `1` WETH.**
-Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
+**Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
 
-# Protocol
+## Protocol
 
-To find counterparties, see [Discovery](./discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
+To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
 
 Upon connection, the server sends an `initialize` notification to the client.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "initialize",
@@ -204,7 +198,7 @@ Upon connection, the server sends an `initialize` notification to the client.
 
 The client may then subscribe to pricing updates.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "subscribeAll",
@@ -215,7 +209,7 @@ The client may then subscribe to pricing updates.
 
 The server then continuously updates the client with new pricing.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "updatePricing",
@@ -240,7 +234,7 @@ The server then continuously updates the client with new pricing.
 
 The client may send an order to the server to consider a swap.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "abc",
@@ -262,7 +256,7 @@ The client may send an order to the server to consider a swap.
 
 After the server accepts an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](deployments.md) contract, which emits a `Swap` event on success.
 
-```JavaScript
+```javascript
   function swap(
     uint256 nonce,
     uint256 expiry,
@@ -277,7 +271,7 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
   ) external;
 ```
 
-```JavaScript
+```javascript
   event Swap(
     uint256 indexed nonce,
     uint256 timestamp,
@@ -292,3 +286,4 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
+

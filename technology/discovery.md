@@ -1,22 +1,24 @@
-To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](./deployments) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
+# Discovery
+
+To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/technology/deployments/README.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
 
 See `getURLsForToken` on the Registry contract:
 
-```TypeScript
+```typescript
 function getURLsForToken(address token) external view returns (string[] memory urls);
 ```
 
-Check [deployments](./deployments) for latest contract addresses for Registry.
+Check [deployments](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/technology/deployments/README.md) for latest contract addresses for Registry.
 
-## Connections
+### Connections
 
-When connecting via HTTP, the server may respond with status code 426 (Upgrade Required) in which case the client should connect using WebSocket.
+When connecting via HTTP, the server may respond with status code 426 \(Upgrade Required\) in which case the client should connect using WebSocket.
 
-# TypeScript
+## TypeScript
 
-Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](./request-for-quote.md).
+Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
 
-```TypeScript
+```typescript
 import { Registry } from "@airswap/protocols";
 const servers = await new Registry(chainId, provider).getServers(
   signerToken,
@@ -26,7 +28,7 @@ const servers = await new Registry(chainId, provider).getServers(
 
 Calling the Registry directly using `ethers`
 
-```TypeScript
+```typescript
 import { ethers } from 'ethers'
 import { chainNames } from '@airswap/constants'
 import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
@@ -48,17 +50,17 @@ const serverURLs = signerTokenURLs
   .filter(value => senderTokenURLs.includes(value))
 ```
 
-# Using the CLI
+## Using the CLI
 
 Ensure the AirSwap CLI is installed.
 
-```
+```text
 $ yarn global add airswap
 ```
 
 Use `airswap chain` to set your chain to Rinkeby or Mainnet.
 
-```
+```text
 $ airswap chain
 AirSwap CLI 1.6.1 — https://airswap.io/
 
@@ -73,7 +75,7 @@ Set active chain to MAINNET.
 
 Use `registry:get` to fetch server URLs for a token pair.
 
-```
+```text
 $ airswap registry:get
 AirSwap CLI 1.6.1 — https://airswap.io/
 
@@ -87,3 +89,4 @@ Server
 ----------------------------------------
 https://maker.example.com/
 ```
+
