@@ -1,7 +1,5 @@
 # Resources
 
-## Resources
-
 ## Community
 
 * AirSwap [Discourse](https://community.airswap.io/) \(Discussion Forum\)

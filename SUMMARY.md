@@ -1,9 +1,8 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [About](about.md)
-* [Resources](resources.md)
 * [Conduct](code-of-conduct.md)
+* [Resources](resources.md)
 * [FAQ](frequently-asked-questions.md)
 
 ## Technology
