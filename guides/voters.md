@@ -53,13 +53,13 @@ Note there will be two transactions: one is for permission & the second one tran
 
 The dashboard will look like this one below.
 
-![\|1024x502](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df.png)
+![\|1024x502](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df%20%281%29.png)
 
 ### Participating in votes to earn points
 
 Once you've voted, you'll notice your points have increased.
 
-![\|1024x502](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df%20%281%29.png)
+![\|1024x502](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df%20%281%29%20%281%29.png)
 
 ### Using points to claim rewards
 

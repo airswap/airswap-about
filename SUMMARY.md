@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [About](about-airswap.md)
+* [About](about.md)
 * [Resources](resources.md)
 * [Conduct](code-of-conduct.md)
 * [FAQ](frequently-asked-questions.md)
