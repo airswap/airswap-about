@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Conduct](code-of-conduct.md)
 * [Contributing](contributing.md)
+* [Conduct](code-of-conduct.md)
 * [Resources](resources.md)
 * [FAQ](frequently-asked-questions.md)
 
