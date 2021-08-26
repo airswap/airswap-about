@@ -20,19 +20,7 @@ We all work together toward community goals. AirSwap is a positive-sum project w
 * **Respect diversity.** This community is built by people across the globe from many walks of life with many perspectives. Honor that diversity; it gives us strength.
 * **Win together.** As members of the AirSwap community, we each share common goals and all share the opportunity to contribute and help AirSwap succeed.
 
-## Roles
+## Thanks
 
-* **Members** are staked AirSwap Tokens \(sAST\) holders who participate in votes.
-* **Authors** support the proposal \(AIP\) creation and publishing process.
-* **Developers** contribute code to software projects being built by the community.
-* **Designers** contribute visual, UI, and UX design and coordinate with developers.
-* **Marketers** help deliver community software into the hands of intended audiences.
-
-## Processes
-
-Every 4 weeks…
-
-* **Votes are run** for four days on one or more proposals.
-* **Rewards are distributed** by contributors for work completed.
-* **Bounties are assessed** and distributed by a project lead.
+Everyone in the community is thankful to have you involved. Let's do this!
 

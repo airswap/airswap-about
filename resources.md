@@ -2,14 +2,14 @@
 
 ## Community
 
-* AirSwap [Discourse](https://community.airswap.io/) \(Discussion Forum\)
 * AirSwap [Discord](https://chat.airswap.io/) \(Chat Server\)
 * AirSwap [Voting Portal](https://activate.codefi.network/staking/airswap/governance) \(Activate\)
 
 ## Tech
 
-* AirSwap [Protocols](https://github.com/airswap/airswap-protocols) Repository
-* AirSwap technical [Documentation](https://docs.airswap.io/)
+* [AirSwap Protocols](https://github.com/airswap/airswap-protocols) Repository
+* [AirSwap Web](https://github.com/airswap/airswap-web) Repository
+* [AirSwap CLI](https://github.com/airswap/airswap-cli) Repository
 
 ## Data
 
