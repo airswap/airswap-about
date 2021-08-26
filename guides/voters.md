@@ -1,11 +1,5 @@
 # Voters
 
-AirSwap is organized as a decentralized network of contributors using a continuous development process called AirSwap Improvement Proposals \(AIP\). This process is how the community captures, selects, and prioritizes new projects.
-
-Each proposal is authored by one or more contributors. To “ratify” an AIP as a community proposal, it’s called to vote by the author and voted on by token holders. Once accepted, the AIP is placed in a backlog for selection by developers.
-
-### Voting
-
 To participate in voting, your staked AST \(sAST\) balance will be used to determine the weight of your votes. AST is staked at a 1:1 rate and tokens are unstakeable **from 0% to 100% over the course of 20 weeks and locked for the first 4 weeks**. Learn how to [stake AST with your MetaMask wallet](https://community.airswap.io/t/guides-how-to-stake-ast-with-metamask/50).
 
 Reading up and informing yourself on each proposal is an important part of the process. Proposals can be browsed, reviewed, and contributed to in the [Proposal Discussions \(AIPs\)](https://community.airswap.io/c/proposals) category on Discourse. Voters can often find additional context on [Discord](https://chat.airswap.io/).

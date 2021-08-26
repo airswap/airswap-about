@@ -2,16 +2,6 @@
 
 The following is a guide for contributing AirSwap Improvement Proposals \(AIP\).
 
-## What is the AIP Process?
-
-AirSwap is organized as a decentralized network of contributors using a continuous process called AirSwap Improvement Proposals \(AIP\). This process is how the community captures, selects, and prioritizes new projects.
-
-Several incentives to participate are built in.
-
-* **Authors** — Authors earn tokens for writing proposals. Each cycle, 5k AST is split among all authors who have contributed in that cycle. [See details of the author incentive](https://community.airswap.io/t/aip-38-creation-of-a-governance-circle-to-reward-aip-collaborative-authorship/256/7).
-* **Voters** — Community members vote to ratify each proposal. Voters earn points, which can be used to claim rewards. [See details of the voter incentive](https://community.airswap.io/t/aip-7-new-token-system-voter-incentive/37).
-* **Developers** — Once a proposal is ratified by community vote, it’s placed on the [roadmap](https://community.airswap.io/c/roadmap) for selection by contributors. Budgets are [specified in each AIP](https://community.airswap.io/t/aip-1-proposal-how-to/31) where possible.
-
 ## How do I create a proposal?
 
 Anyone is welcome to create an AIP. Each proposal outlines a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
