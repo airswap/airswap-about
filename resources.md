@@ -2,14 +2,17 @@
 
 ## Community
 
-* AirSwap [Discord](https://chat.airswap.io/) \(Chat Server\)
-* AirSwap [Voting Portal](https://activate.codefi.network/staking/airswap/governance) \(Activate\)
+* [Discord Server](https://chat.airswap.io/) 
+* [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
+* [Mobile Voting Dashboard](https://ast.on.fleek.co/)
+* [Snapshot Page](https://snapshot.org/#/vote.airswap.eth)
 
-## Tech
+## Code
 
-* [AirSwap Protocols](https://github.com/airswap/airswap-protocols) Repository
-* [AirSwap Web](https://github.com/airswap/airswap-web) Repository
-* [AirSwap CLI](https://github.com/airswap/airswap-cli) Repository
+* [AirSwap Protocols](https://github.com/airswap/airswap-protocols) 
+* [AirSwap Web](https://github.com/airswap/airswap-web) 
+* [AirSwap CLI](https://github.com/airswap/airswap-cli) 
+* [About AirSwap](https://github.com/airswap/airswap-about)
 
 ## Data
 
@@ -20,21 +23,4 @@
 * AirSwap advanced Dashboard on [Dune](https://duneanalytics.com/agrimony/AirSwap-Advanced)
 * Maker Dashboard on [Dune](https://duneanalytics.com/queries/28752/57978)
 * Pool Contract on [Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
-
-## Tools
-
-* [Mobile Voting Dashboard](https://ast.on.fleek.co/)
-* AirSwap [Snapshot](https://snapshot.org/#/vote.airswap.eth)
-
-## Tutorials
-
-* Traders
-  * [How to use AirSwap to swap tokens](https://support.airswap.io/en/collections/1334292-start-trading-on-airswap)
-* Members
-  * [Staking, Voting and Claiming Rewards on AirSwap](https://docs.airswap.io/v/new-docs/guides/voters)
-  * [Voting using MetaMask Mobile](https://docs.airswap.io/v/new-docs/guides/voters#voting-with-metamask-mobile)
-  * [Claiming a bounty](https://docs.airswap.io/v/new-docs/guides/bounties)
-  * [Creating an AIP](https://docs.airswap.io/v/new-docs/guides/authors)
-* Makers
-  * [Setting up a serverless Maker bot](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379)
 

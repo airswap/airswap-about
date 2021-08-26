@@ -2,11 +2,11 @@
 
 There are lots of ways to get involved with AirSwap.
 
-* **Voters** are staked AirSwap Tokens \(sAST\) holders who participate in AIP votes.
+* \*\*\*\*[**Voters**](guides/voters.md) are staked AirSwap Tokens \(sAST\) holders who participate in AIP votes.
+* \*\*\*\*[**Authors**](guides/authors.md) support the proposal \(AIP\) creation and publishing process.
 * **Developers** contribute code to software projects being built by the community.
 * **Designers** contribute visual, UI, and UX design and coordinate with developers.
 * **Marketers** help deliver community software into the hands of our audiences.
-* **Authors** support the proposal \(AIP\) creation and publishing process.
 
 See a list of [active projects](https://github.com/airswap/aips), proposals [ready to be built](https://github.com/airswap/aips), and open [bounty categories](guides/bounties.md).
 
