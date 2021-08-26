@@ -4,7 +4,7 @@
 * [Contributing](contributing.md)
 * [Conduct](code-of-conduct.md)
 * [Resources](resources.md)
-* [FAQ](frequently-asked-questions.md)
+* [Questions](frequently-asked-questions.md)
 
 ## Technology
 
