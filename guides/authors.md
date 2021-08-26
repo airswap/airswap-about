@@ -8,9 +8,9 @@ AirSwap is organized as a decentralized network of contributors using a continuo
 
 Several incentives to participate are built in.
 
-* **Authors** — Authors earn tokens for writing proposals, 5K sAST for a successful vote and 2K sAST for a rejected vote. [See details of the author incentive](https://community.airswap.io/t/aip-15-incentivise-improvement-proposals-author-incentive/51).
+* **Authors** — Authors earn tokens for writing proposals. Each cycle, 5k AST is split among all authors who have contributed in that cycle. [See details of the author incentive](https://community.airswap.io/t/aip-38-creation-of-a-governance-circle-to-reward-aip-collaborative-authorship/256/7).
 * **Voters** — Community members vote to ratify each proposal. Voters earn points, which can be used to claim rewards. [See details of the voter incentive](https://community.airswap.io/t/aip-7-new-token-system-voter-incentive/37).
-* **Developers** — Once a proposal is ratified by community vote, it’s placed on the [roadmap](https://community.airswap.io/c/roadmap) for selection by contributors. Budgets are [specified in each AIP](https://community.airswap.io/t/aip-1-proposal-how-to/31).
+* **Developers** — Once a proposal is ratified by community vote, it’s placed on the [roadmap](https://community.airswap.io/c/roadmap) for selection by contributors. Budgets are [specified in each AIP](https://community.airswap.io/t/aip-1-proposal-how-to/31) where possible.
 
 ## How do I create a proposal?
 
@@ -38,22 +38,23 @@ Discussion is generally a combination of:
 1. **Brainstorming** on Discord where comments happen in real-time and community members build on each others ideas rapidly. A great way to iterate on fresh ideas.
 2. **In-depth** discussion here on Discourse where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
 
-Original authors may also credit fellow contributors as co-authors, and specify how to share the author incentive among themselves.
-
 ### Step 2: Calling a Vote
 
-Once ready, the author requests to call a vote.
+Once ready, the author requests to call a vote. Authors will need to come to a consensus in the governance circle about which AIPs are ready to go for voting.
 
 1. Authors must stake at least 1000 AST to call a vote. To stake AST, navigate to [Codefi Activate](https://activate.codefi.network/staking/airswap/governance) and follow the instructions on the AirSwap governance portal. To verify your staked balance, type “!join” in the Discord to confirm your stake, which gives you the **Author** role.
-2. Once staked, notify a community manager that you’d like to call a vote. Accepted proposals are placed on the project roadmap. If rejected, the author can solicit feedback from the community on how to improve the proposal.
+2. After discussions, authors will decide which proposals will be called to vote in the current voting cycle. This takes place in the \#authors channel in [Discord](https://chat.airswap.io).
+3. Accepted proposals are placed on the project roadmap. If rejected, the author can solicit feedback from the community on how to improve the proposal.
 
 ### Step 3: Collecting Rewards
 
-Once the vote has completed, the author reaches a community manager to collect their reward. Author rewards are currently 5K sAST for successful votes and 2K sAST for rejected votes.
+At the end of each voting cycle, authors allocate GIVE tokens to other authors on [Coordinape ](https://coordinape.com/)to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens. 
+
+Reach out to community managers in [Discord](https://chat.airswap.io) if you would like to get added to the governance circle!
 
 ## Getting help with your proposal
 
-You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#aip-help. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can request the community manager create a new channel for your proposal.
+You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#authors. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
 
-Your humble community manager @CryptoHamilton \(Anthony Albertorio\) is also here to assist you. Just message him in \#aip-help or \#general, and he will help you with the process.
+Your humble community manager @CryptoHamilton \(Anthony Albertorio\) is also here to assist you. Just message him in \#authors or \#general, and he will help you with the process.
 
