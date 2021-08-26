@@ -8,6 +8,8 @@ There are lots of ways to get involved with AirSwap.
 * **Marketers** help deliver community software into the hands of our audiences.
 * **Authors** support the proposal \(AIP\) creation and publishing process.
 
+See a list of [active projects](https://github.com/airswap/aips), proposals [ready to be built](https://github.com/airswap/aips), and open [bounty categories](guides/bounties.md).
+
 ## Process
 
 Every 4 weeks…
