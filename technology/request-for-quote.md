@@ -1,14 +1,21 @@
 # RFQ
 
-In RFQ, servers are **signers** and clients are **senders**.
+AirSwap Request-for-Quote \(RFQ\) is used by market makers to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
+
+**Protocol Features**
+
+* Taker has the option to fill an order.
+* Taker is guaranteed the price until expiry.
+
+**Protocol Summary**
+
+RFQ is available over **HTTP** or **WebSocket**. In RFQ, servers are **signers** and clients are **senders**.
 
 1. Client sends the server a JSON-RPC over HTTP request.
 2. Server responds with a signed order.
 3. Client may send the signed order to Ethereum for settlement.
 
-## Discovery
-
-RFQ is available over **HTTP or WebSocket**. For information in finding counterparties, see [Discovery](discovery.md).
+For information on finding counter-parties, see [Discovery](discovery.md).
 
 ## Methods
 

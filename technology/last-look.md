@@ -2,7 +2,7 @@
 
 AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the “last look” and option to fill it.
 
-**Protocol Benefits**
+**Protocol Features**
 
 * Takers can see quotes without connecting a wallet, and quotes update in realtime
 * Takers don't submit or spend gas on transactions, the maker does instead
