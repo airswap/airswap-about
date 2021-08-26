@@ -48,7 +48,7 @@ Once ready, the author requests to call a vote. Authors will need to come to a c
 
 ### Step 3: Collecting Rewards
 
-At the end of each voting cycle, authors allocate GIVE tokens to other authors on [Coordinape ](https://coordinape.com/)to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens. 
+At the end of each voting cycle, authors allocate GIVE tokens to other authors on [Coordinape ](https://coordinape.com/)to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
 
 Reach out to community managers in [Discord](https://chat.airswap.io) if you would like to get added to the governance circle!
 

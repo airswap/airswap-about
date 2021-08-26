@@ -1,14 +1,24 @@
 # Last Look
 
-In Last Look, clients are **signers** and servers are **senders**.
+AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the “last look” and option to fill it.
 
-1. Client connects to server via WebSocket and subcribes to pricing.
-2. Server streams pricing to client, which then sends orders to the server using its pricing.
+**Protocol Benefits**
+
+* Takers can see quotes without connecting a wallet, and quotes update in realtime
+* Takers don't submit or spend gas on transactions, the maker does instead
+* Better prices from makers since their prices are not locked into an expiry
+
+There is a possibility the maker declines the order because the market has moved, but they're generally amenable to small fluctuations to maintain a good trading relationship with the taker.
+
+**Protocol Summary**
+
+Last Look is only available over **WebSocket**. In Last Look, clients are **signers** and servers are **senders**.
+
+1. Client connects to server via WebSocket and subscribes to pricing.
+2. Server streams pricing to client, which in turn sends orders to the server using the pricing.
 3. Server may send the order to Ethereum for settlement.
 
-## Discovery
-
-Last Look is only available over **WebSocket**. For information on finding counterparties, see [Discovery](discovery.md).
+For information on finding counter-parties, see [Discovery](discovery.md).
 
 ## Methods
 

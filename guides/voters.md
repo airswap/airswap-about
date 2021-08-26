@@ -26,7 +26,7 @@ Notes on points:
 
 Points can be used to claim tokens from the community pool. Depending on the number of points you use the amount of tokens you can withdraw varies. Amount is based on a formula where “scale” determines the conversion of points to tokens up to a “max” amount.
 
-**REWARD = \(POINTS**  _**BALANCE / \(10\*\*SCALE + POINTS\)\)**_  **\(MAX / 100\)**
+**REWARD = \(POINTS** _**BALANCE / \(10\*\*SCALE + POINTS\)\)**_ **\(MAX / 100\)**
 
 * Note that POINTS are multiplied by 104 to account for AST decimal places. BALANCE is the balance of the pool to be claimed from. The SCALE and MAX variables are able to be changed by community vote and are currently 10 and 100 respectively.
 * Note that fees are continuously streaming into the community pool and participants are continuously claiming tokens. Due to the dynamic nature of this process, slippage on claims is possible.
