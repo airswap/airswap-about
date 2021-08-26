@@ -1,6 +1,6 @@
 # Contributing
 
-There are lots of ways to get involved with AirSwap. From generating ideas, to coordinating projects, contributing design and code, and helping to spread the word.
+There are many ways to get involved from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word.
 
 ## Roles
 
