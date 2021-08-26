@@ -1,5 +1,7 @@
 # Resources
 
+For smart contract addresses see [Deployments](technology/deployments.md).
+
 ## Community
 
 * [Discord Server](https://chat.airswap.io/) 
@@ -14,13 +16,15 @@
 * [AirSwap CLI](https://github.com/airswap/airswap-cli) 
 * [About AirSwap](https://github.com/airswap/airswap-about)
 
-## Data
+## Analytics
 
-* Staked AST 1 \(sAST\) on [Etherscan](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
-* Staked AST 2 \(sAST\) on [Etherscan](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
-* Staked AST 3 \(sAST\) on [Etherscan](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15)
-* AirSwap Dashboard on [Dune](https://duneanalytics.com/agrimony/airswap_3)
-* AirSwap advanced Dashboard on [Dune](https://duneanalytics.com/agrimony/AirSwap-Advanced)
-* Maker Dashboard on [Dune](https://duneanalytics.com/queries/28752/57978)
-* Pool Contract on [Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
+* [AirSwap Dune Dashboard](https://dune.xyz/agrimony/airswap_3)
+* [AirSwap Advanced Dashboard](https://dune.xyz/agrimony/AirSwap-Advanced)
+* [AirSwap Maker Dashboard](https://dune.xyz/queries/28752/57978)
+* [Rewards Pool on Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
+
+## Legacy
+
+* [Staked AST \(Legacy\)](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
+* [Staked AST \(Deprecated\)](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
 

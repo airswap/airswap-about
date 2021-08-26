@@ -1,8 +1,6 @@
 # Conduct
 
-**We are an open community that builds decentralized trading software.**
-
-Our greatest chance at success comes from creating a respectful environment where people want to come, stay, and participate for the long term.
+Our greatest chance at success comes from creating a respectful environment where people want to come, stay, and participate over the long term.
 
 ## Guidance
 
@@ -22,5 +20,5 @@ We all work together toward community goals. AirSwap is a positive-sum project w
 
 ## Thanks
 
-Everyone in the community is thankful to have you involved. Let's do this!
+Everyone in the community is excited to have you involved. Let's do this!
 

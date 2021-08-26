@@ -1,8 +1,10 @@
 # Contributing
 
-There are lots of ways to get involved with AirSwap.
+There are lots of ways to get involved with AirSwap. From generating ideas, to coordinating projects, contributing design and code, and helping to spread the word.
 
-* \*\*\*\*[**Voters**](guides/voters.md) are staked AirSwap Tokens \(sAST\) holders who participate in AIP votes.
+## Roles
+
+* [**Voters**](guides/voters.md) are staked AirSwap Tokens \(sAST\) holders who participate in AIP votes.
 * \*\*\*\*[**Authors**](guides/authors.md) support the proposal \(AIP\) creation and publishing process.
 * **Developers** contribute code to software projects being built by the community.
 * **Designers** contribute visual, UI, and UX design and coordinate with developers.
