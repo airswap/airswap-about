@@ -6,19 +6,9 @@
 
 Our vision is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. Our mission is to be the world’s best peer-to-peer trading system: a fundamental primitive of the decentralized economy.
 
-* **AirSwap** is recognized by...
-  * **St. Louis Fed** as the leading peer-to-peer trading protocol [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
-  * **MIT Technology Review** as a protocol built to survive [→](https://www.technologyreview.com/2018/02/22/145100/when-the-cryptocurrency-bubble-pops-these-tokens-are-built-to-survive/)
-  * **Stanford Journal** on Blockchain Law and Policy [→](https://stanford-jblp.pubpub.org/pub/deconstructing-dex/release/1)
-  * _**Trust Machine**_, a 2018 film about the blockchain industry [→](https://www.imdb.com/title/tt7407496/)
-* Used for the **first ever peer-to-peer swap** of a tokenized security [→](https://tokenist.com/airswap-facilitates-first-compliant-security-token-transfer-on-a-public-blockchain/)
-* **Rated \#1 in security** among decentralized exchanges \(DEX\) [→](https://icorating.com/pdf/65/1/pnN3XH96SRWtSs1YMNn2MSw805II3mD7UwKyMrPA.pdf)
-* Founding member of **"wrapped bitcoin" \(WBTC\)** to represent bitcoin on Ethereum [→](https://www.bitgo.com/newsroom/press-releases/wbtc-brings-bitcoin-to-ethereum)
-* Active in the **Ethereum community** and a champion of the technology [→](https://medium.com/fluidity/airswap-devcon-5-43adcf758ba8)
-
 ## Technology
 
-AirSwap introduced a decentralized peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover each other and trade directly peer-to-peer using a combination of web protocols and smart contracts. AirSwap technology is open source and can be found on [GitHub](https://github.com/airswap/).
+AirSwap introduced a peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover each other and trade directly peer-to-peer using a combination of web protocols and smart contracts. AirSwap technology is open source and can be found on [GitHub](https://github.com/airswap/).
 
 ### Benefits
 
@@ -57,11 +47,11 @@ AirSwap is **accessible**, **equitable**, and **transparent**. Every participant
 
 ### Tokens
 
-AirSwap launched the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original atomic swap contract. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and being a part of the AirSwap community.
+AirSwap launched the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original atomic swap contract. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
 ### Principles
 
-Decentralized governance starts with shared principles to align collective decision-making.
+Decentralized governance starts with shared principles to align our decision-making.
 
 1. **Design for simplicity** — Perfection is achieved when there is nothing left to take away. This is especially true with blockchain based technology and applications.
 2. **Prioritize security** — Our work is done in an adversarial setting. While blockchain requires users to take security into their own hands, they trust AirSwap to be designed and to operate in a secure way.
@@ -88,6 +78,16 @@ AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-tok
 * [Phase II Kickoff](https://twitter.com/airswap/status/1346542008345747457) and [Transition Complete](https://twitter.com/airswap/status/1359190898110853122) \(2021\)
 
 Having achieved its initial goals and delivered its technology roadmap, AirSwap is now an open project and community of contributors who pursue initiatives to continue to develop and grow the network.
+
+* **AirSwap** is recognized by...
+  * **St. Louis Fed** as the leading peer-to-peer trading protocol [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
+  * **MIT Technology Review** as a protocol built to survive [→](https://www.technologyreview.com/2018/02/22/145100/when-the-cryptocurrency-bubble-pops-these-tokens-are-built-to-survive/)
+  * **Stanford Journal** on Blockchain Law and Policy [→](https://stanford-jblp.pubpub.org/pub/deconstructing-dex/release/1)
+  * _**Trust Machine**_, a 2018 film about the blockchain industry [→](https://www.imdb.com/title/tt7407496/)
+* Used for the **first ever peer-to-peer swap** of a tokenized security [→](https://tokenist.com/airswap-facilitates-first-compliant-security-token-transfer-on-a-public-blockchain/)
+* **Rated \#1 in security** among decentralized exchanges \(DEX\) [→](https://icorating.com/pdf/65/1/pnN3XH96SRWtSs1YMNn2MSw805II3mD7UwKyMrPA.pdf)
+* Founding member of **"wrapped bitcoin" \(WBTC\)** to represent bitcoin on Ethereum [→](https://www.bitgo.com/newsroom/press-releases/wbtc-brings-bitcoin-to-ethereum)
+* Active in the **Ethereum community** and a champion of the technology [→](https://medium.com/fluidity/airswap-devcon-5-43adcf758ba8)
 
 ## Explore
 
