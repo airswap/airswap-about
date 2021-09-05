@@ -18,11 +18,11 @@ AirSwap Tokens \(AST\) can be staked to participate in governance of the protoco
 
 Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. The current fee reward structure is the subject of an upcoming AIP.
 
-You can follow [this useful tutorial](guides/voters.md).
+To learn more about staking check out [this tutorial](guides/voters.md).
 
 ## How is AirSwap different than Uniswap?
 
-Uniswap is a "peer-to-contract" automated market maker \(AMM\) that runs fully on-chain whereas AirSwap is a peer-to-peer network running as a combination of off-chain negotiation and on-chain settlement by atomic swap.
+Uniswap is a "peer-to-contract" automated market maker \(AMM\) that runs fully on-chain. AirSwap is a peer-to-peer network combining off-chain negotiation and on-chain settlement by atomic swap.
 
 There are benefits to each. With AirSwap there is no price slippage and trades are unlimited size. The trade-off is that it's easier for everyday users to provide liquidity to Uniswap. However, a successful outcome for RFQ is a few high quality liquidity providers covering a variety of digital assets, so AirSwap does not require the same number of liquidity providers to be successful.
 
