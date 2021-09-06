@@ -14,11 +14,9 @@ Learn more about AirSwap's benefits in the blog post [Why AirSwap?](https://medi
 
 ## Why Stake on AirSwap?
 
-AirSwap Tokens \(AST\) can be staked to participate in governance of the protocol. Anyone is welcome to participate by proposing, discussing, and voting on the various proposals to move the technology and community forward.
+AirSwap Tokens \(AST\) can be staked to participate in governance of the protocol. All are welcome to participate by proposing, discussing, and voting on proposals that move the project and community forward.
 
-Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. The current fee reward structure is the subject of an upcoming AIP.
-
-To learn more about staking check out [this tutorial](guides/voters.md).
+Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. Check out [this tutorial](guides/voters.md) to learn more.
 
 ## How is AirSwap different than Uniswap?
 
