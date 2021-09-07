@@ -45,7 +45,7 @@ AirSwap itself is a community asset owned by its token holders, operating as an 
 
 AirSwap is **accessible**, **equitable**, and **transparent**. Every participant and contributor is treated fairly and rewarded consistently. All opportunities are inclusive and available. Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
 
-### Tokens
+### Token
 
 AirSwap launched the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original atomic swap contract. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
