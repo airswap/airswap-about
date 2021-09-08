@@ -19,6 +19,22 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 ## Methods
 
+### `initialize`
+
+If connecting via WebSocket, the server may indicate RFQ among its list of supported protocols.
+
+```typescript
+initialize([
+  {
+    protocol: {
+      name: 'Request for Quote',
+      version: '1.0.0',
+      spec: 'https://about.airwswap.io/technology/request-for-quote'
+    },
+  }, ...
+})
+```
+
 ### `getSignerSideOrder`
 
 Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
