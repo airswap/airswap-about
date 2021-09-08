@@ -24,13 +24,19 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 ### `initialize`
 
-Upon connection, the server sends values for the `swapContract` the it intends to use, the `senderWallet` it intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. Returns no result.
+Upon connection the server may indicate Last Look among its list of supported protocols. Additional params may be included for the `swapContract` the it intends to use, the `senderWallet` it intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint.
 
 ```typescript
-initialize({
-  swapContract: string,
-  senderWallet: string,
-  senderServer: string,
+initialize([
+  {
+    name: 'last-look',
+    version: '1.0.0',
+    params: {
+      swapContract: string,
+      senderWallet: string,
+      senderServer: string,
+    }
+  }, ...
 })
 ```
 

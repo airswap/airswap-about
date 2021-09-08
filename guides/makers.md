@@ -6,11 +6,15 @@ Makers run web servers that implement the RFQ and Last Look APIs using [JSON-RPC
 
 AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms \(an order\), and **senders** who submit those terms for settlement on the Swap contract.
 
-For the RFQ protocol, a server is always the **signer** and a Client is always the **sender**. For Last Look, a Client is always the **signer** and a Server is always the **sender**.
+For the RFQ protocol, a server is always the **signer** and the client is always the **sender**. For Last Look, the client is always the **signer** and a server is always the **sender**.
 
 * **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
-* **Locators** take the form of `hostname[:port][/path]` with a max length is 32 characters. If no scheme is provided, `https://` is implied.
-* **Registries** are used to signal that a server is available to trade specific tokens, including contact information \(locator\), without pricing.
+* **URLs** may be to either HTTP or WebSocket servers using `https` or `wss` respectively.
+* **Registry** is used to signal that a server is available to trade specific tokens, including contact information \(URL\), without pricing.
+
+## HTTP vs WebSocket
+
+If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](../technology/request-for-quote) and [Last Look](../technology/last-look) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
 
 ## Getting Started
 
@@ -23,9 +27,9 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 ## Protocol Fees
 
-A protocol fee \(in basis points\) is hashed into the signature and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../technology/deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee \(in basis points\) is [hashed into the signature](../technology/signatures) and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../technology/deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
-100% of protocol fees go into a reward system for AirSwap contributors.
+100% of protocol fees go toward AirSwap governance and development contributors.
 
 ## Helpful for Testing
 
@@ -38,7 +42,7 @@ The following resources are helpful for testing on **Rinkeby**.
 
 ## Handling Errors
 
-You should provide descriptive errors where possible. In the case of a server side error, return a JSON-RPC error response.
+Provide descriptive errors where possible. In the case of a server side error, return a JSON-RPC error response.
 
 ```javascript
 {
@@ -77,43 +81,11 @@ $ yarn global add airswap
 
 In development, set the chain to `4` with the `airswap chain` command. The following examples assume a local development server is running at `http://localhost:3000`.
 
-Request a maximum quote to see what's available.
+Several useful commands can help you debug your server:
 
-```text
-$ airswap quote:max
-AirSwap CLI 1.3.8 — https://support.airswap.io/
-
-get a max quote from a peer RINKEBY
-
-locator:  http://localhost:3000
-buy or sell:  buy
-token:  weth
-for:  dai
-
-Response: http://localhost:3000
-
-Selling up to 0.25 WETH for 100 DAI
-```
-
-Request a quote for 0.1 WETH.
-
-```text
-$ airswap quote:get
-AirSwap CLI 1.3.8 — https://support.airswap.io/
-
-get a quote from a peer RINKEBY
-
-locator:  http://localhost:3000
-buy or sell:  buy
-amount:  0.1
-of:  weth
-for:  dai
-
-Quote from http://localhost:3000
-
-✨ Buy 0.1 WETH for 40 DAI
-Price 0.0025 WETH/DAI (400 DAI/WETH)
-```
+* `airswap order:get` to request an order directly from your server. (RFQ)
+* `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
+* `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (Last Look)
 
 ## Adding to the Registry
 
