@@ -64,10 +64,6 @@ getSenderSideOrder(
 
 ## Server
 
-{% hint style="info" %}
-Only respond with a light order if the `swapContract` parameter in the request matches the [Light](https://github.com/airswap/airswap-docs/tree/2515c986727706105a3e5ebabb8cfa6df455cbb0/contract-deployments.md) contract address. Your client may otherwise be requesting a [Full](https://github.com/airswap/airswap-docs/tree/2515c986727706105a3e5ebabb8cfa6df455cbb0/technology/full.md) order.
-{% endhint %}
-
 A successful result containing a `LightOrder` has the following properties:
 
 | Property | Type | Description |
@@ -113,7 +109,7 @@ Content-Type: application/json
 
 ## Protocol
 
-For information on finding counterparties, see the \(Discovery\)\[./discovery.md\] protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC over HTTP requests.
+For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC over HTTP requests.
 
 ```javascript
 POST / HTTP/1.1
