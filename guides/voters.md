@@ -71,3 +71,4 @@ You can choose from your favorite tokens.
 6. Cast your vote! ![image\|319x252](../.gitbook/assets/5aedf9bba1a86b5435a52a9b5b855e17927322f2.png)
 7. You will have to sign a message to confirm the vote. \(This does not require you to pay any gas fees\) ![image\|300x373](../.gitbook/assets/5d34fc3567ad0f4b52aae738075c526a18ae4103.png)
 8. Congratulations on participation! You will receive your points after the vote is completed.
+

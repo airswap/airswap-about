@@ -13,7 +13,7 @@ The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airs
 * **Rationale** — Motivations, justifications, arguments for and against.
 * **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-To draft an AIP, create a new topic in the [Proposal Discussion \(AIPs\)](https://github.com/airswap/airswap-aips/issues) category. Drafting an AIP is often done with community support. Authors are welcome to discuss their proposals and solicit feedback from the communities on [Discord](https://chat.airswap.io/) and here on GitHub.
+To draft an AIP, create a new issue on the [GitHub](https://github.com/airswap/airswap-aips/issues) repository. Drafting an AIP is often done with community support. Authors are welcome to discuss their proposals and solicit feedback from the communities on [Discord](https://chat.airswap.io/) and on GitHub.
 
 ## What are the stages of a proposal?
 
@@ -21,7 +21,7 @@ Each proposal follows three main stages.
 
 ### Step 1: Drafting and Discussion
 
-After initial brainstorming, the author creates a new topic in the [Proposal Discussions \(AIPs\)](https://github.com/airswap/airswap-aips/issues) category.
+After initial brainstorming, the author creates a new topic on the [GitHub](https://github.com/airswap/airswap-aips/issues).
 
 Discussion is generally a combination of:
 
@@ -44,6 +44,5 @@ Reach out to community managers in [Discord](https://chat.airswap.io) if you wou
 
 ## Getting help with your proposal
 
-You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#authors. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
+You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#authors channel. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
 
-Your humble community manager @CryptoHamilton \(Anthony Albertorio\) is also here to assist you. Just message him in \#authors or \#general, and he will help you with the process.
