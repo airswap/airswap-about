@@ -26,11 +26,8 @@ If connecting via WebSocket, the server may indicate RFQ among its list of suppo
 ```typescript
 initialize([
   {
-    protocol: {
-      name: 'Request for Quote',
-      version: '1.0.0',
-      spec: 'https://about.airwswap.io/technology/request-for-quote'
-    },
+    name: 'request-for-quote',
+    version: '1.0.0'
   }, ...
 })
 ```

@@ -29,11 +29,8 @@ Upon connection the server may indicate Last Look among its list of supported pr
 ```typescript
 initialize([
   {
-    protocol: {
-      name: 'Last Look',
-      version: '1.0',
-      spec: 'https://about.airwswap.io/technology/last-look'
-    },
+    name: 'last-look',
+    version: '1.0.0',
     params: {
       swapContract: string,
       senderWallet: string,
