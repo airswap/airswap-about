@@ -63,7 +63,7 @@ Decentralized governance starts with shared principles to align our decision-mak
 
 ### Governance
 
-To generate new ideas and directions for the project and cultivate open decision-making, we use a process called AirSwap Improvement Proposals \(AIP\). AIPs give the community a way to develop and finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://community.airswap.io/t/aip-1-proposal-how-to) and check out [all active proposals](https://github.com/airswap/aips). This process is how the community captures, selects, and prioritizes new projects.
+To generate new ideas and directions for the project and cultivate open decision-making, we use a process called AirSwap Improvement Proposals \(AIP\). AIPs give the community a way to develop and finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This process is how the community captures, selects, and prioritizes new projects.
 
 Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](guides/voters.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
 
@@ -96,4 +96,3 @@ Having achieved its initial goals and delivered its technology roadmap, AirSwap 
 * AirSwap [Discord Server](https://chat.airswap.io/)
 * AirSwap [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
 * AirSwap [Twitter](https://twitter.com/airswap)
-

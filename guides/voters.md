@@ -1,8 +1,8 @@
 # Voters
 
-To participate in voting, your staked AST \(sAST\) balance will be used to determine the weight of your votes. AST is staked at a 1:1 rate and tokens are unstakeable **from 0% to 100% over the course of 20 weeks and locked for the first 4 weeks**. Learn how to [stake AST with your MetaMask wallet](https://community.airswap.io/t/guides-how-to-stake-ast-with-metamask/50).
+To participate in voting, your staked AST \(sAST\) balance will be used to determine the weight of your votes. AST is staked at a 1:1 rate and tokens are unstakeable **from 0% to 100% over the course of 20 weeks and locked for the first 4 weeks**.
 
-Reading up and informing yourself on each proposal is an important part of the process. Proposals can be browsed, reviewed, and contributed to in the [Proposal Discussions \(AIPs\)](https://community.airswap.io/c/proposals) category on Discourse. Voters can often find additional context on [Discord](https://chat.airswap.io/).
+Reading up and informing yourself on each proposal is an important part of the process. Proposals can be browsed, reviewed, and contributed to in the [Proposal Discussions \(AIPs\)](https://github.com/airswap/airswap-aips/issues) category on GitHub. Voters can often find additional context on [Discord](https://chat.airswap.io/).
 
 To browse and participate in votes, visit the [AirSwap governance portal](https://activate.codefi.network/staking/airswap/governance) on Codefi Activate. Note that voting is performed off-chain and does not cost gas \(ETH\). At the completion of each vote that you participate in, you’ll notice the Activate portal has updated your points balance.
 
@@ -71,4 +71,3 @@ You can choose from your favorite tokens.
 6. Cast your vote! ![image\|319x252](../.gitbook/assets/5aedf9bba1a86b5435a52a9b5b855e17927322f2.png)
 7. You will have to sign a message to confirm the vote. \(This does not require you to pay any gas fees\) ![image\|300x373](../.gitbook/assets/5d34fc3567ad0f4b52aae738075c526a18ae4103.png)
 8. Congratulations on participation! You will receive your points after the vote is completed.
-
