@@ -14,7 +14,7 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](../technology/request-for-quote) and [Last Look](../technology/last-look) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
+If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket \(`wss`\) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/request-for-quote/README.md) and [Last Look](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/last-look/README.md) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee \(in basis points\) is [hashed into the signature](../technology/signatures) and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../technology/deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee \(in basis points\) is [hashed into the signature](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/signatures/README.md) and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](../technology/deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward AirSwap governance and development contributors.
 
@@ -83,9 +83,9 @@ In development, set the chain to `4` with the `airswap chain` command. The follo
 
 Several useful commands can help you debug your server:
 
-* `airswap order:get` to request an order directly from your server. (RFQ)
-* `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
-* `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (Last Look)
+* `airswap order:get` to request an order directly from your server. \(RFQ\)
+* `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. \(RFQ\)
+* `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. \(Last Look\)
 
 ## Adding to the Registry
 
