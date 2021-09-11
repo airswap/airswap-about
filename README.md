@@ -47,7 +47,7 @@ AirSwap is **accessible**, **equitable**, and **transparent**. Every participant
 
 ### Token
 
-AirSwap launched the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original atomic swap contract. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
+AirSwap launched with the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) running on the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
 Read more in the [community-voted token treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](guides/voters.md).
 
