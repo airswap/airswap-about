@@ -6,3 +6,4 @@ root: ./
 
 redirects:
   system/architecture.md: README.md
+  t/aip-39-time-weighted-stakes-for-points-rewards/257: https://github.com/airswap/airswap-aips/issues/39
