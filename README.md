@@ -2,7 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io/) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer swap networks using de facto standard [RFQ](technology/request-for-quote.md) and [Last Look](technology/last-look.md) protocols making it the weapon of choice for traditional market makers entering the decentralized financial system.
+[AirSwap](https://www.airswap.io/) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/request-for-quote.md) and [Last Look](technology/last-look.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
 
 Our vision is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. Our mission is to be the world’s best peer-to-peer trading system: a fundamental primitive of the decentralized economy.
 
