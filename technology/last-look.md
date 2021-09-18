@@ -34,7 +34,7 @@ initialize([
     params: {
       swapContract: string,
       senderWallet: string,
-      senderServer: string,
+      senderServer?: string,
     }
   }, ...
 ])
@@ -50,7 +50,15 @@ subscribe([
     baseToken: string,
     quoteToken: string
   }, { ... }
-]): boolean
+]): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
 ```
 
 Client may also subscribe to pricing updates for all available pairs.
@@ -80,10 +88,10 @@ unsubscribeAll(): boolean
 
 ### `updatePricing`
 
-Server updates pricing for a token pair. Returns no result.
+Server notifies client of updated pricing for one or more token pairs.
 
 ```typescript
-update([
+updatePricing([
   {
     baseToken: string,
     quoteToken: string,
@@ -205,10 +213,20 @@ Upon connection, the server sends an `initialize` notification to the client.
 {
   "jsonrpc": "2.0",
   "method": "initialize",
-  "params": {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-  }
+  "params": [
+    [
+      {
+        "name": 'last-look',
+        "version": '1.0.0',
+        "params": {
+          "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468",
+          "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501e",
+          "senderServer": "www.maker.com",
+        }
+      }
+    //...
+    ]
+  ]
 }
 ```
 
@@ -230,20 +248,22 @@ The server then continuously updates the client with new pricing.
   "jsonrpc": "2.0",
   "method": "updatePricing",
   "params": [
-    {
-      "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "bid": [
-        ["100", "0.00053"],
-        ["1000", "0.00061"],
-        ["10000", "0.0007"]
-      ],
-      "ask": [
-        ["100", "0.00055"],
-        ["1000", "0.00067"],
-        ["10000", "0.0008"]
-      ]
-    }
+      [
+        {
+          "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "bid": [
+            ["100", "0.00053"],
+            ["1000", "0.00061"],
+            ["10000", "0.0007"]
+          ],
+          "ask": [
+            ["100", "0.00055"],
+            ["1000", "0.00067"],
+            ["10000", "0.0008"]
+          ]
+        }
+    ]
   ]
 }
 ```
@@ -302,4 +322,3 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
-
