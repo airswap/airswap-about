@@ -24,7 +24,7 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 ### `initialize`
 
-Upon connection the server may indicate Last Look among its list of supported protocols. Additional params may be included for the `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint.
+Upon connection the server must make an `initialize` request, within which it may indicate Last Look among its list of supported protocols. Additional params may be included for the `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The client must respond with `true` to indicate acceptance, or an error otherwise.
 
 ```typescript
 initialize([
@@ -34,10 +34,10 @@ initialize([
     params: {
       swapContract: string,
       senderWallet: string,
-      senderServer: string,
+      senderServer?: string,
     }
   }, ...
-])
+]): boolean
 ```
 
 ### `subscribe`
@@ -50,13 +50,29 @@ subscribe([
     baseToken: string,
     quoteToken: string
   }, { ... }
-]): boolean
+]): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
 ```
 
 Client may also subscribe to pricing updates for all available pairs.
 
 ```typescript
-subscribeAll(): boolean
+subscribeAll(): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
 ```
 
 ### `unsubscribe`
@@ -80,10 +96,10 @@ unsubscribeAll(): boolean
 
 ### `updatePricing`
 
-Server updates pricing for a token pair. Returns no result.
+Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
 ```typescript
-update([
+updatePricing([
   {
     baseToken: string,
     quoteToken: string,
@@ -91,7 +107,7 @@ update([
     bid: Levels | Formula,
     ask: Levels | Formula
   }, { ... }
-])
+]): boolean
 ```
 
 ### `consider`
@@ -205,10 +221,21 @@ Upon connection, the server sends an `initialize` notification to the client.
 {
   "jsonrpc": "2.0",
   "method": "initialize",
-  "params": {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-  }
+  "id": "xyz",
+  "params": [
+    [
+      {
+        "name": 'last-look',
+        "version": '1.0.0',
+        "params": {
+          "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468",
+          "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501e",
+          "senderServer": "www.maker.com",
+        }
+      }
+    //...
+    ]
+  ]
 }
 ```
 
@@ -229,21 +256,24 @@ The server then continuously updates the client with new pricing.
 {
   "jsonrpc": "2.0",
   "method": "updatePricing",
+  "id": "qrs",
   "params": [
-    {
-      "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "bid": [
-        ["100", "0.00053"],
-        ["1000", "0.00061"],
-        ["10000", "0.0007"]
-      ],
-      "ask": [
-        ["100", "0.00055"],
-        ["1000", "0.00067"],
-        ["10000", "0.0008"]
-      ]
-    }
+      [
+        {
+          "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "bid": [
+            ["100", "0.00053"],
+            ["1000", "0.00061"],
+            ["10000", "0.0007"]
+          ],
+          "ask": [
+            ["100", "0.00055"],
+            ["1000", "0.00067"],
+            ["10000", "0.0008"]
+          ]
+        }
+    ]
   ]
 }
 ```
@@ -302,4 +332,3 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
-
