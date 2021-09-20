@@ -15,6 +15,11 @@
 | Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
 | AST | `N/A` | [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa) |
 
+### Legacy staking contracts
+
+* [Staked AST \(Legacy\)](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
+* [Staked AST \(Deprecated\)](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
+
 ## Binance Smart Chain
 
 | Contract | Version | Address | Commit |
