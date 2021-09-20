@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Community](community.md)
+* [Contributing](contributing.md)
 * [Conduct](code-of-conduct.md)
 * [Resources](resources.md)
 * [Questions](frequently-asked-questions.md)
@@ -16,17 +16,8 @@
 
 ## Guides
 
-* [Members](guides/members/README.md)
-  * [Staking](guides/members/staking/README.md)
-    * [Manual Unstaking](guides/members/staking/manual-unstaking.md)
-  * [Voting](guides/members/voting/README.md)
-    * [Voting on Mobile](guides/members/voting/voting-on-mobile.md)
-  * [Claiming](guides/members/claiming.md)
-* [Contributors](guides/contributors/README.md)
-  * [Authors](guides/contributors/authors.md)
-  * [Developers](guides/contributors/developers.md)
-  * [Ambassadors](guides/contributors/ambassadors.md)
-  * [Rewards](guides/contributors/rewards.md)
+* [Authors](guides/authors.md)
 * [Bounties](guides/bounties.md)
 * [Makers](guides/makers.md)
+* [Voters](guides/voters.md)
 
