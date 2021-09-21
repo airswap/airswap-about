@@ -44,7 +44,7 @@ The following resources are helpful for testing on **Rinkeby**.
 
 Provide descriptive errors where possible. In the case of a server side error, return a JSON-RPC error response.
 
-```typescript
+```json
 {
   "jsonrpc": "2.0",
   "id": 123,
