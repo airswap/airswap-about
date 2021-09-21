@@ -140,8 +140,8 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 ```json
 [
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "bid": [
       ["100", "0.00053"],
       ["1000", "0.00061"],
@@ -154,8 +154,8 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
     ]
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "bid": [
       ["0.5", "2000"],
       ["1", "2010"],
@@ -187,14 +187,14 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 ```json
 [
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "bid": "x*0.00053",
     "ask": "x*0.00055"
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "bid": "x*2000",
     "ask": "x*2001"
   }
