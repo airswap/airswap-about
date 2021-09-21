@@ -19,11 +19,11 @@ When connecting via HTTP, the server may respond with status code 426 \(Upgrade 
 Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
 
 ```typescript
-import { Registry } from "@airswap/protocols";
+import { Registry } from '@airswap/protocols'
 const servers = await new Registry(chainId, provider).getServers(
   signerToken,
-  senderToken
-);
+  senderToken,
+)
 ```
 
 Calling the Registry directly using `ethers`
@@ -34,20 +34,21 @@ import { chainNames } from '@airswap/constants'
 import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
 import * as registryDeploys from '@airswap/registry/deploys.js'
 const RegistryInterface = new ethers.utils.Interface(
-  JSON.stringify(RegistryContract.abi)
+  JSON.stringify(RegistryContract.abi),
 )
 
 new ethers.Contract(
   registryDeploys[chainId],
   RegistryInterface,
-  ethers.getDefaultProvider(chainNames[chainId].toLowerCase())
+  ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
 )
 
 const signerTokenURLs = await this.contract.getURLsForToken(signerToken)
 const senderTokenURLs = await this.contract.getURLsForToken(senderToken)
 
-const serverURLs = signerTokenURLs
-  .filter(value => senderTokenURLs.includes(value))
+const serverURLs = signerTokenURLs.filter((value) =>
+  senderTokenURLs.includes(value),
+)
 ```
 
 ## Using the CLI
@@ -89,4 +90,3 @@ Server
 ----------------------------------------
 https://maker.example.com/
 ```
-

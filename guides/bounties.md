@@ -37,4 +37,3 @@ Each contribution can earn up to **100,000 points** based on an assessment of ef
 Once a contribution is complete or operational, please [submit for review on the Google Form](https://docs.google.com/forms/d/e/1FAIpQLSf1tRisLlS_BXh0LGhcpCYY8m8XStxPgeg7qMi85lJ5hMpq-A/viewform).
 
 To discuss bounties visit the [Discord](http://chat.airswap.io).
-

@@ -4,9 +4,9 @@ AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to
 
 **Protocol Features**
 
-* Takers can see quotes without connecting a wallet, and quotes update in realtime
-* Takers don't submit or spend gas on transactions, the maker does instead
-* Better prices from makers since their prices are not locked into an expiry
+- Takers can see quotes without connecting a wallet, and quotes update in realtime
+- Takers don't submit or spend gas on transactions, the maker does instead
+- Better prices from makers since their prices are not locked into an expiry
 
 There is a possibility the maker declines the order because the market has moved, but they're generally amenable to small fluctuations to maintain a good trading relationship with the taker.
 
@@ -24,20 +24,20 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 ### `initialize`
 
-Upon connection the server may indicate Last Look among its list of supported protocols. Additional params may be included for the `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint.
+To support Last Look, the server must call initialize upon connection by the client and indicate `last-look` among its list of supported protocols. Additional params may be included for the `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
 initialize([
   {
-    name: 'last-look',
-    version: '1.0.0',
+    name: "last-look",
+    version: "1.0.0",
     params: {
       swapContract: string,
       senderWallet: string,
-      senderServer: string,
+      senderServer?: string,
     }
   }, ...
-])
+]): boolean
 ```
 
 ### `subscribe`
@@ -50,13 +50,29 @@ subscribe([
     baseToken: string,
     quoteToken: string
   }, { ... }
-]): boolean
+]): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
 ```
 
 Client may also subscribe to pricing updates for all available pairs.
 
 ```typescript
-subscribeAll(): boolean
+subscribeAll(): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
 ```
 
 ### `unsubscribe`
@@ -80,10 +96,10 @@ unsubscribeAll(): boolean
 
 ### `updatePricing`
 
-Server updates pricing for a token pair. Returns no result.
+Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
 ```typescript
-update([
+updatePricing([
   {
     baseToken: string,
     quoteToken: string,
@@ -91,7 +107,7 @@ update([
     bid: Levels | Formula,
     ask: Levels | Formula
   }, { ... }
-])
+]): boolean
 ```
 
 ### `consider`
@@ -121,11 +137,11 @@ Server pricing can be communicated either by levels or a formula. All input and 
 
 The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
-```javascript
+```json
 [
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "bid": [
       ["100", "0.00053"],
       ["1000", "0.00061"],
@@ -138,8 +154,8 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
     ]
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "bid": [
       ["0.5", "2000"],
       ["1", "2010"],
@@ -168,17 +184,17 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 
 The server can specify formulas to use for pricing. Each formula is an expression with operations including addition, subtraction, multiplication, and division, where `x` is provided by the client.
 
-```javascript
+```json
 [
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "bid": "x*0.00053",
     "ask": "x*0.00055"
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "bid": "x*2000",
     "ask": "x*2001"
   }
@@ -201,56 +217,69 @@ To find counterparties, see [Discovery](discovery.md). With server URLs in hand,
 
 Upon connection, the server sends an `initialize` notification to the client.
 
-```javascript
+```json
 {
   "jsonrpc": "2.0",
   "method": "initialize",
-  "params": {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-  }
+  "id": "xyz",
+  "params": [
+    [
+      {
+        "name": "last-look",
+        "version": "1.0.0",
+        "params": {
+          "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468",
+          "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
+          "senderServer": "www.maker.com"
+        }
+      }
+    ]
+  ]
 }
 ```
 
 The client may then subscribe to pricing updates.
 
-```javascript
+```json
 {
   "jsonrpc": "2.0",
   "method": "subscribeAll",
-  "id": 123,
+  "id": "123",
   "params": []
 }
 ```
 
 The server then continuously updates the client with new pricing.
 
-```javascript
+```json
 {
   "jsonrpc": "2.0",
   "method": "updatePricing",
+  "id": "qrs",
   "params": [
-    {
-      "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "bid": [
-        ["100", "0.00053"],
-        ["1000", "0.00061"],
-        ["10000", "0.0007"]
-      ],
-      "ask": [
-        ["100", "0.00055"],
-        ["1000", "0.00067"],
-        ["10000", "0.0008"]
-      ]
-    }
+    [
+      {
+        "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "bid": [
+          ["100", "0.00053"],
+          ["1000", "0.00061"],
+          ["10000", "0.0007"]
+        ],
+        "ask": [
+          ["100", "0.00055"],
+          ["1000", "0.00067"],
+          ["10000", "0.0008"]
+        ]
+      }
+    ]
   ]
 }
 ```
 
 The client may send an order to the server to consider a swap.
 
-```javascript
+```json
 {
   "jsonrpc": "2.0",
   "id": "abc",
@@ -272,7 +301,7 @@ The client may send an order to the server to consider a swap.
 
 After the server accepts an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](deployments.md) contract, which emits a `Swap` event on success.
 
-```javascript
+```typescript
   function swap(
     uint256 nonce,
     uint256 expiry,
@@ -287,7 +316,7 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
   ) external;
 ```
 
-```javascript
+```typescript
   event Swap(
     uint256 indexed nonce,
     uint256 timestamp,
@@ -302,4 +331,3 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
-

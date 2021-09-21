@@ -4,8 +4,8 @@ AirSwap Request-for-Quote \(RFQ\) is used by market makers to provide orders wit
 
 **Protocol Features**
 
-* Taker has the option to fill an order.
-* Taker is guaranteed the price until expiry.
+- Taker has the option to fill an order.
+- Taker is guaranteed the price until expiry.
 
 **Protocol Summary**
 
@@ -21,7 +21,7 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 ### `initialize`
 
-If connecting via WebSocket, the server may indicate RFQ among its list of supported protocols.
+To support RFQ via WebSocket, the server must call initialize upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
 
 ```typescript
 initialize([
@@ -66,22 +66,22 @@ getSenderSideOrder(
 
 A successful result containing a `LightOrder` has the following properties:
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| nonce | `uint256` | Unique per signer and should be sequential. |
-| expiry | `uint256` | Expiry in seconds since 1 January 1970. |
-| signerWallet | `address` | Wallet that sets and signs terms. |
-| signerToken | `address` | Token that the signer will transfer. |
-| signerAmount | `uint256` | Amount that the signer will transfer. |
-| senderToken | `address` | Token that the sender will transfer. |
-| senderAmount | `uint256` | Amount that the sender will transfer. |
-| v | `uint8` | `v` value of the ECDSA signature. |
-| r | `bytes32` | `r` value of the ECDSA signature. |
-| s | `bytes32` | `s` value of the ECDSA signature. |
+| Property     | Type      | Description                                 |
+| :----------- | :-------- | :------------------------------------------ |
+| nonce        | `uint256` | Unique per signer and should be sequential. |
+| expiry       | `uint256` | Expiry in seconds since 1 January 1970.     |
+| signerWallet | `address` | Wallet that sets and signs terms.           |
+| signerToken  | `address` | Token that the signer will transfer.        |
+| signerAmount | `uint256` | Amount that the signer will transfer.       |
+| senderToken  | `address` | Token that the sender will transfer.        |
+| senderAmount | `uint256` | Amount that the sender will transfer.       |
+| v            | `uint8`   | `v` value of the ECDSA signature.           |
+| r            | `bytes32` | `r` value of the ECDSA signature.           |
+| s            | `bytes32` | `s` value of the ECDSA signature.           |
 
 ### Example
 
-```javascript
+```json
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Headers: *
@@ -95,7 +95,7 @@ Content-Type: application/json
   "result": {
     "nonce": "99",
     "expiry": "1566941284",
-    "signerWallet": "0x5E6bfd15c85C62e96f5888FCFbe88b74e298862d",
+    "signerWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "signerAmount": "100000000",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
@@ -111,7 +111,7 @@ Content-Type: application/json
 
 For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC over HTTP requests.
 
-```javascript
+```json
 POST / HTTP/1.1
 Content-Length: ...
 Content-Type: application/json
@@ -140,7 +140,7 @@ curl -H 'Content-Type: application/json' \
 
 After requesting an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
 
-```javascript
+```typescript
   function swap(
     uint256 nonce,
     uint256 expiry,
@@ -155,7 +155,7 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
   ) external;
 ```
 
-```javascript
+```typescript
   event Swap(
     uint256 indexed nonce,
     uint256 timestamp,
@@ -170,4 +170,3 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
 ```
 
 The server may subscribe to a filter for a `Swap` event with the nonce they provided to the client.
-
