@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "lint:check": "yarn eslint './**/*.md'",
+    "lint:fix": "yarn eslint --fix './**/*.md'",
+    "pretty:check": "yarn prettier --check './**/*.md'",
+    "pretty:fix": "yarn prettier --write './**/*.md'"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
+  }
+}

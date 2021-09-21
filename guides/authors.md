@@ -8,10 +8,10 @@ Anyone is welcome to create an AIP. Each proposal outlines a problem or opportun
 
 The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)\). Each proposal includes a summary, specification, rationale, and copyright.
 
-* **Summary** — A short \(200 word\) summary describing the proposal.
-* **Specification** — Technical specification for the proposal.
-* **Rationale** — Motivations, justifications, arguments for and against.
-* **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+- **Summary** — A short \(200 word\) summary describing the proposal.
+- **Specification** — Technical specification for the proposal.
+- **Rationale** — Motivations, justifications, arguments for and against.
+- **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 To draft an AIP, create a new issue on the [GitHub](https://github.com/airswap/airswap-aips/issues) repository. Drafting an AIP is often done with community support. Authors are welcome to discuss their proposals and solicit feedback from the communities on [Discord](https://chat.airswap.io/) and on GitHub.
 
@@ -45,4 +45,3 @@ Reach out to community managers in [Discord](https://chat.airswap.io) if you wou
 ## Getting help with your proposal
 
 You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#authors channel. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
-
