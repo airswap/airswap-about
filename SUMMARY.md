@@ -15,12 +15,12 @@
 * [Deployments](technology/deployments.md)
 * [Makers](technology/makers.md)
 
-## Contribute
+## Guides
 
-* [Voters](contribute/voters/README.md)
-* [Ambassadors](contribute/ambassadors.md)
-* [Developers](contribute/developers.md)
-* [Authors](contribute/authors.md)
-* [Bounties](contribute/bounties.md)
-* [Rewards](contribute/rewards.md)
+* [Voters](guides/voters/README.md)
+* [Ambassadors](guides/ambassadors.md)
+* [Developers](guides/developers.md)
+* [Authors](guides/authors.md)
+* [Bounties](guides/bounties.md)
+* [Rewards](guides/rewards.md)
 
