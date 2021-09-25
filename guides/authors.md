@@ -6,7 +6,7 @@ description: A guide to contributing to the AirSwap governance circle
 
 ## Mission
 
-The Authors' mission in the Governance Circle is to help chart the course for the project and guide its roadmap. Authors do this by brainstorming, discussing and drafting new AirSwap Improvement Proposals \(AIPs\) for the community to vote on. 
+To chart the course for AirSwap and guide its future roadmap through collaborative authorship of AirSwap Improvement Proposals \(AIPs\).
 
 ## Scope
 
