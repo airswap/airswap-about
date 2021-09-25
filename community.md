@@ -8,10 +8,10 @@ There are lots of ways to get involved in AirSwap, from generating ideas, to coo
 
 ## Roles
 
-* [**Members** ](guides/members/)stake AirSwap Tokens \(AST\) to vote on the future roadmap of AirSwap
-* \*\*\*\*[**Authors**](guides/contributors/authors.md) draft and propose new projects and protocols for the community to vote on
-* \*\*\*\*[**Developers** ](guides/contributors/developers.md)build new features and products which have been voted in by the community
-* \*\*\*\*[**Ambassadors** ](guides/contributors/ambassadors.md)bring community-built software to a wider audience
+* [**Voters** ](guides/members/)stake AirSwap Tokens \(AST\) to vote on the future roadmap of AirSwap
+* [**Authors**](guides/contributors/authors.md) draft and propose new projects and protocols for the community to vote on
+* [**Developers** ](guides/contributors/developers.md)build new features and products which have been voted in by the community
+* [**Ambassadors** ](guides/contributors/ambassadors.md)bring community-built software to a wider audience
 
 {% hint style="info" %}
 Join our [Discord ](https://discord.gg/BQaJCgmhD7)to find out more about how you can be a part of our mission!

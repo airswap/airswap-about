@@ -13,20 +13,14 @@
 * [Discovery](technology/discovery.md)
 * [Signatures](technology/signatures.md)
 * [Deployments](technology/deployments.md)
+* [Makers](technology/makers.md)
 
-## Guides
+## Contribute
 
-* [Members](guides/members/README.md)
-  * [Staking](guides/members/staking/README.md)
-    * [Manual Unstaking](guides/members/staking/manual-unstaking.md)
-  * [Voting](guides/members/voting/README.md)
-    * [Voting on Mobile](guides/members/voting/voting-on-mobile.md)
-  * [Claiming](guides/members/claiming.md)
-* [Contributors](guides/contributors/README.md)
-  * [Authors](guides/contributors/authors.md)
-  * [Developers](guides/contributors/developers.md)
-  * [Ambassadors](guides/contributors/ambassadors.md)
-  * [Rewards](guides/contributors/rewards.md)
+* [Voters](guides/voters/README.md)
+* [Ambassadors](guides/ambassadors.md)
+* [Developers](guides/developers.md)
+* [Authors](guides/authors.md)
 * [Bounties](guides/bounties.md)
-* [Makers](guides/makers.md)
+* [Rewards](guides/rewards.md)
 
