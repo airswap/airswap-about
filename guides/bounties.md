@@ -2,6 +2,8 @@
 
 **Bounties** work in combination with the AIP system. AIPs are for new strategic directions and project proposals with budgets, teams, and timelines. Bounties are open and collaborative areas of interest and specific smaller tasks. Each bounty is an invitation to create something helpful and productive for the AirSwap community and network.
 
+
+
 ## Categories
 
 You are welcome to submit bounties for any of the following categories.
