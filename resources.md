@@ -9,7 +9,7 @@ For smart contract addresses see [Deployments](technology/deployments.md).
 - [Twitter](https://twitter.com/airswap)
 
 {% hint style="info" %}
-Know some other channels which could be useful for community building? Do drop by our Discord to let us know how else we can reach out to the community!
+Know some other channels which could be useful for community building? Do drop by our [Discord](https://chat.airswap.io) to let us know how else we can reach out to the community!
 {% endhint %}
 
 ## Governance

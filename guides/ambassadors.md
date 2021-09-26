@@ -4,7 +4,7 @@ description: A guide to contributing to the AirSwap Ambassador circle
 
 # Ambassadors
 
-## Mission
+## Mandate
 
 To develop our knowledge and expand our presence through high quality content and productive ecosystem relationships.
 
@@ -50,12 +50,13 @@ Ambassadors are also encouraged to participate in other communities, in order to
 
 Ambassadors would also need to keep up-to-date with the latest discussions and proposals in AirSwap, so that general queries can be addressed or, at least, pointed in the right direction. 
 
-For more information, please refer to our code of conduct.
-
-{% page-ref page="code-of-conduct.md" %}
+For more information, please refer to our [code of conduct](../code-of-conduct.md).
 
 ### Rewards
 
 At the end of each voting cycle, ambassadors allocate GIVE tokens on [Coordinape](https://coordinape.com/) to reward other ambassadors based on their contributions during that cycle. At the end of the cycle, rewards are paid out based on their allocation of GIVE tokens.
 
-{% page-ref page="rewards.md" %}
+{% hint style="tip" %}
+Read more on rewards [here](rewards.md)
+{% endhint %}
+

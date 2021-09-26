@@ -6,6 +6,14 @@ description: A guide to voting in the AirSwap DAO
 
 AirSwap is community owned and community run. Members of the community hold a stake in the project by staking the AirSwap token \(AST\). Staking the token grants members the right to vote on key decisions. 
 
+## Mandate 
+
+To be present in the community and participate in decentralized governance by  making educated votes on issues aligned with the mission and vision of AirSwap.
+
+{% hint style = 'tip' %}
+Read up on the mission and vision of AirSwap [here](../README.md)!
+{% endhint %}
+
 ## Scope
 
 Voters stake the AirSwap token \(AST\) in order to vote on AirSwap Improvement Protocols (AIPs). Voters play an important role in the process, sending a community signal regarding the level of support for a particular proposed feature or idea for [Developers](./developers.md), [Ambassadors](./ambassadors.md) or [Authors](./authors.md) to act on.
@@ -50,5 +58,6 @@ Notes on points:
 
 The number of points enables you to claim a certain percentage of the rewards pool tokens. 
 
-{% page-ref page="../rewards.md" %}
-
+{% hint style="tip" %}
+More in-depth guides can be found on the [tutorials](tutorials.md) page 
+{% endhint %}

@@ -4,7 +4,7 @@ description: A guide to contributing to the AirSwap governance circle
 
 # Authors
 
-## Mission
+## Mandate
 
 To chart the course for AirSwap and guide its future roadmap through collaborative authorship of AirSwap Improvement Proposals \(AIPs\).
 
@@ -55,5 +55,7 @@ AIPs called to vote will require a point-by-point summary of the proposal which 
 
 At the end of each voting cycle, Authors allocate GIVE tokens on [Coordinape](https://coordinape.com/) to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
 
-{% page-ref page="rewards.md" %}
+{% hint style="tip" %}
+Read more on rewards [here](rewards.md)
+{% endhint %}
 

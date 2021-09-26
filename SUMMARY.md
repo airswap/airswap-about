@@ -1,7 +1,7 @@
 # Table of contents
 
 - [Welcome](README.md)
-- [Community](community.md)
+- [Structure](structure.md)
 - [Conduct](code-of-conduct.md)
 - [Resources](resources.md)
 - [Questions](frequently-asked-questions.md)
@@ -17,10 +17,11 @@
 
 ## Guides
 
-* [Voters](guides/voters/README.md)
+* [Voters](guides/voters.md)
 * [Developers](guides/developers.md)
 * [Ambassadors](guides/ambassadors.md)
 * [Authors](guides/authors.md)
 * [Bounties](guides/bounties.md)
 * [Rewards](guides/rewards.md)
+* [Tutorials](guides/tutorials.md)
 

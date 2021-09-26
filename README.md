@@ -4,15 +4,12 @@
 
 [AirSwap](https://www.airswap.io/) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/request-for-quote.md) and [Last Look](technology/last-look.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
 
+## Vision and Mission
 Our vision is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. Our mission is to become the standard peer-to-peer trading protocol system: a fundamental primitive of the decentralized economy.
 
 ## Technology
 
-AirSwap introduced a peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover each other and trade directly peer-to-peer using a combination of web protocols and smart contracts. 
-
-{% hint style="info" %}
-AirSwap technology is open source and can be found on [GitHub](https://github.com/airswap/).
-{% endhint %}
+AirSwap introduced a peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover each other and trade directly peer-to-peer using a combination of web protocols and smart contracts. AirSwap technology is open source and can be found on [GitHub](https://github.com/airswap/).
 
 ### Benefits
 
@@ -38,18 +35,38 @@ Several applications are available to end users.
 - [AirSwap OTC](https://trader.airswap.io/) — Industry standard OTC interface for large bespoke swaps.
 - [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface for interacting with AirSwap.
 
-AirSwap protocols have also been implemented by several aggregators and professional market makers.
+Several DEX aggregators and market makers have implemented AirSwap.
 
 - [MetaMask Swaps](https://metamask.io/swaps.html) — Swap directly from the MetaMask wallet browser extension.
 - Market maker activity can be tracked on the [Dune dashboard](https://dune.xyz/queries/28752/57978).
+
+## Community
+
+AirSwap itself is a community asset owned by its token holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and organization aim to be maximally decentralized. Community members stake AirSwap tokens \(AST\) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
+
+AirSwap is **accessible**, **equitable**, and **transparent**. Every participant and contributor is treated fairly and rewarded consistently. All opportunities are inclusive and available. Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
 
 ### Token
 
 AirSwap launched with the AirSwap Token \(AST\) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) running on the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
-{% hint style="info" %}
-Read more about how AST opens up access to [community membership](community.md)
-{% endhint %}
+Read more in the [community-voted token treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](guides/voters.md).
+
+### Principles
+
+Decentralized governance starts with shared principles to align our decision-making.
+
+1. **Design for simplicity** — Perfection is achieved when there is nothing left to take away. This is especially true with blockchain based technology and applications.
+2. **Prioritize security** — Our work is done in an adversarial setting. While blockchain requires users to take security into their own hands, they trust AirSwap to be designed and to operate in a secure way.
+3. **Decide with data** — Drive decisions with data that matters. AirSwap performance indicators are trading volume, token holders, community engagement, and tokens used for governance.
+4. **Seek opportunity** — Decentralized finance is abundant with opportunities. Seek and prioritize opportunities that positively impact both AirSwap and the broader ecosystem.
+5. **Win together** — Our community spans platforms across cyberspace and countries across the globe. We grow by both sharing responsibility and celebrating each success.
+
+### Governance
+
+To generate new ideas and directions for the project and cultivate open decision-making, we use a process called AirSwap Improvement Proposals \(AIP\). AIPs give the community a way to develop and finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This process is how the community captures, selects, and prioritizes new projects.
+
+Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](guides/voters.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
 
 ## History
 
@@ -63,11 +80,7 @@ AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-tok
 - [AirSwap Delegates](https://medium.com/fluidity/introducing-airswap-delegates-1c3db83be1db) \(February 4, 2020\)
 - [Phase II Kickoff](https://twitter.com/airswap/status/1346542008345747457) and [Transition Complete](https://twitter.com/airswap/status/1359190898110853122) \(2021\)
 
-{% hint style="working" %}
 Having achieved its initial goals and delivered its technology roadmap, AirSwap is now an open project and community of contributors who pursue initiatives to continue to develop and grow the network.
-{% endhint %}
-
-## Recognitions
 
 - **AirSwap** is recognized by...
   - **St. Louis Fed** as the leading peer-to-peer trading protocol [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
@@ -78,3 +91,9 @@ Having achieved its initial goals and delivered its technology roadmap, AirSwap 
 - **Rated \#1 in security** among decentralized exchanges \(DEX\) [→](https://icorating.com/pdf/65/1/pnN3XH96SRWtSs1YMNn2MSw805II3mD7UwKyMrPA.pdf)
 - Founding member of **"wrapped bitcoin" \(WBTC\)** to represent bitcoin on Ethereum [→](https://www.bitgo.com/newsroom/press-releases/wbtc-brings-bitcoin-to-ethereum)
 - Active in the **Ethereum community** and a champion of the technology [→](https://medium.com/fluidity/airswap-devcon-5-43adcf758ba8)
+
+## Explore
+
+- AirSwap [Discord Server](https://chat.airswap.io/)
+- AirSwap [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
+- AirSwap [Twitter](https://twitter.com/airswap)

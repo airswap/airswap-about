@@ -1,16 +1,14 @@
 # Tutorials
 
-{% tabs %}
-{% tab title="Staking" %}
+## Staking
+
 ### Connect your MetaMask wallet to the [Governance portal](https://activate.codefi.network/staking/airswap/governance)
 
-{% embed url="https://activate.codefi.network/staking/airswap/governance" caption="Activate Governance Portal" %}
-
-![](../../.gitbook/assets/95263fbc76788410a762860763cc3aa47abab6d1.png)
+![](../.gitbook/assets/95263fbc76788410a762860763cc3aa47abab6d1.png)
 
 ### Click on Stake to begin the staking process.
 
-![](../../.gitbook/assets/86accfee5ce0af6ac6310ba1a80b39e9cc104947.png)
+![](../.gitbook/assets/86accfee5ce0af6ac6310ba1a80b39e9cc104947.png)
 
 {% hint style="info" %}
 Note there will be two transactions: one is for permission & the second one transfers your tokens to the staking contract.
@@ -20,47 +18,44 @@ Note there will be two transactions: one is for permission & the second one tran
 
 The dashboard should look like this one below.
 
-![](../../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df%20%281%29%20%281%29%20%281%29%20%282%29%20%284%29%20%284%29%20%283%29.png)
-{% endtab %}
+![](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df.png)
 
-{% tab title = "Voting on Mobile " %}
 
-### Voting with MetaMask Mobile
+
+## Voting with MetaMask Mobile
 
 * You will need to download and install MetaMask on your mobile \([https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US](https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US)\)
 * Once your MetaMask mobile wallet is set up, click the voting page link and open it with MetaMask 
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/813697c84bf291b11e7acaf30db3b71041109dd5.png)
 
 * Read through the AIP and make sure you understand what you are voting for 
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/999955bd725bd8203dbb5eb35d797a393965ad11.png)
 
 * Select your choice to vote for
 
-![](../../.gitbook/assets/image.png)
+![](../.gitbook/assets/55dff0dc8db6ec075fb0da374730564635ceb55f.png)
 
 * A prompt to connect your wallet will open up. Select Metamask and confirm your choice.
 
-![](../../.gitbook/assets/8fffc2217b50d29e250e2529b2e93d556a99c740.png)
+![](../.gitbook/assets/8fffc2217b50d29e250e2529b2e93d556a99c740.png)
 
-![](../../.gitbook/assets/5aedf9bba1a86b5435a52a9b5b855e17927322f2.png)
+![](../.gitbook/assets/5aedf9bba1a86b5435a52a9b5b855e17927322f2.png)
 
 * Sign the message to confirm your vote! \(signing does not require any gas fees\)
 
-![](../../.gitbook/assets/5d34fc3567ad0f4b52aae738075c526a18ae4103.png)
+![](../.gitbook/assets/5d34fc3567ad0f4b52aae738075c526a18ae4103.png)
 
 * Congratulations! Your vote has now been cast! Wait for the voting phase to complete to claim your points!
 
-{% end tab %}
 
-{% tab title = "Manual Unstaking from Deprecated contract"%}
+
+## Manual Unstaking from Deprecated contract
 
 ### Manual Unstaking
 
 Navigate to the deprecated staking contract in [etherscan](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#readContract) -&gt; contract -&gt; read contract
-
-![](../../.gitbook/assets/image%20%286%29.png)
 
 ### Check the AST balance in the contract
 
@@ -72,7 +67,7 @@ Check to ensure that the amount tallies with the amount of AST you have staked
 The amount displayed is multiplied by 10,000 to account for the decimal places
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/manual_unstake_1.png)
 
 ### Check the balance available to unstake
 
@@ -80,7 +75,7 @@ Under `available`, input your `address` and under `index`, input `0`
 
 This number represents the amount of AST available to be unstaked currently. Make sure that this number tallies with the number of AST in `balanceOf` if you want to withdraw the full amount.
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/manual_unstake_2.png)
 
 {% hint style="info" %}
 If you have made multiple stakes into this contract, you can check the balance available for each staking event by changing `index`.
@@ -100,10 +95,6 @@ Sign the transaction with your web3 wallet and pay the gas fee to unstake!
 Remember to multiply the AST you wish to unstake by 10,000 to account for decimals!
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/manual_unstake_3.png)
 
-
-
-![](../../.gitbook/assets/image%20%287%29.png)
-{% endtab %}
-{% endtabs %}
+![](../.gitbook/assets/manual_unstake_4.png)
