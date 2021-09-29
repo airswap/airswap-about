@@ -6,24 +6,15 @@ description: A guide to contributing to the AirSwap governance circle
 
 ## Mandate
 
-To chart the course for AirSwap and guide its future roadmap through collaborative authorship of AirSwap Improvement Proposals \(AIPs\).
+Facilitate community discussion and transcribe the best forms of ideas into formal written proposals to be assessed by Voters.
 
 ## Scope
 
-The role of the authors revolves around the creation of AIPs. Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
+The role of the authors revolves around the creation of AirSwap Improvement Protocols (AIPs). Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
 
-## Process
+## Examples
 
-### Joining
-
-Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any @author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle. Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration. Of course, all members should bear in mind the [code of conduct](../../code-of-conduct.md) when debating and discussing ideas! 
-
-### Proposing
-Each proposal follows three main stages.
-
-#### Step 1: Drafting
-
-The author first identifies a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on the [GitHub](https://github.com/airswap/airswap-aips/issues). 
+Authors identify a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on [GitHub](https://github.com/airswap/airswap-aips/issues). 
 
 The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)\). Each proposal includes a summary, specification, rationale, and copyright.
 
@@ -32,24 +23,23 @@ The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airs
 * **Specification** — Technical specification for the proposal.
 * **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-#### Step 2: Discussion
+Examples of AIPs which have been voted on previously can be viewed on [Snapshot](https://snapshot.org/#/vote.airswap.eth)
 
-Drafting an AIP is often done with community support. Authors are welcome to discuss their proposals and solicit feedback from your fellow members in the [Discord](https://chat.airswap.io/) \#authors channel. 
+## How-to
 
-Collaborating with other authors leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
+### Coordination
 
-Discussion is generally a combination of:
+During the 4 week cycle, Authors discuss [open issues and proposals](https://github.com/airswap/airswap-aips/issues), and solicit feedback from fellow Authors in the Governance circle. **Collaborating with other authors leverages our collective knowledge and can lead to better proposals overall.**
 
-1. **Brainstorming** on Discord where comments happen in real-time and community members build on each others ideas rapidly. A great way to iterate on fresh ideas.
-2. **In-depth** discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
+Coordination generally takes place on two platforms:
 
-#### Step 3: Calling a Vote
+1. Brainstorming on Discord where comments happen in real-time and community members build on each other's ideas rapidly. A great way to iterate on fresh ideas.
+2. In-depth discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
 
-Voting happens every 4 weeks, so make sure to give plenty of time to discuss with the other Authors in the Circle, and continue to iterate on the proposal to make it the best version possible. 
+At the end of the cycle, Authors must come to an agreement as to which AIPs (if any) are ready to be voted on. Authors are encouraged to continue iterating on proposals if they do not feel that it is ready to go up for vote yet.
 
-Once ready, the author requests to push the AIP to the upcoming vote. Authors will need to come to a consensus in the governance circle about which AIPs are ready to go for voting.
 
-AIPs called to vote will require a point-by-point summary of the proposal which will be put up on [Snapshot](https://snapshot.org/#/vote.airswap.eth/). Authors will work with the Admins to ensure that the summaries are easily understood by the general Voting community.
+AIPs called to vote will require a point-by-point summary of the proposal which will be put up on [Snapshot](https://snapshot.org/#/vote.airswap.eth). Authors will work with the Admins to ensure that the summaries are easily understood by the general voting community.
 
 ### Rewards
 
@@ -57,5 +47,15 @@ At the end of each voting cycle, Authors allocate GIVE tokens on [Coordinape](ht
 
 {% hint style="tip" %}
 Read more on rewards [here](rewards.md)
+{% endhint %}
+
+### Joining
+
+Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any Author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle. 
+
+Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration. 
+
+{% hint style="tip" %}
+All members should bear in mind the [code of conduct](../../code-of-conduct.md) when debating and discussing ideas! 
 {% endhint %}
 

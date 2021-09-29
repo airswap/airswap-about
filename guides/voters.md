@@ -8,11 +8,7 @@ AirSwap is community owned and community run. Members of the community hold a st
 
 ## Mandate 
 
-To be present in the community and participate in decentralized governance by  making educated votes on issues aligned with the mission and vision of AirSwap.
-
-{% hint style = 'tip' %}
-Read up on the mission and vision of AirSwap [here](../README.md)!
-{% endhint %}
+Decide whether each proposal brought forth by Authors should be accepted and placed into the project backlog for Developers.
 
 ## Scope
 
@@ -20,7 +16,7 @@ Voters stake the AirSwap token \(AST\) in order to vote on AirSwap Improvement P
 
 Voters work hand-in-hand with other community members to establish the roadmap of AirSwap. By making decisions which will impact the future roadmap of the project, all members of the community hold a shared responsibility for the future success of AirSwap! 
 
-## Process
+## How-to
 
 ### Staking
 
