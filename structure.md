@@ -10,7 +10,7 @@ There are lots of ways to get involved in AirSwap, from generating ideas, to coo
 
 * [**Voters** ](./guides/voters.md)stake AirSwap Tokens \(AST\) to vote on the future roadmap of AirSwap
 * [**Authors**](./guides/authors.md) draft and propose new projects and protocols for the community to vote on
-* [**Developers** ](./guides/developers.md)build new features and products which have been voted in by the community
+* **Developers** build new features and products which have been voted in by the community
 * [**Ambassadors** ](./guides/ambassadors.md)bring community-built software to a wider audience
 
 {% hint style="info" %}

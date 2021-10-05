@@ -12,7 +12,7 @@ Decide whether each proposal brought forth by Authors should be accepted and pla
 
 ## Scope
 
-Voters stake the AirSwap token \(AST\) in order to vote on AirSwap Improvement Protocols (AIPs). Voters play an important role in the process, sending a community signal regarding the level of support for a particular proposed feature or idea for [Developers](./developers.md), [Ambassadors](./ambassadors.md) or [Authors](./authors.md) to act on.
+Voters stake the AirSwap token \(AST\) in order to vote on AirSwap Improvement Protocols (AIPs). Voters play an important role in the process, sending a community signal regarding the level of support for a particular proposed feature or idea for Developers, [Ambassadors](./ambassadors.md) or [Authors](./authors.md) to act on.
 
 Voters work hand-in-hand with other community members to establish the roadmap of AirSwap. By making decisions which will impact the future roadmap of the project, all members of the community hold a shared responsibility for the future success of AirSwap! 
 
