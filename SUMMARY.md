@@ -18,7 +18,6 @@
 ## Guides
 
 * [Voters](guides/voters.md)
-* [Developers](guides/developers.md)
 * [Ambassadors](guides/ambassadors.md)
 * [Authors](guides/authors.md)
 * [Bounties](guides/bounties.md)
