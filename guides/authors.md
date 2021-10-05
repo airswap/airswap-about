@@ -1,47 +1,61 @@
+---
+description: A guide to contributing to the AirSwap governance circle
+---
+
 # Authors
 
-The following is a guide for contributing AirSwap Improvement Proposals \(AIP\).
+## Mandate
 
-## How do I create a proposal?
+Facilitate community discussion and transcribe the best forms of ideas into formal written proposals to be assessed by Voters.
 
-Anyone is welcome to create an AIP. Each proposal outlines a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
+## Scope
+
+The role of the authors revolves around the creation of AirSwap Improvement Protocols (AIPs). Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
+
+## Examples
+
+Authors identify a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on [GitHub](https://github.com/airswap/airswap-aips/issues). 
 
 The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)\). Each proposal includes a summary, specification, rationale, and copyright.
 
-- **Summary** — A short \(200 word\) summary describing the proposal.
-- **Specification** — Technical specification for the proposal.
-- **Rationale** — Motivations, justifications, arguments for and against.
-- **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+* **Summary** — A short \(200 word\) summary describing the proposal.
+* **Rationale** — Motivations, justifications, arguments for and against.
+* **Specification** — Technical specification for the proposal.
+* **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-To draft an AIP, create a new issue on the [GitHub](https://github.com/airswap/airswap-aips/issues) repository. Drafting an AIP is often done with community support. Authors are welcome to discuss their proposals and solicit feedback from the communities on [Discord](https://chat.airswap.io/) and on GitHub.
+Examples of AIPs which have been voted on previously can be viewed on [Snapshot](https://snapshot.org/#/vote.airswap.eth)
 
-## What are the stages of a proposal?
+## How-to
 
-Each proposal follows three main stages.
+### Coordination
 
-### Step 1: Drafting and Discussion
+During the 4 week cycle, Authors discuss [open issues and proposals](https://github.com/airswap/airswap-aips/issues), and solicit feedback from fellow Authors in the Governance circle. **Collaborating with other authors leverages our collective knowledge and can lead to better proposals overall.**
 
-After initial brainstorming, the author creates a new topic on the [GitHub](https://github.com/airswap/airswap-aips/issues).
+Coordination generally takes place on two platforms:
 
-Discussion is generally a combination of:
+1. Brainstorming on Discord where comments happen in real-time and community members build on each other's ideas rapidly. A great way to iterate on fresh ideas.
+2. In-depth discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
 
-1. **Brainstorming** on Discord where comments happen in real-time and community members build on each others ideas rapidly. A great way to iterate on fresh ideas.
-2. **In-depth** discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
+At the end of the cycle, Authors must come to an agreement as to which AIPs (if any) are ready to be voted on. Authors are encouraged to continue iterating on proposals if they do not feel that it is ready to go up for vote yet.
 
-### Step 2: Calling a Vote
 
-Once ready, the author requests to call a vote. Authors will need to come to a consensus in the governance circle about which AIPs are ready to go for voting.
+AIPs called to vote will require a point-by-point summary of the proposal which will be put up on [Snapshot](https://snapshot.org/#/vote.airswap.eth). Authors will work with the Admins to ensure that the summaries are easily understood by the general voting community.
 
-1. Authors must stake at least 1000 AST to call a vote. To stake AST, navigate to [Codefi Activate](https://activate.codefi.network/staking/airswap/governance) and follow the instructions on the AirSwap governance portal. To verify your staked balance, type “!join” in the Discord to confirm your stake, which gives you the **Author** role.
-2. After discussions, authors will decide which proposals will be called to vote in the current voting cycle. This takes place in the \#authors channel in [Discord](https://chat.airswap.io).
-3. Accepted proposals are placed on the project roadmap. If rejected, the author can solicit feedback from the community on how to improve the proposal.
+### Rewards
 
-### Step 3: Collecting Rewards
+At the end of each voting cycle, Authors allocate GIVE tokens on [Coordinape](https://coordinape.com/) to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
 
-At the end of each voting cycle, authors allocate GIVE tokens to other authors on [Coordinape ](https://coordinape.com/)to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
+{% hint style="tip" %}
+Read more on rewards [here](rewards.md)
+{% endhint %}
 
-Reach out to community managers in [Discord](https://chat.airswap.io) if you would like to get added to the governance circle!
+### Joining
 
-## Getting help with your proposal
+Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any Author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle. 
 
-You can get help from your fellow members in the [Discord](https://chat.airswap.io/) \#authors channel. Collaborating with other members leverages our collective knowledge and can lead to better proposals overall. If the discussion gets very long mixed in with other threads, you can create a new thread for your proposal.
+Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration. 
+
+{% hint style="tip" %}
+All members should bear in mind the [code of conduct](../../code-of-conduct.md) when debating and discussing ideas! 
+{% endhint %}
+
