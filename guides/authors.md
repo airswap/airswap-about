@@ -10,11 +10,11 @@ Facilitate community discussion and transcribe the best forms of ideas into form
 
 ## Scope
 
-The role of the authors revolves around the creation of AirSwap Improvement Protocols (AIPs). Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
+The role of the authors revolves around the creation of AirSwap Improvement Protocols \(AIPs\). Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
 
 ## Examples
 
-Authors identify a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on [GitHub](https://github.com/airswap/airswap-aips/issues). 
+Authors identify a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on [GitHub](https://github.com/airswap/airswap-aips/issues).
 
 The structure of a proposal is as follows \(See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)\). Each proposal includes a summary, specification, rationale, and copyright.
 
@@ -36,8 +36,7 @@ Coordination generally takes place on two platforms:
 1. Brainstorming on Discord where comments happen in real-time and community members build on each other's ideas rapidly. A great way to iterate on fresh ideas.
 2. In-depth discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
 
-At the end of the cycle, Authors must come to an agreement as to which AIPs (if any) are ready to be voted on. Authors are encouraged to continue iterating on proposals if they do not feel that it is ready to go up for vote yet.
-
+At the end of the cycle, Authors must come to an agreement as to which AIPs \(if any\) are ready to be voted on. Authors are encouraged to continue iterating on proposals if they do not feel that it is ready to go up for vote yet.
 
 AIPs called to vote will require a point-by-point summary of the proposal which will be put up on [Snapshot](https://snapshot.org/#/vote.airswap.eth). Authors will work with the Admins to ensure that the summaries are easily understood by the general voting community.
 
@@ -45,17 +44,17 @@ AIPs called to vote will require a point-by-point summary of the proposal which 
 
 At the end of each voting cycle, Authors allocate GIVE tokens on [Coordinape](https://coordinape.com/) to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
 
-{% hint style="tip" %}
+{% hint style="info" %}
 Read more on rewards [here](rewards.md)
 {% endhint %}
 
 ### Joining
 
-Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any Author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle. 
+Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any Author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle.
 
-Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration. 
+Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration.
 
-{% hint style="tip" %}
-All members should bear in mind the [code of conduct](../../code-of-conduct.md) when debating and discussing ideas! 
+{% hint style="info" %}
+All members should bear in mind the [code of conduct](../code-of-conduct.md) when debating and discussing ideas!
 {% endhint %}
 

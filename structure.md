@@ -8,10 +8,10 @@ There are lots of ways to get involved in AirSwap, from generating ideas, to coo
 
 ## Roles
 
-* [**Voters** ](./guides/voters.md)stake AirSwap Tokens \(AST\) to vote on the future roadmap of AirSwap
-* [**Authors**](./guides/authors.md) draft and propose new projects and protocols for the community to vote on
+* [**Voters** ](guides/voters.md)stake AirSwap Tokens \(AST\) to vote on the future roadmap of AirSwap
+* [**Authors**](guides/authors.md) draft and propose new projects and protocols for the community to vote on
 * **Developers** build new features and products which have been voted in by the community
-* [**Ambassadors** ](./guides/ambassadors.md)bring community-built software to a wider audience
+* [**Ambassadors** ](guides/ambassadors.md)bring community-built software to a wider audience
 
 {% hint style="info" %}
 Join our [Discord ](https://discord.gg/BQaJCgmhD7)to find out more about how you can be a part of our mission!
@@ -30,6 +30,6 @@ Several incentives to participate are built in. Every 4 weeks…
 * **Bounties are assessed** and distributed by a project lead.
 
 {% hint style="info" %}
-See a list of [active projects](https://github.com/airswap/AIPs/issues), proposals [ready to be built](https://github.com/airswap/AIPs/issues), and open [bounty categories](guides/bounties.md). 
+See a list of [active projects](https://github.com/airswap/AIPs/issues), proposals [ready to be built](https://github.com/airswap/AIPs/issues), and open [bounty categories](guides/bounties.md).
 {% endhint %}
 

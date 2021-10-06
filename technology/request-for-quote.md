@@ -4,8 +4,8 @@ AirSwap Request-for-Quote \(RFQ\) is used by market makers to provide orders wit
 
 **Protocol Features**
 
-- Taker has the option to fill an order.
-- Taker is guaranteed the price until expiry.
+* Taker has the option to fill an order.
+* Taker is guaranteed the price until expiry.
 
 **Protocol Summary**
 
@@ -66,22 +66,22 @@ getSenderSideOrder(
 
 A successful result containing a `LightOrder` has the following properties:
 
-| Property     | Type      | Description                                 |
-| :----------- | :-------- | :------------------------------------------ |
-| nonce        | `uint256` | Unique per signer and should be sequential. |
-| expiry       | `uint256` | Expiry in seconds since 1 January 1970.     |
-| signerWallet | `address` | Wallet that sets and signs terms.           |
-| signerToken  | `address` | Token that the signer will transfer.        |
-| signerAmount | `uint256` | Amount that the signer will transfer.       |
-| senderToken  | `address` | Token that the sender will transfer.        |
-| senderAmount | `uint256` | Amount that the sender will transfer.       |
-| v            | `uint8`   | `v` value of the ECDSA signature.           |
-| r            | `bytes32` | `r` value of the ECDSA signature.           |
-| s            | `bytes32` | `s` value of the ECDSA signature.           |
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| nonce | `uint256` | Unique per signer and should be sequential. |
+| expiry | `uint256` | Expiry in seconds since 1 January 1970. |
+| signerWallet | `address` | Wallet that sets and signs terms. |
+| signerToken | `address` | Token that the signer will transfer. |
+| signerAmount | `uint256` | Amount that the signer will transfer. |
+| senderToken | `address` | Token that the sender will transfer. |
+| senderAmount | `uint256` | Amount that the sender will transfer. |
+| v | `uint8` | `v` value of the ECDSA signature. |
+| r | `bytes32` | `r` value of the ECDSA signature. |
+| s | `bytes32` | `s` value of the ECDSA signature. |
 
 ### Example
 
-```json
+```javascript
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Headers: *
@@ -111,7 +111,7 @@ Content-Type: application/json
 
 For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC over HTTP requests.
 
-```json
+```javascript
 POST / HTTP/1.1
 Content-Length: ...
 Content-Type: application/json
@@ -170,3 +170,4 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
 ```
 
 The server may subscribe to a filter for a `Swap` event with the nonce they provided to the client.
+

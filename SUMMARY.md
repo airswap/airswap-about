@@ -1,10 +1,10 @@
 # Table of contents
 
-- [Welcome](README.md)
-- [Structure](structure.md)
-- [Conduct](code-of-conduct.md)
-- [Resources](resources.md)
-- [Questions](frequently-asked-questions.md)
+* [Welcome](README.md)
+* [Structure](structure.md)
+* [Conduct](code-of-conduct.md)
+* [Resources](resources.md)
+* [Questions](frequently-asked-questions.md)
 
 ## Technology
 

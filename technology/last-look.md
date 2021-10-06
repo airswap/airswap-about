@@ -4,9 +4,9 @@ AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to
 
 **Protocol Features**
 
-- Takers can see quotes without connecting a wallet, and quotes update in realtime
-- Takers don't submit or spend gas on transactions, the maker does instead
-- Better prices from makers since their prices are not locked into an expiry
+* Takers can see quotes without connecting a wallet, and quotes update in realtime
+* Takers don't submit or spend gas on transactions, the maker does instead
+* Better prices from makers since their prices are not locked into an expiry
 
 There is a possibility the maker declines the order because the market has moved, but they're generally amenable to small fluctuations to maintain a good trading relationship with the taker.
 
@@ -137,7 +137,7 @@ Server pricing can be communicated either by levels or a formula. All input and 
 
 The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
-```json
+```javascript
 [
   {
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
@@ -184,7 +184,7 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 
 The server can specify formulas to use for pricing. Each formula is an expression with operations including addition, subtraction, multiplication, and division, where `x` is provided by the client.
 
-```json
+```javascript
 [
   {
     "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
@@ -217,7 +217,7 @@ To find counterparties, see [Discovery](discovery.md). With server URLs in hand,
 
 Upon connection, the server sends an `initialize` notification to the client.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "initialize",
@@ -240,7 +240,7 @@ Upon connection, the server sends an `initialize` notification to the client.
 
 The client may then subscribe to pricing updates.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "subscribeAll",
@@ -251,7 +251,7 @@ The client may then subscribe to pricing updates.
 
 The server then continuously updates the client with new pricing.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "updatePricing",
@@ -279,7 +279,7 @@ The server then continuously updates the client with new pricing.
 
 The client may send an order to the server to consider a swap.
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "abc",
@@ -331,3 +331,4 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
+

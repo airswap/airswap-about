@@ -12,7 +12,7 @@ $$
 R = (B / (10^S +P )) * M/100
 $$
 
-where R is the rewards you can obtain, P is the number of points used to claim (multiplied by 10^4), B is the token balance in the rewards pool, S and M are community adjustable parameters (currently set to S = 10 and M = 100). 
+where R is the rewards you can obtain, P is the number of points used to claim \(multiplied by 10^4\), B is the token balance in the rewards pool, S and M are community adjustable parameters \(currently set to S = 10 and M = 100\).
 
 The formula results in rewards being paid out on a smooth curve based on the number of points used to claim.
 
@@ -26,7 +26,7 @@ You can [see the tokens in the pool](https://app.zerion.io/0x7296333e1615721f4Bd
 
 ## Circle Funding
 
-Contributor circles are funded from two sources - a base level of funding paid out from the treasury, and a bonus funding pool derived from trade fees collected. The base fundings are paid out in AST while the bonus fundings are paid out in the currency of the consolidated token pool \(currently WETH\). 
+Contributor circles are funded from two sources - a base level of funding paid out from the treasury, and a bonus funding pool derived from trade fees collected. The base fundings are paid out in AST while the bonus fundings are paid out in the currency of the consolidated token pool \(currently WETH\).
 
 Circle funds will be then distributed based on individual contributions during each cycle.
 
@@ -42,7 +42,7 @@ The base funding amount does not guarantee a minimum to be earned by each contri
 
 ## Circle Allocation
 
-After each 4 week cycle, [Coordinape ](https://coordinape.com/)circles will open for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle. 
+After each 4 week cycle, [Coordinape ](https://coordinape.com/)circles will open for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle.
 
 After the allocation period is complete, any GIVE tokens not distributed will be burnt \(there is no use holding GIVE tokens for yourself!\). Individual contributors will be rewarded from the base/bonus circle funds proportionally to their GIVE allocations received.
 

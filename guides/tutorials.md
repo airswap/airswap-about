@@ -20,8 +20,6 @@ The dashboard should look like this one below.
 
 ![](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df.png)
 
-
-
 ## Voting with MetaMask Mobile
 
 * You will need to download and install MetaMask on your mobile \([https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US](https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US)\)
@@ -49,8 +47,6 @@ The dashboard should look like this one below.
 
 * Congratulations! Your vote has now been cast! Wait for the voting phase to complete to claim your points!
 
-
-
 ## Manual Unstaking from Deprecated contract
 
 ### Manual Unstaking
@@ -61,7 +57,7 @@ Navigate to the deprecated staking contract in [etherscan](https://etherscan.io/
 
 Under `balanceOf`, input your `address` and click query \(querying the chain does not require gas\)
 
-Check to ensure that the amount tallies with the amount of AST you have staked 
+Check to ensure that the amount tallies with the amount of AST you have staked
 
 {% hint style="info" %}
 The amount displayed is multiplied by 10,000 to account for the decimal places
@@ -98,3 +94,4 @@ Remember to multiply the AST you wish to unstake by 10,000 to account for decima
 ![](../.gitbook/assets/manual_unstake_3.png)
 
 ![](../.gitbook/assets/manual_unstake_4.png)
+
