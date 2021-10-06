@@ -16,7 +16,7 @@ AirSwap curates a peer-to-peer network for trading digital assets: a novel desig
 
 At its core, AirSwap enables two parties to perform an "atomic swap" transaction, through which both sides succeed or the entire transaction reverts. These transactions are "trustless" in a way that neither party needs to trust one another to complete the swap.
 
-* **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond the Ethereum virtual machine.
+* **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond Ethereum.
 * **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices because they hedge on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or price manipulation.
 * **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any digital asset conforming to ERC20, ERC721, or ERC1155 can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
 
