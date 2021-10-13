@@ -43,14 +43,14 @@ Ambassadors are also encouraged to participate in other communities, in order to
 
 Ambassadors would also need to keep up-to-date with the latest discussions and proposals in AirSwap, so that general queries can be addressed or, at least, pointed in the right direction.
 
-For more information, please refer to our [code of conduct](../code-of-conduct.md).
+For more information, please refer to our [code of conduct](../community/code-of-conduct.md).
 
 ### Rewards
 
-At the end of each voting cycle, ambassadors allocate GIVE tokens on [Coordinape](https://coordinape.com/) to reward other ambassadors based on their contributions during that cycle. At the end of the cycle, rewards are paid out based on their allocation of GIVE tokens.
+At the end of each voting cycle, ambassadors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward other ambassadors based on their contributions during that cycle. At the end of the cycle, rewards are paid out based on their allocation of GIVE tokens.
 
 {% hint style="info" %}
-Read more on rewards [here](rewards.md)
+Read more on rewards [here](../community/rewards.md)
 {% endhint %}
 
 ### Joining
@@ -60,6 +60,5 @@ Members who are interested in joining the Ambassadors circle can reach out to ot
 Ambassadors-in-training would be expected to read the [guides](https://about.airswap.io) to understand more about AirSwap's product and technology, and to help welcome new members into the community. Once ready, Ambassadors can nominate any ambassador-in-training into the Ambassador circle. If two other Ambassadors vouch for the nominee, s/he will automatically be inducted into the circle and can benefit from the circle rewards.
 
 {% hint style="info" %}
-Ambassadors-in-training can help to create content \(e.g. tutorials and guides\) and be rewarded in [bounties](https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
+Ambassadors-in-training can help to create content (e.g. tutorials and guides) and be rewarded in [bounties](https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
 {% endhint %}
-

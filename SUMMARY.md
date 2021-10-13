@@ -1,10 +1,16 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Structure](structure.md)
-* [Conduct](code-of-conduct.md)
 * [Resources](resources.md)
 * [Questions](frequently-asked-questions.md)
+
+## Community
+
+* [Conduct](community/code-of-conduct.md)
+* [Roles](community/roles.md)
+* [Process](community/process.md)
+* [Bounties](community/bounties.md)
+* [Rewards](community/rewards.md)
 
 ## Technology
 
@@ -20,7 +26,4 @@
 * [Voters](guides/voters.md)
 * [Ambassadors](guides/ambassadors.md)
 * [Authors](guides/authors.md)
-* [Bounties](guides/bounties.md)
-* [Rewards](guides/rewards.md)
 * [Tutorials](guides/tutorials.md)
-
