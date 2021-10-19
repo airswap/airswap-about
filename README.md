@@ -84,17 +84,17 @@ AirSwap a été [lancé le 10 octobre 2017](https://medium.com/fluidity/airswap-
 Ayant atteint ses objectifs initiaux et livré sa feuille de route (roadmap) technologique, AirSwap est maintenant un projet ouvert et une communauté de contributeurs qui poursuivent des initiatives pour continuer à développer et à faire croître le réseau.
 
 * **AirSwap** est reconnu par…
-  * **St. Louis Fed** as the leading peer-to-peer trading protocol [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
-  * **MIT Technology Review** as a protocol built to survive [→](https://www.technologyreview.com/2018/02/22/145100/when-the-cryptocurrency-bubble-pops-these-tokens-are-built-to-survive/)
-  * **Stanford Journal** on Blockchain Law and Policy [→](https://stanford-jblp.pubpub.org/pub/deconstructing-dex/release/1)
-  * _**Trust Machine**_, a 2018 film about the blockchain industry [→](https://www.imdb.com/title/tt7407496/)
-* Used for the **first ever peer-to-peer swap** of a tokenized security [→](https://tokenist.com/airswap-facilitates-first-compliant-security-token-transfer-on-a-public-blockchain/)
-* **Rated #1 in security** among decentralized exchanges (DEX) [→](https://icorating.com/pdf/65/1/pnN3XH96SRWtSs1YMNn2MSw805II3mD7UwKyMrPA.pdf)
-* Founding member of **"wrapped bitcoin" (WBTC)** to represent bitcoin on Ethereum [→](https://www.bitgo.com/newsroom/press-releases/wbtc-brings-bitcoin-to-ethereum)
-* Active in the **Ethereum community** and a champion of the technology [→](https://medium.com/fluidity/airswap-devcon-5-43adcf758ba8)
+  * **St. Louis Fed** comme le premier protocole d'échange de pair à pair [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
+  * **MIT Technology Review** comme un protocole construit pour survivre [→](https://www.technologyreview.com/2018/02/22/145100/when-the-cryptocurrency-bubble-pops-these-tokens-are-built-to-survive/)
+  * **Stanford Journal** sur Blockchain Law and Policy [→](https://stanford-jblp.pubpub.org/pub/deconstructing-dex/release/1)
+  * _**Trust Machine**_, un film de 2018 sur l'industrie de la blockchain [→](https://www.imdb.com/title/tt7407496/)
+* Utilisé pour le **tout premier échange de pair à pair** d'un titre tokenisé [→](https://tokenist.com/airswap-facilitates-first-compliant-security-token-transfer-on-a-public-blockchain/)
+* **Classé n°1 en matière de sécurité** parmi les échanges décentralisés (DEX) [→](https://icorating.com/pdf/65/1/pnN3XH96SRWtSs1YMNn2MSw805II3mD7UwKyMrPA.pdf)
+* Membre fondateur de **"wrapped bitcoin" (WBTC)** pour représenter le bitcoin sur Ethereum [→](https://www.bitgo.com/newsroom/press-releases/wbtc-brings-bitcoin-to-ethereum)
+* Actif dans la **communauté Ethereum** et champion de la technologie [→](https://medium.com/fluidity/airswap-devcon-5-43adcf758ba8)
 
-## Explore
+## Explorez
 
-* AirSwap [Discord Server](https://chat.airswap.io)
-* AirSwap [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
-* AirSwap [Twitter](https://twitter.com/airswap)
+* [Serveur Discord](https://chat.airswap.io) d'AirSwap
+* [Portail de vote](https://activate.codefi.network/staking/airswap/governance) d'AirSwap
+* [Twitter](https://twitter.com/airswap) d'AirSwap
