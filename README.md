@@ -49,13 +49,13 @@ AirSwap is **accessible**, **équitable**, et **transparent**. Chaque participan
 
 ### Token
 
-AirSwap a été lancé avec le token AirSwap (AST) le [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) fonctionnant sur le réseau original de swap peer-to-peer. Le token a initialement permis aux traders d'annoncer leur disponibilité et fonctionne également aujourd'hui comme un moyen pour les contributeurs de participer à la gouvernance et au développement. AST donne à ses détenteurs la possibilité de travailler à la mesure de leurs avoirs, et la possibilité de gagner à la mesure de leur contribution, ce qui nécessite fondamentalement une participation active. AST est la porte d'entrée pour rejoindre et contribuer à la communauté AirSwap.
+AirSwap a été lancé avec le token AirSwap (AST) le [10 octobre 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) fonctionnant sur le réseau original de swap peer-to-peer. Le token a initialement permis aux traders d'annoncer leur disponibilité et fonctionne également aujourd'hui comme un moyen pour les contributeurs de participer à la gouvernance et au développement. AST donne à ses détenteurs la possibilité de travailler à la mesure de leurs avoirs, et la possibilité de gagner à la mesure de leur contribution, ce qui nécessite fondamentalement une participation active. AST est la porte d'entrée pour rejoindre et contribuer à la communauté AirSwap.
 
 Pour en savoir plus, consultez le [plan de trésorerie des tokens voté par la communauté](https://github.com/airswap/airswap-aips/issues/10) et le [guide des votants](guides/voters.md).
 
-### Principles
+### Principes
 
-Decentralized governance starts with shared principles to align our decision-making.
+La gouvernance décentralisée commence par des principes partagés pour aligner notre prise de décision.
 
 1. **Design for simplicity** — Perfection is achieved when there is nothing left to take away. This is especially true with blockchain based technology and applications.
 2. **Prioritize security** — Our work is done in an adversarial setting. While blockchain requires users to take security into their own hands, they trust AirSwap to be designed and to operate in a secure way.
