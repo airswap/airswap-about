@@ -8,9 +8,9 @@
 
 Notre vision est un avenir où toutes les formes de valeur sont représentées sous forme d'actifs numériques et circulent librement et de manière fiable entre les personnes et les communautés du monde entier. Notre mission est de devenir le système standard de protocole de trading peer-to-peer : une primitive fondamentale de l'économie décentralisée.
 
-## Technology
+## Technologie
 
-AirSwap curates a peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover others and trade directly peer-to-peer using a combination of web protocols and smart contracts. AirSwap technology is open source and all code can be found on [GitHub](https://github.com/airswap/).
+AirSwap a lancé un réseau peer-to-peer pour le trading d'actifs numériques : une conception novatrice qui protège les traders du risque de contrepartie, de slippage (glissement des prix) et de front running. Tous les participants au marché peuvent se découvrir mutuellement et échanger directement en peer-to-peer en utilisant une combinaison de protocoles web et de contrats intelligents. La technologie AirSwap est open source et peut être trouvée sur [GitHub](https://github.com/airswap/).
 
 ### Benefits
 
