@@ -12,13 +12,13 @@ Notre vision est un avenir où toutes les formes de valeur sont représentées s
 
 AirSwap a lancé un réseau peer-to-peer pour le trading d'actifs numériques : une conception novatrice qui protège les traders du risque de contrepartie, de slippage (glissement des prix) et de front running. Tous les participants au marché peuvent se découvrir mutuellement et échanger directement en peer-to-peer en utilisant une combinaison de protocoles web et de contrats intelligents. La technologie AirSwap est open source et peut être trouvée sur [GitHub](https://github.com/airswap/).
 
-### Benefits
+### Avantages
 
-At its core, AirSwap enables two parties to perform an "atomic swap" transaction, through which both sides succeed or the entire transaction reverts. These transactions are "trustless" in a way that neither party needs to trust one another to complete the swap.
+À la base, AirSwap permet à deux parties d'effectuer un échange "atomique", par lequel les deux parties “réussissent” ou la transaction entière est annulée. Ce type de transaction est "sans confiance", c'est-à-dire qu'aucune des parties n'a besoin de faire confiance à l'autre pour effectuer une transaction.
 
-* **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond Ethereum.
-* **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices because they hedge on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or price manipulation.
-* **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any digital asset conforming to ERC20, ERC721, or ERC1155 can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
+* **Pas vos clés, pas vos jetons**. AirSwap est “non custodial” et sans dépôt ou Escrow. Chaque transaction se fait de pair à pair, sans risque de contrepartie, sans participants intermédiaires et sans infrastructure autre que la machine virtuelle Ethereum.
+* **Compétitif et efficace**. Les sociétés de trading fournissent des liquidités via AirSwap à des prix compétitifs car elles se couvrent sur des échanges centralisés. Puisqu'il s'agit d'un système de pair à pair, le prix que vous voyez est le prix que vous obtenez, sans slippage, front running ou manipulation.
+* **Aucune limite**. Chaque échange se fait entre deux parties, deux jetons et un contrat intelligent. Cela signifie que tout actif numérique conforme aux normes ERC20, ERC721 ou ERC1155 peut être échangé à un prix personnalisé et à n'importe quelle taille. Quel que soit l’échange (swap), le règlement est bon marché et efficace.
 
 ### Protocols
 
