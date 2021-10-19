@@ -20,38 +20,38 @@ AirSwap a lancé un réseau peer-to-peer pour le trading d'actifs numériques : 
 * **Compétitif et efficace**. Les sociétés de trading fournissent des liquidités via AirSwap à des prix compétitifs car elles se couvrent sur des échanges centralisés. Puisqu'il s'agit d'un système de pair à pair, le prix que vous voyez est le prix que vous obtenez, sans slippage, front running ou manipulation.
 * **Aucune limite**. Chaque échange se fait entre deux parties, deux jetons et un contrat intelligent. Cela signifie que tout actif numérique conforme aux normes ERC20, ERC721 ou ERC1155 peut être échangé à un prix personnalisé et à n'importe quelle taille. Quel que soit l’échange (swap), le règlement est bon marché et efficace.
 
-### Protocols
+### Protocoles
 
-At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to the Ethereum blockchain for settlement.
+Au niveau du protocole, chaque échange se fait entre deux parties, un signataire et un expéditeur. Le signataire représente la partie qui crée et signe cryptographiquement un ordre, et l'expéditeur représente  la partie qui envoie l'ordre à la blockchain Ethereum pour règlement.
 
-* [Request-for-quote](technology/request-for-quote.md) (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC over HTTP.
-* [Last Look](technology/last-look.md) (LL) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement.
-* [Over-the-counter](https://trader.airswap.io) (OTC) is trading between known counterparties via chat applications or email using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC.
+* [Request-for-quote](technology/request-for-quote.md) (RFQ) est un protocole de demande-réponse automatisé pour les market makers qui utilisent des serveurs Web à partir desquels les clients demandent des ordres via JSON-RPC sur HTTP.
+* [Last Look](technology/last-look.md) (LL) est un protocole de streaming automatisé qui permet aux market makers de diffuser les prix aux clients via JSON-RPC sur WebSocket, qui à leur tour soumettent des ordres au serveur pour règlement.
+* [Over-the-counter](https://trader.airswap.io) (OTC) est un échange entre des contreparties connues via des applications de chat ou des emails utilisant AirSwap pour le règlement. Certaines des plus [grandes transactions](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) de DeFi ont été effectuées sur AirSwap OTC.
 
 ### Applications
 
-Several applications are available to end users.
+Plusieurs applications sont disponibles pour les utilisateurs finaux.
 
-* [AirSwap Web](https://preview.airswap.io) — **(alpha)** New open source web app currently in development.
-* [AirSwap OTC](https://trader.airswap.io) — Industry standard OTC interface for large bespoke swaps.
-* [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the AirSwap network.
+* [AirSwap Web](https://preview.airswap.io) — **(alpha)** Nouvelle application web open source en cours de développement.
+* [AirSwap OTC](https://trader.airswap.io) — Interface OTC standard de l'industrie pour les grands swaps sur mesure.
+* [AirSwap CLI](https://github.com/airswap/airswap-cli) — Interface en ligne de commande pour interagir avec AirSwap.
 
-Several DEX aggregators and market makers have implemented AirSwap.
+Plusieurs agrégateurs DEX et market makers ont implémenté AirSwap.
 
-* [MetaMask Swaps](https://metamask.io/swaps.html) — Swap directly from the MetaMask wallet browser extension.
-* Market maker activity can be tracked on the [Dune dashboard](https://dune.xyz/queries/28752/57978).
+* [Swaps MetaMask](https://metamask.io/swaps.html) — Swap directement à partir de l'extension de navigateur du portefeuille MetaMask.
+* L'activité des market makers peut être suivie sur le [tableau de bord de Dune](https://dune.xyz/queries/28752/57978).
 
-## Community
+## Communauté
 
-AirSwap itself is a community asset owned by its token holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and contributor community aim to be maximally decentralized. Community members stake AirSwap tokens (AST) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
+AirSwap est un actif communautaire appartenant à ses détenteurs de tokens, fonctionnant comme un projet ouvert avec un processus transparent de prise de décision et de développement de produits. La technologie et l'organisation du réseau visent toutes deux à une décentralisation maximale. Les membres de la communauté “stakent” des jetons AirSwap (AST) pour participer à la gouvernance et aux autres activités et avantages de la communauté. L'idéation, la rédaction, le vote et l'acceptation des propositions sont un processus ouvert.
 
-AirSwap is **accessible**, **equitable**, and **transparent**. Every participant and contributor is treated fairly and rewarded consistently. All opportunities are inclusive and accessible. Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
+AirSwap is **accessible**, **équitable**, et **transparent**. Chaque participant et contributeur est traité équitablement et récompensé de manière cohérente. Toutes les opportunités sont inclusives et disponibles. Les décisions sont prises ouvertement et les contributions sont open source. Les nouvelles informations sont continuellement et activement partagées tout au long du processus.
 
 ### Token
 
-AirSwap launched with the AirSwap Token (AST) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
+AirSwap a été lancé avec le token AirSwap (AST) le [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) fonctionnant sur le réseau original de swap peer-to-peer. Le token a initialement permis aux traders d'annoncer leur disponibilité et fonctionne également aujourd'hui comme un moyen pour les contributeurs de participer à la gouvernance et au développement. AST donne à ses détenteurs la possibilité de travailler à la mesure de leurs avoirs, et la possibilité de gagner à la mesure de leur contribution, ce qui nécessite fondamentalement une participation active. AST est la porte d'entrée pour rejoindre et contribuer à la communauté AirSwap.
 
-Read more in the community-voted token [treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](guides/voters.md).
+Pour en savoir plus, consultez le [plan de trésorerie des tokens voté par la communauté](https://github.com/airswap/airswap-aips/issues/10) et le [guide des votants](guides/voters.md).
 
 ### Principles
 
