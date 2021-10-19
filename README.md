@@ -57,19 +57,19 @@ Pour en savoir plus, consultez le [plan de trésorerie des tokens voté par la c
 
 La gouvernance décentralisée commence par des principes partagés pour aligner notre prise de décision.
 
-1. **Design for simplicity** — Perfection is achieved when there is nothing left to take away. This is especially true with blockchain based technology and applications.
-2. **Prioritize security** — Our work is done in an adversarial setting. While blockchain requires users to take security into their own hands, they trust AirSwap to be designed and to operate in a secure way.
-3. **Decide with data** — Drive decisions with data that matters. AirSwap performance indicators are trading volume, token holders, community engagement, and tokens used for governance.
-4. **Seek opportunity** — Decentralized finance is abundant with opportunities. Seek and prioritize opportunities that positively impact both AirSwap and the broader ecosystem.
-5. **Win together** — Our community spans platforms across cyberspace and countries across the globe. We grow by both sharing responsibility and celebrating each success.
+1. **Concevoir pour la simplicité** — La perfection est atteinte lorsqu'il n'y a plus rien à enlever. Cela est particulièrement vrai pour les technologies et les applications basées sur la blockchain.
+2. **Priorité à la sécurité** — Notre travail s'effectue dans un cadre contradictoire. Alors que la blockchain exige que les utilisateurs prennent leur sécurité en main, ils font confiance à AirSwap pour être conçu et fonctionner de manière sécurisée.
+3. **Décidez avec des données** — Prenez des décisions avec des données qui comptent. Les indicateurs de performance d'AirSwap sont le volume d'échange, les détenteurs de tokens, l'engagement de la communauté et les tokens utilisés pour la gouvernance.
+4. **Rechercher des opportunités** — La finance décentralisée regorge d'opportunités. Recherchez et priorisez les opportunités qui ont un impact positif à la fois sur AirSwap et sur l'écosystème au sens large.
+5. **Gagner ensemble** — Notre communauté s'étend sur des plateformes à travers le cyberespace et des pays à travers le monde. Nous nous développons en partageant les responsabilités et en célébrant chaque succès.
 
-### Governance
+### Gouvernance
 
-To generate new ideas and directions for the project and cultivate open decision-making, we use a process called AirSwap Improvement Proposals (AIP). AIPs give the community a way to develop and finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This process is how the community captures, selects, and prioritizes new projects.
+Pour générer de nouvelles idées et directions pour le projet et cultiver une prise de décision ouverte, nous utilisons un processus appelé "AirSwap Improvement Proposals" (AIP). Les AIPs donnent à la communauté un moyen de développer et de finaliser des propositions aux contributeurs principaux sur une base continue. Pour plus d'informations, voir [AIP 1](https://github.com/airswap/airswap-aips/issues/1) et consulter [toutes les propositions actives](https://github.com/airswap/aips). Ce processus est la façon dont la communauté attire, sélectionne et priorise les nouveaux projets.
 
-Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](guides/voters.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
+Chaque AIP est ratifié en l'appelant au vote et en étant acceptée par la communauté des détenteurs de tokens. Le vote a lieu sur [Codefi Activate](https://activate.codefi.network/staking/airswap/governance).  Pour participer à la gouvernance, consultez le guide des [Votants](guides/voters.md). Une fois les votes terminés, les propositions sont considérées comme finalisées et placées dans un "backlog" pour être sélectionnées par les contributeurs. En fonction des exigences et de la faisabilité, les contributeurs peuvent accepter la proposition pour la prioriser et la mettre en œuvre.
 
-## History
+## Histoire
 
 AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) and [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
 
