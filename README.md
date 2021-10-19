@@ -1,12 +1,12 @@
-# Welcome
+# Bienvenue
 
 [![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/request-for-quote.md) and [Last Look](technology/last-look.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
+[AirSwap](https://www.airswap.io) est une communauté de développeurs ouverte, qui se concentre sur les systèmes d'échanges décentralisés. La technologie AirSwap alimente les réseaux peer-to-peer en utilisant les protocoles [RFQ](technology/request-for-quote.md) et [Last Look](technology/last-look.md) ce qui en fait le premier choix des market makers de marchés traditionnels qui entrent dans le système financier décentralisé.
 
-## Why We're Here
+## Vision et Mission
 
-Our vision is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. Our mission is to become the standard peer-to-peer trading system: a fundamental primitive of the decentralized economy.
+Notre vision est un avenir où toutes les formes de valeur sont représentées sous forme d'actifs numériques et circulent librement et de manière fiable entre les personnes et les communautés du monde entier. Notre mission est de devenir le système standard de protocole de trading peer-to-peer : une primitive fondamentale de l'économie décentralisée.
 
 ## Technology
 
