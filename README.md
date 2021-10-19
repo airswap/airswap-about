@@ -1,6 +1,6 @@
 # Bienvenue
 
-[![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Suivre](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
+[![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
 [AirSwap](https://www.airswap.io) est une communauté de développeurs ouverte, qui se concentre sur les systèmes d'échanges décentralisés. La technologie AirSwap alimente les réseaux peer-to-peer en utilisant les protocoles [RFQ](technology/request-for-quote.md) et [Last Look](technology/last-look.md), ce qui en fait le premier choix des market makers de marchés traditionnels qui entrent dans le système financier décentralisé.
 
@@ -71,19 +71,19 @@ Chaque AIP est ratifié en l'appelant au vote et en étant acceptée par la comm
 
 ## Histoire
 
-AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) and [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
+AirSwap a été [lancé le 10 octobre 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Au fil des ans, de nouveaux produits et des mises à jour ont été publiés en permanence pour permettre et populariser davantage les avantages du commerce des actifs numériques à l'aide de protocoles décentralisés. Vous pouvez consulter ici les années [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) et [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
 
-* [AirSwap Roadmap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (November 16th, 2017)
-* [AirSwap is Here](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (April 25, 2018)
-* [Spaces is Here](https://medium.com/fluidity/spaces-is-here-a36fa6753474) (October 10, 2018)
-* [AirSwap Instant 2.0](https://medium.com/fluidity/airswap-instant-2-0-d10906447838) (April 26, 2019)
-* [AirSwap Trader](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0) (August 6, 2019)
-* [AirSwap Delegates](https://medium.com/fluidity/introducing-airswap-delegates-1c3db83be1db) (February 4, 2020)
-* [Phase II Kickoff](https://twitter.com/airswap/status/1346542008345747457) and [Transition Complete](https://twitter.com/airswap/status/1359190898110853122) (2021)
+* [Roadmap AirSwap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (16 novembre 2017)
+* [AirSwap est là](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (25 avril 2018)
+* [Spaces est là](https://medium.com/fluidity/spaces-is-here-a36fa6753474) (10 octobre 2018)
+* [AirSwap Instant 2.0](https://medium.com/fluidity/airswap-instant-2-0-d10906447838) (26 avril 2019)
+* [AirSwap Trader](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0) (6 août 2019)
+* [AirSwap Delegates](https://medium.com/fluidity/introducing-airswap-delegates-1c3db83be1db) (4 février 2020)
+* [Lancement de la phase II](https://twitter.com/airswap/status/1346542008345747457) et [fin de la transition](https://twitter.com/airswap/status/1359190898110853122) (2021)
 
-Having achieved its initial goals and delivered its technology roadmap, AirSwap is now an open project and community of contributors who pursue initiatives to continue to develop and grow the network.
+Ayant atteint ses objectifs initiaux et livré sa feuille de route (roadmap) technologique, AirSwap est maintenant un projet ouvert et une communauté de contributeurs qui poursuivent des initiatives pour continuer à développer et à faire croître le réseau.
 
-* **AirSwap** is recognized by...
+* **AirSwap** est reconnu par…
   * **St. Louis Fed** as the leading peer-to-peer trading protocol [→](https://research.stlouisfed.org/publications/review/2021/02/05/decentralized-finance-on-blockchain-and-smart-contract-based-financial-markets)
   * **MIT Technology Review** as a protocol built to survive [→](https://www.technologyreview.com/2018/02/22/145100/when-the-cryptocurrency-bubble-pops-these-tokens-are-built-to-survive/)
   * **Stanford Journal** on Blockchain Law and Policy [→](https://stanford-jblp.pubpub.org/pub/deconstructing-dex/release/1)
