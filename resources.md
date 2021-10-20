@@ -1,4 +1,4 @@
-# Resources
+# Ressources
 
 For smart contract addresses see [Deployments](technology/deployments.md).
 
