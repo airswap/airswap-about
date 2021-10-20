@@ -1,8 +1,8 @@
 # Ressources
 
-For smart contract addresses see [Deployments](technology/deployments.md).
+Pour les adresses du smart contract, rendez-vous sur [Déploiements](technology/deployments.md).
 
-## Social Media
+## Réseaux sociaux
 
 * [Discord](https://chat.airswap.io/)
 * [Telegram](https://t.me/airswapofficial)
