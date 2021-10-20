@@ -1,4 +1,4 @@
-# Table of contents
+# Table des matières
 
 * [Welcome](README.md)
 * [Resources](resources.md)
