@@ -1,20 +1,21 @@
 ---
-description: Learn more about the various roles in AirSwap
+description: Apprenez-en plus à propos des différents rôles au sein d'AirSwap
 ---
 
-# Roles
+# Rôles
 
-AirSwap itself is a community asset owned by its token (AST) holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and organization aim to be maximally decentralized. Community members stake AirSwap tokens (AST) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
 
-AirSwap is **accessible**, **equitable**, and **transparent**. Every participant and contributor is treated fairly and rewarded consistently. All opportunities are inclusive and available. Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
+AirSwap est un actif communautaire appartenant aux détenteurs de son token (AST), fonctionnant comme un projet ouvert avec un processus transparent de prise de décisions et de développement de produits. La technologie et l'organisation du réseau visent toutes deux à une décentralisation maximale. Les membres de la communauté mettent en jeu des tokens AirSwap (AST) pour participer à la gouvernance et aux autres activités et avantages de la communauté. L'idéation, la rédaction, le vote et l'acceptation des propositions sont un processus ouvert.
 
-There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word.
+AirSwap est **accessible**, **équitable**, and **transparent**. Chaque participant et contributeur est traité équitablement et récompensé de manière cohérente. Toutes les opportunités sont inclusives et disponibles. Les décisions sont prises ouvertement et les contributions sont open source. Les nouvelles informations sont continuellement et activement partagées.
 
-* [**Voters** ](../guides/voters.md)stake AirSwap Tokens (AST) to vote on the future roadmap of AirSwap
-* [**Authors**](../guides/authors.md) draft and propose new projects and protocols for the community to vote on
-* **Developers** build new features and products which have been voted in by the community
-* [**Ambassadors** ](../guides/ambassadors.md)bring community-built software to a wider audience
+Il existe de nombreuses façons de participer à AirSwap, qu'il s'agisse de générer des idées, de coordonner des projets, de contribuer à la conception et au code, ou d'aider à faire passer le message.
+
+* [**Votants** ](../guides/voters.md)stakez les AirSwap Tokens (AST) afin de voter par rapport à la roadmap d'AirSwap.
+* [**Auteurs**](../guides/authors.md)rédigez et proposez de nouveaux projets et protocoles soumis au vote de la communauté de
+* **Développeurs** afin de créer de nouvelles fonctionnalités et de nouveaux produits qui ont été votés par la communauté.
+* [**Ambassadeurs** ](../guides/ambassadors.md)faites bénéficier un public plus large des logiciels créés par la communauté
 
 {% hint style="info" %}
-Join our [Discord ](https://discord.gg/BQaJCgmhD7)to find out more about how you can be a part of our mission!
+Rejoignez notre [Discord ](https://discord.gg/BQaJCgmhD7)pour en savoir plus sur la façon dont vous pouvez participer à notre mission !
 {% endhint %}
