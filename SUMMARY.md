@@ -16,7 +16,7 @@
 
 * [RFQ](technology/request-for-quote.md)
 * [Last Look](technology/last-look.md)
-* [Discovery](technology/discovery.md)
+* ["Discovery"](technology/discovery.md)
 * [Signatures](technology/signatures.md)
 * [Déploiements](technology/deployments.md)
 * [Makers](technology/makers.md)
