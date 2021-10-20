@@ -9,31 +9,31 @@ Pour les adresses du smart contract, rendez-vous sur [Déploiements](technology/
 * [Twitter](https://twitter.com/airswap)
 
 {% hint style="info" %}
-Know some other channels which could be useful for community building? Do drop by our [Discord](https://chat.airswap.io) to let us know how else we can reach out to the community!
+Vous connaissez d'autres canaux qui pourraient être utiles pour renforcer la communauté ? Passez sur notre [Discord](https://chat.airswap.io) pour nous en dire plus ! 
 {% endhint %}
 
-## Governance
+## Gouvernance
 
-* [AirSwap Improvement Protocols \(AIPs\)](https://github.com/airswap/airswap-aips/issues)
-* [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
-* [Mobile Voting Dashboard](https://ast.on.fleek.co/)
-* [Snapshot Page](https://snapshot.org/#/vote.airswap.eth)
+* [Protocoles d'amélioration d’AirSwap \(AIPs\)](https://github.com/airswap/airswap-aips/issues)
+* [Portail de vote](https://activate.codefi.network/staking/airswap/governance)
+* [Tableau de bord du vote mobile](https://ast.on.fleek.co/)
+* [Page Snapshot](https://snapshot.org/#/vote.airswap.eth)
 
 ## Code
 
-* [AirSwap Protocols](https://github.com/airswap/airswap-protocols)
+* [Protocoles AirSwap](https://github.com/airswap/airswap-protocols)
 * [AirSwap Web](https://github.com/airswap/airswap-web)
 * [AirSwap CLI](https://github.com/airswap/airswap-cli)
-* [About AirSwap](https://github.com/airswap/airswap-about)
+* [A propos d'AirSwap](https://github.com/airswap/airswap-about)
 
-## Analytics
+## Analytique
 
-* [AirSwap Dune Dashboard](https://dune.xyz/agrimony/airswap_3)
-* [AirSwap Advanced Dashboard](https://dune.xyz/agrimony/AirSwap-Advanced)
-* [AirSwap Rewards Dashboard](https://dune.xyz/agrimony/AirSwap-Rewards)
-* [Rewards Pool on Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
+* [Tableau de bord Dune AirSwap](https://dune.xyz/agrimony/airswap_3)
+* [Tableau de bord avancé AirSwap](https://dune.xyz/agrimony/AirSwap-Advanced)
+* [Tableau de bord des récompenses AirSwap](https://dune.xyz/agrimony/AirSwap-Rewards)
+* [Pool de récompenses sur Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
 
-## Deployments
+## Déploiements
 
-The latest smart contract deployments can be found on the [deployments](technology/deployments.md) page
+Les derniers déploiements de smart contract peuvent être consultés sur la page des [déploiements](technology/deployments.md) 
 
