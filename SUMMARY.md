@@ -1,10 +1,10 @@
 # Table des matières
 
-* [Welcome](README.md)
-* [Resources](resources.md)
+* [Bienvenue](README.md)
+* [Ressources](resources.md)
 * [Questions](frequently-asked-questions.md)
 
-## Community
+## Communauté
 
 * [Conduct](community/code-of-conduct.md)
 * [Roles](community/roles.md)
