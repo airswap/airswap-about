@@ -8,7 +8,7 @@ AirSwap présente un certain nombre d'avantages.
 
 * Non custodial. Contrairement à un échange centralisé, AirSwap ne garde pas les fonds.
 * Pas d'inscription. AirSwap ne demande pas aux utilisateurs de s'inscrire et ne collecte pas de données sensibles.
-* Pas de "glissement" (slippae). Sur AirSwap, les prix sont exacts, donc le prix que vous voyez est le prix que vous obtenez.
+* Pas de "glissement" (slippage). Sur AirSwap, les prix sont exacts, donc le prix que vous voyez est le prix que vous obtenez.
 * Intuitif. AirSwap est conçu avec l'UX comme étant une priorité absolue.
 * Sécurisé. AirSwap a été classé comme l'échange décentralisé Ethereum le plus sûr.
 
