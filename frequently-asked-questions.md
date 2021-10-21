@@ -1,40 +1,40 @@
 # Questions
 
-## Protocols
+## Protocoles
 
-### Why use AirSwap?
+### Pourquoi utiliser AirSwap ?
 
-AirSwap has a number of benefits.
+AirSwap présente un certain nombre d'avantages.
 
-* Non-custodial. Unlike a centralized exchange, AirSwap does not take custody of funds.
-* No sign-ups. AirSwap does not require users to sign up and does not collect sensitive data.
-* No slippage. On AirSwap, prices are exact so the price you see is the price you get.
-* Intuitive. AirSwap is designed with UX as a top priorities.
-* Secure. AirSwap was rated the #1 safest Ethereum decentralized exchange.
+* Non custodial. Contrairement à un échange centralisé, AirSwap ne garde pas les fonds.
+* Pas d'inscription. AirSwap ne demande pas aux utilisateurs de s'inscrire et ne collecte pas de données sensibles.
+* Pas de "glissement" (slippae). Sur AirSwap, les prix sont exacts, donc le prix que vous voyez est le prix que vous obtenez.
+* Intuitif. AirSwap est conçu avec l'UX comme étant une priorité absolue.
+* Sécurisé. AirSwap a été classé comme l'échange décentralisé Ethereum le plus sûr.
 
-Learn more about AirSwap's benefits in the blog post [Why AirSwap?](https://medium.com/fluidity/why-airswap-62ff8b4ee81d)
+Pour en savoir plus sur les avantages d'AirSwap, consultez l'article de blog [Pourquoi AirSwap ?].(https://medium.com/fluidity/why-airswap-62ff8b4ee81d)
 
-### How is AirSwap different than Uniswap?
+### En quoi AirSwap est-il différent d'Uniswap ?
 
-Uniswap is a "peer-to-contract" automated market maker (AMM) that runs fully on-chain. AirSwap is a peer-to-peer network combining off-chain negotiation and on-chain settlement by atomic swap.
+Uniswap est un market maker automatisé (AMM) "peer-to-contract" qui fonctionne entièrement on-chain. AirSwap est un réseau peer-to-peer combinant la négociation off-chain et le règlement on-chain par swap atomique.
 
-There are benefits to each. With AirSwap there is no price slippage and trades are unlimited size. The trade-off is that it's easier for everyday users to provide liquidity to Uniswap. However, a successful outcome for RFQ is a few high quality liquidity providers covering a variety of digital assets, so AirSwap does not require the same number of liquidity providers to be successful.
+Chacun de ces systèmes présente des avantages. Avec AirSwap, il n'y a pas de "glissement" des prix et la taille des transactions est illimitée. La contrepartie est qu'il est plus facile pour les utilisateurs quotidiens de fournir de la liquidité à Uniswap. Cependant, le succès de RFQ repose sur un petit nombre de fournisseurs de liquidités de haute qualité couvrant une variété d'actifs numériques, alors AirSwap ne nécessite pas le même nombre de fournisseurs de liquidités pour réussir.
 
-### Is AirSwap available on other chains?
+### AirSwap est-il disponible sur d'autres chaînes ?
 
-AirSwap [RFQ ](technology/request-for-quote.md)is currently available through Metamask swaps on BSC. We are currently working on bringing AirSwap swaps to a [chain near you](https://github.com/airswap/airswap-aips/issues/49). Stay tuned...
+AirSwap [RFQ ](technology/request-for-quote.md)est actuellement disponible par le biais de swaps Metamask sur la BSC. Nous travaillons actuellement à la mise en place des swaps AirSwap sur . [chain near you](https://github.com/airswap/airswap-aips/issues/49). Restez à l'écoute...
 
-## Governance
+## Gouvernance
 
-### Why Stake on AirSwap?
+### Pourquoi staker sur AirSwap ?
 
-AirSwap Tokens (AST) can be staked to participate in governance of the protocol. All are welcome to participate by proposing, discussing, and voting on proposals that move the project and community forward.
+Les tokens AirSwap (AST) peuvent être stakés pour participer à la gouvernance du protocole. Tout le monde est invité à participer en proposant, discutant et votant pour des propositions qui font avancer le projet et la communauté.
 
-Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. Check out [this tutorial](guides/voters.md) to learn more.
+Les votants sont récompensés par des points en fonction du montant misé. Les points peuvent être utilisés pour réclamer une partie des fonds de la pool de récompenses. Consultez ce [tutoriel](guides/voters.md) pour en apprendre plus
 
-### How do I stake on AirSwap?
+### Comment puis-je staker sur AirSwap ?
 
-You can stake your AST on the [Codefi Activate platform](https://activate.codefi.network/staking/airswap/governance)
+Vous pouvez staker vos AST sur la [plateforme Codefi Activate](https://activate.codefi.network/staking/airswap/governance)
 
 ### What are the rules of staking?
 
