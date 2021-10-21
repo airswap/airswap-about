@@ -12,7 +12,7 @@ AirSwap présente un certain nombre d'avantages.
 * Intuitif. AirSwap est conçu avec l'UX comme étant une priorité absolue.
 * Sécurisé. AirSwap a été classé comme l'échange décentralisé Ethereum le plus sûr.
 
-Pour en savoir plus sur les avantages d'AirSwap, consultez l'article de blog [Pourquoi AirSwap ?].(https://medium.com/fluidity/why-airswap-62ff8b4ee81d)
+Pour en savoir plus sur les avantages d'AirSwap, consultez l'article de blog [Pourquoi AirSwap ?](https://medium.com/fluidity/why-airswap-62ff8b4ee81d)
 
 ### En quoi AirSwap est-il différent d'Uniswap ?
 
