@@ -36,24 +36,24 @@ Les votants sont récompensés par des points en fonction du montant misé. Les 
 
 Vous pouvez staker vos AST sur la [plateforme Codefi Activate](https://activate.codefi.network/staking/airswap/governance)
 
-### What are the rules of staking?
+### Quelles sont les règles du staking?
 
-Staked tokens are unlocked over a 20 week period with a 4 week initial cliff. This means that you may not unstake any tokens during the first 4 weeks.
+Les tokens stakés sont débloqués sur une période de 20 semaines avec un blocage initial de 4 semaines. Cela signifie que vous ne pouvez pas débloquer de jetons pendant les 4 premières semaines.
 
-### When is the next vote?
+### Quand a lieu le prochain vote ?
 
-Voting occurs every 4 weeks. You can check when the next vote is scheduled [here](https://dune.xyz/agrimony/airswap\_3)
+Le vote a lieu toutes les 4 semaines. Vous pouvez vérifier quand le prochain vote est prévu [ici](https://dune.xyz/agrimony/airswap\_3)
 
-### Do my points expire?
+### Mes points expirent-ils ?
 
-No! Points don't expire and will be carried over to the next cycle.
+Non ! Les points n'expirent pas et sont reportés au cycle suivant.
 
-## Contributing
+## Contribuer
 
-### How can I contribute to AirSwap?
+### Comment puis-je contribuer à AirSwap ?
 
-There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word. Learn more about the different roles [here](community/roles.md).
+Il existe de nombreuses façons de s'impliquer dans AirSwap, de la création d'idées à la coordination de projets, en passant par la contribution à la conception et au code, et l'aide à la diffusion de notre vision. Apprenez-en plus sur les différents rôles [ici](community/roles.md).
 
-### How do contributors get rewarded?
+### Comment les contributeurs sont-ils récompensés ?
 
-Every 4 weeks, contributors determine the allocation of funds through [Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the number of GIVE tokens received. Learn more about how each role is funded [here](community/rewards.md#circle-funding).
+Toutes les 4 semaines, les contributeurs déterminent l'allocation des fonds à travers [Coordinape](https://coordinape.com). Les fonds sont ensuite distribués au prorata à chaque membre du cercle en fonction du nombre de jetons GIVE reçus. En savoir plus sur la façon dont chaque rôle est financé [ici](community/rewards.md#circle-funding).
