@@ -22,7 +22,7 @@ Chacun de ces systèmes présente des avantages. Avec AirSwap, il n'y a pas de "
 
 ### AirSwap est-il disponible sur d'autres chaînes ?
 
-AirSwap [RFQ ](technology/request-for-quote.md)est actuellement disponible par le biais de swaps Metamask sur la BSC. Nous travaillons actuellement à la mise en place des swaps AirSwap sur . [chain near you](https://github.com/airswap/airswap-aips/issues/49). Restez à l'écoute...
+AirSwap [RFQ ](technology/request-for-quote.md)est actuellement disponible par le biais de swaps Metamask sur la BSC. Nous travaillons actuellement à la mise en place des swaps AirSwap sur [chain near you](https://github.com/airswap/airswap-aips/issues/49). Restez à l'écoute...
 
 ## Gouvernance
 
