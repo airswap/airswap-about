@@ -56,4 +56,4 @@ Il existe de nombreuses façons de s'impliquer dans AirSwap, de la création d'i
 
 ### Comment les contributeurs sont-ils récompensés ?
 
-Toutes les 4 semaines, les contributeurs déterminent l'allocation des fonds à travers [Coordinape](https://coordinape.com). Les fonds sont ensuite distribués au prorata à chaque membre du cercle en fonction du nombre de jetons GIVE reçus. En savoir plus sur la façon dont chaque rôle est financé [ici](community/rewards.md#circle-funding).
+Toutes les 4 semaines, les contributeurs déterminent l'allocation des fonds à travers [Coordinape](https://coordinape.com). Les fonds sont ensuite distribués au prorata à chaque membre du cercle en fonction du nombre de jetons GIVE reçus. Apprenez-en plus sur la façon dont chaque rôle est financé [ici](community/rewards.md#circle-funding).
