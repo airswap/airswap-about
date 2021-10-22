@@ -6,7 +6,7 @@
 
 ## Communauté
 
-* [Conduite](community/code-of-conduct.md)
+* [Code de conduite](community/code-of-conduct.md)
 * [Rôles](community/roles.md)
 * [Processus](community/process.md)
 * [Bounties](community/bounties.md)
