@@ -1,4 +1,4 @@
-# Conduct
+# Code de conduite
 
 Our greatest chance at success comes from creating a respectful environment where people want to come, stay, and participate over the long term.
 
