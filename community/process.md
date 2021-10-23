@@ -1,19 +1,19 @@
 ---
-description: Learn how AirSwap continuously upgrades itself through the community
+description: Découvrez comment AirSwap s'améliore continuellement grâce à la communauté.
 ---
 
-# Process
+# Processus
 
-AirSwap is organized as a decentralized network of contributors using a continuous process called [AirSwap Improvement Proposals (AIP)](https://github.com/airswap/AIPs/issues/1). This process is how the community captures, selects, and prioritizes new projects.
+AirSwap est organisé comme un réseau décentralisé de contributeurs utilisant un processus continu appelé [Propositions d'amélioration d'AirSwap (AIP)](https://github.com/airswap/AIPs/issues/1). C'est par ce processus que la communauté saisit, sélectionne et hiérarchise les nouveaux projets.
 
-Each proposal is authored by one or more authors. The AIP is ratified as a community proposal once it is called to vote and accepted by token holders. Once accepted, the AIP is placed in a backlog for selection by developers. Developers select proposals for prioritization and implementation based on their requirements and feasibility. Once complete, Ambassadors help to deliver projects and bring awareness to a wider audience.
+Chaque proposition est rédigée par un ou plusieurs auteurs. L'AIP est ratifiée en tant que proposition de la communauté une fois qu'elle est appelée au vote et acceptée par les détenteurs de tokens. Une fois acceptée, l'AIP est placée dans un backlog pour être sélectionnée par les développeurs. Les développeurs sélectionnent les propositions pour les classer par ordre de priorité et les mettre en œuvre en fonction de leurs exigences et de leur faisabilité. Une fois le projet terminé, les ambassadeurs aident à le réaliser et à le faire connaître à un public plus large.
 
-Several incentives to participate are built in. Every 4 weeks…
+Plusieurs incitations à participer sont prévues. Toutes les 4 semaines...
 
-* **Votes are run** for four days on one or more proposals.
-* **Rewards are distributed** to contributors for work completed.
-* **Bounties are assessed** and distributed by a project lead.
+* **Les votes sont effectués** pendant quatre jours sur une ou plusieurs propositions.
+* **Les récompenses sont distribuées** aux contributeurs pour le travail accompli.
+* **Les primes sont évaluées** et distribuées par un chef de projet.
 
 {% hint style="info" %}
-See a list of [active projects](https://github.com/airswap/AIPs/issues), proposals [ready to be built](https://github.com/airswap/AIPs/issues), and open [bounty categories](bounties.md).
+Voyez ici une liste de [projets actifs](https://github.com/airswap/AIPs/issues), propositions [prêtes à être construites](https://github.com/airswap/AIPs/issues), et les [catégories de bouties](bounties.md). ouvertes
 {% endhint %}
