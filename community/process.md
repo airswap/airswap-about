@@ -15,5 +15,5 @@ Plusieurs incitations à participer sont prévues. Toutes les 4 semaines...
 * **Les primes sont évaluées** et distribuées par un chef de projet.
 
 {% hint style="info" %}
-Voyez ici une liste de [projets actifs](https://github.com/airswap/AIPs/issues), propositions [prêtes à être construites](https://github.com/airswap/AIPs/issues), et les [catégories de bouties](bounties.md) ouvertes
+Voyez ici une liste de [projets actifs](https://github.com/airswap/AIPs/issues), propositions [prêtes à être construites](https://github.com/airswap/AIPs/issues), et les [catégories de bounties](bounties.md) ouvertes
 {% endhint %}
