@@ -24,7 +24,7 @@ Contributions à la culture communautaire et à la promotion d'un esprit positif
 
 ### Networking et présentations
 
-dFaire des introductions sociales et professionnelles pour le projet sont également des contributions précieuses. Il peut s'agir, par exemple, de références à des **makers** qui, en fin de compte, fournissent des liquidités, à des **applications** intéressées par l'intégration d'échanges, et à des **contributeurs à fort impact**, comme des designers, des développeurs et des spécialistes du marketing.
+Faire des introductions sociales et professionnelles pour le projet sont également des contributions précieuses. Il peut s'agir, par exemple, de références à des **makers** qui, en fin de compte, fournissent des liquidités, à des **applications** intéressées par l'intégration d'échanges, et à des **contributeurs à fort impact**, comme des designers, des développeurs et des spécialistes du marketing.
 
 ## Récompenses
 
