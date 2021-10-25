@@ -4,7 +4,7 @@
 
 ## Catégories
 
-Vous êtes invités à soumettre des bounties pour l'une des catégories suivantes.
+Vous êtes invités à soumettre des bounties pour l'une des catégories suivantes :
 
 ### Sensibilisation et éducation
 
