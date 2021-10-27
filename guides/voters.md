@@ -25,7 +25,7 @@ Pour participer au vote, votre solde de tokens AST (sAST) sera utilisé pour dé
 La staking et le unstaking s'effectuent via la plateforme Codefi Activate. Suivez les guides d'utilisation ci-dessous pour apprendre à staker vos tokens en utilisant [Metamask](https://metamask.io/).
 
 {% hint style="warning" %}
-Plusieurs anciens stakes ont été laissés sur des contrats de staking hérités. Pour ceux sur le contrat de staking [originel ](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe), le montant maximal disponible pour le unstaking est de 10 % tous les 7 jours. \(jusqu'à &lt; 100 AST\).
+Plusieurs anciens stakes ont été laissés sur des contrats de staking hérités. Pour ceux sur le contrat de staking [originel](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe), le montant maximal disponible pour le unstaking est de 10 % tous les 7 jours. \(jusqu'à &lt; 100 AST\).
 
 Il existe un autre contrat de staking [obsolète ](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec) qui suit le même protocole d'unstaking (**déblocage de 0 à 100 % sur 20 semaines et blocage pendant les 4 premières semaines**), Cependant, l'unstaking doit être fait par [interaction manuelle avec le contrat intelligent](tutorials.md) plutôt qu'en passant par Codefi Activate.
 
@@ -55,6 +55,6 @@ Notes concernant les points :
 Le nombre de points vous permet de réclamer un certain pourcentage des jetons de la pool de récompenses.
 
 {% hint style="info" %}
-Des guides plus détaillés sont disponibles sur la page [tutorials](tutorials.md).
+Des guides plus détaillés sont disponibles sur la page [tutoriels](tutorials.md).
 {% endhint %}
 
