@@ -55,6 +55,6 @@ Notes concernant les points :
 Le nombre de points vous permet de réclamer un certain pourcentage des jetons de la pool de récompenses.
 
 {% hint style="info" %}
-Des guides plus détaillés sont disponibles sur la page [tutoriels](tutorials.md).
+Des guides plus détaillés sont disponibles sur la page [tutoriel](tutorials.md).
 {% endhint %}
 
