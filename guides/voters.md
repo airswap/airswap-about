@@ -1,5 +1,5 @@
 ---
-description: Un guide pour voter dans la DAO AirSwap
+description: Le guide pour voter sur la DAO AirSwap
 ---
 
 # Votants
