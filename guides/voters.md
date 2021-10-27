@@ -39,7 +39,7 @@ Se documenter et s'informer sur chaque proposition est une partie importante du 
 Les cycles de vote ont lieu toutes les 4 semaines, où un certain nombre d'AIP seront votées en même temps. Vous devez voter sur toutes les propositions afin d'obtenir le nombre maximum de points. Pour parcourir et participer aux votes, visitez le site [Portail de gouvernance d'AirSwap](https://activate.codefi.network/staking/airswap/governance) sur Codefi Activate quand le vote est disponible. Notez que le vote est effectué "off-chain"g et ne coûte pas de gaz (ETH).
 
 {% hint style="info" %}
-Vous pouvez vérifier quand le prochain cycle de vote commencera sur ce [tableau de bord] (https://dune.xyz/agrimony/airswap_3).
+Vous pouvez vérifier quand le prochain cycle de vote commencera sur ce [tableau de bord](https://dune.xyz/agrimony/airswap_3).
 {% endhint %}
 
 ### Réclamer
