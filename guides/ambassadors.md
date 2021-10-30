@@ -16,8 +16,8 @@ Le champ d'application du programme Ambassadeur s'articule autour de trois domai
   * Sensibilisation au produit - favoriser l'engagement des utilisateurs avec l'application web.
   * Sensibilisation au protocole - conduire de nouvelles intégrations
   * Sensibilisation à notre communauté - accueillir de nouveaux membres et contributeurs.
-* **Engagement interne** - Engagement interne - engagement de la communauté et communication des mises à jour.
-* **Engagement interne** - Engagement externe : identifier et établir des relations avec des projets pertinents.
+* **Engagement interne** - engagement de la communauté et communication des mises à jour.
+* **Engagement interne** - identifier et établir des relations avec des projets pertinents.
 
 ## Mode d'emploi
 
