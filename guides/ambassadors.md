@@ -23,13 +23,13 @@ Le champ d'application du programme Ambassadeur s'articule autour de trois domai
 
 ### Coordination
 
-Les ambassadeurs travaillent ensemble sur [les projets en cours].(https://github.com/airswap/airswap-growth/projects/1) par le biais des canaux [Discord](https://chat.airswap.io). Le cercle des ambassadeurs se réunit chaque semaine pour discuter des projets et des tâches en cours. Des réunions plus courtes peuvent également être organisées pour des sujets particuliers.
+Les ambassadeurs travaillent ensemble sur [les projets en cours](https://github.com/airswap/airswap-growth/projects/1) par le biais des canaux [Discord](https://chat.airswap.io). Le cercle des ambassadeurs se réunit chaque semaine pour discuter des projets et des tâches en cours. Des réunions plus courtes peuvent également être organisées pour des sujets particuliers.
 
 ### Équiper
 
-Ambassadors can find useful information in the [guides](https://about.airswap.io). Ambassadors should also familiarize themselves with useful community built [resources](../resources.md), which contain helpful statistics and tools for the community.
+Les ambassadeurs peuvent trouver des informations utiles dans les [guides](https://about.airswap.io). Les ambassadeurs doivent également se familiariser avec les [ressources].(../resources.md) utiles construites par la communauté, qui contiennent des statistiques et des outils utiles pour la communauté.
 
-Cross-circle sharing sessions will also be organised to get Ambassadors familiarized with not only the product and protocols, but also the people involved in AirSwap.
+Des sessions de partage entre les cercles seront également organisées afin que les ambassadeurs se familiarisent non seulement avec le produit et les protocoles, mais aussi avec les personnes impliquées dans AirSwap.
 
 ### Engagement
 
