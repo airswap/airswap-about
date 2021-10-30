@@ -1,31 +1,31 @@
 ---
-description: A guide to contributing to the AirSwap Ambassador circle
+description: Un guide pour contribuer au cercle des ambassadeurs AirSwap
 ---
 
 # Ambassadors
 
-## Mandate
+## Mandat
 
-Develop our collective knowledge and expand our presence through high quality engagement and productive ecosystem relationships.
+Développer nos connaissances collectives et étendre notre présence par un engagement de haute qualité et des relations productives avec les différents écosystèmes.
 
-## Scope
+## Portée
 
-The scope of the Ambassador program revolves around three main areas. Ambassadors are welcome to propose ideas which will grow AirSwap in any of these areas.
+Le champ d'application du programme Ambassadeur s'articule autour de trois domaines principaux. Les ambassadeurs sont invités à proposer des idées qui feront progresser AirSwap dans l'un de ces domaines.
 
-* **Awareness** - projects which help to bring awareness to AirSwap
-  * Awareness of the product - driving user engagement with the web app
-  * Awareness of the protocol - driving new integrations
-  * Awareness of our community - welcoming new members and contributors
-* **Internal engagement** - engaging the community and communicating updates
-* **External engagement** - identifying and building relationships with relevant projects
+* **Sensibilisation** - projets qui aident à faire connaître AirSwap.
+  * Sensibilisation au produit - favoriser l'engagement des utilisateurs avec l'application web.
+  * Sensibilisation au protocole - conduire de nouvelles intégrations
+  * Sensibilisation à notre communauté - accueillir de nouveaux membres et contributeurs.
+* **Engagement interne** - Engagement interne - engagement de la communauté et communication des mises à jour.
+* **Engagement interne** - Engagement externe : identifier et établir des relations avec des projets pertinents.
 
-## How-to
+## Mode d'emploi
 
 ### Coordination
 
-Ambassadors work together on [ongoing projects](https://github.com/airswap/airswap-growth/projects/1) through [Discord](https://chat.airswap.io) channels. The Ambassador circle meets weekly to discuss ongoing projects and tasks. Shorter meetings may also be arranged for special topics.
+Les ambassadeurs travaillent ensemble sur [les projets en cours].(https://github.com/airswap/airswap-growth/projects/1) par le biais des canaux [Discord](https://chat.airswap.io). Le cercle des ambassadeurs se réunit chaque semaine pour discuter des projets et des tâches en cours. Des réunions plus courtes peuvent également être organisées pour des sujets particuliers.
 
-### Equipping
+### Équiper
 
 Ambassadors can find useful information in the [guides](https://about.airswap.io). Ambassadors should also familiarize themselves with useful community built [resources](../resources.md), which contain helpful statistics and tools for the community.
 
@@ -33,32 +33,32 @@ Cross-circle sharing sessions will also be organised to get Ambassadors familiar
 
 ### Engagement
 
-Ambassadors are typically the first contact for newcomers to the community - so please be welcoming and helpful to our new friends! Remember to adhere to our code of conduct when engaging with community members.
+Les ambassadeurs sont généralement le premier contact avec les nouveaux arrivants dans la communauté. Soyez donc accueillants et serviables envers nos nouveaux amis ! N'oubliez pas d'adhérer à notre code de conduite lors de vos échanges avec les membres de la communauté.
 
-* **No price talk.** Speculation is detrimental and counterproductive to our mission. Do not talk about price. Keep discussions about building, growing, and governing AirSwap.
-* **Respect diversity.** This community is built by people across the globe from many walks of life with many perspectives. Honor that diversity; it gives us strength.
-* **Win together.** As members of the AirSwap community, we each share common goals and all share the opportunity to contribute and help AirSwap succeed.
+* **Ne parlez pas de prix.** La spéculation est préjudiciable et contre-productive pour notre mission. Ne parlez pas de prix. Gardez les discussions sur la construction, la croissance et la gouvernance d'AirSwap.
+* **Respectez la diversité.** Cette communauté est construite par des personnes à travers le monde provenant de nombreux horizons et ayant de nombreuses perspectives. Honorez cette diversité, elle nous donne de la force.
+* **Gagner ensemble.** En tant que membres de la communauté AirSwap, nous partageons tous des objectifs communs et nous avons tous la possibilité de contribuer et d'aider AirSwap à réussir.
 
-Ambassadors are also encouraged to participate in other communities, in order to understand and identify potential partners. As an Ambassador, you help to represent the AirSwap community, and as such should always behave appropriately - especially in other communities.
+Les ambassadeurs sont également encouragés à participer à d'autres communautés, afin de comprendre et d'identifier des partenaires potentiels. En tant qu'ambassadeur, vous aidez à représenter la communauté AirSwap, et en tant que tel, vous devez toujours vous comporter de manière appropriée - en particulier dans les autres communautés.
 
-Ambassadors would also need to keep up-to-date with the latest discussions and proposals in AirSwap, so that general queries can be addressed or, at least, pointed in the right direction.
+Les ambassadeurs devront également se tenir au courant des dernières discussions et propositions d'AirSwap, afin de pouvoir répondre aux questions générales ou, du moins, de les orienter dans la bonne direction.
 
-For more information, please refer to our [code of conduct](../community/code-of-conduct.md).
+Pour plus d'informations, veuillez vous référer à notre [code de conduite].(../community/code-of-conduct.md).
 
-### Rewards
+### Récompenses
 
-At the end of each voting cycle, ambassadors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward other ambassadors based on their contributions during that cycle. At the end of the cycle, rewards are paid out based on their allocation of GIVE tokens.
+À la fin de chaque cycle de vote, les ambassadeurs attribuent des jetons GIVE sur [Coordinape](https://coordinape.com) pour récompenser d'autres ambassadeurs en fonction de leurs contributions au cours de ce cycle. À la fin du cycle, les récompenses sont versées en fonction de leur allocation de jetons GIVE.
 
 {% hint style="info" %}
-Read more on rewards [here](../community/rewards.md)
+Apprenez-en davantage sur les récompenses [ici].(../community/rewards.md)
 {% endhint %}
 
-### Joining
+### Rejoindre
 
-Members who are interested in joining the Ambassadors circle can reach out to other @ambassadors in [Discord](https://chat.airswap.io). In general, Ambassadors are selected based on language spoken, their knowledge of AirSwap, their connections with other communities, their motivations, skills and visions.
+Les membres qui souhaitent rejoindre le cercle des ambassadeurs peuvent contacter d'autres @ambassadeurs sur [Discord].(https://chat.airswap.io). En général, les ambassadeurs sont sélectionnés en fonction de la langue parlée, de leur connaissance d'AirSwap, de leurs liens avec d'autres communautés, de leurs motivations, de leurs compétences et de leurs visions.
 
-Ambassadors-in-training would be expected to read the [guides](https://about.airswap.io) to understand more about AirSwap's product and technology, and to help welcome new members into the community. Once ready, Ambassadors can nominate any ambassador-in-training into the Ambassador circle. If two other Ambassadors vouch for the nominee, s/he will automatically be inducted into the circle and can benefit from the circle rewards.
+Les ambassadeurs en formation sont censés lire les [guides].(https://about.airswap.io) pour mieux comprendre le produit et la technologie d'AirSwap, et pour aider à accueillir de nouveaux membres dans la communauté. Une fois prêts, les ambassadeurs peuvent nommer tout ambassadeur en formation dans le cercle des ambassadeurs. Si deux autres ambassadeurs se portent garants de la personne nommée, celle-ci sera automatiquement intronisée dans le cercle et pourra bénéficier des récompenses du cercle.
 
 {% hint style="info" %}
-Ambassadors-in-training can help to create content (e.g. tutorials and guides) and be rewarded in [bounties](https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
+Les ambassadeurs en formation peuvent aider à créer du contenu (par exemple, des tutoriels et des guides) et être récompensés par des [bounties].(https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
 {% endhint %}
