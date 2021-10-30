@@ -27,7 +27,7 @@ Les ambassadeurs travaillent ensemble sur [les projets en cours](https://github.
 
 ### Équiper
 
-Les ambassadeurs peuvent trouver des informations utiles dans les [guides](https://about.airswap.io). Les ambassadeurs doivent également se familiariser avec les [ressources].(../resources.md) utiles construites par la communauté, qui contiennent des statistiques et des outils utiles pour la communauté.
+Les ambassadeurs peuvent trouver des informations utiles dans les [guides](https://about.airswap.io). Les ambassadeurs doivent également se familiariser avec les [ressources](../resources.md) utiles construites par la communauté, qui contiennent des statistiques et des outils utiles pour la communauté.
 
 Des sessions de partage entre les cercles seront également organisées afin que les ambassadeurs se familiarisent non seulement avec le produit et les protocoles, mais aussi avec les personnes impliquées dans AirSwap.
 
@@ -43,22 +43,22 @@ Les ambassadeurs sont également encouragés à participer à d'autres communaut
 
 Les ambassadeurs devront également se tenir au courant des dernières discussions et propositions d'AirSwap, afin de pouvoir répondre aux questions générales ou, du moins, de les orienter dans la bonne direction.
 
-Pour plus d'informations, veuillez vous référer à notre [code de conduite].(../community/code-of-conduct.md).
+Pour plus d'informations, veuillez vous référer à notre [code de conduite](../community/code-of-conduct.md).
 
 ### Récompenses
 
 À la fin de chaque cycle de vote, les ambassadeurs attribuent des jetons GIVE sur [Coordinape](https://coordinape.com) pour récompenser d'autres ambassadeurs en fonction de leurs contributions au cours de ce cycle. À la fin du cycle, les récompenses sont versées en fonction de leur allocation de jetons GIVE.
 
 {% hint style="info" %}
-Apprenez-en davantage sur les récompenses [ici].(../community/rewards.md)
+Apprenez-en davantage sur les récompenses [ici](../community/rewards.md)
 {% endhint %}
 
 ### Rejoindre
 
-Les membres qui souhaitent rejoindre le cercle des ambassadeurs peuvent contacter d'autres @ambassadeurs sur [Discord].(https://chat.airswap.io). En général, les ambassadeurs sont sélectionnés en fonction de la langue parlée, de leur connaissance d'AirSwap, de leurs liens avec d'autres communautés, de leurs motivations, de leurs compétences et de leurs visions.
+Les membres qui souhaitent rejoindre le cercle des ambassadeurs peuvent contacter d'autres @ambassadeurs sur [Discord](https://chat.airswap.io). En général, les ambassadeurs sont sélectionnés en fonction de la langue parlée, de leur connaissance d'AirSwap, de leurs liens avec d'autres communautés, de leurs motivations, de leurs compétences et de leurs visions.
 
-Les ambassadeurs en formation sont censés lire les [guides].(https://about.airswap.io) pour mieux comprendre le produit et la technologie d'AirSwap, et pour aider à accueillir de nouveaux membres dans la communauté. Une fois prêts, les ambassadeurs peuvent nommer tout ambassadeur en formation dans le cercle des ambassadeurs. Si deux autres ambassadeurs se portent garants de la personne nommée, celle-ci sera automatiquement intronisée dans le cercle et pourra bénéficier des récompenses du cercle.
+Les ambassadeurs en formation sont censés lire les [guides](https://about.airswap.io) pour mieux comprendre le produit et la technologie d'AirSwap, et pour aider à accueillir de nouveaux membres dans la communauté. Une fois prêts, les ambassadeurs peuvent nommer tout ambassadeur en formation dans le cercle des ambassadeurs. Si deux autres ambassadeurs se portent garants de la personne nommée, celle-ci sera automatiquement intronisée dans le cercle et pourra bénéficier des récompenses du cercle.
 
 {% hint style="info" %}
-Les ambassadeurs en formation peuvent aider à créer du contenu (par exemple, des tutoriels et des guides) et être récompensés par des [bounties].(https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
+Les ambassadeurs en formation peuvent aider à créer du contenu (par exemple, des tutoriels et des guides) et être récompensés par des [bounties](https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md)!
 {% endhint %}
