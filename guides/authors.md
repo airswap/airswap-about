@@ -29,7 +29,7 @@ Des exemples d'AIP ayant fait l'objet d'un vote antérieur peuvent être consult
 
 ### Coordination
 
-Pendant le cycle de 4 semaines, les auteurs discutent [des questions ouvertes et des propositions].(htps://github.com/airswap/airswap-aips/issues), et sollicitent les commentaires des autres auteurs du cercle de gouvernance. **La collaboration avec d'autres auteurs permet de tirer parti de nos connaissances collectives et peut conduire à de meilleures propositions dans l'ensemble.**
+Pendant le cycle de 4 semaines, les auteurs discutent [des questions ouvertes et des propositions](htps://github.com/airswap/airswap-aips/issues), et sollicitent les commentaires des autres auteurs du cercle de gouvernance. **La collaboration avec d'autres auteurs permet de tirer parti de nos connaissances collectives et peut conduire à de meilleures propositions dans l'ensemble.**
 
 La coordination se fait généralement sur deux plateformes :
 
