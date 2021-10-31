@@ -1,59 +1,59 @@
 ---
-description: A guide to contributing to the AirSwap governance circle
+description: Un guide pour contribuer au cercle de gouvernance AirSwap
 ---
 
-# Authors
+# Auteurs
 
-## Mandate
+## Mandat
 
-Facilitate community discussion and transcribe the best forms of ideas into formal written proposals to be assessed by Voters.
+Faciliter la discussion au sein de la communauté et transcrire les meilleures formes d'idées en propositions écrites formelles qui seront évaluées par les votants.
 
-## Scope
+## Portée
 
-The role of the authors revolves around the creation of AirSwap Improvement Protocols (AIPs). Any author is welcome to create an AIP. Each proposal must outline a problem or opportunity and specifies a solution and its tradeoffs. Proposals cover all sorts of topics like new protocols, smart contracts, network tooling, applications, marketing, tokenomics, and more!
+Le rôle des auteurs consiste en la création de protocoles d'amélioration d'AirSwap (AIPs). Tout auteur est le bienvenu pour créer un AIP. Chaque proposition doit exposer un problème ou une opportunité et spécifier une solution et ses compromis. Les propositions couvrent toutes sortes de sujets tels que les nouveaux protocoles, les smart contracts, les outils de réseau, les applications, le marketing, la tokenomics, et plus encore !
 
-## Examples
+## Exemples
 
-Authors identify a relevant issue, or potential improvement for AirSwap. After initial brainstorming, the author creates a new topic on [GitHub](https://github.com/airswap/airswap-aips/issues).
+Les auteurs identifient un problème pertinent, ou une amélioration potentielle pour AirSwap. Après un brainstorming initial, l'auteur crée un nouveau sujet sur [GitHub](https://github.com/airswap/airswap-aips/issues).
 
-The structure of a proposal is as follows (See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)). Each proposal includes a summary, specification, rationale, and copyright.
+La structure d'une proposition est la suivante (Voir : [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)). Chaque proposition comprend un résumé, une spécification, une justification et un copyright.
 
-* **Summary** — A short (200 word) summary describing the proposal.
-* **Rationale** — Motivations, justifications, arguments for and against.
-* **Specification** — Technical specification for the proposal.
-* **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+* **Résumé** — Un bref résumé (200 mots) décrivant la proposition.
+* **Justification** — Motivations, justifications, arguments pour et contre.
+* **Spécification** — Spécification technique de la proposition.
+* **Copyright** — Toutes les propositions sont du domaine public via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-Examples of AIPs which have been voted on previously can be viewed on [Snapshot](https://snapshot.org/#/vote.airswap.eth)
+Des exemples d'AIP ayant fait l'objet d'un vote antérieur peuvent être consultés à l'adresse suivante [Snapshot](https://snapshot.org/#/vote.airswap.eth)
 
-## How-to
+## Mode d'emploi
 
 ### Coordination
 
-During the 4 week cycle, Authors discuss [open issues and proposals](https://github.com/airswap/airswap-aips/issues), and solicit feedback from fellow Authors in the Governance circle. **Collaborating with other authors leverages our collective knowledge and can lead to better proposals overall.**
+Pendant le cycle de 4 semaines, les auteurs discutent [des questions ouvertes et des propositions].(htps://github.com/airswap/airswap-aips/issues), et sollicitent les commentaires des autres auteurs du cercle de gouvernance. **La collaboration avec d'autres auteurs permet de tirer parti de nos connaissances collectives et peut conduire à de meilleures propositions dans l'ensemble.**
 
-Coordination generally takes place on two platforms:
+La coordination se fait généralement sur deux plateformes :
 
-1. Brainstorming on Discord where comments happen in real-time and community members build on each other's ideas rapidly. A great way to iterate on fresh ideas.
-2. In-depth discussion here on GitHub where slower moving comments contribute to our longer term memory and feedback gets integrated directly into proposals.
+1. Brainstorming  sur Discord où les commentaires se font en temps réel et où les membres de la communauté s'appuient rapidement sur les idées des autres. Un excellent moyen d'itérer sur des idées nouvelles.
+2. Discussion approfondie sur GitHub, où les commentaires plus lents contribuent à notre mémoire à long terme et où le feedback est directement intégré aux propositions.
 
-At the end of the cycle, Authors must come to an agreement as to which AIPs (if any) are ready to be voted on. Authors are encouraged to continue iterating on proposals if they do not feel that it is ready to go up for vote yet.
+À la fin du cycle, les auteurs doivent se mettre d'accord sur les AIPs (le cas échéant) qui sont prêts à être soumis au vote. Les auteurs sont encouragés à continuer d'itérer sur les propositions s'ils estiment qu'elles ne sont pas encore prêtes à être soumises au vote.
 
-AIPs called to vote will require a point-by-point summary of the proposal which will be put up on [Snapshot](https://snapshot.org/#/vote.airswap.eth). Authors will work with the Admins to ensure that the summaries are easily understood by the general voting community.
+Les AIPs appelées à voter devront fournir un résumé point par point de la proposition, laquelle sera affichée sur [Snapshot](https://snapshot.org/#/vote.airswap.eth). Les auteurs travailleront avec les admins pour s'assurer que les résumés sont facilement compréhensibles par l'ensemble de la communauté des votants.
 
-### Rewards
+### Récompenses
 
-At the end of each voting cycle, Authors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward other authors based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
+A la fin de chaque cycle de vote, les Auteurs allouent des tokens GIVE sur [Coordinape](https://coordinape.com) pour récompenser d'autres auteurs en fonction de leurs contributions dans ce cycle. À la fin du cycle, les récompenses AST sont versées en fonction de leur allocation de tokens GIVE.
 
 {% hint style="info" %}
-Read more on rewards [here](../community/rewards.md)
+Apprenez-en plus sur les récompenses [ici](../community/rewards.md)
 {% endhint %}
 
-### Joining
+### Rejoindre
 
-Members of the AirSwap community who are interested in joining the Governance Circle can reach out to any Author in [Discord](https://chat.airswap.io). Current authors in the Governance Circle can nominate other members to join the Circle.
+Les membres de la communauté AirSwap qui souhaitent rejoindre le Cercle de Gouvernance peuvent s'adresser à n'importe quel auteur de la communauté AirSwap [Discord](https://chat.airswap.io). Les auteurs actuels du cercle de gouvernance peuvent proposer à d'autres membres de rejoindre le cercle.
 
-Nominees must receive 2 vouches from other authors to be confirmed into the Circle. Members who have shown previous interactions with community members in debating and discussing AIPs will be given more consideration.
+Les candidats doivent recevoir 2 attestations d'autres auteurs pour être confirmés dans le Cercle. Les membres qui ont déjà fait preuve d'interactions avec les membres de la communauté en débattant et en discutant des AIPs seront davantage pris en considération.
 
 {% hint style="info" %}
-All members should bear in mind the [code of conduct](../community/code-of-conduct.md) when debating and discussing ideas!
+Tous les membres doivent garder à l'esprit le [code de conduite](../community/code-of-conduct.md) lors des débats et des discussions d'idées !
 {% endhint %}
