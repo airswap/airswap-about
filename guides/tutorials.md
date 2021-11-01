@@ -88,7 +88,7 @@ Entrez le montant que vous souhaitez déprendre \(il doit être inférieur au so
 Signez la transaction avec votre porte-monnaie web3 et payez les frais de gaz pour vous libérer !
 
 {% hint style="info" %}
-N'oubliez pas de multiplier l'AST que vous souhaitez unstaker par 10 000 pour tenir compte des décimales
+N'oubliez pas de multiplier l'AST que vous souhaitez unstaker par 10 000 pour tenir compte des décimales !
 {% endhint %}
 
 ![](../.gitbook/assets/manual_unstake_3.png)
