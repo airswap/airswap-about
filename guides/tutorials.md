@@ -10,7 +10,7 @@
 
 ![](../.gitbook/assets/86accfee5ce0af6ac6310ba1a80b39e9cc104947.png)
 
-{% hint style="info" %} 
+{% hint style="info" %}
 Notez qu'il y aura deux transactions : l'une pour l'autorisation et la seconde pour le transfert de vos tokens vers le contrat de staking.
 {% endhint %}
 
