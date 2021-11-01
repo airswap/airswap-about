@@ -1,94 +1,94 @@
-# Tutorials
+# Tutoriels
 
 ## Staking
 
-### Connect your MetaMask wallet to the [Governance portal](https://activate.codefi.network/staking/airswap/governance)
+### Connectez votre wallet MetaMask au [portail de gouvernance](https://activate.codefi.network/staking/airswap/governance)
 
 ![](../.gitbook/assets/95263fbc76788410a762860763cc3aa47abab6d1.png)
 
-### Click on Stake to begin the staking process.
+### Cliquez sur Stake pour commencer le processus de staking
 
 ![](../.gitbook/assets/86accfee5ce0af6ac6310ba1a80b39e9cc104947.png)
 
-{% hint style="info" %}
-Note there will be two transactions: one is for permission & the second one transfers your tokens to the staking contract.
+{% hint style="info" %} 
+Notez qu'il y aura deux transactions : l'une pour l'autorisation et la seconde pour le transfert de vos tokens vers le contrat de staking.
 {% endhint %}
 
-### Staking complete
+### Staking terminé
 
-The dashboard should look like this one below.
+Le tableau de bord devrait ressembler à celui ci-dessous.
 
 ![](../.gitbook/assets/e480f2e7f8795306a0a39bd49a772ff7e6b894df.png)
 
-## Voting with MetaMask Mobile
+## Voter avec MetaMask Mobile
 
-* You will need to download and install MetaMask on your mobile \([https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US](https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US)\)
-* Once your MetaMask mobile wallet is set up, click the voting page link and open it with MetaMask 
+* Vous devez télécharger et installer MetaMask sur votre téléphone portable \([https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US](https://play.google.com/store/apps/details?id=io.metamask&hl=en&gl=US)\)
+* Une fois que votre wallet mobile MetaMask est configuré, cliquez sur le lien de la page de vote et ouvrez-la avec MetaMask. 
 
 ![](../.gitbook/assets/813697c84bf291b11e7acaf30db3b71041109dd5.png)
 
-* Read through the AIP and make sure you understand what you are voting for 
+* Lisez l'AIP et assurez-vous de bien comprendre ce pour quoi vous votez. 
 
 ![](../.gitbook/assets/999955bd725bd8203dbb5eb35d797a393965ad11.png)
 
-* Select your choice to vote for
+* Sélectionnez votre choix pour voter pour
 
 ![](../.gitbook/assets/55dff0dc8db6ec075fb0da374730564635ceb55f.png)
 
-* A prompt to connect your wallet will open up. Select Metamask and confirm your choice.
+* Une invitation à connecter votre wallet s'ouvrira. Sélectionnez Metamask et confirmez votre choix.
 
 ![](../.gitbook/assets/8fffc2217b50d29e250e2529b2e93d556a99c740.png)
 
 ![](../.gitbook/assets/5aedf9bba1a86b5435a52a9b5b855e17927322f2.png)
 
-* Sign the message to confirm your vote! \(signing does not require any gas fees\)
+* Signez le message pour confirmer votre vote ! \(la signature ne nécessite pas de frais de gaz\)
 
 ![](../.gitbook/assets/5d34fc3567ad0f4b52aae738075c526a18ae4103.png)
 
-* Congratulations! Your vote has now been cast! Wait for the voting phase to complete to claim your points!
+* Félicitations ! Votre vote a été enregistré ! Attendez que la phase de vote soit terminée pour réclamer vos points !
 
-## Manual Unstaking from Deprecated contract
+## Unstaking manuel d'un contrat déprécié
 
-### Manual Unstaking
+### Unstaking manuel
 
-Navigate to the deprecated staking contract in [etherscan](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#readContract) -&gt; contract -&gt; read contract
+Naviguez jusqu'au contrat de staking déprécié sur [etherscan](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#readContract) -&gt; contract -&gt; read contract
 
-### Check the AST balance in the contract
+### Vérifiez le solde AST dans le contrat
 
-Under `balanceOf`, input your `address` and click query \(querying the chain does not require gas\)
+Sous `balanceOf`, Saisissez votre adresse et cliquez sur "Query" \("l'interrogation" de la chaîne ne nécessite pas de gaz\)
 
-Check to ensure that the amount tallies with the amount of AST you have staked
+Vérifiez que le montant correspond au montant d'AST que vous avez staké.
 
 {% hint style="info" %}
-The amount displayed is multiplied by 10,000 to account for the decimal places
+Le montant affiché est multiplié par 10 000 pour tenir compte des décimales.
 {% endhint %}
 
 ![](../.gitbook/assets/manual_unstake_1.png)
 
-### Check the balance available to unstake
+### Vérifier le solde disponible pour le unstake
 
-Under `available`, input your `address` and under `index`, input `0`
+Sous "disponible", entrez votre "adresse" et sous "index", entrez "0".
 
-This number represents the amount of AST available to be unstaked currently. Make sure that this number tallies with the number of AST in `balanceOf` if you want to withdraw the full amount.
+Ce nombre représente le montant d'AST disponible pour être unstaké actuellement. Assurez-vous que ce nombre corresponde au nombre d'AST dans `balanceOf` si vous voulez retirer le montant total.
 
 ![](../.gitbook/assets/manual_unstake_2.png)
 
 {% hint style="info" %}
-If you have made multiple stakes into this contract, you can check the balance available for each staking event by changing `index`.
+Si vous avez effectué plusieurs stakes sur ce contrat, vous pouvez vérifier le solde disponible pour chaque mise en changeant `index`.
 {% endhint %}
 
-If the number does not tally, either, you have to wait longer to unstake the full amount \(20 weeks\), or you had staked in multiple batches. Check your historical interactions with this contract in [etherscan ](https://etherscan.io/token/0x704c5818b574358dfb5225563852639151a943ec#balances)to find out when you staked, and how many stakes you had made.
+Si le nombre ne correspond pas non plus, vous devez attendre plus longtemps pour retirer la totalité du montant. \(20 semaines\), ou vous aviez misé sur plusieurs lots. Vérifiez l'historique de vos interactions avec ce contrat dans [etherscan ](https://etherscan.io/token/0x704c5818b574358dfb5225563852639151a943ec#balances)pour savoir quand vous avez staké, et combien de mises vous avez fait.
 
 ### Unstake
 
-Finally, to unstake, head to `write contract` and scroll to the `unstake` function.
+Enfin, pour unstaker, allez dans "Rédiger le contrat" et faites défiler jusqu'à la fonction "unstake".
 
-Input the amount you wish to unstake \(it has to be less than the `available` balance from above\). If you had staked multiple times, you can batch unstake by providing the input in an array format `[unstake1, unstake2, unstake3...]`.
+Entrez le montant que vous souhaitez déprendre \(il doit être inférieur au solde `disponible` d'en haut\). Si vous avez staké plusieurs fois, vous pouvez unstaker en fournissant l'entrée dans un format de tableau. `[unstake1, unstake2, unstake3...]`.
 
-Sign the transaction with your web3 wallet and pay the gas fee to unstake!
+Signez la transaction avec votre porte-monnaie web3 et payez les frais de gaz pour vous libérer !
 
 {% hint style="info" %}
-Remember to multiply the AST you wish to unstake by 10,000 to account for decimals!
+N'oubliez pas de multiplier l'AST que vous souhaitez unstaker par 10 000 pour tenir compte des décimales !
 {% endhint %}
 
 ![](../.gitbook/assets/manual_unstake_3.png)
