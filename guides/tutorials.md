@@ -83,7 +83,7 @@ Si le nombre ne correspond pas non plus, vous devez attendre plus longtemps pour
 
 Enfin, pour unstaker, allez dans "Rédiger le contrat" et faites défiler jusqu'à la fonction "unstake".
 
-Entrez le montant que vous souhaitez déprendre \(il doit être inférieur au solde `disponible` d'en haut\). Si vous avez staké plusieurs fois, vous pouvez unstaker en fournissant l'entrée dans un format de tableau. `[unstake1, unstake2, unstake3...]`.
+Entrez le montant que vous souhaitez unstaker \(il doit être inférieur au solde `disponible` d'en haut\). Si vous avez staké plusieurs fois, vous pouvez unstaker en fournissant l'entrée dans un format de tableau. `[unstake1, unstake2, unstake3...]`.
 
 Signez la transaction avec votre porte-monnaie web3 et payez les frais de gaz pour vous libérer !
 
