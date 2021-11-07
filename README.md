@@ -16,7 +16,7 @@ At its core, AirSwap enables two parties to perform an "atomic swap" transaction
 
 * **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond Ethereum.
 * **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices because they hedge on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or price manipulation.
-* **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any digital asset conforming to ERC20, ERC721, or ERC1155 can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
+* **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any standardized digital asset can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
 
 ### Protocols
 
@@ -41,29 +41,24 @@ Several DEX aggregators and market makers have implemented AirSwap.
 
 ## Community
 
-AirSwap itself is a community asset owned by its token holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and contributor community aim to be maximally decentralized. Community members stake AirSwap tokens (AST) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
+AirSwap is a community asset held by its token holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and contributor community aim to be maximally decentralized. Community members stake AirSwap tokens (AST) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
 
-AirSwap is **accessible**, **equitable**, and **transparent**. Every participant and contributor is treated fairly and rewarded consistently. All opportunities are inclusive and accessible. Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
+### Values
+
+* **Quality** — We craft software systems that are thoughtful, elegant, and secure. We envision and create the best form of each protocol and product that we deliver.
+* **Transparency** — Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
+* **Inclusion** — All contribution opportunities are accessible and inclusive. Every community member is treated fairly and rewarded consistently.
+* **Automation** — We strive to run organizational processes and execute relevant tasks entirely automatically using trustless and transparent tools.
 
 ### Token
 
-AirSwap launched with the AirSwap Token (AST) on [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) using the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
+AirSwap launched with the AirSwap Token (AST) [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) on the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
 Read more in the community-voted token [treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](guides/voters.md).
 
-### Principles
-
-Decentralized governance starts with shared principles to align our decision-making.
-
-1. **Design for simplicity** — Perfection is achieved when there is nothing left to take away. This is especially true with blockchain based technology and applications.
-2. **Prioritize security** — Our work is done in an adversarial setting. While blockchain requires users to take security into their own hands, they trust AirSwap to be designed and to operate in a secure way.
-3. **Decide with data** — Drive decisions with data that matters. AirSwap performance indicators are trading volume, token holders, community engagement, and tokens used for governance.
-4. **Seek opportunity** — Decentralized finance is abundant with opportunities. Seek and prioritize opportunities that positively impact both AirSwap and the broader ecosystem.
-5. **Win together** — Our community spans platforms across cyberspace and countries across the globe. We grow by both sharing responsibility and celebrating each success.
-
 ### Governance
 
-To generate new ideas and directions for the project and cultivate open decision-making, we use a process called AirSwap Improvement Proposals (AIP). AIPs give the community a way to develop and finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This process is how the community captures, selects, and prioritizes new projects.
+To generate new ideas and directions for the project and cultivate transparency, we use a process called [AirSwap Improvement Proposals (AIP)](community/process.md). AIPs give the community a way to finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This is how the community captures, selects, and prioritizes new projects.
 
 Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](guides/voters.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
 
