@@ -10,48 +10,11 @@ function getURLsForToken(address token) external view returns (string[] memory u
 
 Check [deployments](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/technology/deployments/README.md) for latest contract addresses for Registry.
 
-### Connections
+### HTTP or WebSocket
 
-When connecting via HTTP, the server may respond with status code 426 \(Upgrade Required\) in which case the client should connect using WebSocket.
+Clients should connect using HTTP or WebSocket based on the URL scheme (http/s or ws/s).
 
-## TypeScript
-
-Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
-
-```typescript
-import { Registry } from '@airswap/protocols'
-const servers = await new Registry(chainId, provider).getServers(
-  signerToken,
-  senderToken,
-)
-```
-
-Calling the Registry directly using `ethers`
-
-```typescript
-import { ethers } from 'ethers'
-import { chainNames } from '@airswap/constants'
-import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
-import * as registryDeploys from '@airswap/registry/deploys.js'
-const RegistryInterface = new ethers.utils.Interface(
-  JSON.stringify(RegistryContract.abi),
-)
-
-new ethers.Contract(
-  registryDeploys[chainId],
-  RegistryInterface,
-  ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
-)
-
-const signerTokenURLs = await this.contract.getURLsForToken(signerToken)
-const senderTokenURLs = await this.contract.getURLsForToken(senderToken)
-
-const serverURLs = signerTokenURLs.filter((value) =>
-  senderTokenURLs.includes(value),
-)
-```
-
-## Using the CLI
+## Fetching URLs via CLI
 
 Ensure the AirSwap CLI is installed.
 
@@ -91,3 +54,39 @@ Server
 https://maker.example.com/
 ```
 
+## TypeScript
+
+Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
+
+```typescript
+import { Registry } from '@airswap/protocols'
+const servers = await new Registry(chainId, provider).getServers(
+  signerToken,
+  senderToken,
+)
+```
+
+Calling the Registry directly using `ethers`
+
+```typescript
+import { ethers } from 'ethers'
+import { chainNames } from '@airswap/constants'
+import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
+import * as registryDeploys from '@airswap/registry/deploys.js'
+const RegistryInterface = new ethers.utils.Interface(
+  JSON.stringify(RegistryContract.abi),
+)
+
+new ethers.Contract(
+  registryDeploys[chainId],
+  RegistryInterface,
+  ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
+)
+
+const signerTokenURLs = await this.contract.getURLsForToken(signerToken)
+const senderTokenURLs = await this.contract.getURLsForToken(senderToken)
+
+const serverURLs = signerTokenURLs.filter((value) =>
+  senderTokenURLs.includes(value),
+)
+```
