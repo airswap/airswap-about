@@ -20,9 +20,8 @@ If a URL is HTTPS, it is implied that the server supports the latest RFQ protoco
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-* Servers generally implement the [RFQ: Light](request-for-quote.md) protocol.
+* Servers generally implement the [RFQ](request-for-quote.md) protocol.
 * You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
-* See [_Deploy a Serverless Maker Bot on AirSwap_](https://medium.com/fluidity/deploy-a-serverless-maker-bot-on-airswap-part-i-1f711ff4d379) for a guide using [Vercel](https://vercel.com/).
 * When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
 
 ## Protocol Fees
@@ -161,7 +160,6 @@ AirSwap CLI 1.6.1 — https://airswap.io/
 
 get the best available order MAINNET
 
-full or light:  light
 buy or sell:  buy
 amount:  0.1
 of:  weth
