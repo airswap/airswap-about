@@ -14,12 +14,12 @@
 
 ## Technology
 
+* [Makers](technology/makers.md)
 * [RFQ](technology/request-for-quote.md)
 * [Last Look](technology/last-look.md)
 * [Discovery](technology/discovery.md)
 * [Signatures](technology/signatures.md)
 * [Deployments](technology/deployments.md)
-* [Makers](technology/makers.md)
 
 ## Guides
 
