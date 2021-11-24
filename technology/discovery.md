@@ -10,10 +10,6 @@ function getURLsForToken(address token) external view returns (string[] memory u
 
 Check [deployments](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/technology/deployments/README.md) for latest contract addresses for Registry.
 
-### HTTP or WebSocket
-
-Clients should connect using HTTP or WebSocket based on the URL scheme (http/s or ws/s).
-
 ## Fetching URLs via CLI
 
 Ensure the AirSwap CLI is installed.
@@ -54,6 +50,10 @@ Server
 https://maker.example.com/
 ```
 
+### Example: Take an Order
+
+Try `airswap order:get` with a server URL from the previous command.
+
 ## TypeScript
 
 Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
@@ -83,10 +83,30 @@ new ethers.Contract(
   ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
 )
 
-const signerTokenURLs = await this.contract.getURLsForToken(signerToken)
-const senderTokenURLs = await this.contract.getURLsForToken(senderToken)
+const baseTokenURLs = await this.contract.getURLsForToken(baseToken)
+const quoteTokenURLs = await this.contract.getURLsForToken(quoteToken)
 
-const serverURLs = signerTokenURLs.filter((value) =>
-  senderTokenURLs.includes(value),
+const serverURLs = baseTokenURLs.filter((value) =>
+  quoteTokenURLs.includes(value),
 )
+```
+
+### Example: Take an Order
+
+```typescript
+import { Registry, Light } from '@airswap/libraries'
+import { chainNames } from '@airswap/constants'
+
+const provider = ethers.getDefaultProvider(chainNames[chainId].toLowerCase())
+
+const servers = await new Registry(chainId, provider).getServers(quoteToken, baseToken);
+
+const order = servers[0].getSignerSideOrder(
+    baseTokenAmount,
+    quoteToken,
+    baseToken,
+    wallet.address
+)
+
+const tx = await new Light(chainId, provider).swap(order);
 ```
