@@ -4,18 +4,21 @@
 
 | Contract | Version | Address | Commit |
 | :--- | :--- | :--- | :--- |
-| Swap | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8) | [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
 | Light | [`2.2.0`](https://www.npmjs.com/package/@airswap/light/v/2.2.0) | [`0xc549a5c701cb6e6cbc091007a80c089c49595468`](https://etherscan.io/address/0xc549a5c701cb6e6cbc091007a80c089c49595468) | [`e27cbda`](https://github.com/airswap/airswap-protocols/tree/e27cbda7df6d6e93bd63f5aa78755386092ec569) |
 | Registry | [`4.6.1`](https://www.npmjs.com/package/@airswap/registry/v/4.6.1) | [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95) | [`2f7e751`](https://github.com/airswap/airswap-protocols/tree/2f7e751427e18b94a03c80e599282ef179964ae6) |
-| Delegate | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9) | [`0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345`](https://etherscan.io/address/0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+| Wrapper | [`2.5.2`](https://www.npmjs.com/package/@airswap/wrapper/v/2.5.2) | [`0x3775fECdd794E6136Ea0Df43c18631314ABC01b1`](https://etherscan.io/address/0x3775fECdd794E6136Ea0Df43c18631314ABC01b1) | [`8d6be24`](https://github.com/airswap/airswap-protocols/tree/8d6be247a4ac1740f4b0bff2b37f3030dd93b0ca) |
 | Staking | [`2.3.0`](https://www.npmjs.com/package/@airswap/staking/v/2.3.0) | [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15) | [`6349b6f`](https://github.com/airswap/airswap-protocols/tree/6349b6f0d9aad4e04202a4981697a4f87bb12b3a) |
 | Pool | [`1.1.0`](https://www.npmjs.com/package/@airswap/pool/v/1.1.0) | [`0x7296333e1615721f4Bd9Df1a3070537484A50CF8`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8) | [`ed7af5e`](https://github.com/airswap/airswap-protocols/tree/ed7af5e048bc754e920ffbc6e4a0735a75d07386) |
-| Wrapper | [`3.6.9`](https://www.npmjs.com/package/@airswap/wrapper/v/3.6.9) | [`0x28de5C5f56B6216441eE114e832808D5B9d4A775`](https://etherscan.io/address/0x28de5C5f56B6216441eE114e832808D5B9d4A775) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Types | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10) | [`0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7`](https://etherscan.io/address/0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
-| AST | `N/A` | [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa) |
+| Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C`](https://etherscan.io/address/0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
+| AST | `1.0.0` | [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa) |
 
-### Legacy staking contracts
+### Legacy
+
+| Contract | Version | Address | Commit |
+| :--- | :--- | :--- | :--- |
+| Swap | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8) | [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+| Delegate | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9) | [`0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345`](https://etherscan.io/address/0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+| Types | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10) | [`0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7`](https://etherscan.io/address/0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
 
 * [Staked AST \(Legacy\)](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
 * [Staked AST \(Deprecated\)](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
