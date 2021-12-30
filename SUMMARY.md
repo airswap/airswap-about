@@ -7,10 +7,16 @@
 ## Community
 
 * [Conduct](community/code-of-conduct.md)
-* [Roles](community/roles.md)
-* [Process](community/process.md)
 * [Bounties](community/bounties.md)
+* [Process](community/process.md)
 * [Rewards](community/rewards.md)
+
+## Activities
+
+* [Overview](activities/overview.md)
+* [Voting](activities/voting.md)
+* [Direction](activities/direction.md)
+* [Delivery](activities/delivery.md)
 
 ## Technology
 
@@ -20,10 +26,3 @@
 * [Discovery](technology/discovery.md)
 * [Signatures](technology/signatures.md)
 * [Deployments](technology/deployments.md)
-
-## Guides
-
-* [Voters](guides/voters.md)
-* [Ambassadors](guides/ambassadors.md)
-* [Authors](guides/authors.md)
-* [Tutorials](guides/tutorials.md)

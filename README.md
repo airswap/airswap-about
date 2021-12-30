@@ -30,7 +30,7 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 Several applications are available to end users.
 
-* [AirSwap Web](https://preview.airswap.io) — **(alpha)** New open source web app currently in development.
+* [AirSwap Web](https://www.airswap.io) — New open source web app for instant swaps.
 * [AirSwap OTC](https://trader.airswap.io) — Industry standard OTC interface for large bespoke swaps.
 * [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the AirSwap network.
 
@@ -54,13 +54,13 @@ AirSwap is a community asset held by its token holders, operating as an open pro
 
 AirSwap launched with the AirSwap Token (AST) [October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1) on the original peer-to-peer swap network. The token initially enabled traders to announce their availability and today also functions as a way for contributors to participate in governance and development. AST gives its holders the opportunity to work commensurate with their holdings, and the opportunity to earn commensurate with their contribution, which fundamentally requires active participation. AST is the gateway to joining and contributing to the AirSwap community.
 
-Read more in the community-voted token [treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](guides/voters.md).
+Read more in the community-voted token [treasury plan](https://github.com/airswap/airswap-aips/issues/10) and [Voters Guide](activities/voting.md).
 
 ### Governance
 
 To generate new ideas and directions for the project and cultivate transparency, we use a process called [AirSwap Improvement Proposals (AIP)](community/process.md). AIPs give the community a way to finalize proposals to core contributors on an ongoing basis. For more information see [AIP 1](https://github.com/airswap/airswap-aips/issues/1) and check out [all active proposals](https://github.com/airswap/aips). This is how the community captures, selects, and prioritizes new projects.
 
-Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](guides/voters.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
+Each AIP is ratified by calling it to vote and being accepted by the token holder community. Voting is held on [Codefi Activate](https://activate.codefi.network/staking/airswap/governance). To participate in governance, see the [Voters](activities/voting.md) guide. Once votes are completed, proposals are considered finalized and placed in a backlog for selection by contributors. Based on requirements and feasibility, contributors may accept the proposal for prioritization and implementation.
 
 ## History
 

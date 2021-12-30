@@ -30,7 +30,7 @@ AirSwap [RFQ ](technology/request-for-quote.md)is currently available through Me
 
 AirSwap Tokens (AST) can be staked to participate in governance of the protocol. All are welcome to participate by proposing, discussing, and voting on proposals that move the project and community forward.
 
-Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. Check out [this tutorial](guides/voters.md) to learn more.
+Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool. Check out [this tutorial](activities/voting.md) to learn more.
 
 ### How do I stake on AirSwap?
 
@@ -42,7 +42,7 @@ Staked tokens are unlocked over a 20 week period with a 4 week initial cliff. Th
 
 ### When is the next vote?
 
-Voting occurs every 4 weeks. You can check when the next vote is scheduled [here](https://dune.xyz/agrimony/airswap\_3)
+Voting occurs every month, from the 1st to the 4th of each month.
 
 ### Do my points expire?
 
@@ -52,8 +52,8 @@ No! Points don't expire and will be carried over to the next cycle.
 
 ### How can I contribute to AirSwap?
 
-There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word. Learn more about the different roles [here](community/roles.md).
+There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word. Learn more about the different activities [here](activities/overview.md).
 
 ### How do contributors get rewarded?
 
-Every 4 weeks, contributors determine the allocation of funds through [Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the number of GIVE tokens received. Learn more about how each role is funded [here](community/rewards.md#circle-funding).
+Every month, contributors determine the allocation of funds through [Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the number of GIVE tokens received. Learn more about how the contributor circle is funded [here](community/rewards.md#circle-funding).
