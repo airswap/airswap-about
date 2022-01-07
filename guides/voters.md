@@ -36,7 +36,7 @@ Si vous n'êtes pas sûr du contrat de staking auquel vous êtes soumis, venez n
 
 Se documenter et s'informer sur chaque proposition est une partie importante du processus. Les propositions peuvent être consultées, examinées et faire l'objet d'une contribution dans la catégorie [Discussions sur les propositions \(AIPs\)](https://github.com/airswap/airswap-aips/issues) sur GitHub. Les votant peuvent souvent trouver des informations supplémentaires sur [Discord](https://chat.airswap.io/).
 
-Les cycles de vote ont lieu toutes les 4 semaines, où un certain nombre d'AIP seront votées en même temps. Vous devez voter sur toutes les propositions afin d'obtenir le nombre maximum de points. Pour parcourir et participer aux votes, visitez le site [Portail de gouvernance d'AirSwap](https://activate.codefi.network/staking/airswap/governance) sur Codefi Activate quand le vote est disponible. Notez que le vote est effectué "off-chain"g et ne coûte pas de gaz (ETH).
+Les cycles de vote ont lieu toutes les 4 semaines, où un certain nombre d'AIP seront votées en même temps. Vous devez voter sur toutes les propositions afin d'obtenir le nombre maximum de points. Pour parcourir et participer aux votes, visitez le site [Portail de gouvernance d'AirSwap](https://activate.codefi.network/staking/airswap/governance) sur Codefi Activate quand le vote est disponible. Notez que le vote est effectué "off-chain" et ne coûte pas de gaz (ETH).
 
 {% hint style="info" %}
 Vous pouvez vérifier quand le prochain cycle de vote commencera sur ce [tableau de bord](https://dune.xyz/agrimony/airswap_3).
