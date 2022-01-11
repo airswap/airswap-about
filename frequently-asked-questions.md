@@ -42,7 +42,7 @@ Les tokens stakés sont débloqués sur une période de 20 semaines avec un bloc
 
 ### Quand a lieu le prochain vote ?
 
-Le vote a lieu toutes les 4 semaines. Vous pouvez vérifier quand le prochain vote est prévu [ici](https://dune.xyz/agrimony/airswap\_3)
+Le vote a lieu tous les mois, du 1er au 4 de chaque mois. Vous pouvez vérifier quand le prochain vote est prévu [ici](https://dune.xyz/agrimony/airswap\_3)
 
 ### Mes points expirent-ils ?
 
@@ -56,4 +56,4 @@ Il existe de nombreuses façons de s'impliquer dans AirSwap, de la création d'i
 
 ### Comment les contributeurs sont-ils récompensés ?
 
-Toutes les 4 semaines, les contributeurs déterminent l'allocation des fonds à travers [Coordinape](https://coordinape.com). Les fonds sont ensuite distribués au prorata à chaque membre du cercle en fonction du nombre de jetons GIVE reçus. Apprenez-en plus sur la façon dont chaque rôle est financé [ici](community/rewards.md#circle-funding).
+Chaque mois, les contributeurs déterminent l'allocation des fonds à travers [Coordinape](https://coordinape.com). Les fonds sont ensuite distribués au prorata à chaque membre du cercle en fonction du nombre de jetons GIVE reçus. Apprenez-en plus sur la façon dont chaque rôle est financé [ici](community/rewards.md#circle-funding).
