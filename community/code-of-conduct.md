@@ -21,9 +21,9 @@ Nous travaillons tous ensemble pour atteindre les objectifs de la communauté. A
 Principes
 La gouvernance décentralisée commence avec des principes partagés afin d'aligner nos décisions.
 
-Concevoir pour la simplicité - La perfection est atteinte lorsqu'il n'y a plus rien à enlever. Cela est particulièrement vrai pour la technologie et les applications basées sur la blockchain.
-Donner la priorité à la sécurité - Notre travail s'effectue dans un cadre contradictoire. Alors que la blockchain exige que les utilisateurs prennent leur sécurité en main, ils font confiance à AirSwap pour être conçu et fonctionner de manière sécurisée.
-Décidez avec des données - Prenez des décisions avec des données qui comptent. Les indicateurs de performance d'AirSwap sont le volume d'échange, les détenteurs de tokens, l'engagement de la communauté et les tokens utilisés pour la gouvernance.
-Rechercher des opportunités - La finance décentralisée regorge d'opportunités. Recherchez et priorisez les opportunités qui ont un impact positif à la fois sur AirSwap et sur l'écosystème au sens large.
-Gagner ensemble - Notre communauté s'étend sur des plateformes à travers le cyber espace et des pays à travers le monde. Nous nous développons en partageant les responsabilités et en célébrant chaque succès.
+1. **Concevoir pour la simplicité** — La perfection est atteinte lorsqu'il n'y a plus rien à enlever. Cela est particulièrement vrai pour la technologie et les applications basées sur la blockchain.
+2. **Donner la priorité à la sécurité** — Notre travail s'effectue dans un cadre contradictoire. Alors que la blockchain exige que les utilisateurs prennent leur sécurité en main, ils font confiance à AirSwap pour être conçu et fonctionner de manière sécurisée.
+3. **Décidez avec des données** — Prenez des décisions avec des données qui comptent. Les indicateurs de performance d'AirSwap sont le volume d'échange, les détenteurs de tokens, l'engagement de la communauté et les tokens utilisés pour la gouvernance.
+4. **Rechercher des opportunités** — La finance décentralisée regorge d'opportunités. Recherchez et priorisez les opportunités qui ont un impact positif à la fois sur AirSwap et sur l'écosystème au sens large.
+5. **Gagner ensemble** — Notre communauté s'étend sur des plateformes à travers le cyber espace et des pays à travers le monde. Nous nous développons en partageant les responsabilités et en célébrant chaque succès.
 
