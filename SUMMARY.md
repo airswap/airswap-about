@@ -7,7 +7,6 @@
 ## Communauté
 
 * [Code de conduite](community/code-of-conduct.md)
-* [Rôles](community/roles.md)
 * [Processus](community/process.md)
 * [Bounties](community/bounties.md)
 * [Récompenses](community/rewards.md)
@@ -21,9 +20,9 @@
 * [Déploiements](technology/deployments.md)
 * [Makers](technology/makers.md)
 
-## Guides
+## Activités 
 
+* [Vue d'ensemble](community/roles.md)
 * [Votants](guides/voters.md)
-* [Ambassadeurs](guides/ambassadors.md)
-* [Auteurs](guides/authors.md)
-* [Tutoriels](guides/tutorials.md)
+* [Livraison](guides/ambassadors.md)
+* [Direction](guides/authors.md)
