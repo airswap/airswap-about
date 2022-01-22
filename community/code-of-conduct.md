@@ -18,7 +18,8 @@ Nous travaillons tous ensemble pour atteindre les objectifs de la communauté. A
 * **Respectez la diversité.** Cette communauté est construite par des personnes du monde entier, venant d'horizons divers et ayant de nombreuses perspectives. Honorez cette diversité ; elle nous donne de la force.
 * **Gagner ensemble.** En tant que membres de la communauté AirSwap, nous partageons tous des objectifs communs et nous avons tous la possibilité de contribuer et d'aider AirSwap à réussir.
 
-Principes
+## Principes 
+
 La gouvernance décentralisée commence avec des principes partagés afin d'aligner nos décisions.
 
 1. **Concevoir pour la simplicité** — La perfection est atteinte lorsqu'il n'y a plus rien à enlever. Cela est particulièrement vrai pour la technologie et les applications basées sur la blockchain.
