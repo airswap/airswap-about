@@ -15,10 +15,15 @@ Nous travaillons tous ensemble pour atteindre les objectifs de la communauté. A
 ## Règles
 
 * **Ne parlez pas de prix.** La spéculation est préjudiciable et contre-productive pour notre mission. Ne parlez pas de prix. Gardez les discussions sur la construction, la croissance et la gouvernance d'AirSwap.
-**Respectez la diversité.** Cette communauté est construite par des personnes du monde entier, venant d'horizons divers et ayant de nombreuses perspectives. Honorez cette diversité ; elle nous donne de la force.
+* **Respectez la diversité.** Cette communauté est construite par des personnes du monde entier, venant d'horizons divers et ayant de nombreuses perspectives. Honorez cette diversité ; elle nous donne de la force.
 * **Gagner ensemble.** En tant que membres de la communauté AirSwap, nous partageons tous des objectifs communs et nous avons tous la possibilité de contribuer et d'aider AirSwap à réussir.
 
-## Merci
+Principes
+La gouvernance décentralisée commence avec des principes partagés afin d'aligner nos décisions.
 
-Tous les membres de la communauté sont ravis que vous soyez impliqués. C'est parti !
+Concevoir pour la simplicité - La perfection est atteinte lorsqu'il n'y a plus rien à enlever. Cela est particulièrement vrai pour la technologie et les applications basées sur la blockchain.
+Donner la priorité à la sécurité - Notre travail s'effectue dans un cadre contradictoire. Alors que la blockchain exige que les utilisateurs prennent leur sécurité en main, ils font confiance à AirSwap pour être conçu et fonctionner de manière sécurisée.
+Décidez avec des données - Prenez des décisions avec des données qui comptent. Les indicateurs de performance d'AirSwap sont le volume d'échange, les détenteurs de tokens, l'engagement de la communauté et les tokens utilisés pour la gouvernance.
+Rechercher des opportunités - La finance décentralisée regorge d'opportunités. Recherchez et priorisez les opportunités qui ont un impact positif à la fois sur AirSwap et sur l'écosystème au sens large.
+Gagner ensemble - Notre communauté s'étend sur des plateformes à travers le cyber espace et des pays à travers le monde. Nous nous développons en partageant les responsabilités et en célébrant chaque succès.
 
