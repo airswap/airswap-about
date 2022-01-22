@@ -12,9 +12,9 @@ AirSwap est **accessible**, **équitable**, et **transparent**. Chaque participa
 Il existe de nombreuses façons de participer à AirSwap, qu'il s'agisse de générer des idées, de coordonner des projets, de contribuer à la conception et au code, ou d'aider à faire passer le message.
 
 * [**Votants** ](../guides/voters.md) stakez les AirSwap Tokens (AST) afin de voter par rapport à la roadmap d'AirSwap.
-* [**Auteurs**](../guides/authors.md) rédigez et proposez de nouveaux projets et protocoles soumis au vote de la communauté de
-* **Développeurs** afin de créer de nouvelles fonctionnalités et de nouveaux produits qui ont été votés par la communauté.
-* [**Ambassadeurs** ](../guides/ambassadors.md) faites bénéficier un public plus large des logiciels créés par la communauté
+* [**Direction**](../guides/authors.md) rédigez et proposez de nouveaux projets et protocoles soumis au vote de la communauté.
+* **Développez** afin de créer de nouvelles fonctionnalités et de nouveaux produits qui ont été votés par la communauté.
+* [**Livraison** ](../guides/ambassadors.md) faites bénéficier un public plus large des logiciels créés par la communauté
 
 {% hint style="info" %}
 Rejoignez notre [Discord ](https://discord.gg/BQaJCgmhD7)pour en savoir plus sur la façon dont vous pouvez participer à notre mission !
