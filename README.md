@@ -6,7 +6,7 @@
 
 ## Vision et Mission
 
-Notre vision est un avenir où toutes les formes de valeur sont représentées sous forme d'actifs numériques et circulent librement et de manière fiable entre les personnes et les communautés du monde entier. Notre mission est de devenir le système standard de protocole de trading peer-to-peer : une primitive fondamentale de l'économie décentralisée.
+Notre vision est un avenir où toutes les formes de valeur sont représentées sous forme d'actifs numériques circulant librement et de manière fiable entre les personnes et les communautés du monde entier. Notre mission est de devenir le système standard de protocole de trading peer-to-peer : une primitive fondamentale de l'économie décentralisée.
 
 ## Technologie
 
@@ -32,8 +32,8 @@ Au niveau du protocole, chaque échange se fait entre deux parties, un signatair
 
 Plusieurs applications sont disponibles pour les utilisateurs finaux.
 
-* [AirSwap Web](https://preview.airswap.io) — Nouvelle application web open source pour les swaps instantanés
-* [AirSwap OTC](https://trader.airswap.io) — Interface OTC standard de l'industrie pour les grands swaps sur mesure.
+* [AirSwap Web](https://preview.airswap.io) — Nouvelle application web open source pour les swaps instantanés.
+* [AirSwap OTC](https://trader.airswap.io) — Interface OTC standard de l'industrie pour des swaps conséquents sur mesure.
 * [AirSwap CLI](https://github.com/airswap/airswap-cli) — Interface en ligne de commande pour interagir avec AirSwap.
 
 Plusieurs agrégateurs DEX et market makers ont implémenté AirSwap.
@@ -43,9 +43,9 @@ Plusieurs agrégateurs DEX et market makers ont implémenté AirSwap.
 
 ## Communauté
 
-AirSwap est un actif communautaire appartenant à ses détenteurs de tokens, fonctionnant comme un projet ouvert avec un processus transparent de prise de décision et de développement de produits. La technologie et l'organisation du réseau visent toutes deux à une décentralisation maximale. Les membres de la communauté “stakent” des jetons AirSwap (AST) pour participer à la gouvernance et aux autres activités et avantages de la communauté. L'idéation, la rédaction, le vote et l'acceptation des propositions sont un processus ouvert.
+AirSwap est un actif communautaire appartenant à ses détenteurs de tokens, fonctionnant comme un projet ouvert avec un processus transparent de prise de décisions et de développement de produits. La technologie et l'organisation du réseau visent toutes deux à une décentralisation maximale. Les membres de la communauté “stakent” des jetons AirSwap (AST) pour participer à la gouvernance et aux autres activités et avantages de la communauté. L'idéation, la rédaction, le vote et l'acceptation des propositions sont un processus ouvert.
 
-AirSwap is **accessible**, **équitable**, et **transparent**. Chaque participant et contributeur est traité équitablement et récompensé de manière cohérente. Toutes les opportunités sont inclusives et disponibles. Les décisions sont prises ouvertement et les contributions sont open source. Les nouvelles informations sont continuellement et activement partagées tout au long du processus.
+AirSwap is **accessible**, **équitable**, et **transparent**. Chaque participant et contributeur est traité équitablement et récompensé de manière cohérente. Toutes les opportunités sont inclusives et accessible. Les décisions sont prises ouvertement et les contributions sont open source. Les nouvelles informations sont continuellement et activement partagées tout au long du processus.
 
 ### Token
 
@@ -65,13 +65,13 @@ La gouvernance décentralisée commence par des principes partagés pour aligner
 
 ### Gouvernance
 
-Pour générer de nouvelles idées et directions pour le projet et cultiver une prise de décision ouverte, nous utilisons un processus appelé "AirSwap Improvement Proposals" (AIP). Les AIPs donnent à la communauté un moyen de développer et de finaliser des propositions aux contributeurs principaux sur une base continue. Pour plus d'informations, voir [AIP 1](https://github.com/airswap/airswap-aips/issues/1) et consulter [toutes les propositions actives](https://github.com/airswap/aips). Ce processus est la façon dont la communauté attire, sélectionne et priorise les nouveaux projets.
+Pour générer les nouvelles idées et directions du projet, tout en cultivant une prise de décision ouverte, nous utilisons un processus appelé "AirSwap Improvement Proposals" (AIP). Les AIPs donnent à la communauté un moyen de développer et soumettre des propositions aux contributeurs principaux, le tout, sur une base continue. Pour plus d'informations, voir [AIP 1](https://github.com/airswap/airswap-aips/issues/1) et consulter [toutes les propositions actives](https://github.com/airswap/aips). Ce processus est la façon dont la communauté attire, sélectionne et priorise les nouveaux projets.
 
 Chaque AIP est ratifié en l'appelant au vote et en étant acceptée par la communauté des détenteurs de tokens. Le vote a lieu sur [Codefi Activate](https://activate.codefi.network/staking/airswap/governance).  Pour participer à la gouvernance, consultez le guide des [Votants](guides/voters.md). Une fois les votes terminés, les propositions sont considérées comme finalisées et placées dans un "backlog" pour être sélectionnées par les contributeurs. En fonction des exigences et de la faisabilité, les contributeurs peuvent accepter la proposition pour la prioriser et la mettre en œuvre.
 
 ## Histoire
 
-AirSwap a été [lancé le 10 octobre 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Au fil des ans, de nouveaux produits et des mises à jour ont été publiés en permanence pour permettre et populariser davantage les avantages du commerce des actifs numériques à l'aide de protocoles décentralisés. Vous pouvez consulter ici les années [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) et [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
+AirSwap a été [lancé le 10 octobre 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Au fil des ans, de nouveaux produits et des mises à jour ont été publiés en permanence dans le but de populariser davantage les avantages du commerce d'actifs numériques à l'aide de protocoles décentralisés. Vous pouvez consulter ici le résumé des années [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) et [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
 
 * [Roadmap AirSwap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (16 novembre 2017)
 * [AirSwap est là](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (25 avril 2018)
