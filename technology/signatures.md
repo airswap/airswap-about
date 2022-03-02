@@ -85,7 +85,7 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 ## Authorized Signers
 
-**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](https://github.com/airswap/airswap-docs/tree/2515c986727706105a3e5ebabb8cfa6df455cbb0/contract-deployments.md) contract.
+**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Light](deployments.md) contract.
 
 ```text
 function authorize(address signer) external
@@ -101,5 +101,5 @@ The following values are used for the EIP712Domain.
 | `name` | `bytes32` | `SWAP_LIGHT` |
 | `version` | `bytes32` | `3` |
 | `chainId` | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4` |
-| `verifyingContract` | `address` | [Light](https://github.com/airswap/airswap-docs/tree/2515c986727706105a3e5ebabb8cfa6df455cbb0/contract-deployments.md) contract address |
+| `verifyingContract` | `address` | [Light](deployments.md) contract address |
 

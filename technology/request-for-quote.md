@@ -138,7 +138,7 @@ curl -H 'Content-Type: application/json' \
      http://localhost:3000/
 ```
 
-After requesting an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
+After requesting an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](deployments.md) contract, which emits a `Swap` event on success.
 
 ```typescript
   function swap(
