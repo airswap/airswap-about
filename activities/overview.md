@@ -10,10 +10,10 @@ AirSwap is **accessible**, **equitable**, and **transparent**. Every participant
 
 There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word. Contributors have the flexibility of deciding how they want to contribute to AirSwap and be [rewarded ](../community/rewards.md)each round.
 
-* ****[**Vote** ](voting.md)- Stake AirSwap Tokens (AST) and vote on the future roadmap of AirSwap
-* ****[**Direct** ](direction.md)- Draft and propose new projects and protocols for the community to vote on
-* **Develop** - build new features and products which have been voted in by the community
-* ****[**Deliver** ](delivery.md)- bring community-built software to a wider audience
+* ****[**Vote** ](voting.md)- Stake AirSwap Tokens (AST) and vote on the future roadmap of AirSwap.
+* ****[**Direct** ](direction.md)- Draft and propose new projects and protocols for the community to vote on.
+* **Develop** - Build new features and products which have been voted in by the community.
+* ****[**Deliver** ](delivery.md)- Bring community-built software to a wider audience.
 
 {% hint style="info" %}
 Join our [Discord ](https://discord.gg/BQaJCgmhD7)to find out more about how you can be a part of our mission!
