@@ -6,11 +6,11 @@
 
 AirSwap has a number of benefits.
 
-* Non-custodial. Unlike a centralized exchange, AirSwap does not take custody of funds.
-* No sign-ups. AirSwap does not require users to sign up and does not collect sensitive data.
-* No slippage. On AirSwap, prices are exact so the price you see is the price you get.
-* Intuitive. AirSwap is designed with UX as a top priorities.
-* Secure. AirSwap was rated the #1 safest Ethereum decentralized exchange.
+- Non-custodial. Unlike a centralized exchange, AirSwap does not take custody of funds.
+- No sign-ups. AirSwap does not require users to sign up and does not collect sensitive data.
+- No slippage. On AirSwap, prices are exact so the price you see is the price you get.
+- Intuitive. AirSwap is designed with UX as a top priorities.
+- Secure. AirSwap was rated the #1 safest Ethereum decentralized exchange.
 
 Learn more about AirSwap's benefits in the blog post [Why AirSwap?](https://medium.com/fluidity/why-airswap-62ff8b4ee81d)
 

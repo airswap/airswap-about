@@ -4,9 +4,9 @@ AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to
 
 **Protocol Features**
 
-* Takers can see quotes without connecting a wallet, and quotes update in realtime
-* Takers don't submit or spend gas on transactions, the maker does instead
-* Better prices from makers since their prices are not locked into an expiry
+- Takers can see quotes without connecting a wallet, and quotes update in realtime
+- Takers don't submit or spend gas on transactions, the maker does instead
+- Better prices from makers since their prices are not locked into an expiry
 
 There is a possibility the maker declines the order because the market has moved, but they're generally amenable to small fluctuations to maintain a good trading relationship with the taker.
 
@@ -138,35 +138,35 @@ Server pricing can be communicated either by levels or a formula. All input and 
 The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
 ```javascript
-[
+;[
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "bid": [
-      ["100", "0.00053"],
-      ["1000", "0.00061"],
-      ["10000", "0.0007"]
+    baseToken: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    quoteToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    bid: [
+      ['100', '0.00053'],
+      ['1000', '0.00061'],
+      ['10000', '0.0007'],
     ],
-    "ask": [
-      ["100", "0.00055"],
-      ["1000", "0.00067"],
-      ["10000", "0.0008"]
-    ]
+    ask: [
+      ['100', '0.00055'],
+      ['1000', '0.00067'],
+      ['10000', '0.0008'],
+    ],
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "bid": [
-      ["0.5", "2000"],
-      ["1", "2010"],
-      ["10", "2050"]
+    baseToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    quoteToken: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    bid: [
+      ['0.5', '2000'],
+      ['1', '2010'],
+      ['10', '2050'],
     ],
-    "ask": [
-      ["0.5", "2001"],
-      ["1", "2015"],
-      ["10", "2060"]
-    ]
-  }
+    ask: [
+      ['0.5', '2001'],
+      ['1', '2015'],
+      ['10', '2060'],
+    ],
+  },
 ]
 ```
 
@@ -185,19 +185,19 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 The server can specify formulas to use for pricing. Each formula is an expression with operations including addition, subtraction, multiplication, and division, where `x` is provided by the client.
 
 ```javascript
-[
+;[
   {
-    "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "bid": "x*0.00053",
-    "ask": "x*0.00055"
+    baseToken: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    quoteToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    bid: 'x*0.00053',
+    ask: 'x*0.00055',
   },
   {
-    "baseToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "quoteToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "bid": "x*2000",
-    "ask": "x*2001"
-  }
+    baseToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    quoteToken: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    bid: 'x*2000',
+    ask: 'x*2001',
+  },
 ]
 ```
 
@@ -331,4 +331,3 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
 ```
 
 The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
-

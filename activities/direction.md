@@ -18,10 +18,10 @@ Contributors identify a relevant issue, or potential improvement for AirSwap. Af
 
 The structure of a proposal is as follows (See: [AIP 1](https://github.com/airswap/airswap-aips/issues/1/31)). Each proposal includes a summary, specification, rationale, and copyright.
 
-* **Summary** — A short (200 word) summary describing the proposal.
-* **Rationale** — Motivations, justifications, arguments for and against.
-* **Specification** — Technical specification for the proposal.
-* **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+- **Summary** — A short (200 word) summary describing the proposal.
+- **Rationale** — Motivations, justifications, arguments for and against.
+- **Specification** — Technical specification for the proposal.
+- **Copyright** — All proposals are public domain via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 Examples of AIPs which have been voted on previously can be viewed on [Snapshot](https://snapshot.org/#/vote.airswap.eth)
 

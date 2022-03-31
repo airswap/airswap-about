@@ -10,9 +10,9 @@ Each proposal is authored by one or more authors. The AIP is ratified as a commu
 
 Several incentives to participate are built in. Every month…
 
-* **Votes are run** for four days on one or more proposals.
-* **Rewards are distributed** to contributors for work completed.
-* **Bounties are assessed** and distributed by a project lead.
+- **Votes are run** for four days on one or more proposals.
+- **Rewards are distributed** to contributors for work completed.
+- **Bounties are assessed** and distributed by a project lead.
 
 Learn more about the different [activities ](../activities/overview.md)that go on in the AirSwap DAO.
 

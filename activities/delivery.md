@@ -12,12 +12,12 @@ Develop our collective knowledge and expand our presence through high quality en
 
 The scope of the delivery team revolves around three main areas. Contributors are welcome to propose ideas which will grow AirSwap in any of these areas.
 
-* **Awareness** - projects which help to bring awareness to AirSwap
-  * Awareness of the **product** - driving user engagement with the web app
-  * Awareness of the **protocol** - driving new integrations
-  * Awareness of our **community** - welcoming new members and contributors
-* **Internal engagement** - engaging the community and communicating updates
-* **External engagement** - identifying and building relationships with relevant projects
+- **Awareness** - projects which help to bring awareness to AirSwap
+  - Awareness of the **product** - driving user engagement with the web app
+  - Awareness of the **protocol** - driving new integrations
+  - Awareness of our **community** - welcoming new members and contributors
+- **Internal engagement** - engaging the community and communicating updates
+- **External engagement** - identifying and building relationships with relevant projects
 
 ## How-to
 
@@ -35,9 +35,9 @@ Those interested in contributing to delivery are also expected to reach out to d
 
 Contributors are typically the first contact for newcomers to the community - so please be welcoming and helpful to our new friends! Remember to adhere to our code of conduct when engaging with community members.
 
-* **No price talk.** Speculation is detrimental and counterproductive to our mission. Do not talk about price. Keep discussions about building, growing, and governing AirSwap.
-* **Respect diversity.** This community is built by people across the globe from many walks of life with many perspectives. Honor that diversity; it gives us strength.
-* **Win together.** As members of the AirSwap community, we each share common goals and all share the opportunity to contribute and help AirSwap succeed.
+- **No price talk.** Speculation is detrimental and counterproductive to our mission. Do not talk about price. Keep discussions about building, growing, and governing AirSwap.
+- **Respect diversity.** This community is built by people across the globe from many walks of life with many perspectives. Honor that diversity; it gives us strength.
+- **Win together.** As members of the AirSwap community, we each share common goals and all share the opportunity to contribute and help AirSwap succeed.
 
 Contributors are also encouraged to participate in other communities, in order to understand and identify potential partners. As an ambassador, you help to represent the AirSwap community, and as such should always behave appropriately - especially in other communities.
 

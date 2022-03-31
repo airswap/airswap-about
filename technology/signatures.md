@@ -96,10 +96,9 @@ function revoke() external
 
 The following values are used for the EIP712Domain.
 
-| Param | Type | Value |
-| :--- | :--- | :--- |
-| `name` | `bytes32` | `SWAP_LIGHT` |
-| `version` | `bytes32` | `3` |
-| `chainId` | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4` |
+| Param               | Type      | Value                                                                                                                                   |
+| :------------------ | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`              | `bytes32` | `SWAP_LIGHT`                                                                                                                            |
+| `version`           | `bytes32` | `3`                                                                                                                                     |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`                                                                                                     |
 | `verifyingContract` | `address` | [Light](https://github.com/airswap/airswap-docs/tree/2515c986727706105a3e5ebabb8cfa6df455cbb0/contract-deployments.md) contract address |
-

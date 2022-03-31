@@ -99,14 +99,17 @@ import { chainNames } from '@airswap/constants'
 
 const provider = ethers.getDefaultProvider(chainNames[chainId].toLowerCase())
 
-const servers = await new Registry(chainId, provider).getServers(quoteToken, baseToken);
-
-const order = servers[0].getSignerSideOrder(
-    baseTokenAmount,
-    quoteToken,
-    baseToken,
-    wallet.address
+const servers = await new Registry(chainId, provider).getServers(
+  quoteToken,
+  baseToken,
 )
 
-const tx = await new Light(chainId, provider).swap(order);
+const order = servers[0].getSignerSideOrder(
+  baseTokenAmount,
+  quoteToken,
+  baseToken,
+  wallet.address,
+)
+
+const tx = await new Light(chainId, provider).swap(order)
 ```
