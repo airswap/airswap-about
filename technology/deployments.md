@@ -1,86 +1,67 @@
 # Deployments
 
-## Ethereum Mainnet
+## Mainnet
 
-| Contract  | Version                                                             | Address                                                                                                                 | Commit                                                                                                  |
-| :-------- | :------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| Light     | [`2.2.0`](https://www.npmjs.com/package/@airswap/light/v/2.2.0)     | [`0xc549a5c701cb6e6cbc091007a80c089c49595468`](https://etherscan.io/address/0xc549a5c701cb6e6cbc091007a80c089c49595468) | [`e27cbda`](https://github.com/airswap/airswap-protocols/tree/e27cbda7df6d6e93bd63f5aa78755386092ec569) |
-| Registry  | [`4.6.1`](https://www.npmjs.com/package/@airswap/registry/v/4.6.1)  | [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95) | [`2f7e751`](https://github.com/airswap/airswap-protocols/tree/2f7e751427e18b94a03c80e599282ef179964ae6) |
-| Wrapper   | [`2.5.2`](https://www.npmjs.com/package/@airswap/wrapper/v/2.5.2)   | [`0x3775fECdd794E6136Ea0Df43c18631314ABC01b1`](https://etherscan.io/address/0x3775fECdd794E6136Ea0Df43c18631314ABC01b1) | [`8d6be24`](https://github.com/airswap/airswap-protocols/tree/8d6be247a4ac1740f4b0bff2b37f3030dd93b0ca) |
-| Staking   | [`2.3.0`](https://www.npmjs.com/package/@airswap/staking/v/2.3.0)   | [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15) | [`6349b6f`](https://github.com/airswap/airswap-protocols/tree/6349b6f0d9aad4e04202a4981697a4f87bb12b3a) |
-| Pool      | [`1.1.0`](https://www.npmjs.com/package/@airswap/pool/v/1.1.0)      | [`0x7296333e1615721f4Bd9Df1a3070537484A50CF8`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8) | [`ed7af5e`](https://github.com/airswap/airswap-protocols/tree/ed7af5e048bc754e920ffbc6e4a0735a75d07386) |
-| Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C`](https://etherscan.io/address/0x0c8d551c52206F1C16043F1dCD9B7bc6A45fc02C) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
-| AST       | `1.0.0`                                                             | [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa)      |
+### Ethereum
 
-### Legacy
+- Registry — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code)
+- Swap — [`0x522D6F36c95A1b6509A14272C17747BbB582F2A6`](https://etherscan.io/address/0x522D6F36c95A1b6509A14272C17747BbB582F2A6#code)
+- Wrapper — [`0x3a0e257568cc9c6c5d767d5dc0cd8a9ac69cc3ae`](https://etherscan.io/address/0x3a0e257568cc9c6c5d767d5dc0cd8a9ac69cc3ae#code)
+- Converter — [`0x191A6Da5543772779CaBa4730cEdb2fF030b8b13`](https://etherscan.io/address/0x191A6Da5543772779CaBa4730cEdb2fF030b8b13#code)
+- Pool — [`0xaeB0E11e7C21715b4e8F3425Cb3d4978e5a7cf11`](https://etherscan.io/address/0xaeB0E11e7C21715b4e8F3425Cb3d4978e5a7cf11#code)
+- Staking — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code)
 
-| Contract | Version                                                            | Address                                                                                                                 | Commit                                                                                                  |
-| :------- | :----------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| Swap     | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8)     | [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Delegate | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9) | [`0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345`](https://etherscan.io/address/0x072073f78a2d58610Ee3d5e170CA7AC9CB58a345) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Types    | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10)  | [`0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7`](https://etherscan.io/address/0xa42d613D8B8B6cB9507F46A5dd3FD98276570FD7) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+### Avalanche
 
-- [Staked AST \(Legacy\)](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
-- [Staked AST \(Deprecated\)](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
+- Registry — [`0xE40feb39fcb941A633deC965Abc9921b3FE962b2`](https://snowtrace.io/address/0xE40feb39fcb941A633deC965Abc9921b3FE962b2#code)
+- Swap — [`0xEc08261ac8b3D2164d236bD499def9f82ba9d13F`](https://snowtrace.io/address/0xEc08261ac8b3D2164d236bD499def9f82ba9d13F#code)
+- Wrapper — [`0x1b789619D23cB67755d61691e8A9ddbD60b7BF8F`](https://snowtrace.io/address/0x1b789619D23cB67755d61691e8A9ddbD60b7BF8F#code)
+- Converter — [`0x64888583E676368390D6eB573bC2AC3bCE9002B3`](https://snowtrace.io/address/0x64888583E676368390D6eB573bC2AC3bCE9002B3#code)
+- Pool — [`0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0`](https://snowtrace.io/address/0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0#code)
+- Staking — [`0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74`](https://snowtrace.io/address/0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74#code)
 
-## Binance Smart Chain
+### BSC
 
-| Contract | Version                                                           | Address                                                                                                                | Commit                                                                                                  |
-| :------- | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| Light    | [`2.2.0`](https://www.npmjs.com/package/@airswap/light/v/2.2.0)   | [`0xc98314a5077DBa8F12991B29bcE39F834E82e197`](https://bscscan.com/address/0xc98314a5077DBa8F12991B29bcE39F834E82e197) | [`e27cbda`](https://github.com/airswap/airswap-protocols/tree/e27cbda7df6d6e93bd63f5aa78755386092ec569) |
-| Indexer  | [`3.6.9`](https://www.npmjs.com/package/@airswap/indexer/v/3.6.9) | [`0x0fEE96B8d44C0fD9E6D6472531E2aD159CCba73d`](https://bscscan.com/address/0x0fEE96B8d44C0fD9E6D6472531E2aD159CCba73d) | [`48da430`](https://github.com/airswap/airswap-protocols/tree/48da430ca23876b9d01743d59b548f7fb59660ab) |
-| Pool     | [`1.1.0`](https://www.npmjs.com/package/@airswap/pool/v/1.1.0)    | [`0xF636776aCfca2132E019E714a1fC881124B3bAfC`](https://bscscan.com/address/0xF636776aCfca2132E019E714a1fC881124B3bAfC) | [`ed7af5e`](https://github.com/airswap/airswap-protocols/tree/ed7af5e048bc754e920ffbc6e4a0735a75d07386) |
-| AST      | `N/A`                                                             | [`0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1`](https://bscscan.com/token/0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1)   | `N/A`                                                                                                   |
+- Registry — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://bscscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
+- Swap — [`0x132F13C3896eAB218762B9e46F55C9c478905849`](https://bscscan.com/address/0x132F13C3896eAB218762B9e46F55C9c478905849#code)
+- Wrapper — [`0x6713C23261c8A9B7D84Dd6114E78d9a7B9863C1a`](https://bscscan.com/address/0x6713C23261c8A9B7D84Dd6114E78d9a7B9863C1a#code)
+- Converter — [`0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3`](https://bscscan.com/address/0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3#code)
+- Pool — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://bscscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
+- Staking — [`0xd161ddCFCC0C2D823021AA26200824Efa75218d1`](https://bscscan.com/address/0xd161ddCFCC0C2D823021AA26200824Efa75218d1#code)
 
-## Ethereum Rinkeby
+## Testnet
 
-| Contract  | Version                                                             | Address                                                                                                                         | Commit                                                                                                  |
-| :-------- | :------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------ |
-| Swap      | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8)      | [`0x2e7373D70732E0F37F4166D8FD9dBC89DD5BC476`](https://rinkeby.etherscan.io/address/0x2e7373D70732E0F37F4166D8FD9dBC89DD5BC476) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Light     | [`2.2.0`](https://www.npmjs.com/package/@airswap/light/v/2.2.0)     | [`0x79782c5a3aeb65850769d9933f33a1938c4a6349`](https://rinkeby.etherscan.io/address/0x79782c5a3aeb65850769d9933f33a1938c4a6349) | [`e27cbda`](https://github.com/airswap/airswap-protocols/tree/e27cbda7df6d6e93bd63f5aa78755386092ec569) |
-| Delegate  | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9)  | [`0xe01cE51C3CB0B68b5Fa07CCBD9544AeEcd006e6E`](https://rinkeby.etherscan.io/address/0xe01cE51C3CB0B68b5Fa07CCBD9544AeEcd006e6E) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Staking   | [`2.3.0`](https://www.npmjs.com/package/@airswap/staking/v/2.3.0)   | [`0x7c04c63b971D23f39db2D0eaecB6AE5537Bcd467`](https://rinkeby.etherscan.io/address/0x7c04c63b971D23f39db2D0eaecB6AE5537Bcd467) | [`6349b6f`](https://github.com/airswap/airswap-protocols/tree/6349b6f0d9aad4e04202a4981697a4f87bb12b3a) |
-| Pool      | [`1.1.0`](https://www.npmjs.com/package/@airswap/pool/v/1.1.0)      | [`0xdeD442725364710f5501a85Eb9Ff49CC45851693`](https://rinkeby.etherscan.io/address/0xdeD442725364710f5501a85Eb9Ff49CC45851693) | [`eef21f7`](https://github.com/airswap/airswap-protocols/tree/eef21f7b713983a471de0a3dae811cbb885941bb) |
-| Wrapper   | [`3.6.9`](https://www.npmjs.com/package/@airswap/wrapper/v/3.6.9)   | [`0x8C80e2c9C5244C2283Da85396dde6b7af4ebaA31`](https://rinkeby.etherscan.io/address/0x8C80e2c9C5244C2283Da85396dde6b7af4ebaA31) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Types     | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10)   | [`0x42d0f5fE517A0e4aB8be2F3FA7799fB96E30E777`](https://rinkeby.etherscan.io/address/0x42d0f5fE517A0e4aB8be2F3FA7799fB96E30E777) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Validator | [`1.2.6`](https://www.npmjs.com/package/@airswap/validator/v/1.2.6) | [`0x2D8849EAaB159d20Abf10D4a80c97281A12448CC`](https://rinkeby.etherscan.io/address/0x2D8849EAaB159d20Abf10D4a80c97281A12448CC) | [`8dcb14d`](https://github.com/airswap/airswap-protocols/tree/8dcb14d4f96e08b0f247060cdb598567a72024e0) |
-| AST       | `N/A`                                                               | [`0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8`](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) | [`517a927`](https://github.com/airswap/contracts-v1/tree/517a9275a3f4d5f4d039c6db078d15d67d0f63fa)      |
+### Ethereum: Rinkeby
 
-## Ethereum Kovan
+- Registry — [`0x054e6c06B044802BdF12136027C894ffd00d925A`](https://rinkeby.etherscan.io/address/0x054e6c06B044802BdF12136027C894ffd00d925A#code)
+- Swap — [`0x03710fb8e65070A4Bc6422d111a1beb7949e1a87`](https://rinkeby.etherscan.io/address/0x03710fb8e65070A4Bc6422d111a1beb7949e1a87#code)
+- Wrapper — [`0x74b9e644cB5C0b174c1531e3a4c50e0A3ed13961`](https://rinkeby.etherscan.io/address/0x74b9e644cB5C0b174c1531e3a4c50e0A3ed13961#code)
+- Converter — [`0x04Ca0A9a349F5F24E7ca4e36a0a20D977518A033`](https://rinkeby.etherscan.io/address/0x04Ca0A9a349F5F24E7ca4e36a0a20D977518A033#code)
+- Pool — [`0x2b8CAb4a96E843159A4cb6d4C071Ed4b4C15c476`](https://rinkeby.etherscan.io/address/0x2b8CAb4a96E843159A4cb6d4C071Ed4b4C15c476#code)
+- Staking — [`0x1f22124a0cfa8e54005CC3b1186ACE50a4cB0229`](https://rinkeby.etherscan.io/address/0x1f22124a0cfa8e54005CC3b1186ACE50a4cB0229#code)
 
-| Contract | Version                                                            | Address                                                                                                                       | Commit                                                                                                  |
-| :------- | :----------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| Swap     | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8)     | [`0x79fb4604f2D7bD558Cda0DFADb7d61D98b28CA9f`](https://kovan.etherscan.io/address/0x79fb4604f2D7bD558Cda0DFADb7d61D98b28CA9f) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Indexer  | [`3.6.9`](https://www.npmjs.com/package/@airswap/indexer/v/3.6.9)  | [`0x0f125A69e1590CEa67F776cd44B87F6059128887`](https://kovan.etherscan.io/address/0x0f125A69e1590CEa67F776cd44B87F6059128887) | [`48da430`](https://github.com/airswap/airswap-protocols/tree/48da430ca23876b9d01743d59b548f7fb59660ab) |
-| Delegate | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9) | [`0x982A916882Fb26e9408993b9d03247d44Fb4E8D4`](https://kovan.etherscan.io/address/0x982A916882Fb26e9408993b9d03247d44Fb4E8D4) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Wrapper  | [`3.6.9`](https://www.npmjs.com/package/@airswap/wrapper/v/3.6.9)  | [`0xE5E7116AB49666e9791f53aeD4f5B7207770879D`](https://kovan.etherscan.io/address/0xE5E7116AB49666e9791f53aeD4f5B7207770879D) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Types    | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10)  | [`0x708A7ea9C9580fD194c2941eeD48e4ff4ee32a9D`](https://kovan.etherscan.io/address/0x708A7ea9C9580fD194c2941eeD48e4ff4ee32a9D) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+### Avalanche: Fuji
 
-## Ethereum Goerli
+- Registry — [`0x4F290e83B414097C107F5AD483a9ae15434B43d3`](https://testnet.snowtrace.io/address/0x4F290e83B414097C107F5AD483a9ae15434B43d3#code)
+- Swap — [`0x5F189f72Ed14E6A2d7d4A3fdd58E104a1c8C9024`](https://testnet.snowtrace.io/address/0x5F189f72Ed14E6A2d7d4A3fdd58E104a1c8C9024#code)
+- Wrapper — [`0xF5ecbB901eBeFa61Cd82108a4c48839be8E1DAe6`](https://testnet.snowtrace.io/address/0xF5ecbB901eBeFa61Cd82108a4c48839be8E1DAe6#code)
+- Converter — [`0x81c9817DD6d863b0C857cec50e12f50006cde5Bb`](https://testnet.snowtrace.io/address/0x81c9817DD6d863b0C857cec50e12f50006cde5Bb#code)
+- Pool — [`0xE1DEee135ED1e8220C59c5063F9510Bb7ab63F15`](https://testnet.snowtrace.io/address/0xE1DEee135ED1e8220C59c5063F9510Bb7ab63F15#code)
+- Staking — [`0x50c13b3763075C9DA5Dfc4E88e77C3DaB4bf6af2`](https://testnet.snowtrace.io/address/0x50c13b3763075C9DA5Dfc4E88e77C3DaB4bf6af2#code)
 
-| Contract | Version                                                            | Address                                                                                                                        | Commit                                                                                                  |
-| :------- | :----------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| Swap     | [`5.4.8`](https://www.npmjs.com/package/@airswap/swap/v/5.4.8)     | [`0x18C90516a38Dd7B779A8f6C19FA698F0F4Efc7FC`](https://goerli.etherscan.io/address/0x18C90516a38Dd7B779A8f6C19FA698F0F4Efc7FC) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Indexer  | [`3.6.9`](https://www.npmjs.com/package/@airswap/indexer/v/3.6.9)  | [`0x79fb4604f2D7bD558Cda0DFADb7d61D98b28CA9f`](https://goerli.etherscan.io/address/0x79fb4604f2D7bD558Cda0DFADb7d61D98b28CA9f) | [`48da430`](https://github.com/airswap/airswap-protocols/tree/48da430ca23876b9d01743d59b548f7fb59660ab) |
-| Delegate | [`2.6.9`](https://www.npmjs.com/package/@airswap/delegate/v/2.6.9) | [`0x0f125A69e1590CEa67F776cd44B87F6059128887`](https://goerli.etherscan.io/address/0x0f125A69e1590CEa67F776cd44B87F6059128887) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Wrapper  | [`3.6.9`](https://www.npmjs.com/package/@airswap/wrapper/v/3.6.9)  | [`0x982A916882Fb26e9408993b9d03247d44Fb4E8D4`](https://goerli.etherscan.io/address/0x982A916882Fb26e9408993b9d03247d44Fb4E8D4) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
-| Types    | [`3.5.10`](https://www.npmjs.com/package/@airswap/types/v/3.5.10)  | [`0x9bFB5fa73e95C4Dfe76B888e013864baF990D14D`](https://goerli.etherscan.io/address/0x9bFB5fa73e95C4Dfe76B888e013864baF990D14D) | [`953956f`](https://github.com/airswap/airswap-protocols/tree/953956f308c65ec53d1f1b20d35f47fe04b936af) |
+### BSC: Testnet
 
-## Deploy Process
+- Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://testnet.bscscan.com/address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
+- Swap — [`0xC32a3c867aBAd28d977e1724f92D9684fF3d2976`](https://testnet.bscscan.com/address/0xC32a3c867aBAd28d977e1724f92D9684fF3d2976#code)
+- Wrapper — [`0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74`](https://testnet.bscscan.com/address/0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74#code)
+- Converter — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://testnet.bscscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
+- Pool — [`0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3`](https://testnet.bscscan.com/address/0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3#code)
+- Staking — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://testnet.bscscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
 
-See [Deployer](https://github.com/airswap/airswap-protocols/tree/master/tools/deployer) for a guide to the deployment process. Each deploy has the following outputs:
+## Legacy
 
-- A new contract is deployed from the master branch.
-- After deploy, the contract source code is verified on Etherscan.
-- New contract addresses are written to `deploys.json` in each package. \(Both on GitHub and NPM\)
-- New contract ABI is written to `build/contracts` in each package. \(Only on NPM\)
-
-## Contract Versioning
-
-Packages are versioned based on deploys. Major versions e.g. 1.x.x are mainnet deploys, while minor versions e.g. x.1.x are rinkeby deploys. Packages that are not deployed increment patch versions e.g. x.x.1.
-
-**MAJOR.MINOR.PATCH** \(Semantic Versioning\)
-
-- _MAJOR_ is incremented on _MAINNET_ deploy.
-- _MINOR_ is incremented on _TESTNET_ deploy \(specifically RINKEBY\).
-- _PATCH_ is incremented to publish to NPM, unrelated to a deploy.
+- Light (V2) — [`0xc549a5c701cb6e6cbc091007a80c089c49595468`](https://etherscan.io/address/0xc549a5c701cb6e6cbc091007a80c089c49595468)
+- Swap (V2) — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA)
+- Staking (V2) [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15)
+- Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
+- Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)

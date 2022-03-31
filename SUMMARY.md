@@ -26,4 +26,3 @@
 - [Discovery](technology/discovery.md)
 - [Signatures](technology/signatures.md)
 - [Deployments](technology/deployments.md)
-- [V3](technology/v3.md)

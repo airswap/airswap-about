@@ -42,7 +42,7 @@ getSignerSideOrder(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  swapContract: string, // Swap contract intended for use (Light)
+  swapContract: string, // Swap contract intended for use
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
 )
 ```
@@ -57,14 +57,14 @@ getSenderSideOrder(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  swapContract: string, // Swap contract intended for use (Light)
+  swapContract: string, // Swap contract intended for use
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
 )
 ```
 
 ## Server
 
-A successful result containing a `LightOrder` has the following properties:
+A successful result containing a `Order` has the following properties:
 
 | Property     | Type      | Description                                 |
 | :----------- | :-------- | :------------------------------------------ |
@@ -138,10 +138,10 @@ curl -H 'Content-Type: application/json' \
      http://localhost:3000/
 ```
 
-After requesting an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
+After requesting an order, parameters are submitted as an Ethereum transaction to the `light` function on the [Swap](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
 
 ```typescript
-  function swap(
+  function light(
     uint256 nonce,
     uint256 expiry,
     address signerWallet,
@@ -162,7 +162,7 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
     address indexed signerWallet,
     IERC20 signerToken,
     uint256 signerAmount,
-    uint256 signerFee,
+    uint256 protocolFee,
     address indexed senderWallet,
     IERC20 senderToken,
     uint256 senderAmount

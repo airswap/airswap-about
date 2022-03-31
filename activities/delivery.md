@@ -60,5 +60,5 @@ Members who are interested in contributing to delivery can reach out to other Co
 Delivery team members would be expected to read the [guides](https://about.airswap.io) to understand more about AirSwap's product and technology, and to help welcome new members into the community. Once ready, contributors can nominate new members into the circle. If two other contributors vouch for the nominee, s/he will automatically be inducted into the circle and can benefit from the circle rewards.
 
 {% hint style="info" %}
-New members interested to try contributing can also help to create content (e.g. tutorials and guides) and be rewarded in [bounties](https://github.com/airswap/airswap-about/tree/d27062da8c952b6204d213079d222c1ffd6c96e9/bounties.md) before being nominated into the circle!
+New members interested to try contributing can also help to create content (e.g. tutorials and guides) and be rewarded in bounties before being nominated into the circle!
 {% endhint %}

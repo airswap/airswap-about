@@ -1,6 +1,6 @@
 # Makers
 
-Makers run web servers that implement the RFQ and Last Look APIs using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/guides/add-to-the-registry.md) smart contract, which is queried by clients.
+Makers run web servers that implement the RFQ and Last Look APIs using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](./deployments.md) smart contract, which is queried by clients.
 
 ## Introduction
 
@@ -14,7 +14,7 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket \(`wss`\) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/request-for-quote/README.md) and [Last Look](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/last-look/README.md) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
+If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket \(`wss`\) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](./request-for-quote.md) and [Last Look](./last-look.md) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee \(in basis points\) is [hashed into the signature](https://github.com/airswap/airswap-about/tree/0c6694fd69e97125c73962d19b785983484f2f71/technology/signatures/README.md) and verified during settlement. The value of this parameter must match its current value of `signerFee` on the [Light](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee \(in basis points\) is [hashed into the signature](./signatures.md) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [Swap](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward AirSwap governance and development contributors.
 
@@ -96,7 +96,7 @@ Ensure the AirSwap CLI is installed.
 $ yarn global add airswap
 ```
 
-Once your [server](https://github.com/airswap/airswap-docs/tree/82d700b725317da365a3680f53106d69db7273bc/guides/run-a-server.md) is up and running at a **public URL**, you're ready to add it to the Registry. First, ensure an account is set with the `airswap account:import` command. You can but are not required to use the same Ethereum account that your Server is using.
+Once your server is up and running at a **public URL**, you're ready to add it to the Registry. First, ensure an account is set with the `airswap account:import` command. You can but are not required to use the same Ethereum account that your Server is using.
 
 Let's take a look at the available Registry commands.
 

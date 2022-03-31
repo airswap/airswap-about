@@ -299,10 +299,10 @@ The client may send an order to the server to consider a swap.
 }
 ```
 
-After the server accepts an order, parameters are submitted as an Ethereum transaction to the `swap` function on the [Light](deployments.md) contract, which emits a `Swap` event on success.
+After the server accepts an order, parameters are submitted as an Ethereum transaction to the `light` function on the [Swap](deployments.md) contract, which emits a `Swap` event on success.
 
 ```typescript
-  function swap(
+  function light(
     uint256 nonce,
     uint256 expiry,
     address signerWallet,
@@ -323,7 +323,7 @@ After the server accepts an order, parameters are submitted as an Ethereum trans
     address indexed signerWallet,
     IERC20 signerToken,
     uint256 signerAmount,
-    uint256 signerFee,
+    uint256 protocolFee,
     address indexed senderWallet,
     IERC20 senderToken,
     uint256 senderAmount
