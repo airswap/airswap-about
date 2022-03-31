@@ -10,6 +10,7 @@
 - Converter — [`0x191A6Da5543772779CaBa4730cEdb2fF030b8b13`](https://etherscan.io/address/0x191A6Da5543772779CaBa4730cEdb2fF030b8b13#code)
 - Pool — [`0xaeB0E11e7C21715b4e8F3425Cb3d4978e5a7cf11`](https://etherscan.io/address/0xaeB0E11e7C21715b4e8F3425Cb3d4978e5a7cf11#code)
 - Staking — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code)
+- AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a)
 
 ### Avalanche
 
@@ -19,6 +20,7 @@
 - Converter — [`0x64888583E676368390D6eB573bC2AC3bCE9002B3`](https://snowtrace.io/address/0x64888583E676368390D6eB573bC2AC3bCE9002B3#code)
 - Pool — [`0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0`](https://snowtrace.io/address/0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0#code)
 - Staking — [`0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74`](https://snowtrace.io/address/0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74#code)
+- AST — [`0xc32a3c867abad28d977e1724f92d9684ff3d2976`](https://snowtrace.io/address/0xc32a3c867abad28d977e1724f92d9684ff3d2976)
 
 ### BSC
 
@@ -28,6 +30,7 @@
 - Converter — [`0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3`](https://bscscan.com/address/0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3#code)
 - Pool — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://bscscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
 - Staking — [`0xd161ddCFCC0C2D823021AA26200824Efa75218d1`](https://bscscan.com/address/0xd161ddCFCC0C2D823021AA26200824Efa75218d1#code)
+- AST — [`0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1`](https://bscscan.com/address/0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1#code)
 
 ## Testnet
 
@@ -39,6 +42,7 @@
 - Converter — [`0x04Ca0A9a349F5F24E7ca4e36a0a20D977518A033`](https://rinkeby.etherscan.io/address/0x04Ca0A9a349F5F24E7ca4e36a0a20D977518A033#code)
 - Pool — [`0x2b8CAb4a96E843159A4cb6d4C071Ed4b4C15c476`](https://rinkeby.etherscan.io/address/0x2b8CAb4a96E843159A4cb6d4C071Ed4b4C15c476#code)
 - Staking — [`0x1f22124a0cfa8e54005CC3b1186ACE50a4cB0229`](https://rinkeby.etherscan.io/address/0x1f22124a0cfa8e54005CC3b1186ACE50a4cB0229#code)
+- AST — [`0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8`](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8#code)
 
 ### Avalanche: Fuji
 
@@ -48,6 +52,7 @@
 - Converter — [`0x81c9817DD6d863b0C857cec50e12f50006cde5Bb`](https://testnet.snowtrace.io/address/0x81c9817DD6d863b0C857cec50e12f50006cde5Bb#code)
 - Pool — [`0xE1DEee135ED1e8220C59c5063F9510Bb7ab63F15`](https://testnet.snowtrace.io/address/0xE1DEee135ED1e8220C59c5063F9510Bb7ab63F15#code)
 - Staking — [`0x50c13b3763075C9DA5Dfc4E88e77C3DaB4bf6af2`](https://testnet.snowtrace.io/address/0x50c13b3763075C9DA5Dfc4E88e77C3DaB4bf6af2#code)
+- AST — [`0x48c427e7cef42399e9e8300fc47875772309e995`](https://testnet.snowtrace.io/address/0x48c427e7cef42399e9e8300fc47875772309e995#code)
 
 ### BSC: Testnet
 
@@ -57,6 +62,7 @@
 - Converter — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://testnet.bscscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
 - Pool — [`0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3`](https://testnet.bscscan.com/address/0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3#code)
 - Staking — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://testnet.bscscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
+- AST — [`0xd161ddcfcc0c2d823021aa26200824efa75218d1`](https://testnet.bscscan.com/address/0xd161ddcfcc0c2d823021aa26200824efa75218d1#code)
 
 ## Legacy
 
