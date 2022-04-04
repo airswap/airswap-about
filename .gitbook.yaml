@@ -6,4 +6,4 @@ root: ./
 
 redirects:
   system/architecture.md: README.md
-  technology/v3: technology/deployments.md
+  technology/v3.md: technology/deployments.md
