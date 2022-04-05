@@ -68,6 +68,7 @@
 
 - Light (V2) — [`0xc549a5c701cb6e6cbc091007a80c089c49595468`](https://etherscan.io/address/0xc549a5c701cb6e6cbc091007a80c089c49595468)
 - Swap (V2) — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA)
+- Pool (V2) — [`0x7296333e1615721f4Bd9Df1a3070537484A50CF8`](https://etherscan.io/address/0x7296333e1615721f4Bd9Df1a3070537484A50CF8)
 - Staking (V2) [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15)
 - Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe)
 - Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec)
