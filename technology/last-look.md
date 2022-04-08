@@ -228,7 +228,7 @@ Upon connection, the server sends an `initialize` notification to the client.
         "name": "last-look",
         "version": "1.0.0",
         "params": {
-          "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468",
+          "swapContract": "0x522D6F36c95A1b6509A14272C17747BbB582F2A6",
           "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
           "senderServer": "www.maker.com"
         }

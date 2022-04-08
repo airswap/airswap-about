@@ -125,7 +125,7 @@ Content-Type: application/json
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "senderAmount": "1000000000000000000",
-    "swapContract": "0xc549a5c701cb6e6cbc091007a80c089c49595468"
+    "swapContract": "0x522D6F36c95A1b6509A14272C17747BbB582F2A6"
   }
 }
 ```
@@ -134,7 +134,7 @@ A response looks like the [example](request-for-quote.md#example) above. Request
 
 ```bash
 curl -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0xc549a5c701cb6e6cbc091007a80c089c49595468"}}' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0x522D6F36c95A1b6509A14272C17747BbB582F2A6"}}' \
      http://localhost:3000/
 ```
 
