@@ -132,7 +132,7 @@ The server or client may subscribe to a filter for a `Swap` event with the nonce
 
 ## Server
 
-A successful result containing a `Order` has the following properties:
+See the [signatures](./signatures.md) page for creating and signing an order. A successful server response containing a `Order` has the following properties:
 
 | Property     | Type      | Description                                 |
 | :----------- | :-------- | :------------------------------------------ |
