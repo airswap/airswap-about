@@ -62,54 +62,11 @@ getSenderSideOrder(
 )
 ```
 
-## Server
-
-A successful result containing a `Order` has the following properties:
-
-| Property     | Type      | Description                                 |
-| :----------- | :-------- | :------------------------------------------ |
-| nonce        | `uint256` | Unique per signer and should be sequential. |
-| expiry       | `uint256` | Expiry in seconds since 1 January 1970.     |
-| signerWallet | `address` | Wallet that sets and signs terms.           |
-| signerToken  | `address` | Token that the signer will transfer.        |
-| signerAmount | `uint256` | Amount that the signer will transfer.       |
-| senderToken  | `address` | Token that the sender will transfer.        |
-| senderAmount | `uint256` | Amount that the sender will transfer.       |
-| v            | `uint8`   | `v` value of the ECDSA signature.           |
-| r            | `bytes32` | `r` value of the ECDSA signature.           |
-| s            | `bytes32` | `s` value of the ECDSA signature.           |
-
-### Example
-
-```javascript
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Headers: *
-Access-Control-Allow-Methods: POST, OPTIONS
-Content-Length: ...
-Content-Type: application/json
-
-{
-  "jsonrpc": "2.0",
-  "id": 123,
-  "result": {
-    "nonce": "99",
-    "expiry": "1566941284",
-    "signerWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
-    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "signerAmount": "100000000",
-    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "senderAmount": "1000000000000000000",
-    "v": "28",
-    "r": "0x67e0723b0afd357d4f28523bf633dfee16e0eab2f3cbcf8ce1afd32a035d2764",
-    "s": "0x1b71e6e633b3334fc88faf4ec0ca1b7611883bc0de4df7024abec07af78b97c3"
-  }
-}
-```
-
-## Protocol
+## Client
 
 For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC requests.
+
+### Example Request
 
 ```javascript
 POST / HTTP/1.1
@@ -130,7 +87,7 @@ Content-Type: application/json
 }
 ```
 
-A response looks like the [example](request-for-quote.md#example) above. Requests can be made using curl for testing.
+A response looks like the [example](request-for-quote.md#example-response) below. Requests can be made using curl for testing.
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -138,7 +95,9 @@ curl -H 'Content-Type: application/json' \
      http://localhost:3000/
 ```
 
-After requesting an order, parameters are submitted as an Ethereum transaction to the `light` function on the [Swap](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success.
+### Swap Contract
+
+With an order in hand, parameters are submitted as an Ethereum transaction to the [Swap](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success. The `light` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order.
 
 ```typescript
   function light(
@@ -169,4 +128,49 @@ After requesting an order, parameters are submitted as an Ethereum transaction t
   );
 ```
 
-The server may subscribe to a filter for a `Swap` event with the nonce they provided to the client.
+The server or client may subscribe to a filter for a `Swap` event with the nonce they provided to the client.
+
+## Server
+
+A successful result containing a `Order` has the following properties:
+
+| Property     | Type      | Description                                 |
+| :----------- | :-------- | :------------------------------------------ |
+| nonce        | `uint256` | Unique per signer and should be sequential. |
+| expiry       | `uint256` | Expiry in seconds since 1 January 1970.     |
+| signerWallet | `address` | Wallet that sets and signs terms.           |
+| signerToken  | `address` | Token that the signer will transfer.        |
+| signerAmount | `uint256` | Amount that the signer will transfer.       |
+| senderToken  | `address` | Token that the sender will transfer.        |
+| senderAmount | `uint256` | Amount that the sender will transfer.       |
+| v            | `uint8`   | `v` value of the ECDSA signature.           |
+| r            | `bytes32` | `r` value of the ECDSA signature.           |
+| s            | `bytes32` | `s` value of the ECDSA signature.           |
+
+### Example Response
+
+```javascript
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Methods: POST, OPTIONS
+Content-Length: ...
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "result": {
+    "nonce": "99",
+    "expiry": "1566941284",
+    "signerWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "signerAmount": "100000000",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "senderAmount": "1000000000000000000",
+    "v": "28",
+    "r": "0x67e0723b0afd357d4f28523bf633dfee16e0eab2f3cbcf8ce1afd32a035d2764",
+    "s": "0x1b71e6e633b3334fc88faf4ec0ca1b7611883bc0de4df7024abec07af78b97c3"
+  }
+}
+```
