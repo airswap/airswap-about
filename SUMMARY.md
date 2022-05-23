@@ -6,23 +6,15 @@
 
 ## Community
 
+- [Working](community/working.md)
+- [Earning](community/earning.md)
 - [Conduct](community/code-of-conduct.md)
-- [Bounties](community/bounties.md)
-- [Process](community/process.md)
-- [Rewards](community/rewards.md)
-
-## Activities
-
-- [Overview](activities/overview.md)
-- [Voting](activities/voting.md)
-- [Direction](activities/direction.md)
-- [Delivery](activities/delivery.md)
 
 ## Technology
 
-- [Makers](technology/makers.md)
-- [RFQ](technology/request-for-quote.md)
-- [Last Look](technology/last-look.md)
+- [Servers](technology/makers.md)
+- [Protocols](technology/request-for-quote.md)
 - [Discovery](technology/discovery.md)
+- [Orders](technology/orders.md)
 - [Signatures](technology/signatures.md)
-- [Deployments](technology/deployments.md)
+- [Contracts](technology/deployments.md)
