@@ -8,7 +8,7 @@
 
 - [Working](community/working.md)
 - [Earning](community/earning.md)
-- [Conduct](community/code-of-conduct.md)
+- [Code of Conduct](community/conduct.md)
 
 ## Technology
 
