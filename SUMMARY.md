@@ -6,9 +6,9 @@
 
 ## Community
 
+- [Conduct](community/conduct.md)
 - [Working](community/working.md)
 - [Earning](community/earning.md)
-- [Code of Conduct](community/conduct.md)
 
 ## Technology
 
