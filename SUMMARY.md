@@ -12,8 +12,8 @@
 
 ## Technology
 
-- [Servers](technology/makers.md)
-- [Protocols](technology/request-for-quote.md)
+- [Servers](technology/servers.md)
+- [Protocols](technology/protocols.md)
 - [Discovery](technology/discovery.md)
 - [Orders](technology/orders.md)
 - [Signatures](technology/signatures.md)
