@@ -1,6 +1,6 @@
 # Conduct
 
-Our greatest chance at success comes from creating a respectful environment where people want to come, stay, and participate over the long term.
+We continuously create a respectful environment where people want to come, stay, and participate over the long term.
 
 The following code of conduct extends the [Berlin Code of Conduct](https://berlincodeofconduct.org).
 
