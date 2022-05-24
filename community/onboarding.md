@@ -10,21 +10,10 @@ AirSwap is a "Product DAO" focused on decentralized trading systems. Anyone can 
 
 Once you’ve joined the [AirSwap Discord](https://chat.airswap.io/), tag the _Ops_ role to request a _Contributor_ role and you’ll be able to join groups in the **#join-groups** channel. Although each group does unique work, each is in constant communication with one another and members are often shared. Keep in mind that you can join any group and joining multiple groups is welcome!
 
-### Direction
-
-Join the **direction** group to discuss strategic and product direction, draft community proposals (AIPs), create new product specifications, and drive the product development process. Meets every Monday at 1pm UTC.
-
-### Design
-
-Join the **design** group to contribute to everything from UX and UI design to marketing collateral and visual branding. Design generally collaborates on work using Figma and meets every Wednesday at 9am UTC.
-
-### Development
-
-Join the **development** group to contribute to open source protocols and products that comprise the AirSwap network. Develop Solidity smart contracts and TypeScript web apps. Meets every Tuesday at 3pm UTC.
-
-### Delivery
-
-Join the **delivery** group to put our technologies into users hands, grow our communities online and off, develop and foster relationships with other projects and DAOs in the space. Meets every Monday at 1pm UTC.
+- **Direction** — Join the direction group to discuss strategic and product direction, draft community proposals (AIPs), create new product specifications, and drive the product development process. Meets every Monday at 1pm UTC.
+- **Design** — Join the design group to contribute to everything from UX and UI design to marketing collateral and visual branding. Design generally collaborates on work using Figma and meets every Wednesday at 9am UTC.
+- **Development** — Join the development group to contribute to open source protocols and products that comprise the AirSwap network. Develop Solidity smart contracts and TypeScript web apps. Meets every Tuesday at 3pm UTC.
+- **Delivery** — Join the delivery group to put our technologies into users hands, grow our communities online and off, develop and foster relationships with other projects and DAOs in the space. Meets every Monday at 1pm UTC.
 
 ## Finding Projects
 
