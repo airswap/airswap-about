@@ -4,7 +4,7 @@ description: Learn how community members get rewarded by contributing to AirSwap
 
 ## Circle Funding
 
-The contributor circle is funded from two sources - a base level of funding paid out from the treasury, and a bonus funding pool derived from trade fees collected. The base fundings are paid out in AST while the bonus fundings are paid out in the currency of the consolidated token pool (currently WETH).
+The contributor circle is funded from two sources - a base level of funding distributed from the treasury, and a bonus funding pool derived from trade fees collected. The base fundings are distributed in AST while the bonus fundings are distributed in the currency of the consolidated token pool (currently WETH).
 
 Circle funds will be then distributed based on individual contributions during each cycle.
 
@@ -38,9 +38,9 @@ $$
 
 where R is the rewards you can obtain, P is the number of points used to claim (multiplied by 10^4), B is the token balance in the rewards pool, S and M are community adjustable parameters (currently set to S = 10 and M = 100).
 
-The formula results in rewards being paid out on a smooth curve based on the number of points used to claim.
+The formula results in rewards being distributed on a smooth curve based on the number of points used to claim.
 
-![Current rewards are paid out on a curve based on the number of points](../.gitbook/assets/rewards.svg)
+![Current rewards are distributed on a curve based on the number of points](../.gitbook/assets/rewards.svg)
 
 ⚠ Note that fees are continuously streaming into the community pool and participants are continuously claiming tokens. Due to the dynamic nature of this process, slippage on claims is possible.
 

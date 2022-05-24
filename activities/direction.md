@@ -42,7 +42,7 @@ AIPs called to vote will require a point-by-point summary of the proposal which 
 
 ### Rewards
 
-At the end of each cycle, contributors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward others based on their contributions in that cycle. At the end of the cycle, AST rewards are paid out based on their allocation of GIVE tokens.
+At the end of each cycle, contributors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward others based on their contributions in that cycle. At the end of the cycle, AST rewards are distributed based on their allocation of GIVE tokens.
 
 {% hint style="info" %}
 Read more on rewards [here](../community/rewards.md)

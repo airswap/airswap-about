@@ -47,7 +47,7 @@ For more information, please refer to our [code of conduct](../community/code-of
 
 ### Rewards
 
-At the end of each voting cycle, Contributors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward others based on their contributions during that cycle. At the end of the cycle, rewards are paid out based on their allocation of GIVE tokens.
+At the end of each voting cycle, Contributors allocate GIVE tokens on [Coordinape](https://coordinape.com) to reward others based on their contributions during that cycle. At the end of the cycle, rewards are distributed based on their allocation of GIVE tokens.
 
 {% hint style="info" %}
 Read more on rewards [here](../community/rewards.md)
@@ -60,5 +60,5 @@ Members who are interested in contributing to delivery can reach out to other Co
 Delivery team members would be expected to read the [guides](https://about.airswap.io) to understand more about AirSwap's product and technology, and to help welcome new members into the community. Once ready, contributors can nominate new members into the circle. If two other contributors vouch for the nominee, s/he will automatically be inducted into the circle and can benefit from the circle rewards.
 
 {% hint style="info" %}
-New members interested to try contributing can also help to create content (e.g. tutorials and guides) and be rewarded in bounties before being nominated into the circle!
+New members interested to try contributing can also help to create content (e.g. tutorials and guides) before being nominated into the circle!
 {% endhint %}

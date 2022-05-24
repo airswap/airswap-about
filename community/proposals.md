@@ -10,10 +10,9 @@ Several incentives to participate are built in. Every month…
 
 - **Votes are run** for four days on one or more proposals.
 - **Rewards are distributed** to contributors for work completed.
-- **Bounties are assessed** and distributed by a project lead.
 
 Learn more about the different [activities ](../activities/overview.md)that go on in the AirSwap DAO.
 
 {% hint style="info" %}
-See a list of [active projects](https://github.com/airswap/AIPs/issues), proposals [ready to be built](https://github.com/airswap/AIPs/issues), and open [bounty categories](bounties.md).
+See a list of [active projects](https://github.com/orgs/airswap/projects/7) and proposals [ready to be built](https://github.com/airswap/AIPs/issues).
 {% endhint %}
