@@ -1,4 +1,6 @@
-# Conduct
+---
+description: Code of conduct
+---
 
 We continuously create a respectful environment where people want to come, stay, and participate over the long term.
 

@@ -6,9 +6,10 @@
 
 ## Community
 
-- [Conduct](community/conduct.md)
+- [Onboarding](community/onboarding.md)
 - [Working](community/working.md)
 - [Earning](community/earning.md)
+- [Conduct](community/conduct.md)
 
 ## Technology
 
