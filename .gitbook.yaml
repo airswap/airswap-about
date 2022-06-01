@@ -7,9 +7,10 @@ root: ./
 redirects:
   system/architecture: README.md
   technology/v3: technology/deployments.md
-  technology/makers: technology/servers.md
+  technology/servers: technology/makers.md
   technology/request-for-quote: technology/protocols.md
   technology/last-look: technology/protocols.md
   guides/voters: community/onboarding.md
   guides/ambassadors: community/onboarding.md
   guides/authors: community/onboarding.md
+  technology/signatures: technology/orders.md

@@ -13,9 +13,8 @@
 
 ## Technology
 
-- [Servers](technology/servers.md)
-- [Protocols](technology/protocols.md)
+- [Trading](technology/protocols.md)
 - [Discovery](technology/discovery.md)
+- [Makers](technology/makers.md)
 - [Orders](technology/orders.md)
-- [Signatures](technology/signatures.md)
 - [Contracts](technology/deployments.md)
