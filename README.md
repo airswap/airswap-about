@@ -39,6 +39,10 @@ Several DEX aggregators and market makers have implemented AirSwap.
 - [MetaMask Swaps](https://metamask.io/swaps.html) — Swap directly from the MetaMask wallet browser extension.
 - Market maker activity can be tracked on the [Dune dashboard](https://dune.xyz/queries/28752/57978).
 
+### Analytics
+
+See the AirSwap [Dashboard on Dune](https://dune.com/agrimony/AirSwap-v2) for latest trading network and community stats.
+
 ## Community
 
 AirSwap is a community asset held by its token holders, operating as an open project with a transparent decision-making and product development process. Both the network technology and contributor community aim to be maximally decentralized. Community members stake AirSwap tokens (AST) to participate in governance and other community activities and benefits. Ideating, drafting, voting on, and accepting proposals is an open process.
