@@ -4,7 +4,7 @@ description: Learn how to get connected and start contributing to AirSwap
 
 ## Welcome to AirSwap!
 
-AirSwap is a "Product DAO" focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by network health and trading activity.
+AirSwap is a DAO focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by positive impact on network health and trading activity.
 
 ## Joining Groups
 
