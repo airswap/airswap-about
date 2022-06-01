@@ -1,4 +1,4 @@
-# Protocols
+AirSwap trading technology is fully decentralized through peer-to-peer protocols, enabled by smart contracts for counterparty discovery and to perform atomic swaps. Depending on the scenario, makers implement RFQ, Last Look, or both, either via HTTPS or WebSocket.
 
 ## RFQ
 

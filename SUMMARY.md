@@ -14,7 +14,7 @@
 ## Technology
 
 - [Trading](technology/protocols.md)
-- [Discovery](technology/discovery.md)
 - [Makers](technology/makers.md)
+- [Discovery](technology/discovery.md)
 - [Orders](technology/orders.md)
 - [Contracts](technology/deployments.md)
