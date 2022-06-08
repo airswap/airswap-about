@@ -4,7 +4,7 @@ description: Learn how to get connected and start contributing to AirSwap
 
 ## Welcome to AirSwap!
 
-AirSwap is a DAO focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by positive impact on network health and trading activity.
+[AirSwap](https://about.airswap.io/) is a DAO focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by positive impact on network health and trading volume.
 
 ## Joining Groups
 
@@ -25,7 +25,7 @@ Anyone can propose a project by [creating an issue on GitHub](https://github.com
 
 Good project proposals…
 
-- **Make a "business case"** for dedicating resources to a project. This could mean identifying a new customer segment or estimating a positive impact on network activity.
+- **Make a "business case"** for dedicating resources to a project. This could mean identifying a new customer segment or estimating a positive impact on trading volume.
 - **Specify a rough project scope** of X taking a rough time of Y to complete without going deep into product details—actual specs can be drafted in parallel or after a vote.
 - **Present a clear benefit** to AirSwap. After all, what we work on benefits us and our community. We ultimately build together with and for our fellow contributors.
 
