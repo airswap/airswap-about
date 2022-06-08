@@ -8,7 +8,7 @@ description: Learn how to get connected and start contributing to AirSwap
 
 ## Joining Groups
 
-Once you’ve joined the [AirSwap Discord](https://chat.airswap.io/), tag the _Ops_ role to request a _Contributor_ role and you’ll be able to join groups in the **#join-groups** channel. Although each group does unique work, each is in constant communication with one another and members are often shared. Keep in mind that you can join any group and joining multiple groups is welcome!
+Once you’ve joined the [AirSwap Discord](https://chat.airswap.io/), tag the _Ops_ role to chat with someone who can help set you up with a _Contributor_ role. You’ll then be able to join contributor groups in the **#join** channel. Although each group does unique work, each is in constant communication with one another and members are often shared. Keep in mind that you can join any group and joining multiple groups is welcome!
 
 - **Direction** — Join the direction group to discuss strategic and product direction, draft community proposals (AIPs), create new product specifications, and drive the product development process. Meets every Monday at 1pm UTC.
 - **Design** — Join the design group to contribute to everything from UX and UI design to marketing collateral and visual branding. Design generally collaborates on work using Figma and meets every Wednesday at 9am UTC.
@@ -17,7 +17,7 @@ Once you’ve joined the [AirSwap Discord](https://chat.airswap.io/), tag the _O
 
 ## Finding Projects
 
-Projects are [available on GitHub](https://github.com/orgs/airswap/projects/7) and labeled by group and skills. The "#find-projects" channel on the AirSwap Discord is also a good place to start—whether browsing new projects or those in the works, discussing and coordinating with other contributors on what to focus on next.
+Projects are [available on GitHub](https://github.com/orgs/airswap/projects/7) and labeled by group and skills. The "#direction" channel on the AirSwap Discord is also a good place to explore—whether browsing new projects or those in the works, discussing and coordinating with other contributors on what to focus on next.
 
 ## Proposing Projects
 
