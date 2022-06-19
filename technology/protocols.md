@@ -1,4 +1,4 @@
-AirSwap trading technology is fully decentralized through peer-to-peer protocols, enabled by smart contracts for counterparty discovery and performing atomic swaps. Peer-to-peer protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
+AirSwap trading technology is fully decentralized, enabled by smart contracts for counterparty discovery and performing atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
 ## RFQ
 
