@@ -1,6 +1,6 @@
 # Deployments
 
-## Mainnet
+## Mainnet (V3)
 
 ### Ethereum
 
@@ -42,7 +42,7 @@
 - Staking — [`0xd161ddCFCC0C2D823021AA26200824Efa75218d1`](https://polygonscan.com/address/0xd161ddCFCC0C2D823021AA26200824Efa75218d1#code)
 - AST — [`0x04bEa9FCE76943E90520489cCAb84E84C0198E29`](https://polygonscan.com/address/0x04bEa9FCE76943E90520489cCAb84E84C0198E29)
 
-## Testnet
+## Testnet (V3)
 
 ### Ethereum: Rinkeby
 
