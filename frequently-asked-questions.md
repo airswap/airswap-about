@@ -48,6 +48,18 @@ Voting occurs every month, from the 1st to the 4th of each month.
 
 No! Points don't expire and will be carried over to the next cycle.
 
+### How do I unstake from V1?
+
+This will unlock your AST and transfer it to your wallet.
+
+1. Visit this URL to determine your balance (replace 0x000 with your wallet address):
+   [https://etherscan.io/token/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe?a=0x000](https://etherscan.io/token/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe?a=0x000)
+
+2. Visit this URL, connect your wallet, go to “unlock” and provide your balance amount:
+   [https://etherscan.io/token/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#writeContract](https://etherscan.io/token/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#writeContract)
+
+Note: balances have 4 decimals so e.g. 2,500.00 would have an “unlock” amount of 25000000.
+
 ## Contributing
 
 ### How can I contribute to AirSwap?
