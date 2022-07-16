@@ -33,6 +33,10 @@ Know some other channels which could be useful for community building? Do drop b
 - [AirSwap Rewards Dashboard](https://dune.xyz/agrimony/AirSwap-Rewards)
 - [Rewards Pool on Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
 
+## Media Kit
+
+- [Download AirSwap Brand Assets](.gitbook/assets/AirSwap_Brand_Assets.zip)
+
 ## Deployments
 
 The latest smart contract deployments can be found on the [deployments](technology/deployments.md) page
