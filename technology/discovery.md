@@ -1,6 +1,6 @@
 # Discovery
 
-To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](./deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
+To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
 
 See `getURLsForToken` on the Registry contract:
 
@@ -8,19 +8,19 @@ See `getURLsForToken` on the Registry contract:
 function getURLsForToken(address token) external view returns (string[] memory urls);
 ```
 
-Check [deployments](./deployments.md) for latest contract addresses for Registry.
+Check [deployments](deployments.md) for latest contract addresses for Registry.
 
 ## Fetching URLs via CLI
 
 Ensure the AirSwap CLI is installed.
 
-```text
+```
 $ yarn global add airswap
 ```
 
 Use `airswap chain` to set your chain to Rinkeby or Mainnet.
 
-```text
+```
 $ airswap chain
 AirSwap CLI 1.6.1 — https://airswap.io/
 
@@ -35,7 +35,7 @@ Set active chain to MAINNET.
 
 Use `registry:get` to fetch server URLs for a token pair.
 
-```text
+```
 $ airswap registry:get
 AirSwap CLI 1.6.1 — https://airswap.io/
 
@@ -56,7 +56,7 @@ Try `airswap order:get` with a server URL from the previous command.
 
 ## TypeScript
 
-Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](request-for-quote.md).
+Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](broken-reference).
 
 ```typescript
 import { Registry } from '@airswap/protocols'
