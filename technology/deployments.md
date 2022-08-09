@@ -26,7 +26,7 @@
 
 - Swap — [`0x6713C23261c8A9B7D84Dd6114E78d9a7B9863C1a`](https://polygonscan.com/address/0x6713C23261c8A9B7D84Dd6114E78d9a7B9863C1a#code)
 - Registry — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://polygonscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
-- Wrapper — [`0x9C0f658331B9f87d7FA54EF0216689492a0176C5`](https://polygonscan.com/address/0x9C0f658331B9f87d7FA54EF0216689492a0176C5#code)
+- Wrapper — [`0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74`](https://polygonscan.com/address/0xee194bc274c2036B7e4F22e5BB7ef352e7ec9B74#code)
 - Converter — [`0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3`](https://polygonscan.com/address/0x9C7005Fa2F8476E2331F45f69e0930A4c9eFf0c3#code)
 - Pool — [`0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0`](https://polygonscan.com/address/0xF5709FF738C8193F876D2b070f25b1aC433Cb5e0#code)
 - Staking — [`0xd161ddCFCC0C2D823021AA26200824Efa75218d1`](https://polygonscan.com/address/0xd161ddCFCC0C2D823021AA26200824Efa75218d1#code)
