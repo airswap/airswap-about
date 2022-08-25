@@ -2,7 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) ![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social) ![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)
 
-[AirSwap](https://www.airswap.io) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/request-for-quote.md) and [Last Look](technology/last-look.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
+[AirSwap](https://www.airswap.io) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/protocols.md) and [Last Look](technology/protocols.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
 
 **Our vision** is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. **Our mission** is to become the standard peer-to-peer trading system: a fundamental primitive of the decentralized economy.
 
@@ -22,8 +22,8 @@ At its core, AirSwap enables two parties to perform an "atomic swap" transaction
 
 At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to the Ethereum blockchain for settlement.
 
-- [Request-for-quote](technology/request-for-quote.md) (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket.
-- [Last Look](technology/last-look.md) (LL) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement.
+- [Request-for-quote](technology/protocols.md) (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket.
+- [Last Look](technology/protocols.md) (LL) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement.
 - [Over-the-counter](https://trader.airswap.io) (OTC) is trading between known counterparties via chat applications or email using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC.
 
 ### Applications
