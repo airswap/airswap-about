@@ -38,6 +38,8 @@ Orders are passed to the [Swap](https://docs.airswap.io/contract-deployments) co
 
 # Signatures
 
+AirSwap signatures are [EIP712](https://eips.ethereum.org/EIPS/eip-712), which includes a domain separator to avoid replays across chains.
+
 **TypeScript**. Swap signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```typescript

@@ -6,15 +6,15 @@
 
 ## Community
 
-- [Onboarding](community/onboarding.md)
-- [Earning](community/earning.md)
-- [Proposals](community/proposals.md)
-- [Conduct](community/conduct.md)
+- [Getting Started](community/onboarding.md)
+- [Earning for Work](community/earning.md)
+- [Improvement Proposals](community/proposals.md)
+- [Code of Conduct](community/conduct.md)
 
 ## Technology
 
-- [Protocols](technology/protocols.md)
-- [Makers](technology/makers.md)
-- [Discovery](technology/discovery.md)
-- [Orders](technology/orders.md)
-- [Deployments](technology/deployments.md)
+- [Swap Protocols](technology/protocols.md)
+- [Maker Development](technology/makers.md)
+- [Maker Discovery](technology/discovery.md)
+- [Orders and Signatures](technology/orders.md)
+- [Contract Deployments](technology/deployments.md)

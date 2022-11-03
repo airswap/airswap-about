@@ -2,7 +2,7 @@ AirSwap trading technology is fully decentralized, enabled by smart contracts fo
 
 ## RFQ
 
-AirSwap Request-for-Quote \(RFQ\) is used by market makers to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
+AirSwap Request-for-Quote \(RFQ\) is used by [makers](makers.md)]to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
 
 **Protocol Features**
 
@@ -166,7 +166,7 @@ Content-Type: application/json
 
 ## Last Look
 
-AirSwap Last Look \(LL\) is a protocol used by market makers to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the “last look” and option to fill it.
+AirSwap Last Look \(LL\) is a protocol used by [makers](makers.md) to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the “last look” and option to fill it.
 
 **Protocol Features**
 
