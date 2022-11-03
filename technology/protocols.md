@@ -2,7 +2,7 @@ AirSwap trading technology is fully decentralized, enabled by smart contracts fo
 
 ## RFQ
 
-AirSwap Request-for-Quote \(RFQ\) is used by [makers](makers.md)]to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
+AirSwap Request-for-Quote \(RFQ\) is used by [makers](makers.md) to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
 
 **Protocol Features**
 
