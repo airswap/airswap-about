@@ -34,7 +34,7 @@ Voters are rewarded with points based on the amount staked. Points can be used t
 
 ### How do I stake on AirSwap?
 
-You can stake your AST on the [Codefi Activate platform](https://activate.codefi.network/staking/airswap/governance)
+You can stake your AST on the [Codefi Activate platform](https://activate.codefi.network/staking/airswap/governance).
 
 ### What are the rules of staking?
 

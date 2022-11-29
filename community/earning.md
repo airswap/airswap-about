@@ -20,7 +20,7 @@ _Base funding level is subject to monthly review and can change._
 
 ## Circle Allocation
 
-After each monthly cycle, The [Coordinape ](https://coordinape.com)circle will open for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle.
+After each monthly cycle, the [Coordinape ](https://coordinape.com)circle will open for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle.
 
 After the allocation period is complete, any GIVE tokens not distributed will be burnt (there is no use holding GIVE tokens for yourself!). Individual contributors will be rewarded from the base/bonus circle funds proportionally to their GIVE allocations received.
 
@@ -45,5 +45,5 @@ The formula results in rewards being distributed on a smooth curve based on the 
 ⚠ Note that fees are continuously streaming into the community pool and participants are continuously claiming tokens. Due to the dynamic nature of this process, slippage on claims is possible.
 
 {% hint style="info" %}
-You can [see the tokens in the pool](https://app.zerion.io/0x7296333e1615721f4Bd9Df1a3070537484A50CF8/overview) and [calculate potential rewards using this dashboard](https://dune.xyz/agrimony/airswap_3)
+You can [see the tokens in the pool](https://app.zerion.io/0x7296333e1615721f4Bd9Df1a3070537484A50CF8/overview) and [calculate potential rewards using this dashboard](https://dune.xyz/agrimony/airswap_3).
 {% endhint %}

@@ -1,6 +1,6 @@
 AirSwap trading technology is fully decentralized, enabled by smart contracts for counterparty discovery and performing atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
-## RFQ
+# RFQ
 
 AirSwap Request-for-Quote \(RFQ\) is used by [makers](makers.md) to provide orders with expirations. Takers will request an order periodically and have the option to fill it.
 
@@ -164,15 +164,15 @@ Content-Type: application/json
 }
 ```
 
-## Last Look
+# Last Look
 
 AirSwap Last Look \(LL\) is a protocol used by [makers](makers.md) to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the “last look” and option to fill it.
 
 **Protocol Features**
 
-- Takers can see quotes without connecting a wallet, and quotes update in realtime
-- Takers don't submit or spend gas on transactions, the maker does instead
-- Better prices from makers since their prices are not locked into an expiry
+- Takers can see quotes without connecting a wallet, and quotes update in realtime.
+- Takers don't submit or spend gas on transactions, the maker does instead.
+- Better prices from makers since their prices are not locked into an expiry.
 
 There is a possibility the maker declines the order because the market has moved, but they're generally amenable to small fluctuations to maintain a good trading relationship with the taker.
 

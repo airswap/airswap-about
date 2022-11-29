@@ -39,7 +39,7 @@ Reading up and informing yourself on each proposal is an important part of the p
 Voting cycles take place every month, where a number of AIPs will be voted on concurrently. You must vote on all proposals in order to earn the maximum number of points. To browse and participate in votes, visit the [AirSwap governance portal](https://activate.codefi.network/staking/airswap/governance) on Codefi Activate when voting is live. Note that voting is performed off-chain and does not cost gas (ETH).
 
 {% hint style="info" %}
-You can check out when the next voting cycle will begin on this [dashboard](https://dune.xyz/agrimony/airswap_3)
+You can check out when the next voting cycle will begin on this [dashboard](https://dune.xyz/agrimony/airswap_3).
 {% endhint %}
 
 ### Claiming
@@ -55,7 +55,7 @@ Notes on points:
 The number of points enables you to claim a certain percentage of the rewards pool tokens.
 
 {% hint style="info" %}
-Learn more about claiming voting rewards [here](../community/rewards.md#voting-rewards)
+Learn more about claiming voting rewards [here](../community/rewards.md#voting-rewards).
 {% endhint %}
 
 ### Unstaking from V1
