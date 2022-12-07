@@ -1,11 +1,12 @@
 const fs = require('fs')
-const {getEtherscanWalletURL} = require('@airswap/utils')
+const { getEtherscanWalletURL } = require('@airswap/utils')
+const { mainnets, testnets, chainNames } = require('@airswap/constants')
 
 const contracts = [{
-  name: 'Swap',
-  deploys: require('@airswap/swap/deploys')
+  name: 'SwapERC20',
+  deploys: require('@airswap/swap-erc20/deploys')
 }, {
-  name: 'Registry',
+  name: 'MakerRegistry',
   deploys: require('@airswap/maker-registry/deploys')
 }, {
   name: 'Wrapper',
@@ -21,40 +22,6 @@ const contracts = [{
   deploys: require('@airswap/constants').stakingTokenAddresses
 }]
 
-const mainnets = [{
-  name: 'Ethereum',
-  id: 1
-}, {
-  name: 'BSC',
-  id: 56
-}, {
-  name: 'Polygon',
-  id: 137
-}, {
-  name: 'Arbitrum',
-  id: 42161
-}, {
-  name: 'Avalanche',
-  id: 43114
-}]
-
-const testnets = [{
-  name: 'Ethereum: Goerli',
-  id: 5
-}, {
-  name: 'BSC: Testnet',
-  id: 97
-}, {
-  name: 'Polygon: Mumbai',
-  id: 80001
-}, {
-  name: 'Arbitrum: Goerli',
-  id: 421613
-}, {
-  name: 'Avalanche: Fuji',
-  id: 43113
-}]
-
 function printContracts(contracts, chainid) {
   let md = ''
   for (let contract in contracts) {
@@ -66,12 +33,14 @@ function printContracts(contracts, chainid) {
 
 let markdown = "# Deployments\n\n## Mainnets\n\n"
 for (let net in mainnets) {
-  markdown += `### ${mainnets[net].name} (${mainnets[net].id})\n\n${printContracts(contracts, mainnets[net].id)}\n`
+  let name = chainNames[mainnets[net]]
+  markdown += `### ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
 }
 
 markdown += "## Testnets\n\n"
 for (let net in testnets) {
-  markdown += `### ${testnets[net].name} (${testnets[net].id})\n\n${printContracts(contracts, testnets[net].id)}\n`
+  let name = chainNames[testnets[net]]
+  markdown += `### ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
 }
 
 markdown += '## Legacy\n\n\
