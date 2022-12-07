@@ -6,6 +6,13 @@
     "pretty:fix": "yarn prettier --write './**/*.md'"
   },
   "devDependencies": {
+    "@airswap/constants": "^3.0.1",
+    "@airswap/maker-registry": "^3.1.2",
+    "@airswap/pool": "^3.2.3",
+    "@airswap/staking": "^3.1.2",
+    "@airswap/swap": "^3.2.3",
+    "@airswap/utils": "^3.0.4",
+    "@airswap/wrapper": "^3.1.3",
     "eslint": "^7.32.0",
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
