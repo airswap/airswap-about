@@ -14,7 +14,7 @@
   dependencies:
     "@openzeppelin/contracts" "^4.3.1"
 
-"@airswap/pool@3.2.4":
+"@airswap/pool@3.2.5":
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/@airswap/pool/-/pool-3.2.5.tgz#b990c639e7dbaa9ee9d15eac9fa431e8282b1d9b"
   integrity sha512-CNNOD94EWuiEYsT/yIoyYTGWYwrTyWe6DwNSlZMmDfGhUJeNNNvhwRyt1THt1EGqhhkWk/ZFmk992vkO8+X3Mg==
