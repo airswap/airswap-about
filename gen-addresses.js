@@ -26,20 +26,24 @@ function printContracts(contracts, chainid) {
   let md = ''
   for (let contract in contracts) {
     let address = contracts[contract].deploys[chainid]
-    md += `- ${contracts[contract].name} — [\`${address}]\`](${getEtherscanWalletURL(chainid, address)}#code)\n`
+    md += `- ${contracts[contract].name} — [\`${address}\`](${getEtherscanWalletURL(chainid, address)}#code)\n`
   }
   return md
 }
 
+function initial(name) {
+  return name[0] + name.slice(1).toLowerCase()
+}
+
 let markdown = "# Deployments\n\n## Mainnets\n\n"
 for (let net in mainnets) {
-  let name = chainNames[mainnets[net]]
+  let name = initial(chainNames[mainnets[net]])
   markdown += `### ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
 }
 
 markdown += "## Testnets\n\n"
 for (let net in testnets) {
-  let name = chainNames[testnets[net]]
+  let name = initial(chainNames[testnets[net]])
   markdown += `### ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
 }
 
