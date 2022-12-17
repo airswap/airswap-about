@@ -33,7 +33,7 @@ The GIVE allocation system is open and transparent, so GIVE fairly and honestly!
 At the end of each voting period, a number of points is awarded based on the number of AST used to vote. Points enable you to claim a certain percentage of the rewards pool based on the formula
 
 $$
-R = (B / (10^S +P )) * M/100
+R = B * (P / (10^S +P )) * M/100
 $$
 
 where R is the rewards you can obtain, P is the number of points used to claim (multiplied by 10^4), B is the token balance in the rewards pool, S and M are community adjustable parameters (currently set to S = 10 and M = 100).
