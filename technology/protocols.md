@@ -342,9 +342,9 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 
 **Client wants to swap `1` WETH into USDT.** Client looks up baseToken WETH and quoteToken USDT and uses the `bid` levels above. The first `0.5` would be multiplied by `2000` and second `0.5` would be multiplied by `2010` for a total of `2005` USDT.
 
-**Client wants to swap WETH into `1000` USDT.** Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. The first `100` would be multiplied by `0.00055` and second 90 would be multiplied by `0.00067` for a total of `0.658` WETH.
+**Client wants to swap WETH into `1000` USDT.** Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. The first `100` would be multiplied by `0.00055` and second `900` would be multiplied by `0.00067` for a total of `0.658` WETH.
 
-**Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second 90 would be multiplied by `2015` for a total WETH amount of `2008` USDT.
+**Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second `0.5` would be multiplied by `2015` for a total WETH amount of `2008` USDT.
 
 #### Formula
 
