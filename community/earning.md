@@ -59,14 +59,14 @@ After the allocation period is complete, any GIVE tokens not distributed will be
 The GIVE allocation system is open and transparent, so GIVE fairly and honestly!
 {% endhint %}
 
-## KPI incentives
+## Target KPI Rewards
 
-To priotize development and growth of the protocol, bonus funding was enabled upon hitting certain KPI metrics for DeFi and NFT Marketplace integrations. Contributors who help to achieve the objectives can qualify to receive part of the KPI incentive rewards.
+KPI (key performance indicator) targets may be set with rewards for contributors who help to achieve them. At time of writing there are two active target KPI rewards.
 
-| Objective                                                                                               | Deadline  | Budget (AST) |
-| ------------------------------------------------------------------------------------------------------- | --------- | ------------ |
-| [Increase protocol volumes through new aggregators](https://github.com/airswap/airswap-aips/issues/82)  | June 2023 | Up to 850K   |
-| [Establish NFT marketplaces using AirSwap protocols](https://github.com/airswap/airswap-aips/issues/83) | June 2023 | Up to 275K   |
+| Target                                                                                                  | Reward (AST) | Deadline  |
+| ------------------------------------------------------------------------------------------------------- | ------------ | --------- |
+| [Increase protocol volumes through new aggregators](https://github.com/airswap/airswap-aips/issues/82)  | Up to 850K   | June 2023 |
+| [Establish NFT marketplaces using AirSwap protocols](https://github.com/airswap/airswap-aips/issues/83) | Up to 275K   | June 2023 |
 
 ## Voting Rewards
 
