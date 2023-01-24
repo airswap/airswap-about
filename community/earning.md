@@ -4,29 +4,67 @@ description: Learn how community members get rewarded by contributing to AirSwap
 
 ## Circle Funding
 
-The contributor circle is funded from two sources - a base level of funding distributed from the treasury, and a bonus funding pool derived from trade fees collected. The base fundings are distributed in AST while the bonus fundings are distributed in the currency of the consolidated token pool (currently WETH).
+The contributor circle is funded by a portion of the monthly trade fees collected (currently 14%). AST from the Treasury will be used to top up Contributor tips to the base level if there is a shortfall in the amount of fees collected for the month. 
 
-Circle funds will be then distributed based on individual contributions during each cycle.
+| Number of Unique Contributors | Monthly Base Amount (USD) |
+| ------------ | -------- | 
+| 15 - 20      |  $30,000 | 
+| 21 - 25      |  $35,000 |
+| 26 - 30      |  $40,000 |
 
-| Circle       | Base (AST)        | Bonus (in development)      |
-| ------------ | ----------------- | --------------------------- |
-| Contributors | 30,000 USD in AST | 14% of trade fees collected |
+The funds are allocated to two Coordinape circles. The Tech circle funds development and design activities for building our protocols and products. The Growth circle funds direction and marketing activities for growing the protocol.  
+
+The distribution of funds between the two circles depends on the number of Contributors in each circle. A larger weight is placed on the Tech circle to prioritize our activities on building the protocol and product.
+
+
+| Circle       | Allocation (%)     |
+| ------------ | -------------------| 
+| Tech         | $$ 1.4 * N_{tech} \over 1.4 * N_{tech} + N_{growth} $$ |
+| Growth       | $$ N_{growth} \over 1.4 * N_{tech} + N_{growth} $$ |
 
 {% hint style="info" %}
-The base funding amount does not guarantee a minimum to be earned by each contributor. Instead, base funds are summed up and split among contributors based on their allocations within Coordinape.
+The base funding amount does not guarantee a minimum to be earned by each contributor. Instead, base funds are split among contributors based on their allocations within Coordinape.
 
-_Base funding level is subject to monthly review and can change._
+_Funding levels are subject to review and can change._
 {% endhint %}
 
 ## Circle Allocation
 
-After each monthly cycle, the [Coordinape ](https://coordinape.com)circle will open for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle.
+### Describing your Contributions
+Each month, a Contributions thread will be opened on [Discord](https://chat.airswap.io). Anyone who has contributed to AirSwap in that month should summarize their contributions for the month in that thread.
 
-After the allocation period is complete, any GIVE tokens not distributed will be burnt (there is no use holding GIVE tokens for yourself!). Individual contributors will be rewarded from the base/bonus circle funds proportionally to their GIVE allocations received.
+{% hint style="info" %}
+Communicating your contributions to AirSwap is part of your responsibility as a Contributor. Help your fellow contributors by clearly stating what you have achieved for the month.
+{% endhint %}
+
+{% hint style="warning" %}
+If you have not contributed for the month, remember to **Opt-out** of receiving GIVE for that epoch. Anyone who did not describe their contributions or opt out will be removed from the circle and will have to be re-nominated for future rounds.
+{% endhint %}
+
+### Nomination and Vouching
+New Contributors who have recently contributed to AirSwap will need to be nominated and vouched in by 3 Contributors before they can enter the Coordinape circle. If you have not yet been added to the circle, please ping someone you have worked with who can vouch for your work. 
+
+{% hint style="info" %}
+Once you have been vouched into the circle, check that it is visible on [Coordinape](https://coordinape.com) and ping @Ops to receive your **Contributor** role in Discord!
+{% endhint %}
+
+### Allocating GIVE
+[Coordinape](https://coordinape.com) circles will open 1st - 6th of each month for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle. 
+
+After the allocation period is complete, any GIVE tokens not distributed will be burnt (there is no use holding GIVE tokens for yourself!). Individual contributors will be rewarded from the circle funds proportionally to their GIVE allocations received. 
 
 {% hint style="info" %}
 The GIVE allocation system is open and transparent, so GIVE fairly and honestly!
 {% endhint %}
+
+## KPI incentives 
+
+To priotize development and growth of the protocol, bonus funding was enabled upon hitting certain KPI metrics for DeFi and NFT Marketplace integrations. Contributors who help to achieve the objectives can qualify to receive part of the KPI incentive rewards.
+
+| Objective            | Deadline   | Budget (AST)       |
+| ----------------------- | ---------- | -------------------| 
+| [Increase protocol volumes through new aggregators](https://github.com/airswap/airswap-aips/issues/82) | June 2023  | Up to 850K   |
+| [Establish NFT marketplaces using AirSwap protocols](https://github.com/airswap/airswap-aips/issues/83) | June 2023  | Up to 275K   |
 
 ## Voting Rewards
 
