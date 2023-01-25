@@ -40,8 +40,8 @@ The distribution of funds between the two circles depends on the number of Contr
 
 | Circle | Allocation (%)                                          |
 | ------ | ------------------------------------------------------- |
-| Tech   | $$ 1.4 _ N\_{tech} \over 1.4 _ N*{tech} + N*{growth} $$ |
-| Growth | $$ N*{growth} \over 1.4 \* N*{tech} + N\_{growth} $$    |
+| Tech   | $$ 1.4 * N_{tech} \over 1.4 * N_{tech} + N_{growth} $$ |
+| Growth | $$ N_{growth} \over 1.4 * N_{tech} + N_{growth} $$    |
 
 # Contributor Tips
 
