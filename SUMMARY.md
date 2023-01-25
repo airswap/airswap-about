@@ -9,7 +9,7 @@
 - [Code of Conduct](community/conduct.md)
 - [Onboard as a Contributor](community/onboarding.md)
 - [Rewards and Tips](community/earning.md)
-- [Improvement Proposals](community/proposals.md)
+- [Proposals](community/proposals.md)
 
 ## Technology
 
