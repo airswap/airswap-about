@@ -1,13 +1,13 @@
 # Deployments
 
-## Swap V3
+## Active Swap V3
 
 - Ethereum (1) — [`0x522d6f36c95a1b6509a14272c17747bbb582f2a6`](https://etherscan.io/address/0x522d6f36c95a1b6509a14272c17747bbb582f2a6#code)
 - Bsc (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
 - Polygon (137) — [`0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a`](https://polygonscan.com/address/0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a#code)
 - Avalanche (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
 
-## Mainnets
+## Latest Mainnets
 
 ### Ethereum (1)
 
@@ -54,7 +54,7 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://snowtrace.io/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x702d0f43edd46b77ea2d48570b02c328a20a94a1`](https://snowtrace.io/address/0x702d0f43edd46b77ea2d48570b02c328a20a94a1#code)
 
-## Testnets
+## Latest Testnets
 
 ### Goerli (5)
 

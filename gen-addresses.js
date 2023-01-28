@@ -42,19 +42,19 @@ function initial(name) {
   return name[0] + name.slice(1).toLowerCase()
 }
 
-let markdown = "# Deployments\n\n## Swap V3\n\n"
+let markdown = "# Deployments\n\n## Active Swap V3\n\n"
 for (let chainid in active) {
   let name = initial(chainNames[chainid])
   markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getEtherscanWalletURL(chainid, active[chainid])}#code)\n`
 }
 
-markdown += "\n## Mainnets\n\n"
+markdown += "\n## Latest Mainnets\n\n"
 for (let net in mainnets) {
   let name = initial(chainNames[mainnets[net]])
   markdown += `### ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
 }
 
-markdown += "## Testnets\n\n"
+markdown += "## Latest Testnets\n\n"
 for (let net in testnets) {
   let name = initial(chainNames[testnets[net]])
   markdown += `### ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
