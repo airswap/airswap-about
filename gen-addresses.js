@@ -22,6 +22,13 @@ const contracts = [{
   deploys: require('@airswap/constants').stakingTokenAddresses
 }]
 
+const active = {
+  '1': '0x522d6f36c95a1b6509a14272c17747bbb582f2a6',
+  '56': '0x132f13c3896eab218762b9e46f55c9c478905849',
+  '137': '0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a',
+  '43114': '0xec08261ac8b3d2164d236bd499def9f82ba9d13f'
+}
+
 function printContracts(contracts, chainid) {
   let md = ''
   for (let contract in contracts) {
@@ -35,7 +42,13 @@ function initial(name) {
   return name[0] + name.slice(1).toLowerCase()
 }
 
-let markdown = "# Deployments\n\n## Mainnets\n\n"
+let markdown = "# Deployments\n\n## Swap V3\n\n"
+for (let chainid in active) {
+  let name = initial(chainNames[chainid])
+  markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getEtherscanWalletURL(chainid, active[chainid])}#code)\n`
+}
+
+markdown += "\n## Mainnets\n\n"
 for (let net in mainnets) {
   let name = initial(chainNames[mainnets[net]])
   markdown += `### ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
