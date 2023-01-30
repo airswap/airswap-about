@@ -1,6 +1,6 @@
 # Discovery
 
-To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
+To find servers that support a token pair, clients call the `getURLsForToken` function on the [MakerRegistry](deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
 
 See `getURLsForToken` on the Registry contract:
 
@@ -26,7 +26,7 @@ AirSwap CLI 1.6.1 — https://airswap.io/
 
 set the active ethereum chain
 
-Current chain: 4 (RINKEBY)
+Current chain: 5 (GOERLI)
 
 New chain: (1=mainnet, 4=rinkeby, 5=goerli, 42=kovan, 56=binance):  (4) 1
 
@@ -52,15 +52,15 @@ https://maker.example.com/
 
 ### Example: Take an Order
 
-Try `airswap order:get` with a server URL from the previous command.
+Try `airswap rfq:get` with a server URL from the previous command.
 
 ## TypeScript
 
-Using the `Registry` library from `@airswap/protocols` can return `Server` objects that implement the [RFQ API](broken-reference).
+Using the `MakerRegistry` library from `@airswap/libraries` returns `Maker` instances that you can interact with.
 
 ```typescript
-import { Registry } from '@airswap/protocols'
-const servers = await new Registry(chainId, provider).getServers(
+import { MakerRegistry } from '@airswap/libraries'
+const servers = await new MakerRegistry(chainId, provider).getMakers(
   signerToken,
   senderToken,
 )
@@ -71,15 +71,15 @@ Calling the Registry directly using `ethers`
 ```typescript
 import { ethers } from 'ethers'
 import { chainNames } from '@airswap/constants'
-import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
-import * as registryDeploys from '@airswap/registry/deploys.js'
-const RegistryInterface = new ethers.utils.Interface(
-  JSON.stringify(RegistryContract.abi),
+import * as MakerRegistryContract from '@airswap/maker-registry/build/contracts/MakerRegistry.sol/MakerRegistry.json'
+import * as makerRegistryDeploys from '@airswap/maker-registry/deploys.js'
+const MakerRegistryInterface = new ethers.utils.Interface(
+  JSON.stringify(MakerRegistryContract.abi),
 )
 
 new ethers.Contract(
-  registryDeploys[chainId],
-  RegistryInterface,
+  makerRegistryDeploys[chainId],
+  MakerRegistryInterface,
   ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
 )
 
