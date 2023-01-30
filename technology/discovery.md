@@ -22,28 +22,28 @@ Use `airswap chain` to set your chain to Rinkeby or Mainnet.
 
 ```
 $ airswap chain
-AirSwap CLI 1.6.1 — https://airswap.io/
+AirSwap CLI 3.1.0 — https://www.airswap.io/
 
 set the active ethereum chain
 
 Current chain: 5 (GOERLI)
 
-New chain: (1=mainnet, 4=rinkeby, 5=goerli, 42=kovan, 56=binance):  (4) 1
+New chain id:  (5) 1
 
-Set active chain to MAINNET.
+Set active chain to ETHEREUM.
 ```
 
 Use `registry:get` to fetch server URLs for a token pair.
 
 ```
 $ airswap registry:get
-AirSwap CLI 1.6.1 — https://airswap.io/
+AirSwap CLI 3.1.0 — https://www.airswap.io/
 
-get urls from the registry MAINNET
+get urls from the registry ETHEREUM
 
 Registry 0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95
 
-Token pair (e.g. WETH/USDT):  DAI/WETH
+Token pair (e.g. WETH/USDT):  dai/weth
 
 Server
 ----------------------------------------
