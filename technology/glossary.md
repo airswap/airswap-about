@@ -18,6 +18,10 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 **Takers accept prices and "take" a market.** On order books, takers execute market buys or sells against existing orders created by makers. On P2P systems, takers come online when they intend to make a trade and connect to available makers to fetch pricing data.
 
+# Atomic Swaps
+
+**In database systems** an atomic transaction is an indivisible and irreducible series of operations such that either all occur or none occur. This concept of "atomicity" translates to smart contracts programmed to perform multiple digital token transfers in a single transaction. This enables multiple assets held by multiple parties to change hands without the risk of any party not receiving his or her funds. Atomic swaps are the core of P2P systems like AirSwap.
+
 # Slippage and Front-running
 
 **Slippage occurs when** a trade executes differently than the expected price. This is caused by other orders being executed ahead of the submitted order. [Slippage](https://www.investopedia.com/terms/s/slippage.asp) can be to either the detriment and benefit to a trader, depending on which direction it occurs. Slippage is commonplace in all continuous markets, that is, a market where the previous order impacts the price of the next. Slippage is avoidable in P2P systems, which are not continuous.
