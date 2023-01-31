@@ -14,7 +14,7 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 # Atomic Swaps
 
-**In database systems** an atomic transaction is an indivisible and irreducible series of operations such that either all occur or none occur. This concept of "atomicity" translates to smart contracts programmed to perform multiple digital token transfers in a single transaction. This enables multiple assets held by multiple parties to change hands without the risk of any party not receiving his or her funds. Atomic swaps are the core of P2P systems like AirSwap.
+**In database systems** an atomic transaction is an indivisible and irreducible series of operations such that either all occur or none occur. This concept of atomicity translates to smart contracts programmed to perform multiple digital token transfers in a single transaction. This enables multiple assets held by multiple parties to change hands without the risk of any party not receiving his or her funds. Atomic swaps are the core of P2P systems like AirSwap.
 
 # Makers and Takers
 
