@@ -12,15 +12,15 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 **Early decentralized exchanges failed** because they attempted to replicate the order book model, which is fundamentally centralized. What we’ve since found is that decentralized models that perform well are either peer-to-peer (e.g. [AirSwap](https://airswap.io/)) or peer-to-contract (e.g. [Uniswap](https://uniswap.org/)).
 
+# Atomic Swaps
+
+**In database systems** an atomic transaction is an indivisible and irreducible series of operations such that either all occur or none occur. This concept of "atomicity" translates to smart contracts programmed to perform multiple digital token transfers in a single transaction. This enables multiple assets held by multiple parties to change hands without the risk of any party not receiving his or her funds. Atomic swaps are the core of P2P systems like AirSwap.
+
 # Makers and Takers
 
 **Makers provide prices and "make" a market.** On order books, makers continuously create and cancel bids and asks around market price and profit from the "spread" between the two. On P2P systems, makers are generally online and available to offer prices to other participants.
 
 **Takers accept prices and "take" a market.** On order books, takers execute market buys or sells against existing orders created by makers. On P2P systems, takers come online when they intend to make a trade and connect to available makers to fetch pricing data.
-
-# Atomic Swaps
-
-**In database systems** an atomic transaction is an indivisible and irreducible series of operations such that either all occur or none occur. This concept of "atomicity" translates to smart contracts programmed to perform multiple digital token transfers in a single transaction. This enables multiple assets held by multiple parties to change hands without the risk of any party not receiving his or her funds. Atomic swaps are the core of P2P systems like AirSwap.
 
 # Slippage and Front-running
 
