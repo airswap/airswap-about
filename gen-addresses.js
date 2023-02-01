@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { getEtherscanWalletURL } = require('@airswap/utils')
-const { mainnets, testnets, chainNames } = require('@airswap/constants')
+const { mainnets, testnets, chainNames, chainIds } = require('@airswap/constants')
 
 const contracts = [{
   name: 'SwapERC20',
@@ -33,7 +33,7 @@ function printContracts(contracts, chainid) {
   let md = ''
   for (let contract in contracts) {
     let address = contracts[contract].deploys[chainid]
-    md += `- ${contracts[contract].name} — [\`${address}\`](${getEtherscanWalletURL(chainid, address)}#code)\n`
+    if (!!address) md += `- ${contracts[contract].name} — [\`${address}\`](${getEtherscanWalletURL(chainid, address)}#code)\n`
   }
   return md
 }
@@ -57,7 +57,7 @@ for (let net in mainnets) {
 markdown += "## Latest Testnets\n\n"
 for (let net in testnets) {
   let name = initial(chainNames[testnets[net]])
-  markdown += `### ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
+  if (testnets[net] !== chainIds.HARDHAT) markdown += `### ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
 }
 
 markdown += '## Legacy\n\n\
