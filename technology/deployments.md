@@ -22,6 +22,7 @@
 
 - SwapERC20 — [`0xf54721F5C14CD6624b0cFeCa1EF9FF41C6E9bB2B`](https://blockscout.com/rsk/mainnet/address/0xf54721F5C14CD6624b0cFeCa1EF9FF41C6E9bB2B#code)
 - MakerRegistry — [`0xE0EE84592b12cfcd03843DE12b58852879ee6FF5`](https://blockscout.com/rsk/mainnet/address/0xE0EE84592b12cfcd03843DE12b58852879ee6FF5#code)
+- Wrapper — [`0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A`](https://blockscout.com/rsk/mainnet/address/0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A#code)
 - Pool — [`0x9e9c21C4747B078712D2bb49A279A043973BE9a0`](https://blockscout.com/rsk/mainnet/address/0x9e9c21C4747B078712D2bb49A279A043973BE9a0#code)
 - Staking — [`0xB1F80291d0EB60b75E7DF9422FB942d8FC575F4d`](https://blockscout.com/rsk/mainnet/address/0xB1F80291d0EB60b75E7DF9422FB942d8FC575F4d#code)
 - AST — [`0x71070c5607358fc25e3b4aaf4fb0a580c190252a`](https://blockscout.com/rsk/mainnet/address/0x71070c5607358fc25e3b4aaf4fb0a580c190252a#code)
@@ -77,6 +78,7 @@
 
 - SwapERC20 — [`0x5E5A433cdfB14aB228c45E23251Ad83F7b1E3302`](https://explorer.testnet.rsk.co/address/0x5E5A433cdfB14aB228c45E23251Ad83F7b1E3302#code)
 - MakerRegistry — [`0x517d482F686f11b922EED764692f2b42663ce2fa`](https://explorer.testnet.rsk.co/address/0x517d482F686f11b922EED764692f2b42663ce2fa#code)
+- Wrapper — [`0xDECA72bDA0cDf62d79b46B1585B380c9C6d57D9E`](https://explorer.testnet.rsk.co/address/0xDECA72bDA0cDf62d79b46B1585B380c9C6d57D9E#code)
 - Pool — [`0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4`](https://explorer.testnet.rsk.co/address/0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4#code)
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://explorer.testnet.rsk.co/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3`](https://explorer.testnet.rsk.co/address/0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3#code)

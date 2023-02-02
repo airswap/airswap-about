@@ -12,7 +12,7 @@
     "@airswap/staking": "3.1.5",
     "@airswap/swap-erc20": "3.0.2",
     "@airswap/utils": "3.0.8",
-    "@airswap/wrapper": "3.1.4",
+    "@airswap/wrapper": "3.1.6",
     "eslint": "^7.32.0",
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
