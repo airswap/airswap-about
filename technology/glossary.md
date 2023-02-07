@@ -58,7 +58,7 @@ _Protocol_
 2. Second party signs an order including the agreed terms.
 3. First party sends the signed order to Swap for execution.
 
-<img src="../images/otc-diagram.png" width="500" />
+<img src="../images/otc-diagram.png" />
 
 # Request for Quote (RFQ)
 
@@ -80,7 +80,7 @@ _Protocol_
 4. Each Server responds with a signed order including price.
 5. Client sends the best signed order to Swap for execution.
 
-<img src="../images/rfq-diagram.png" width="500" />
+<img src="../images/rfq-diagram.png" />
 
 # Last Look (LL)
 
@@ -102,7 +102,7 @@ _Protocol_
 4. Client signs and transmits an order to the server using server pricing.
 5. Server sends the signed order to Swap for execution.
 
-<img src="../images/ll-diagram.png" width="500" />
+<img src="../images/ll-diagram.png" />
 
 # Peer-to-Contract (P2C) Swaps
 
