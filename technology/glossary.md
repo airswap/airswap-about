@@ -54,9 +54,11 @@ _Limitations_
 
 _Protocol_
 
-1. Two parties discuss the terms of a swap.
-2. First party signs an order including the agreed terms.
-3. Second party sends the signed order to EVM for execution.
+1. First party requests to swap with second party.
+2. Second party signs an order including the agreed terms.
+3. First party sends the signed order to Swap for execution.
+
+<img src="../images/otc-diagram.png" width="500" />
 
 # Request for Quote (RFQ)
 
@@ -72,11 +74,13 @@ _Features_
 
 _Protocol_
 
-1. Server sets URL on a Registry and adds supported tokens.
+1. Server sets URL on the Registry and adds supported tokens.
 2. Client queries the Registry for URLs by token.
 3. Client sends each Server a web request to swap two tokens.
 4. Each Server responds with a signed order including price.
-5. Client sends the best signed order to EVM for execution.
+5. Client sends the best signed order to Swap for execution.
+
+<img src="../images/rfq-diagram.png" width="500" />
 
 # Last Look (LL)
 
@@ -92,11 +96,13 @@ _Features_
 
 _Protocol_
 
-1. Server sets URL on a Registry and adds supported tokens.
+1. Server sets URL on the Registry and adds supported tokens.
 2. Client queries the Registry for URLs by token.
 3. Client connects to each server and subscribes to the pricing stream.
 4. Client signs and transmits an order to the server using server pricing.
-5. Server sends the signed order to EVM for execution.
+5. Server sends the signed order to Swap for execution.
+
+<img src="../images/ll-diagram.png" width="500" />
 
 # Peer-to-Contract (P2C) Swaps
 
