@@ -54,9 +54,9 @@ _Limitations_
 
 _Protocol_
 
-1. First party requests to swap with second party.
-2. Second party signs an order including the agreed terms.
-3. First party sends the signed order to Swap for execution.
+1. Bob asks Alice for a price.
+2. Alice signs and gives Bob a priced order.
+3. Bob sends the order to the Swap contract.
 
 <img src="../images/otc-diagram.png" />
 
@@ -78,7 +78,7 @@ _Protocol_
 2. Client queries the Registry for URLs by token.
 3. Client sends each Server a web request to swap two tokens.
 4. Each Server responds with a signed order including price.
-5. Client sends the best signed order to Swap for execution.
+5. Client sends the best order to the Swap contract.
 
 <img src="../images/rfq-diagram.png" />
 
@@ -100,7 +100,7 @@ _Protocol_
 2. Client queries the Registry for URLs by token.
 3. Client connects to each server and subscribes to the pricing stream.
 4. Client signs and transmits an order to the server using server pricing.
-5. Server sends the signed order to Swap for execution.
+5. Server sends the order to the Swap contract.
 
 <img src="../images/ll-diagram.png" />
 
