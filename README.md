@@ -22,9 +22,17 @@ At its core, AirSwap enables two parties to perform an "atomic swap" transaction
 
 At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to the Ethereum blockchain for settlement.
 
-- [Request-for-quote](technology/protocols.md) (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket.
-- [Last Look](technology/protocols.md) (LL) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement.
-- [Over-the-counter](https://trader.airswap.io) (OTC) is trading between known counterparties via chat applications or email using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC.
+- [Request-for-quote](https://about.airswap.io/technology/glossary#request-for-quote-rfq) (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket. Makers respond to client requests with signed quotes, quotes are aggregated and the best rate is presented to the taker who then has the option of completing the swap order by sending the transaction on-chain.
+
+Metamask uses the RFQ protocol to help users swap tokens directly from their Metamask wallet. Whenever a swap is to be made, Metamask receives quotes from Makers using the AirSwap protocol and passes the best available quote on to the user.
+
+- [Last Look](https://about.airswap.io/technology/glossary#last-look-ll) (LL) is an automated streaming protocol that allows market makers to stream pricing to clients via JSON-RPC over WebSocket, which in turn submit orders to the server for settlement. With Last Look, market makers continuously stream asset prices to clients in real-time. Clients can then sign orders based on the prices they receive to the maker, who then has the “last look” for accepting and settling the order. Last Look also has the added benefit of being gasless for the client; swaps can be settled without needing native tokens for gas.
+
+When trading on airswap.io, if the best quote includes the "gasless" tag, you're performing a swap where the server handles the transaction and pays the gas to settle. They’re using the Last Look protocol.
+
+- [Over-the-counter](https://about.airswap.io/technology/glossary#over-the-counter-otc) (OTC) is trading between known counterparties via chat applications or email using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC.
+
+StakeDAO, a cryptoasset management firm uses the AirSwap OTC protocol for their ETH put selling investment strategy. Find out more about how that works [here](https://stakedaohq.medium.com/the-latest-stake-dao-option-strategy-is-live-with-the-eth-put-selling-strategy-8954db7aab8b).
 
 ### Applications
 
