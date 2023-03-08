@@ -6,11 +6,9 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 [AirSwap Request-for-Quote (RFQ)](./glossary.md#request-for-quote-rfq) is an automated request-response protocol used by market makers running web servers from which clients request orders via HTTP or WebSocket.
 
-## Methods
+## `initialize`
 
-### `initialize`
-
-To support RFQ via WebSocket, the server must call initialize upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
+If connected via WebSocket, the server must call initialize upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
 
 ```typescript
 initialize([
@@ -21,7 +19,7 @@ initialize([
 })
 ```
 
-### `getSignerSideOrderERC20`
+## `getSignerSideOrderERC20`
 
 Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
 
@@ -37,7 +35,7 @@ getSignerSideOrderERC20(
 )
 ```
 
-### `getSenderSideOrderERC20`
+## `getSenderSideOrderERC20`
 
 Given a `signerAmount` the server returns a signed order with a `senderAmount`. The client is **buying** from the server.
 
@@ -53,11 +51,11 @@ getSenderSideOrderERC20(
 )
 ```
 
-## Client
+## Examples
 
 For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
 
-### Example Request
+### Client Request
 
 ```javascript
 POST / HTTP/1.1
@@ -121,11 +119,9 @@ With an order in hand, parameters are submitted as an Ethereum transaction to th
 
 The server or client may subscribe to a filter for a `SwapERC20` event with the nonce they provided to the client.
 
-## Server
+### Server Response
 
 See the [signatures](./signatures.md) page for creating and signing an order.
-
-### Example Response
 
 ```javascript
 HTTP/1.1 200 OK
@@ -157,9 +153,7 @@ Content-Type: application/json
 
 [AirSwap Last Look (LL)](./glossary.md#last-look-ll) is a protocol used by makers to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the "last look" and option to fill it.
 
-## Methods
-
-### `initialize`
+## `initialize`
 
 To support Last Look, the server must call initialize upon connection by the client and indicate `last-look` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
 
@@ -178,7 +172,7 @@ initialize([
 ]): boolean
 ```
 
-### `subscribe`
+## `subscribe`
 
 Client subscribes to pricing updates for a list of token pairs. Returns current formula or levels for each pair.
 
@@ -213,7 +207,7 @@ subscribeAll(): [
 ]
 ```
 
-### `unsubscribe`
+## `unsubscribe`
 
 Client unsubscribes from pricing updates for a list of token pairs. Returns a boolean.
 
@@ -232,7 +226,7 @@ Client may also unsubscribe from all subscriptions.
 unsubscribeAll(): boolean
 ```
 
-### `updatePricing`
+## `updatePricing`
 
 Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
@@ -248,7 +242,7 @@ updatePricing([
 ]): boolean
 ```
 
-### `consider`
+## `consider`
 
 Client provides a priced order to the server. If the server has set a `senderServer` this method is to be called on that URL via JSON-RPC over HTTP. Returns boolean `true` if accepted by the server.
 
