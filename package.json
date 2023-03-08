@@ -6,16 +6,20 @@
     "pretty:fix": "yarn prettier --write './**/*.md'"
   },
   "devDependencies": {
-    "@airswap/constants": "3.0.7",
-    "@airswap/maker-registry": "3.1.5",
-    "@airswap/pool": "3.2.7",
-    "@airswap/staking": "3.1.5",
-    "@airswap/swap-erc20": "3.0.2",
-    "@airswap/utils": "3.0.8",
-    "@airswap/wrapper": "3.1.6",
+    "@airswap/constants": "^4.0.0",
+    "@airswap/maker-registry": "^4.0.1",
+    "@airswap/pool": "^4.0.0",
+    "@airswap/staking": "^4.0.0",
+    "@airswap/swap": "^4.0.1",
+    "@airswap/swap-erc20": "^4.0.1",
+    "@airswap/utils": "^4.0.0",
+    "@airswap/wrapper": "^4.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "@airswap/indexer-registry": "^4.0.0"
   }
 }

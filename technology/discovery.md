@@ -104,7 +104,7 @@ const servers = await new Registry(chainId, provider).getServers(
   baseToken,
 )
 
-const order = servers[0].getSignerSideOrder(
+const order = servers[0].getSignerSideOrderERC20(
   baseTokenAmount,
   quoteToken,
   baseToken,
