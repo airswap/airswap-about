@@ -66,7 +66,7 @@ const servers = await new MakerRegistry(chainId, provider).getMakers(
 )
 ```
 
-Calling the Registry directly using `ethers`
+Calling the MakerRegistry directly using `ethers`
 
 ```typescript
 import { ethers } from 'ethers'
@@ -94,22 +94,22 @@ const serverURLs = baseTokenURLs.filter((value) =>
 ### Example: Take an Order
 
 ```typescript
-import { Registry, Swap } from '@airswap/libraries'
+import { MakerRegistry, SwapERC20 } from '@airswap/libraries'
 import { chainNames } from '@airswap/constants'
 
 const provider = ethers.getDefaultProvider(chainNames[chainId].toLowerCase())
 
-const servers = await new Registry(chainId, provider).getServers(
+const makers = await new MakerRegistry(chainId, provider).getMakers(
   quoteToken,
   baseToken,
 )
 
-const order = servers[0].getSignerSideOrder(
+const order = makers[0].getSignerSideOrderERC20(
   baseTokenAmount,
   quoteToken,
   baseToken,
   wallet.address,
 )
 
-const tx = await new Swap(chainId, provider).light(order)
+const tx = await new SwapERC20(chainId, provider).swapLight(order)
 ```

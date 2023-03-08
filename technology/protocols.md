@@ -21,39 +21,41 @@ initialize([
 })
 ```
 
-#### `getSignerSideOrder`
+#### `getSignerSideOrderERC20`
 
 Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
 
 ```typescript
-getSignerSideOrder(
+getSignerSideOrderERC20(
+  chainId: string,      // Chain ID for which order is being requested
+  swapContract: string, // Swap contract intended for use
   senderAmount: string, // Amount the sender would transfer
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  swapContract: string, // Swap contract intended for use
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
 )
 ```
 
-#### `getSenderSideOrder`
+#### `getSenderSideOrderERC20`
 
 Given a `signerAmount` the server returns a signed order with a `senderAmount`. The client is **buying** from the server.
 
 ```typescript
-getSenderSideOrder(
+getSenderSideOrderERC20(
+  chainId: string,      // Chain ID for which order is being requested
+  swapContract: string, // Swap contract intended for use
   signerAmount: string, // Amount the signer would transfer
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  swapContract: string, // Swap contract intended for use
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
 )
 ```
 
 ### Client
 
-For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrder` or `getSenderSideOrder` as JSON-RPC requests.
+For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
 
 #### Example Request
 
@@ -65,13 +67,14 @@ Content-Type: application/json
 {
   "jsonrpc": "2.0",
   "id": 123,
-  "method": "getSignerSideOrder",
+  "method": "getSignerSideOrderERC20",
   "params": {
+    "chainId": "1"
+    "swapContract": "0x522D6F36c95A1b6509A14272C17747BbB582F2A6",
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "senderAmount": "1000000000000000000",
-    "swapContract": "0x522D6F36c95A1b6509A14272C17747BbB582F2A6"
   }
 }
 ```
@@ -80,22 +83,22 @@ A response looks like the [example](request-for-quote.md#example-response) below
 
 ```bash
 curl -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrder","params":{"signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000","swapContract":"0x522D6F36c95A1b6509A14272C17747BbB582F2A6"}}' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0x522D6F36c95A1b6509A14272C17747BbB582F2A6","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
      http://localhost:3000/
 ```
 
-#### Swap Contract
+#### SwapERC20 Contract
 
-With an order in hand, parameters are submitted as an Ethereum transaction to the [Swap](https://docs.airswap.io/contract-deployments) contract, which emits a `Swap` event on success. The `light` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order.
+With an order in hand, parameters are submitted as an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract, which emits a `SwapERC20` event on success. The `swapLight` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order.
 
 ```typescript
-  function light(
+  function swapLight(
     uint256 nonce,
     uint256 expiry,
     address signerWallet,
-    IERC20 signerToken,
+    address signerToken,
     uint256 signerAmount,
-    IERC20 senderToken,
+    address senderToken,
     uint256 senderAmount,
     uint8 v,
     bytes32 r,
@@ -104,20 +107,19 @@ With an order in hand, parameters are submitted as an Ethereum transaction to th
 ```
 
 ```typescript
-  event Swap(
+  event SwapERC20(
     uint256 indexed nonce,
-    uint256 timestamp,
     address indexed signerWallet,
-    IERC20 signerToken,
+    address signerToken,
     uint256 signerAmount,
     uint256 protocolFee,
     address indexed senderWallet,
-    IERC20 senderToken,
+    address senderToken,
     uint256 senderAmount
   );
 ```
 
-The server or client may subscribe to a filter for a `Swap` event with the nonce they provided to the client.
+The server or client may subscribe to a filter for a `SwapERC20` event with the nonce they provided to the client.
 
 ### Server
 
@@ -159,7 +161,7 @@ Content-Type: application/json
 
 #### `initialize`
 
-To support Last Look, the server must call initialize upon connection by the client and indicate `last-look` among its list of supported protocols. Additional params may be included for the `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
+To support Last Look, the server must call initialize upon connection by the client and indicate `last-look` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
 initialize([
@@ -167,6 +169,7 @@ initialize([
     name: "last-look",
     version: "1.0.0",
     params: {
+      chainId: number,
       swapContract: string,
       senderWallet: string,
       senderServer?: string,
@@ -363,9 +366,10 @@ Upon connection, the server sends an `initialize` notification to the client.
         "name": "last-look",
         "version": "1.0.0",
         "params": {
+          "chainId": 1,
           "swapContract": "0x522D6F36c95A1b6509A14272C17747BbB582F2A6",
           "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
-          "senderServer": "www.maker.com"
+          "senderServer": "www.maker.com",
         }
       }
     ]
@@ -434,35 +438,6 @@ The client may send an order to the server to consider a swap.
 }
 ```
 
-After the server accepts an order, parameters are submitted as an Ethereum transaction to the `light` function on the [Swap](deployments.md) contract, which emits a `Swap` event on success.
+After the server accepts an order, parameters are submitted as an Ethereum transaction to the `swapLight` function on the [SwapERC20](deployments.md) contract, which emits a `SwapERC20` event on success.
 
-```typescript
-  function light(
-    uint256 nonce,
-    uint256 expiry,
-    address signerWallet,
-    IERC20 signerToken,
-    uint256 signerAmount,
-    IERC20 senderToken,
-    uint256 senderAmount,
-    uint8 v,
-    bytes32 r,
-    bytes32 s
-  ) external;
-```
-
-```typescript
-  event Swap(
-    uint256 indexed nonce,
-    uint256 timestamp,
-    address indexed signerWallet,
-    IERC20 signerToken,
-    uint256 signerAmount,
-    uint256 protocolFee,
-    address indexed senderWallet,
-    IERC20 senderToken,
-    uint256 senderAmount
-  );
-```
-
-The client may subscribe to a filter for a `Swap` event with the nonce they provided to the server.
+The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server.
