@@ -7,6 +7,7 @@
   },
   "devDependencies": {
     "@airswap/constants": "^4.0.0",
+    "@airswap/indexer-registry": "^4.0.0",
     "@airswap/maker-registry": "^4.0.0",
     "@airswap/pool": "^4.0.0",
     "@airswap/staking": "^4.0.0",
@@ -18,8 +19,5 @@
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1"
-  },
-  "dependencies": {
-    "@airswap/indexer-registry": "^4.0.0"
   }
 }
