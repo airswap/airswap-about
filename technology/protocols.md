@@ -25,7 +25,7 @@ Given a `senderAmount` the server returns a signed order with a `signerAmount`. 
 
 ```typescript
 getSignerSideOrderERC20(
-  chainId: string,      // Chain ID for which order is being requested
+  chainId: string,      // ID of the chain intended for use
   swapContract: string, // Swap contract intended for use
   senderAmount: string, // Amount the sender would transfer
   signerToken: string,  // Token the signer would transfer
@@ -41,7 +41,7 @@ Given a `signerAmount` the server returns a signed order with a `senderAmount`. 
 
 ```typescript
 getSenderSideOrderERC20(
-  chainId: string,      // Chain ID for which order is being requested
+  chainId: string,      // ID of the chain intended for use
   swapContract: string, // Swap contract intended for use
   signerAmount: string, // Amount the signer would transfer
   signerToken: string,  // Token the signer would transfer
@@ -53,7 +53,7 @@ getSenderSideOrderERC20(
 
 ## Examples
 
-For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
+Clients find servers using the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
 
 ### Client Request
 
@@ -77,47 +77,13 @@ Content-Type: application/json
 }
 ```
 
-A response looks like the [example](request-for-quote.md#example-response) below. Requests can be made using curl for testing.
+Requests can also easily be made using curl.
 
 ```bash
 curl -H 'Content-Type: application/json' \
      -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0x522D6F36c95A1b6509A14272C17747BbB582F2A6","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
      http://localhost:3000/
 ```
-
-### SwapERC20 Contract
-
-With an order in hand, parameters are submitted as an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract, which emits a `SwapERC20` event on success. The `swapLight` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order.
-
-```typescript
-  function swapLight(
-    uint256 nonce,
-    uint256 expiry,
-    address signerWallet,
-    address signerToken,
-    uint256 signerAmount,
-    address senderToken,
-    uint256 senderAmount,
-    uint8 v,
-    bytes32 r,
-    bytes32 s
-  ) external;
-```
-
-```typescript
-  event SwapERC20(
-    uint256 indexed nonce,
-    address indexed signerWallet,
-    address signerToken,
-    uint256 signerAmount,
-    uint256 protocolFee,
-    address indexed senderWallet,
-    address senderToken,
-    uint256 senderAmount
-  );
-```
-
-The server or client may subscribe to a filter for a `SwapERC20` event with the nonce they provided to the client.
 
 ### Server Response
 
@@ -148,6 +114,40 @@ Content-Type: application/json
   }
 }
 ```
+
+### Client Settlement
+
+With an order in hand, the client sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order. A successful swap emits a `SwapERC20` event.
+
+```typescript
+  function swapLight(
+    uint256 nonce,
+    uint256 expiry,
+    address signerWallet,
+    address signerToken,
+    uint256 signerAmount,
+    address senderToken,
+    uint256 senderAmount,
+    uint8 v,
+    bytes32 r,
+    bytes32 s
+  ) external;
+```
+
+```typescript
+  event SwapERC20(
+    uint256 indexed nonce,
+    address indexed signerWallet,
+    address signerToken,
+    uint256 signerAmount,
+    uint256 protocolFee,
+    address indexed senderWallet,
+    address senderToken,
+    uint256 senderAmount
+  );
+```
+
+The server or client may subscribe to a filter for a `SwapERC20` event with the order `nonce`.
 
 # Last Look
 
