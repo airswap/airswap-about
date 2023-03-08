@@ -6,9 +6,9 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 [AirSwap Request-for-Quote (RFQ)](./glossary.md#request-for-quote-rfq) is an automated request-response protocol used by market makers running web servers from which clients request orders via HTTP or WebSocket.
 
-### Methods
+## Methods
 
-#### `initialize`
+### `initialize`
 
 To support RFQ via WebSocket, the server must call initialize upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
 
@@ -21,7 +21,7 @@ initialize([
 })
 ```
 
-#### `getSignerSideOrderERC20`
+### `getSignerSideOrderERC20`
 
 Given a `senderAmount` the server returns a signed order with a `signerAmount`. The client is **selling** to the server.
 
@@ -37,7 +37,7 @@ getSignerSideOrderERC20(
 )
 ```
 
-#### `getSenderSideOrderERC20`
+### `getSenderSideOrderERC20`
 
 Given a `signerAmount` the server returns a signed order with a `senderAmount`. The client is **buying** from the server.
 
@@ -53,11 +53,11 @@ getSenderSideOrderERC20(
 )
 ```
 
-### Client
+## Client
 
 For information on finding counterparties, see the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
 
-#### Example Request
+### Example Request
 
 ```javascript
 POST / HTTP/1.1
@@ -87,7 +87,7 @@ curl -H 'Content-Type: application/json' \
      http://localhost:3000/
 ```
 
-#### SwapERC20 Contract
+### SwapERC20 Contract
 
 With an order in hand, parameters are submitted as an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract, which emits a `SwapERC20` event on success. The `swapLight` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed order.
 
@@ -121,11 +121,11 @@ With an order in hand, parameters are submitted as an Ethereum transaction to th
 
 The server or client may subscribe to a filter for a `SwapERC20` event with the nonce they provided to the client.
 
-### Server
+## Server
 
 See the [signatures](./signatures.md) page for creating and signing an order.
 
-#### Example Response
+### Example Response
 
 ```javascript
 HTTP/1.1 200 OK
@@ -157,9 +157,9 @@ Content-Type: application/json
 
 [AirSwap Last Look (LL)](./glossary.md#last-look-ll) is a protocol used by makers to stream quotes to takers. Takers periodically send signed orders to the maker, which then has the "last look" and option to fill it.
 
-### Methods
+## Methods
 
-#### `initialize`
+### `initialize`
 
 To support Last Look, the server must call initialize upon connection by the client and indicate `last-look` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `consider` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
 
@@ -178,7 +178,7 @@ initialize([
 ]): boolean
 ```
 
-#### `subscribe`
+### `subscribe`
 
 Client subscribes to pricing updates for a list of token pairs. Returns current formula or levels for each pair.
 
@@ -213,7 +213,7 @@ subscribeAll(): [
 ]
 ```
 
-#### `unsubscribe`
+### `unsubscribe`
 
 Client unsubscribes from pricing updates for a list of token pairs. Returns a boolean.
 
@@ -232,7 +232,7 @@ Client may also unsubscribe from all subscriptions.
 unsubscribeAll(): boolean
 ```
 
-#### `updatePricing`
+### `updatePricing`
 
 Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
@@ -248,7 +248,7 @@ updatePricing([
 ]): boolean
 ```
 
-#### `consider`
+### `consider`
 
 Client provides a priced order to the server. If the server has set a `senderServer` this method is to be called on that URL via JSON-RPC over HTTP. Returns boolean `true` if accepted by the server.
 
@@ -267,11 +267,11 @@ consider({
 }): boolean
 ```
 
-### Pricing
+## Pricing
 
 Server pricing can be communicated either by levels or a formula. All input and output values for pricing are in base units rather than atomic units. When generating orders, all values must be converted to atomic units.
 
-#### Levels
+### Levels
 
 The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
 
@@ -308,7 +308,7 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 ]
 ```
 
-##### Examples
+#### Examples
 
 **Client wants to swap `1000` USDT into WETH.** Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. The first `100` would be multiplied by `0.00053` and second `900` would be multiplied by `0.00061` for a total of `0.602` WETH.
 
@@ -318,7 +318,7 @@ The server can specify levels to use for pricing. Each level is a tuple of amoun
 
 **Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. The first `0.5` would be multiplied by `2001` and second `0.5` would be multiplied by `2015` for a total WETH amount of `2008` USDT.
 
-#### Formula
+### Formula
 
 The server can specify formulas to use for pricing. Each formula is an expression with operations including addition, subtraction, multiplication, and division, where `x` is provided by the client.
 
@@ -339,7 +339,7 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 ]
 ```
 
-##### Examples
+#### Examples
 
 **Client wants to swap `1000` USDT into WETH.** Client looks up baseToken USDT and quoteToken WETH and uses the `bid` levels above. `1000` is multiplied by `0.00053` for a total of `0.53` WETH.
 
@@ -349,7 +349,7 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 
 **Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
 
-### Protocol
+## Protocol
 
 To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
 
