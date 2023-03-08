@@ -8,9 +8,9 @@ AirSwap liquidity providers are **makers**, generally online and quoting, with *
 
 For the RFQ protocol, a server is always the **signer** and the client is always the **sender**. For Last Look, the client is always the **signer** and a server is always the **sender**.
 
-* **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
-* **URLs** may be to either HTTP or WebSocket servers using `https` or `wss` respectively.
-* **Registry** is used to signal that a server is available to trade specific tokens, including contact information (URL), without pricing.
+- **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
+- **URLs** may be to either HTTP or WebSocket servers using `https` or `wss` respectively.
+- **Registry** is used to signal that a server is available to trade specific tokens, including contact information (URL), without pricing.
 
 ## HTTP vs WebSocket
 
@@ -20,24 +20,15 @@ If a URL is HTTPS, it is implied that the server supports the latest RFQ protoco
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-* Servers generally implement the [RFQ](request-for-quote.md) protocol.
-* You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
-* When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
+- Servers generally implement the [RFQ](request-for-quote.md) protocol.
+- You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
+- When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
 
 ## Protocol Fees
 
 When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](broken-reference) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [Swap](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
-100% of protocol fees go toward AirSwap governance and development contributors.
-
-## Helpful for Testing
-
-The following resources are helpful for testing on **Rinkeby**.
-
-* **ETH** to pay for transactions - [Faucet](https://faucet.rinkeby.io/)
-* **WETH** for trading - `0xc778417e063141139fce010982780140aa0cd5ab` [Etherscan](https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab)
-* **DAI** for trading - `0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea` [Etherscan](https://rinkeby.etherscan.io/address/0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea)
-* **AST** for staking - `0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8` [Etherscan](https://rinkeby.etherscan.io/address/0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8) / [Faucet](https://ast-faucet-ui.development.airswap.io/)
+100% of protocol fees go toward AirSwap governance participants and project contributors.
 
 ## Handling Errors
 
@@ -51,24 +42,24 @@ Provide descriptive errors where possible. In the case of a server side error, r
 }
 ```
 
-The following are error codes in the [JSON-RPC specification](http://www.jsonrpc.org/specification#error\_object):
+The following are error codes in the [JSON-RPC specification](http://www.jsonrpc.org/specification#error_object):
 
-* `-32700` Parse error
-* `-32600` Invalid Request
-* `-32601` Method not found
-* `-32602` Invalid params
-* `-32603` Internal error
-* `-32000 to -32099` (Reserved for implementation-defined server-errors)
+- `-32700` Parse error
+- `-32600` Invalid Request
+- `-32601` Method not found
+- `-32602` Invalid params
+- `-32603` Internal error
+- `-32000 to -32099` (Reserved for implementation-defined server-errors)
 
 The following are AirSwap specific errors:
 
-* `-33600` Cannot provide the requested quote or order
-* `-33601` Not trading the requested `signerToken` `senderToken` pair
-* `-33602` The specified `senderAmount` or `signerAmount` is too low
-* `-33603` The specified `senderAmount` or `signerAmount` is too high
-* `-33604` Invalid request parameters
-* `-33605` Rate limit exceeded
-* `-33700 to -33799` (Reserved for implementation specific trading errors)
+- `-33600` Cannot provide the requested quote or order
+- `-33601` Not trading the requested `signerToken` `senderToken` pair
+- `-33602` The specified `senderAmount` or `signerAmount` is too low
+- `-33603` The specified `senderAmount` or `signerAmount` is too high
+- `-33604` Invalid request parameters
+- `-33605` Rate limit exceeded
+- `-33700 to -33799` (Reserved for implementation specific trading errors)
 
 ## Debugging with the CLI
 
@@ -82,9 +73,9 @@ In development, set the chain to `4` with the `airswap chain` command. The follo
 
 Several useful commands can help you debug your server:
 
-* `airswap order:get` to request an order directly from your server. (RFQ)
-* `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
-* `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (Last Look)
+- `airswap order:get` to request an order directly from your server. (RFQ)
+- `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
+- `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (Last Look)
 
 ## Adding to the Registry
 

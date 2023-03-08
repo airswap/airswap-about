@@ -18,7 +18,7 @@ Ensure the AirSwap CLI is installed.
 $ yarn global add airswap
 ```
 
-Use `airswap chain` to set your chain to Rinkeby or Mainnet.
+Use `airswap chain` to set your chain to Goerli or Mainnet.
 
 ```
 $ airswap chain

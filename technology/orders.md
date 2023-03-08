@@ -2,7 +2,7 @@ AirSwap orders are mutually signed instructions to perform an atomic swap. Prior
 
 ## Properties
 
-An `Order` has the following properties:
+An `OrderERC20` has the following properties:
 
 | Property     | Type      | Description                               |
 | :----------- | :-------- | :---------------------------------------- |
@@ -19,16 +19,16 @@ An `Order` has the following properties:
 
 ## Execution
 
-Orders are passed to the [Swap](https://docs.airswap.io/contract-deployments) contract for execution, which emits a `Swap` event on success. The `light` function is gas more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
+Orders are passed to the [Swap](https://docs.airswap.io/contract-deployments) contract for execution, which emits a `Swap` event on success. The `swapLight` function is more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
 
 ```typescript
-  function light(
+  function swapLight(
     uint256 nonce,
     uint256 expiry,
     address signerWallet,
-    IERC20 signerToken,
+    address signerToken,
     uint256 signerAmount,
-    IERC20 senderToken,
+    address senderToken,
     uint256 senderAmount,
     uint8 v,
     bytes32 r,
@@ -44,9 +44,9 @@ AirSwap signatures are [EIP712](https://eips.ethereum.org/EIPS/eip-712), which i
 
 ```typescript
 import { UnsignedOrder } from '@airswap/types'
-import { createOrder, createSwapSignature } from '@airswap/utils'
+import { createOrderERC20, createOrderERC20Signature } from '@airswap/utils'
 
-const order = createOrder({
+const order = createOrderERC20({
   nonce: string,
   expiry: string,
   signerWallet: string,
@@ -58,7 +58,7 @@ const order = createOrder({
   senderAmount: string,
 })
 
-const { v, r, s } = createSwapSignature(
+const { v, r, s } = createOrderERC20Signature(
   order: UnsignedOrder,
   privateKey: string,
   swapContract: string,
@@ -75,7 +75,7 @@ SIGNER_KEY = "0000000000000000000000000000000000000000000000000000000000000000"
 SWAP_CONTRACT = "0x0000000000000000000000000000000000000000"
 
 DOMAIN = "SWAP"
-VERSION = "3"
+VERSION = "4"
 CHAIN_ID = 1
 
 order = {
@@ -98,7 +98,7 @@ data = {
       { "name": "chainId", "type": "uint256" },
       { "name": "verifyingContract", "type": "address" },
     ],
-    "Order": [
+    "OrderERC20": [
       { "name": "nonce", "type": "uint256" },
       { "name": "expiry", "type": "uint256" },
       { "name": "signerWallet", "type": "address" },
@@ -116,7 +116,7 @@ data = {
     "chainId": CHAIN_ID,
     "verifyingContract": SWAP_CONTRACT,
   },
-  "primaryType": "Order",
+  "primaryType": "OrderERC20",
   "message": order,
 }
 
@@ -125,7 +125,7 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 ## Authorized Signers
 
-**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [Swap](./deployments.md) contract.
+**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [SwapERC20](deployments.md) contract.
 
 ```text
 function authorize(address signer) external
@@ -136,9 +136,9 @@ function revoke() external
 
 The following values are used for the EIP712Domain.
 
-| Param               | Type      | Value                                     |
-| :------------------ | :-------- | :---------------------------------------- |
-| `name`              | `bytes32` | `SWAP`                                    |
-| `version`           | `bytes32` | `3`                                       |
-| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Rinkeby: `4`       |
-| `verifyingContract` | `address` | [Swap](./deployments.md) contract address |
+| Param               | Type      | Value                               |
+| :------------------ | :-------- | :---------------------------------- |
+| `name`              | `bytes32` | `SWAP_ERC20`                        |
+| `version`           | `bytes32` | `4`                                 |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Goerli: `5`  |
+| `verifyingContract` | `address` | [SwapERC20](deployments.md) address |

@@ -87,7 +87,7 @@ curl -H 'Content-Type: application/json' \
 
 ### Server Response
 
-See the [signatures](./signatures.md) page for creating and signing an order.
+See the [signatures](signatures.md) page for creating and signing an order.
 
 ```javascript
 HTTP/1.1 200 OK
