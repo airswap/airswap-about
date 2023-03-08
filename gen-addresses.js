@@ -6,11 +6,11 @@ const contracts = [{
   name: 'SwapERC20',
   deploys: require('@airswap/swap-erc20/deploys')
 }, {
-  name: 'Wrapper',
-  deploys: require('@airswap/wrapper/deploys')
-}, {
   name: 'Swap',
   deploys: require('@airswap/swap/deploys')
+}, {
+  name: 'Wrapper',
+  deploys: require('@airswap/wrapper/deploys')
 }, {
   name: 'MakerRegistry',
   deploys: require('@airswap/maker-registry/deploys')
