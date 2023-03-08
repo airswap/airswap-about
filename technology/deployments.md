@@ -1,6 +1,6 @@
 # Deployments
 
-## V4
+## AirSwap V4
 
 ### Mainnet (1)
 
@@ -62,7 +62,7 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://snowtrace.io/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x702d0f43edd46b77ea2d48570b02c328a20a94a1`](https://snowtrace.io/address/0x702d0f43edd46b77ea2d48570b02c328a20a94a1#code)
 
-## V4 Testnets
+## AirSwap V4: Testnets
 
 ### Goerli (5)
 
@@ -129,7 +129,7 @@
 
 ## Legacy
 
-### Swap (V3)
+### AirSwap V3: Swap
 
 - Mainnet (1) — [`0x522d6f36c95a1b6509a14272c17747bbb582f2a6`](https://etherscan.io/address/0x522d6f36c95a1b6509a14272c17747bbb582f2a6#code)
 - Bsc (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
@@ -139,7 +139,7 @@
 
 ### Other
 
-- Swap (V2) — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)
-- Staking (V2) [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)
-- Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)
-- Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)
+- AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)
+- AirSwap V2: Staking [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)
+- AirSwap V2: Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)
+- AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)

@@ -13,9 +13,9 @@
 
 ## Technology
 
-- [Contracts](technology/deployments.md)
 - [Protocols](technology/protocols.md)
 - [Makers](technology/makers.md)
 - [Discovery](technology/discovery.md)
 - [Formats](technology/orders.md)
 - [Glossary](technology/glossary.md)
+- [Deployments](technology/deployments.md)
