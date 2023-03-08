@@ -66,7 +66,7 @@ for (let chainid in active) {
   markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getEtherscanWalletURL(chainid, active[chainid])}#code)\n`
 }
 
-markdown += '### Other\n\n\
+markdown += '\n\n### Other\n\n\
 - Swap (V2) — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)\n\
 - Staking (V2) [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)\n\
 - Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)\n\
