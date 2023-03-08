@@ -3,9 +3,9 @@
 
 
 "@airswap/constants@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.0.tgz#198a93c2c40b85fed554f9d606106b9717c0d601"
-  integrity sha512-/canKNBOHB7Z3UFGKcZWpTTZqJFplVrGIHa7phE4zHBuLFbup2IB/HGWjhkwLCsmR4wNThnR3+V7DTVmaYRYpA==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.1.tgz#20c111e258fa73f81a2508dc38ec6f3f53eb4f17"
+  integrity sha512-2ldcHh1eWT3zDoe5lUG0gw10rg3OtCSOppuwmv41/NNr2s0BOcBDgrtuALbpQiU+S1Wfx+f8h1Wm1MBRGaBLNw==
 
 "@airswap/indexer-registry@^4.0.0":
   version "4.0.0"
@@ -58,9 +58,9 @@
     "@uniswap/token-lists" "^1.0.0-beta.31"
 
 "@airswap/utils@^4.0.0":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.2.tgz#f332da5f5f393358577ae02e09ed67b7f7e1a8d8"
-  integrity sha512-aJPIKmH5vXzrc1D2kRsON3oRjRb5L1WD1rztD0Fv7OiYaKrAMDyU4YCUz+15Es7+Y1ny4StH87MfRhEONXWZvA==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.3.tgz#8f0aeff51997cf6713043a40cda9d34922ae2219"
+  integrity sha512-yjZdenaMQrGvflP9gRFJUHeFLf5wFF+xFz+aCo4Rv658VAXDvRrBjdtluyzBYtTxpKcbwp5w7pQQlnUr/fXWkw==
   dependencies:
     "@airswap/constants" "^4.0.0"
     "@airswap/types" "^4.0.0"
