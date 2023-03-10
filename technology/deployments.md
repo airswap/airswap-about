@@ -1,8 +1,6 @@
-## AirSwap V4
-- [Audit Report (SwapERC20, Swap, Wrapper)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)
-- [Audit Report (MakerRegistry, Pool, Staking)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)
+# AirSwap V4
 
-### Mainnet (1)
+## Mainnet (1)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://etherscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://etherscan.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -12,7 +10,7 @@
 - Staking — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
 
-### Rsk (30)
+## Rsk (30)
 
 - SwapERC20 — [`0x51F372bE64F0612532F28142cECF8F204B272622`](https://blockscout.com/rsk/mainnet/address/0x51F372bE64F0612532F28142cECF8F204B272622#code)
 - Swap — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://blockscout.com/rsk/mainnet/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
@@ -22,7 +20,7 @@
 - Staking — [`0xB1F80291d0EB60b75E7DF9422FB942d8FC575F4d`](https://blockscout.com/rsk/mainnet/address/0xB1F80291d0EB60b75E7DF9422FB942d8FC575F4d#code)
 - AST — [`0x71070c5607358fc25e3b4aaf4fb0a580c190252a`](https://blockscout.com/rsk/mainnet/address/0x71070c5607358fc25e3b4aaf4fb0a580c190252a#code)
 
-### Bsc (56)
+## Bsc (56)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://bscscan.com/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -32,7 +30,7 @@
 - Staking — [`0xDECA72bDA0cDf62d79b46B1585B380c9C6d57D9E`](https://bscscan.com/address/0xDECA72bDA0cDf62d79b46B1585B380c9C6d57D9E#code)
 - AST — [`0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1`](https://bscscan.com/address/0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1#code)
 
-### Polygon (137)
+## Polygon (137)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://polygonscan.com/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -42,7 +40,7 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://polygonscan.com/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x04bEa9FCE76943E90520489cCAb84E84C0198E29`](https://polygonscan.com/address/0x04bEa9FCE76943E90520489cCAb84E84C0198E29#code)
 
-### Arbitrum (42161)
+## Arbitrum (42161)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://arbiscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://arbiscan.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -52,7 +50,7 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://arbiscan.io/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0xa1135c2f2c7798d31459b5fdaef8613419be1008`](https://arbiscan.io/address/0xa1135c2f2c7798d31459b5fdaef8613419be1008#code)
 
-### Avalanche (43114)
+## Avalanche (43114)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://snowtrace.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -62,9 +60,9 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://snowtrace.io/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x702d0f43edd46b77ea2d48570b02c328a20a94a1`](https://snowtrace.io/address/0x702d0f43edd46b77ea2d48570b02c328a20a94a1#code)
 
-## AirSwap V4: Testnets
+# AirSwap V4: Testnets
 
-### Goerli (5)
+## Goerli (5)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://goerli.etherscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://goerli.etherscan.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -75,7 +73,7 @@
 - Staking — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://goerli.etherscan.io/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
 - AST — [`0x1a1ec25dc08e98e5e93f1104b5e5cdd298707d31`](https://goerli.etherscan.io/address/0x1a1ec25dc08e98e5e93f1104b5e5cdd298707d31#code)
 
-### Rsktestnet (31)
+## Rsktestnet (31)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://explorer.testnet.rsk.co/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://explorer.testnet.rsk.co/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -85,7 +83,7 @@
 - Staking — [`0x71070c5607358fc25E3B4aaf4FB0a580c190252a`](https://explorer.testnet.rsk.co/address/0x71070c5607358fc25E3B4aaf4FB0a580c190252a#code)
 - AST — [`0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3`](https://explorer.testnet.rsk.co/address/0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3#code)
 
-### Bsctestnet (97)
+## Bsctestnet (97)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://testnet.bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://testnet.bscscan.com/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -95,7 +93,7 @@
 - Staking — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://testnet.bscscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
 - AST — [`0xd161ddcfcc0c2d823021aa26200824efa75218d1`](https://testnet.bscscan.com/address/0xd161ddcfcc0c2d823021aa26200824efa75218d1#code)
 
-### Mumbai (80001)
+## Mumbai (80001)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://mumbai.polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://mumbai.polygonscan.com/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -105,7 +103,7 @@
 - Staking — [`0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF`](https://mumbai.polygonscan.com/address/0x4A2C0926f21723C56f6899dedbBb3DAE83A4C5dF#code)
 - AST — [`0xd161ddcfcc0c2d823021aa26200824efa75218d1`](https://mumbai.polygonscan.com/address/0xd161ddcfcc0c2d823021aa26200824efa75218d1#code)
 
-### Arbitrumgoerli (421613)
+## Arbitrumgoerli (421613)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://goerli.arbiscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://goerli.arbiscan.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -115,7 +113,7 @@
 - Staking — [`0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4`](https://goerli.arbiscan.io/address/0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4#code)
 - AST — [`0x71070c5607358fc25e3b4aaf4fb0a580c190252a`](https://goerli.arbiscan.io/address/0x71070c5607358fc25e3b4aaf4fb0a580c190252a#code)
 
-### Fuji (43113)
+## Fuji (43113)
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://testnet.snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0xCb3839A953533339273e251Dd179515b7bA9a309`](https://testnet.snowtrace.io/address/0xCb3839A953533339273e251Dd179515b7bA9a309#code)
@@ -127,9 +125,9 @@
 
 
 
-## Legacy
+# Legacy
 
-### AirSwap V3: Swap
+## AirSwap V3: Swap
 
 - Mainnet (1) — [`0x522d6f36c95a1b6509a14272c17747bbb582f2a6`](https://etherscan.io/address/0x522d6f36c95a1b6509a14272c17747bbb582f2a6#code)
 - Bsc (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
@@ -137,9 +135,15 @@
 - Avalanche (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
 
 
-### Other
+## AirSwap V2
 
 - AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)
 - AirSwap V2: Staking [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)
 - AirSwap V2: Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)
 - AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)
+
+
+# Security Audits
+
+- [AirSwap V4: Audit Report (SwapERC20, Swap, Wrapper)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)
+- [AirSwap V3: Audit Report (MakerRegistry, Pool, Staking)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)
