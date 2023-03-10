@@ -13,7 +13,10 @@
 
 ## Technology
 
-- [Protocols](technology/protocols.md)
+- Protocols
+  - [Swaps](technology/protocols.md)
+  - [Pricing](technology/protocols.md)
+  - [Indexing](technology/protocols.md)
 - [Makers](technology/makers.md)
 - [Discovery](technology/discovery.md)
 - [Formats](technology/orders.md)
