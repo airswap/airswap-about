@@ -1,6 +1,6 @@
-# Deployments
-
 ## AirSwap V4
+- [Audit Report (SwapERC20, Swap, Wrapper)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)
+- [Audit Report (MakerRegistry, Pool, Staking)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)
 
 ### Mainnet (1)
 

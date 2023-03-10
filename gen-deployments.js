@@ -48,7 +48,9 @@ function initial(name) {
   return name[0] + name.slice(1).toLowerCase()
 }
 
-let markdown = "# Deployments\n\n## AirSwap V4\n\n"
+let markdown = "## AirSwap V4\n" +
+"- [Audit Report (SwapERC20, Swap, Wrapper)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n" +
+"- [Audit Report (MakerRegistry, Pool, Staking)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)\n\n"
 for (let net in mainnets) {
   let name = initial(chainNames[mainnets[net]])
   markdown += `### ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
