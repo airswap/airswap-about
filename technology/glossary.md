@@ -24,7 +24,7 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 # Slippage and Front-running
 
-**Slippage occurs when** a trade executes differently than the expected price. This is caused by other orders being executed ahead of the submitted order. [Slippage](https://www.investopedia.com/terms/s/slippage.asp) can be to either the detriment and benefit to a trader, depending on which direction it occurs. Slippage is commonplace in all continuous markets, that is, a market where the previous order impacts the price of the next. Slippage is avoidable in P2P systems, which are not continuous.
+**Slippage occurs when** a trade executes differently than the expected price. This is caused by other orders being executed ahead of the submitted order. [Slippage](https://www.investopedia.com/terms/s/slippage.asp) can be to either the detriment or benefit of a trader, depending on which direction it occurs. Slippage is commonplace in all continuous markets, that is, a market where the previous order impacts the price of the next. Slippage is avoidable in P2P systems, which are not continuous.
 
 **Front-running occurs when** a third-party sees an order before it is executed and takes advantage of this information to submit an order of its own to be executed first. [Front-running](https://www.investopedia.com/terms/f/frontrunning.asp) is prohibited in traditional markets. In the land of pseudonymous public ledgers, front-running is commonplace and a fundamental part of on-chain continuous markets through the practice of [MEV](https://ethereum.org/en/developers/docs/mev/). Front-running can also be avoided in P2P systems because they are not continuous.
 
