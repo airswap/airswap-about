@@ -14,7 +14,7 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it is implied that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](protocols.md#rfq) and [Last Look](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
+If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](protocols.md#rfq) and [Last Look](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](broken-reference) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [Swap](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
-100% of protocol fees go toward AirSwap governance participants and project contributors.
+100% of protocol fees go toward rewarding AirSwap governance participants and project contributors.
 
 ## Handling Errors
 
