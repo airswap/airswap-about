@@ -65,7 +65,7 @@ If you have not contributed for the month, remember to **Opt-out** of receiving 
 
 ## Allocate accurately
 
-[Coordinape](https://coordinape.com) circles will open 1st - 6th of each month for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members with according to their impact in the circle during the current cycle.
+[Coordinape](https://coordinape.com) circles will open 1st - 6th of each month for all contributors to reward their co-workers with GIVE tokens. Contributors will start with 100 GIVE tokens. These GIVE tokens are used to reward team members according to their impact in the circle during the current cycle.
 
 After the allocation period is complete, any GIVE tokens not distributed will be burnt (there is no use holding GIVE tokens for yourself!). Individual contributors will be rewarded from the circle funds proportionally to their GIVE allocations received.
 
