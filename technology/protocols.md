@@ -6,7 +6,7 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket.
 
-## `initialize`
+## `updateSupportedProtocols`
 
 If connected via WebSocket, the server must call `updateSupportedProtocols` upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
 
