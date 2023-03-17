@@ -8,10 +8,10 @@ AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server prot
 
 ## `initialize`
 
-If connected via WebSocket, the server must call initialize upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
+If connected via WebSocket, the server must call `updateSupportedProtocols` upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
 
 ```typescript
-initialize([
+updateSupportedProtocols([
   {
     name: 'request-for-quote-erc20',
     version: '1.0.0'
@@ -77,7 +77,7 @@ Content-Type: application/json
 }
 ```
 
-Requests can also easily be made using curl.
+Requests can also be made using curl etc.
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -153,12 +153,12 @@ The server or client may subscribe to a filter for a `SwapERC20` event with the 
 
 AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by makers to stream quotes to takers. Takers periodically send signed OrderERC20s to the maker, which then has the "last look" and option to fill it.
 
-## `initialize`
+## `updateSupportedProtocols`
 
-To support Last Look, the server must call initialize upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The initialize method either returns `true` or throws an error if something went wrong on the client side.
+To support Last Look, the server must call `updateSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `updateSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
-initialize([
+updateSupportedProtocols([
   {
     name: "last-look-erc20",
     version: "1.0.0",
@@ -172,12 +172,12 @@ initialize([
 ]): boolean
 ```
 
-## `subscribe`
+## `subscribePricingERC20`
 
 Client subscribes to pricing updates for a list of token pairs. Returns current formula or levels for each pair.
 
 ```typescript
-subscribe([
+subscribePricingERC20([
   {
     baseToken: string,
     quoteToken: string
@@ -196,7 +196,7 @@ subscribe([
 Client may also subscribe to pricing updates for all available pairs.
 
 ```typescript
-subscribeAll(): [
+subscribeAllPricingERC20(): [
   {
     baseToken: string,
     quoteToken: string,
@@ -207,12 +207,12 @@ subscribeAll(): [
 ]
 ```
 
-## `unsubscribe`
+## `unsubscribePricingERC20`
 
 Client unsubscribes from pricing updates for a list of token pairs. Returns a boolean.
 
 ```typescript
-unsubscribe([
+unsubscribePricingERC20([
   {
     baseToken: string,
     quoteToken: string
@@ -223,15 +223,15 @@ unsubscribe([
 Client may also unsubscribe from all subscriptions.
 
 ```typescript
-unsubscribeAll(): boolean
+unsubscribePricingAllERC20(): boolean
 ```
 
-## `updatePricing`
+## `updatePricingERC20`
 
 Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
 ```typescript
-updatePricing([
+updatePricingERC20([
   {
     baseToken: string,
     quoteToken: string,
@@ -347,12 +347,12 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 
 To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
 
-Upon connection, the server sends an `initialize` notification to the client.
+Upon connection, the server sends an `updateSupportedProtocols` notification to the client.
 
 ```javascript
 {
   "jsonrpc": "2.0",
-  "method": "initialize",
+  "method": "updateSupportedProtocols",
   "id": "xyz",
   "params": [
     [
