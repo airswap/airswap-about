@@ -8,7 +8,7 @@ AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server prot
 
 ## `updateSupportedProtocols`
 
-If connected via WebSocket, the server must call `updateSupportedProtocols` upon connection by the client and indicate `request-for-quote` among its list of supported protocols.
+If connected via WebSocket, the server must call `updateSupportedProtocols` upon connection by the client and indicate `request-for-quote-erc20` among its list of supported protocols.
 
 ```typescript
 updateSupportedProtocols([
