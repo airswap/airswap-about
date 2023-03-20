@@ -6,12 +6,12 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket.
 
-## `updateSupportedProtocols`
+## `setSupportedProtocols`
 
-If connected via WebSocket, the server must call `updateSupportedProtocols` upon connection by the client and indicate `request-for-quote-erc20` among its list of supported protocols.
+If connected via WebSocket, the server must call `setSupportedProtocols` upon connection by the client and indicate `request-for-quote-erc20` among its list of supported protocols.
 
 ```typescript
-updateSupportedProtocols([
+setSupportedProtocols([
   {
     name: 'request-for-quote-erc20',
     version: '1.0.0'
@@ -153,12 +153,12 @@ The server or client may subscribe to a filter for a `SwapERC20` event with the 
 
 AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by makers to stream quotes to takers. Takers periodically send signed OrderERC20s to the maker, which then has the "last look" and option to fill it.
 
-## `updateSupportedProtocols`
+## `setSupportedProtocols`
 
-To support Last Look, the server must call `updateSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `updateSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
+To support Last Look, the server must call `setSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
-updateSupportedProtocols([
+setSupportedProtocols([
   {
     name: "last-look-erc20",
     version: "1.0.0",
@@ -226,12 +226,12 @@ Client may also unsubscribe from all subscriptions.
 unsubscribePricingAllERC20(): boolean
 ```
 
-## `updatePricingERC20`
+## `setPricingERC20`
 
 Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
 
 ```typescript
-updatePricingERC20([
+setPricingERC20([
   {
     baseToken: string,
     quoteToken: string,
@@ -347,13 +347,13 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 
 To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
 
-Upon connection, the server sends an `updateSupportedProtocols` notification to the client.
+Upon connection, the server sends an `setSupportedProtocols` notification to the client.
 
 ```javascript
 {
   "jsonrpc": "2.0",
-  "method": "updateSupportedProtocols",
-  "id": "xyz",
+  "method": "setSupportedProtocols",
+  "id": 123,
   "params": [
     [
       {
@@ -376,8 +376,8 @@ The client may then subscribe to pricing updates.
 ```javascript
 {
   "jsonrpc": "2.0",
-  "method": "subscribeAll",
-  "id": "123",
+  "method": "subscribeAllPricingERC20",
+  "id": 123,
   "params": []
 }
 ```
@@ -387,8 +387,8 @@ The server then continuously updates the client with new pricing.
 ```javascript
 {
   "jsonrpc": "2.0",
-  "method": "updatePricingERC20",
-  "id": "qrs",
+  "method": "setPricingERC20",
+  "id": 123,
   "params": [
     [
       {
@@ -415,7 +415,7 @@ The client may send an OrderERC20 to the server to consider a swap.
 ```javascript
 {
   "jsonrpc": "2.0",
-  "id": "abc",
+  "id": 123,
   "method": "considerOrderERC20",
   "params": {
     "nonce": "1",
