@@ -4,7 +4,7 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 # RFQ-ERC20
 
-AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket.
+AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (e.g. `signerAmount`, `signerToken`) and the client is the sender (e.g. `senderAmount`, `senderToken`).
 
 ## `setSupportedProtocols`
 
@@ -151,7 +151,7 @@ The server or client may subscribe to a filter for a `SwapERC20` event with the 
 
 # Last-Look-ERC20
 
-AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by makers to stream quotes to takers. Takers periodically send signed OrderERC20s to the maker, which then has the "last look" and option to fill it.
+AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
 
 ## `setSupportedProtocols`
 
