@@ -172,6 +172,41 @@ setSupportedProtocols([
 ]): boolean
 ```
 
+## `getPricingERC20`
+
+Client requests pricing for a list of token pairs. Returns current formula or levels for each pair.
+
+```typescript
+getPricingERC20([
+  {
+    baseToken: string,
+    quoteToken: string
+  }, { ... }
+]): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
+```
+
+Client may also request pricing for all available pairs.
+
+```typescript
+getAllPricingERC20(): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, { ... }
+]
+```
+
 ## `subscribePricingERC20`
 
 Client subscribes to pricing updates for a list of token pairs. Returns current formula or levels for each pair.
