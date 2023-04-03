@@ -1,12 +1,12 @@
 # Makers
 
-Makers run web servers that implement the RFQ and Last Look APIs using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](deployments.md) smart contract, which is queried by clients.
+Makers run web servers that implement APIs like RFQ and LastLook using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](deployments.md) smart contract, which is queried by clients.
 
 ## Introduction
 
 AirSwap liquidity providers are **makers**, generally online and quoting, with **takers** on the other side of each trade. At the lower protocol level, where the software used by makers and takers interacts with Ethereum, there are **signers**, who set and cryptographically sign terms (an order), and **senders** who submit those terms for settlement on the Swap contract.
 
-For the RFQ protocol, a server is always the **signer** and the client is always the **sender**. For Last Look, the client is always the **signer** and a server is always the **sender**.
+For the RFQ protocol, a server is always the **signer** and the client is always the **sender**. For LastLook, the client is always the **signer** and a server is always the **sender**.
 
 - **Nonces** are unique identifiers for swaps and used for cancels. They should be generated incrementally but might execute out of order.
 - **URLs** may be to either HTTP or WebSocket servers using `https` or `wss` respectively.
@@ -14,13 +14,13 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `initialize` method of the [Request for Quote](protocols.md#rfq) and [Last Look](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and Last Look protocols.
+If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `setSupportedProtocols` method of the [Request for Quote](protocols.md#rfq) and [LastLook](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and LastLook protocols.
 
 ## Getting Started
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-- Servers generally implement the [RFQ](request-for-quote.md) protocol.
+- Servers generally implement the [RFQ](protocols.md) protocol.
 - You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
 - When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
 
@@ -75,7 +75,7 @@ Several useful commands can help you debug your server:
 
 - `airswap order:get` to request an order directly from your server. (RFQ)
 - `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
-- `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (Last Look)
+- `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (LastLook)
 
 ## Adding to the Registry
 

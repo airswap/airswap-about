@@ -10,7 +10,7 @@ With the onchain payments system [0xSplits](https://www.0xsplits.xyz/), protocol
 
 ## Distributions
 
-Community members (like you!) trigger token distributions and withdrawals from the Split contract to their final destinations earning a 1% reward for doing so. Anyone can trigger these at any time by clicking the “Distribute & withdraw for all” on the [0xSplits web app](https://app.0xsplits.xyz/accounts/0xaD30f7EEBD9Bd5150a256F47DA41d4403033CdF0/).
+Community members (like you!) trigger token distributions and withdrawals from the Split contract to their final destinations earning a 1% reward for doing so. Anyone can trigger these at any time by clicking the "Distribute & withdraw for all" on the [0xSplits web app](https://app.0xsplits.xyz/accounts/0xaD30f7EEBD9Bd5150a256F47DA41d4403033CdF0/).
 
 Our current split percentages are 86% to voter rewards and 14% to contributor tips according to [AIP 46](https://snapshot.org/#/vote.airswap.eth/proposal/QmRes6C3ZqLK4Mk3pygH62wkU2XJWBm3hXo54qZ9Z3FkVz). What this means is that rewards and tips do not top up until a withdrawal is triggered by a community member—so keep an eye on the split balances if you’d like to help out.
 
@@ -40,8 +40,8 @@ The distribution of funds between the two circles depends on the number of Contr
 
 | Circle | Allocation (%)                                          |
 | ------ | ------------------------------------------------------- |
-| Tech   | $$ 1.4 * N_{tech} \over 1.4 * N_{tech} + N_{growth} $$ |
-| Growth | $$ N_{growth} \over 1.4 * N_{tech} + N_{growth} $$    |
+| Tech   | $$ 1.4 _ N\_{tech} \over 1.4 _ N*{tech} + N*{growth} $$ |
+| Growth | $$ N*{growth} \over 1.4 \* N*{tech} + N\_{growth} $$    |
 
 # Contributor Tips
 

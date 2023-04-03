@@ -155,7 +155,7 @@ AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by serv
 
 ## `setSupportedProtocols`
 
-To support Last Look, the server must call `setSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
+To support LastLook, the server must call `setSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
 setSupportedProtocols([
