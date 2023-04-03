@@ -6,19 +6,6 @@ For information on finding counter-parties, see [Discovery](discovery.md).
 
 AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (e.g. `signerAmount`, `signerToken`) and the client is the sender (e.g. `senderAmount`, `senderToken`).
 
-## `setSupportedProtocols`
-
-If connected via WebSocket, the server must call `setSupportedProtocols` upon connection by the client and indicate `request-for-quote-erc20` among its list of supported protocols.
-
-```typescript
-setSupportedProtocols([
-  {
-    name: 'request-for-quote-erc20',
-    version: '1.0.0'
-  }, ...
-})
-```
-
 ## `getSignerSideOrderERC20`
 
 Given a `senderAmount` the server returns a signed OrderERC20 with a `signerAmount`. The client is **selling** to the server.
@@ -49,6 +36,19 @@ getSenderSideOrderERC20(
   senderWallet: string, // Wallet of the sender
   proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
 )
+```
+
+## `setSupportedProtocols`
+
+If connected via WebSocket, the server calls `setSupportedProtocols` upon client connection to indicate `request-for-quote-erc20` among its list of supported protocols.
+
+```typescript
+setSupportedProtocols([
+  {
+    name: 'request-for-quote-erc20',
+    version: '1.0.0'
+  }, ...
+})
 ```
 
 ## Examples
