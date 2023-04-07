@@ -14,7 +14,7 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `setSupportedProtocols` method of the [Request for Quote](protocols.md#rfq) and [LastLook](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and LastLook protocols.
+If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `setProtocols` method of the [Request for Quote](protocols.md#rfq) and [LastLook](protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and LastLook protocols.
 
 ## Getting Started
 

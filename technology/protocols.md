@@ -38,12 +38,12 @@ getSenderSideOrderERC20(
 )
 ```
 
-## `setSupportedProtocols`
+## `setProtocols`
 
-If connected via WebSocket, the server calls `setSupportedProtocols` upon client connection to indicate `request-for-quote-erc20` among its list of supported protocols.
+If connected via WebSocket, the server calls `setProtocols` upon client connection to indicate `request-for-quote-erc20` among its list of supported protocols.
 
 ```typescript
-setSupportedProtocols([
+setProtocols([
   {
     name: 'request-for-quote-erc20',
     version: '1.0.0'
@@ -153,12 +153,12 @@ The server or client may subscribe to a filter for a `SwapERC20` event with the 
 
 AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
 
-## `setSupportedProtocols`
+## `setProtocols`
 
-To support LastLook, the server must call `setSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
+To support LastLook, the server must call `setProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setProtocols` method either returns `true` or throws an error if something went wrong on the client side.
 
 ```typescript
-setSupportedProtocols([
+setProtocols([
   {
     name: "last-look-erc20",
     version: "1.0.0",
@@ -258,7 +258,7 @@ unsubscribePricingERC20([
 Client may also unsubscribe from all subscriptions.
 
 ```typescript
-unsubscribePricingAllERC20(): boolean
+unsubscribeAllPricingERC20(): boolean
 ```
 
 ## `setPricingERC20`
@@ -382,12 +382,12 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 
 To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
 
-Upon connection, the server sends an `setSupportedProtocols` notification to the client.
+Upon connection, the server sends an `setProtocols` notification to the client.
 
 ```javascript
 {
   "jsonrpc": "2.0",
-  "method": "setSupportedProtocols",
+  "method": "setProtocols",
   "id": 123,
   "params": [
     [
