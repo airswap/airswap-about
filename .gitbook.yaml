@@ -10,7 +10,8 @@ redirects:
   technology/servers: technology/makers.md
   technology/request-for-quote: technology/protocols.md
   technology/last-look: technology/protocols.md
-  guides/voters: community/onboarding.md
-  guides/ambassadors: community/onboarding.md
-  guides/authors: community/onboarding.md
+  guides/voters: README.md
+  guides/ambassadors: README.md
+  guides/authors: README.md
   technology/signatures: technology/orders.md
+  community/onboarding: README.md
