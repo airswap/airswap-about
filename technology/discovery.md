@@ -1,6 +1,6 @@
-# Discovery
+# Registry
 
-To find servers that support a token pair, clients call the `getURLsForToken` function on the [MakerRegistry](deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
+To find servers that support a token pair, clients call the `getURLsForToken` function on the [Registry](deployments.md) contract for each token and then intersect the results. For example, if the resulting URLs for token A are `[maker1.com, maker2.com]` and for token B are `[maker2.com, maker3.com]` then the only server supporting swapping token A for B is `maker2.com`.
 
 See `getURLsForToken` on the Registry contract:
 
@@ -22,7 +22,7 @@ Use `airswap chain` to set your chain to Goerli or Mainnet.
 
 ```
 $ airswap chain
-AirSwap CLI 3.1.0 — https://www.airswap.io/
+AirSwap CLI 4.0.1 — https://www.airswap.io/
 
 set the active ethereum chain
 
@@ -37,7 +37,7 @@ Use `registry:get` to fetch server URLs for a token pair.
 
 ```
 $ airswap registry:get
-AirSwap CLI 3.1.0 — https://www.airswap.io/
+AirSwap CLI 4.0.1 — https://www.airswap.io/
 
 get urls from the registry ETHEREUM
 
@@ -56,59 +56,64 @@ Try `airswap rfq:get` with a server URL from the previous command.
 
 ## TypeScript
 
-Using the `MakerRegistry` library from `@airswap/libraries` returns `Maker` instances that you can interact with.
+Using the `Registry` library from `@airswap/libraries` returns `Server` instances that you can interact with.
 
 ```typescript
-import { MakerRegistry } from '@airswap/libraries'
-const servers = await new MakerRegistry(chainId, provider).getMakers(
+import { Protocols } from "@airswap/constants";
+import { Registry } from '@airswap/libraries'
+const servers = await Registry.getServers(
+  provider,
+  chainId,
+  Protocols.RequestForQuoteERC20,
   signerToken,
-  senderToken,
+  senderToken
 )
 ```
 
-Calling the MakerRegistry directly using `ethers`
+Calling the Registry directly using `ethers`
 
 ```typescript
 import { ethers } from 'ethers'
 import { chainNames } from '@airswap/constants'
-import * as MakerRegistryContract from '@airswap/maker-registry/build/contracts/MakerRegistry.sol/MakerRegistry.json'
-import * as makerRegistryDeploys from '@airswap/maker-registry/deploys.js'
-const MakerRegistryInterface = new ethers.utils.Interface(
-  JSON.stringify(MakerRegistryContract.abi),
+import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
+import * as registryDeploys from '@airswap/registry/deploys.js'
+const RegistryInterface = new ethers.utils.Interface(
+  JSON.stringify(RegistryContract.abi),
 )
 
 new ethers.Contract(
-  makerRegistryDeploys[chainId],
-  MakerRegistryInterface,
+  registryDeploys[chainId],
+  RegistryInterface,
   ethers.getDefaultProvider(chainNames[chainId].toLowerCase()),
 )
 
-const baseTokenURLs = await this.contract.getURLsForToken(baseToken)
-const quoteTokenURLs = await this.contract.getURLsForToken(quoteToken)
+const signerTokenURLs = await this.contract.getURLsForToken(signerToken)
+const senderTokenURLs = await this.contract.getURLsForToken(senderToken)
 
-const serverURLs = baseTokenURLs.filter((value) =>
-  quoteTokenURLs.includes(value),
+const serverURLs = signerTokenURLs.filter((value) =>
+  senderTokenURLs.includes(value),
 )
 ```
 
 ### Example: Take an Order
 
 ```typescript
-import { MakerRegistry, SwapERC20 } from '@airswap/libraries'
+import { Registry, SwapERC20 } from '@airswap/libraries'
 import { chainNames } from '@airswap/constants'
 
-const provider = ethers.getDefaultProvider(chainNames[chainId].toLowerCase())
-
-const makers = await new MakerRegistry(chainId, provider).getMakers(
-  quoteToken,
-  baseToken,
+const servers = await Registry.getServers(
+  provider,
+  chainId,
+  Protocols.RequestForQuoteERC20,
+  signerToken,
+  senderToken
 )
 
-const order = makers[0].getSignerSideOrderERC20(
-  baseTokenAmount,
-  quoteToken,
-  baseToken,
-  wallet.address,
+const order = servers[0].getSignerSideOrderERC20(
+  senderAmount,
+  signerToken,
+  senderToken,
+  senderWallet
 )
 
 const tx = await new SwapERC20(chainId, provider).swapLight(order)

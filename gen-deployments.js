@@ -1,6 +1,6 @@
 const fs = require('fs')
-const { getEtherscanWalletURL } = require('@airswap/utils')
-const { mainnets, testnets, chainNames, chainIds } = require('@airswap/constants')
+const { getAccountUrl } = require('@airswap/utils')
+const { mainnets, testnets, chainNames, ChainIds } = require('@airswap/constants')
 
 const contracts = [{
   name: 'SwapERC20',
@@ -12,11 +12,8 @@ const contracts = [{
   name: 'Wrapper',
   deploys: require('@airswap/wrapper/deploys')
 }, {
-  name: 'MakerRegistry',
-  deploys: require('@airswap/maker-registry/deploys')
-}, {
-  name: 'IndexerRegistry',
-  deploys: require('@airswap/indexer-registry/deploys')
+  name: 'Registry',
+  deploys: require('@airswap/registry/deploys')
 }, {
   name: 'Pool',
   deploys: require('@airswap/pool/deploys')
@@ -39,7 +36,7 @@ function printContracts(contracts, chainid) {
   let md = ''
   for (let contract in contracts) {
     let address = contracts[contract].deploys[chainid]
-    if (!!address) md += `- ${contracts[contract].name} — [\`${address}\`](${getEtherscanWalletURL(chainid, address)}#code)\n`
+    if (!!address) md += `- ${contracts[contract].name} — [\`${address}\`](${getAccountUrl(chainid, address)}#code)\n`
   }
   return md
 }
@@ -57,13 +54,13 @@ for (let net in mainnets) {
 markdown += "# AirSwap V4: Testnets\n\n"
 for (let net in testnets) {
   let name = initial(chainNames[testnets[net]])
-  if (testnets[net] !== chainIds.HARDHAT) markdown += `## ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
+  if (testnets[net] !== ChainIds.HARDHAT) markdown += `## ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
 }
 
 markdown += '\n\n# Legacy\n\n## AirSwap V3: Swap\n\n'
 for (let chainid in active) {
   let name = initial(chainNames[chainid])
-  markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getEtherscanWalletURL(chainid, active[chainid])}#code)\n`
+  markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getAccountUrl(chainid, active[chainid])}#code)\n`
 }
 
 markdown += '\n\n## AirSwap V2\n\n\
@@ -73,8 +70,9 @@ markdown += '\n\n## AirSwap V2\n\n\
 - AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)\n'
 
 markdown += '\n\n# Security Audits\n\n\
-- [AirSwap V4: Audit Report (SwapERC20, Swap, Wrapper)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
-- [AirSwap V3: Audit Report (MakerRegistry, Pool, Staking)](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)\n'
+- [AirSwap V4: Audit Report: SwapERC20, Swap, Wrapper](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
+- [AirSwap V4: Audit Report: Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
+- [AirSwap V3: Audit Report: Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)'
 
 fs.writeFileSync(
   './technology/deployments.md',
