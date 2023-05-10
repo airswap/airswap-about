@@ -73,7 +73,7 @@ markdown += '\n\n## AirSwap V2\n\n\
 
 markdown += '\n\n# Security Audits\n\n\
 - [AirSwap V4: Audit Report: SwapERC20, Swap, Wrapper](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
-- [AirSwap V4: Audit Report: Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
+- [AirSwap V4: Audit Report: Staking, Registry](https://github.com/peckshield/publications/tree/master/audit_reports/PeckShield-Audit-Report-AirSwap-Staking-v1.0.pdf)\n\
 - [AirSwap V3: Audit Report: Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.pdf)'
 
 fs.writeFileSync(
