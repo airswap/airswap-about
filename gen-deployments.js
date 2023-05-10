@@ -13,7 +13,7 @@ const contracts = [{
   deploys: require('@airswap/wrapper/deploys')
 }, {
   name: 'Registry',
-  deploys: require('@airswap/registry/deploys')
+  deploys: require('@airswap/maker-registry/deploys')
 }, {
   name: 'Pool',
   deploys: require('@airswap/pool/deploys')

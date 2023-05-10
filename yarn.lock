@@ -7,19 +7,19 @@
   resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.2.tgz#631007239da140124cda7987e08fad92e6621e3f"
   integrity sha512-6fdyguI9sX9Z3+zuMgnyPAq96nhyM9b58kZ4vI3YRV3P6AdXZNMf9zbBWDGOuoJ+d11bvmgtbf1Amjpvepa51A==
 
+"@airswap/maker-registry@^3.0.0":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@airswap/maker-registry/-/maker-registry-3.1.5.tgz#89d5308401a302892d81bf6ed488f519fc0c2967"
+  integrity sha512-m/gLUMX1KJsHfD3dAm5/9uzPj84/ASVEFgHalwlAIJwQ1fXVDsus+QO8h7sD3ZFFUOEWms5EsMIlsVSm3CXTQA==
+  dependencies:
+    "@openzeppelin/contracts" "^4.8.1"
+
 "@airswap/pool@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@airswap/pool/-/pool-4.0.1.tgz#a28e91b3032247a772631234699e37df26311c26"
   integrity sha512-G9ERwA1slGOSqimoJxIoDYW5swVm/5B3SA/1bFgxiyEZxo3J6nj3rwqRJY2Q4up5FsMYGpwJkDU4FjBHbNCjFw==
   dependencies:
     "@airswap/staking" "4.0.1"
-    "@openzeppelin/contracts" "^4.8.3"
-
-"@airswap/registry@^4.0.0":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@airswap/registry/-/registry-4.0.2.tgz#4a3e09ea8d3d2b8aeea2cd94184c5167c06670ea"
-  integrity sha512-BjdAyg5Nx9r6+z3YctiGotSu67Gz60Xcr0MxTfbEQhVeRGdfi0HGsZoy08eAW/GOWltteRXEbh2aP9/6Aji/fw==
-  dependencies:
     "@openzeppelin/contracts" "^4.8.3"
 
 "@airswap/staking@4.0.1", "@airswap/staking@^4.0.0":

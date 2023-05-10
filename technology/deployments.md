@@ -5,7 +5,7 @@
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://etherscan.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0x6aAf11d89bb380499EB14ddDE5ac6b45a0e15bEc`](https://etherscan.io//address/0x6aAf11d89bb380499EB14ddDE5ac6b45a0e15bEc#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://etherscan.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
-- Registry — [`0xf5E6730c5A915b6f47AeAB0952655036aE2e73E9`](https://etherscan.io//address/0xf5E6730c5A915b6f47AeAB0952655036aE2e73E9#code)
+- Registry — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io//address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code)
 - Pool — [`0xe2E7AE67E7ee6d4D90dfef945aB6dE6A14dB4c17`](https://etherscan.io//address/0xe2E7AE67E7ee6d4D90dfef945aB6dE6A14dB4c17#code)
 - Staking — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io//address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io//address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
@@ -14,6 +14,7 @@
 
 - SwapERC20 — [`0x51F372bE64F0612532F28142cECF8F204B272622`](https://blockscout.com/rsk/mainnet//address/0x51F372bE64F0612532F28142cECF8F204B272622#code)
 - Wrapper — [`0x66bb3d0909FCAEB4316D57981e7BBBB31F502858`](https://blockscout.com/rsk/mainnet//address/0x66bb3d0909FCAEB4316D57981e7BBBB31F502858#code)
+- Registry — [`0xE0EE84592b12cfcd03843DE12b58852879ee6FF5`](https://blockscout.com/rsk/mainnet//address/0xE0EE84592b12cfcd03843DE12b58852879ee6FF5#code)
 - Pool — [`0x9e9c21C4747B078712D2bb49A279A043973BE9a0`](https://blockscout.com/rsk/mainnet//address/0x9e9c21C4747B078712D2bb49A279A043973BE9a0#code)
 - AST — [`0x71070c5607358fc25e3b4aaf4fb0a580c190252a`](https://blockscout.com/rsk/mainnet//address/0x71070c5607358fc25e3b4aaf4fb0a580c190252a#code)
 
@@ -21,6 +22,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://bscscan.com//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A`](https://bscscan.com//address/0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A#code)
 - Pool — [`0x16B57a5958271C479f64BC5F830DfC4f30ba2235`](https://bscscan.com//address/0x16B57a5958271C479f64BC5F830DfC4f30ba2235#code)
 - AST — [`0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1`](https://bscscan.com//address/0x1ac0d76f11875317f8a7d791db94cdd82bd02bd1#code)
 
@@ -28,6 +30,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://polygonscan.com//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://polygonscan.com//address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
 - Pool — [`0xb1b586afa8a2aab42826fb2ab9896cd0c686d0f4`](https://polygonscan.com//address/0xb1b586afa8a2aab42826fb2ab9896cd0c686d0f4#code)
 - AST — [`0x04bEa9FCE76943E90520489cCAb84E84C0198E29`](https://polygonscan.com//address/0x04bEa9FCE76943E90520489cCAb84E84C0198E29#code)
 
@@ -35,6 +38,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://arbiscan.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://arbiscan.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A`](https://arbiscan.io//address/0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A#code)
 - Pool — [`0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4`](https://arbiscan.io//address/0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4#code)
 - AST — [`0xa1135c2f2c7798d31459b5fdaef8613419be1008`](https://arbiscan.io//address/0xa1135c2f2c7798d31459b5fdaef8613419be1008#code)
 
@@ -42,6 +46,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://snowtrace.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0xE40feb39fcb941A633deC965Abc9921b3FE962b2`](https://snowtrace.io//address/0xE40feb39fcb941A633deC965Abc9921b3FE962b2#code)
 - Pool — [`0xd3B6279cD6b21e92A6c53476E59a2C819018D6fE`](https://snowtrace.io//address/0xd3B6279cD6b21e92A6c53476E59a2C819018D6fE#code)
 - AST — [`0x702d0f43edd46b77ea2d48570b02c328a20a94a1`](https://snowtrace.io//address/0x702d0f43edd46b77ea2d48570b02c328a20a94a1#code)
 
@@ -52,7 +57,7 @@
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://goerli.etherscan.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Swap — [`0x974B5023E5b45a222E99036c3C9604D388E2d2B7`](https://goerli.etherscan.io//address/0x974B5023E5b45a222E99036c3C9604D388E2d2B7#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://goerli.etherscan.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
-- Registry — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://goerli.etherscan.io//address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
+- Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://goerli.etherscan.io//address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
 - Pool — [`0x62069Ff3b5127742B0D86b5fF5C6c21cF5e44154`](https://goerli.etherscan.io//address/0x62069Ff3b5127742B0D86b5fF5C6c21cF5e44154#code)
 - Staking — [`0x51F372bE64F0612532F28142cECF8F204B272622`](https://goerli.etherscan.io//address/0x51F372bE64F0612532F28142cECF8F204B272622#code)
 - AST — [`0x1a1ec25dc08e98e5e93f1104b5e5cdd298707d31`](https://goerli.etherscan.io//address/0x1a1ec25dc08e98e5e93f1104b5e5cdd298707d31#code)
@@ -61,6 +66,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://explorer.testnet.rsk.co//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://explorer.testnet.rsk.co//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x517d482F686f11b922EED764692f2b42663ce2fa`](https://explorer.testnet.rsk.co//address/0x517d482F686f11b922EED764692f2b42663ce2fa#code)
 - Pool — [`0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4`](https://explorer.testnet.rsk.co//address/0xb1B586AfA8a2AaB42826Fb2Ab9896CD0c686d0F4#code)
 - AST — [`0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3`](https://explorer.testnet.rsk.co//address/0x9c7005fa2f8476e2331f45f69e0930a4c9eff0c3#code)
 
@@ -68,6 +74,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://testnet.bscscan.com//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://testnet.bscscan.com//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://testnet.bscscan.com//address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
 - Pool — [`0x64888583E676368390D6eB573bC2AC3bCE9002B3`](https://testnet.bscscan.com//address/0x64888583E676368390D6eB573bC2AC3bCE9002B3#code)
 - AST — [`0xd161ddcfcc0c2d823021aa26200824efa75218d1`](https://testnet.bscscan.com//address/0xd161ddcfcc0c2d823021aa26200824efa75218d1#code)
 
@@ -75,6 +82,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://mumbai.polygonscan.com//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://mumbai.polygonscan.com//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://mumbai.polygonscan.com//address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
 - Pool — [`0xC32a3c867aBAd28d977e1724f92D9684fF3d2976`](https://mumbai.polygonscan.com//address/0xC32a3c867aBAd28d977e1724f92D9684fF3d2976#code)
 - AST — [`0xd161ddcfcc0c2d823021aa26200824efa75218d1`](https://mumbai.polygonscan.com//address/0xd161ddcfcc0c2d823021aa26200824efa75218d1#code)
 
@@ -82,6 +90,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://goerli.arbiscan.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://goerli.arbiscan.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x517d482F686f11b922EED764692f2b42663ce2fa`](https://goerli.arbiscan.io//address/0x517d482F686f11b922EED764692f2b42663ce2fa#code)
 - Pool — [`0x5E5A433cdfB14aB228c45E23251Ad83F7b1E3302`](https://goerli.arbiscan.io//address/0x5E5A433cdfB14aB228c45E23251Ad83F7b1E3302#code)
 - AST — [`0x71070c5607358fc25e3b4aaf4fb0a580c190252a`](https://goerli.arbiscan.io//address/0x71070c5607358fc25e3b4aaf4fb0a580c190252a#code)
 
@@ -89,13 +98,13 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://testnet.snowtrace.io//address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://testnet.snowtrace.io//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Registry — [`0x4F290e83B414097C107F5AD483a9ae15434B43d3`](https://testnet.snowtrace.io//address/0x4F290e83B414097C107F5AD483a9ae15434B43d3#code)
 - Pool — [`0x1CfA1b1809b9fF6bDCE1d4c5fCc842eAA31a836d`](https://testnet.snowtrace.io//address/0x1CfA1b1809b9fF6bDCE1d4c5fCc842eAA31a836d#code)
 - AST — [`0x48c427e7cEf42399e9e8300fC47875772309e995`](https://testnet.snowtrace.io//address/0x48c427e7cEf42399e9e8300fC47875772309e995#code)
 
 ## Linea (59140)
 
 - Swap — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://explorer.goerli.linea.build//address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
-- Registry — [`0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD`](https://explorer.goerli.linea.build//address/0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD#code)
 - AST — [`0x2C1b868d6596a18e32E61B901E4060C872647b6C`](https://explorer.goerli.linea.build//address/0x2C1b868d6596a18e32E61B901E4060C872647b6C#code)
 
 
