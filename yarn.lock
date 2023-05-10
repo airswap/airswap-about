@@ -3,9 +3,9 @@
 
 
 "@airswap/constants@^4.0.0":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.2.tgz#631007239da140124cda7987e08fad92e6621e3f"
-  integrity sha512-6fdyguI9sX9Z3+zuMgnyPAq96nhyM9b58kZ4vI3YRV3P6AdXZNMf9zbBWDGOuoJ+d11bvmgtbf1Amjpvepa51A==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.3.tgz#be0cd8ca6bd16f1007a83c86cf967b77ab3b9366"
+  integrity sha512-8lFLbrwTzdTaGJz3Fs1PWm02j/4Z5BevYmREkDFiJLxmdErC9HwJ9l2+dPu/4QBLkCRtce3l7LdvUHzTGfZfRw==
 
 "@airswap/maker-registry@^3.0.0":
   version "3.1.5"
@@ -51,9 +51,9 @@
     "@uniswap/token-lists" "^1.0.0-beta.31"
 
 "@airswap/utils@^4.0.0":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.4.tgz#35112ce7c9d4433cd0a3aac446bd5e73a6c79037"
-  integrity sha512-msuVQ1buGvJT+EfUiztMUwolKY44VpLIH04aJQm5wYeu+xaU3O2eqVQcd3bfZuowbhpJpbGJmzfbflAvKVf/VA==
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.5.tgz#02f3653b415448d1c48b37619029a0aaa03525b1"
+  integrity sha512-6SLrw2G+hbhcpz8D1Rk7nJz7jx1HvZjHZEsyySLU8QtZ9spLAWxBavs/pMaD1wdSPo5rVpRcAqVe8tsWFTUPAg==
   dependencies:
     "@airswap/constants" "^4.0.0"
     "@airswap/types" "^4.0.0"
@@ -565,9 +565,9 @@
     "@types/unist" "*"
 
 "@types/node@*":
-  version "20.1.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.0.tgz#258805edc37c327cf706e64c6957f241ca4c4c20"
-  integrity sha512-O+z53uwx64xY7D6roOi4+jApDGFg0qn6WHcxe5QeqjMaTezBO/mxdfFXIVAVVyNWKx84OmPB3L8kbVYOTeN34A==
+  version "20.1.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.2.tgz#8fd63447e3f99aba6c3168fd2ec4580d5b97886f"
+  integrity sha512-CTO/wa8x+rZU626cL2BlbCDzydgnFNgc19h4YvizpTO88MFQxab8wqisxaofQJ/9bLGugRdWIuX/TbIs6VVF6g==
 
 "@types/pbkdf2@^3.0.0":
   version "3.1.0"
