@@ -22,7 +22,9 @@ const contracts = [{
   deploys: require('@airswap/staking/deploys')
 }, {
   name: 'AST',
-  deploys: require('@airswap/constants').stakingTokenAddresses
+  deploys: {
+    1: require('@airswap/constants').stakingTokenAddresses[1]
+  }
 }]
 
 const active = {
