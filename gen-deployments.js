@@ -15,6 +15,9 @@ const contracts = [{
   name: 'Registry',
   deploys: require('@airswap/maker-registry/deploys')
 }, {
+  name: 'RegistryV4',
+  deploys: require('@airswap/registry/deploys')
+}, {
   name: 'Pool',
   deploys: require('@airswap/pool/deploys')
 }, {

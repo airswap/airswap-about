@@ -6,6 +6,7 @@
 - Swap — [`0x6aAf11d89bb380499EB14ddDE5ac6b45a0e15bEc`](https://etherscan.io/address/0x6aAf11d89bb380499EB14ddDE5ac6b45a0e15bEc#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://etherscan.io/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
 - Registry — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code)
+- RegistryV4 — [`0xf5E6730c5A915b6f47AeAB0952655036aE2e73E9`](https://etherscan.io/address/0xf5E6730c5A915b6f47AeAB0952655036aE2e73E9#code)
 - Pool — [`0xe2E7AE67E7ee6d4D90dfef945aB6dE6A14dB4c17`](https://etherscan.io/address/0xe2E7AE67E7ee6d4D90dfef945aB6dE6A14dB4c17#code)
 - Staking — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
@@ -53,6 +54,7 @@
 - Swap — [`0x974B5023E5b45a222E99036c3C9604D388E2d2B7`](https://goerli.etherscan.io/address/0x974B5023E5b45a222E99036c3C9604D388E2d2B7#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://goerli.etherscan.io/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
 - Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://goerli.etherscan.io/address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
+- RegistryV4 — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://goerli.etherscan.io/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
 - Pool — [`0x62069Ff3b5127742B0D86b5fF5C6c21cF5e44154`](https://goerli.etherscan.io/address/0x62069Ff3b5127742B0D86b5fF5C6c21cF5e44154#code)
 - Staking — [`0x51F372bE64F0612532F28142cECF8F204B272622`](https://goerli.etherscan.io/address/0x51F372bE64F0612532F28142cECF8F204B272622#code)
 
@@ -93,7 +95,10 @@
 
 ## Linea (59140)
 
+- SwapERC20 — [`0x1E92FFC1c39a0a982c462f521a135a0407b21B71`](https://explorer.goerli.linea.build/address/0x1E92FFC1c39a0a982c462f521a135a0407b21B71#code)
 - Swap — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://explorer.goerli.linea.build/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Wrapper — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://explorer.goerli.linea.build/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
+- RegistryV4 — [`0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD`](https://explorer.goerli.linea.build/address/0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD#code)
 
 
 
