@@ -341,7 +341,7 @@ Upon connection, the server calls `setProtocols` on the client.
       {
         "interfaceId": "0x2ca4c820",
         "params": {
-          "chainId": 1,
+          "chainId": "1",
           "swapContractAddress": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
           "walletAddress": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f"
         }
