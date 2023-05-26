@@ -67,7 +67,7 @@ Content-Type: application/json
   "id": 123,
   "method": "getSignerSideOrderERC20",
   "params": {
-    "chainId": "1"
+    "chainId": "1",
     "swapContract": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
@@ -392,10 +392,9 @@ Upon connection, the server sends an `setSupportedProtocols` notification to the
   "params": [
     [
       {
-        "name": "last-look-erc20",
-        "version": "1.0.0",
+        "interfaceId": "0x2ca4c820",
         "params": {
-          "chainId": 1,
+          "chainId": "1",
           "swapContract": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
           "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
           "senderServer": "www.maker.com",
