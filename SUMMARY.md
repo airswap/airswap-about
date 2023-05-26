@@ -7,7 +7,6 @@
 ## Community
 
 - [Code of Conduct](community/conduct.md)
-- [Join as a Contributor](community/onboarding.md)
 - [Rewards and Tips](community/earning.md)
 - [Proposals](community/proposals.md)
 

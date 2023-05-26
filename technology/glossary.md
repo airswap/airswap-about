@@ -82,9 +82,9 @@ _Protocol_
 
 <img src="../images/rfq-diagram.png" />
 
-# Last Look (LL)
+# LastLook (LL)
 
-**Last Look (LL) is a form of P2P Swaps** among clients and servers on the Internet. LL is an automated streaming protocol that allows servers to stream pricing updates to clients via WebSocket, which in turn sign and transmit orders back to the server.
+**LastLook (LL) is a form of P2P Swaps** among clients and servers on the Internet. LL is an automated streaming protocol that allows servers to stream pricing updates to clients via WebSocket, which in turn sign and transmit orders back to the server.
 
 _Features_
 

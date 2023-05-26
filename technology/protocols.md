@@ -1,27 +1,68 @@
-AirSwap trading technology is fully decentralized, powered by smart contracts enabling counterparty discovery and performing atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
+AirSwap trading technology is fully decentralized, powered by smart contracts that enable counterparty discovery and atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
-For information on finding counter-parties, see [Discovery](discovery.md).
+For information on finding counter-parties, see [Registry](registry.md).
 
-# RFQ-ERC20
+# Discovery
 
-AirSwap [RFQ](./glossary.md#request-for-quote-rfq)-ERC20 is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (e.g. `signerAmount`, `signerToken`) and the client is the sender (e.g. `senderAmount`, `senderToken`).
+AirSwap Discovery protocol is used to determine the trading protocols and tokens supported by peers.
 
-## `setSupportedProtocols`
+## `getProtocols`
 
-If connected via WebSocket, the server must call `setSupportedProtocols` upon connection by the client and indicate `request-for-quote-erc20` among its list of supported protocols.
+Peers may call `getProtocols` to determine protocols supported by a peer. Protocols are identified by `interfaceId` and configuration params include the `chainId`, `swapContractAddress`, and `walletAddress` that the peer intends to use.
 
 ```typescript
-setSupportedProtocols([
+getProtocols(): [
   {
-    name: 'request-for-quote-erc20',
-    version: '1.0.0'
+    interfaceId: string,
+    params: {
+      chainId: string,
+      swapContractAddress: string,
+      walletAddress: string,
+    }
   }, ...
-})
+]
 ```
+
+## `setProtocols`
+
+When connected via WebSocket, the server may send a `setProtocols` notification to the client to indicate the protocols it supports. Protocols are identified by `interfaceId` and configuration params include the `chainId`, `swapContractAddress`, and `walletAddress` the server intends to use.
+
+```typescript
+setProtocols([
+  {
+    interfaceId: string,
+    params: {
+      chainId: string,
+      swapContractAddress: string,
+      walletAddress: string,
+    }
+  }, ...
+])
+```
+
+## `getTokens`
+
+Peers may call `getTokens` to determine tokens supported by another peer, whether connected via HTTPS or WebSocket. The return value is an array of tokens identified by the token contract address.
+
+```typescript
+getTokens(): [ tokenContractAddress, ... ]
+```
+
+## `setTokens`
+
+When connected via WebSocket, the server may send a `setTokens` notification to indicate the tokens it supports.
+
+```typescript
+setTokens([ tokenContractAddress, ... ])
+```
+
+# RequestForQuoteERC20
+
+AirSwap [RequestForQuoteERC20](./glossary.md#request-for-quote-rfq) is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (i.e. `signerAmount`, `signerToken`) and the client is the sender (i.e. `senderAmount`, `senderToken`).
 
 ## `getSignerSideOrderERC20`
 
-Given a `senderAmount` the server returns a signed OrderERC20 with a `signerAmount`. The client is **selling** to the server.
+Given a `senderAmount` the server returns a signed OrderERC20 including the `signerAmount`. The client is **selling** to the server. Client may optionally request an expiry in seconds, otherwise the expiry is determined by the server. Returns an order.
 
 ```typescript
 getSignerSideOrderERC20(
@@ -31,13 +72,14 @@ getSignerSideOrderERC20(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-)
+  expiry?: string,      // Requested order expiry
+  proxyingFor?: string, // Ultimate counterparty
+): OrderERC20
 ```
 
 ## `getSenderSideOrderERC20`
 
-Given a `signerAmount` the server returns a signed OrderERC20 with a `senderAmount`. The client is **buying** from the server.
+Given a `signerAmount` the server returns a signed OrderERC20 with a `senderAmount`. The client is **buying** from the server. Client may optionally request an expiry in seconds, otherwise the expiry is determined by the server. Returns an order.
 
 ```typescript
 getSenderSideOrderERC20(
@@ -47,13 +89,52 @@ getSenderSideOrderERC20(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  proxyingFor: string,  // Ultimate counterparty of the swap (Optional)
-)
+  expiry?: string,      // Requested order expiry
+  proxyingFor?: string, // Ultimate counterparty
+): OrderERC20
 ```
 
-## Examples
+## `getPricingERC20`
 
-Clients find servers using the [Discovery](discovery.md) protocol. With server URLs in hand, clients call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests.
+Client may request soft pricing for a list of token pairs. Client may optionally request an expiry in seconds is factored into pricing. Returns current formula or levels for each pair.
+
+```typescript
+getPricingERC20(
+  [
+    {
+      baseToken: string,
+      quoteToken: string
+    }, ...
+  ],
+  expiry?: string,
+): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, ...
+]
+```
+
+Client may also request pricing for all available pairs.
+
+```typescript
+getAllPricingERC20(): [
+  {
+    baseToken: string,
+    quoteToken: string,
+    minimum: string,
+    bid: Levels | Formula,
+    ask: Levels | Formula
+  }, ...
+]
+```
+
+## Example
+
+To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients may call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests on servers that support RequestForQuoteERC20.
 
 ### Client Request
 
@@ -77,7 +158,7 @@ Content-Type: application/json
 }
 ```
 
-Requests can also be made using curl etc.
+Requests can also be made using curl or wget for debugging.
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -87,7 +168,7 @@ curl -H 'Content-Type: application/json' \
 
 ### Server Response
 
-See the [signatures](signatures.md) page for creating and signing an OrderERC20.
+See the [signatures](signatures.md) page for details on signing an OrderERC20.
 
 ```javascript
 HTTP/1.1 200 OK
@@ -117,7 +198,7 @@ Content-Type: application/json
 
 ### Client Settlement
 
-With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a properly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
 
 ```typescript
   function swapLight(
@@ -147,65 +228,11 @@ With an OrderERC20 in hand, the client sends an Ethereum transaction to the [Swa
   );
 ```
 
-The server or client may subscribe to a filter for a `SwapERC20` event with the order `nonce`.
+The server or client may subscribe to a filter for a `SwapERC20` event with the order `nonce` to track fills.
 
-# Last-Look-ERC20
+# LastLookERC20
 
-AirSwap [Last-Look](./glossary.md#last-look-ll)-ERC20 is a protocol used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
-
-## `setSupportedProtocols`
-
-To support Last Look, the server must call `setSupportedProtocols` upon connection by the client and indicate `last-look-erc20` among its list of supported protocols. Additional params include the `chainId` and `swapContract` the server intends to use, the `senderWallet` the server intends to use, and optionally a `senderServer` if the server is not receiving `considerOrderERC20` calls over the socket and instead an alternative JSON-RPC over HTTP endpoint. The `setSupportedProtocols` method either returns `true` or throws an error if something went wrong on the client side.
-
-```typescript
-setSupportedProtocols([
-  {
-    name: "last-look-erc20",
-    version: "1.0.0",
-    params: {
-      chainId: number,
-      swapContract: string,
-      senderWallet: string,
-      senderServer?: string,
-    }
-  }, ...
-]): boolean
-```
-
-## `getPricingERC20`
-
-Client requests pricing for a list of token pairs. Returns current formula or levels for each pair.
-
-```typescript
-getPricingERC20([
-  {
-    baseToken: string,
-    quoteToken: string
-  }, { ... }
-]): [
-  {
-    baseToken: string,
-    quoteToken: string,
-    minimum: string,
-    bid: Levels | Formula,
-    ask: Levels | Formula
-  }, { ... }
-]
-```
-
-Client may also request pricing for all available pairs.
-
-```typescript
-getAllPricingERC20(): [
-  {
-    baseToken: string,
-    quoteToken: string,
-    minimum: string,
-    bid: Levels | Formula,
-    ask: Levels | Formula
-  }, { ... }
-]
-```
+AirSwap [LastLookERC20](./glossary.md#last-look-ll) is used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
 
 ## `subscribePricingERC20`
 
@@ -216,7 +243,7 @@ subscribePricingERC20([
   {
     baseToken: string,
     quoteToken: string
-  }, { ... }
+  }, ...
 ]): [
   {
     baseToken: string,
@@ -224,11 +251,11 @@ subscribePricingERC20([
     minimum: string,
     bid: Levels | Formula,
     ask: Levels | Formula
-  }, { ... }
+  }, ...
 ]
 ```
 
-Client may also subscribe to pricing updates for all available pairs.
+Client may also subscribe to pricing updates for all available pairs. Returns current formula or levels for each pair.
 
 ```typescript
 subscribeAllPricingERC20(): [
@@ -238,7 +265,7 @@ subscribeAllPricingERC20(): [
     minimum: string,
     bid: Levels | Formula,
     ask: Levels | Formula
-  }, { ... }
+  }, ...
 ]
 ```
 
@@ -251,19 +278,19 @@ unsubscribePricingERC20([
   {
     baseToken: string,
     quoteToken: string
-  }, { ... }
+  }, ...
 ]): boolean
 ```
 
-Client may also unsubscribe from all subscriptions.
+Client may also unsubscribe from all subscriptions. Returns a boolean.
 
 ```typescript
-unsubscribePricingAllERC20(): boolean
+unsubscribeAllPricingERC20(): boolean
 ```
 
 ## `setPricingERC20`
 
-Server updates pricing for one or more token pairs. Returns boolean `true` if accepted by the client.
+Server updates pricing for one or more token pairs. Returns a boolean.
 
 ```typescript
 setPricingERC20([
@@ -273,13 +300,13 @@ setPricingERC20([
     minimum: string,
     bid: Levels | Formula,
     ask: Levels | Formula
-  }, { ... }
-]): boolean
+  }, ...
+])
 ```
 
 ## `considerOrderERC20`
 
-Client provides a priced OrderERC20 to the server. If the server has set a `senderServer` this method is to be called on that URL via JSON-RPC over HTTP. Returns boolean `true` if accepted by the server.
+Client provides a priced OrderERC20 to the server. Returns boolean `true` if accepted by the server.
 
 ```typescript
 considerOrderERC20({
@@ -296,7 +323,137 @@ considerOrderERC20({
 }): boolean
 ```
 
-## Pricing
+## Example
+
+To find counterparties, see [Discovery](discovery.md). With WebSocket server URLs in hand (i.e. the URL schema is `wss`), clients connect to each and calls methods as JSON-RPC over WebSocket.
+
+### WebSocket
+
+Upon connection, the server calls `setProtocols` on the client.
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "method": "setProtocols",
+  "id": 123,
+  "params": [
+    [
+      {
+        "interfaceId": "0x2ca4c820",
+        "params": {
+          "chainId": 1,
+          "swapContractAddress": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
+          "walletAddress": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f"
+        }
+      }
+    ]
+  ]
+}
+```
+
+The client may then subscribe to pricing updates.
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "method": "subscribeAllPricingERC20",
+  "id": 123,
+  "params": []
+}
+```
+
+The server then continuously updates the client with new pricing.
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "method": "setPricingERC20",
+  "id": 123,
+  "params": [
+    [
+      {
+        "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "bid": [
+          ["100", "0.00053"],
+          ["1000", "0.00061"],
+          ["10000", "0.0007"]
+        ],
+        "ask": [
+          ["100", "0.00055"],
+          ["1000", "0.00067"],
+          ["10000", "0.0008"]
+        ]
+      }
+    ]
+  ]
+}
+```
+
+The client may send an OrderERC20 to the server to consider a swap.
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "id": 123,
+  "method": "considerOrderERC20",
+  "params": {
+    "nonce": "1",
+    "expiry": "1629117312",
+    "signerWallet": "0x0...",
+    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "signerAmount": "1000000000",
+    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "senderAmount": "530000000000000000",
+    "v": "28",
+    "r": "0x0...",
+    "s": "0x0..."
+  }
+}
+```
+
+With an OrderERC20 in hand, the server sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+
+The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server to track fills.
+
+# StorageERC20
+
+AirSwap StorageERC20 is used by peers to add and get OrderERC20s to and from other peers.
+
+## `addOrderERC20`
+
+Peers may call `addOrderERC20` to add an order to another peer.
+
+```typescript
+addOrderERC20(
+  nonce: string,
+  expiry: string,
+  signerWallet: string,
+  signerToken: string,
+  signerAmount: string,
+  senderToken: string,
+  senderAmount: string,
+  v: string,
+  r: string,
+  s: string
+)
+```
+
+## `getOrdersERC20`
+
+Peers may call `getOrdersERC20` to query for orders stored on another peer.
+
+```typescript
+getOrdersERC20(
+  sortField: string,
+  senderToken: string[],
+  page: string,
+  filters: string,
+  sortOrder: string
+)
+```
+
+# Pricing Formats
 
 Server pricing can be communicated either by levels or a formula. All input and output values for pricing are in base units rather than atomic units. When generating orders, all values must be converted to atomic units.
 
@@ -377,95 +534,3 @@ The server can specify formulas to use for pricing. Each formula is an expressio
 **Client wants to swap WETH into `1000` USDT.** Client looks up baseToken USDT and quoteToken WETH and uses the `ask` levels above. `1000` is multiplied by `0.00055` for a total of `0.55` WETH.
 
 **Client wants to swap USDT into `1` WETH.** Client looks up baseToken WETH and quoteToken USDT and uses the `ask` levels above. `1` is multiplied by `2001` for a total of `2001` WETH.
-
-## Protocol
-
-To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients connect to each and calls methods as JSON-RPC over WebSocket.
-
-Upon connection, the server sends an `setSupportedProtocols` notification to the client.
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "method": "setSupportedProtocols",
-  "id": 123,
-  "params": [
-    [
-      {
-        "interfaceId": "0x2ca4c820",
-        "params": {
-          "chainId": "1",
-          "swapContract": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
-          "senderWallet": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f",
-          "senderServer": "www.maker.com",
-        }
-      }
-    ]
-  ]
-}
-```
-
-The client may then subscribe to pricing updates.
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "method": "subscribeAllPricingERC20",
-  "id": 123,
-  "params": []
-}
-```
-
-The server then continuously updates the client with new pricing.
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "method": "setPricingERC20",
-  "id": 123,
-  "params": [
-    [
-      {
-        "baseToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "quoteToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-        "bid": [
-          ["100", "0.00053"],
-          ["1000", "0.00061"],
-          ["10000", "0.0007"]
-        ],
-        "ask": [
-          ["100", "0.00055"],
-          ["1000", "0.00067"],
-          ["10000", "0.0008"]
-        ]
-      }
-    ]
-  ]
-}
-```
-
-The client may send an OrderERC20 to the server to consider a swap.
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 123,
-  "method": "considerOrderERC20",
-  "params": {
-    "nonce": "1",
-    "expiry": "1629117312",
-    "signerWallet": "0x0...",
-    "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "signerAmount": "1000000000",
-    "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "senderAmount": "530000000000000000",
-    "v": "28",
-    "r": "0x0...",
-    "s": "0x0..."
-  }
-}
-```
-
-After the server accepts an OrderERC20, parameters are submitted as an Ethereum transaction to the `swapLight` function on the [SwapERC20](deployments.md) contract, which emits a `SwapERC20` event on success.
-
-The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server.
