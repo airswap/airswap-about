@@ -62,11 +62,12 @@ for (let net in testnets) {
   if (testnets[net] !== ChainIds.HARDHAT) markdown += `## ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
 }
 
-markdown += '\n\n# Legacy\n\n## AirSwap V3: Swap\n\n'
+markdown += '\n\n# Legacy\n\n## AirSwap V3\n\n'
 for (let chainid in active) {
   let name = initial(chainNames[chainid])
-  markdown += `- ${name} (${chainid}) — [\`${active[chainid]}\`](${getAccountUrl(chainid, active[chainid])}#code)\n`
+  markdown += `- AirSwap V3: Swap (${chainid}) — [\`${active[chainid]}\`](${getAccountUrl(chainid, active[chainid])}#code)\n`
 }
+markdown += '- AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code])\n'
 
 markdown += '\n\n## AirSwap V2\n\n\
 - AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)\n\

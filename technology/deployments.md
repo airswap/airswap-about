@@ -104,12 +104,13 @@
 
 # Legacy
 
-## AirSwap V3: Swap
+## AirSwap V3
 
-- Ethereum (1) — [`0x522d6f36c95a1b6509a14272c17747bbb582f2a6`](https://etherscan.io/address/0x522d6f36c95a1b6509a14272c17747bbb582f2a6#code)
-- Bsc (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
-- Polygon (137) — [`0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a`](https://polygonscan.com/address/0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a#code)
-- Avalanche (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
+- AirSwap V3: Swap (1) — [`0x522d6f36c95a1b6509a14272c17747bbb582f2a6`](https://etherscan.io/address/0x522d6f36c95a1b6509a14272c17747bbb582f2a6#code)
+- AirSwap V3: Swap (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
+- AirSwap V3: Swap (137) — [`0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a`](https://polygonscan.com/address/0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a#code)
+- AirSwap V3: Swap (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
+- AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code])
 
 
 ## AirSwap V2
