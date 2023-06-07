@@ -32,7 +32,7 @@ Au niveau du protocole, chaque échange se fait entre deux parties, un signatair
 
 Plusieurs applications sont disponibles pour les utilisateurs finaux.
 
-* [AirSwap Web](https://preview.airswap.io) — Nouvelle application web open source pour les swaps instantanés.
+* [AirSwap Web](https://airswap.io) — Nouvelle application web open source pour les swaps instantanés.
 * [AirSwap OTC](https://trader.airswap.io) — Interface OTC standard de l'industrie pour des swaps conséquents sur mesure.
 * [AirSwap CLI](https://github.com/airswap/airswap-cli) — Interface en ligne de commande pour interagir avec AirSwap.
 
