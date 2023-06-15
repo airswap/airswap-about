@@ -30,7 +30,7 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 # Peer-to-Peer (P2P) Swaps
 
-Peer-to-peer swaps are enabled by an "atomic" transaction, through which both sides succeed or the entire transaction reverts. These transactions are without intermediaries and "trustless" in a way that neither party needs to trust one another to complete the swap.
+Peer-to-peer token swaps are enabled by an "atomic" transaction in which both sides succeed or the transaction reverts. Pricing is communicated off-chain prior to execution on-chain. These transactions are without intermediaries and "trustless" in a way that neither party needs to trust one another to complete the swap.
 
 At the protocol level, there are **signers**, which cryptographically sign terms (an order), and **senders** which submit those terms for settlement on the atomic swap contract. Different market participants may take the role of signer or sender depending on the flavor of P2P.
 
@@ -106,7 +106,7 @@ _Protocol_
 
 # Peer-to-Contract (P2C) Swaps
 
-Peer-to-contract swaps are enabled by "automated market makers" (AMM), which determine price at time of execution based on a constant product formula. These transactions are without intermediaries and involve one party depositing "liquidity" and another party later taking it.
+Peer-to-contract token swaps are enabled by on-chain "automated market makers" (AMM), which determine price during on-chain execution based on a constant product formula. These transactions are without intermediaries and involve one party depositing "liquidity" and another party later taking it.
 
 Makers in this case are "liquidity providers" who may make adjustments to their positions by depositing to and configuring the AMM. Takers simply execute a swap transaction on the AMM contract frontend often through an easy to use web app.
 
