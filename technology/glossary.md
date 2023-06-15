@@ -30,7 +30,7 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 # Peer-to-Peer (P2P) Swaps
 
-Peer-to-peer token swaps are enabled by an "atomic" transaction in which both sides succeed or the transaction reverts. Pricing is communicated off-chain prior to execution on-chain. These transactions are without intermediaries and "trustless" in a way that neither party needs to trust one another to complete the swap.
+Peer-to-peer token swaps are enabled by an "atomic" transaction in which both sides succeed or the transaction reverts. Pricing is communicated off-chain before executing on-chain. These transactions do not require intermediaries or escrow and are therefore "trustless".
 
 At the protocol level, there are **signers**, which cryptographically sign terms (an order), and **senders** which submit those terms for settlement on the atomic swap contract. Different market participants may take the role of signer or sender depending on the flavor of P2P.
 
@@ -38,10 +38,10 @@ At the protocol level, there are **signers**, which cryptographically sign terms
 
 _Strengths_
 
-- Takers interface with and consume pricing data directly from makers.
-- Makers run fully custom, high performance pricing strategies.
-- Front-running and market manipulation are not possible.
-- Low execution costs due to simplicity of swap logic.
+- No front-running, slippage, or market manipulation.
+- Makers run customized high performance pricing strategies.
+- Takers interface directly with makers in real-time.
+- Low execution costs due to simplicity.
 
 _Limitations_
 
