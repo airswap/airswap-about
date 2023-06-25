@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.6.tgz#25395d9c76f77bf9a3465ccedd94c98491138215"
   integrity sha512-ls9vg97ugtzxCvefah4KY3Ao0cz3SxZf8og7cyhUn+EbI8u2YHEyc3QSw4CrmwHQCX9HZuvxmUf7h1DJ6xs0ug==
 
-"@airswap/maker-registry@^3.0.0":
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/@airswap/maker-registry/-/maker-registry-3.1.5.tgz#89d5308401a302892d81bf6ed488f519fc0c2967"
-  integrity sha512-m/gLUMX1KJsHfD3dAm5/9uzPj84/ASVEFgHalwlAIJwQ1fXVDsus+QO8h7sD3ZFFUOEWms5EsMIlsVSm3CXTQA==
+"@airswap/maker-registry@^4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@airswap/maker-registry/-/maker-registry-4.0.4.tgz#57296740a3c08ee40982c4cbf02e84513df738cc"
+  integrity sha512-EuYXfnsLnRHbxDOONcmV6Qk4Q5CikcyyRki068+w6CwGC3s6FXdgUkSfQ6aYea/GGfjxqVdpHm2xsnyhEx0Z9w==
   dependencies:
     "@openzeppelin/contracts" "^4.8.1"
 

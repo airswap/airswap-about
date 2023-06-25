@@ -22,7 +22,7 @@
 
 - SwapERC20 — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - Wrapper — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://bscscan.com/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
-- Registry — [`0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A`](https://bscscan.com/address/0xaBF694A434E0fE3b951409C01aa2db50Af4D2E3A#code)
+- Registry — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://bscscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
 - Pool — [`0x16B57a5958271C479f64BC5F830DfC4f30ba2235`](https://bscscan.com/address/0x16B57a5958271C479f64BC5F830DfC4f30ba2235#code)
 
 ## Polygon (137)
@@ -98,6 +98,7 @@
 - SwapERC20 — [`0x1E92FFC1c39a0a982c462f521a135a0407b21B71`](https://goerli.lineascan.build/address/0x1E92FFC1c39a0a982c462f521a135a0407b21B71#code)
 - Swap — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://goerli.lineascan.build/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
 - Wrapper — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://goerli.lineascan.build/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
+- Registry — [`0xC97c45dD2A4FDeaC5218823B98bD9e3bb978d84E`](https://goerli.lineascan.build/address/0xC97c45dD2A4FDeaC5218823B98bD9e3bb978d84E#code)
 - RegistryV4 — [`0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD`](https://goerli.lineascan.build/address/0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD#code)
 
 
