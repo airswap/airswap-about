@@ -93,12 +93,12 @@
 - Registry — [`0x4F290e83B414097C107F5AD483a9ae15434B43d3`](https://testnet.snowtrace.io/address/0x4F290e83B414097C107F5AD483a9ae15434B43d3#code)
 - Pool — [`0x1CfA1b1809b9fF6bDCE1d4c5fCc842eAA31a836d`](https://testnet.snowtrace.io/address/0x1CfA1b1809b9fF6bDCE1d4c5fCc842eAA31a836d#code)
 
-## Linea (59140)
+## Linea-goerli (59140)
 
-- SwapERC20 — [`0x1E92FFC1c39a0a982c462f521a135a0407b21B71`](https://explorer.goerli.linea.build/address/0x1E92FFC1c39a0a982c462f521a135a0407b21B71#code)
-- Swap — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://explorer.goerli.linea.build/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
-- Wrapper — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://explorer.goerli.linea.build/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
-- RegistryV4 — [`0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD`](https://explorer.goerli.linea.build/address/0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD#code)
+- SwapERC20 — [`0x1E92FFC1c39a0a982c462f521a135a0407b21B71`](https://goerli.lineascan.build/address/0x1E92FFC1c39a0a982c462f521a135a0407b21B71#code)
+- Swap — [`0x99568Ce6c9901097150403B7629CF426B859BC22`](https://goerli.lineascan.build/address/0x99568Ce6c9901097150403B7629CF426B859BC22#code)
+- Wrapper — [`0x6787cD07B0E6934BA9c3D1eBf3866eF091697128`](https://goerli.lineascan.build/address/0x6787cD07B0E6934BA9c3D1eBf3866eF091697128#code)
+- RegistryV4 — [`0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD`](https://goerli.lineascan.build/address/0xAa7fC83C31db055261cb88e5cAa02CAFe12c8dCD#code)
 
 
 

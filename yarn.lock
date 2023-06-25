@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@airswap/constants@^4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.4.tgz#005866cf69db210aaed844c45463478eee4daaf4"
-  integrity sha512-icV6+UfWhhfxLLm+8nNHxhqZ9gYA+1V+m8Lspaz2CFynvxqyIuc+BRaRafPu+0uk98Q27SHdZSXCcKO6Z+XCOw==
+"@airswap/constants@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@airswap/constants/-/constants-4.0.6.tgz#25395d9c76f77bf9a3465ccedd94c98491138215"
+  integrity sha512-ls9vg97ugtzxCvefah4KY3Ao0cz3SxZf8og7cyhUn+EbI8u2YHEyc3QSw4CrmwHQCX9HZuvxmUf7h1DJ6xs0ug==
 
 "@airswap/maker-registry@^3.0.0":
   version "3.1.5"
@@ -57,12 +57,12 @@
   dependencies:
     "@uniswap/token-lists" "^1.0.0-beta.31"
 
-"@airswap/utils@^4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.6.tgz#321d2510da362056f83be7942273a903b546f3e4"
-  integrity sha512-ZAFsS6PtqeDIivmiR3BFjhM0Ub7Xua918H4tYfPlr1WirVaIEg8pd3C61UF/+M2PsC80LGoA+XrYCrBIgKYmNQ==
+"@airswap/utils@^4.0.7":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@airswap/utils/-/utils-4.0.7.tgz#9bfdc369a5b149cc8b189e696ff7bb3ec7a4d02a"
+  integrity sha512-/fUWzakRLy6IMxGjycRPm9Y5cSPaIyu2aRxgEJj8NrGnKRR2kg0uagFOmDdOGHgmNPT/W6a4AUsMnymcOM803w==
   dependencies:
-    "@airswap/constants" "^4.0.4"
+    "@airswap/constants" "^4.0.6"
     "@airswap/types" "^4.0.4"
     "@metamask/eth-sig-util" "^5.0.2"
     bignumber.js "^9.0.1"
