@@ -28,10 +28,7 @@ Know some other channels which could be useful for community building? Do drop b
 
 ## Analytics
 
-- [AirSwap Dune Dashboard](https://dune.xyz/agrimony/airswap_3)
-- [AirSwap Advanced Dashboard](https://dune.xyz/agrimony/AirSwap-Advanced)
-- [AirSwap Rewards Dashboard](https://dune.xyz/agrimony/AirSwap-Rewards)
-- [Rewards Pool on Zerion](https://app.zerion.io/0x7296333e1615721f4bd9df1a3070537484a50cf8/overview)
+- [AirSwap Dune Dashboard](https://dune.com/airswap/airswap-v3)
 
 ## Media Kit
 

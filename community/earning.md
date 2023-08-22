@@ -18,38 +18,7 @@ Our current split contract is configurable by the Ops multisig, which means spli
 
 ## Base amounts
 
-In case of a shortfall in protocol fees against the monthly base amount (below), AST is withdrawn from `treasury.airswap.eth` to ensure the monthly base amount is met.
-
-| Number of Unique Contributors | Monthly Base Amount (USD) |
-| ----------------------------- | ------------------------- |
-| 15 - 20                       | $30,000                   |
-| 21 - 25                       | $35,000                   |
-| 26 - 30                       | $40,000                   |
-
-{% hint style="info" %}
-The base funding amount does not guarantee a minimum to be earned by each contributor. Instead, base funds are split among contributors based on their allocations within Coordinape.
-
-_Funding levels are subject to review and can change._
-{% endhint %}
-
-## Circle allocations
-
-The funds are allocated to two Coordinape circles. The Tech circle funds development and design activities for building our protocols and products. The Growth circle funds direction and marketing activities for growing the protocol.
-
-The distribution of funds between the two circles depends on the number of Contributors in each circle. A larger weight is placed on the Tech circle to prioritize our activities on building the protocol and product.
-
-| Circle | Allocation (%)                                          |
-| ------ | ------------------------------------------------------- |
-| Tech   | $$ 1.4 _ N\_{tech} \over 1.4 _ N*{tech} + N*{growth} $$ |
-| Growth | $$ N*{growth} \over 1.4 \* N*{tech} + N\_{growth} $$    |
-
-# Contributor Tips
-
-New Contributors who have recently contributed to AirSwap will need to be nominated and vouched in by 3 Contributors before they can enter the Coordinape circle. If you have not yet been added to the circle, please ping someone you have worked with who can vouch for your work.
-
-{% hint style="info" %}
-Once you have been vouched into the circle, check that it is visible on [Coordinape](https://coordinape.com) and ping @Ops to receive your **Contributor** role in Discord!
-{% endhint %}
+In case of a shortfall in protocol fees against the monthly base amount (below), $30K in AST is withdrawn from `treasury.airswap.eth` to ensure the monthly base amount is met.
 
 ## Be descriptive
 
@@ -88,16 +57,3 @@ The formula results in rewards being distributed on a smooth curve based on the 
 ![Current rewards are distributed on a curve based on the number of points](../.gitbook/assets/rewards.svg)
 
 ⚠ Note that fees are continuously streaming into the community pool and participants are continuously claiming tokens. Due to the dynamic nature of this process, slippage on claims is possible.
-
-{% hint style="info" %}
-You can [see the tokens in the pool](https://app.zerion.io/0x7296333e1615721f4Bd9Df1a3070537484A50CF8/overview) and [calculate potential rewards using this dashboard](https://dune.xyz/agrimony/airswap_3).
-{% endhint %}
-
-# Target KPI Rewards
-
-KPI (key performance indicator) targets may be set with rewards for contributors who help to achieve them. At time of writing there are two active target KPI rewards.
-
-| Target                                                                                                  | Reward (AST) | Deadline  |
-| ------------------------------------------------------------------------------------------------------- | ------------ | --------- |
-| [Increase protocol volumes through new aggregators](https://github.com/airswap/airswap-aips/issues/82)  | Up to 850K   | June 2023 |
-| [Establish NFT marketplaces using AirSwap protocols](https://github.com/airswap/airswap-aips/issues/83) | Up to 275K   | June 2023 |
