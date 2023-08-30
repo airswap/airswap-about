@@ -62,7 +62,7 @@ AirSwap [RequestForQuoteERC20](./glossary.md#request-for-quote-rfq) is a client-
 
 ## `getSignerSideOrderERC20`
 
-Given a `senderAmount` the server returns a signed OrderERC20 including the `signerAmount`. The client is **selling** to the server. Client may optionally request an expiry in seconds, otherwise the expiry is determined by the server. Returns an order.
+Given a `senderAmount` the server returns a signed OrderERC20 including the `signerAmount`. The client is **selling** to the server. Client may optionally request a minimum expiry in seconds. Returns an order.
 
 ```typescript
 getSignerSideOrderERC20(
@@ -72,14 +72,14 @@ getSignerSideOrderERC20(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  expiry?: string,      // Requested order expiry
+  minExpiry?: string,   // Minimum required expiry
   proxyingFor?: string, // Ultimate counterparty
 ): OrderERC20
 ```
 
 ## `getSenderSideOrderERC20`
 
-Given a `signerAmount` the server returns a signed OrderERC20 with a `senderAmount`. The client is **buying** from the server. Client may optionally request an expiry in seconds, otherwise the expiry is determined by the server. Returns an order.
+Given a `signerAmount` the server returns a signed OrderERC20 with a `senderAmount`. The client is **buying** from the server. Client may optionally request a minimum expiry in seconds. Returns an order.
 
 ```typescript
 getSenderSideOrderERC20(
@@ -89,24 +89,24 @@ getSenderSideOrderERC20(
   signerToken: string,  // Token the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
-  expiry?: string,      // Requested order expiry
+  minExpiry?: string,   // Minimum required expiry
   proxyingFor?: string, // Ultimate counterparty
 ): OrderERC20
 ```
 
 ## `getPricingERC20`
 
-Client may request soft pricing for a list of token pairs. Client may optionally request an expiry in seconds is factored into pricing. Returns current formula or levels for each pair.
+Client may request soft pricing for a list of token pairs. Client may optionally request a minimum expiry in seconds to be factored into pricing. Returns current formula or levels for each pair.
 
 ```typescript
 getPricingERC20(
-  [
+  tokenPairs: [
     {
       baseToken: string,
       quoteToken: string
     }, ...
   ],
-  expiry?: string,
+  minExpiry?: string,
 ): [
   {
     baseToken: string,
@@ -121,7 +121,9 @@ getPricingERC20(
 Client may also request pricing for all available pairs.
 
 ```typescript
-getAllPricingERC20(): [
+getAllPricingERC20(
+  minExpiry?: string,
+): [
   {
     baseToken: string,
     quoteToken: string,
@@ -293,15 +295,17 @@ unsubscribeAllPricingERC20(): boolean
 Server updates pricing for one or more token pairs. Returns a boolean.
 
 ```typescript
-setPricingERC20([
-  {
-    baseToken: string,
-    quoteToken: string,
-    minimum: string,
-    bid: Levels | Formula,
-    ask: Levels | Formula
-  }, ...
-])
+setPricingERC20(
+  pricing: [
+    {
+      baseToken: string,
+      quoteToken: string,
+      minimum: string,
+      bid: Levels | Formula,
+      ask: Levels | Formula
+    }, ...
+  ]
+)
 ```
 
 ## `considerOrderERC20`
@@ -309,7 +313,7 @@ setPricingERC20([
 Client provides a priced OrderERC20 to the server. Returns boolean `true` if accepted by the server.
 
 ```typescript
-considerOrderERC20({
+considerOrderERC20(
   nonce: string,
   expiry: string,
   signerWallet: string,
@@ -320,7 +324,7 @@ considerOrderERC20({
   v: string,
   r: string,
   s: string
-}): boolean
+): boolean
 ```
 
 ## Example
