@@ -19,7 +19,7 @@ An `OrderERC20` has the following properties:
 
 ## Execution
 
-Orders are passed to the [Swap](https://docs.airswap.io/contract-deployments) contract for execution, which emits a `Swap` event on success. The `swapLight` function is more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
+Orders are passed to the [SwapERC20](https://about.airswap.io/contract-deployments) contract for execution, which emits a `SwapERC20` event on success. The `swapLight` function is more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
 
 ```typescript
   function swapLight(
