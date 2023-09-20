@@ -26,7 +26,7 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](broken-reference) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [Swap](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](./orders.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward rewarding AirSwap governance participants and project contributors.
 
