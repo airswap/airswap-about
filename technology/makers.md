@@ -73,8 +73,8 @@ In development, set the chain to `4` with the `airswap chain` command. The follo
 
 Several useful commands can help you debug your server:
 
-- `airswap order:get` to request an order directly from your server. (RFQ)
-- `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
+- `airswap rfq:get` to request an order directly from your server. (RFQ)
+- `airswap rfq:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
 - `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (LastLook)
 
 ## Adding to the Registry
@@ -143,18 +143,20 @@ Server
 https://maker.example.com/
 ```
 
-Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap order:best` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
+Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap rfq:best` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
 
 ```
-$ airswap order:best
-AirSwap CLI 1.6.1 — https://airswap.io/
+$ airswap rfq:best
+AirSwap CLI 4.0.6 — https://www.airswap.io/
 
-get the best available order MAINNET
+get the best available order ETHEREUM
 
 buy or sell:  buy
 amount:  0.1
 of:  weth
 for:  dai
+
+Requesting from 7 peers... done
 
 Quote from https://maker.example.com/
 

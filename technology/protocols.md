@@ -198,7 +198,7 @@ Content-Type: application/json
 
 ### Client Settlement
 
-With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](https://about.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
 
 ```typescript
   function swapLight(
@@ -412,7 +412,7 @@ The client may send an OrderERC20 to the server to consider a swap.
 }
 ```
 
-With an OrderERC20 in hand, the server sends an Ethereum transaction to the [SwapERC20](https://docs.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+With an OrderERC20 in hand, the server sends an Ethereum transaction to the [SwapERC20](https://about.airswap.io/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
 
 The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server to track fills.
 
