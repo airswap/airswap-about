@@ -20,9 +20,9 @@ If a URL is HTTPS, it implies that the server supports the latest RFQ protocol a
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-- Servers generally implement the [RFQ](protocols.md) protocol.
-- You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
-- When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
+- Servers generally implement the [RFQ](protocols.md) protocol at minimum.
+- You can debug your server with the [CLI](makers.md#debugging-with-the-cli) or via curl.
+- When ready, add your server [to the Registry](makers.md#adding-to-the-registry) which requires [100K AST](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#readContract#F6).
 
 ## Protocol Fees
 
