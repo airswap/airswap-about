@@ -68,8 +68,8 @@ Given a `senderAmount` the server returns a signed OrderERC20 including the `sig
 getSignerSideOrderERC20(
   chainId: string,      // ID of the chain intended for use
   swapContract: string, // Swap contract intended for use
-  senderAmount: string, // Amount the sender would transfer
   signerToken: string,  // Token the signer would transfer
+  senderAmount: string, // Amount the sender would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
   minExpiry?: string,   // Minimum required expiry
@@ -85,8 +85,8 @@ Given a `signerAmount` the server returns a signed OrderERC20 with a `senderAmou
 getSenderSideOrderERC20(
   chainId: string,      // ID of the chain intended for use
   swapContract: string, // Swap contract intended for use
-  signerAmount: string, // Amount the signer would transfer
   signerToken: string,  // Token the signer would transfer
+  signerAmount: string, // Amount the signer would transfer
   senderToken: string,  // Token the sender would transfer
   senderWallet: string, // Wallet of the sender
   minExpiry?: string,   // Minimum required expiry
