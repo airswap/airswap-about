@@ -7,9 +7,9 @@
 
 - [Protocols](technology/protocols.md)
 - [Formats](technology/orders.md)
-- [Deployments](technology/deployments.md)
 - [Discovery](technology/discovery.md)
 - [Makers](technology/makers.md)
+- [Deployments](technology/deployments.md)
 
 ## Community
 
