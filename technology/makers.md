@@ -61,7 +61,25 @@ The following are AirSwap specific errors:
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` (Reserved for implementation specific trading errors)
 
-## Debugging with the CLI
+## Testing with the Web App
+
+To connect directly to your server via the Web App, construct a URL as follows.
+
+```
+https://airswap.io/#/swap/:fromToken/:toToken?serverUrl=SERVER_URL
+```
+
+- `fromToken` the contract address of the senderToken (client).
+- `toToken` the contract address of the signerToken (server).
+- `SERVER_URL` a URL-encoded server URL to connect to including schema.
+
+A complete example:
+
+```
+https://airswap.io/#/swap/0xdac17f958d2ee523a2206206994597c13d831ec7/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?serverUrl=https%3A%2F%2Fmaker.com%2Fapi
+```
+
+## Testing with the CLI
 
 Ensure the AirSwap CLI is installed.
 
