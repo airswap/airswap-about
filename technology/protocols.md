@@ -153,7 +153,7 @@ Content-Type: application/json
     "chainId": "1",
     "swapContract": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "senderWallet": "0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2",
+    "senderWallet": "0xed669F5fe2A37Ef204DB178c7a982717B9f03Ec2",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "senderAmount": "1000000000000000000",
   }
@@ -164,7 +164,7 @@ Requests can also be made using curl or wget for debugging.
 
 ```bash
 curl -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0x1FF808E34E4DF60326a3fc4c2b0F80748A3D60c2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0xed669F5fe2A37Ef204DB178c7a982717B9f03Ec2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
      http://localhost:3000/
 ```
 
