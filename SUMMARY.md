@@ -1,8 +1,15 @@
 # Table of contents
 
 - [Welcome](README.md)
-- [Resources](resources.md)
-- [Questions](frequently-asked-questions.md)
+- [Announcements](announcements.md)
+
+## Technology
+
+- [Protocols](technology/protocols.md)
+- [Formats](technology/orders.md)
+- [Discovery](technology/discovery.md)
+- [Makers](technology/makers.md)
+- [Deployments](technology/deployments.md)
 
 ## Community
 
@@ -10,11 +17,8 @@
 - [Rewards and Tips](community/earning.md)
 - [Proposals](community/proposals.md)
 
-## Technology
+## About
 
-- [Protocols](technology/protocols.md)
-- [Makers](technology/makers.md)
-- [Discovery](technology/discovery.md)
-- [Formats](technology/orders.md)
-- [Glossary](technology/glossary.md)
-- [Deployments](technology/deployments.md)
+- [Glossary](glossary.md)
+- [Resources](resources.md)
+- [FAQ](frequently-asked-questions.md)

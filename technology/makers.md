@@ -20,13 +20,13 @@ If a URL is HTTPS, it implies that the server supports the latest RFQ protocol a
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-- Servers generally implement the [RFQ](protocols.md) protocol.
-- You can debug your server with the [CLI](makers.md#debugging-with-the-cli).
-- When ready, add your server [to the Registry](makers.md#adding-to-the-registry).
+- Servers generally implement the [RFQ](protocols.md) protocol at minimum.
+- You can debug your server with the [CLI](makers.md#debugging-with-the-cli) or via curl.
+- When ready, add your server [to the Registry](makers.md#adding-to-the-registry) which requires [100K AST](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#readContract#F6).
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](broken-reference) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [Swap](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](./orders.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward rewarding AirSwap governance participants and project contributors.
 
@@ -61,7 +61,25 @@ The following are AirSwap specific errors:
 - `-33605` Rate limit exceeded
 - `-33700 to -33799` (Reserved for implementation specific trading errors)
 
-## Debugging with the CLI
+## Testing with the Web App
+
+To connect directly to your server via the Web App, construct a URL as follows.
+
+```
+https://airswap.io/#/swap/:fromToken/:toToken?serverUrl=SERVER_URL
+```
+
+- `fromToken` the contract address of the senderToken (client).
+- `toToken` the contract address of the signerToken (server).
+- `SERVER_URL` a URL-encoded server URL to connect to including schema.
+
+A complete example:
+
+```
+https://airswap.io/#/swap/0xdac17f958d2ee523a2206206994597c13d831ec7/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?serverUrl=https%3A%2F%2Fmaker.com%2Fapi
+```
+
+## Testing with the CLI
 
 Ensure the AirSwap CLI is installed.
 
@@ -73,8 +91,8 @@ In development, set the chain to `4` with the `airswap chain` command. The follo
 
 Several useful commands can help you debug your server:
 
-- `airswap order:get` to request an order directly from your server. (RFQ)
-- `airswap order:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
+- `airswap rfq:get` to request an order directly from your server. (RFQ)
+- `airswap rfq:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
 - `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (LastLook)
 
 ## Adding to the Registry
@@ -143,18 +161,20 @@ Server
 https://maker.example.com/
 ```
 
-Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap order:best` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
+Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap rfq:best` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
 
 ```
-$ airswap order:best
-AirSwap CLI 1.6.1 — https://airswap.io/
+$ airswap rfq:best
+AirSwap CLI 4.0.6 — https://www.airswap.io/
 
-get the best available order MAINNET
+get the best available order ETHEREUM
 
 buy or sell:  buy
 amount:  0.1
 of:  weth
 for:  dai
+
+Requesting from 7 peers... done
 
 Quote from https://maker.example.com/
 
