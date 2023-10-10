@@ -1,10 +1,9 @@
-# Marketplace Admin Guide
 
-Welcome to the NFT marketplace admin guide. Setup is a breeze.
+Marketplaces are custom decentralized frontends for NFT communities.
 
 # Get the code
 
-From https://github.com/airswap/airswap-marketplace...
+From [https://github.com/airswap/airswap-marketplace](https://github.com/airswap/airswap-marketplace)...
 - Option 1: Clone the repository
 - Option 2: Download a zip file
 
@@ -22,7 +21,7 @@ Environment variables are required to be set.
 
 # Deploy your app
 
-- GitHub Pages — Free static site hosting on GitHub. If you fork or otherwise copy the Marketplace codebase into your own repository you can set up deploys to Pages with the following guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+- GitHub Pages — Free static site hosting on GitHub. If you fork or otherwise copy the Marketplace codebase into your own repository you can set up deploys to Pages with [the following guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 - Other — The build generates static assets that can be easily published to any hosting service.
 
 # Contributions
