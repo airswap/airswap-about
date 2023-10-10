@@ -13,8 +13,7 @@ Know some other channels which could be useful for community building? Do drop b
 # Governance
 
 - [AirSwap Improvement Protocols \(AIPs\)](https://github.com/airswap/airswap-aips/issues)
-- [Voting Portal](https://activate.codefi.network/staking/airswap/governance)
-- [Mobile Voting Dashboard](https://ast.on.fleek.co/)
+- [Member Dashboard](https://dao.airswap.eth.limo/)
 - [Snapshot Page](https://snapshot.org/#/vote.airswap.eth)
 
 # Code

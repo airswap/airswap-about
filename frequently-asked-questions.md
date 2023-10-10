@@ -32,7 +32,7 @@ AirSwap Tokens (AST) can be staked to participate in governance of the protocol.
 
 ### How do I stake on AirSwap?
 
-You can stake your AST on the [Codefi Activate platform](https://activate.codefi.network/staking/airswap/governance).
+You can stake your AST on the [Member Dashboard](https://dao.airswap.eth.limo/).
 
 ### What are the rules of staking?
 
