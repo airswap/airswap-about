@@ -16,6 +16,7 @@
 - [Code of Conduct](community/conduct.md)
 - [Rewards and Tips](community/earning.md)
 - [Proposals](community/proposals.md)
+- [Marketplaces](community/marketplaces.md)
 
 ## About
 
