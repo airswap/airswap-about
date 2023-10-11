@@ -1,6 +1,8 @@
 
 Marketplaces are custom decentralized frontends for NFT communities.
 
+<img src="../images/marketplace-screenshot.png" />
+
 # Get the code
 
 From [https://github.com/airswap/airswap-marketplace](https://github.com/airswap/airswap-marketplace)...
