@@ -9,6 +9,7 @@
 - [Formats](technology/orders.md)
 - [Discovery](technology/discovery.md)
 - [Makers](technology/makers.md)
+- [Marketplaces](technology/marketplaces.md)
 - [Deployments](technology/deployments.md)
 
 ## Community
@@ -16,7 +17,6 @@
 - [Code of Conduct](community/conduct.md)
 - [Rewards and Tips](community/earning.md)
 - [Proposals](community/proposals.md)
-- [Marketplaces](community/marketplaces.md)
 
 ## About
 
