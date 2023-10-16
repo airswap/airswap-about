@@ -28,7 +28,7 @@ AirSwap [RFQ ](technology/protocols.md)is currently available through Metamask s
 
 ### Why Stake on AirSwap?
 
-AirSwap Tokens (AST) can be staked to participate in governance of the protocol. All are welcome to participate by proposing, discussing, and voting on proposals that move the project and community forward. Voters are rewarded with points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool.
+AirSwap Tokens (AST) can be staked to participate in governance of the protocol. All are welcome to participate by proposing, discussing, and voting on proposals that move the project and community forward. Voters earn points based on the amount staked. Points can be used to claim a portion of the funds from the rewards pool.
 
 ### How do I stake on AirSwap?
 
@@ -64,6 +64,6 @@ Note: balances have 4 decimals so e.g. 2,500.00 would have an "unlock" amount of
 
 There are lots of ways to get involved in AirSwap, from generating ideas, to coordinating projects, contributing design and code, and helping to spread the word.
 
-### How do contributors get rewarded?
+### How do contributors earn?
 
-Every month, contributors determine the allocation of funds through [Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the number of GIVE tokens received. Learn more about how the contributor circle is funded [here](community/rewards.md#circle-funding).
+Every month, contributors come together to tip each other using[Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the about of GIVE received. Learn more about [earning](community/earning.md).
