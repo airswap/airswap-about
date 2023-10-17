@@ -1,8 +1,8 @@
 ---
-description: Learn how community members are rewarded by contributing to AirSwap
+description: Learn how community members earn by contributing to AirSwap
 ---
 
-Protocol fees on AirSwap support development, growth, and upkeep of AirSwap protocols and apps. Protocol fees are routed to two destinations: a contributor tips pool and a voter rewards pool. This guide explains the system and how you can be rewarded for helping to operate it.
+Protocol fees on AirSwap support development, growth, and upkeep of AirSwap protocols and apps. Protocol fees are routed to two destinations: a contributor tips pool and a voter rewards pool. This guide explains the system and how you can earn for helping to operate it.
 
 # Contributor Tips
 
@@ -12,7 +12,7 @@ Each month, a contributions thread is opened on [Discord](https://chat.airswap.i
 If you have not contributed for the month, always **opt-out** of receiving GIVE for that epoch. Anyone who did not describe their contributions or opt out will be removed from the circle and will have to be re-nominated for future rounds.
 {% endhint %}
 
-[Coordinape](https://coordinape.com) epochs are 1-6 of each month to allocate GIVE tokens among fellow contributors based on impact. Individual contributors are rewarded proportionally to GIVE received. In case of a shortfall in protocol fees against the monthly minimum ($30K) then AST is requested from `treasury.airswap.eth`.
+[Coordinape](https://coordinape.com) epochs are 1-6 of each month to allocate GIVE tokens among fellow contributors based on impact. Individual contributors earn proportionally to GIVE received. In case of a shortfall in protocol fees against the monthly minimum ($30K) then AST is requested from `treasury.airswap.eth`.
 
 {% hint style="warning" %}
 The allocation system is fully transparent. Allocate fairly and honestly!

@@ -53,7 +53,7 @@ AirSwap is a community asset held by its token holders, operating as an open pro
 
 - **Quality** — We craft software systems that are thoughtful, elegant, and secure. We envision and create the best form of each protocol and product that we deliver.
 - **Transparency** — Decisions are made in the open and contributions are open source. New information is continuously and actively shared throughout.
-- **Inclusion** — All contribution opportunities are accessible and inclusive. Every community member is treated fairly and rewarded consistently.
+- **Inclusion** — All contribution opportunities are accessible and inclusive. Every community member is treated fairly and consistently.
 - **Automation** — We strive to run organizational processes and execute relevant tasks entirely automatically using trustless and transparent tools.
 
 ### Token

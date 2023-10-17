@@ -14,8 +14,8 @@
 
 ## Community
 
-- [Code of Conduct](community/conduct.md)
-- [Rewards and Tips](community/earning.md)
+- [Conduct](community/conduct.md)
+- [Earning](community/earning.md)
 - [Proposals](community/proposals.md)
 
 ## About
