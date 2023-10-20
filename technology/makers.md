@@ -66,7 +66,7 @@ The following are AirSwap specific errors:
 To connect directly to your server via the Web App, construct a URL as follows.
 
 ```
-https://airswap.io/#/swap/:fromToken/:toToken?serverUrl=SERVER_URL
+https://swap.eth.limo/#/swap/:fromToken/:toToken?serverUrl=SERVER_URL
 ```
 
 - `fromToken` the contract address of the senderToken (client).
@@ -76,7 +76,7 @@ https://airswap.io/#/swap/:fromToken/:toToken?serverUrl=SERVER_URL
 A complete example:
 
 ```
-https://airswap.io/#/swap/0xdac17f958d2ee523a2206206994597c13d831ec7/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?serverUrl=https%3A%2F%2Fmaker.com%2Fapi
+https://swap.eth.limo/#/swap/0xdac17f958d2ee523a2206206994597c13d831ec7/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?serverUrl=https%3A%2F%2Fmaker.com%2Fapi
 ```
 
 ## Testing with the CLI
@@ -87,7 +87,7 @@ Ensure the AirSwap CLI is installed.
 $ yarn global add airswap
 ```
 
-In development, set the chain to `4` with the `airswap chain` command. The following examples assume a local development server is running at `http://localhost:3000`.
+In development, set the chain to `5` with the `airswap chain` command. The following examples assume a local development server is running at `http://localhost:3000`.
 
 Several useful commands can help you debug your server:
 
@@ -111,7 +111,7 @@ Let's take a look at the available Registry commands.
 
 ```
 $ airswap registry
-AirSwap CLI 1.6.1 — https://airswap.io/
+AirSwap CLI 4.0.6 — https://airswap.io/
 add and remove supported tokens
 
 USAGE
@@ -148,7 +148,7 @@ To ensure your configuration is correct, you can query tokens that you support o
 
 ```
 $ airswap registry:get
-AirSwap CLI 1.6.1 — https://airswap.io/
+AirSwap CLI 4.0.6 — https://airswap.io/
 
 get urls from the registry RINKEBY
 
