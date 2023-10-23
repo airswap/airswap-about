@@ -100,7 +100,7 @@ Client may request soft pricing for a list of token pairs. Client may optionally
 
 ```typescript
 getPricingERC20(
-  tokenPairs: [
+  pairs: [
     {
       baseToken: string,
       quoteToken: string
