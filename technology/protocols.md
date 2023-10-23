@@ -463,7 +463,7 @@ Server pricing can be communicated either by levels or a formula. All input and 
 
 ### Levels
 
-The server can specify levels to use for pricing. Each level is a tuple of amount and price at that level.
+A server may provide "levels" to determine its pricing for various tokens and amounts. Each level is a tuple of amount and price at that level. Amounts and minimums are all in `baseToken`. Each level indicates price “up to” the specified amount and therefore the last level is the maximum.
 
 ```javascript
 ;[
