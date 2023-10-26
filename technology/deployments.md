@@ -20,6 +20,14 @@
 - RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://rootstock.blockscout.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
+## Telos EVM Mainnet (40)
+
+- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://teloscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
+- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://teloscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- RegistryV4 — [`0x0A655E762238Fee539338F433087A3B9dAdD798b`](https://teloscan.io/address/0x0A655E762238Fee539338F433087A3B9dAdD798b#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
 ## BSC (56)
 
 - SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://bscscan.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
@@ -82,7 +90,7 @@
 - Registry — [`0x05545815a5579d80Bd4c380da3487EAC2c4Ce299`](https://goerli.etherscan.io/address/0x05545815a5579d80Bd4c380da3487EAC2c4Ce299#code)
 - RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.etherscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Staking — [`0x51F372bE64F0612532F28142cECF8F204B272622`](https://goerli.etherscan.io/address/0x51F372bE64F0612532F28142cECF8F204B272622#code)
+- Staking — [`0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e`](https://goerli.etherscan.io/address/0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e#code)
 
 ## RSK Testnet (31)
 
@@ -92,6 +100,14 @@
 - Registry — [`0x517d482F686f11b922EED764692f2b42663ce2fa`](https://rootstock-testnet.blockscout.com/address/0x517d482F686f11b922EED764692f2b42663ce2fa#code)
 - RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://rootstock-testnet.blockscout.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock-testnet.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Telos EVM Testnet (41)
+
+- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://testnet.teloscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
+- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://testnet.teloscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://testnet.teloscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 ## BSC Testnet (97)
 
@@ -145,6 +161,15 @@
 - Registry — [`0x517d482F686f11b922EED764692f2b42663ce2fa`](https://goerli.arbiscan.io/address/0x517d482F686f11b922EED764692f2b42663ce2fa#code)
 - RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.arbiscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.arbiscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Sepolia (11155111)
+
+- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://sepolia.etherscan.io//address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
+- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://sepolia.etherscan.io//address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://sepolia.etherscan.io//address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- RegistryV4 — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://sepolia.etherscan.io//address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://sepolia.etherscan.io//address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Staking — [`0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e`](https://sepolia.etherscan.io//address/0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e#code)
 
 
 
