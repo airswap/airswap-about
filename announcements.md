@@ -4,7 +4,7 @@ For up-to-date information see [AirSwap on X](https://twitter.com/airswap) and [
 
 * `v4.1.1` release has been tagged on [GitHub](https://github.com/airswap/airswap-protocols/releases).
 * Includes latest Registry, SwapERC20, Wrapper, Registry, and Pool across all [19 supported chains](https://github.com/airswap/airswap-protocols/blob/v4.1.1/tools/constants/index.ts#L10).
-* All network participants are encouraged to upgrade. [Latest contract addresses](https://about.airswap.io/technology/deployments) are up to date.
+* All network participants are encouraged to upgrade. [Latest contract addresses](./technology/deployments.md) are up to date.
 
 **Activate Shutdown**: 3 October, 2023
 
