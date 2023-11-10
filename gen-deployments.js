@@ -13,9 +13,6 @@ const contracts = [{
   deploys: require('@airswap/wrapper/deploys')
 }, {
   name: 'Registry',
-  deploys: require('@airswap/maker-registry/deploys')
-}, {
-  name: 'RegistryV4',
   deploys: require('@airswap/registry/deploys')
 }, {
   name: 'Pool',
@@ -79,6 +76,7 @@ for (let chainid in V3) {
   markdown += `- AirSwap V3: Swap (${chainid}) — [\`${V3[chainid]}\`](${getAccountUrl(chainid, V3[chainid])}#code)\n`
 }
 markdown += '- AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code])\n'
+markdown += '- AirSwap V3: Registry (1) — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code])\n'
 
 markdown += '\n\n## AirSwap V2\n\n\
 - AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)\n\
