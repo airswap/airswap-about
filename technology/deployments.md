@@ -164,10 +164,10 @@
 
 ## AirSwap V4
 
-- AirSwap V4: Swap (1) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://etherscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
-- AirSwap V4: Swap (56) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
-- AirSwap V4: Swap (137) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
-- AirSwap V4: Swap (43114) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
+- AirSwap V4: SwapERC20 (1) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://etherscan.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
+- AirSwap V4: SwapERC20 (56) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
+- AirSwap V4: SwapERC20 (137) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
+- AirSwap V4: SwapERC20 (43114) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 
 
 ## AirSwap V3
@@ -176,8 +176,8 @@
 - AirSwap V3: Swap (56) — [`0x132f13c3896eab218762b9e46f55c9c478905849`](https://bscscan.com/address/0x132f13c3896eab218762b9e46f55c9c478905849#code)
 - AirSwap V3: Swap (137) — [`0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a`](https://polygonscan.com/address/0x6713c23261c8a9b7d84dd6114e78d9a7b9863c1a#code)
 - AirSwap V3: Swap (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
-- AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code])
-- AirSwap V3: Registry (1) — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code])
+- AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code)
+- AirSwap V3: Registry (1) — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code)
 
 
 ## AirSwap V2
