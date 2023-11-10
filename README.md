@@ -24,7 +24,7 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 - **[Request-for-quote](technology/glossary#request-for-quote-rfq)** (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket. Maker servers respond to client requests with signed orders, which are assessed by the client who then has the option to complete the swap on-chain. For example, [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785) implements AirSwap RFQ to enable users to swap tokens directly from within their MetaMask wallet by requesting orders directly from market makers.
 
-- **[LastLook](technology/glossary#last-look-ll)** (LL) is an automated streaming protocol via JSON-RPC over WebSocket. With LastLook, market makers continuously stream asset prices to clients in real-time. Clients can then sign and transmit orders based on the prices they receive to the maker, who then has the "last look" and the option to complete the swap on-chain. LastLook also has the added benefit of being effectively gasless for the client. For example, when a quote on [www.airswap.io](http://www.airswap.io) displays the "gasless" label, your web browser is connected directly to a market maker using the LastLook streaming protocol.
+- **[LastLook](technology/glossary#last-look-ll)** (LL) is an automated streaming protocol via JSON-RPC over WebSocket. With LastLook, market makers continuously stream asset prices to clients in real-time. Clients can then sign and transmit orders based on the prices they receive to the maker, who then has the "last look" and the option to complete the swap on-chain. LastLook also has the added benefit of being effectively gasless for the client. For example, when a quote on [swap.eth.limo](http://swap.eth.limo) displays the "gasless" label, your web browser is connected directly to a market maker using the LastLook streaming protocol.
 
 - **[Over-the-counter](technology/glossary#over-the-counter-otc)** (OTC) is manual trading between known counterparties, with prices communicated via chat applications or email and using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC. For example, Stake DAO, a digital asset management firm, uses AirSwap OTC for an ETH put selling investment strategy.
 
@@ -32,8 +32,8 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 Several applications are available to end users.
 
-- [AirSwap Web](https://www.airswap.io) — New open source web app for instant swaps.
-- [AirSwap OTC](https://trader.airswap.io) — Industry standard OTC interface for large bespoke swaps.
+- [AirSwap DEX](https://swap.eth.limo/) — All things peer-to-peer swaps.
+- [AirSwap DAO](https://dao.airswap.eth.limo/) — Dashboard for community members.
 - [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the AirSwap network.
 
 Several DEX aggregators and market makers have implemented AirSwap.
@@ -68,7 +68,7 @@ Each AIP is ratified by calling it to vote and being accepted by the token holde
 
 ## History
 
-AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76) and [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb).
+AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76), [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb), [2021](https://blog.airswap.io/2021-a-year-in-review-20dff123b11), and [2022](https://blog.airswap.io/2022-a-year-in-review-918f1d7b9a71).
 
 - [AirSwap Roadmap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (November 16th, 2017)
 - [AirSwap is Here](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (April 25, 2018)
