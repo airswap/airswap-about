@@ -1,8 +1,8 @@
 For up-to-date information see [AirSwap on X](https://twitter.com/airswap) and [AirSwap on Discord](https://chat.airswap.io/).
 
-**4.1 Migration**: 16 November, 2023
+**4.1 Migration**: 30 November, 2023
 
-* All makers **must** migrate to [V4.1](https://about.airswap.io/technology/deployments) on or after **16 November**, 2023.
+* All makers **must** migrate to [V4.1](https://about.airswap.io/technology/deployments) on or after **30 November**, 2023.
 * Makers **must** set a server URL and add supported tokens to the [V4.1 Registry](https://about.airswap.io/technology/deployments#airswap-v4.1) contract and approve the [V4.1 SwapERC20](https://about.airswap.io/technology/deployments#airswap-v4.1) contract for supported tokens. AirSwap CLI [4.1.4](https://www.npmjs.com/package/airswap/v/4.1.4) supports these operations.
 * Makers **should** remove all tokens from and revoke approvals for the [V3 Registry](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95) and revoke approvals for [V4 SwapERC20](https://about.airswap.io/technology/deployments#airswap-v4) contracts. AirSwap CLI [4.0.6](https://www.npmjs.com/package/airswap/v/4.0.6) supports these operations.
 * Only once all supported tokens are removed from the V3 Registry is all staked AST returned to the maker, which can then be staked to the V4.1 Registry.
