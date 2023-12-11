@@ -23,8 +23,8 @@ For up-to-date information see [AirSwap on X](https://twitter.com/airswap) and [
 2. Choose "OTC" from the side menu.
 3. Select tokens to send and receive, one of which must have value of at least $15.
 4. Optionally change the expiry or set a specific taker address.
-5. Share the generated URL with your counterparty to take it.
-6. Your counterparty (or another account you own) takes the order.
+5. Sign and share the URL on the [AirSwap Discord](https://discord.gg/9sEBHXnD).
+6. Your counterparty (or another account you own) must take the order.
 
 Your order transaction should look [something like this](https://lineascan.build/tx/0x774b7ccc7495fdb1144471bcea1b29cd8de76b1d00a784c21bd8e5c3a6eabc80) (potentially different tokens and amounts).
 
