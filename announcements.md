@@ -33,6 +33,8 @@ Your order transaction should look [something like this](https://lineascan.build
 1. Find available orders on the [AirSwap Discord](https://discord.gg/9sEBHXnD).
 2. Click one of the `linea.airswap.eth.limo` links to take it.
 
+**Verification may take a few hours** but if the swap is valid it will be verified by Intract.
+
 ## 4.1.1 Release: 26 October, 2023
 
 * `v4.1.1` release has been tagged on [GitHub](https://github.com/airswap/airswap-protocols/releases).
