@@ -1,5 +1,26 @@
 For up-to-date information see [AirSwap on X](https://twitter.com/airswap) and [AirSwap on Discord](https://chat.airswap.io/).
 
+**Linea Voyage**: 8-16 December, 2023
+
+To complete the bonus OTC task for Wave 7: Trading:
+
+- You can either make or take an order. If you make an order, you can take it with another account you own.
+- One of the sides (maker or taker) of the order must have a value of $15 or more.
+- If you make an order with ETH, it will be wrapped as WETH. WETH is a 1:1 conversion of ETH to make it swappable.
+- If you take an order with WETH, you can unwrap it by clicking RFQ and swapping WETH to ETH on https://linea.airswap.eth.limo/.
+
+To make an order, navigate to https://linea.airswap.eth.limo/
+
+1. Choose "OTC" from the side menu.
+2. Select tokens to send and receive, one of which must have value of at least $15.
+3. Optionally change the expiry or set a specific taker address.
+4. Share the generated URL with your counterparty to take it.
+5. Your counterparty (or another account you own) takes the order.
+
+Your order transaction should look something like this (potentially different tokens and amounts): https://lineascan.build/tx/0x774b7ccc7495fdb1144471bcea1b29cd8de76b1d00a784c21bd8e5c3a6eabc80
+
+To take an order, you can find available orders on the [AirSwap Discord](https://discord.gg/9sEBHXnD).
+
 **4.1 Migration**: 30 January, 2024
 
 * All makers **must** migrate to [V4.1](https://about.airswap.io/technology/deployments) on or after **30 January**, 2024.
