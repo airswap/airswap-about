@@ -10,7 +10,7 @@ For up-to-date information see [AirSwap on X](https://twitter.com/airswap) and [
 
 ## Linea Voyage: 8-16 December, 2023
 
-**To complete the bonus OTC task for Wave 7: Trading**
+**To complete the bonus OTC task for [Wave 7: Trading](https://www.intract.io/linea/quest/6572fc0bef415b56fd67608f)**
 
 - Either make or take an order. If you make an order, you can take it with another account you own.
 - One of the sides (maker or taker) of the order must have a value of $15 or more.
