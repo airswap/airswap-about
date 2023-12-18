@@ -420,9 +420,43 @@ With an OrderERC20 in hand, the server sends an Ethereum transaction to the [Swa
 
 The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server to track fills.
 
-# StorageERC20
+# Indexing
 
-AirSwap StorageERC20 is used by peers to add and get OrderERC20s to and from other peers.
+AirSwap Indexing is used by peers to store and fetch orders on other peers.
+
+## `addOrder`
+
+Peers may call `addOrder` to add an order to another peer.
+
+```typescript
+addOrder(
+  order: FullOrder
+): boolean
+```
+
+## `getOrders`
+
+Peers may call `getOrders` to query for orders indexed by another peer.
+
+```typescript
+getOrders(
+  filters?: OrderFilter,
+  sortField?: SortField,
+  sortOrder?: SortOrder,
+  offset: number,
+  limit: number
+): (
+  orders: FullOrder[],
+  offset: number,
+  total: number
+)
+```
+
+Where `OrderFilter`, `SortField`, and `SortOrder` [can be found here](https://github.com/airswap/airswap-protocols/blob/develop/tools/types/src/server.ts).
+
+# IndexingERC20
+
+AirSwap Indexing is used by peers to store and fetch ERC20 orders on other peers.
 
 ## `addOrderERC20`
 
@@ -430,32 +464,29 @@ Peers may call `addOrderERC20` to add an order to another peer.
 
 ```typescript
 addOrderERC20(
-  nonce: string,
-  expiry: string,
-  signerWallet: string,
-  signerToken: string,
-  signerAmount: string,
-  senderToken: string,
-  senderAmount: string,
-  v: string,
-  r: string,
-  s: string
-)
+  order: FullOrderERC20
+): boolean
 ```
 
 ## `getOrdersERC20`
 
-Peers may call `getOrdersERC20` to query for orders stored on another peer.
+Peers may call `getOrdersERC20` to query for orders indexed by another peer.
 
 ```typescript
 getOrdersERC20(
-  sortField: string,
-  senderToken: string[],
-  page: string,
-  filters: string,
-  sortOrder: string
+  filters?: OrderFilter,
+  sortField?: SortField,
+  sortOrder?: SortOrder,
+  offset: number,
+  limit: number
+): (
+  orders: FullOrderERC20[],
+  offset: number,
+  total: number
 )
 ```
+
+Where `OrderFilter`, `SortField`, and `SortOrder` [can be found here](https://github.com/airswap/airswap-protocols/blob/develop/tools/types/src/server.ts).
 
 # Pricing Formats
 
