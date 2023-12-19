@@ -440,11 +440,11 @@ Peers may call `getOrders` to query for orders indexed by another peer.
 
 ```typescript
 getOrders(
-  filters?: OrderFilter,
-  sortField?: SortField,
-  sortOrder?: SortOrder,
+  filters: OrderFilter,
   offset: number,
-  limit: number
+  limit: number,
+  sortField?: SortField,
+  sortOrder?: SortOrder
 ): (
   orders: FullOrder[],
   offset: number,
@@ -474,11 +474,11 @@ Peers may call `getOrdersERC20` to query for orders indexed by another peer.
 
 ```typescript
 getOrdersERC20(
-  filters?: OrderFilter,
-  sortField?: SortField,
-  sortOrder?: SortOrder,
+  filters: OrderFilter,
   offset: number,
   limit: number
+  sortField?: SortField,
+  sortOrder?: SortOrder
 ): (
   orders: FullOrderERC20[],
   offset: number,
