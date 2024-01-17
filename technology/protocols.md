@@ -1,6 +1,6 @@
 AirSwap trading technology is fully decentralized, powered by smart contracts that enable counterparty discovery and atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
-For information on finding counter-parties, see [Registry](registry.md).
+For information on finding counter-parties, see [Discovery](discovery.md).
 
 # Discovery
 
@@ -58,7 +58,7 @@ setTokens([ tokenContractAddress, ... ])
 
 # RequestForQuoteERC20
 
-AirSwap [RequestForQuoteERC20](./glossary.md#request-for-quote-rfq) is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (i.e. `signerAmount`, `signerToken`) and the client is the sender (i.e. `senderAmount`, `senderToken`).
+AirSwap [RequestForQuoteERC20](../glossary.md#request-for-quote-rfq) is a client-server protocol used by market makers running servers from which clients request ERC20 orders via HTTP or WebSocket. In RFQ, the server is the signer (i.e. `signerAmount`, `signerToken`) and the client is the sender (i.e. `senderAmount`, `senderToken`).
 
 ## `getSignerSideOrderERC20`
 
@@ -234,7 +234,7 @@ The server or client may subscribe to a filter for a `SwapERC20` event with the 
 
 # LastLookERC20
 
-AirSwap [LastLookERC20](./glossary.md#last-look-ll) is used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
+AirSwap [LastLookERC20](../glossary.md/#lastlook-ll) is used by servers to stream quotes to clients. Clients periodically send signed OrderERC20s to the server, which then has the "last look" and option to send it to the EVM for settlement. In last-look, the client is the signer (e.g. `signerAmount`, `signerToken`) and the server is the sender (e.g. `senderAmount`, `senderToken`).
 
 ## `subscribePricingERC20`
 
