@@ -1,3 +1,5 @@
+See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releases).
+
 # AirSwap V4.2
 
 ## Ethereum (1)
