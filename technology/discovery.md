@@ -59,7 +59,7 @@ Try `airswap rfq:get` with a server URL from the previous command.
 Using the `Registry` library from `@airswap/libraries` returns `Server` instances that you can interact with.
 
 ```typescript
-import { Protocols } from "@airswap/constants";
+import { Protocols } from "@airswap/utils";
 import { Registry } from '@airswap/libraries'
 const servers = await Registry.getServers(
   provider,
@@ -74,7 +74,7 @@ Calling the Registry directly using `ethers`
 
 ```typescript
 import { ethers } from 'ethers'
-import { chainNames } from '@airswap/constants'
+import { chainNames } from '@airswap/utils'
 import * as RegistryContract from '@airswap/registry/build/contracts/Registry.sol/Registry.json'
 import * as registryDeploys from '@airswap/registry/deploys.js'
 const RegistryInterface = new ethers.utils.Interface(
@@ -99,7 +99,7 @@ const serverURLs = signerTokenURLs.filter((value) =>
 
 ```typescript
 import { Registry, SwapERC20 } from '@airswap/libraries'
-import { chainNames } from '@airswap/constants'
+import { chainNames } from '@airswap/utils'
 
 const servers = await Registry.getServers(
   provider,

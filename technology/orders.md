@@ -43,8 +43,7 @@ AirSwap signatures are [EIP712](https://eips.ethereum.org/EIPS/eip-712), which i
 **TypeScript**. Swap signatures in TypeScript can be created using the `@airswap/utils` package.
 
 ```typescript
-import { UnsignedOrder } from '@airswap/types'
-import { createOrderERC20, createOrderERC20Signature } from '@airswap/utils'
+import { UnsignedOrder, createOrderERC20, createOrderERC20Signature } from '@airswap/utils'
 
 const order = createOrderERC20({
   nonce: string,

@@ -6,8 +6,7 @@
     "pretty:fix": "yarn prettier --write './**/*.md'"
   },
   "devDependencies": {
-    "@airswap/libraries": "^4.1.9",
-    "@airswap/utils": "^4.1.6",
+    "@airswap/libraries": "4.2.8",
     "eslint": "^7.32.0",
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",

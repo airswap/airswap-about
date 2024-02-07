@@ -1,162 +1,152 @@
-# AirSwap V4.1
+# AirSwap V4.2
 
 ## Ethereum (1)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://etherscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://etherscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://etherscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://etherscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://etherscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://etherscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Staking — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
+- Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
-
-## RSK (30)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://rootstock.blockscout.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://rootstock.blockscout.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://rootstock.blockscout.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Telos EVM Mainnet (40)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://teloscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://teloscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x0A655E762238Fee539338F433087A3B9dAdD798b`](https://teloscan.io/address/0x0A655E762238Fee539338F433087A3B9dAdD798b#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 ## BSC (56)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://bscscan.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://bscscan.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://bscscan.com/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://bscscan.com/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://bscscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://bscscan.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://bscscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://bscscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 ## Polygon (137)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://polygonscan.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://polygonscan.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://polygonscan.com/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://polygonscan.com/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://polygonscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://polygonscan.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://polygonscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://polygonscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-## Base (8453)
+## Linea (59144)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://basescan.org/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://basescan.org/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://basescan.org/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://basescan.org/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://basescan.org/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://lineascan.build/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://lineascan.build/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://lineascan.build/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 ## Arbitrum (42161)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://arbiscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://arbiscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://arbiscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://arbiscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://arbiscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://arbiscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://arbiscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://arbiscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 ## Avalanche (43114)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://snowtrace.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://snowtrace.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://snowtrace.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://snowtrace.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://snowtrace.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://snowtrace.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://snowtrace.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://snowtrace.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-## Linea (59144)
+## Base (8453)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://lineascan.build/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://lineascan.build/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://lineascan.build/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://basescan.org/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://basescan.org/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://basescan.org/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://basescan.org/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://basescan.org/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-# AirSwap V4.1: Testnets
+## Telos (40)
 
-## Goerli (5)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://goerli.etherscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://goerli.etherscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://goerli.etherscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.etherscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Staking — [`0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e`](https://goerli.etherscan.io/address/0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e#code)
+## RSK (30)
 
-## RSK Testnet (31)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://rootstock-testnet.blockscout.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://rootstock-testnet.blockscout.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock-testnet.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://rootstock-testnet.blockscout.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock-testnet.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Telos EVM Testnet (41)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://testnet.teloscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://testnet.teloscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://testnet.teloscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## BSC Testnet (97)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://testnet.bscscan.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://testnet.bscscan.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.bscscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://testnet.bscscan.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.bscscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Fuji Testnet (43113)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://testnet.snowtrace.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://testnet.snowtrace.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.snowtrace.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://testnet.snowtrace.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.snowtrace.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Linea-Goerli (59140)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://goerli.lineascan.build/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://goerli.lineascan.build/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://goerli.lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.lineascan.build/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Mumbai Testnet (80001)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://mumbai.polygonscan.com/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://mumbai.polygonscan.com/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://mumbai.polygonscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://mumbai.polygonscan.com/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://mumbai.polygonscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Base Görli (84531)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://goerli.basescan.org/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://goerli.basescan.org/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0d1a1472307d1853809c3aa455b1b76c9bcfe`](https://goerli.basescan.org/address/0x88d0d1a1472307d1853809c3aa455b1b76c9bcfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.basescan.org/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.basescan.org/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-
-## Arbitrum Goerli (421613)
-
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://goerli.arbiscan.io/address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://goerli.arbiscan.io/address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://goerli.arbiscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://goerli.arbiscan.io/address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.arbiscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+# AirSwap V4.2: Testnets
 
 ## Sepolia (11155111)
 
-- SwapERC20 — [`0x0C9b31Dc37718417608CE22bb1ba940f702BF90B`](https://sepolia.etherscan.io//address/0x0C9b31Dc37718417608CE22bb1ba940f702BF90B#code)
-- Swap — [`0xb926D88D6BdD560383fCd6537bbf5Aa863470318`](https://sepolia.etherscan.io//address/0xb926D88D6BdD560383fCd6537bbf5Aa863470318#code)
-- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://sepolia.etherscan.io//address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
-- Registry — [`0x339Eb75235CBf823C6352D529A258226ecF59cfF`](https://sepolia.etherscan.io//address/0x339Eb75235CBf823C6352D529A258226ecF59cfF#code)
-- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://sepolia.etherscan.io//address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Staking — [`0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e`](https://sepolia.etherscan.io//address/0x3BeC6526366cb2C2A609eb2bCeC8A696C141a33e#code)
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://sepolia.etherscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://sepolia.etherscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://sepolia.etherscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://sepolia.etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://sepolia.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://sepolia.etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
+
+## Holesky (17000)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://holesky.etherscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://holesky.etherscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0xCF8EbAd621778b3Ea973Dd12a15b6c90bC14bD3C`](https://holesky.etherscan.io/address/0xCF8EbAd621778b3Ea973Dd12a15b6c90bC14bD3C#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://holesky.etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://holesky.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://holesky.etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
+
+## BSC Testnet (97)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://testnet.bscscan.com/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://testnet.bscscan.com/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.bscscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://testnet.bscscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.bscscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Mumbai Testnet (80001)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://mumbai.polygonscan.com/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://mumbai.polygonscan.com/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://mumbai.polygonscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://mumbai.polygonscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://mumbai.polygonscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Linea Goerli (59140)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://goerli.lineascan.build/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://goerli.lineascan.build/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://goerli.lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://goerli.lineascan.build/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://goerli.lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Arbitrum Sepolia (421614)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://sepolia.arbiscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://sepolia.arbiscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://sepolia.arbiscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+
+## Fuji Testnet (43113)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://testnet.snowtrace.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://testnet.snowtrace.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.snowtrace.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://testnet.snowtrace.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.snowtrace.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## Base Sepolia (84532)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://sepolia.basescan.org/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://sepolia.basescan.org/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://sepolia.basescan.org/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+
+## Telos Testnet (41)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://testnet.teloscan.io/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://testnet.teloscan.io/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://testnet.teloscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://testnet.teloscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://testnet.teloscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+
+## RSK Testnet (31)
+
+- SwapERC20 — [`0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e`](https://rootstock-testnet.blockscout.com/address/0xD82a5ff379f20fc45e213F4ee1D1FCF47545665e#code)
+- Swap — [`0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F`](https://rootstock-testnet.blockscout.com/address/0x01b28Aa66a54c6F2bE5C2eF905A2329270CCa96F#code)
+- Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock-testnet.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
+- Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://rootstock-testnet.blockscout.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
+- Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock-testnet.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
 
 
@@ -190,6 +180,7 @@
 
 # Security Audits
 
+- [AirSwap V4.2: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4.2-v1.0.pdf)
 - [AirSwap V4.1: SwapERC20, Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-SwapERC20-v1.0.pdf)
 - [AirSwap V4.1: Pool, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-PoolRegistry-v1.0.pdf)
 - [AirSwap V4: SwapERC20, Swap, Wrapper](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)

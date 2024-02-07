@@ -430,7 +430,8 @@ Peers may call `addOrder` to add an order to another peer.
 
 ```typescript
 addOrder(
-  order: FullOrder
+  order: FullOrder,
+  tags: string[]
 ): boolean
 ```
 
@@ -440,11 +441,11 @@ Peers may call `getOrders` to query for orders indexed by another peer.
 
 ```typescript
 getOrders(
-  filters: OrderFilter,
+  filter: OrderFilter,
   offset: number,
   limit: number,
-  sortField?: SortField,
-  sortOrder?: SortOrder
+  by = Indexes.EXPIRY,
+  direction = Direction.ASC
 ): (
   orders: FullOrder[],
   offset: number,
@@ -452,7 +453,17 @@ getOrders(
 )
 ```
 
-Where `OrderFilter`, `SortField`, and `SortOrder` [can be found here](https://github.com/airswap/airswap-protocols/blob/develop/tools/types/src/server.ts).
+## `getTags`
+
+Peers may call `getTags` to get all available tags for a token.
+
+```typescript
+getTags(
+  token: address
+): string[]
+```
+
+Where `OrderFilter`, `Indexes`, and `Direction` [can be found here](https://github.com/airswap/airswap-protocols/blob/v4.2/tools/utils/src/server.ts).
 
 # IndexingERC20
 
@@ -464,7 +475,8 @@ Peers may call `addOrderERC20` to add an order to another peer.
 
 ```typescript
 addOrderERC20(
-  order: FullOrderERC20
+  order: FullOrderERC20,
+  tags: string[]
 ): boolean
 ```
 
@@ -474,11 +486,11 @@ Peers may call `getOrdersERC20` to query for orders indexed by another peer.
 
 ```typescript
 getOrdersERC20(
-  filters: OrderFilter,
+  filter: OrderFilter,
   offset: number,
-  limit: number
-  sortField?: SortField,
-  sortOrder?: SortOrder
+  limit: number,
+  by = Indexes.EXPIRY,
+  direction = Direction.ASC
 ): (
   orders: FullOrderERC20[],
   offset: number,
@@ -486,7 +498,17 @@ getOrdersERC20(
 )
 ```
 
-Where `OrderFilter`, `SortField`, and `SortOrder` [can be found here](https://github.com/airswap/airswap-protocols/blob/develop/tools/types/src/server.ts).
+Where `OrderFilter`, `Indexes`, and `Direction` [can be found here](https://github.com/airswap/airswap-protocols/blob/v4.2/tools/utils/src/server.ts).
+
+## `getTags`
+
+Peers may call `getTags` to get all available tags for a token.
+
+```typescript
+getTags(
+  token: address
+): string[]
+```
 
 # Pricing Formats
 
