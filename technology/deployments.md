@@ -158,6 +158,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V4: SwapERC20 (56) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://bscscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: SwapERC20 (137) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: SwapERC20 (43114) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
+- AirSwap V4: Staking (1) — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
 
 
 ## AirSwap V3
