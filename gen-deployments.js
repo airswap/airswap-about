@@ -63,7 +63,7 @@ function printContracts(contracts, chainid) {
 
 let markdown = "See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releases).\n\n"
 
-markdown += "# AirSwap V4.2\n\n"
+markdown += "# AirSwap V4.3\n\n"
 for (let net in mainnets) {
   let name = chainNames[mainnets[net]]
   markdown += `## ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
