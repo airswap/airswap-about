@@ -87,6 +87,8 @@ for (let chainid in V4) {
   markdown += `- AirSwap V4: SwapERC20 (${chainid}) — [\`${V4[chainid]}\`](${getAccountUrl(chainid, V4[chainid])}#code)\n`
 }
 
+markdown += '- AirSwap V4: Staking (1) — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)\n'
+
 const V3 = {
   '1': '0x522d6f36c95a1b6509a14272c17747bbb582f2a6',
   '56': '0x132f13c3896eab218762b9e46f55c9c478905849',
