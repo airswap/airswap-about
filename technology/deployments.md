@@ -181,6 +181,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 
 # Security Audits
 
+- [AirSwap V4.3: SwapERC20](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.2.pdf)
 - [AirSwap V4.2: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4.2-v1.0.pdf)
 - [AirSwap V4.1: SwapERC20, Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-SwapERC20-v1.0.pdf)
 - [AirSwap V4.1: Pool, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-PoolRegistry-v1.0.pdf)
