@@ -70,7 +70,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-# AirSwap V4.2: Testnets
+# AirSwap V4.3: Testnets
 
 ## Sepolia (11155111)
 
@@ -181,8 +181,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 
 # Security Audits
 
-- [AirSwap V4.3: SwapERC20](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.2.pdf)
-- [AirSwap V4.2: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4.2-v1.0.pdf)
+- [AirSwap V4.3: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.2.pdf)
 - [AirSwap V4.1: SwapERC20, Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-SwapERC20-v1.0.pdf)
 - [AirSwap V4.1: Pool, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-PoolRegistry-v1.0.pdf)
 - [AirSwap V4: SwapERC20, Swap, Wrapper](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)

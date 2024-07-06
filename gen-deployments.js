@@ -69,7 +69,7 @@ for (let net in mainnets) {
   markdown += `## ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
 }
 
-markdown += "# AirSwap V4.2: Testnets\n\n"
+markdown += "# AirSwap V4.3: Testnets\n\n"
 for (let net in testnets) {
   let name = (chainNames[testnets[net]])
   if (testnets[net] !== ChainIds.HARDHAT) markdown += `## ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`
@@ -110,7 +110,7 @@ markdown += '\n\n## AirSwap V2\n\n\
 - AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)\n'
 
 markdown += '\n\n# Security Audits\n\n\
-- [AirSwap V4.2: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4.2-v1.0.pdf)\n\
+- [AirSwap V4.3: SwapERC20, Swap, Staking, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirSwap-v1.0.2.pdf)\n\
 - [AirSwap V4.1: SwapERC20, Pool](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-SwapERC20-v1.0.pdf)\n\
 - [AirSwap V4.1: Pool, Registry](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-PoolRegistry-v1.0.pdf)\n\
 - [AirSwap V4: SwapERC20, Swap, Wrapper](https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-AirswapV4-v1.0.pdf)\n\
