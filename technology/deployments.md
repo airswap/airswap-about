@@ -169,6 +169,9 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V3: Swap (43114) — [`0xec08261ac8b3d2164d236bd499def9f82ba9d13f`](https://snowtrace.io/address/0xec08261ac8b3d2164d236bd499def9f82ba9d13f#code)
 - AirSwap V3: Staking (1) — [`0x6d88B09805b90dad911E5C5A512eEDd984D6860B`](https://etherscan.io/address/0x6d88B09805b90dad911E5C5A512eEDd984D6860B#code)
 - AirSwap V3: Registry (1) — [`0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95`](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#code)
+- AirSwap V3: Registry (56) — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://bscscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
+- AirSwap V3: Registry (137) — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://polygonscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
+- AirSwap V3: Registry (43114) — [`0xE40feb39fcb941A633deC965Abc9921b3FE962b2`](https://snowtrace.io/address/0xE40feb39fcb941A633deC965Abc9921b3FE962b2#code)
 
 
 ## AirSwap V2
