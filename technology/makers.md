@@ -91,9 +91,9 @@ In development, set the chain to `5` with the `airswap chain` command. The follo
 
 Several useful commands can help you debug your server:
 
-- `airswap rfq:get` to request an order directly from your server. (RFQ)
-- `airswap rfq:best` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
-- `airswap quote:stream` to subscribe to a pricing stream and make orders for your server. (LastLook)
+- `airswap order` to request an order directly from your server. (RFQ)
+- `airswap compare` to request an order from servers supporting a specific token pair. Once your server is on the registry it will be queried with this command. (RFQ)
+- `airswap stream` to subscribe to a pricing stream and make orders for your server. (LastLook)
 
 ## Adding to the Registry
 
@@ -129,7 +129,7 @@ COMMANDS
 First run the following command to enable staking for your account.
 
 ```
-$ airswap registry:enable
+$ airswap registry:approve
 ```
 
 Now run the following command to set your server url on the registry.
@@ -147,10 +147,10 @@ $ airswap registry:add
 To ensure your configuration is correct, you can query tokens that you support on the registry.
 
 ```
-$ airswap registry:get
+$ airswap registry:list
 AirSwap CLI 4.0.6 — https://airswap.io/
 
-get urls from the registry RINKEBY
+get urls from the registry GOERLI
 
 Registry 0xa77fbeD39D5128e1cA9795d68D73010851393BCc
 
@@ -161,11 +161,11 @@ Server
 https://maker.example.com/
 ```
 
-Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap rfq:best` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
+Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap compare` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
 
 ```
-$ airswap rfq:best
-AirSwap CLI 4.0.6 — https://www.airswap.io/
+$ airswap compare
+AirSwap CLI 4.3.2 — https://www.airswap.io/
 
 get the best available order ETHEREUM
 

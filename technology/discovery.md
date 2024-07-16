@@ -36,7 +36,7 @@ Set active chain to ETHEREUM.
 Use `registry:get` to fetch server URLs for a token pair.
 
 ```
-$ airswap registry:get
+$ airswap registry:list
 AirSwap CLI 4.0.1 — https://www.airswap.io/
 
 get urls from the registry ETHEREUM
@@ -52,7 +52,7 @@ https://maker.example.com/
 
 ### Example: Take an Order
 
-Try `airswap rfq:get` with a server URL from the previous command.
+Try `airswap order` with a server URL from the previous command.
 
 ## TypeScript
 
