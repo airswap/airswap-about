@@ -46,6 +46,9 @@ const contracts = [{
   name: 'Staking',
   deploys: require('@airswap/staking/deploys')
 }, {
+  name: 'Delegate',
+  deploys: require('@airswap/delegate/deploys')
+}, {
   name: 'AST',
   deploys: {
     1: require('@airswap/utils').stakingTokenAddresses[1]
@@ -63,13 +66,13 @@ function printContracts(contracts, chainid) {
 
 let markdown = "See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releases).\n\n"
 
-markdown += "# AirSwap V4.3\n\n"
+markdown += "# AirSwap V5.0\n\n"
 for (let net in mainnets) {
   let name = chainNames[mainnets[net]]
   markdown += `## ${name} (${mainnets[net]})\n\n${printContracts(contracts, mainnets[net])}\n`
 }
 
-markdown += "# AirSwap V4.3: Testnets\n\n"
+markdown += "# AirSwap V5.0: Testnets\n\n"
 for (let net in testnets) {
   let name = (chainNames[testnets[net]])
   if (testnets[net] !== ChainIds.HARDHAT) markdown += `## ${name} (${testnets[net]})\n\n${printContracts(contracts, testnets[net])}\n`

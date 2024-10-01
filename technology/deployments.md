@@ -1,6 +1,6 @@
 See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releases).
 
-# AirSwap V4.3
+# AirSwap V5.0
 
 ## Ethereum (1)
 
@@ -10,6 +10,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 - Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://etherscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
 
 ## BSC (56)
@@ -19,6 +20,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://bscscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://bscscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://bscscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://bscscan.com/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Polygon (137)
 
@@ -27,6 +29,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://polygonscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://polygonscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://polygonscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://polygonscan.com/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Linea (59144)
 
@@ -35,6 +38,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://lineascan.build/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://lineascan.build/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Arbitrum (42161)
 
@@ -43,6 +47,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://arbiscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://arbiscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://arbiscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://arbiscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Avalanche (43114)
 
@@ -51,6 +56,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://snowtrace.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://snowtrace.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://snowtrace.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://snowtrace.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Base (8453)
 
@@ -59,6 +65,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://basescan.org/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://basescan.org/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://basescan.org/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://basescan.org/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Telos (40)
 
@@ -70,7 +77,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://rootstock.blockscout.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-# AirSwap V4.3: Testnets
+# AirSwap V5.0: Testnets
 
 ## Sepolia (11155111)
 
@@ -80,6 +87,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://sepolia.etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://sepolia.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 - Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://sepolia.etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
+- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://sepolia.etherscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Holesky (17000)
 
