@@ -26,7 +26,7 @@ Getting started is as easy as standing up a JSON-RPC web server and adding its U
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](./orders.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](./formats.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward rewarding AirSwap governance participants and project contributors.
 
@@ -111,19 +111,19 @@ Let's take a look at the available Registry commands.
 
 ```
 $ airswap registry
-AirSwap CLI 4.0.6 — https://airswap.io/
+AirSwap CLI 5.0.0 — https://www.airswap.io/
 add and remove supported tokens
 
 USAGE
   $ airswap registry:COMMAND
 
 COMMANDS
-  registry:add     add supported tokens to the registry
-  registry:enable  enable staking on the registry
-  registry:get     get urls from the registry
-  registry:list    list supported tokens from registry
-  registry:remove  remove supported tokens from the registry
-  registry:url     set server url on the registry
+  registry:approve  enable staking on the registry
+  registry:eject    remove url, protocols, and tokens from registry
+  registry:list     get urls from the registry
+  registry:revoke   disable staking on the registry
+  registry:status   check status of url, protocols, and tokens on registry
+  registry:url      set server url on the registry
 ```
 
 First run the following command to enable staking for your account.
@@ -132,40 +132,35 @@ First run the following command to enable staking for your account.
 $ airswap registry:approve
 ```
 
-Now run the following command to set your server url on the registry.
+Next run the following command to set your server url on the registry.
 
 ```
 $ airswap registry:url
 ```
 
-Now run the following command to add tokens you support.
+Next run the following command to add protocols you support.
 
 ```
-$ airswap registry:add
+$ airswap protocols:add
 ```
 
-To ensure your configuration is correct, you can query tokens that you support on the registry.
+Next run the following command to add tokens you support.
 
 ```
-$ airswap registry:list
-AirSwap CLI 4.0.6 — https://airswap.io/
+$ airswap tokens:add
+```
 
-get urls from the registry GOERLI
+To ensure your configuration is correct, run the following.
 
-Registry 0xa77fbeD39D5128e1cA9795d68D73010851393BCc
-
-Token pair (e.g. WETH/USDT):  DAI/WETH
-
-Server
-----------------------------------------
-https://maker.example.com/
+```
+$ airswap registry:status
 ```
 
 Now that your server is running and has been added to the Registry, your quotes will be returned among results of the `airswap compare` command and aggregators like [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785).
 
 ```
-$ airswap compare
-AirSwap CLI 4.3.2 — https://www.airswap.io/
+$ airswap best
+AirSwap CLI 5.0.0 — https://www.airswap.io/
 
 get the best available order ETHEREUM
 

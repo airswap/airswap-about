@@ -13,5 +13,5 @@ redirects:
   guides/voters: README.md
   guides/ambassadors: README.md
   guides/authors: README.md
-  technology/signatures: technology/orders.md
+  technology/signatures: technology/formats.md
   community/onboarding: README.md

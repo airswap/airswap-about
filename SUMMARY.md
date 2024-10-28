@@ -6,9 +6,10 @@
 ## Technology
 
 - [Protocols](technology/protocols.md)
-- [Formats](technology/orders.md)
+- [Formats](technology/formats.md)
 - [Discovery](technology/discovery.md)
 - [Makers](technology/makers.md)
+- [Delegate](technology/delegate.md)
 - [Marketplaces](technology/marketplaces.md)
 - [Deployments](technology/deployments.md)
 
