@@ -19,7 +19,7 @@ To enable Delegate call the `setRule` function. Token approvals must be set up b
   ) external;
 ```
 
-Rules can be be updated using `setRule` again or canceled using `unsetRule`.
+Rules can be updated using `setRule` again or deleted using `unsetRule`.
 
 ```typescript
   function unsetRule(
@@ -31,7 +31,7 @@ Rules can be be updated using `setRule` again or canceled using `unsetRule`.
 
 ## Swaps
 
-As a counterparty, query logs or subscribe to `SetRule` and `UnsetRule` events for pricing information. With price in hand, create and sign an order at any time and then call `swap` on the Delegate contract. Upon success, Delegate emits a `DelegateSwap` event.
+To trade with Delegate, query event logs `SetRule` and `UnsetRule` for pricing information. With price in hand, create and sign an order at any time and call `swap` on the Delegate contract. Upon success, Delegate emits a `DelegateSwap` event.
 
 ```typescript
   function swap(
@@ -50,3 +50,19 @@ As a counterparty, query logs or subscribe to `SetRule` and `UnsetRule` events f
 ```
 
 Delegate uses SwapERC20 `swapLight` behind the scenes to complete the swap.
+
+## Managers
+
+A wallet usually manages its own rules. A wallet may authorize another wallet to manage rules on its behalf; for example, a cold wallet may authorize a hot wallet. To authorize a manager, call the `authorize` function on the Delegate.
+
+```typescript
+  function authorize(address manager) external
+```
+
+Delegate will emit an `Authorize` event. To revoke an existing authorization, call `revoke` on the Delegate.
+
+```typescript
+  function revoke() external
+```
+
+Delegate will emit a `Revoke` event.
