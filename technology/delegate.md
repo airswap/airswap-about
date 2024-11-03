@@ -9,24 +9,24 @@ See the [deployments](./deployments.md) page for latest deployed Delegate contra
 To enable Delegate call the `setRule` function. Token approvals must be set up by `senderWallet` on the `senderToken` to allow Delegate to act as a spender.
 
 ```typescript
-  function setRule(
-    address senderWallet,
-    address senderToken,
-    uint256 senderAmount,
-    address signerToken,
-    uint256 signerAmount,
-    uint256 expiry
-  ) external;
+function setRule(
+  address senderWallet,
+  address senderToken,
+  uint256 senderAmount,
+  address signerToken,
+  uint256 signerAmount,
+  uint256 expiry
+) external;
 ```
 
 Rules can be updated using `setRule` again or deleted using `unsetRule`.
 
 ```typescript
-  function unsetRule(
-    address senderWallet,
-    address senderToken,
-    address signerToken
-  ) external;
+function unsetRule(
+  address senderWallet,
+  address senderToken,
+  address signerToken
+) external;
 ```
 
 ## Swaps
@@ -34,19 +34,19 @@ Rules can be updated using `setRule` again or deleted using `unsetRule`.
 To trade with Delegate, query event logs `SetRule` and `UnsetRule` for pricing information. With price in hand, create and sign an order at any time and call `swap` on the Delegate contract. Upon success, Delegate emits a `DelegateSwap` event.
 
 ```typescript
-  function swap(
-    address senderWallet,
-    uint256 nonce,
-    uint256 expiry,
-    address signerWallet,
-    address signerToken,
-    uint256 signerAmount,
-    address senderToken,
-    uint256 senderAmount,
-    uint8 v,
-    bytes32 r,
-    bytes32 s
-  ) external
+function swap(
+  address senderWallet,
+  uint256 nonce,
+  uint256 expiry,
+  address signerWallet,
+  address signerToken,
+  uint256 signerAmount,
+  address senderToken,
+  uint256 senderAmount,
+  uint8 v,
+  bytes32 r,
+  bytes32 s
+) external
 ```
 
 Delegate uses SwapERC20 `swapLight` behind the scenes to complete the swap.
@@ -56,13 +56,13 @@ Delegate uses SwapERC20 `swapLight` behind the scenes to complete the swap.
 A wallet usually manages its own rules. A wallet may authorize another wallet to manage rules on its behalf; for example, a cold wallet may authorize a hot wallet. To authorize a manager, call the `authorize` function on the Delegate.
 
 ```typescript
-  function authorize(address manager) external
+function authorize(address manager) external
 ```
 
 Delegate will emit an `Authorize` event. To revoke an existing authorization, call `revoke` on the Delegate.
 
 ```typescript
-  function revoke() external
+function revoke() external
 ```
 
 Delegate will emit a `Revoke` event.
