@@ -156,8 +156,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://rootstock-testnet.blockscout.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock-testnet.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
-
-
 # Legacy
 
 ## AirSwap V4
@@ -167,7 +165,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V4: SwapERC20 (137) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: SwapERC20 (43114) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: Staking (1) — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
-
 
 ## AirSwap V3
 
@@ -181,14 +178,12 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V3: Registry (137) — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://polygonscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
 - AirSwap V3: Registry (43114) — [`0xE40feb39fcb941A633deC965Abc9921b3FE962b2`](https://snowtrace.io/address/0xE40feb39fcb941A633deC965Abc9921b3FE962b2#code)
 
-
 ## AirSwap V2
 
 - AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)
 - AirSwap V2: Staking [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)
 - AirSwap V2: Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)
 - AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)
-
 
 # Security Audits
 

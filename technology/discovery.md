@@ -59,14 +59,14 @@ Try `airswap order` with a server URL from the previous command.
 Using the `Registry` library from `@airswap/libraries` returns `Server` instances that you can interact with.
 
 ```typescript
-import { ProtocolIds } from "@airswap/utils";
+import { ProtocolIds } from '@airswap/utils'
 import { Registry } from '@airswap/libraries'
 const servers = await Registry.getServers(
   provider,
   chainId,
   ProtocolIds.RequestForQuoteERC20,
   signerToken,
-  senderToken
+  senderToken,
 )
 ```
 
@@ -99,22 +99,24 @@ const serverURLs = signerTokenURLs.filter((value) =>
 
 ```typescript
 import { Registry, SwapERC20 } from '@airswap/libraries'
-import { ProtocolIds, chainNames } from '@airswap/utils'
+import { ProtocolIds, chainNames, orderERC20ToParams } from '@airswap/utils'
 
 const servers = await Registry.getServers(
   provider,
   chainId,
   ProtocolIds.RequestForQuoteERC20,
   signerToken,
-  senderToken
+  senderToken,
 )
 
 const order = servers[0].getSignerSideOrderERC20(
   senderAmount,
   signerToken,
   senderToken,
-  senderWallet
+  senderWallet,
 )
 
-const tx = await new SwapERC20(chainId, provider).swapLight(order)
+await SwapERC20.getContract(provider, chainId).swapLight(
+  ...orderERC20ToParams(order),
+)
 ```
