@@ -1,26 +1,26 @@
 # Table of contents
 
-- [Welcome](README)
-- [Announcements](./announcements)
+- [Welcome](README.md)
+- [Announcements](./announcements.md)
 
 ## Technology
 
 - [Protocols](./technology/protocols.md)
-- [Formats](./technology/formats)
+- [Formats](./technology/formats.md)
 - [Discovery](./technology/discovery.md)
-- [Makers](./technology/makers)
-- [Delegate](./technology/delegate)
-- [Marketplaces](./technology/marketplaces)
-- [Deployments](./technology/deployments)
+- [Makers](./technology/makers.md)
+- [Delegate](./technology/delegate.md)
+- [Marketplaces](./technology/marketplaces.md)
+- [Deployments](./technology/deployments.md)
 
 ## Community
 
-- [Conduct](./community/conduct)
-- [Earning](./community/earning)
-- [Proposals](./community/proposals)
+- [Conduct](./community/conduct.md)
+- [Earning](./community/earning.md)
+- [Proposals](./community/proposals.md)
 
 ## About
 
-- [Glossary](./glossary)
-- [Resources](./resources)
-- [FAQ](./frequently-asked-questions)
+- [Glossary](./glossary.md)
+- [Resources](./resources.md)
+- [FAQ](./frequently-asked-questions.md)
