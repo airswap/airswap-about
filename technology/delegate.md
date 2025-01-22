@@ -2,7 +2,7 @@
 
 Delegate is a contract that allows users to set on-chain trading rules that accept and execute AirSwap orders that meet price criteria. In terms of the underlying SwapERC20 protocol, a trader setting rules is authorizing the Delegate to act as `sender` on its behalf. The trader interfacing with the delegate is the `signer` of each order. Delegate acts as an on-chain intermediary for cases where a Trader does not have an immediate counterparty or wishes to make an order publicly available.
 
-See the [deployments](./deployments.md) page for latest deployed Delegate contract addresses.
+See the [deployments](https://about.airswap.xyz/deployments) page for latest deployed Delegate contract addresses.
 
 ## Rules
 

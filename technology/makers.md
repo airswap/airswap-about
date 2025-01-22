@@ -1,6 +1,6 @@
 # Makers
 
-Makers run web servers that implement APIs like RFQ and LastLook using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](./deployments.md) smart contract, which is queried by clients.
+Makers run web servers that implement APIs like RFQ and LastLook using JSON-RPC [over HTTP](https://www.jsonrpc.org/historical/json-rpc-over-http.html) or WebSocket. To be reachable by clients, servers run at public endpoints with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled. To become discoverable, server URLs are added to the [Registry](https://about.airswap.xyz/deployments) smart contract, which is queried by clients.
 
 ## Introduction
 
@@ -14,19 +14,19 @@ For the RFQ protocol, a server is always the **signer** and the client is always
 
 ## HTTP vs WebSocket
 
-If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `setProtocols` method of the [Request for Quote](./protocols.md#rfq) and [LastLook](./protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and LastLook protocols.
+If a URL is HTTPS, it implies that the server supports the latest RFQ protocol at that endpoint. If a URL is WebSocket (`wss`) then the server communicates its supported protocols upon connnection. See the `setProtocols` method of the [Request for Quote](https://about.airswap.xyz/protocols.md#rfq) and [LastLook](https://about.airswap.xyz/protocols.md#last-look) protocols for details. WebSocket servers can support both RFQ and LastLook protocols.
 
 ## Getting Started
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
-- Servers generally implement the [RFQ](./protocols.md) protocol at minimum.
-- You can debug your server with the [CLI](./makers.md#debugging-with-the-cli) or via curl.
-- When ready, add your server [to the Registry](./makers.md#adding-to-the-registry) which requires [100K AST](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#readContract#F6).
+- Servers generally implement the [RFQ](https://about.airswap.xyz/protocols) protocol at minimum.
+- You can debug your server with the [CLI](https://about.airswap.xyz/makers.md#debugging-with-the-cli) or via curl.
+- When ready, add your server [to the Registry](https://about.airswap.xyz/makers.md#adding-to-the-registry) which requires [100K AST](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#readContract#F6).
 
 ## Protocol Fees
 
-When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](./formats.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](./deployments.md) contract. The amount is transferred from the `signerWallet` address upon settlement.
+When signing orders in RFQ, a protocol fee (in basis points) is [hashed into the signature](https://about.airswap.xyz/formats.md#signatures) and verified during settlement. The value of this parameter must match its current value of `protocolFeeLight` on the [SwapERC20](https://about.airswap.xyz/deployments) contract. The amount is transferred from the `signerWallet` address upon settlement.
 
 100% of protocol fees go toward rewarding AirSwap governance participants and project contributors.
 

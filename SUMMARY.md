@@ -1,26 +1,26 @@
 # Table of contents
 
-- [Welcome](README.md)
-- [Announcements](./announcements.md)
+- [Welcome](README)
+- [Announcements](https://about.airswap.xyz/announcements)
 
 ## Technology
 
-- [Protocols](./technology/protocols.md)
-- [Formats](./technology/formats.md)
-- [Discovery](./technology/discovery.md)
-- [Makers](./technology/makers.md)
-- [Delegate](./technology/delegate.md)
-- [Marketplaces](./technology/marketplaces.md)
-- [Deployments](./technology/deployments.md)
+- [Protocols](https://about.airswap.xyz/technology/protocols)
+- [Formats](https://about.airswap.xyz/technology/formats)
+- [Discovery](https://about.airswap.xyz/technology/discovery)
+- [Makers](https://about.airswap.xyz/technology/makers)
+- [Delegate](https://about.airswap.xyz/technology/delegate)
+- [Marketplaces](https://about.airswap.xyz/technology/marketplaces)
+- [Deployments](https://about.airswap.xyz/technology/deployments)
 
 ## Community
 
-- [Conduct](./community/conduct.md)
-- [Earning](./community/earning.md)
-- [Proposals](./community/proposals.md)
+- [Conduct](https://about.airswap.xyz/community/conduct)
+- [Earning](https://about.airswap.xyz/community/earning)
+- [Proposals](https://about.airswap.xyz/community/proposals)
 
 ## About
 
-- [Glossary](./glossary.md)
-- [Resources](./resources.md)
-- [FAQ](./frequently-asked-questions.md)
+- [Glossary](https://about.airswap.xyz/glossary)
+- [Resources](https://about.airswap.xyz/resources)
+- [FAQ](https://about.airswap.xyz/frequently-asked-questions)
