@@ -2,12 +2,12 @@ For smart contract addresses see [Deployments](technology/deployments.md).
 
 # Social Media
 
-- [Discord](https://chat.airswap.io/)
+- [Discord](https://discord.gg/Pc6gV3hFjR)
 - [Telegram](https://t.me/airswapofficial)
-- [Twitter](https://twitter.com/airswap)
+- [Twitter](https://x.com/airswap)
 
 {% hint style="info" %}
-Know some other channels which could be useful for community building? Do drop by our [Discord](https://chat.airswap.io) to let us know how else we can reach out to the community!
+Know some other channels which could be useful for community building? Do drop by our [Discord](https://discord.gg/Pc6gV3hFjR) to let us know how else we can reach out to the community!
 {% endhint %}
 
 # Governance

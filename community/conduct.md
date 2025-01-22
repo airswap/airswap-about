@@ -2,7 +2,7 @@
 description: Code of conduct
 ---
 
-[AirSwap](https://about.airswap.io/) is a DAO focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by positive impact on network health and trading volume.
+[AirSwap](https://www.airswap.xyz) is a DAO focused on decentralized trading systems. Anyone can join, contribute, and earn as a member of our development community. Everything we build is aligned with our mission and generally measured by positive impact on network health and trading volume.
 
 We continuously create a respectful environment where people want to come, stay, and participate over the long term.
 

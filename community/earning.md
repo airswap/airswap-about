@@ -6,7 +6,7 @@ Protocol fees on AirSwap support development, growth, and upkeep of AirSwap prot
 
 # Contributor Tips
 
-Each month, a contributions thread is opened on [Discord](https://chat.airswap.io). Communicating your contributions is part of your responsibility as a contributor—help your fellow contributors by clearly stating what you have achieved for the month.
+Each month, a contributions thread is opened on [Discord](https://discord.gg/Pc6gV3hFjR). Communicating your contributions is part of your responsibility as a contributor—help your fellow contributors by clearly stating what you have achieved for the month.
 
 {% hint style="warning" %}
 If you have not contributed for the month, always **opt-out** of receiving GIVE for that epoch. Anyone who did not describe their contributions or opt out will be removed from the circle and will have to be re-nominated for future rounds.

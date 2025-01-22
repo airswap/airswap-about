@@ -111,7 +111,7 @@ Let's take a look at the available Registry commands.
 
 ```
 $ airswap registry
-AirSwap CLI 5.0.0 — https://www.airswap.io/
+AirSwap CLI 5.0.0 — https://www.airswap.xyz/
 add and remove supported tokens
 
 USAGE
@@ -160,7 +160,7 @@ Now that your server is running and has been added to the Registry, your quotes 
 
 ```
 $ airswap best
-AirSwap CLI 5.0.0 — https://www.airswap.io/
+AirSwap CLI 5.0.0 — https://www.airswap.xyz/
 
 get the best available order ETHEREUM
 

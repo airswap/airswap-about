@@ -10,7 +10,7 @@ Digital tokens can represent both purely digital assets and real-world assets.
 
 **With pseudonymous public ledgers** like Bitcoin and Ethereum came international centralized exchanges without the same management and regulation standards, introducing risk into a system that intended to put power into the hands of participants rather than trusted intermediaries that can be mismanaged, hacked, or broken.
 
-**Early decentralized exchanges failed** because they attempted to replicate the order book model, which is fundamentally centralized. What we’ve since found is that decentralized models that perform well are either peer-to-peer (e.g. [AirSwap](https://airswap.io/)) or peer-to-contract (e.g. [Uniswap](https://uniswap.org/)).
+**Early decentralized exchanges failed** because they attempted to replicate the order book model, which is fundamentally centralized. What we’ve since found is that decentralized models that perform well are either peer-to-peer (e.g. [AirSwap](https://airswap.xyz/)) or peer-to-contract (e.g. [Uniswap](https://uniswap.org/)).
 
 # Atomic Swaps
 
@@ -34,7 +34,7 @@ Peer-to-peer token swaps are enabled by an "atomic" transaction in which both si
 
 At the protocol level, there are **signers**, which cryptographically sign terms (an order), and **senders** which submit those terms for settlement on the atomic swap contract. Different market participants may take the role of signer or sender depending on the flavor of P2P.
 
-[AirSwap](https://airswap.io/) is the original peer-to-peer swaps protocol.
+[AirSwap](https://airswap.xyz/) is the original peer-to-peer swaps protocol.
 
 _Strengths_
 

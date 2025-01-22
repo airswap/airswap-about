@@ -1,8 +1,8 @@
 # Welcome
 
-[![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://chat.airswap.io) [![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social)](https://twitter.com/airswap) [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social)](https://www.reddit.com/r/AirSwap/) [![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)](https://github.com/airswap/airswap-protocols)
+[![Discord](https://img.shields.io/discord/590643190281928738.svg)](https://discord.gg/Pc6gV3hFjR) [![Twitter Follow](https://img.shields.io/twitter/follow/airswap?style=social)](https://x.com/airswap) [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/AirSwap?style=social)](https://www.reddit.com/r/AirSwap/) [![GitHub stars](https://img.shields.io/github/stars/airswap/airswap-protocols?style=social)](https://github.com/airswap/airswap-protocols)
 
-[AirSwap](https://www.airswap.io) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/protocols.md) and [LastLook](technology/protocols.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
+[AirSwap](https://www.airswap.xyz) is an open developer community focused on decentralized trading systems. AirSwap technology powers peer-to-peer networks using de facto standard [RFQ](technology/protocols.md) and [LastLook](technology/protocols.md) protocols making it the top choice for traditional market makers entering the decentralized financial system.
 
 **Our vision** is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. **Our mission** is to become the standard peer-to-peer trading system: a fundamental primitive of the decentralized economy.
 
@@ -68,7 +68,7 @@ Each AIP is ratified by calling it to vote and being accepted by the token holde
 
 ## History
 
-AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76), [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb), [2021](https://blog.airswap.io/2021-a-year-in-review-20dff123b11), [2022](https://blog.airswap.io/2022-a-year-in-review-918f1d7b9a71), and [2023](https://blog.airswap.io/2023-a-year-in-review-7bebc102c0d7).
+AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76), [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb), [2021](https://medium.com/airswap/2021-a-year-in-review-20dff123b11), [2022](https://medium.com/airswap/2022-a-year-in-review-918f1d7b9a71), and [2023](https://medium.com/airswap/2023-a-year-in-review-7bebc102c0d7).
 
 - [AirSwap Roadmap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (November 16th, 2017)
 - [AirSwap is Here](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (April 25, 2018)
@@ -76,11 +76,11 @@ AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-tok
 - [AirSwap Instant 2.0](https://medium.com/fluidity/airswap-instant-2-0-d10906447838) (April 26, 2019)
 - [AirSwap Trader](https://medium.com/fluidity/introducing-airswap-trader-63a0ef9e67c0) (August 6, 2019)
 - [AirSwap Delegates](https://medium.com/fluidity/introducing-airswap-delegates-1c3db83be1db) (February 4, 2020)
-- [Phase II Kickoff](https://twitter.com/airswap/status/1346542008345747457) and [Transition Complete](https://twitter.com/airswap/status/1359190898110853122) (2021)
-- [AirSwap Web App](https://blog.airswap.io/airswap-dao-launches-new-app-cb5a9735b9e1) (2021)
-- [AirSwap V3](https://blog.airswap.io/introducing-airswap-v3-97f8d14bebad) (2022)
-- [AirSwap V4](https://blog.airswap.io/introducing-airswap-v4-1962923ccc74) (2023)
-- [AirSwap NFT and OTC 2.0](https://blog.airswap.io/happy-10-10-nft-marketplaces-otc-2-0-protocols-4-1-and-more-b49cf6b1bc2f) (2023)
+- [Phase II Kickoff](https://x.com/airswap/status/1346542008345747457) and [Transition Complete](https://x.com/airswap/status/1359190898110853122) (2021)
+- [AirSwap Web App](https://medium.com/airswap/airswap-dao-launches-new-app-cb5a9735b9e1) (2021)
+- [AirSwap V3](https://medium.com/airswap/introducing-airswap-v3-97f8d14bebad) (2022)
+- [AirSwap V4](https://medium.com/airswap/introducing-airswap-v4-1962923ccc74) (2023)
+- [AirSwap NFT and OTC 2.0](https://medium.com/airswap/happy-10-10-nft-marketplaces-otc-2-0-protocols-4-1-and-more-b49cf6b1bc2f) (2023)
 
 Having achieved its initial goals and delivered its technology roadmap, AirSwap is now an open project and community of contributors who pursue initiatives to continue to develop and grow the network.
 
@@ -96,6 +96,6 @@ Having achieved its initial goals and delivered its technology roadmap, AirSwap 
 
 ## Explore
 
-- AirSwap [Discord Server](https://chat.airswap.io)
+- AirSwap [Discord Server](https://discord.gg/Pc6gV3hFjR)
 - AirSwap [Member Dashboard](https://dao.airswap.eth.limo/)
-- AirSwap [Twitter](https://twitter.com/airswap)
+- AirSwap [Twitter](https://x.com/airswap)

@@ -22,7 +22,7 @@ Use `airswap chain` to set your chain to Goerli or Mainnet.
 
 ```
 $ airswap chain
-AirSwap CLI 4.0.1 — https://www.airswap.io/
+AirSwap CLI 4.0.1 — https://www.airswap.xyz/
 
 set the active ethereum chain
 
@@ -37,7 +37,7 @@ Use `registry:get` to fetch server URLs for a token pair.
 
 ```
 $ airswap registry:list
-AirSwap CLI 4.0.1 — https://www.airswap.io/
+AirSwap CLI 4.0.1 — https://www.airswap.xyz/
 
 get urls from the registry ETHEREUM
 
