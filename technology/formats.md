@@ -19,7 +19,7 @@ An `OrderERC20` has the following properties:
 
 ## Execution
 
-Orders are passed to the [SwapERC20](https://about.airswap.xyz/contract-deployments) contract for execution, which emits a `SwapERC20` event on success. The `swapLight` function is more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
+Orders are passed to the [SwapERC20](./deployments.md) contract for execution, which emits a `SwapERC20` event on success. The `swapLight` function is more efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can execute a properly signed order.
 
 ```typescript
   function swapLight(
@@ -124,7 +124,7 @@ v, r, s = sign_typed_data(data, bytes.fromhex(SIGNER_KEY))
 
 ## Authorized Signers
 
-**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [SwapERC20](https://about.airswap.xyz/deployments) contract.
+**Optional.** One account may authorize another account to sign orders on its behalf. For example, a server might sign using an account that has been authorized by a contract wallet. To manage signer authorizations, use the following functions on the [SwapERC20](./deployments.md) contract.
 
 ```text
 function authorize(address signer) external
@@ -135,9 +135,9 @@ function revoke() external
 
 The following values are used for the EIP712Domain.
 
-| Param               | Type      | Value                               |
-| :------------------ | :-------- | :---------------------------------- |
-| `name`              | `bytes32` | `SWAP_ERC20`                        |
-| `version`           | `bytes32` | `4`                                 |
-| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Goerli: `5`  |
-| `verifyingContract` | `address` | [SwapERC20](https://about.airswap.xyz/deployments) address |
+| Param               | Type      | Value                                 |
+| :------------------ | :-------- | :------------------------------------ |
+| `name`              | `bytes32` | `SWAP_ERC20`                          |
+| `version`           | `bytes32` | `4`                                   |
+| `chainId`           | `uint256` | Ethereum Mainnet: `1`, Goerli: `5`    |
+| `verifyingContract` | `address` | [SwapERC20](./deployments.md) address |

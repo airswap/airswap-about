@@ -1,4 +1,4 @@
-For smart contract addresses see [Deployments](https://about.airswap.xyz/technology/deployments).
+For smart contract addresses see [Deployments](./technology/deployments).
 
 # Social Media
 

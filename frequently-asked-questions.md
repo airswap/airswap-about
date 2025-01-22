@@ -66,4 +66,4 @@ There are lots of ways to get involved in AirSwap, from generating ideas, to coo
 
 ### How do contributors earn?
 
-Every month, contributors come together to tip each other using[Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the about of GIVE received. Learn more about [earning](https://about.airswap.xyz/community/earning).
+Every month, contributors come together to tip each other using[Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the about of GIVE received. Learn more about [earning](./community/earning).

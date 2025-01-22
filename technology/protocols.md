@@ -1,6 +1,6 @@
 AirSwap trading technology is fully decentralized, powered by smart contracts that enable counterparty discovery and atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
-For information on finding counter-parties, see [Discovery](https://about.airswap.xyz/discovery).
+For information on finding counter-parties, see [Discovery](./discovery.md).
 
 # Discovery
 
@@ -136,7 +136,7 @@ getAllPricingERC20(
 
 ## Example
 
-To find counterparties, see [Discovery](https://about.airswap.xyz/discovery). With server URLs in hand, clients may call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests on servers that support RequestForQuoteERC20.
+To find counterparties, see [Discovery](./discovery.md). With server URLs in hand, clients may call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests on servers that support RequestForQuoteERC20.
 
 ### Client Request
 
@@ -170,7 +170,7 @@ curl -H 'Content-Type: application/json' \
 
 ### Server Response
 
-See the [signatures](https://about.airswap.xyz/signatures) page for details on signing an OrderERC20.
+See the [signatures](./formats.md#signatures) page for details on signing an OrderERC20.
 
 ```javascript
 HTTP/1.1 200 OK
@@ -200,7 +200,7 @@ Content-Type: application/json
 
 ### Client Settlement
 
-With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](https://about.airswap.xyz/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+With an OrderERC20 in hand, the client sends an Ethereum transaction to the [SwapERC20](./deployments.md) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
 
 ```typescript
   function swapLight(
@@ -329,7 +329,7 @@ considerOrderERC20(
 
 ## Example
 
-To find counterparties, see [Discovery](https://about.airswap.xyz/discovery). With WebSocket server URLs in hand (i.e. the URL schema is `wss`), clients connect to each and calls methods as JSON-RPC over WebSocket.
+To find counterparties, see [Discovery](./discovery.md). With WebSocket server URLs in hand (i.e. the URL schema is `wss`), clients connect to each and calls methods as JSON-RPC over WebSocket.
 
 ### WebSocket
 
@@ -416,7 +416,7 @@ The client may send an OrderERC20 to the server to consider a swap.
 }
 ```
 
-With an OrderERC20 in hand, the server sends an Ethereum transaction to the [SwapERC20](https://about.airswap.xyz/contract-deployments) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
+With an OrderERC20 in hand, the server sends an Ethereum transaction to the [SwapERC20](./deployments.md) contract. The `swapLight` function is gas efficient, whereas the `swap` function provides protocol fee rebates to staked AST holders. Either function can settle a correctly signed OrderERC20. A successful swap emits a `SwapERC20` event.
 
 The client may subscribe to a filter for a `SwapERC20` event with the `nonce` they provided to the server to track fills.
 
