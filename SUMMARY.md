@@ -5,7 +5,7 @@
 
 ## Technology
 
-- [Protocols](https://about.airswap.xyz/technology/protocols)
+- [Protocols](./technology/protocols.md)
 - [Formats](https://about.airswap.xyz/technology/formats)
 - [Discovery](https://about.airswap.xyz/technology/discovery)
 - [Makers](https://about.airswap.xyz/technology/makers)

@@ -22,7 +22,7 @@ There are benefits to each. With AirSwap there is no price slippage and trades a
 
 ### Is AirSwap available on other chains?
 
-AirSwap [RFQ ](https://about.airswap.xyz/technology/protocols)is currently available through Metamask swaps on BSC. We are currently working on bringing AirSwap swaps to a [chain near you](https://github.com/airswap/airswap-aips/issues/49). Stay tuned...
+AirSwap [RFQ ](./technology/protocols.md) is currently available through Metamask swaps on BSC. We are currently working on bringing AirSwap swaps to a [chain near you](https://github.com/airswap/airswap-aips/issues/49). Stay tuned...
 
 ## Governance
 
