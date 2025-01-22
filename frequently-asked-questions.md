@@ -22,7 +22,7 @@ There are benefits to each. With AirSwap there is no price slippage and trades a
 
 ### Is AirSwap available on other chains?
 
-AirSwap [RFQ ](technology/protocols.md)is currently available through Metamask swaps on BSC. We are currently working on bringing AirSwap swaps to a [chain near you](https://github.com/airswap/airswap-aips/issues/49). Stay tuned...
+AirSwap [RFQ ](./technology/protocols.md)is currently available through Metamask swaps on BSC. We are currently working on bringing AirSwap swaps to a [chain near you](https://github.com/airswap/airswap-aips/issues/49). Stay tuned...
 
 ## Governance
 
@@ -66,4 +66,4 @@ There are lots of ways to get involved in AirSwap, from generating ideas, to coo
 
 ### How do contributors earn?
 
-Every month, contributors come together to tip each other using[Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the about of GIVE received. Learn more about [earning](community/earning.md).
+Every month, contributors come together to tip each other using[Coordinape](https://coordinape.com). Funds are then distributed pro rata to each member of the circle based on the about of GIVE received. Learn more about [earning](./community/earning.md).

@@ -1,26 +1,26 @@
 # Table of contents
 
 - [Welcome](README.md)
-- [Announcements](announcements.md)
+- [Announcements](./announcements.md)
 
 ## Technology
 
-- [Protocols](technology/protocols.md)
-- [Formats](technology/formats.md)
-- [Discovery](technology/discovery.md)
-- [Makers](technology/makers.md)
-- [Delegate](technology/delegate.md)
-- [Marketplaces](technology/marketplaces.md)
-- [Deployments](technology/deployments.md)
+- [Protocols](./technology/protocols.md)
+- [Formats](./technology/formats.md)
+- [Discovery](./technology/discovery.md)
+- [Makers](./technology/makers.md)
+- [Delegate](./technology/delegate.md)
+- [Marketplaces](./technology/marketplaces.md)
+- [Deployments](./technology/deployments.md)
 
 ## Community
 
-- [Conduct](community/conduct.md)
-- [Earning](community/earning.md)
-- [Proposals](community/proposals.md)
+- [Conduct](./community/conduct.md)
+- [Earning](./community/earning.md)
+- [Proposals](./community/proposals.md)
 
 ## About
 
-- [Glossary](glossary.md)
-- [Resources](resources.md)
-- [FAQ](frequently-asked-questions.md)
+- [Glossary](./glossary.md)
+- [Resources](./resources.md)
+- [FAQ](./frequently-asked-questions.md)

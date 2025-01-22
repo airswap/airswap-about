@@ -1,6 +1,6 @@
 AirSwap trading technology is fully decentralized, powered by smart contracts that enable counterparty discovery and atomic swaps. AirSwap protocols communicate prices **off-chain** and settle **on-chain**. Peers take the form of individuals trading manually or software trading in an automated way, in which case market makers run servers that implement the following protocols.
 
-For information on finding counter-parties, see [Discovery](discovery.md).
+For information on finding counter-parties, see [Discovery](./discovery.md).
 
 # Discovery
 
@@ -136,7 +136,7 @@ getAllPricingERC20(
 
 ## Example
 
-To find counterparties, see [Discovery](discovery.md). With server URLs in hand, clients may call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests on servers that support RequestForQuoteERC20.
+To find counterparties, see [Discovery](./discovery.md). With server URLs in hand, clients may call `getSignerSideOrderERC20` or `getSenderSideOrderERC20` as JSON-RPC requests on servers that support RequestForQuoteERC20.
 
 ### Client Request
 
@@ -170,7 +170,7 @@ curl -H 'Content-Type: application/json' \
 
 ### Server Response
 
-See the [signatures](signatures.md) page for details on signing an OrderERC20.
+See the [signatures](./signatures.md) page for details on signing an OrderERC20.
 
 ```javascript
 HTTP/1.1 200 OK
@@ -329,7 +329,7 @@ considerOrderERC20(
 
 ## Example
 
-To find counterparties, see [Discovery](discovery.md). With WebSocket server URLs in hand (i.e. the URL schema is `wss`), clients connect to each and calls methods as JSON-RPC over WebSocket.
+To find counterparties, see [Discovery](./discovery.md). With WebSocket server URLs in hand (i.e. the URL schema is `wss`), clients connect to each and calls methods as JSON-RPC over WebSocket.
 
 ### WebSocket
 
