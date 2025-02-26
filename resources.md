@@ -25,7 +25,7 @@ Know some other channels which could be useful for community building? Do drop b
 
 # Analytics
 
-- [AirSwap Dune Dashboard](https://dune.com/airswap/airswap-v3)
+- [AirSwap Dashboard](https://analytics.airswap.xyz/)
 
 # Media Kit
 

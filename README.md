@@ -32,18 +32,17 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 Several applications are available to end users.
 
-- [AirSwap DEX](https://swap.eth.limo/) — All things peer-to-peer swaps.
-- [AirSwap DAO](https://dao.airswap.eth.limo/) — Dashboard for community members.
+- [AirSwap DEX](https://dex.airswap.xyz/) — All things peer-to-peer swaps.
+- [AirSwap DAO](https://dao.airswap.xyz/) — Dashboard for community members.
 - [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the AirSwap network.
 
 Several DEX aggregators and market makers have implemented AirSwap.
 
 - [MetaMask Swaps](https://metamask.io/swaps.html) — Swap directly from the MetaMask wallet browser extension.
-- Market maker activity can be tracked on the [Dune dashboard](https://dune.xyz/queries/28752/57978).
 
 ### Analytics
 
-See the AirSwap [Dashboard on Dune](https://dune.com/agrimony/AirSwap-v2) for latest trading network and community stats.
+See the [AirSwap Analytics](https://analytics.airswap.xyz/) dashboard for latest trading network and community stats.
 
 ## Community
 
