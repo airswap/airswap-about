@@ -6,21 +6,25 @@
 
 **Our vision** is a future where all forms of value are represented as digital assets and flow freely and reliably among people and communities around the world. **Our mission** is to become the standard peer-to-peer trading system: a fundamental primitive of the decentralized economy.
 
+At its core, AirSwap enables two parties to perform an "atomic swap" transaction, through which both sides succeed or the entire transaction reverts. These transactions are "trustless" in a way that neither party needs to trust one another to complete the swap.
+
+- **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond an EVM.
+- **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices by hedging on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or manipulation.
+- **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any standardized digital asset can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
+
 ## Technology
 
 AirSwap curates a peer-to-peer network for trading digital assets: a novel design that protects traders from counterparty risk, price slippage, and front running. Any market participant can discover others and trade directly peer-to-peer using a combination of web protocols and smart contracts. AirSwap technology is open source and all code can be found on [GitHub](https://github.com/airswap/).
 
-### Benefits
+### Architecture
 
-At its core, AirSwap enables two parties to perform an "atomic swap" transaction, through which both sides succeed or the entire transaction reverts. These transactions are "trustless" in a way that neither party needs to trust one another to complete the swap.
+AirSwap is developed and governed by an open-source community and DAO. The network is comprised of trading protocols and applications that generate protocol fees. These are routed through the swap contracts to other smart-contract based systems that support contributor tips and rewards for those actively participating in the DAO. On the following diagram, blue entities are core contracts, blue-outlined entities are applications, and black-outlined entities are participants.
 
-- **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond Ethereum.
-- **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices because they hedge on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or price manipulation.
-- **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any standardized digital asset can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
+<img src="./images/architecture.png" />
 
 ### Protocols
 
-At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to the Ethereum blockchain for settlement.
+At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to an EVM for settlement.
 
 - **[Request-for-quote](./glossary.md#request-for-quote-rfq)** (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket. Maker servers respond to client requests with signed orders, which are assessed by the client who then has the option to complete the swap on-chain. For example, [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785) implements AirSwap RFQ to enable users to swap tokens directly from within their MetaMask wallet by requesting orders directly from market makers.
 
@@ -30,15 +34,20 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 ### Applications
 
-Several applications are available to end users.
+Several end-user applications are available.
 
 - [AirSwap DEX](https://dex.airswap.xyz/) — All things peer-to-peer swaps.
 - [AirSwap DAO](https://dao.airswap.xyz/) — Dashboard for community members.
-- [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the AirSwap network.
+- [AirSwap CLI](https://github.com/airswap/airswap-cli) — Command-line interface to interact with the network.
 
-Several DEX aggregators and market makers have implemented AirSwap.
+Several DEX aggregators and market makers implement AirSwap.
 
 - [MetaMask Swaps](https://metamask.io/swaps.html) — Swap directly from the MetaMask wallet browser extension.
+
+Several third-party applications serve important roles.
+
+- [Snapshot](https://snapshot.box/#/s:vote.airswap.eth) — Proposal voting by token holders.
+- [Splits](https://app.splits.org/accounts/0xaD30f7EEBD9Bd5150a256F47DA41d4403033CdF0/?chainId=1) — Protocol fee routing.
 
 ### Analytics
 
