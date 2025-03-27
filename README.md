@@ -10,7 +10,7 @@ At its core, AirSwap enables two parties to perform an "atomic swap" transaction
 
 - **Not your keys, not your coins**. AirSwap is non-custodial and without deposits or escrow. Every transaction is peer-to-peer with no counterparty risk, no intermediating participants, and no infrastructure beyond an EVM.
 - **Competitive and efficient**. Trading firms provide liquidity via AirSwap at competitive prices by hedging on centralized exchanges. Since it’s peer-to-peer, the price you see is the price you get, without slippage, front running, or manipulation.
-- **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any standardized digital asset can be swapped at a custom price and at any size. No matter the swap, settlement is cheap and efficient.
+- **Zero limitations**. Each swap is between two parties, two tokens, and a smart contract. This means any standardized digital token implements its own transfer restrictions and can be swapped at any price or size.
 
 ## Technology
 
