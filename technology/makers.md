@@ -20,9 +20,22 @@ If a URL is HTTPS, it implies that the server supports the latest RFQ protocol a
 
 Getting started is as easy as standing up a JSON-RPC web server and adding its URL to the Registry.
 
+- Check out the [reference server](https://github.com/airswap/airswap-ref-server) for inspiration.
 - Servers generally implement the [RFQ](./protocols) protocol at minimum.
 - You can debug your server with the [CLI](./makers.md#debugging-with-the-cli) or via curl.
-- When ready, add your server [to the Registry](./makers.md#adding-to-the-registry) which requires [100K AST](https://etherscan.io/address/0x8F9DA6d38939411340b19401E8c54Ea1f51B8f95#readContract#F6).
+- When ready, add your server [to the Registry](./makers.md#adding-to-the-registry) by calling setURL, addTokens, and addProtocols.
+  - Registry staking requirements are as follows (stakingCost, supportCost).
+    - ETH: 100K AST, 100 AST
+    - BSC: 0.1 WBNB, 0.001 WBNB
+    - POLYGON: 100 WMATIC, 1 WMATIC
+    - AVALANCHE: 1 WAVAX, 0.01 WAVAX
+    - LINEA: 0.05 WETH, 0.0005 WETH
+  - Registry enables servers to signal support for multiple protocols with addProtocols.
+    - RequestForQuoteERC20 (0x02ad05d3)
+    - LastLookERC20 (0x395ca9f1)
+    - IndexingERC20 (0x85ccc7d5)
+    - Indexing = (0x9498325a)
+    - Discovery (0xf3713ede)
 
 ## Protocol Fees
 
@@ -97,9 +110,7 @@ Several useful commands can help you debug your server:
 
 ## Adding to the Registry
 
-You can debug all methods using the `quote` and `order` [AirSwap CLI commands](https://github.com/airswap/airswap-cli#all-commands).
-
-Ensure the AirSwap CLI is installed.
+The following steps (setURL, addTokens, and addProtocols) can be called directly on the [Registry](./deployments.md) contract. Alternatively, you are welcome to use the CLI as follows.
 
 ```
 $ yarn global add airswap
@@ -111,7 +122,7 @@ Let's take a look at the available Registry commands.
 
 ```
 $ airswap registry
-AirSwap CLI 5.0.0 — https://www.airswap.xyz/
+AirSwap CLI 5.0.3 — https://www.airswap.io/
 add and remove supported tokens
 
 USAGE
@@ -138,16 +149,16 @@ Next run the following command to set your server url on the registry.
 $ airswap registry:url
 ```
 
-Next run the following command to add protocols you support.
-
-```
-$ airswap protocols:add
-```
-
 Next run the following command to add tokens you support.
 
 ```
 $ airswap tokens:add
+```
+
+Next run the following command to add protocols you support.
+
+```
+$ airswap protocols:add
 ```
 
 To ensure your configuration is correct, run the following.
