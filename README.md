@@ -22,16 +22,6 @@ AirSwap is developed and governed by an open-source community and DAO. The netwo
 
 <img src="./images/architecture.png" />
 
-### Protocols
-
-At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to an EVM for settlement.
-
-- **[Request-for-quote](./glossary.md#request-for-quote-rfq)** (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket. Maker servers respond to client requests with signed orders, which are assessed by the client who then has the option to complete the swap on-chain. For example, [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785) implements AirSwap RFQ to enable users to swap tokens directly from within their MetaMask wallet by requesting orders directly from market makers.
-
-- **[LastLook](./glossary.md#last-look-ll)** (LL) is an automated streaming protocol via JSON-RPC over WebSocket. With LastLook, market makers continuously stream asset prices to clients in real-time. Clients can then sign and transmit orders based on the prices they receive to the maker, who then has the "last look" and the option to complete the swap on-chain. LastLook also has the added benefit of being effectively gasless for the client. For example, when a quote on [swap.eth.limo](http://swap.eth.limo) displays the "gasless" label, your web browser is connected directly to a market maker using the LastLook streaming protocol.
-
-- **[Over-the-counter](./glossary.md#over-the-counter-otc)** (OTC) is manual trading between known counterparties, with prices communicated via chat applications or email and using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC. For example, Stake DAO, a digital asset management firm, uses AirSwap OTC for an ETH put selling investment strategy.
-
 ### Applications
 
 Several end-user applications are available.
@@ -48,6 +38,17 @@ Several third-party applications serve important roles.
 
 - [Snapshot](https://snapshot.box/#/s:vote.airswap.eth) — Proposal voting by token holders.
 - [Splits](https://app.splits.org/accounts/0xaD30f7EEBD9Bd5150a256F47DA41d4403033CdF0/?chainId=1) — Protocol fee routing.
+
+### Protocols
+
+At the protocol level, each swap is between two parties, a signer and a sender. The signer is the party that creates and cryptographically signs an order, and sender is the party that sends the order to an EVM for settlement.
+
+- **[Request-for-quote](./glossary.md#request-for-quote-rfq)** (RFQ) is an automated request-response protocol for market makers running web servers from which clients request orders via JSON-RPC or WebSocket. Maker servers respond to client requests with signed orders, which are assessed by the client who then has the option to complete the swap on-chain. For example, [MetaMask Swaps](https://medium.com/metamask/introducing-metamask-swaps-84318c643785) implements AirSwap RFQ to enable users to swap tokens directly from within their MetaMask wallet by requesting orders directly from market makers.
+
+- **[LastLook](./glossary.md#last-look-ll)** (LL) is an automated streaming protocol via JSON-RPC over WebSocket. With LastLook, market makers continuously stream asset prices to clients in real-time. Clients can then sign and transmit orders based on the prices they receive to the maker, who then has the "last look" and the option to complete the swap on-chain. LastLook also has the added benefit of being effectively gasless for the client. For example, when a quote on [swap.eth.limo](http://swap.eth.limo) displays the "gasless" label, your web browser is connected directly to a market maker using the LastLook streaming protocol.
+
+- **[Over-the-counter](./glossary.md#over-the-counter-otc)** (OTC) is manual trading between known counterparties, with prices communicated via chat applications or email and using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC. For example, Stake DAO, a digital asset management firm, uses AirSwap OTC for an ETH put selling investment strategy.
+
 
 ### Analytics
 
