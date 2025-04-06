@@ -106,5 +106,9 @@ Having achieved its initial goals and delivered its technology roadmap, AirSwap 
 ## Explore
 
 - AirSwap [Discord Server](https://discord.gg/Pc6gV3hFjR)
-- AirSwap [Member Dashboard](https://dao.airswap.eth.limo/)
+- AirSwap [Member Dashboard](https://dao.airswap.xyz)
 - AirSwap [Twitter](https://x.com/airswap)
+- AirSwap [Farcaster](https://warpcast.com/~/channel/airswap)
+- AirSwap [Telegram Announcements](https://t.me/airswapofficial)
+- AirSwap [Telegram English](https://t.me/AirSwap)
+- AirSwap [Telegram French](https://t.me/AirSwap_france)
