@@ -77,7 +77,7 @@ Each AIP is ratified by calling it to vote and being accepted by the token holde
 
 ## History
 
-AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76), [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb), [2021](https://medium.com/airswap/2021-a-year-in-review-20dff123b11), [2022](https://medium.com/airswap/2022-a-year-in-review-918f1d7b9a71), and [2023](https://medium.com/airswap/2023-a-year-in-review-7bebc102c0d7).
+AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-token-launch-report-fbd04b748eb1). Over the years, new products and upgrades have been continuously published to further enable and popularize the benefits of trading digital assets using decentralized protocols. See the years in review for [2018](https://medium.com/fluidity/2018-a-year-in-review-d7f5cb0e5d76), [2019](https://medium.com/fluidity/2019-a-year-in-review-6b40035e6edb), [2021](https://medium.com/airswap/2021-a-year-in-review-20dff123b11), [2022](https://medium.com/airswap/2022-a-year-in-review-918f1d7b9a71), [2023](https://medium.com/airswap/2023-a-year-in-review-7bebc102c0d7), and [2024](https://medium.com/airswap/2024-a-year-in-review-545c02635734).
 
 - [AirSwap Roadmap](https://medium.com/fluidity/the-airswap-roadmap-1c1a3c3b20d3) (November 16th, 2017)
 - [AirSwap is Here](https://medium.com/fluidity/airswap-is-here-c83c001d5bbe) (April 25, 2018)
@@ -90,6 +90,7 @@ AirSwap [launched on October 10th, 2017](https://medium.com/fluidity/airswap-tok
 - [AirSwap V3](https://medium.com/airswap/introducing-airswap-v3-97f8d14bebad) (2022)
 - [AirSwap V4](https://medium.com/airswap/introducing-airswap-v4-1962923ccc74) (2023)
 - [AirSwap NFT and OTC 2.0](https://medium.com/airswap/happy-10-10-nft-marketplaces-otc-2-0-protocols-4-1-and-more-b49cf6b1bc2f) (2023)
+- [AirSwap V5](https://x.com/airswap/status/1844478269225304095) (2024)
 
 Having achieved its initial goals and delivered its technology roadmap, AirSwap is now an open project and community of contributors who pursue initiatives to continue to develop and grow the network.
 
