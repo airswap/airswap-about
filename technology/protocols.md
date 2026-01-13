@@ -1,11 +1,3 @@
-# AirSwap Trading Protocol
-
-AirSwap trading technology is fully decentralized, powered by smart contracts that enable counterparty discovery and atomic swaps. AirSwap protocols communicate prices off-chain and settle on-chain.
-
-**Version:** 1.0.0
-
-# Methods
-
 # Discovery
 
 ## `getProtocols`

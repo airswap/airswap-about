@@ -133,19 +133,7 @@ function groupMethodsByTag(methods) {
 
 let markdown = ''
 
-if (openRpcSpec.info) {
-  markdown += `# ${openRpcSpec.info.title || 'RPC API'}\n\n`
-  if (openRpcSpec.info.description) {
-    markdown += `${openRpcSpec.info.description}\n\n`
-  }
-  if (openRpcSpec.info.version) {
-    markdown += `**Version:** ${openRpcSpec.info.version}\n\n`
-  }
-}
-
 if (openRpcSpec.methods && openRpcSpec.methods.length > 0) {
-  markdown += '# Methods\n\n'
-
   const groupedMethods = groupMethodsByTag(openRpcSpec.methods)
 
   Object.entries(groupedMethods).forEach(([tag, methods]) => {
