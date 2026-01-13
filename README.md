@@ -49,7 +49,6 @@ At the protocol level, each swap is between two parties, a signer and a sender. 
 
 - **[Over-the-counter](./glossary.md#over-the-counter-otc)** (OTC) is manual trading between known counterparties, with prices communicated via chat applications or email and using AirSwap for settlement. Some of the [largest trades](https://etherscan.io/tx/0x346a9f45c70d4f323c67fd0f348b2a8aaa7477a719557c27a8130c8873279d3b) in DeFi have been made on AirSwap OTC. For example, Stake DAO, a digital asset management firm, uses AirSwap OTC for an ETH put selling investment strategy.
 
-
 ### Analytics
 
 See the [AirSwap Analytics](https://analytics.airswap.xyz/) dashboard for latest trading network and community stats.

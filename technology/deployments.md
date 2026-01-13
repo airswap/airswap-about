@@ -10,7 +10,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 - Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://etherscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
+- Delegate — [`0xDe1Ebf9b429F5066FD060F86847657e29bD49Bb0`](https://etherscan.io/address/0xDe1Ebf9b429F5066FD060F86847657e29bD49Bb0#code)
 - AST — [`0x27054b13b1b798b345b591a4d22e6562d47ea75a`](https://etherscan.io/address/0x27054b13b1b798b345b591a4d22e6562d47ea75a#code)
 
 ## BSC (56)
@@ -20,7 +20,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://bscscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://bscscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://bscscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://bscscan.com/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Polygon (137)
 
@@ -29,7 +28,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://polygonscan.com/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://polygonscan.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://polygonscan.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://polygonscan.com/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Linea (59144)
 
@@ -38,7 +36,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://lineascan.build/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://lineascan.build/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://lineascan.build/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://lineascan.build/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Arbitrum (42161)
 
@@ -47,7 +44,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://arbiscan.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://arbiscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://arbiscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://arbiscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Avalanche (43114)
 
@@ -56,7 +52,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://snowtrace.io/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://snowtrace.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://snowtrace.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://snowtrace.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Base (8453)
 
@@ -65,7 +60,6 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Wrapper — [`0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe`](https://basescan.org/address/0x88d0D1a1472307d1853809C3aA455B1B76c9bCfe#code)
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://basescan.org/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://basescan.org/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://basescan.org/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
 
 ## Telos (40)
 
@@ -87,7 +81,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://sepolia.etherscan.io/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://sepolia.etherscan.io/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 - Staking — [`0x8Bf384296A009723435aD5E8203DA5736b895038`](https://sepolia.etherscan.io/address/0x8Bf384296A009723435aD5E8203DA5736b895038#code)
-- Delegate — [`0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1`](https://sepolia.etherscan.io/address/0xC4ad1c6fBe2794a276C09dc8AadF7F4cF79Df9E1#code)
+- Delegate — [`0x35010796699e5c2C9C002F550756A1548921d503`](https://sepolia.etherscan.io/address/0x35010796699e5c2C9C002F550756A1548921d503#code)
 
 ## Holesky (17000)
 
@@ -156,6 +150,8 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - Registry — [`0xe30E9c001dEFb5F0B04fD21662454A2427F4257A`](https://rootstock-testnet.blockscout.com/address/0xe30E9c001dEFb5F0B04fD21662454A2427F4257A#code)
 - Pool — [`0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11`](https://rootstock-testnet.blockscout.com/address/0xbbcec987E4C189FCbAB0a2534c77b3ba89229F11#code)
 
+
+
 # Legacy
 
 ## AirSwap V4
@@ -165,6 +161,7 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V4: SwapERC20 (137) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://polygonscan.com/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: SwapERC20 (43114) — [`0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8`](https://snowtrace.io/address/0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8#code)
 - AirSwap V4: Staking (1) — [`0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860`](https://etherscan.io/address/0x9fc450F9AfE2833Eb44f9A1369Ab3678D3929860#code)
+
 
 ## AirSwap V3
 
@@ -178,12 +175,14 @@ See all releases on [GitHub](https://github.com/airswap/airswap-protocols/releas
 - AirSwap V3: Registry (137) — [`0x9F11691FA842856E44586380b27Ac331ab7De93d`](https://polygonscan.com/address/0x9F11691FA842856E44586380b27Ac331ab7De93d#code)
 - AirSwap V3: Registry (43114) — [`0xE40feb39fcb941A633deC965Abc9921b3FE962b2`](https://snowtrace.io/address/0xE40feb39fcb941A633deC965Abc9921b3FE962b2#code)
 
+
 ## AirSwap V2
 
 - AirSwap V2: Swap — [`0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA`](https://etherscan.io/address/0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA#code)
 - AirSwap V2: Staking [`0x579120871266ccd8de6c85ef59e2ff6743e7cd15`](https://etherscan.io/address/0x579120871266ccd8de6c85ef59e2ff6743e7cd15#code)
 - AirSwap V2: Staking (Legacy) [`0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe`](https://etherscan.io/address/0xa4C5107184a88D4B324Dd10D98a11dd8037823Fe#code)
 - AirSwap V2: Staking (Deprecated) [`0x704c5818b574358dfb5225563852639151a943ec`](https://etherscan.io/address/0x704c5818b574358dfb5225563852639151a943ec#code)
+
 
 # Security Audits
 

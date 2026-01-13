@@ -5,8 +5,8 @@
 
 ## Technology
 
+- [Introduction](./technology/introduction.md)
 - [Protocols](./technology/protocols.md)
-- [Formats](./technology/formats.md)
 - [Discovery](./technology/discovery.md)
 - [Makers](./technology/makers.md)
 - [Delegate](./technology/delegate.md)

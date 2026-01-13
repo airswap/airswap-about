@@ -47,7 +47,7 @@ const contracts = [{
   deploys: require('@airswap/staking/deploys')
 }, {
   name: 'Delegate',
-  deploys: require('@airswap/delegate/deploys')
+  deploys: require('@airswap/delegate-erc20/deploys')
 }, {
   name: 'AST',
   deploys: {
