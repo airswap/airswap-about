@@ -68,7 +68,7 @@ function generateMethodDoc(method) {
       const required = param.required !== false ? 'Yes' : 'No'
       const type = formatType(param.schema)
       const description = param.description || ''
-      md += `| \`${param.name}\` | \`${type}\` | ${required} | ${description} |\n`
+      md += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`
     })
     md += '\n'
   }
@@ -98,7 +98,7 @@ function generateSchemaDoc(name, schema) {
     Object.entries(schema.properties).forEach(([propName, propSchema]) => {
       const type = formatType(propSchema)
       const description = propSchema.description || ''
-      md += `| \`${propName}\` | \`${type}\` | ${description} |\n`
+      md += `| \`${propName}\` | ${type} | ${description} |\n`
     })
     md += '\n'
   }

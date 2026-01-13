@@ -27,7 +27,7 @@ setProtocols(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `protocols` | `[SupportedProtocolInfo](#supportedprotocolinfo)[]` | Yes | Array of supported protocol configurations |
+| `protocols` | [SupportedProtocolInfo](#supportedprotocolinfo)[] | Yes | Array of supported protocol configurations |
 
 ### Returns
 
@@ -60,7 +60,7 @@ setTokens(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `tokens` | `[Address](#address)[]` | Yes | Array of token contract addresses |
+| `tokens` | [Address](#address)[] | Yes | Array of token contract addresses |
 
 ### Returns
 
@@ -89,14 +89,14 @@ getSignerSideOrderERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `chainId` | `[ChainId](#chainid)` | Yes | The blockchain network chain ID |
-| `swapContract` | `[Address](#address)` | Yes | Address of the AirSwap SwapERC20 contract |
-| `senderAmount` | `[Amount](#amount)` | Yes | Amount of tokens the sender will provide (in wei) |
-| `signerToken` | `[Address](#address)` | Yes | Address of the token the signer will provide |
-| `senderToken` | `[Address](#address)` | Yes | Address of the token the sender will provide |
-| `senderWallet` | `[Address](#address)` | Yes | Address of the sender's wallet |
-| `minExpiry` | `[Amount](#amount)` | No | Minimum expiry in seconds (optional) |
-| `proxyingFor` | `[Address](#address)` | No | Address being proxied for (optional) |
+| `chainId` | [ChainId](#chainid) | Yes | The blockchain network chain ID |
+| `swapContract` | [Address](#address) | Yes | Address of the AirSwap SwapERC20 contract |
+| `senderAmount` | [Amount](#amount) | Yes | Amount of tokens the sender will provide (in wei) |
+| `signerToken` | [Address](#address) | Yes | Address of the token the signer will provide |
+| `senderToken` | [Address](#address) | Yes | Address of the token the sender will provide |
+| `senderWallet` | [Address](#address) | Yes | Address of the sender's wallet |
+| `minExpiry` | [Amount](#amount) | No | Minimum expiry in seconds (optional) |
+| `proxyingFor` | [Address](#address) | No | Address being proxied for (optional) |
 
 ### Returns
 
@@ -123,14 +123,14 @@ getSenderSideOrderERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `chainId` | `[ChainId](#chainid)` | Yes | The blockchain network chain ID |
-| `swapContract` | `[Address](#address)` | Yes | Address of the AirSwap SwapERC20 contract |
-| `signerAmount` | `[Amount](#amount)` | Yes | Amount of tokens the signer will provide (in wei) |
-| `signerToken` | `[Address](#address)` | Yes | Address of the token the signer will provide |
-| `senderToken` | `[Address](#address)` | Yes | Address of the token the sender will provide |
-| `senderWallet` | `[Address](#address)` | Yes | Address of the sender's wallet |
-| `minExpiry` | `[Amount](#amount)` | No | Minimum expiry in seconds (optional) |
-| `proxyingFor` | `[Address](#address)` | No | Address being proxied for (optional) |
+| `chainId` | [ChainId](#chainid) | Yes | The blockchain network chain ID |
+| `swapContract` | [Address](#address) | Yes | Address of the AirSwap SwapERC20 contract |
+| `signerAmount` | [Amount](#amount) | Yes | Amount of tokens the signer will provide (in wei) |
+| `signerToken` | [Address](#address) | Yes | Address of the token the signer will provide |
+| `senderToken` | [Address](#address) | Yes | Address of the token the sender will provide |
+| `senderWallet` | [Address](#address) | Yes | Address of the sender's wallet |
+| `minExpiry` | [Amount](#amount) | No | Minimum expiry in seconds (optional) |
+| `proxyingFor` | [Address](#address) | No | Address being proxied for (optional) |
 
 ### Returns
 
@@ -151,8 +151,8 @@ getPricingERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `pairs` | `[TokenPair](#tokenpair)[]` | Yes | Array of token pairs to get pricing for |
-| `minExpiry` | `[Amount](#amount)` | No | Minimum expiry in seconds (optional) |
+| `pairs` | [TokenPair](#tokenpair)[] | Yes | Array of token pairs to get pricing for |
+| `minExpiry` | [Amount](#amount) | No | Minimum expiry in seconds (optional) |
 
 ### Returns
 
@@ -188,8 +188,8 @@ subscribePricingERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `pairs` | `[TokenPair](#tokenpair)[]` | Yes | Array of token pairs to subscribe to |
-| `minExpiry` | `[Amount](#amount)` | No | Minimum expiry in seconds (optional) |
+| `pairs` | [TokenPair](#tokenpair)[] | Yes | Array of token pairs to subscribe to |
+| `minExpiry` | [Amount](#amount) | No | Minimum expiry in seconds (optional) |
 
 ### Returns
 
@@ -222,7 +222,7 @@ unsubscribePricingERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `pairs` | `[TokenPair](#tokenpair)[]` | Yes | Array of token pairs to unsubscribe from |
+| `pairs` | [TokenPair](#tokenpair)[] | Yes | Array of token pairs to unsubscribe from |
 
 ### Returns
 
@@ -255,7 +255,7 @@ setPricingERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `pricing` | `[Pricing](#pricing)[]` | Yes | Array of pricing updates |
+| `pricing` | [Pricing](#pricing)[] | Yes | Array of pricing updates |
 
 ### Returns
 
@@ -284,16 +284,16 @@ considerOrderERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `nonce` | `[Amount](#amount)` | Yes | Unique order nonce |
-| `expiry` | `[Amount](#amount)` | Yes | Order expiry timestamp |
-| `signerWallet` | `[Address](#address)` | Yes | Address of the signer's wallet |
-| `signerToken` | `[Address](#address)` | Yes | Address of the token the signer will provide |
-| `signerAmount` | `[Amount](#amount)` | Yes | Amount of tokens the signer will provide |
-| `senderToken` | `[Address](#address)` | Yes | Address of the token the sender will provide |
-| `senderAmount` | `[Amount](#amount)` | Yes | Amount of tokens the sender will provide |
-| `v` | `[Amount](#amount)` | Yes | ECDSA signature recovery parameter |
-| `r` | `[Bytes32](#bytes32)` | Yes | ECDSA signature r parameter |
-| `s` | `[Bytes32](#bytes32)` | Yes | ECDSA signature s parameter |
+| `nonce` | [Amount](#amount) | Yes | Unique order nonce |
+| `expiry` | [Amount](#amount) | Yes | Order expiry timestamp |
+| `signerWallet` | [Address](#address) | Yes | Address of the signer's wallet |
+| `signerToken` | [Address](#address) | Yes | Address of the token the signer will provide |
+| `signerAmount` | [Amount](#amount) | Yes | Amount of tokens the signer will provide |
+| `senderToken` | [Address](#address) | Yes | Address of the token the sender will provide |
+| `senderAmount` | [Amount](#amount) | Yes | Amount of tokens the sender will provide |
+| `v` | [Amount](#amount) | Yes | ECDSA signature recovery parameter |
+| `r` | [Bytes32](#bytes32) | Yes | ECDSA signature r parameter |
+| `s` | [Bytes32](#bytes32) | Yes | ECDSA signature s parameter |
 
 ### Returns
 
@@ -316,8 +316,8 @@ addOrder(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `order` | `[FullOrder](#fullorder)` | Yes | The full order to add |
-| `tags` | `string[]` | No | Tags to associate with the order |
+| `order` | [FullOrder](#fullorder) | Yes | The full order to add |
+| `tags` | string[] | No | Tags to associate with the order |
 
 ### Returns
 
@@ -341,11 +341,11 @@ getOrders(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `filter` | `[OrderFilter](#orderfilter)` | Yes | Filter criteria for orders |
-| `offset` | `integer` | No | Pagination offset |
-| `limit` | `integer` | No | Maximum number of orders to return |
-| `by` | `[Indexes](#indexes)` | No | Index to sort by |
-| `direction` | `[Direction](#direction)` | No | Sort direction |
+| `filter` | [OrderFilter](#orderfilter) | Yes | Filter criteria for orders |
+| `offset` | integer | No | Pagination offset |
+| `limit` | integer | No | Maximum number of orders to return |
+| `by` | [Indexes](#indexes) | No | Index to sort by |
+| `direction` | [Direction](#direction) | No | Sort direction |
 
 ### Returns
 
@@ -365,7 +365,7 @@ getTags(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `token` | `[Address](#address)` | Yes | Token contract address |
+| `token` | [Address](#address) | Yes | Token contract address |
 
 ### Returns
 
@@ -388,8 +388,8 @@ addOrderERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `order` | `[FullOrderERC20](#fullordererc20)` | Yes | The full ERC20 order to add |
-| `tags` | `string[]` | No | Tags to associate with the order |
+| `order` | [FullOrderERC20](#fullordererc20) | Yes | The full ERC20 order to add |
+| `tags` | string[] | No | Tags to associate with the order |
 
 ### Returns
 
@@ -413,11 +413,11 @@ getOrdersERC20(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `filter` | `[OrderFilter](#orderfilter)` | Yes | Filter criteria for orders |
-| `offset` | `integer` | No | Pagination offset |
-| `limit` | `integer` | No | Maximum number of orders to return |
-| `by` | `[Indexes](#indexes)` | No | Index to sort by |
-| `direction` | `[Direction](#direction)` | No | Sort direction |
+| `filter` | [OrderFilter](#orderfilter) | Yes | Filter criteria for orders |
+| `offset` | integer | No | Pagination offset |
+| `limit` | integer | No | Maximum number of orders to return |
+| `by` | [Indexes](#indexes) | No | Index to sort by |
+| `direction` | [Direction](#direction) | No | Sort direction |
 
 ### Returns
 
@@ -437,7 +437,7 @@ getTags(
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| `token` | `[Address](#address)` | Yes | Token contract address |
+| `token` | [Address](#address) | Yes | Token contract address |
 
 ### Returns
 
@@ -467,8 +467,8 @@ Information about a supported trading protocol
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `interfaceId` | `string` | Protocol interface identifier (e.g., 0x02ad05d3 for RequestForQuoteERC20) |
-| `params` | `{ chainId: [ChainId](#chainid), swapContractAddress: [Address](#address), walletAddress: [Address](#address), senderServer: string, senderWallet: [Address](#address) }` |  |
+| `interfaceId` | string | Protocol interface identifier (e.g., 0x02ad05d3 for RequestForQuoteERC20) |
+| `params` | { chainId: [ChainId](#chainid), swapContractAddress: [Address](#address), walletAddress: [Address](#address), senderServer: string, senderWallet: [Address](#address) } |  |
 
 ## TokenPair
 
@@ -476,8 +476,8 @@ A pair of tokens for trading
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `baseToken` | `[Address](#address)` | Base token address |
-| `quoteToken` | `[Address](#address)` | Quote token address |
+| `baseToken` | [Address](#address) | Base token address |
+| `quoteToken` | [Address](#address) | Quote token address |
 
 ## OrderERC20
 
@@ -485,17 +485,17 @@ Signed ERC20 order in AirSwap format
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `nonce` | `[Amount](#amount)` | Unique order nonce |
-| `expiry` | `[Amount](#amount)` | Order expiry timestamp (Unix timestamp) |
-| `signerWallet` | `[Address](#address)` | Address of the signer's wallet |
-| `signerToken` | `[Address](#address)` | Address of the token the signer will provide |
-| `signerAmount` | `[Amount](#amount)` | Amount of tokens the signer will provide (in wei) |
-| `protocolFee` | `[Amount](#amount)` | Protocol fee in basis points |
-| `senderToken` | `[Address](#address)` | Address of the token the sender will provide |
-| `senderAmount` | `[Amount](#amount)` | Amount of tokens the sender will provide (in wei) |
-| `v` | `[Amount](#amount)` | ECDSA signature recovery parameter |
-| `r` | `[Bytes32](#bytes32)` | ECDSA signature r parameter |
-| `s` | `[Bytes32](#bytes32)` | ECDSA signature s parameter |
+| `nonce` | [Amount](#amount) | Unique order nonce |
+| `expiry` | [Amount](#amount) | Order expiry timestamp (Unix timestamp) |
+| `signerWallet` | [Address](#address) | Address of the signer's wallet |
+| `signerToken` | [Address](#address) | Address of the token the signer will provide |
+| `signerAmount` | [Amount](#amount) | Amount of tokens the signer will provide (in wei) |
+| `protocolFee` | [Amount](#amount) | Protocol fee in basis points |
+| `senderToken` | [Address](#address) | Address of the token the sender will provide |
+| `senderAmount` | [Amount](#amount) | Amount of tokens the sender will provide (in wei) |
+| `v` | [Amount](#amount) | ECDSA signature recovery parameter |
+| `r` | [Bytes32](#bytes32) | ECDSA signature r parameter |
+| `s` | [Bytes32](#bytes32) | ECDSA signature s parameter |
 
 ## FullOrderERC20
 
@@ -507,23 +507,23 @@ Full order for NFT/ERC721 swaps
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `nonce` | `[Amount](#amount)` |  |
-| `expiry` | `[Amount](#amount)` |  |
-| `signerWallet` | `[Address](#address)` |  |
-| `signerToken` | `[Address](#address)` |  |
-| `signerAmount` | `[Amount](#amount)` |  |
-| `signerId` | `[Amount](#amount)` |  |
-| `senderWallet` | `[Address](#address)` |  |
-| `senderToken` | `[Address](#address)` |  |
-| `senderAmount` | `[Amount](#amount)` |  |
-| `senderId` | `[Amount](#amount)` |  |
-| `affiliateWallet` | `[Address](#address)` |  |
-| `affiliateAmount` | `[Amount](#amount)` |  |
-| `chainId` | `[ChainId](#chainid)` |  |
-| `swapContract` | `[Address](#address)` |  |
-| `v` | `[Amount](#amount)` |  |
-| `r` | `[Bytes32](#bytes32)` |  |
-| `s` | `[Bytes32](#bytes32)` |  |
+| `nonce` | [Amount](#amount) |  |
+| `expiry` | [Amount](#amount) |  |
+| `signerWallet` | [Address](#address) |  |
+| `signerToken` | [Address](#address) |  |
+| `signerAmount` | [Amount](#amount) |  |
+| `signerId` | [Amount](#amount) |  |
+| `senderWallet` | [Address](#address) |  |
+| `senderToken` | [Address](#address) |  |
+| `senderAmount` | [Amount](#amount) |  |
+| `senderId` | [Amount](#amount) |  |
+| `affiliateWallet` | [Address](#address) |  |
+| `affiliateAmount` | [Amount](#amount) |  |
+| `chainId` | [ChainId](#chainid) |  |
+| `swapContract` | [Address](#address) |  |
+| `v` | [Amount](#amount) |  |
+| `r` | [Bytes32](#bytes32) |  |
+| `s` | [Bytes32](#bytes32) |  |
 
 ## Pricing
 
@@ -531,11 +531,11 @@ Pricing information for a token pair
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `baseToken` | `[Address](#address)` |  |
-| `quoteToken` | `[Address](#address)` |  |
-| `minimum` | `[Amount](#amount)` | Minimum order size |
-| `bid` | `any` | Bid pricing (levels array or formula string) |
-| `ask` | `any` | Ask pricing (levels array or formula string) |
+| `baseToken` | [Address](#address) |  |
+| `quoteToken` | [Address](#address) |  |
+| `minimum` | [Amount](#amount) | Minimum order size |
+| `bid` | any | Bid pricing (levels array or formula string) |
+| `ask` | any | Ask pricing (levels array or formula string) |
 
 ## Levels
 
@@ -551,17 +551,17 @@ Filter criteria for querying orders
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `chainId` | `[ChainId](#chainid)` |  |
-| `signerWallet` | `[Address](#address)` |  |
-| `signerToken` | `[Address](#address)` |  |
-| `signerId` | `[Amount](#amount)` |  |
-| `senderWallet` | `[Address](#address)` |  |
-| `senderToken` | `[Address](#address)` |  |
-| `minSignerAmount` | `[Amount](#amount)` |  |
-| `maxSignerAmount` | `[Amount](#amount)` |  |
-| `minSenderAmount` | `[Amount](#amount)` |  |
-| `maxSenderAmount` | `[Amount](#amount)` |  |
-| `tags` | `string[]` |  |
+| `chainId` | [ChainId](#chainid) |  |
+| `signerWallet` | [Address](#address) |  |
+| `signerToken` | [Address](#address) |  |
+| `signerId` | [Amount](#amount) |  |
+| `senderWallet` | [Address](#address) |  |
+| `senderToken` | [Address](#address) |  |
+| `minSignerAmount` | [Amount](#amount) |  |
+| `maxSignerAmount` | [Amount](#amount) |  |
+| `minSenderAmount` | [Amount](#amount) |  |
+| `maxSenderAmount` | [Amount](#amount) |  |
+| `tags` | string[] |  |
 
 ## Indexes
 
@@ -577,9 +577,9 @@ Response containing orders and pagination info
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `orders` | `[FullOrder](#fullorder)[]` |  |
-| `offset` | `integer` |  |
-| `total` | `integer` |  |
+| `orders` | [FullOrder](#fullorder)[] |  |
+| `offset` | integer |  |
+| `total` | integer |  |
 
 ## OrderResponseERC20
 
@@ -587,7 +587,7 @@ Response containing ERC20 orders and pagination info
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `orders` | `[FullOrderERC20](#fullordererc20)[]` |  |
-| `offset` | `integer` |  |
-| `total` | `integer` |  |
+| `orders` | [FullOrderERC20](#fullordererc20)[] |  |
+| `offset` | integer |  |
+| `total` | integer |  |
 
