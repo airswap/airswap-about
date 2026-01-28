@@ -8,8 +8,8 @@
     "pretty:fix": "yarn prettier --write './**/*.md'"
   },
   "devDependencies": {
-    "@airswap/delegate-erc20": "^5.1.1",
-    "@airswap/libraries": "5.0.14",
+    "@airswap/delegate-erc20": "5.1.1",
+    "@airswap/libraries": "5.0.15",
     "@airswap/pool": "^5.0.1",
     "@airswap/registry": "^5.0.1",
     "@airswap/staking": "^5.0.1",

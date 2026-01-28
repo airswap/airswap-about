@@ -63,7 +63,7 @@ Content-Type: application/json
   "method": "getSignerSideOrderERC20",
   "params": {
     "chainId": "1",
-    "swapContract": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
+    "swapContract": "0xD82E10B9A4107939e55fCCa9B53A9ede6CF2fC46",
     "signerToken": "0xdac17f958d2ee523a2206206994597c13d831ec7",
     "senderWallet": "0xed669F5fe2A37Ef204DB178c7a982717B9f03Ec2",
     "senderToken": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
@@ -76,7 +76,7 @@ Requests can also be made using curl or wget for debugging.
 
 ```bash
 curl -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0xed669F5fe2A37Ef204DB178c7a982717B9f03Ec2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
+     -d '{"jsonrpc":"2.0","id":"123","method":"getSignerSideOrderERC20","params":{"chainId":"1","swapContract":"0xD82E10B9A4107939e55fCCa9B53A9ede6CF2fC46","signerToken":"0xdac17f958d2ee523a2206206994597c13d831ec7","senderWallet":"0xed669F5fe2A37Ef204DB178c7a982717B9f03Ec2","senderToken":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","senderAmount":"1000000000000000000"}}' \
      http://localhost:3000/
 ```
 
@@ -165,7 +165,7 @@ Upon connection, the server calls `setProtocols` on the client.
         "interfaceId": "0x2ca4c820",
         "params": {
           "chainId": "1",
-          "swapContractAddress": "0xd82FA167727a4dc6D6F55830A2c47aBbB4b3a0F8",
+          "swapContractAddress": "0xD82E10B9A4107939e55fCCa9B53A9ede6CF2fC46",
           "walletAddress": "0x73BCEb1Cd57C711feaC4224D062b0F6ff338501f"
         }
       }
